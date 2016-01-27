@@ -27,3 +27,9 @@ plot(force.Time, force.Data)
 hold on
 plot(speed.Time, speed.Data)
 legend('Force','Speed')
+
+ sim('ex1_simscape')
+% figure
+% plot(force_simscape.Time,force_simscape.Data)
+% hold on
+% plot(velocity_simscape.Time,velocity_simscape.Data)
