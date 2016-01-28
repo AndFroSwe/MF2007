@@ -33,6 +33,4 @@ legend('Force','Speed')
  plot(force_simscape.Time,force_simscape.Data,'b')
  hold on
  plot(velocity_simscape.Time,velocity_simscape.Data,'r')
- legend('Force','Speed')
- title('Simscape sin 10 rad/s')
-%  print('plot_ex1_simscape_sin_10_rad','-dpng')
+ 

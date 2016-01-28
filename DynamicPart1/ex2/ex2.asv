@@ -73,7 +73,7 @@ hold on
 plot(speed.Time, speed.Data)
 title('Over Resonance')
 title('Ex2: Simulink over Resonance')
-print('plot_ex2_simulink_over','-dpng')
+print('plot_ex2_simulink_below','-dpng')
 sim('ex2_simscape')
 figure
 plot(force_simscape.Time,force_simscape.Data,'b')
