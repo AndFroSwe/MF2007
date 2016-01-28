@@ -20,19 +20,20 @@ figure
 pzmap(G)
 damp(G)
 dcgain(G)
-freq = 10;
+freq = 1;
 sim('ex1_sim')
 figure
 plot(force.Time, force.Data)
 hold on
 plot(speed.Time, speed.Data)
 legend('Force','Speed')
-
+title('Ex1: Simulink sin 1 rad/s')
+print('plot_ex1_simulink_sin_1_rad','-dpng')
  sim('ex1_simscape')
  figure
  plot(force_simscape.Time,force_simscape.Data,'b')
  hold on
  plot(velocity_simscape.Time,velocity_simscape.Data,'r')
  legend('Force','Speed')
- title('Simscape sin 10 rad/s')
-%  print('plot_ex1_simscape_sin_10_rad','-dpng')
+ title('Ex1: Simscape sin 1 rad/s')
+ print('plot_ex1_simscape_sin_1_rad','-dpng')

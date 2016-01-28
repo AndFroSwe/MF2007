@@ -38,7 +38,7 @@ plot(force.Time, force.Data,'b')
 hold on
 plot(speed.Time, speed.Data,'r')
 title('Ex2: Simulink below Resonance')
-print('plot_ex2_simulink_below','-dpng')
+% print('plot_ex2_simulink_below','-dpng')
 sim('ex2_simscape')
 figure
 plot(force_simscape.Time,force_simscape.Data,'b')
@@ -46,7 +46,7 @@ hold on
 plot(velocity_simscape.Time,velocity_simscape.Data,'r')
 legend('Force','Speed')
 title('Ex2: Simscape below Resonance')
-print('plot_ex2_simscape_below','-dpng')
+% print('plot_ex2_simscape_below','-dpng')
 % resonance
 freq = resonance;
 sim('ex2_sim')
@@ -55,7 +55,7 @@ plot(force.Time, force.Data)
 hold on
 plot(speed.Time, speed.Data)
 title('Ex2: Simulink Same as Resonance')
-print('plot_ex2_simulink_same','-dpng')
+% print('plot_ex2_simulink_same','-dpng')
 sim('ex2_simscape')
 figure
 plot(force_simscape.Time,force_simscape.Data,'b')
@@ -63,7 +63,7 @@ hold on
 plot(velocity_simscape.Time,velocity_simscape.Data,'r')
 legend('Force','Speed')
 title('Ex2: Simscape Same as Resonance')
-print('plot_ex2_simscape_same','-dpng')
+% print('plot_ex2_simscape_same','-dpng')
 %over resonance
 freq = resonance*1.2;
 sim('ex2_sim')
@@ -73,7 +73,7 @@ hold on
 plot(speed.Time, speed.Data)
 title('Over Resonance')
 title('Ex2: Simulink over Resonance')
-print('plot_ex2_simulink_over','-dpng')
+% print('plot_ex2_simulink_over','-dpng')
 sim('ex2_simscape')
 figure
 plot(force_simscape.Time,force_simscape.Data,'b')
@@ -81,6 +81,6 @@ hold on
 plot(velocity_simscape.Time,velocity_simscape.Data,'r')
 legend('Force','Speed')
 title('Ex2: Simscape over Resonance')
-print('plot_ex2_simscape_over','-dpng')
+% print('plot_ex2_simscape_over','-dpng')
 
 
