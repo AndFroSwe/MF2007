@@ -27,13 +27,13 @@ plot(force.Time, force.Data)
 hold on
 plot(speed.Time, speed.Data)
 legend('Force','Speed')
-title('Ex1: Simulink sin 1 rad/s')
-print('plot_ex1_simulink_sin_1_rad','-dpng')
+title('Ex1: Simulink step')
+print('plot_ex1_simulink_step','-dpng')
  sim('ex1_simscape')
  figure
  plot(force_simscape.Time,force_simscape.Data,'b')
  hold on
  plot(velocity_simscape.Time,velocity_simscape.Data,'r')
  legend('Force','Speed')
- title('Ex1: Simscape sin 1 rad/s')
- print('plot_ex1_simscape_sin_1_rad','-dpng')
+ title('Ex1: Simscape step')
+ print('plot_ex1_simscape_step','-dpng')
