@@ -1,0 +1,26 @@
+close all, clear all, clc
+ 
+R1 = 200;
+R2 = 200;
+C = 10e-6;
+U = 12;
+time = 0.018;
+
+s = tf('s');
+
+G1 = C/(R1*C*s+1)
+
+
+bode(G1)
+print('ex4_S1_bode','-dpng')
+figure
+pzplot(G1)
+print('ex4_S1_pz','-dpng')
+figure
+step(G1)
+print('ex4_S1_step','-dpng')
+
+sim('ex4_s1_simscape')
+figure
+plot(s1_voltage.Time,s1_voltage.Data)
+
