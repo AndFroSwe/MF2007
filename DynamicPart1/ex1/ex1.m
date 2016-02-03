@@ -5,21 +5,28 @@ v = 0;
 
 s = tf('s');
 
-G = 1/(m*s^2 +d*s);
+Gx = 1/(m*s^2 +d*s);
+Gv = 1/(m*s + d);
+
 
 A = [ 0 1
       0 d/m];
 B = [0 1/m];
-C = [1 0];
+C = [1 0;0 1];
 
 figure
-bode(G)
+bode(Gx)
 figure
-step(G)
+bode(Gv)
 figure
-pzmap(G)
-damp(G)
-dcgain(G)
+step(Gx)
+figure
+pzmap(Gx)
+damp(Gx)
+damp(Gv)
+dcgain(Gx)
+figure
+dcgain(Gv)
 freq = 1;
 sim('ex1_sim')
 figure

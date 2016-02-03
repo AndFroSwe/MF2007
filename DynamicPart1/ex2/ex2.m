@@ -7,7 +7,7 @@ v = 0;
 
 s = tf('s');
 
-G = s/(m*s^2+d*s+k);
+G = 1/(m*s^2+d*s+k);
 
 A = [ 0 1
      -k/m -d/m];
@@ -31,7 +31,7 @@ resonance = damp(sys);
 dcgain(sys)
 
 %below resonance
-freq = resonance*0.8;
+freq = resonance*0.5;
 sim('ex2_sim')
 figure
 plot(force.Time, force.Data,'b')
@@ -65,7 +65,7 @@ legend('Force','Speed')
 title('Ex2: Simscape Same as Resonance')
 % print('plot_ex2_simscape_same','-dpng')
 %over resonance
-freq = resonance*1.2;
+freq = resonance*1.5;
 sim('ex2_sim')
 figure
 plot(force.Time, force.Data)

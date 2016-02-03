@@ -9,6 +9,10 @@ time = 0.25;
 s = tf('s');
 
 G1 = 1/(R1*C*s + 1);
+S2 = R2/(C*R1*R2*s+R1+R2);
+
+[A1,B1,C1,D1] = tf2ss(G1.num{1},G1.den{1});
+[A2,B2,C2,D2] = tf2ss(S2.num{1},S2.den{1});
 
 
 bode(G1)
@@ -25,6 +29,11 @@ figure
 plot(s1_voltage.Time,s1_voltage.Data)
 figure
 
+dcgain(G1)
+dcgain(S2)
+
+damp(G1)
+damp(S2)
 
 
 sim('ex4_s1_simulink')
