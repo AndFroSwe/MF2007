@@ -8,6 +8,7 @@ Vmin = -24; %Supply voltage
 Imax = 430e-3; %Maximum current
 V_i = Vmax;
 V_w = Vmax;
+sim_V = Vmax;
 % Motor parameters
 motor = struct(); % Create empty struct for motor
 motor.R = 112; % Terminal resistance [Ohm]
@@ -81,6 +82,16 @@ subplot(2,1,2)
 bode(motor.tf_w)
 title('Bode for w')
 
+% Simulink model
+simtime = 0.3;    % Simulation time in seconds
+sim('sim_ex1')
+figure
+subplot(2,1,1)
+plot(sim_ex1_i)
+title('Simulink: Step response for i [A]')
+subplot(2,1,2)
+plot(sim_ex1_w)
+title('Simulink: Step response for w [rad/s]')
 
 
 
