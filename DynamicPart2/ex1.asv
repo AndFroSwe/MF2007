@@ -6,24 +6,28 @@ J2 = 1.8e-5; %Load inertia 2
 Vmax = 24; %Supply voltage
 Vmin = -24; %Supply voltage
 Imax = 430e-3; %Maximum current
+V_i = Vmax;
+V_w = Vmax;
+sim_V = Vmax;
 % Motor parameters
-motor = struct(); % Create empty struct for motor
-motor.R = 112; % Terminal resistance [Ohm]
-motor.L = 11.4e-3;    % Terminal inductance [H]
-motor.d = 3.8e-6; %Viscous friction in brushes
-motor.k = 69.7e-3;    % Torque constant [Nm/A]
-motor.J_m = 7.46e-7;  % Rotor inertia
+motor_pars = struct(); % Create empty struct for motor
+motor_pars.R = 112; % Terminal resistance [Ohm]
+motor_pars.L = 11.4e-3;    % Terminal inductance [H]
+motor_pars.d = 3.8e-6; %Viscous friction in brushes
+motor_pars.k = 69.7e-3;    % Torque constant [Nm/A]
+motor_pars.J_m = 7.46e-7;  % Rotor inertia
 
 %% Exercise 1
 disp('Exercise 1')
+motor = motor_pars;
 
 J = motor.J_m + (J1 + J2)/n^2; % Calculate total inertia on motor
 disp('x1 = i, x2 = omega')
 % State space representation
 disp('State space of motor')
-motor.A = [-motor.R/motor.L  -motor.k/motor.L;
-    motor.k/J    -motor.d/J];
-motor.B = [1/motor.L;
+motor.A = [-motor.R/motor.L  -motor.k*n/motor.L;
+    motor.k/J    -motor.d*n/J];
+motor.B = [sim_V/motor.L;
     0];
 motor.C = [1 0;
      0 1];
@@ -65,26 +69,74 @@ disp(motor.w_zeros{1})
 figure
 subplot(2,1,1)
 step(motor.tf_i)
-title('Step response for i')
+title('Step response for i [A]')
 ylabel('i')
-
+subplot(2,1,2)
+bode(motor.tf_i)
+title('Bode for i')
 figure
 subplot(2,1,1)
-step(motor.tf_w)
+step(motor.tf_w, 1)
 title('Step response for w')
-ylabel('\omega')
+ylabel('\omega [rad/s]')
+subplot(2,1,2)
+bode(motor.tf_w)
+title('Bode for w')
 
+% Simulink model
+simtime = 0.3;    % Simulation time in seconds
+sim('sim_ex1')
+figure
+subplot(3,1,1)
+plot(sim_ex1_i)
+title('Simulink: Step response for i [A]')
+subplot(3,1,2)
+plot(sim_ex1_w)
+title('Simulink: Step response for w [rad/s]')
+subplot(3,1,3)
+plot(sim_ex1_theta)
+title('Simulink: Step response for theta')
+%% Exercise 2
+disp('Exercise 2')
+motor_L = motor_pars;
+motor_L.L = 0;
 
+disp('x1 = i, x2 = omega')
+% State space representation
+disp('State space of motor')
+motor_L.A = [-motor_L.R  -motor_L.k;
+    motor_L.k/J    -motor_L.d/J];
+motor_L.B = [1;  
+    0];
+motor_L.C = [1 0;
+     0 1];
+D = [0; 0]; % Just to be used in ss2tf
 
+disp('State space for motor')
+disp('A')
+disp(motor_L.A)
+disp('B')
+disp(motor_L.B)
+disp('C')
+disp(motor_L.C)
 
+[num, den] = ss2tf(motor_L.A, motor_L.B, [V_i 0], 0); % Returns tf from V to i
+disp('tf for i')
+motor_L.tf_i = tf(num, den);
+motor_L.tf_i
+[num, den] = ss2tf(motor_L.A, motor_L.B, [0 V_w], 0); % Returns tf from V to omega
+disp('tf for w')
+motor_L.tf_w = tf(num, den);
+motor_L.tf_w
+clearvars num den   % Remove variable form workspace
 
-
-
-
-
-
-
-
+% Current control
+motor_L.tf_i_controlled = tf([n*motor_L.k/J*Imax], [1 motor_L.k/J]);
+disp('Current controlled motor tf')
+motor_L.tf_i_controlled
+figure 
+step(motor_L.tf_i_controlled)
+ylabel('\omega [rad/s]')
 
 
 
