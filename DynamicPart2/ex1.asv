@@ -6,8 +6,6 @@ J2 = 1.8e-5; %Load inertia 2
 Vmax = 24; %Supply voltage
 Vmin = -24; %Supply voltage
 Imax = 430e-3; %Maximum current
-V_i = Vmax;
-V_w = Vmax;
 % Motor parameters
 motor = struct(); % Create empty struct for motor
 motor.R = 112; % Terminal resistance [Ohm]
@@ -39,11 +37,11 @@ disp(motor.B)
 disp('C')
 disp(motor.C)
 
-[num, den] = ss2tf(motor.A, motor.B, [V_i 0], 0); % Returns tf from V to i
+[num, den] = ss2tf(motor.A, motor.B, [1 0], 0); % Returns tf from V to i
 disp('tf for i')
 motor.tf_i = tf(num, den);
 motor.tf_i
-[num, den] = ss2tf(motor.A, motor.B, [0 V_w], 0); % Returns tf from V to omega
+[num, den] = ss2tf(motor.A, motor.B, [0 1], 0); % Returns tf from V to omega
 disp('tf for w')
 motor.tf_w = tf(num, den);
 motor.tf_w
@@ -67,19 +65,14 @@ disp(motor.w_zeros{1})
 figure
 subplot(2,1,1)
 step(motor.tf_i)
-title('Step response for i [A]')
+title('Step response for i')
 ylabel('i')
-subplot(2,1,2)
-bode(motor.tf_i)
-title('Bode for i')
+
 figure
 subplot(2,1,1)
-step(motor.tf_w, 1)
+step(motor.tf_w)
 title('Step response for w')
-ylabel('\omega [rad/s]')
-subplot(2,1,2)
-bode(motor.tf_w)
-title('Bode for w')
+ylabel('\omega')
 
 
 
