@@ -102,11 +102,12 @@ disp('Exercise 2')
 motor_L = motor_pars;
 motor_L.L = 0;
 
+
+% Votlage controll
 disp('x1 = i, x2 = omega')
 % State space representation
 disp('State space of motor')
-motor_L.A = [-motor_L.R  -motor_L.k;
-    motor_L.k/J    -motor_L.d/J];
+motor_L.A = 
 motor_L.B = [1;  
     0];
 motor_L.C = [1 0;
