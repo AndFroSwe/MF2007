@@ -104,7 +104,7 @@ motor_L.L = 0;
 
 % Voltage control
 % Transfer function
-motor_L.tf_w = tf([motor_L.k], [(motor_L.J_m + J/n^2) (motor_L.k^2 + motor_L.d)]);
+motor_L.tf_w = tf([motor_L.k], [(motor_L.J_m + J/n^2) (motor_L.k^2 + motor_L.d)])
 figure
 step(motor_L.tf_w)
 title('Step for voltage controlled DC motor with no inductance')
@@ -113,12 +113,9 @@ pzmap(motor_L.tf_w)
 title('PZ map for voltage controlled DC motor with no inductance')
 
 % Current control
-motor_L.tf_i = tf([motor_L.k], [(motor_L.J_m + J/n^2) motor_L.d]);
+motor_L.tf_i = tf([motor_L.k], [(motor_L.J_m + J/n^2) motor_L.d])
 figure
 step(motor_L.tf_i)
-title('Step for DC motor with i control')
-figure
-pzmap(motor_L.tf_i)
-title('PZ map for DC motor with i control')
+title('Step for DC motor 
 
 
