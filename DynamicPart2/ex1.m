@@ -97,6 +97,7 @@ subplot(3,1,3)
 % plot(sim_ex1_theta)
 % title('Simulink: Step response for theta')
 %% Exercise 2
+J = (J1 + J2);
 disp('Exercise 2')
 motor_L = motor_pars;
 motor_L.L = 0;
