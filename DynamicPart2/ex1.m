@@ -94,8 +94,8 @@ subplot(3,1,2)
 plot(sim_ex1_w)
 title('Simulink: Step response for w [rad/s]')
 subplot(3,1,3)
-plot(sim_ex1_theta)
-title('Simulink: Step response for theta')
+% plot(sim_ex1_theta)
+% title('Simulink: Step response for theta')
 %% Exercise 2
 disp('Exercise 2')
 motor_L = motor_pars;
