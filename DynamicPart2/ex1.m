@@ -102,35 +102,9 @@ disp('Exercise 2')
 motor_L = motor_pars;
 motor_L.L = 0;
 
-
-% Votlage controll
-disp('x1 = i, x2 = omega')
-% State space representation
-disp('State space of motor')
-motor_L.A = 
-motor_L.B = [1;  
-    0];
-motor_L.C = [1 0;
-     0 1];
-D = [0; 0]; % Just to be used in ss2tf
-
-disp('State space for motor')
-disp('A')
-disp(motor_L.A)
-disp('B')
-disp(motor_L.B)
-disp('C')
-disp(motor_L.C)
-
-[num, den] = ss2tf(motor_L.A, motor_L.B, [V_i 0], 0); % Returns tf from V to i
-disp('tf for i')
-motor_L.tf_i = tf(num, den);
-motor_L.tf_i
-[num, den] = ss2tf(motor_L.A, motor_L.B, [0 V_w], 0); % Returns tf from V to omega
-disp('tf for w')
-motor_L.tf_w = tf(num, den);
-motor_L.tf_w
-clearvars num den   % Remove variable form workspace
+% Voltage control
+G_voltage = tf([motor_L.k], [(motor_L.J_m + J/n^2) (motor_L.k^2 + motor_L.d)])
+step(G_voltage)
 
 % Current control
 motor_L.tf_i_controlled = tf([motor_L.k/J*Imax], [1 motor_L.k/J]);
