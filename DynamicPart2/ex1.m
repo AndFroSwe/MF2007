@@ -3,12 +3,14 @@ clear all, close all, clc;
 n = 5; %Gearbox ratio
 J1 = 1.8e-5; %Load inertia 1
 J2 = 1.8e-5; %Load inertia 2
-Vmax = 24; %Supply voltage
+Vmax = 1; %Supply voltage
 Vmin = -24; %Supply voltage
 Imax = 430e-3; %Maximum current
 V_i = Vmax;
 V_w = Vmax;
 sim_V = Vmax;
+T_fric = 0;
+enable_sin = 0;
 % Motor parameters
 motor_pars = struct(); % Create empty struct for motor
 motor_pars.R = 112; % Terminal resistance [Ohm]
@@ -94,20 +96,31 @@ subplot(3,1,2)
 plot(sim_ex1_w)
 title('Simulink: Step response for w [rad/s]')
 subplot(3,1,3)
-% plot(sim_ex1_theta)
-% title('Simulink: Step response for theta')
+
 %% Exercise 2
 J = (J1 + J2);
 disp('Exercise 2')
 motor_L = motor_pars;
 motor_L.L = 0;
 
+% Simulate model to get data
+disp('Simulating ex2...')
+simtime = 5;
+sim_step_v = 1;
+enable_sin = 0;
+sim('sim_ex2.slx');
+
 % Voltage control
 % Transfer function
-motor_L.tf_w = tf([motor_L.k], [(motor_L.J_m + J/n^2) (motor_L.k^2 + motor_L.d)]);
+motor_L.tf_w = tf([motor_L.k], [(motor_L.J_m + J/n^2)*motor_L.R (motor_L.k^2 + motor_L.d*motor_L.R)]);
 figure
 step(motor_L.tf_w)
-title('Step for voltage controlled DC motor with no inductance')
+hold on
+plot(sim_ex2_v_w.Time, sim_ex2_v_w.Data, 'g')
+hold on
+step(motor.tf_w)
+title('Step for voltage controlled DC motor')
+legend('No inductance, tf', 'No inductance, model', 'Inductance')
 figure
 pzmap(motor_L.tf_w)
 title('PZ map for voltage controlled DC motor with no inductance')
@@ -120,5 +133,12 @@ title('Step for DC motor with i control')
 figure
 pzmap(motor_L.tf_i)
 title('PZ map for DC motor with i control')
+
+%% Ex 3
+% Add coloumb friction
+T_fric = 0.001;
+
+
+
 
 
