@@ -9,8 +9,14 @@ Imax = 430e-3; %Maximum current
 V_i = Vmax;
 V_w = Vmax;
 sim_V = Vmax;
-T_fric = 0;
+% Set up generic simulation parameters, change when using sine input or
+% karnop
+F_c = 1;
+d_v = 1;
 enable_sin = 0;
+enable_karnop = 0;
+sim_sin_amp = 1;
+sim_sin_freq = 1;
 % Motor parameters
 motor_pars = struct(); % Create empty struct for motor
 motor_pars.R = 112; % Terminal resistance [Ohm]
@@ -134,9 +140,36 @@ figure
 pzmap(motor_L.tf_i)
 title('PZ map for DC motor with i control')
 
-%% Ex 3
-% Add coloumb friction
-T_fric = 0.001;
+%% Ex 3 With Karnopp model for friction
+%For step inputs
+sim_step_v = 2.38;
+% For sine inputs
+sim_sin_amp = 10;
+sim_sin_freq = 1;
+enable_sin = 1;
+% With Karnopp
+F_c = 0.001;
+d_v = 10;
+enable_karnop = 1;
+
+% Create atomatic string for title
+if enable_sin
+    title_string = sprintf('Sine input with f=%0.1f rad/s and A=%0.1f V with Karnopp',...
+        sim_sin_freq, sim_sin_amp);
+else
+    title_string = sprintf('Step input with A=%0.1f V with Karnopp',...
+        sim_step_v);
+end
+simtime = 10;
+sim('sim_ex2.slx')
+figure
+% Plot resulting velocity
+plot(sim_ex2_v_w.Time, sim_ex2_v_w.Data);
+title(title_string)
+grid on
+
+
+
 
 
 
