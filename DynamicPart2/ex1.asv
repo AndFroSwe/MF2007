@@ -173,9 +173,8 @@ grid on
 %% part 4: Quantizing
 % Set parameters
 enable_sin = 0;     % Set 1 to enable sine input
-zoh_sample_time = 1;   % Sample time in zoh [ms]
+zoh_sample_time = 10;   % Sample time in zoh [ms]
 pulses_per_rev = 512;   % Pulses per revolution [-]
-    
 
 % Calculated parameters
 enable_karnop = 0;  % Dont use karnop
@@ -190,7 +189,7 @@ figure
 plot(sim_ex2_v_w.Time, sim_ex2_v_w.Data)
 hold on
 stairs(sim_ex2_v_w_sampled.Time, sim_ex2_v_w_sampled.Data, 'r')
-grid on
+grid 
 title('Motor control with and without quantization')
 xlabel('Time [s]')
 ylabel('\omega [rad/s]')
