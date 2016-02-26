@@ -11,7 +11,7 @@ Ps = 20e6; %Supply pressure MPA
 Pt = 0 ; %Tank return pressure MPA
 Fe = 10000; %External force N
 poil = 1000; % Oil density kg/m^3
-Tforce = 1;
+
 B = 2e9; %Bulk modulus
 A1 = (Dc/2)^2*pi; %Area of piston
 A2 = (Dc/2)^2*pi - (Dp/2)^2*pi;
@@ -29,9 +29,9 @@ eq1 = (1/m)*(Am*(p1-p2)-Fe-df*v )==0;
 eq2 = (1/Cf)*(Rv*sqrt(Ps-p1)*xv-Am*v )==0;
 eq3 = (1/Cf)*(Am*v-Rv*sqrt(p2)*xv) == 0;
 solution = solve([eq1,eq2,eq3],[v,p1,p2]);
-v0 = double(solution.v);
-p10 = double(solution.p1);
-p20 = double(solution.p2);
+v0 = double(solution.v)
+p10 = double(solution.p1)
+p20 = double(solution.p2)
 
 R1 = -Rv*xv/(2*sqrt(Ps-p10)*Cf);
 
@@ -53,9 +53,6 @@ D = [0 0; 0 0; 0 0];
 sys = ss(A,B,C,D);
 [NUM,DEN] = ss2tf(A,B,C,D,1);
 Fe = 10000;
-
-A1 = Am;
-A2 = Am;
 sim('hydraulic.slx')
 figure
 plot(sim_p1)
@@ -71,5 +68,4 @@ legend('P1sim','P2sim','P1lin','P2lin')
 figure
 plot(sim_velocity)
 hold on
-plot(sim_linear.Time,sim_linear.Data(:,1))
-legend('Velocity simulated','Velocity Linear')
+plot(sim_linear(:,1))
