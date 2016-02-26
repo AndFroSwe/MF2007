@@ -34,18 +34,15 @@ D = [df -df;-df df];
 % 
 % F = [0.03*n 0; 0 0.03*n];
 % 
-A = [zeros(2) eye(2);[-kf/J2 kf/J2;kf/J1 -kf/J1] [-df/J2 df/J2;df/J1 -df/J1]];
-B = [0 0.03/J1 0 0]';
+A = [zeros(2) eye(2);[-kf/J2 kf/J2;kf/J1 -kf/J1]];
 % B = [F; M^-1];
-C = [0 0 1 0];
+% C = [0 0 0 1];
 
 
 
-[num, den] = ss2tf(A, B, C, 0, 1);
+[num, den] = ss2tf(A, B, C, zeros(1,2), 2);
 
 Gs=tf(num, den);
-
-Gs = minreal(Gs);
 
 bode(Gs)
 figure
