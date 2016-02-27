@@ -44,7 +44,7 @@ disp('Transfer function of motor with inductance and inertial load with viscous 
 G
 
 % P-control
-P = 20; % OBS! This value is chosen from the command rlocfind, explained below
+P = 10; % OBS! This value is chosen from the command rlocfind, explained below
 % Plot root locus
 figure
 rlocus(G)
