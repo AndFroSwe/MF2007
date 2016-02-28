@@ -32,8 +32,6 @@ motor_pars.J = 7.46e-7;  % Rotor inertia
 motor = motor_pars;
 J = J1+J2;
 Jtot = motor.J + J/n^2; % Total inertia including load inertia after gear
-% Model
-%   named motor_model.slx
 
 % Transfer function of system, without control
 s = tf('s');
@@ -43,14 +41,15 @@ G = G_nom/G_den;
 disp('Transfer function of motor without inductance and inertial load with viscous friction')
 G
 
-% P-control
-P = 20; % OBS! This value is chosen from the command rlocfind, explained below
+%% P-control
+P = 3; % OBS! This value is chosen from the command rlocfind, explained below
 % Plot root locus
 figure
 rlocus(G)
 grid on
 % OBS
-% Run command "P = rlocfind(G) to find desired P value in plot
+% First run rlocus(G), then
+% run command "P = rlocfind(G) to find desired P value in plot
 % OBS
 % Closed loop system
 F_P= P;
@@ -58,6 +57,8 @@ F_P= P;
 Gc_P = minreal(F_P*G/(1 + F_P*G));
 disp('Closed loop system')
 Gc_P
+disp('With pole in')
+p1 = pole(Gc_P)
 figure
 step(Gc_P);
 hold on
@@ -88,14 +89,38 @@ xlabel('Time [s]')
 ylabel('\omega [rad/s]')
 
 %% Designing a PI controller
-% PI controller
-P = 20;
-I = 1;
-D = 0;
+% PI controller, placing double poles in same position as in P controller
+% Solved on paper beforehand
+P = -(2*p1*motor.R*Jtot + motor.k + motor.d*motor.R)/motor.k
+I = (p1^2*Jtot*motor.R)/motor.k
+
+
 F_PI = P + 1/s*I;
 Gc_PI = minreal(F_PI*G);
 disp('Transfer function of closed system with PI controller is')
 Gc_PI
+disp('With poles in')
+pole(Gc_PI)
+[Gm,Pm,Wgm,Wpm] = margin(Gc_P);
+fprintf('Phase margin is %0.3f\n', Pm)
+fprintf('with DC gain %0.3f\n', dcgain(Gc_PI))
+
+% Simulate again
+enable_sin = 0;
+simtime = 0.5;
+sim('motor.slx')
+figure
+plot(sim_reference)
+hold on 
+grid on
+plot(sim_output)
+title('Closed loop PI controller for DC motor, output velocity')
+legend('Reference', 'Output')
+xlabel('Time [s]')
+ylabel('\omega [rad/s]')
+
+%% Discrete time controller
+
 
 
 
