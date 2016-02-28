@@ -44,7 +44,7 @@ disp('Transfer function of motor with inductance and inertial load with viscous 
 G
 
 % P-control
-P = 10; % OBS! This value is chosen from the command rlocfind, explained below
+P = 20; % OBS! This value is chosen from the command rlocfind, explained below
 % Plot root locus
 figure
 rlocus(G)
@@ -54,6 +54,7 @@ grid on
 % OBS
 % Closed loop system
 F = P;
+
 Gc = F*G/(1 + F*G);
 disp('Closed loop system')
 Gc
@@ -61,12 +62,32 @@ figure
 step(Gc);
 hold on
 grid on
-legend('Closed loop system', 'Open system')
 title(sprintf('Step response for closed loop system with K_p=%0.2f', P))
 
+% Get phase margin
+[Gm,Pm,Wgm,Wpm] = margin(Gc);
+fprintf('Phase margin is %0.3f\n', Pm)
 
+% Simulation parameters
+simtime = 10;
+enable_sin = 1;
+sim_sin_amp = 200;
+sim_sin_freq = 10;
+I = 0;
+D = 0;
+% Run simulation
+sim('motor.slx')
+figure
+plot(sim_reference)
+hold on 
+grid on
+plot(sim_output)
+title('Closed loop controller for DC motor, output velocity')
+legend('Reference', 'Ouput')
+xlabel('Time [s]')
+ylabel('\omega [rad/s]')
 
-
+% 
 
 
 
