@@ -77,7 +77,7 @@ sim_sin_freq = 10;
 I = 0;
 D = 0;
 % Run simulation
-sim('motor.slx')
+sim('motor_velocity.slx')
 figure
 plot(sim_reference)
 hold on 
@@ -108,7 +108,7 @@ fprintf('with DC gain %0.3f\n', dcgain(Gc_PI))
 % Simulate again
 enable_sin = 0;
 simtime = 0.5;
-sim('motor.slx')
+sim('motor_velocity.slx')
 figure
 plot(sim_reference)
 hold on 
