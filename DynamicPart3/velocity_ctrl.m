@@ -81,7 +81,7 @@ fprintf('Phase margin is %0.3f\n', Pm)
 % Controller polynomials. This is a regular P controller with error
 % feedback
 T = P;
-S = P;
+S = P; 
 R = 1;
 
 simtime = 10;
@@ -106,7 +106,7 @@ ylabel('\omega [rad/s]')
 % PI controller, placing double poles in same position as in P controller
 % Solved on paper beforehand
 omega = abs(p1);
-zeta = 1;
+zeta = 0.9;
 P = (2*motor.J*motor.R*omega*zeta - motor.k - motor.d*motor.R)/motor.k%-(2*p1*motor.R*Jtot + motor.k + motor.d*motor.R)/motor.k
 I = (motor.J*motor.R*omega^2)/motor.k%(p1^2*Jtot*motor.R)/motor.k
 
@@ -151,7 +151,6 @@ sim_zoh = 0.02;
 enable_karnop = 0;  % Dont use karnop
 sim_quantization_interval = 2*pi/pulses_per_rev;    % Ppr to degrees
 sim_zoh_sample_time = zoh_sample_time*1e-3;  % Sample time, from ms to s
-I = 2;
 G_d = c2d(G,0.002,'zoh');
 F_d = c2d(F_PI,0.002,'tustin');
 Gc_d =minreal( G_d*F_d/(1+G_d*F_d));

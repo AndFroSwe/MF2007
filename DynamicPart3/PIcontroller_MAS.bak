@@ -95,7 +95,7 @@
 </Group></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L18" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input>
-<Text-field style="Text" layout="Normal"><Font size="14">Get parameters for PI controller </Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font size="14">Get parameters for PI controller  with error feedback</Font></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L9" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
@@ -190,6 +190,11 @@
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkmbWZyYWNHNiMvSSttb2R1bGVuYW1lRzYiSSxUeXBlc2V0dGluZ0dJKF9zeXNsaWJHRic2KC1JJW1yb3dHRiQ2Ji1GLDYoLUYsNigtSSNtaUdGJDYlUSJKRicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVExJkludmlzaWJsZVRpbWVzO0YnL0Y6USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGRC8lKXN0cmV0Y2h5R0ZELyUqc3ltbWV0cmljR0ZELyUobGFyZ2VvcEdGRC8lLm1vdmFibGVsaW1pdHNHRkQvJSdhY2NlbnRHRkQvJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZTLUYzNiVRInJGJ0Y2RjlGPC1JJW1zdXBHRiQ2JS1GMzYlUSJzRidGNkY5LUkjbW5HRiQ2JFEiMkYnRkAvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRkAtRj02LVEiK0YnRkBGQkZFRkdGSUZLRk1GTy9GUlEsMC4yMjIyMjIyZW1GJy9GVUZkby1GLDYmLUkobWZlbmNlZEdGJDYkLUYsNigtRiw2Ji1GMzYlUSJQRidGNkY5RjwtRjM2JVEia0YnRjZGOUZARmBvLUYsNiYtRjM2JVEiZEYnRjZGOUY8RlZGQEZgb0ZicEZARkBGPEZmbkZARmBvLUYsNiZGYnBGPC1GMzYlUSNUaUYnRjZGOUZARkAvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkRGQC1GLDYoRjJGPEZWRl9xRmJxRkAvJS5saW5ldGhpY2tuZXNzR1EiMUYnLyUrZGVub21hbGlnbkdRJ2NlbnRlckYnLyUpbnVtYWxpZ25HRltyLyUpYmV2ZWxsZWRHRkQ=">KigsKCooSSJKRzYiIiIiSSJyR0YmRidJInNHRiYiIiNGJyomLCgqJkkiUEdGJkYnSSJrR0YmRidGJyomSSJkR0YmRidGKEYnRidGL0YnRidGKUYnRicqJkYvRidJI1RpR0YmRidGJ0YnRiUhIiJGKEY0</Equation></Text-field>
 </Output>
+</Group>
+<Group view="presentation" hide-input="true" hide-output="false" inline-output="false" labelreference="L43" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Equation executable="true" style="Maple Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUkjbWlHRiQ2I1EhRicvJSdmYW1pbHlHUTBUaW1lc35OZXd+Um9tYW5GJy8lJWJvbGRHUSZmYWxzZUYnLyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lK2V4ZWN1dGFibGVHRjQvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">JSFH</Equation></Text-field>
+</Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L38" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input>
