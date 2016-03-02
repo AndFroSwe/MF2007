@@ -78,7 +78,8 @@ title(sprintf('Step response for closed loop system with K_p=%0.2f', P))
 fprintf('Phase margin is %0.3f\n', Pm)
 
 % Simulation parameters
-% Controller polynomials
+% Controller polynomials. This is a regular P controller with error
+% feedback
 T = P;
 S = P;
 R = 1;
@@ -121,6 +122,11 @@ fprintf('Phase margin is %0.3f\n', Pm)
 fprintf('with DC gain %0.3f\n', dcgain(Gc_PI))
 
 % Simulate again
+% Controller parameters
+S = [P I];  % = Ps + I
+T = [P I];
+R = [1 0];    % = s
+
 enable_sin = 0;
 simtime = 0.5;
 sim('motor_velocity.slx')
