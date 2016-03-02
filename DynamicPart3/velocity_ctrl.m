@@ -78,6 +78,11 @@ title(sprintf('Step response for closed loop system with K_p=%0.2f', P))
 fprintf('Phase margin is %0.3f\n', Pm)
 
 % Simulation parameters
+% Controller polynomials
+T = P;
+S = P;
+R = 1;
+
 simtime = 10;
 enable_sin = 1;
 sim_sin_amp = 200;
