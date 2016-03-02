@@ -37,12 +37,15 @@ Jtot = motor.J + J/n^2; % Total inertia including load inertia after gear
 s = tf('s');
 G_nom = motor.k;
 G_den = (s*Jtot + motor.d)*(motor.R) + motor.k;
-G = G_nom/G_den*1/s;
+G = G_nom/G_den;
 disp('Transfer function of motor without inductance and inertial load with viscous friction')
 G
+disp('Risetime of the open system with no control')
+G_stepinfo = stepinfo(G);
+G_stepinfo.RiseTime
 
 %% P-control
-P = 81; % OBS! This value is chosen from the command rlocfind, explained below
+P = 3; % OBS! This value is chosen from the command rlocfind, explained below
 % Plot root locus
 figure
 rlocus(G)
@@ -60,8 +63,9 @@ disp('Closed loop system')
 Gc_P
 disp('Risetime of closed loop system')
 Gc_P_stepinfo.RiseTime
+fprintf('Closed loop is %0.2f times faster than open loop\n', (Gc_P_stepinfo.RiseTime/G_stepinfo.RiseTime)^-1)
 disp('With pole in')
-p = pole(Gc_P)
+p1 = pole(Gc_P)
 figure
 step(Gc_P);
 hold on
@@ -74,6 +78,12 @@ title(sprintf('Step response for closed loop system with K_p=%0.2f', P))
 fprintf('Phase margin is %0.3f\n', Pm)
 
 % Simulation parameters
+% Controller polynomials. This is a regular P controller with error
+% feedback
+T = P;
+S = P; 
+R = 1;
+
 simtime = 10;
 enable_sin = 1;
 sim_sin_amp = 200;
@@ -81,7 +91,7 @@ sim_sin_freq = 10;
 I = 0;
 D = 0;
 % Run simulation
-sim('motor_position.slx')
+sim('motor_velocity.slx')
 figure
 plot(sim_reference)
 hold on 
@@ -92,15 +102,14 @@ legend('Reference', 'Ouput')
 xlabel('Time [s]')
 ylabel('\omega [rad/s]')
 
-%% Designing a PD controller
-% PD controller, placing double poles in same position as in P controller
+%% Designing a PI controller
+% PI controller, placing double poles in same position as in P controller
 % Solved on paper beforehand
 omega = abs(p1);
-omega = 100
 zeta = 0.9;
-P = (motot.J*motor.R*omega^2*omega2)/motor.k;
-D = ((2*J^2*zeta*omega*omega2*r^2+J^2*omega^2*r^2-2*J*zeta*d*omega*r^2-2*J*zeta*k*omega*r-J*d*omega2*r^2-J*k*omega2*r+d^2*r^2+2*d*k*r+k^2)/(J*k*r)
-r0 = (2*J*Zeta*omega*r+J*omega2*r-d*r-k)/(J*r);
+P = (2*motor.J*motor.R*omega*zeta - motor.k - motor.d*motor.R)/motor.k%-(2*p1*motor.R*Jtot + motor.k + motor.d*motor.R)/motor.k
+I = (motor.J*motor.R*omega^2)/motor.k%(p1^2*Jtot*motor.R)/motor.k
+
 
 F_PI = P + 1/s*I;
 Gc_PI = minreal(F_PI*G);
