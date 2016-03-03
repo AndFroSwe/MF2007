@@ -158,6 +158,8 @@ figure
 pzmap(Gc_d)
 
 %% PID controller
+% TODO: Find PID parameters in maple
+% TODO: Simulation parameters
 disp('No PID implemented yet')
 
 
