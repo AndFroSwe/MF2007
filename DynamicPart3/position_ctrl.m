@@ -1,3 +1,5 @@
+% TODO: PD controller
+% TODO: PID controller
 close all, clear all, clc
 warning('off', 'all')
 %% Define parameters
@@ -95,22 +97,32 @@ ylabel('\omega [rad/s]')
 %% Designing a PD controller
 % PD controller, placing double poles in same position as in P controller
 % Solved on paper beforehand
-omega = abs(p1);
-omega = 100
-zeta = 0.9;
-P = (motot.J*motor.R*omega^2*omega2)/motor.k;
-D = ((2*J^2*zeta*omega*omega2*r^2+J^2*omega^2*r^2-2*J*zeta*d*omega*r^2-2*J*zeta*k*omega*r-J*d*omega2*r^2-J*k*omega2*r+d^2*r^2+2*d*k*r+k^2)/(J*k*r)
-r0 = (2*J*Zeta*omega*r+J*omega2*r-d*r-k)/(J*r);
+% TODO: Set simulation parameters
 
-F_PI = P + 1/s*I;
-Gc_PI = minreal(F_PI*G);
+% Because of Maple
+J = motor.J;
+r = motor.R;
+d = motor.d;
+k = motor.k;
+
+% Regulator parameters
+omega = real(abs(p(1)));
+omega2 = 100
+zeta = 0.9;
+P = (motor.J*motor.R*omega^2*omega2)/motor.k;
+I = 0;
+D = (2*J^2*zeta*omega*omega2*r^2+J^2*omega^2*r^2-2*J*zeta*d*omega*r^2-2*J*zeta*k*omega*r-J*d*omega2*r^2-J*k*omega2*r+d^2*r^2+2*d*k*r+k^2)/(J*k*r)
+r0 = (2*J*zeta*omega*r+J*omega2*r-d*r-k)/(J*r);
+
+F_PD = (P + s*D)/(r0 + s);
+Gc_PD = minreal(F_PD*G);
 disp('Transfer function of closed system with PI controller is')
-Gc_PI
+Gc_PD
 disp('With poles in')
-pole(Gc_PI)
-[Gm,Pm,Wgm,Wpm] = margin(Gc_P);
+pole(Gc_PD)
+[Gm,Pm,Wgm,Wpm] = margin(Gc_PD);
 fprintf('Phase margin is %0.3f\n', Pm)
-fprintf('with DC gain %0.3f\n', dcgain(Gc_PI))
+fprintf('with DC gain %0.3f\n', dcgain(Gc_PD))
 
 % Simulate again
 % Controller parameters
@@ -148,6 +160,9 @@ Gc_d =minreal( G_d*F_d/(1+G_d*F_d));
 
 figure
 pzmap(Gc_d)
+
+%% PID controller
+disp('No PID implemented yet')
 
 
 
