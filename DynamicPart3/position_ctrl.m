@@ -97,7 +97,7 @@ ylabel('\omega [rad/s]')
 %% Designing a PD controller
 % PD controller, placing double poles in same position as in P controller
 % Solved on paper beforehand
-% TODO: Set simulation parameters
+% TODO: Fix r0. Other than small r0 forces the model to be unstable.
 
 % Because of Maple
 J = motor.J;
@@ -112,7 +112,7 @@ zeta = 0.9;
 P = (motor.J*motor.R*omega^2*omega2)/motor.k;
 I = 0;
 D = (2*J^2*zeta*omega*omega2*r^2+J^2*omega^2*r^2-2*J*zeta*d*omega*r^2-2*J*zeta*k*omega*r-J*d*omega2*r^2-J*k*omega2*r+d^2*r^2+2*d*k*r+k^2)/(J*k*r)
-r0 = (2*J*zeta*omega*r+J*omega2*r-d*r-k)/(J*r);
+r0 = 0;%(2*J*zeta*omega*r+J*omega2*r-d*r-k)/(J*r);
 
 F_PD = (P + s*D)/(r0 + s);
 Gc_PD = minreal(F_PD*G);
@@ -126,22 +126,18 @@ fprintf('with DC gain %0.3f\n', dcgain(Gc_PD))
 
 % Simulate again
 % Controller parameters
-S = [P I];  % = Ps + I
-T = [P I];
-R = [1 0];    % = s
-
 enable_sin = 0;
 simtime = 0.5;
-sim('motor_velocity.slx')
+sim('motor_position.slx')
 figure
 plot(sim_reference)
 hold on 
 grid on
 plot(sim_output)
-title('Closed loop PI controller for DC motor, output velocity')
+title('Closed loop PD controller for DC motor, output position')
 legend('Reference', 'Output')
 xlabel('Time [s]')
-ylabel('\omega [rad/s]')
+ylabel('\phi [rad]')
 
 %% Discrete time controller
 % Set parameters
