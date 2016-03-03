@@ -21,6 +21,7 @@ sim_sin_amp = 1;
 sim_sin_freq = 1;
 sim_quantization_interval = 0;
 sim_zoh_sample_time = 0;
+r0 = 0;     % Filter coefficient in controller model
 % Motor parameters
 motor_pars = struct(); % Create empty struct for motor
 motor_pars.R = 112; % Terminal resistance [Ohm]
@@ -148,30 +149,31 @@ d = motor.d;
 k = motor.k;
 
 % Parameters from Maple "PIDcontroller.mw"
-P = J^2*omega*r^2*(2*zeta*omega2+omega)/(k*(J*r-d*r-k));
-I = omega^2*omega2*J^2*r^2/((J*r-d*r-k)*k);
-D = (2*J^2*zeta*omega*r^2+J^2*omega2*r^2-J*d*r^2+d^2*r^2-J*k*r+2*d*k*r+k^2)/(k*(J*r-d*r-k));
-r0 = J*r/(J*r-d*r-k);
+P = abs(J^2*omega*r^2*(2*zeta*omega2+omega)/(k*(J*r-d*r-k)));
+I = abs(omega^2*omega2*J^2*r^2/((J*r-d*r-k)*k));
+D = abs((2*J^2*zeta*omega*r^2+J^2*omega2*r^2-J*d*r^2+d^2*r^2-J*k*r+2*d*k*r+k^2)/(k*(J*r-d*r-k)));
+r0 = abs(J*r/(J*r-d*r-k));
+
 
 
 
 %% Discrete time controller
 % Set parameters
-enable_sin = 0;     % Set 1 to enable sine input
-zoh_sample_time = 0.002;   % Sample time in zoh [ms]
-pulses_per_rev = 1000;   % Pulses per revolution [-]
-sim_zoh = 0.02;    
-
-% Calculated parameters
-enable_karnop = 0;  % Dont use karnop
-sim_quantization_interval = 2*pi/pulses_per_rev;    % Ppr to degrees
-sim_zoh_sample_time = zoh_sample_time*1e-3;  % Sample time, from ms to s
-G_d = c2d(G,0.002,'zoh');
-F_d = c2d(F_PI,0.002,'tustin');
-Gc_d =minreal( G_d*F_d/(1+G_d*F_d));
-
-figure
-pzmap(Gc_d)
+% enable_sin = 0;     % Set 1 to enable sine input
+% zoh_sample_time = 0.002;   % Sample time in zoh [ms]
+% pulses_per_rev = 1000;   % Pulses per revolution [-]
+% sim_zoh = 0.02;    
+% 
+% % Calculated parameters
+% enable_karnop = 0;  % Dont use karnop
+% sim_quantization_interval = 2*pi/pulses_per_rev;    % Ppr to degrees
+% sim_zoh_sample_time = zoh_sample_time*1e-3;  % Sample time, from ms to s
+% G_d = c2d(G,0.002,'zoh');
+% F_d = c2d(F_PI,0.002,'tustin');
+% Gc_d =minreal( G_d*F_d/(1+G_d*F_d));
+% 
+% figure
+% pzmap(Gc_d)
 
 
 
