@@ -115,7 +115,7 @@ D = (2*J^2*zeta*omega*omega2*r^2+J^2*omega^2*r^2-2*J*zeta*d*omega*r^2-2*J*zeta*k
 r0 = 0;%(2*J*zeta*omega*r+J*omega2*r-d*r-k)/(J*r);
 
 F_PD = (P + s*D)/(r0 + s);
-Gc_PD = minreal(F_PD*G);
+Gc_PD = minreal(F_PD*G/(1+F_PD*G));
 disp('Transfer function of closed system with PI controller is')
 Gc_PD
 disp('With poles in')
@@ -142,6 +142,9 @@ ylabel('\phi [rad]')
 %% PID controller
 % TODO: Theoretical tf
 
+omega = real(abs(p(1)));
+omega2 = 100
+
 % Because of Maple
 J = motor.J;
 r = motor.R;
@@ -153,6 +156,18 @@ P = abs(J^2*omega*r^2*(2*zeta*omega2+omega)/(k*(J*r-d*r-k)));
 I = abs(omega^2*omega2*J^2*r^2/((J*r-d*r-k)*k));
 D = abs((2*J^2*zeta*omega*r^2+J^2*omega2*r^2-J*d*r^2+d^2*r^2-J*k*r+2*d*k*r+k^2)/(k*(J*r-d*r-k)));
 r0 = abs(J*r/(J*r-d*r-k));
+
+% Find the PID controller and the closed loop system tf
+F_PID = (D*s^2+P*s+I)/(s*(r0*s+1));
+% Closed loop system
+Gc_PID = minreal(F_PID*G/(1 + F_PID*G));
+disp('Transfer function of closed system with PI controller is')
+Gc_PID
+disp('With poles in')
+pole(Gc_PID)
+[Gm,Pm,Wgm,Wpm] = margin(Gc_PID);
+fprintf('Phase margin is %0.3f\n', Pm)
+fprintf('with DC gain %0.3f\n', dcgain(Gc_PID))
 
 % Simulation 
 % Simulate again
@@ -169,7 +184,6 @@ title('Closed loop PID controller for DC motor, output position')
 legend('Reference', 'Output')
 xlabel('Time [s]')
 ylabel('\phi [rad]')
-
 
 %% Discrete time controller
 % Set parameters

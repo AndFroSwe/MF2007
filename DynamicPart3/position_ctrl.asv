@@ -89,7 +89,7 @@ plot(sim_reference)
 hold on 
 grid on
 plot(sim_output)
-title('Closed loop controller for DC motor, output velocity')
+title('Closed loop P controller for DC motor, output velocity')
 legend('Reference', 'Ouput')
 xlabel('Time [s]')
 ylabel('\omega [rad/s]')
@@ -140,7 +140,7 @@ xlabel('Time [s]')
 ylabel('\phi [rad]')
 
 %% PID controller
-% TODO: Simulation parameters
+% TODO: Theoretical tf
 
 % Because of Maple
 J = motor.J;
@@ -154,7 +154,27 @@ I = abs(omega^2*omega2*J^2*r^2/((J*r-d*r-k)*k));
 D = abs((2*J^2*zeta*omega*r^2+J^2*omega2*r^2-J*d*r^2+d^2*r^2-J*k*r+2*d*k*r+k^2)/(k*(J*r-d*r-k)));
 r0 = abs(J*r/(J*r-d*r-k));
 
+% Find the PID controller and the closed loop system tf
+F_PID = (D*s^2+P*s+i)/(s*(r0*s+1));
+% Closed loop system
 
+
+
+% Simulation 
+% Simulate again
+% Controller parameters
+enable_sin = 0;
+simtime = 100;
+sim('motor_position.slx')
+figure
+plot(sim_reference)
+hold on 
+grid on
+plot(sim_output)
+title('Closed loop PID controller for DC motor, output position')
+legend('Reference', 'Output')
+xlabel('Time [s]')
+ylabel('\phi [rad]')
 
 
 %% Discrete time controller
