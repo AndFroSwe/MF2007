@@ -1,0 +1,57 @@
+%implements s1_b0_vi4jd_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS1B2 = OpaqueTLCBlockFcn("Start", 1, 2, 0, 0)
+%assign tlcStartFcnOfS1B3 = OpaqueTLCBlockFcn("Start", 1, 3, 0, 0)
+%assign tlcStartFcnOfS1B4 = OpaqueTLCBlockFcn("Start", 1, 4, 0, 0)
+%assign tlcStartFcnOfS1B5 = OpaqueTLCBlockFcn("Start", 1, 5, 0, 0)
+%assign tlcStartFcnOfS1B7 = OpaqueTLCBlockFcn("Start", 1, 7, 0, 0)
+%assign tlcStartFcnOfS1B11 = OpaqueTLCBlockFcn("Start", 1, 11, 0, 0)
+%assign tlcStartFcnOfS1B12 = OpaqueTLCBlockFcn("Start", 1, 12, 0, 0)
+%assign tlcStartFcnOfS1B13 = OpaqueTLCBlockFcn("Start", 1, 13, 0, 0)
+%assign tlcStartFcnOfS1B14 = OpaqueTLCBlockFcn("Start", 1, 14, 0, 0)
+%assign tlcStartFcnOfS0B0 = OpaqueTLCBlockFcn("Start", 0, 0, 0, 0)
+%assign tlcStartFcnOfS1B17 = OpaqueTLCBlockFcn("Start", 1, 17, 0, 0)
+%assign tlcStartFcnOfS1B18 = OpaqueTLCBlockFcn("Start", 1, 18, 0, 0)
+%<tlcStartFcnOfS1B2>\
+%<tlcStartFcnOfS1B3>\
+%<tlcStartFcnOfS1B4>\
+%<tlcStartFcnOfS1B5>\
+%<tlcStartFcnOfS1B7>\
+%<tlcStartFcnOfS1B11>\
+%<tlcStartFcnOfS1B12>\
+%<tlcStartFcnOfS1B13>\
+%<tlcStartFcnOfS1B14>\
+%assign   Start_open_DS1104ENC_SET_POS_C1_1_49 = ""
+%openfile Start_open_DS1104ENC_SET_POS_C1_1_49
+
+/* Start for Triggered SubSystem: '<S4>/DS1104ENC_SET_POS_C1' */
+%closefile Start_open_DS1104ENC_SET_POS_C1_1_49
+
+%assign    Start_body_DS1104ENC_SET_POS_C1_1_49 = ""
+%openfile  Start_body_DS1104ENC_SET_POS_C1_1_49
+
+%<tlcStartFcnOfS0B0>\
+%closefile Start_body_DS1104ENC_SET_POS_C1_1_49
+
+%assign    Start_close_DS1104ENC_SET_POS_C1_1_49 = ""
+%openfile  Start_close_DS1104ENC_SET_POS_C1_1_49
+
+/* End of Start for SubSystem: '<S4>/DS1104ENC_SET_POS_C1' */
+%closefile Start_close_DS1104ENC_SET_POS_C1_1_49
+%<SLibCG_DumpSSCode(Start_open_DS1104ENC_SET_POS_C1_1_49, Start_body_DS1104ENC_SET_POS_C1_1_49, Start_close_DS1104ENC_SET_POS_C1_1_49)>
+
+%<tlcStartFcnOfS1B17>\
+%<tlcStartFcnOfS1B18>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%endfunction

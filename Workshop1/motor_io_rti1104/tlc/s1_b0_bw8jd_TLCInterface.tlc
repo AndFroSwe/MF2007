@@ -1,0 +1,332 @@
+%implements s1_b0_bw8jd_TLCInterface "C"
+
+%function getInputAddr_1_4_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.Sum"
+%endfunction
+
+%function getInput_1_4_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.Sum"
+%endfunction
+
+%function getDWorkAddr_1_4_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction1_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_4_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction1_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_5_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "NULL"
+%endfunction
+
+%function getInput_1_5_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "(*NULL)"
+%endfunction
+
+%function getDWorkAddr_1_5_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction2_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_5_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction2_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_6_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "NULL"
+%endfunction
+
+%function getInput_1_6_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "(*NULL)"
+%endfunction
+
+%function getDWorkAddr_1_6_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction3_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_6_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction3_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_7_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "NULL"
+%endfunction
+
+%function getInput_1_7_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "(*NULL)"
+%endfunction
+
+%function getDWorkAddr_1_7_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction4_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_7_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction4_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_9_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.DataTypeConversion"
+%endfunction
+
+%function getInput_1_9_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.DataTypeConversion"
+%endfunction
+
+%function getOutputAddr_1_10_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.SFunction1"
+%endfunction
+
+%function getOutput_1_10_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.SFunction1"
+%endfunction
+
+%function getOutputAddr_1_11_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.SFunction2"
+%endfunction
+
+%function getOutput_1_11_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.SFunction2"
+%endfunction
+
+%function getInputAddr_1_4_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.Sum"
+%endfunction
+
+%function getInput_1_4_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.Sum"
+%endfunction
+
+%function getDWorkAddr_1_4_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction1_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_4_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction1_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_5_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "NULL"
+%endfunction
+
+%function getInput_1_5_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "(*NULL)"
+%endfunction
+
+%function getDWorkAddr_1_5_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction2_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_5_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction2_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_6_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "NULL"
+%endfunction
+
+%function getInput_1_6_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "(*NULL)"
+%endfunction
+
+%function getDWorkAddr_1_6_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction3_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_6_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction3_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_7_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "NULL"
+%endfunction
+
+%function getInput_1_7_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "(*NULL)"
+%endfunction
+
+%function getDWorkAddr_1_7_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction4_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_7_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction4_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_9_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.DataTypeConversion"
+%endfunction
+
+%function getInput_1_9_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.DataTypeConversion"
+%endfunction
+
+%function getOutputAddr_1_10_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.SFunction1"
+%endfunction
+
+%function getOutput_1_10_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.SFunction1"
+%endfunction
+
+%function getOutputAddr_1_11_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.SFunction2"
+%endfunction
+
+%function getOutput_1_11_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.SFunction2"
+%endfunction
+
+%function getInputAddr_1_4_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.Sum"
+%endfunction
+
+%function getInput_1_4_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.Sum"
+%endfunction
+
+%function getDWorkAddr_1_4_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction1_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_4_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction1_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_5_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "NULL"
+%endfunction
+
+%function getInput_1_5_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "(*NULL)"
+%endfunction
+
+%function getDWorkAddr_1_5_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction2_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_5_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction2_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_6_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "NULL"
+%endfunction
+
+%function getInput_1_6_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "(*NULL)"
+%endfunction
+
+%function getDWorkAddr_1_6_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction3_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_6_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction3_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_7_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "NULL"
+%endfunction
+
+%function getInput_1_7_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "(*NULL)"
+%endfunction
+
+%function getDWorkAddr_1_7_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_DW.SFunction4_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_1_7_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_DW.SFunction4_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_9_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.DataTypeConversion"
+%endfunction
+
+%function getInput_1_9_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.DataTypeConversion"
+%endfunction
+
+%function getOutputAddr_1_10_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.SFunction1"
+%endfunction
+
+%function getOutput_1_10_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.SFunction1"
+%endfunction
+
+%function getOutputAddr_1_11_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&motor_io_B.SFunction2"
+%endfunction
+
+%function getOutput_1_11_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "motor_io_B.SFunction2"
+%endfunction
+

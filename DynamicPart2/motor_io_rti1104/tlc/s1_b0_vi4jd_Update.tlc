@@ -1,0 +1,22 @@
+%implements s1_b0_vi4jd_Update "C"
+
+%function Update(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Header")>\
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Body")>\
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* Update for UnitDelay: '<S5>/Unit Delay' */
+    motor_io_DW.UnitDelay_DSTATE = motor_io_B.Add_g;
+}
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Trailer")>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%endfunction

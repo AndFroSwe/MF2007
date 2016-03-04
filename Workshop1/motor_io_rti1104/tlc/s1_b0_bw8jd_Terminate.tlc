@@ -1,0 +1,53 @@
+%implements s1_b0_bw8jd_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS1B4 = OpaqueTLCBlockFcn("Terminate", 1, 4, 0, 6)
+%assign tlcTerminateFcnOfS1B5 = OpaqueTLCBlockFcn("Terminate", 1, 5, 0, 6)
+%assign tlcTerminateFcnOfS1B6 = OpaqueTLCBlockFcn("Terminate", 1, 6, 0, 6)
+%assign tlcTerminateFcnOfS1B7 = OpaqueTLCBlockFcn("Terminate", 1, 7, 0, 6)
+%assign tlcTerminateFcnOfS1B9 = OpaqueTLCBlockFcn("Terminate", 1, 9, 0, 6)
+%assign tlcTerminateFcnOfS1B10 = OpaqueTLCBlockFcn("Terminate", 1, 10, 0, 6)
+%assign tlcTerminateFcnOfS1B11 = OpaqueTLCBlockFcn("Terminate", 1, 11, 0, 6)
+%assign tlcTerminateFcnOfS0B0 = OpaqueTLCBlockFcn("Terminate", 0, 0, 0, 6)
+%assign tlcTerminateFcnOfS1B14 = OpaqueTLCBlockFcn("Terminate", 1, 14, 0, 6)
+%assign tlcTerminateFcnOfS1B15 = OpaqueTLCBlockFcn("Terminate", 1, 15, 0, 6)
+%<tlcTerminateFcnOfS1B4>\
+%<tlcTerminateFcnOfS1B5>\
+%<tlcTerminateFcnOfS1B6>\
+%<tlcTerminateFcnOfS1B7>\
+%<tlcTerminateFcnOfS1B9>\
+%<tlcTerminateFcnOfS1B10>\
+%<tlcTerminateFcnOfS1B11>\
+%assign   Terminate_open_DS1104ENC_SET_POS_C1_1_31 = ""
+%openfile Terminate_open_DS1104ENC_SET_POS_C1_1_31
+
+/* Terminate for Triggered SubSystem: '<S5>/DS1104ENC_SET_POS_C1' */
+%closefile Terminate_open_DS1104ENC_SET_POS_C1_1_31
+
+%assign    Terminate_body_DS1104ENC_SET_POS_C1_1_31 = ""
+%openfile  Terminate_body_DS1104ENC_SET_POS_C1_1_31
+
+%<tlcTerminateFcnOfS0B0>\
+%closefile Terminate_body_DS1104ENC_SET_POS_C1_1_31
+
+%assign    Terminate_close_DS1104ENC_SET_POS_C1_1_31 = ""
+%openfile  Terminate_close_DS1104ENC_SET_POS_C1_1_31
+
+/* End of Terminate for SubSystem: '<S5>/DS1104ENC_SET_POS_C1' */
+%closefile Terminate_close_DS1104ENC_SET_POS_C1_1_31
+%<SLibCG_DumpSSCode(Terminate_open_DS1104ENC_SET_POS_C1_1_31, Terminate_body_DS1104ENC_SET_POS_C1_1_31, Terminate_close_DS1104ENC_SET_POS_C1_1_31)>
+
+%<tlcTerminateFcnOfS1B14>\
+%<tlcTerminateFcnOfS1B15>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 6, fcnProtoType)>
+%endfunction
