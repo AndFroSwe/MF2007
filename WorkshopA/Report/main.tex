@@ -1,0 +1,46 @@
+%     Compiler: pdflatex
+
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath, amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{float}
+
+\title{MF2007 - Workshop A}
+
+\author{
+Adam Lang \\ 861110-3956
+\and
+Gabriel Andersson Santiago \\ 910706-4538
+\and 
+Andreas Fr\"oderberg \\ 880730-7577
+}
+
+\begin{document}
+\maketitle
+
+\subsection*{Parameter identification}
+
+\begin{center}
+  \begin{table}[H]
+    \centering
+    \caption{Parameters for the DC-motor}
+    
+\begin{tabular}{|c|c|c|c|}
+  \hline
+    & Inertia & Coulomb Friction & Viscous Friction \\ 
+    \hline
+    Original & $2.18e^{-6}$ & $1e^{-3}$ & $3.8e{-6}$ \\
+    \hline
+    Adjusted & $2.5e^{-5}$ & $1e^{-3}$ & $2e^{-5}$ \\
+    \hline
+    \end{tabular}
+   \label{tab:parameters}
+  \end{table}
+\end{center}
+
+
+\end{document}
