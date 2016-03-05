@@ -9,6 +9,8 @@
 \usepackage[margin=0.5in]{geometry}
 \usepackage{float}
 
+\graphicspath{{fig/}}
+
 \title{MF2007 - Workshop A}
 
 \author{
@@ -24,22 +26,69 @@ Andreas Fr\"oderberg \\ 880730-7577
 
 \subsection*{Parameter identification}
 
+\subsubsection*{Level 1}
+The parameters that was modeled originally was not very good and in
+table \ref{tab:parameters} both the original and new parameters is
+given.
 \begin{center}
   \begin{table}[H]
-    \centering
     \caption{Parameters for the DC-motor}
-    
-\begin{tabular}{|c|c|c|c|}
-  \hline
-    & Inertia & Coulomb Friction & Viscous Friction \\ 
-    \hline
-    Original & $2.18e^{-6}$ & $1e^{-3}$ & $3.8e{-6}$ \\
-    \hline
-    Adjusted & $2.5e^{-5}$ & $1e^{-3}$ & $2e^{-5}$ \\
-    \hline
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        & Inertia & Coulomb Friction & Viscous Friction \\ 
+        \hline
+        Original & $2.18e^{-6}$ & $-$ & $3.8e{-6}$ \\
+        \hline
+        Adjusted & $2.5e^{-5}$ & $-$ & $2e^{-5}$ \\
+        \hline
     \end{tabular}
    \label{tab:parameters}
   \end{table}
+\end{center}
+After adjusting the parameters, the result in figure
+\ref{fig:par_level1} was obtained. We can
+tune the model very good when modeling towards one velocity, but when
+the velocity is changed, the model will differ from reality.
+\begin{center}
+    \begin{figure}[H]
+    \centering
+      \includegraphics[scale = 0.6]{par_level1.png}
+      \caption{The velocity output for the model and the real motor}
+      \label{fig:par_level1.png}
+    \end{figure}
+\end{center}
+
+\subsubsection*{Level 2}
+The parameters from Level 1 and the coulomb friction can be seen in
+table \ref{tab:parametersL2}.
+\begin{center}
+  \begin{table}[H]
+    \centering
+    \caption{Complete parameters for the DC-motor}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        & Inertia & Coulomb Friction & Viscous Friction \\ 
+        \hline
+        Original & $2.18e^{-6}$ & $1e^{-3}$ & $3.8e{-6}$ \\
+        \hline
+        Adjusted & $2.22e^{-5}$ & $8e^{-4}$ & $2e^{-5}$ \\
+        \hline
+    \end{tabular}
+   \label{tab:parametersL2}
+  \end{table}
+\end{center}
+When the model is changed to include coulomb friction it is still
+equally easy to model for on single velocity, but it is easier to get
+good results for different amplitudes. These results can be seen in
+figure \ref{fig:par_level2}.
+\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{par_level2.png}
+    \caption{Velocity output for the model when including coulomb
+    friction for sinus- and square wave input}
+    \label{fig:par_level2.png}
+    \end{figure}
 \end{center}
 
 
