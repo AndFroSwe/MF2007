@@ -12,7 +12,7 @@ V_w = Vmax;
 sim_V = Vmax;
 % Set up generic simulation parameters, change when using sine input or
 % karnop
-F_c = 0.001;
+F_c = 1;
 d_v = 1;
 enable_sin = 0;
 enable_karnop = 0;
@@ -146,7 +146,6 @@ pzmap(motor_L.tf_i)
 title('PZ map for DC motor with i control')
 
 %% Ex 3 With Karnopp model for friction
-
 %For step inputs
 sim_step_v = 2.38;
 % For sine inputs
@@ -174,21 +173,6 @@ plot(sim_ex2_v_w.Time, sim_ex2_v_w.Data);
 title(title_string)
 grid on
 
-simtime = 3;
-sim_step_v = 1;
-enable_sin = 0;
-sim('sim_ex2.slx')
-figure
-plot(sim_ex2_v_w.Time,sim_ex2_v_w.Data);
-title('Step input with A=1 V with Karnopp')
-
-sim_step_v=10;
-sim('sim_ex2.slx')
-
-figure
-plot(sim_ex2_v_w.Time,sim_ex2_v_w.Data);
-title('Step input with A=10 V with Karnopp')
-simtime = 10;
 % %% part 4: Quantizing
 % % Set parameters
 % enable_sin = 0;     % Set 1 to enable sine input
