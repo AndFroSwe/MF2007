@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.16)  5 MAR 2016 13:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.16)  6 MAR 2016 12:08
 entering extended mode
 **./main.tex
 (main.tex
@@ -494,57 +494,73 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 25.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Reference `fig:par_level1' on page 1 undefined on input line 50.
-
-
 <fig/par_level1.png, id=1, 421.575pt x 316.18124pt>
 File: fig/par_level1.png Graphic file (type png)
  <use fig/par_level1.png>
-Package pdftex.def Info: fig/par_level1.png used on input line 56.
+Package pdftex.def Info: fig/par_level1.png used on input line 55.
 (pdftex.def)             Requested size: 252.94695pt x 189.7102pt.
 
 [1
 
 {C:/Users/Lamn/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./fig/par_le
-vel1.png (PNG copy)>]
-
-LaTeX Warning: Reference `fig:par_level2' on page 2 undefined on input line 84.
-
-
-<fig/par_level2.png, id=16, 394.47375pt x 431.36156pt>
+vel1.png (PNG copy)>] <fig/par_level2.png, id=16, 526.96875pt x 435.12563pt>
 File: fig/par_level2.png Graphic file (type png)
 
 <use fig/par_level2.png>
-Package pdftex.def Info: fig/par_level2.png used on input line 88.
-(pdftex.def)             Requested size: 236.68607pt x 258.81892pt.
- [2 <./fig/par_level2.png (PNG copy)>] (main.aux)
+Package pdftex.def Info: fig/par_level2.png used on input line 87.
+(pdftex.def)             Requested size: 316.18369pt x 261.07738pt.
+
+
+LaTeX Warning: Reference `.' on page 2 undefined on input line 98.
+
+<fig/41SqVo.png, id=17, 632.3625pt x 347.04657pt>
+File: fig/41SqVo.png Graphic file (type png)
+ <use fig/41SqVo.png>
+Package pdftex.def Info: fig/41SqVo.png used on input line 104.
+(pdftex.def)             Requested size: 316.18048pt x 173.52286pt.
+
+<fig/41SiVo.png, id=18, 622.57594pt x 352.31625pt>
+File: fig/41SiVo.png Graphic file (type png)
+ <use fig/41SiVo.png>
+Package pdftex.def Info: fig/41SiVo.png used on input line 113.
+(pdftex.def)             Requested size: 311.2872pt x 176.15768pt.
+
+[2 <./fig/par_level2.png (PNG copy)>]
+<fig/41SiVoBr.png, id=23, 706.89093pt x 374.14781pt>
+File: fig/41SiVoBr.png Graphic file (type png)
+ <use fig/41SiVoBr.png>
+Package pdftex.def Info: fig/41SiVoBr.png used on input line 120.
+(pdftex.def)             Requested size: 353.4446pt x 187.07344pt.
+
+[3 <./fig/41SqVo.png (PNG copy)> <./fig/41SiVo.png (PNG copy)> <./fig/41SiVoBr.
+png (PNG copy)>] (main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3439 strings out of 493634
- 42355 string characters out of 3141316
- 114183 words of memory out of 3000000
- 6771 multiletter control sequences out of 15000+200000
- 14739 words of font info for 48 fonts, out of 3000000 for 9000
+ 3460 strings out of 493634
+ 42670 string characters out of 3141316
+ 114207 words of memory out of 3000000
+ 6787 multiletter control sequences out of 15000+200000
+ 16284 words of font info for 50 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  27i,9n,32p,253b,285s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Lamn\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
-crm1200.pk> <C:\Users\Lamn\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
-\dpi600\ecbx1200.pk> <C:\Users\Lamn\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
+cbx1200.pk> <C:\Users\Lamn\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\ecrm1200.pk> <C:\Users\Lamn\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
 nappen\ec\dpi600\ecbx1440.pk> <C:\Users\Lamn\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Lamn\AppData\Local\MiKTeX\2.9\
-fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (2 pages, 138935 bytes).
+ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Lamn\AppData\Local\MiKTeX\2.9\
+fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Lamn\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (3 pages, 256749 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
+ 181 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

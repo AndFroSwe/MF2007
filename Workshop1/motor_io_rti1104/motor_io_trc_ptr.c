@@ -5,7 +5,7 @@
    Definition of function that initializes the global TRC pointers
 
    RTI1104 7.3 (02-Nov-2014)
-   Fri Mar 04 16:46:50 2016
+   Sun Mar 06 14:16:21 2016
 
    (c) Copyright 2008, dSPACE GmbH. All rights reserved.
 
@@ -18,6 +18,7 @@
 volatile real_T *p_0_motor_io_real_T_0 = 0;
 volatile boolean_T *p_0_motor_io_boolean_T_1 = 0;
 volatile real_T *p_1_motor_io_real_T_0 = 0;
-volatile int_T *p_2_motor_io_int_T_0 = 0;
+volatile real_T *p_2_motor_io_real_T_0 = 0;
+volatile int_T *p_2_motor_io_int_T_2 = 0;
 volatile real_T *p_3_motor_io_real_T_0 = 0;
 volatile real_T *p_5_motor_io_real_T_0 = 0;

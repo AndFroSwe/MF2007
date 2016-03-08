@@ -7,17 +7,17 @@ Model {
     NumRootInports	    0
     NumRootOutports	    2
     Outport {
-      Name		      "Pos"
+      Name		      "Vel1"
       BusObject		      ""
       BusOutputAsStruct	      "off"
     }
     Outport {
-      Name		      "Vel"
+      Name		      "Pos1"
       BusObject		      ""
       BusOutputAsStruct	      "off"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.23"
+    ComputedModelVersion    "1.27"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -43,7 +43,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1936.0, 1056.0]
+      Location		      [1912.0, -8.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -68,8 +68,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1886.0, 882.0]
-	ZoomFactor		[1.1433846153846152]
-	Offset			[-27.723747378367211, -239.98403242813879]
+	ZoomFactor		[1.25]
+	Offset			[169.24520978379564, 207.4591084234641]
       }
     }
   }
@@ -82,9 +82,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "es2lab2"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Mar 04 16:52:33 2016"
-  RTWModifiedTimeStamp	  379010800
-  ModelVersionFormat	  "1.%<AutoIncrement:23>"
+  LastModifiedDate	  "Sun Mar 06 16:13:59 2016"
+  RTWModifiedTimeStamp	  379174158
+  ModelVersionFormat	  "1.%<AutoIncrement:27>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -651,7 +651,7 @@ Model {
 	      Version		      "1.14.3"
 	      Array {
 		Type			"Cell"
-		Dimension		25
+		Dimension		24
 		Cell			"TimeScaleFactor"
 		Cell			"CCompilerOptimizationOpts"
 		Cell			"RTICfgSetVer"
@@ -670,13 +670,12 @@ Model {
 		Cell			"SupportNonInlinedSFcns"
 		Cell			"GRTInterface"
 		Cell			"ParMdlRefBuildCompliant"
-		Cell			"LoadToFlash"
 		Cell			"MultiInstanceERTCode"
-		Cell			"PortableWordSizes"
+		Cell			"CodeInterfacePackaging"
+		Cell			"LoadToFlash"
 		Cell			"BoardName"
 		Cell			"CPPClassGenCompliant"
-		Cell			"CodeInterfacePackaging"
-		Cell			"CombineOutputUpdateFcns"
+		Cell			"PortableWordSizes"
 		PropName		"DisabledProps"
 	      }
 	      TargetFcnLib	      "ansi_tfl_tmw.mat"
@@ -752,11 +751,11 @@ Model {
 		    Cell		    "SupportNonInlinedSFcns"
 		    Cell		    "GRTInterface"
 		    Cell		    "ParMdlRefBuildCompliant"
-		    Cell		    "CPPClassGenCompliant"
 		    Cell		    "MultiInstanceERTCode"
+		    Cell		    "CodeInterfacePackaging"
 		    Cell		    "PortableWordSizes"
 		    Cell		    "CombineOutputUpdateFcns"
-		    Cell		    "CodeInterfacePackaging"
+		    Cell		    "CPPClassGenCompliant"
 		    PropName		    "DisabledProps"
 		  }
 		  TargetFcnLib		  "ansi_tfl_tmw.mat"
@@ -982,7 +981,7 @@ Model {
       Name		      "Configuration"
       ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 464, 21, 1576, 917 ] 
+      ConfigPrmDlgPosition     [ 456, 21, 1584, 955 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -1171,6 +1170,12 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      Quantizer
+      QuantizationInterval    "0.5"
+      LinearizeAsGain	      on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Saturate
       UpperLimitSource	      "Dialog"
       UpperLimit	      "0.5"
@@ -1279,10 +1284,14 @@ Model {
       SampleTime	      "-1"
       AllowDiffInputSizes     off
     }
+    Block {
+      BlockType		      ZeroOrderHold
+      SampleTime	      "1"
+    }
   }
   System {
     Name		    "motor_io"
-    Location		    [-8, -8, 1928, 1048]
+    Location		    [1912, -8, 3848, 1048]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1294,49 +1303,14 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "114"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "638"
-    Block {
-      BlockType		      Gain
-      Name		      "1/J"
-      SID		      "606"
-      Position		      [840, 244, 890, 286]
-      ZOrder		      127
-      Gain		      "1/Jtot"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Add"
-      SID		      "607"
-      Ports		      [2, 1]
-      Position		      [615, 211, 655, 284]
-      ZOrder		      128
-      Inputs		      "+-"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Add1"
-      SID		      "608"
-      Ports		      [2, 1]
-      Position		      [765, 238, 800, 287]
-      ZOrder		      131
-      Inputs		      "+-"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
+    SIDHighWatermark	    "762"
     Block {
       BlockType		      Gain
       Name		      "Gain"
       SID		      "634"
-      Position		      [535, 125, 565, 155]
+      Position		      [640, 355, 670, 385]
       ZOrder		      192
       Gain		      "-1"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1344,1871 +1318,16 @@ Model {
       SaturateOnIntegerOverflow	off
     }
     Block {
-      BlockType		      Gain
-      Name		      "Gain1"
-      SID		      "609"
-      Position		      [725, 414, 775, 456]
-      ZOrder		      129
-      BlockMirror	      on
-      Gain		      "motor.k"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Integrator
-      Name		      "Integrator"
-      SID		      "610"
-      Ports		      [1, 1]
-      Position		      [950, 247, 985, 283]
-      ZOrder		      126
-    }
-    Block {
-      BlockType		      Integrator
-      Name		      "Integrator1"
-      SID		      "611"
-      Ports		      [1, 1]
-      Position		      [1170, 247, 1205, 283]
-      ZOrder		      134
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Model Motor"
-      SID		      "415"
-      Ports		      [1, 5]
-      Position		      [505, 445, 545, 505]
-      ZOrder		      91
-      Commented		      "on"
-      RequestExecContextInheritance off
-      System {
-	Name			"Model Motor"
-	Location		[-8, -8, 1928, 1048]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"A4"
-	PaperUnits		"centimeters"
-	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "In1"
-	  SID			  "416"
-	  Position		  [90, 290, 120, 305]
-	  ZOrder		  91
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Dc motor with friction"
-	  SID			  "350"
-	  Ports			  [1, 3]
-	  Position		  [295, 193, 580, 427]
-	  ZOrder		  89
-	  RequestExecContextInheritance	off
-	  Object {
-	    $PropName		    "MaskObject"
-	    $ObjectID		    20
-	    $ClassName		    "Simulink.Mask"
-	    Display		    "image('dcmotor.jpg')\nport_label('input', 1, 'Voltage')\nport_label('output', 1, 'Current')\nport_l"
-	    "abel('output', 2, 'Torque')\nport_label('output', 3, 'Position')\nport_label('output', 4, 'Velocity')\nport_label"
-	    "('output', 5, 'Acceleration')"
-	  }
-	  Port {
-	    PortNumber		    1
-	    Name		    "Position -n"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    2
-	    Name		    "Velocity -n"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "Acceleration -n"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  System {
-	    Name		    "Dc motor with friction"
-	    Location		    [-8, -8, 1928, 1048]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "A4"
-	    PaperUnits		    "centimeters"
-	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "In1"
-	      SID		      "351"
-	      Position		      [265, 58, 295, 72]
-	      ZOrder		      48
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "DC motor model"
-	      SID		      "450"
-	      Ports		      [2, 4]
-	      Position		      [380, 17, 780, 208]
-	      ZOrder		      56
-	      RequestExecContextInheritance off
-	      System {
-		Name			"DC motor model"
-		Location		[-8, -8, 1928, 1048]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"A4"
-		PaperUnits		"centimeters"
-		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"150"
-		Block {
-		  BlockType		  Inport
-		  Name			  "Volt input\n"
-		  SID			  "451"
-		  Position		  [20, 83, 50, 97]
-		  ZOrder		  38
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "External torque"
-		  SID			  "452"
-		  Position		  [180, 178, 210, 192]
-		  ZOrder		  50
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "1/J"
-		  SID			  "453"
-		  Position		  [345, 104, 395, 146]
-		  ZOrder		  43
-		  Gain			  "1/motor.J"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Add"
-		  SID			  "454"
-		  Ports			  [2, 1]
-		  Position		  [120, 71, 160, 144]
-		  ZOrder		  44
-		  Inputs		  "+-"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Add1"
-		  SID			  "455"
-		  Ports			  [2, 1]
-		  Position		  [270, 98, 305, 147]
-		  ZOrder		  49
-		  Inputs		  "+-"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Gain1"
-		  SID			  "456"
-		  Position		  [225, 244, 275, 286]
-		  ZOrder		  46
-		  BlockMirror		  on
-		  Gain			  "motor.k"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Integrator
-		  Name			  "Integrator"
-		  SID			  "457"
-		  Ports			  [1, 1]
-		  Position		  [455, 107, 490, 143]
-		  ZOrder		  41
-		}
-		Block {
-		  BlockType		  Integrator
-		  Name			  "Integrator1"
-		  SID			  "461"
-		  Ports			  [1, 1]
-		  Position		  [805, 222, 840, 258]
-		  ZOrder		  52
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "k/R\n"
-		  SID			  "458"
-		  Position		  [180, 89, 235, 131]
-		  ZOrder		  48
-		  Gain			  "motor.k/motor.R"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Angular velocity output\n"
-		  SID			  "459"
-		  Position		  [565, 118, 595, 132]
-		  ZOrder		  40
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Angular acceleration\n"
-		  SID			  "460"
-		  Position		  [565, 58, 595, 72]
-		  ZOrder		  51
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Position"
-		  SID			  "462"
-		  Position		  [1005, 218, 1035, 232]
-		  ZOrder		  53
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Torque\n1"
-		  SID			  "471"
-		  Position		  [475, 18, 505, 32]
-		  ZOrder		  54
-		  Port			  "4"
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  ZOrder		  1
-		  SrcBlock		  "Volt input\n"
-		  SrcPort		  1
-		  DstBlock		  "Add"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  2
-		  SrcBlock		  "Gain1"
-		  SrcPort		  1
-		  Points		  [-115, 0]
-		  DstBlock		  "Add"
-		  DstPort		  2
-		}
-		Line {
-		  ZOrder		  3
-		  SrcBlock		  "Add"
-		  SrcPort		  1
-		  DstBlock		  "k/R\n"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  4
-		  SrcBlock		  "k/R\n"
-		  SrcPort		  1
-		  DstBlock		  "Add1"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  5
-		  SrcBlock		  "Add1"
-		  SrcPort		  1
-		  Points		  [10, 0]
-		  Branch {
-		    ZOrder		    18
-		    Points		    [0, -100]
-		    DstBlock		    "Torque\n1"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    17
-		    DstBlock		    "1/J"
-		    DstPort		    1
-		  }
-		}
-		Line {
-		  ZOrder		  6
-		  SrcBlock		  "1/J"
-		  SrcPort		  1
-		  Points		  [28, 0]
-		  Branch {
-		    ZOrder		    7
-		    Points		    [0, -60]
-		    DstBlock		    "Angular acceleration\n"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    8
-		    DstBlock		    "Integrator"
-		    DstPort		    1
-		  }
-		}
-		Line {
-		  ZOrder		  9
-		  SrcBlock		  "Integrator"
-		  SrcPort		  1
-		  Points		  [14, 0]
-		  Branch {
-		    ZOrder		    10
-		    Points		    [0, 115]
-		    Branch {
-		    ZOrder		    14
-		    DstBlock		    "Integrator1"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    13
-		    Points		    [0, 25]
-		    DstBlock		    "Gain1"
-		    DstPort		    1
-		    }
-		  }
-		  Branch {
-		    ZOrder		    11
-		    DstBlock		    "Angular velocity output\n"
-		    DstPort		    1
-		  }
-		}
-		Line {
-		  ZOrder		  12
-		  SrcBlock		  "External torque"
-		  SrcPort		  1
-		  Points		  [32, 0; 0, -50]
-		  DstBlock		  "Add1"
-		  DstPort		  2
-		}
-		Line {
-		  ZOrder		  16
-		  SrcBlock		  "Integrator1"
-		  SrcPort		  1
-		  Points		  [62, 0; 0, -15]
-		  DstBlock		  "Position"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "Inertia and resistance model\n"
-	      SID		      "352"
-	      Ports		      [3, 1]
-	      Position		      [465, 259, 695, 391]
-	      ZOrder		      47
-	      BlockMirror	      on
-	      RequestExecContextInheritance off
-	      System {
-		Name			"Inertia and resistance model\n"
-		Location		[-8, -8, 1928, 1048]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"A4"
-		PaperUnits		"centimeters"
-		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"136"
-		Block {
-		  BlockType		  Inport
-		  Name			  "Acc in"
-		  SID			  "448"
-		  Position		  [235, 48, 265, 62]
-		  ZOrder		  63
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "Ang velocity in"
-		  SID			  "354"
-		  Position		  [20, 178, 50, 192]
-		  ZOrder		  51
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "Applied torque"
-		  SID			  "355"
-		  Position		  [20, 443, 50, 457]
-		  ZOrder		  60
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Add"
-		  SID			  "356"
-		  Ports			  [2, 1]
-		  Position		  [645, 117, 675, 148]
-		  ZOrder		  55
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Enable Karnop"
-		  SID			  "357"
-		  Position		  [360, 232, 435, 268]
-		  ZOrder		  59
-		  Value			  "enable_karnop"
-		}
-		Block {
-		  BlockType		  SubSystem
-		  Name			  "Karnop friction1"
-		  SID			  "358"
-		  Ports			  [2, 1]
-		  Position		  [230, 309, 435, 496]
-		  ZOrder		  61
-		  RequestExecContextInheritance	off
-		  System {
-		    Name		    "Karnop friction1"
-		    Location		    [-8, -8, 1928, 1048]
-		    Open		    off
-		    ModelBrowserVisibility  off
-		    ModelBrowserWidth	    200
-		    ScreenColor		    "white"
-		    PaperOrientation	    "landscape"
-		    PaperPositionMode	    "auto"
-		    PaperType		    "A4"
-		    PaperUnits		    "centimeters"
-		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
-		    TiledPageScale	    1
-		    ShowPageBoundaries	    off
-		    ZoomFactor		    "125"
-		    Block {
-		    BlockType		    Inport
-		    Name		    "Angular \nvelcoity"
-		    SID			    "359"
-		    Position		    [20, 200, 80, 230]
-		    ZOrder		    83
-		    IconDisplay		    "Port number"
-		    Port {
-		    PortNumber		    1
-		    Name		    "Velocity"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		    }
-		    }
-		    Block {
-		    BlockType		    Inport
-		    Name		    "Applied torque\n"
-		    SID			    "360"
-		    Position		    [345, 65, 405, 95]
-		    ZOrder		    84
-		    Port		    "2"
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    Abs
-		    Name		    "Abs"
-		    SID			    "361"
-		    Position		    [435, 200, 465, 230]
-		    ZOrder		    80
-		    SaturateOnIntegerOverflow off
-		    }
-		    Block {
-		    BlockType		    Sum
-		    Name		    "Add"
-		    SID			    "362"
-		    Ports		    [2, 1]
-		    Position		    [760, 367, 790, 398]
-		    ZOrder		    77
-		    InputSameDT		    off
-		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
-		    SaturateOnIntegerOverflow off
-		    Port {
-		    PortNumber		    1
-		    Name		    "Viscous region"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		    }
-		    }
-		    Block {
-		    BlockType		    Constant
-		    Name		    "Couloumb friction"
-		    SID			    "363"
-		    Position		    [490, 372, 540, 418]
-		    ZOrder		    76
-		    Value		    "F_c"
-		    }
-		    Block {
-		    BlockType		    Product
-		    Name		    "Product"
-		    SID			    "364"
-		    Ports		    [2, 1]
-		    Position		    [650, 427, 680, 458]
-		    ZOrder		    75
-		    InputSameDT		    off
-		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
-		    RndMeth		    "Floor"
-		    SaturateOnIntegerOverflow off
-		    }
-		    Block {
-		    BlockType		    Saturate
-		    Name		    "Saturate to Fc"
-		    SID			    "365"
-		    Ports		    [1, 1]
-		    Position		    [520, 65, 550, 95]
-		    ZOrder		    82
-		    InputPortMap	    "u0"
-		    UpperLimit		    "F_c"
-		    LowerLimit		    "-F_c"
-		    Port {
-		    PortNumber		    1
-		    Name		    "Stick slip region\n"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		    }
-		    }
-		    Block {
-		    BlockType		    Scope
-		    Name		    "Scope2"
-		    SID			    "366"
-		    Ports		    [5]
-		    Position		    [1030, 306, 1060, 454]
-		    ZOrder		    87
-		    Floating		    off
-		    Location		    [1, 200, 1435, 1047]
-		    Open		    off
-		    NumInputPorts	    "5"
-		    List {
-		    ListType		    AxesTitles
-		    axes1		    "%<SignalLabel>"
-		    axes2		    "%<SignalLabel>"
-		    axes3		    "%<SignalLabel>"
-		    axes4		    "%<SignalLabel>"
-		    axes5		    "%<SignalLabel>"
-		    }
-		    List {
-		    ListType		    ScopeGraphics
-		    FigureColor		    "[0.5 0.5 0.5]"
-		    AxesColor		    "[0 0 0]"
-		    AxesTickColor	    "[1 1 1]"
-		    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-		    LineStyles		    "-|-|-|-|-|-"
-		    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-		    MarkerStyles	    "none|none|none|none|none|none"
-		    }
-		    ShowLegends		    on
-		    YMin		    "-0.00177~-0.125~0.0009~-0.00177~-138.1533~-0.12501~-0.12501~-0.12501"
-		    YMax		    "0.00177~1.125~0.0011~0.00177~138.10681~0.12501~0.12501~0.12501"
-		    SaveName		    "ScopeData3"
-		    DataFormat		    "StructureWithTime"
-		    LimitDataPoints	    off
-		    ScrollMode		    off
-		    }
-		    Block {
-		    BlockType		    Signum
-		    Name		    "Sign"
-		    SID			    "367"
-		    Position		    [505, 458, 545, 502]
-		    ZOrder		    71
-		    }
-		    Block {
-		    BlockType		    Switch
-		    Name		    "Switch"
-		    SID			    "368"
-		    Position		    [895, 195, 945, 235]
-		    ZOrder		    70
-		    Criteria		    "u2 > Threshold"
-		    InputSameDT		    off
-		    SaturateOnIntegerOverflow off
-		    Port {
-		    PortNumber		    1
-		    Name		    "Friction"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		    }
-		    }
-		    Block {
-		    BlockType		    Reference
-		    Name		    "Velocity threshold\n"
-		    SID			    "369"
-		    Ports		    [1, 1]
-		    Position		    [505, 192, 570, 238]
-		    ZOrder		    66
-		    LibraryVersion	    "1.354"
-		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
-		    SourceType		    "Compare To Constant"
-		    ContentPreviewEnabled   off
-		    relop		    "<="
-		    const		    "3.0"
-		    OutDataTypeStr	    "boolean"
-		    ZeroCross		    on
-		    Port {
-		    PortNumber		    1
-		    Name		    "Activator"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		    }
-		    }
-		    Block {
-		    BlockType		    Gain
-		    Name		    "Vicous friction"
-		    SID			    "370"
-		    Position		    [510, 295, 620, 345]
-		    ZOrder		    78
-		    Gain		    "motor.d"
-		    ParamDataTypeStr	    "Inherit: Inherit via internal rule"
-		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
-		    SaturateOnIntegerOverflow off
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "Friction"
-		    SID			    "371"
-		    Position		    [1050, 205, 1110, 225]
-		    ZOrder		    85
-		    IconDisplay		    "Port number"
-		    }
-		    Line {
-		    Name		    "Stick slip region\n"
-		    ZOrder		    1
-		    SrcBlock		    "Saturate to Fc"
-		    SrcPort		    1
-		    Points		    [181, 0; 0, 120; 119, 0]
-		    Branch {
-		    ZOrder		    2
-		    Labels		    [2, 1]
-		    Points		    [0, 180]
-		    DstBlock		    "Scope2"
-		    DstPort		    3
-		    }
-		    Branch {
-		    ZOrder		    3
-		    DstBlock		    "Switch"
-		    DstPort		    1
-		    }
-		    }
-		    Line {
-		    Name		    "Friction"
-		    ZOrder		    4
-		    SrcBlock		    "Switch"
-		    SrcPort		    1
-		    Points		    [65, 0]
-		    Branch {
-		    ZOrder		    5
-		    Labels		    [1, 1]
-		    DstBlock		    "Scope2"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    6
-		    DstBlock		    "Friction"
-		    DstPort		    1
-		    }
-		    }
-		    Line {
-		    Name		    "Velocity"
-		    ZOrder		    7
-		    SrcBlock		    "Angular \nvelcoity"
-		    SrcPort		    1
-		    Points		    [142, 0]
-		    Branch {
-		    ZOrder		    8
-		    Labels		    [2, 1]
-		    Points		    [0, -37; 753, 0; 0, 262]
-		    DstBlock		    "Scope2"
-		    DstPort		    5
-		    }
-		    Branch {
-		    ZOrder		    9
-		    Points		    [159, 0]
-		    Branch {
-		    ZOrder		    10
-		    DstBlock		    "Abs"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    11
-		    Points		    [0, 105]
-		    Branch {
-		    ZOrder		    12
-		    DstBlock		    "Vicous friction"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    13
-		    Points		    [0, 160]
-		    DstBlock		    "Sign"
-		    DstPort		    1
-		    }
-		    }
-		    }
-		    }
-		    Line {
-		    Name		    "Activator"
-		    ZOrder		    14
-		    SrcBlock		    "Velocity threshold\n"
-		    SrcPort		    1
-		    Points		    [158, 0]
-		    Branch {
-		    ZOrder		    15
-		    Labels		    [2, 1]
-		    Points		    [0, 135]
-		    DstBlock		    "Scope2"
-		    DstPort		    2
-		    }
-		    Branch {
-		    ZOrder		    16
-		    DstBlock		    "Switch"
-		    DstPort		    2
-		    }
-		    }
-		    Line {
-		    ZOrder		    17
-		    SrcBlock		    "Abs"
-		    SrcPort		    1
-		    DstBlock		    "Velocity threshold\n"
-		    DstPort		    1
-		    }
-		    Line {
-		    ZOrder		    18
-		    SrcBlock		    "Product"
-		    SrcPort		    1
-		    Points		    [38, 0; 0, -55]
-		    DstBlock		    "Add"
-		    DstPort		    2
-		    }
-		    Line {
-		    ZOrder		    19
-		    SrcBlock		    "Vicous friction"
-		    SrcPort		    1
-		    Points		    [99, 0; 0, 55]
-		    DstBlock		    "Add"
-		    DstPort		    1
-		    }
-		    Line {
-		    ZOrder		    20
-		    SrcBlock		    "Couloumb friction"
-		    SrcPort		    1
-		    Points		    [42, 0; 0, 40]
-		    DstBlock		    "Product"
-		    DstPort		    1
-		    }
-		    Line {
-		    ZOrder		    21
-		    SrcBlock		    "Sign"
-		    SrcPort		    1
-		    Points		    [54, 0; 0, -30]
-		    DstBlock		    "Product"
-		    DstPort		    2
-		    }
-		    Line {
-		    ZOrder		    22
-		    SrcBlock		    "Applied torque\n"
-		    SrcPort		    1
-		    DstBlock		    "Saturate to Fc"
-		    DstPort		    1
-		    }
-		    Line {
-		    Name		    "Viscous region"
-		    ZOrder		    23
-		    SrcBlock		    "Add"
-		    SrcPort		    1
-		    Points		    [48, 0]
-		    Branch {
-		    ZOrder		    24
-		    Labels		    [1, 1]
-		    Points		    [0, -155]
-		    DstBlock		    "Switch"
-		    DstPort		    3
-		    }
-		    Branch {
-		    ZOrder		    25
-		    Points		    [0, 25]
-		    DstBlock		    "Scope2"
-		    DstPort		    4
-		    }
-		    }
-		    Annotation {
-		    SID			    "373"
-		    Name		    "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<"
-		    "html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n"
-		    "</style></head><body style=\" font-family:'Arial'; font-size:10px; font-weight:400; font-style:normal;\">\n<p st"
-		    "yle=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px"
-		    ";\"><span style=\" font-size:12px; font-weight:600;\">Inside stick slip region</span></p></body></html>"
-		    Position		    [467, 19, 596, 36]
-		    InternalMargins	    [0, 0, 0, 0]
-		    FixedHeight		    off
-		    FixedWidth		    off
-		    HorizontalAlignment	    "left"
-		    VerticalAlignment	    "top"
-		    Interpreter		    "rich"
-		    ZOrder		    -1
-		    }
-		    Annotation {
-		    SID			    "372"
-		    Name		    "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<"
-		    "html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n"
-		    "</style></head><body style=\" font-family:'Arial'; font-size:10px; font-weight:400; font-style:normal;\">\n<p st"
-		    "yle=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px"
-		    ";\"><span style=\" font-size:12px; font-weight:600;\">Outside stick slip region</span></p></body></html>"
-		    Position		    [487, 274, 626, 291]
-		    InternalMargins	    [0, 0, 0, 0]
-		    FixedHeight		    off
-		    FixedWidth		    off
-		    HorizontalAlignment	    "left"
-		    VerticalAlignment	    "top"
-		    Interpreter		    "rich"
-		    ZOrder		    -2
-		    }
-		  }
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Load Inertia after gear"
-		  SID			  "449"
-		  Position		  [490, 37, 570, 73]
-		  ZOrder		  64
-		  Gain			  "J/n^2"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Motor viscous friction"
-		  SID			  "375"
-		  Position		  [275, 167, 355, 203]
-		  ZOrder		  56
-		  Gain			  "motor.d"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Scope
-		  Name			  "Scope"
-		  SID			  "376"
-		  Ports			  [2]
-		  Position		  [715, 171, 745, 204]
-		  ZOrder		  62
-		  Floating		  off
-		  Location		  [427, 445, 987, 865]
-		  Open			  off
-		  NumInputPorts		  "2"
-		  List {
-		    ListType		    AxesTitles
-		    axes1		    "%<SignalLabel>"
-		    axes2		    "%<SignalLabel>"
-		  }
-		  List {
-		    ListType		    ScopeGraphics
-		    FigureColor		    "[0.5 0.5 0.5]"
-		    AxesColor		    "[0 0 0]"
-		    AxesTickColor	    "[1 1 1]"
-		    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-		    LineStyles		    "-|-|-|-|-|-"
-		    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-		    MarkerStyles	    "none|none|none|none|none|none"
-		  }
-		  ShowLegends		  off
-		  YMin			  "-0.00177~-0.00177"
-		  YMax			  "0.00177~0.00177"
-		  SaveName		  "ScopeData1"
-		  DataFormat		  "StructureWithTime"
-		  LimitDataPoints	  off
-		  ScrollMode		  off
-		}
-		Block {
-		  BlockType		  Switch
-		  Name			  "Switch"
-		  SID			  "377"
-		  Position		  [520, 195, 570, 235]
-		  ZOrder		  58
-		  Criteria		  "u2 > Threshold"
-		  InputSameDT		  off
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Torque out"
-		  SID			  "378"
-		  Position		  [835, 128, 865, 142]
-		  ZOrder		  49
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  ZOrder		  2
-		  SrcBlock		  "Add"
-		  SrcPort		  1
-		  DstBlock		  "Torque out"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  4
-		  SrcBlock		  "Ang velocity in"
-		  SrcPort		  1
-		  Points		  [94, 0]
-		  Branch {
-		    ZOrder		    5
-		    Points		    [0, 170]
-		    DstBlock		    "Karnop friction1"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    6
-		    DstBlock		    "Motor viscous friction"
-		    DstPort		    1
-		  }
-		}
-		Line {
-		  ZOrder		  7
-		  SrcBlock		  "Motor viscous friction"
-		  SrcPort		  1
-		  Points		  [99, 0; 0, 45]
-		  DstBlock		  "Switch"
-		  DstPort		  3
-		}
-		Line {
-		  ZOrder		  8
-		  SrcBlock		  "Karnop friction1"
-		  SrcPort		  1
-		  Points		  [38, 0; 0, -137]
-		  Branch {
-		    ZOrder		    9
-		    Points		    [0, -68]
-		    DstBlock		    "Switch"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    10
-		    Points		    [184, 0; 0, -73]
-		    DstBlock		    "Scope"
-		    DstPort		    2
-		  }
-		}
-		Line {
-		  ZOrder		  11
-		  SrcBlock		  "Switch"
-		  SrcPort		  1
-		  Points		  [33, 0; 0, -30]
-		  Branch {
-		    ZOrder		    12
-		    Points		    [0, -45]
-		    DstBlock		    "Add"
-		    DstPort		    2
-		  }
-		  Branch {
-		    ZOrder		    13
-		    Points		    [92, 0]
-		    DstBlock		    "Scope"
-		    DstPort		    1
-		  }
-		}
-		Line {
-		  ZOrder		  14
-		  SrcBlock		  "Enable Karnop"
-		  SrcPort		  1
-		  Points		  [7, 0; 0, -35]
-		  DstBlock		  "Switch"
-		  DstPort		  2
-		}
-		Line {
-		  ZOrder		  15
-		  SrcBlock		  "Applied torque"
-		  SrcPort		  1
-		  DstBlock		  "Karnop friction1"
-		  DstPort		  2
-		}
-		Line {
-		  ZOrder		  17
-		  SrcBlock		  "Acc in"
-		  SrcPort		  1
-		  DstBlock		  "Load Inertia after gear"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  19
-		  SrcBlock		  "Load Inertia after gear"
-		  SrcPort		  1
-		  Points		  [35, 0; 0, 70]
-		  DstBlock		  "Add"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "Motor"
-	      SID		      "379"
-	      Ports		      [2, 5]
-	      Position		      [20, 38, 185, 112]
-	      ZOrder		      -2
-	      Commented		      "on"
-	      RequestExecContextInheritance off
-	      System {
-		Name			"Motor"
-		Location		[-8, -8, 1928, 1048]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"A4"
-		PaperUnits		"centimeters"
-		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"125"
-		Block {
-		  BlockType		  Inport
-		  Name			  "Voltage"
-		  SID			  "380"
-		  Position		  [20, 38, 60, 52]
-		  ZOrder		  30
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "M External\n"
-		  SID			  "381"
-		  Position		  [725, 488, 755, 502]
-		  ZOrder		  41
-		  BlockMirror		  on
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Add"
-		  SID			  "382"
-		  Ports			  [3, 1]
-		  Position		  [225, 26, 265, 144]
-		  ZOrder		  21
-		  Inputs		  "+--"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Current constant"
-		  SID			  "383"
-		  Position		  [520, 267, 570, 313]
-		  ZOrder		  40
-		  BlockMirror		  on
-		  Gain			  "motor.k"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Gain3"
-		  SID			  "384"
-		  Position		  [85, 59, 140, 111]
-		  ZOrder		  26
-		  Gain			  "motor.k"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Inductance in motor"
-		  SID			  "385"
-		  Position		  [325, 27, 400, 93]
-		  ZOrder		  20
-		  Gain			  "1/motor.L"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		  Port {
-		    PortNumber		    1
-		    Name		    "i_dot"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		  }
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Inertia of motor"
-		  SID			  "386"
-		  Position		  [330, 284, 395, 336]
-		  ZOrder		  38
-		  BlockMirror		  on
-		  Gain			  "1/motor.J"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		  Port {
-		    PortNumber		    1
-		    Name		    "Ang acc"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		  }
-		}
-		Block {
-		  BlockType		  Integrator
-		  Name			  "Integrator"
-		  SID			  "387"
-		  Ports			  [1, 1]
-		  Position		  [520, 27, 560, 93]
-		  ZOrder		  18
-		  Port {
-		    PortNumber		    1
-		    Name		    "x1, i\n"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		  }
-		}
-		Block {
-		  BlockType		  Integrator
-		  Name			  "Integrator1"
-		  SID			  "388"
-		  Ports			  [1, 1]
-		  Position		  [245, 289, 275, 331]
-		  ZOrder		  37
-		  BlockMirror		  on
-		  Port {
-		    PortNumber		    1
-		    Name		    "Angular velocity"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		  }
-		}
-		Block {
-		  BlockType		  Integrator
-		  Name			  "Integrator2"
-		  SID			  "389"
-		  Ports			  [1, 1]
-		  Position		  [245, 474, 275, 516]
-		  ZOrder		  43
-		  Port {
-		    PortNumber		    1
-		    Name		    "Position"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		  }
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Resistance in motor"
-		  SID			  "390"
-		  Position		  [325, 137, 400, 203]
-		  ZOrder		  23
-		  BlockMirror		  on
-		  Gain			  "motor.R"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Supplied current and ext M\n"
-		  SID			  "391"
-		  Ports			  [2, 1]
-		  Position		  [435, 268, 475, 352]
-		  ZOrder		  39
-		  BlockMirror		  on
-		  Inputs		  "+-"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Torque Output"
-		  SID			  "392"
-		  Position		  [660, 238, 690, 252]
-		  ZOrder		  45
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Current"
-		  SID			  "393"
-		  Position		  [685, 53, 715, 67]
-		  ZOrder		  31
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Position"
-		  SID			  "394"
-		  Position		  [350, 488, 380, 502]
-		  ZOrder		  44
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Speed"
-		  SID			  "395"
-		  Position		  [350, 443, 380, 457]
-		  ZOrder		  32
-		  Port			  "4"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Acceleration"
-		  SID			  "396"
-		  Position		  [350, 388, 380, 402]
-		  ZOrder		  42
-		  Port			  "5"
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  ZOrder		  1
-		  SrcBlock		  "Voltage"
-		  SrcPort		  1
-		  DstBlock		  "Add"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  2
-		  SrcBlock		  "Add"
-		  SrcPort		  1
-		  Points		  [25, 0; 0, -25]
-		  DstBlock		  "Inductance in motor"
-		  DstPort		  1
-		}
-		Line {
-		  Name			  "i_dot"
-		  ZOrder		  3
-		  Labels		  [1, 1]
-		  SrcBlock		  "Inductance in motor"
-		  SrcPort		  1
-		  DstBlock		  "Integrator"
-		  DstPort		  1
-		}
-		Line {
-		  Name			  "x1, i\n"
-		  ZOrder		  4
-		  Labels		  [1, 1]
-		  SrcBlock		  "Integrator"
-		  SrcPort		  1
-		  Points		  [22, 0]
-		  Branch {
-		    ZOrder		    5
-		    Points		    [0, 110]
-		    Branch {
-		    ZOrder		    6
-		    Points		    [0, 120]
-		    DstBlock		    "Current constant"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    7
-		    DstBlock		    "Resistance in motor"
-		    DstPort		    1
-		    }
-		  }
-		  Branch {
-		    ZOrder		    8
-		    Labels		    [1, 1]
-		    DstBlock		    "Current"
-		    DstPort		    1
-		  }
-		}
-		Line {
-		  ZOrder		  9
-		  SrcBlock		  "Resistance in motor"
-		  SrcPort		  1
-		  Points		  [-133, 0; 0, -45]
-		  DstBlock		  "Add"
-		  DstPort		  3
-		}
-		Line {
-		  ZOrder		  10
-		  SrcBlock		  "Gain3"
-		  SrcPort		  1
-		  DstBlock		  "Add"
-		  DstPort		  2
-		}
-		Line {
-		  Name			  "Angular velocity"
-		  ZOrder		  11
-		  SrcBlock		  "Integrator1"
-		  SrcPort		  1
-		  Points		  [-13, 0]
-		  Branch {
-		    ZOrder		    12
-		    Points		    [0, 140]
-		    DstBlock		    "Speed"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    13
-		    Labels		    [1, 1]
-		    Points		    [-75, 0]
-		    Branch {
-		    ZOrder		    14
-		    Points		    [0, 185]
-		    DstBlock		    "Integrator2"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    15
-		    Points		    [-82, 0]
-		    DstBlock		    "Gain3"
-		    DstPort		    1
-		    }
-		  }
-		}
-		Line {
-		  ZOrder		  16
-		  SrcBlock		  "Supplied current and ext M\n"
-		  SrcPort		  1
-		  DstBlock		  "Inertia of motor"
-		  DstPort		  1
-		}
-		Line {
-		  Name			  "Ang acc"
-		  ZOrder		  17
-		  SrcBlock		  "Inertia of motor"
-		  SrcPort		  1
-		  Points		  [-18, 0]
-		  Branch {
-		    ZOrder		    18
-		    Points		    [0, 85]
-		    DstBlock		    "Acceleration"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    19
-		    Labels		    [1, 1]
-		    DstBlock		    "Integrator1"
-		    DstPort		    1
-		  }
-		}
-		Line {
-		  ZOrder		  20
-		  SrcBlock		  "Current constant"
-		  SrcPort		  1
-		  Points		  [-16, 0]
-		  Branch {
-		    ZOrder		    21
-		    Points		    [0, -45]
-		    DstBlock		    "Torque Output"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    22
-		    DstBlock		    "Supplied current and ext M\n"
-		    DstPort		    1
-		  }
-		}
-		Line {
-		  ZOrder		  23
-		  SrcBlock		  "M External\n"
-		  SrcPort		  1
-		  Points		  [-102, 0; 0, -165]
-		  DstBlock		  "Supplied current and ext M\n"
-		  DstPort		  2
-		}
-		Line {
-		  Name			  "Position"
-		  ZOrder		  24
-		  Labels		  [1, 1]
-		  SrcBlock		  "Integrator2"
-		  SrcPort		  1
-		  DstBlock		  "Position"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Position"
-	      SID		      "399"
-	      Position		      [1085, 128, 1115, 142]
-	      ZOrder		      51
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Speed"
-	      SID		      "400"
-	      Position		      [1085, 173, 1115, 187]
-	      ZOrder		      50
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Acceleration"
-	      SID		      "401"
-	      Position		      [1085, 213, 1115, 227]
-	      ZOrder		      53
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      51
-	      SrcBlock		      "DC motor model"
-	      SrcPort		      1
-	      Points		      [123, 0; 0, 135]
-	      Branch {
-		ZOrder			67
-		Points			[0, 145]
-		DstBlock		"Inertia and resistance model\n"
-		DstPort			2
-	      }
-	      Branch {
-		ZOrder			63
-		DstBlock		"Speed"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      ZOrder		      53
-	      SrcBlock		      "DC motor model"
-	      SrcPort		      3
-	      DstBlock		      "Position"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      47
-	      SrcBlock		      "In1"
-	      SrcPort		      1
-	      DstBlock		      "DC motor model"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      49
-	      SrcBlock		      "DC motor model"
-	      SrcPort		      2
-	      Points		      [90, 0; 0, 130]
-	      Branch {
-		ZOrder			68
-		Points			[0, 60]
-		DstBlock		"Inertia and resistance model\n"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			45
-		DstBlock		"Acceleration"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      ZOrder		      77
-	      SrcBlock		      "Inertia and resistance model\n"
-	      SrcPort		      1
-	      Points		      [-95, 0]
-	      DstBlock		      "DC motor model"
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      60
-	      SrcBlock		      "DC motor model"
-	      SrcPort		      4
-	      Points		      [56, 0; 0, 190]
-	      DstBlock		      "Inertia and resistance model\n"
-	      DstPort		      3
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Gearbox"
-	  SID			  "402"
-	  Ports			  [4, 4]
-	  Position		  [775, 239, 980, 426]
-	  ZOrder		  90
-	  RequestExecContextInheritance	off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Torque"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    2
-	    Name		    "Position"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "Velocity"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    4
-	    Name		    "Acceleration"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  System {
-	    Name		    "Gearbox"
-	    Location		    [-7, -7, 1735, 1119]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "A4"
-	    PaperUnits		    "centimeters"
-	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "175"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Torque in"
-	      SID		      "403"
-	      Position		      [20, 33, 50, 47]
-	      ZOrder		      67
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Angular \npostiion in"
-	      SID		      "404"
-	      Position		      [20, 128, 50, 142]
-	      ZOrder		      75
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Angular \nvelocity in"
-	      SID		      "405"
-	      Position		      [20, 228, 50, 242]
-	      ZOrder		      68
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Angular \nacceleration in"
-	      SID		      "406"
-	      Position		      [20, 338, 50, 352]
-	      ZOrder		      72
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "1/n"
-	      SID		      "407"
-	      Position		      [105, 212, 150, 258]
-	      ZOrder		      65
-	      Gain		      "1/n"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "1/n1"
-	      SID		      "408"
-	      Position		      [105, 322, 150, 368]
-	      ZOrder		      71
-	      Gain		      "1/n"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "1/n2"
-	      SID		      "409"
-	      Position		      [105, 112, 150, 158]
-	      ZOrder		      74
-	      Gain		      "1/n"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "n"
-	      SID		      "410"
-	      Position		      [105, 17, 145, 63]
-	      ZOrder		      66
-	      Gain		      "n"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Torque out"
-	      SID		      "411"
-	      Position		      [200, 33, 230, 47]
-	      ZOrder		      69
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Angular \nposition out"
-	      SID		      "412"
-	      Position		      [200, 128, 230, 142]
-	      ZOrder		      76
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Angular \nvelocity out"
-	      SID		      "413"
-	      Position		      [200, 228, 230, 242]
-	      ZOrder		      70
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Angular \nacceleration out"
-	      SID		      "414"
-	      Position		      [200, 338, 230, 352]
-	      ZOrder		      73
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "1/n"
-	      SrcPort		      1
-	      DstBlock		      "Angular \nvelocity out"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      2
-	      SrcBlock		      "Angular \nvelocity in"
-	      SrcPort		      1
-	      DstBlock		      "1/n"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "n"
-	      SrcPort		      1
-	      DstBlock		      "Torque out"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "Torque in"
-	      SrcPort		      1
-	      DstBlock		      "n"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "1/n1"
-	      SrcPort		      1
-	      DstBlock		      "Angular \nacceleration out"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      6
-	      SrcBlock		      "Angular \nacceleration in"
-	      SrcPort		      1
-	      DstBlock		      "1/n1"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "1/n2"
-	      SrcPort		      1
-	      DstBlock		      "Angular \nposition out"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      8
-	      SrcBlock		      "Angular \npostiion in"
-	      SrcPort		      1
-	      DstBlock		      "1/n2"
-	      DstPort		      1
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out1"
-	  SID			  "417"
-	  Position		  [685, 153, 715, 167]
-	  ZOrder		  92
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out2"
-	  SID			  "418"
-	  Position		  [1170, 243, 1200, 257]
-	  ZOrder		  93
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out3"
-	  SID			  "419"
-	  Position		  [1135, 293, 1165, 307]
-	  ZOrder		  94
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out4"
-	  SID			  "420"
-	  Position		  [1205, 328, 1235, 342]
-	  ZOrder		  95
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out5"
-	  SID			  "421"
-	  Position		  [1170, 393, 1200, 407]
-	  ZOrder		  96
-	  Port			  "5"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  Name			  "Velocity -n"
-	  ZOrder		  70
-	  Labels		  [4, 0]
-	  SrcBlock		  "Dc motor with friction"
-	  SrcPort		  2
-	  Points		  [44, 0; 0, 14; 49, 0; 0, 31]
-	  DstBlock		  "Gearbox"
-	  DstPort		  3
-	}
-	Line {
-	  Name			  "Torque -n"
-	  ZOrder		  71
-	  Labels		  [1, 1]
-	  Points		  [580, 265]
-	  DstBlock		  "Gearbox"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Acceleration -n"
-	  ZOrder		  73
-	  Labels		  [2, 0]
-	  SrcBlock		  "Dc motor with friction"
-	  SrcPort		  3
-	  Points		  [93, 0; 0, 10]
-	  DstBlock		  "Gearbox"
-	  DstPort		  4
-	}
-	Line {
-	  Name			  "Position -n"
-	  ZOrder		  74
-	  Labels		  [2, 1]
-	  SrcBlock		  "Dc motor with friction"
-	  SrcPort		  1
-	  Points		  [93, 0; 0, 80]
-	  DstBlock		  "Gearbox"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  105
-	  SrcBlock		  "In1"
-	  SrcPort		  1
-	  DstBlock		  "Dc motor with friction"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Torque"
-	  ZOrder		  107
-	  Labels		  [0, 0]
-	  SrcBlock		  "Gearbox"
-	  SrcPort		  1
-	  Points		  [90, 0; 0, -15]
-	  DstBlock		  "Out2"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Current"
-	  ZOrder		  106
-	  Labels		  [0, 0]
-	  Points		  [580, 220; 53, 0; 0, -60]
-	  DstBlock		  "Out1"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Position"
-	  ZOrder		  108
-	  Labels		  [0, 0]
-	  SrcBlock		  "Gearbox"
-	  SrcPort		  2
-	  Points		  [73, 0; 0, -10]
-	  DstBlock		  "Out3"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Acceleration"
-	  ZOrder		  110
-	  Labels		  [0, 0]
-	  SrcBlock		  "Gearbox"
-	  SrcPort		  4
-	  DstBlock		  "Out5"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Velocity"
-	  ZOrder		  109
-	  Labels		  [0, 0]
-	  SrcBlock		  "Gearbox"
-	  SrcPort		  3
-	  Points		  [108, 0; 0, -20]
-	  DstBlock		  "Out4"
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
       BlockType		      SubSystem
       Name		      "Motor"
-      SID		      "498"
-      Ports		      [1, 4]
-      Position		      [320, 571, 605, 689]
-      ZOrder		      124
-      Commented		      "on"
+      SID		      "704"
+      Ports		      [1, 2]
+      Position		      [1025, 625, 1205, 725]
+      ZOrder		      239
       RequestExecContextInheritance off
       System {
 	Name			"Motor"
-	Location		[-8, -8, 1928, 1048]
+	Location		[1912, -8, 3848, 1048]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3224,20 +1343,18 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "In1"
-	  SID			  "499"
-	  Position		  [20, 20, 50, 35]
-	  ZOrder		  123
-	  BlockRotation		  270
-	  BlockMirror		  on
+	  SID			  "705"
+	  Position		  [20, 23, 50, 37]
+	  ZOrder		  214
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Gain
 	  Name			  "1/J"
-	  SID			  "473"
-	  Position		  [530, 289, 580, 331]
-	  ZOrder		  112
-	  Gain			  "1/motor.J"
+	  SID			  "706"
+	  Position		  [665, 59, 715, 101]
+	  ZOrder		  205
+	  Gain			  "1/Jtot"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
@@ -3245,10 +1362,10 @@ Model {
 	Block {
 	  BlockType		  Sum
 	  Name			  "Add"
-	  SID			  "474"
+	  SID			  "707"
 	  Ports			  [2, 1]
-	  Position		  [305, 256, 345, 329]
-	  ZOrder		  113
+	  Position		  [295, 26, 335, 99]
+	  ZOrder		  206
 	  Inputs		  "+-"
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -3257,10 +1374,10 @@ Model {
 	Block {
 	  BlockType		  Sum
 	  Name			  "Add1"
-	  SID			  "475"
+	  SID			  "708"
 	  Ports			  [2, 1]
-	  Position		  [455, 283, 490, 332]
-	  ZOrder		  116
+	  Position		  [495, 53, 530, 102]
+	  ZOrder		  209
 	  Inputs		  "+-"
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -3269,9 +1386,9 @@ Model {
 	Block {
 	  BlockType		  Gain
 	  Name			  "Gain1"
-	  SID			  "476"
-	  Position		  [410, 429, 460, 471]
-	  ZOrder		  114
+	  SID			  "709"
+	  Position		  [545, 154, 595, 196]
+	  ZOrder		  207
 	  BlockMirror		  on
 	  Gain			  "motor.k"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -3279,16 +1396,33 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator"
+	  SID			  "710"
+	  Ports			  [1, 1]
+	  Position		  [775, 62, 810, 98]
+	  ZOrder		  204
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator1"
+	  SID			  "711"
+	  Ports			  [1, 1]
+	  Position		  [995, 62, 1030, 98]
+	  ZOrder		  210
+	}
+	Block {
 	  BlockType		  SubSystem
-	  Name			  "Gearbox"
-	  SID			  "484"
-	  Ports			  [4, 4]
-	  Position		  [1085, 219, 1290, 406]
-	  ZOrder		  122
+	  Name			  "Karnop friction1"
+	  SID			  "712"
+	  Ports			  [1, 1]
+	  Position		  [590, 321, 795, 509]
+	  ZOrder		  213
+	  BlockMirror		  on
 	  RequestExecContextInheritance	off
 	  System {
-	    Name		    "Gearbox"
-	    Location		    [-8, -8, 1928, 1048]
+	    Name		    "Karnop friction1"
+	    Location		    [1912, -8, 3848, 1048]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3300,213 +1434,448 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "175"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Torque in"
-	      SID		      "485"
-	      Position		      [20, 33, 50, 47]
-	      ZOrder		      67
+	      Name		      "Angular \nvelcoity"
+	      SID		      "713"
+	      Position		      [20, 200, 80, 230]
+	      ZOrder		      83
 	      IconDisplay	      "Port number"
+	      Port {
+		PortNumber		1
+		Name			"Velocity"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
-	      BlockType		      Inport
-	      Name		      "Angular \npostiion in"
-	      SID		      "486"
-	      Position		      [20, 128, 50, 142]
-	      ZOrder		      75
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Angular \nvelocity in"
-	      SID		      "487"
-	      Position		      [20, 228, 50, 242]
-	      ZOrder		      68
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Angular \nacceleration in"
-	      SID		      "488"
-	      Position		      [20, 338, 50, 352]
-	      ZOrder		      72
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "1/n"
-	      SID		      "489"
-	      Position		      [105, 212, 150, 258]
-	      ZOrder		      65
-	      Gain		      "1/n"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      BlockType		      Abs
+	      Name		      "Abs"
+	      SID		      "714"
+	      Position		      [435, 200, 465, 230]
+	      ZOrder		      80
 	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
-	      BlockType		      Gain
-	      Name		      "1/n1"
-	      SID		      "490"
-	      Position		      [105, 322, 150, 368]
-	      ZOrder		      71
-	      Gain		      "1/n"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      BlockType		      Sum
+	      Name		      "Add"
+	      SID		      "715"
+	      Ports		      [2, 1]
+	      Position		      [760, 367, 790, 398]
+	      ZOrder		      77
+	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"Viscous region"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
-	      BlockType		      Gain
-	      Name		      "1/n2"
-	      SID		      "491"
-	      Position		      [105, 112, 150, 158]
-	      ZOrder		      74
-	      Gain		      "1/n"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "716"
+	      Position		      [235, 40, 265, 70]
+	      ZOrder		      88
+	      Value		      "F_c"
 	    }
 	    Block {
-	      BlockType		      Gain
-	      Name		      "n"
-	      SID		      "492"
-	      Position		      [105, 17, 145, 63]
-	      ZOrder		      66
-	      Gain		      "n"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      SID		      "717"
+	      Position		      [235, 120, 265, 150]
+	      ZOrder		      90
+	      Value		      "0"
 	    }
 	    Block {
-	      BlockType		      Outport
-	      Name		      "Torque out"
-	      SID		      "493"
-	      Position		      [200, 33, 230, 47]
-	      ZOrder		      69
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Angular \nposition out"
-	      SID		      "494"
-	      Position		      [200, 128, 230, 142]
+	      BlockType		      Constant
+	      Name		      "Couloumb friction"
+	      SID		      "718"
+	      Position		      [490, 372, 540, 418]
 	      ZOrder		      76
-	      Port		      "2"
-	      IconDisplay	      "Port number"
+	      Value		      "F_c"
 	    }
 	    Block {
-	      BlockType		      Outport
-	      Name		      "Angular \nvelocity out"
-	      SID		      "495"
-	      Position		      [200, 228, 230, 242]
+	      BlockType		      Product
+	      Name		      "Product"
+	      SID		      "719"
+	      Ports		      [2, 1]
+	      Position		      [650, 427, 680, 458]
+	      ZOrder		      75
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturate to Fc"
+	      SID		      "720"
+	      Ports		      [1, 1]
+	      Position		      [520, 65, 550, 95]
+	      ZOrder		      82
+	      InputPortMap	      "u0"
+	      UpperLimit	      "F_c"
+	      LowerLimit	      "-F_c"
+	      Port {
+		PortNumber		1
+		Name			"Stick slip region\n"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Scope2"
+	      SID		      "721"
+	      Ports		      [5]
+	      Position		      [1030, 306, 1060, 454]
+	      ZOrder		      87
+	      Floating		      off
+	      Location		      [1, 200, 1435, 1047]
+	      Open		      off
+	      NumInputPorts	      "5"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+		axes2			"%<SignalLabel>"
+		axes3			"%<SignalLabel>"
+		axes4			"%<SignalLabel>"
+		axes5			"%<SignalLabel>"
+	      }
+	      List {
+		ListType		ScopeGraphics
+		FigureColor		"[0.5 0.5 0.5]"
+		AxesColor		"[0 0 0]"
+		AxesTickColor		"[1 1 1]"
+		LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+		LineStyles		"-|-|-|-|-|-"
+		LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+		MarkerStyles		"none|none|none|none|none|none"
+	      }
+	      ShowLegends	      on
+	      YMin		      "-0.00177~-0.125~0.0009~-0.00177~-138.1533~-0.12501~-0.12501~-0.12501"
+	      YMax		      "0.00177~1.125~0.0011~0.00177~138.10681~0.12501~0.12501~0.12501"
+	      SaveName		      "ScopeData3"
+	      DataFormat	      "StructureWithTime"
+	      LimitDataPoints	      off
+	      ScrollMode	      off
+	    }
+	    Block {
+	      BlockType		      Signum
+	      Name		      "Sign"
+	      SID		      "722"
+	      Position		      [505, 458, 545, 502]
+	      ZOrder		      71
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      SID		      "723"
+	      Position		      [895, 195, 945, 235]
 	      ZOrder		      70
-	      Port		      "3"
-	      IconDisplay	      "Port number"
+	      Criteria		      "u2 > Threshold"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"Friction"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch1"
+	      SID		      "724"
+	      Position		      [330, 90, 380, 130]
+	      ZOrder		      89
+	      Criteria		      "u2 > Threshold"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Velocity threshold\n"
+	      SID		      "725"
+	      Ports		      [1, 1]
+	      Position		      [505, 192, 570, 238]
+	      ZOrder		      66
+	      LibraryVersion	      "1.354"
+	      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+	      SourceType	      "Compare To Constant"
+	      ContentPreviewEnabled   off
+	      relop		      "<="
+	      const		      "3.0"
+	      OutDataTypeStr	      "boolean"
+	      ZeroCross		      on
+	      Port {
+		PortNumber		1
+		Name			"Activator"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Vicous friction"
+	      SID		      "726"
+	      Position		      [510, 295, 620, 345]
+	      ZOrder		      78
+	      Gain		      "motor.d"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Angular \nacceleration out"
-	      SID		      "496"
-	      Position		      [200, 338, 230, 352]
-	      ZOrder		      73
-	      Port		      "4"
+	      Name		      "Friction"
+	      SID		      "727"
+	      Position		      [1050, 205, 1110, 225]
+	      ZOrder		      85
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      Name		      "Viscous region"
 	      ZOrder		      1
-	      SrcBlock		      "1/n"
+	      SrcBlock		      "Add"
 	      SrcPort		      1
-	      DstBlock		      "Angular \nvelocity out"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      2
-	      SrcBlock		      "Angular \nvelocity in"
-	      SrcPort		      1
-	      DstBlock		      "1/n"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "n"
-	      SrcPort		      1
-	      DstBlock		      "Torque out"
-	      DstPort		      1
+	      Points		      [48, 0]
+	      Branch {
+		ZOrder			2
+		Points			[0, 25]
+		DstBlock		"Scope2"
+		DstPort			4
+	      }
+	      Branch {
+		ZOrder			3
+		Labels			[1, 1]
+		Points			[0, -155]
+		DstBlock		"Switch"
+		DstPort			3
+	      }
 	    }
 	    Line {
 	      ZOrder		      4
-	      SrcBlock		      "Torque in"
+	      SrcBlock		      "Sign"
 	      SrcPort		      1
-	      DstBlock		      "n"
-	      DstPort		      1
+	      Points		      [54, 0; 0, -30]
+	      DstBlock		      "Product"
+	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      5
-	      SrcBlock		      "1/n1"
+	      SrcBlock		      "Couloumb friction"
 	      SrcPort		      1
-	      DstBlock		      "Angular \nacceleration out"
+	      Points		      [42, 0; 0, 40]
+	      DstBlock		      "Product"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      6
-	      SrcBlock		      "Angular \nacceleration in"
+	      SrcBlock		      "Vicous friction"
 	      SrcPort		      1
-	      DstBlock		      "1/n1"
+	      Points		      [99, 0; 0, 55]
+	      DstBlock		      "Add"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      7
-	      SrcBlock		      "1/n2"
+	      SrcBlock		      "Product"
 	      SrcPort		      1
-	      DstBlock		      "Angular \nposition out"
-	      DstPort		      1
+	      Points		      [38, 0; 0, -55]
+	      DstBlock		      "Add"
+	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      8
-	      SrcBlock		      "Angular \npostiion in"
+	      SrcBlock		      "Abs"
 	      SrcPort		      1
-	      DstBlock		      "1/n2"
+	      DstBlock		      "Velocity threshold\n"
 	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Activator"
+	      ZOrder		      9
+	      SrcBlock		      "Velocity threshold\n"
+	      SrcPort		      1
+	      Points		      [158, 0]
+	      Branch {
+		ZOrder			10
+		DstBlock		"Switch"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			11
+		Labels			[2, 1]
+		Points			[0, 135]
+		DstBlock		"Scope2"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      Name		      "Velocity"
+	      ZOrder		      12
+	      SrcBlock		      "Angular \nvelcoity"
+	      SrcPort		      1
+	      Points		      [91, 0]
+	      Branch {
+		ZOrder			13
+		Points			[0, -105]
+		DstBlock		"Switch1"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			14
+		Points			[51, 0]
+		Branch {
+		  ZOrder		  15
+		  Points		  [159, 0]
+		  Branch {
+		    ZOrder		    16
+		    Points		    [0, 105; 1, 0]
+		    Branch {
+		    ZOrder		    17
+		    Points		    [0, 160]
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Branch {
+		    ZOrder		    18
+		    DstBlock		    "Vicous friction"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    ZOrder		    19
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  ZOrder		  20
+		  Labels		  [2, 1]
+		  Points		  [0, -37; 753, 0; 0, 262]
+		  DstBlock		  "Scope2"
+		  DstPort		  5
+		}
+	      }
+	    }
+	    Line {
+	      Name		      "Friction"
+	      ZOrder		      21
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      Points		      [65, 0]
+	      Branch {
+		ZOrder			22
+		DstBlock		"Friction"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			23
+		Labels			[1, 1]
+		DstBlock		"Scope2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "Stick slip region\n"
+	      ZOrder		      24
+	      SrcBlock		      "Saturate to Fc"
+	      SrcPort		      1
+	      Points		      [181, 0; 0, 120; 119, 0]
+	      Branch {
+		ZOrder			25
+		DstBlock		"Switch"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			26
+		Labels			[2, 1]
+		Points			[0, 180]
+		DstBlock		"Scope2"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      ZOrder		      27
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [58, 0; 0, 25; -13, 0]
+	      DstBlock		      "Switch1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      28
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [23, 0; 0, -10]
+	      DstBlock		      "Switch1"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      29
+	      SrcBlock		      "Switch1"
+	      SrcPort		      1
+	      Points		      [59, 0; 0, -30]
+	      DstBlock		      "Saturate to Fc"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      SID		      "729"
+	      Name		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">"
+	      "\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap"
+	      "; }\n</style></head><body style=\" font-family:'Arial'; font-size:10px; font-weight:400; font-style:normal;\">\n"
+	      "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-inde"
+	      "nt:0px;\"><span style=\" font-size:12px; font-weight:600;\">Outside stick slip region</span></p></body></html>"
+	      Position		      [487, 274, 626, 291]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
+	      HorizontalAlignment     "left"
+	      VerticalAlignment	      "top"
+	      Interpreter	      "rich"
+	      ZOrder		      -1
+	    }
+	    Annotation {
+	      SID		      "728"
+	      Name		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">"
+	      "\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap"
+	      "; }\n</style></head><body style=\" font-family:'Arial'; font-size:10px; font-weight:400; font-style:normal;\">\n"
+	      "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-inde"
+	      "nt:0px;\"><span style=\" font-size:12px; font-weight:600;\">Inside stick slip region</span></p></body></html>"
+	      Position		      [467, 19, 596, 36]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
+	      HorizontalAlignment     "left"
+	      VerticalAlignment	      "top"
+	      Interpreter	      "rich"
+	      ZOrder		      -2
 	    }
 	  }
 	}
 	Block {
-	  BlockType		  Integrator
-	  Name			  "Integrator"
-	  SID			  "477"
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  SID			  "754"
 	  Ports			  [1, 1]
-	  Position		  [640, 292, 675, 328]
-	  ZOrder		  111
-	}
-	Block {
-	  BlockType		  Integrator
-	  Name			  "Integrator1"
-	  SID			  "478"
-	  Ports			  [1, 1]
-	  Position		  [860, 412, 895, 448]
-	  ZOrder		  119
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Load Inertia after gear"
-	  SID			  "604"
-	  Position		  [490, 517, 570, 553]
-	  ZOrder		  185
-	  BlockMirror		  on
-	  Gain			  "J/n^2"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
+	  Position		  [185, 15, 215, 45]
+	  ZOrder		  217
+	  InputPortMap		  "u0"
+	  UpperLimit		  "24"
+	  LowerLimit		  "-24"
 	}
 	Block {
 	  BlockType		  Gain
 	  Name			  "k/R\n"
-	  SID			  "479"
-	  Position		  [365, 274, 420, 316]
-	  ZOrder		  115
+	  SID			  "730"
+	  Position		  [355, 31, 445, 99]
+	  ZOrder		  208
 	  Gain			  "motor.k/motor.R"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -3514,222 +1883,367 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "Angular velocity output\n2"
-	  SID			  "588"
-	  Position		  [1455, 333, 1485, 347]
-	  ZOrder		  176
+	  Name			  "Position"
+	  SID			  "731"
+	  Position		  [1085, 73, 1115, 87]
+	  ZOrder		  215
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "Torque\n1"
-	  SID			  "589"
-	  Position		  [1530, 218, 1560, 232]
-	  ZOrder		  177
+	  Name			  "Velocity"
+	  SID			  "732"
+	  Position		  [1270, 193, 1300, 207]
+	  ZOrder		  216
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Position1"
-	  SID			  "590"
-	  Position		  [1545, 288, 1575, 302]
-	  ZOrder		  178
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Angular acceleration\n1"
-	  SID			  "591"
-	  Position		  [1495, 368, 1525, 382]
-	  ZOrder		  179
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
 	Line {
-	  ZOrder		  165
-	  SrcBlock		  "Integrator1"
+	  ZOrder		  16
+	  SrcBlock		  "In1"
 	  SrcPort		  1
-	  Points		  [155, 0; 0, -140]
-	  DstBlock		  "Gearbox"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  146
-	  SrcBlock		  "Add"
-	  SrcPort		  1
-	  DstBlock		  "k/R\n"
+	  DstBlock		  "Saturation"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  147
+	  ZOrder		  2
+	  SrcBlock		  "Add1"
+	  SrcPort		  1
+	  DstBlock		  "1/J"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "Karnop friction1"
+	  SrcPort		  1
+	  Points		  [-104, 0; 0, -325]
+	  DstBlock		  "Add1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Integrator1"
+	  SrcPort		  1
+	  DstBlock		  "Position"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Integrator"
+	  SrcPort		  1
+	  Points		  [58, 0]
+	  Branch {
+	    ZOrder		    6
+	    Points		    [0, 90]
+	    Branch {
+	      ZOrder		      7
+	      Points		      [0, 245]
+	      DstBlock		      "Karnop friction1"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      8
+	      Points		      [-145, 0; 0, 5]
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    ZOrder		    9
+	    Points		    [38, 0]
+	    Branch {
+	      ZOrder		      10
+	      Points		      [0, 131; 85, 0; 0, -11]
+	      DstBlock		      "Velocity"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      11
+	      DstBlock		      "Integrator1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  ZOrder		  12
+	  SrcBlock		  "1/J"
+	  SrcPort		  1
+	  DstBlock		  "Integrator"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  13
 	  SrcBlock		  "k/R\n"
 	  SrcPort		  1
 	  DstBlock		  "Add1"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  153
-	  SrcBlock		  "1/J"
+	  ZOrder		  14
+	  SrcBlock		  "Add"
 	  SrcPort		  1
-	  Points		  [12, 0]
-	  Branch {
-	    ZOrder		    319
-	    Points		    [0, 225]
-	    DstBlock		    "Load Inertia after gear"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    318
-	    Points		    [16, 0]
-	    Branch {
-	      ZOrder		      152
-	      Points		      [0, -60; 149, 0; 0, 130]
-	      DstBlock		      "Gearbox"
-	      DstPort		      4
-	    }
-	    Branch {
-	      ZOrder		      151
-	      DstBlock		      "Integrator"
-	      DstPort		      1
-	    }
-	  }
+	  DstBlock		  "k/R\n"
+	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  150
-	  SrcBlock		  "Add1"
-	  SrcPort		  1
-	  Points		  [10, 0]
-	  Branch {
-	    ZOrder		    171
-	    Points		    [0, -105; 524, 0; 0, 40]
-	    DstBlock		    "Gearbox"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    148
-	    DstBlock		    "1/J"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  322
+	  ZOrder		  15
 	  SrcBlock		  "Gain1"
 	  SrcPort		  1
-	  Points		  [-114, 0; 0, -140]
+	  Points		  [-260, 0]
 	  DstBlock		  "Add"
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  158
-	  SrcBlock		  "Integrator"
+	  ZOrder		  17
+	  SrcBlock		  "Saturation"
 	  SrcPort		  1
-	  Points		  [14, 0]
-	  Branch {
-	    ZOrder		    166
-	    Points		    [11, 0; 0, 25]
-	    DstBlock		    "Gearbox"
-	    DstPort		    3
-	  }
-	  Branch {
-	    ZOrder		    157
-	    Points		    [0, 120]
-	    Branch {
-	      ZOrder		      156
-	      DstBlock		      "Integrator1"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      155
-	      Points		      [0, 20]
-	      DstBlock		      "Gain1"
-	      DstPort		      1
-	    }
-	  }
-	}
-	Line {
-	  ZOrder		  278
-	  SrcBlock		  "In1"
-	  SrcPort		  1
-	  Points		  [0, 235]
+	  Points		  [35, 0; 0, 15]
 	  DstBlock		  "Add"
 	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  288
-	  SrcBlock		  "Gearbox"
-	  SrcPort		  4
-	  Points		  [98, 0; 0, -5]
-	  DstBlock		  "Angular acceleration\n1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  287
-	  SrcBlock		  "Gearbox"
-	  SrcPort		  3
-	  Points		  [78, 0; 0, 5]
-	  DstBlock		  "Angular velocity output\n2"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  286
-	  SrcBlock		  "Gearbox"
-	  SrcPort		  2
-	  Points		  [123, 0; 0, 5]
-	  DstBlock		  "Position1"
-	  DstPort		  1
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  285
-	  SrcBlock		  "Gearbox"
-	  SrcPort		  1
-	  Points		  [115, 0; 0, -20]
-	  DstBlock		  "Torque\n1"
-	  DstPort		  1
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  320
-	  SrcBlock		  "Load Inertia after gear"
-	  SrcPort		  1
-	  Points		  [-81, 0; 0, -215]
-	  DstBlock		  "Add1"
-	  DstPort		  2
 	}
       }
     }
     Block {
-      BlockType		      Gain
-      Name		      "Motor viscous friction"
-      SID		      "631"
-      Position		      [825, 337, 905, 373]
-      ZOrder		      189
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      Gain		      "motor.d"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      BlockType		      Reference
+      Name		      "PID Model "
+      SID		      "744"
+      Ports		      [1, 1]
+      Position		      [740, 657, 780, 693]
+      ZOrder		      247
+      LibraryVersion	      "1.354"
+      SourceBlock	      "simulink/Continuous/PID Controller"
+      SourceType	      "PID 1dof"
+      ContentPreviewEnabled   off
+      Controller	      "PID"
+      TimeDomain	      "Discrete-time"
+      SampleTime	      "Ts"
+      IntegratorMethod	      "Forward Euler"
+      FilterMethod	      "Forward Euler"
+      Form		      "Parallel"
+      P			      "P"
+      I			      "I"
+      D			      "D"
+      N			      "r0"
+      InitialConditionSource  "internal"
+      InitialConditionForIntegrator "0"
+      InitialConditionForFilter	"0"
+      ExternalReset	      "none"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      LinearizeAsGain	      on
+      AntiWindupMode	      "none"
+      Kb		      "1"
+      TrackingMode	      off
+      Kt		      "1"
+      RndMeth		      "Floor"
       SaturateOnIntegerOverflow	off
+      LockScale		      off
+      PParamMin		      "[]"
+      PParamMax		      "[]"
+      PParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      IParamMin		      "[]"
+      IParamMax		      "[]"
+      IParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      DParamMin		      "[]"
+      DParamMax		      "[]"
+      DParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      NParamMin		      "[]"
+      NParamMax		      "[]"
+      NParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      KbParamMin	      "[]"
+      KbParamMax	      "[]"
+      KbParamDataTypeStr      "Inherit: Inherit via internal rule"
+      KtParamMin	      "[]"
+      KtParamMax	      "[]"
+      KtParamDataTypeStr      "Inherit: Inherit via internal rule"
+      POutMin		      "[]"
+      POutMax		      "[]"
+      POutDataTypeStr	      "Inherit: Inherit via internal rule"
+      IOutMin		      "[]"
+      IOutMax		      "[]"
+      IOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      DOutMin		      "[]"
+      DOutMax		      "[]"
+      DOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      NOutMin		      "[]"
+      NOutMax		      "[]"
+      NOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      KbOutMin		      "[]"
+      KbOutMax		      "[]"
+      KbOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      KtOutMin		      "[]"
+      KtOutMax		      "[]"
+      KtOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      IntegratorOutMin	      "[]"
+      IntegratorOutMax	      "[]"
+      IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+      FilterOutMin	      "[]"
+      FilterOutMax	      "[]"
+      FilterOutDataTypeStr    "Inherit: Inherit via internal rule"
+      SumOutMin		      "[]"
+      SumOutMax		      "[]"
+      SumOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SumI1OutMin	      "[]"
+      SumI1OutMax	      "[]"
+      SumI1OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI2OutMin	      "[]"
+      SumI2OutMax	      "[]"
+      SumI2OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI3OutMin	      "[]"
+      SumI3OutMax	      "[]"
+      SumI3OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumDOutMin	      "[]"
+      SumDOutMax	      "[]"
+      SumDOutDataTypeStr      "Inherit: Inherit via internal rule"
+      SumAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI1AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumI2AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumI3AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumDAccumDataTypeStr    "Inherit: Inherit via internal rule"
+      SaturationOutMin	      "[]"
+      SaturationOutMax	      "[]"
+      SaturationOutDataTypeStr "Inherit: Same as input"
+      IntegratorContinuousStateAttributes "''"
+      IntegratorStateMustResolveToSignalObject off
+      IntegratorRTWStateStorageClass "Auto"
+      FilterContinuousStateAttributes "''"
+      FilterStateMustResolveToSignalObject off
+      FilterRTWStateStorageClass "Auto"
+      DifferentiatorICPrevScaledInput "0"
+      DifferentiatorOutMin    "[]"
+      DifferentiatorOutMax    "[]"
+      DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
+      UseFilter		      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PID Real"
+      SID		      "745"
+      Ports		      [1, 1]
+      Position		      [600, 77, 640, 113]
+      ZOrder		      248
+      LibraryVersion	      "1.354"
+      SourceBlock	      "simulink/Continuous/PID Controller"
+      SourceType	      "PID 1dof"
+      ContentPreviewEnabled   off
+      Controller	      "PID"
+      TimeDomain	      "Discrete-time"
+      SampleTime	      "Ts"
+      IntegratorMethod	      "Forward Euler"
+      FilterMethod	      "Forward Euler"
+      Form		      "Parallel"
+      P			      "P"
+      I			      "I"
+      D			      "D"
+      N			      "r0"
+      InitialConditionSource  "internal"
+      InitialConditionForIntegrator "0"
+      InitialConditionForFilter	"0"
+      ExternalReset	      "none"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      LinearizeAsGain	      on
+      AntiWindupMode	      "none"
+      Kb		      "1"
+      TrackingMode	      off
+      Kt		      "1"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      LockScale		      off
+      PParamMin		      "[]"
+      PParamMax		      "[]"
+      PParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      IParamMin		      "[]"
+      IParamMax		      "[]"
+      IParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      DParamMin		      "[]"
+      DParamMax		      "[]"
+      DParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      NParamMin		      "[]"
+      NParamMax		      "[]"
+      NParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      KbParamMin	      "[]"
+      KbParamMax	      "[]"
+      KbParamDataTypeStr      "Inherit: Inherit via internal rule"
+      KtParamMin	      "[]"
+      KtParamMax	      "[]"
+      KtParamDataTypeStr      "Inherit: Inherit via internal rule"
+      POutMin		      "[]"
+      POutMax		      "[]"
+      POutDataTypeStr	      "Inherit: Inherit via internal rule"
+      IOutMin		      "[]"
+      IOutMax		      "[]"
+      IOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      DOutMin		      "[]"
+      DOutMax		      "[]"
+      DOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      NOutMin		      "[]"
+      NOutMax		      "[]"
+      NOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      KbOutMin		      "[]"
+      KbOutMax		      "[]"
+      KbOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      KtOutMin		      "[]"
+      KtOutMax		      "[]"
+      KtOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      IntegratorOutMin	      "[]"
+      IntegratorOutMax	      "[]"
+      IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+      FilterOutMin	      "[]"
+      FilterOutMax	      "[]"
+      FilterOutDataTypeStr    "Inherit: Inherit via internal rule"
+      SumOutMin		      "[]"
+      SumOutMax		      "[]"
+      SumOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SumI1OutMin	      "[]"
+      SumI1OutMax	      "[]"
+      SumI1OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI2OutMin	      "[]"
+      SumI2OutMax	      "[]"
+      SumI2OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI3OutMin	      "[]"
+      SumI3OutMax	      "[]"
+      SumI3OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumDOutMin	      "[]"
+      SumDOutMax	      "[]"
+      SumDOutDataTypeStr      "Inherit: Inherit via internal rule"
+      SumAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI1AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumI2AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumI3AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumDAccumDataTypeStr    "Inherit: Inherit via internal rule"
+      SaturationOutMin	      "[]"
+      SaturationOutMax	      "[]"
+      SaturationOutDataTypeStr "Inherit: Same as input"
+      IntegratorContinuousStateAttributes "''"
+      IntegratorStateMustResolveToSignalObject off
+      IntegratorRTWStateStorageClass "Auto"
+      FilterContinuousStateAttributes "''"
+      FilterStateMustResolveToSignalObject off
+      FilterRTWStateStorageClass "Auto"
+      DifferentiatorICPrevScaledInput "0"
+      DifferentiatorOutMin    "[]"
+      DifferentiatorOutMax    "[]"
+      DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
+      UseFilter		      on
     }
     Block {
       BlockType		      SubSystem
       Name		      "PWM"
       SID		      "58"
       Ports		      [1]
-      Position		      [600, 109, 665, 171]
+      Position		      [745, 339, 810, 401]
       ZOrder		      -1
       RequestExecContextInheritance off
       System {
 	Name			"PWM"
-	Location		[-8, -8, 1928, 1048]
+	Location		[1912, -8, 3848, 1048]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3741,7 +2255,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"200"
+	ZoomFactor		"250"
 	Block {
 	  BlockType		  Inport
 	  Name			  "u1"
@@ -3878,6 +2392,12 @@ Model {
 	  InputPortMap		  "u0"
 	  UpperLimit		  "24"
 	  LowerLimit		  "-24"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Volt"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
 	}
 	Block {
 	  BlockType		  Sum
@@ -3973,13 +2493,40 @@ Model {
 	  DstPort		  2
 	}
 	Line {
+	  Name			  "Volt"
 	  ZOrder		  16
 	  SrcBlock		  "Saturation"
 	  SrcPort		  1
-	  DstBlock		  "pwm_skalning"
-	  DstPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    ZOrder		    18
+	    Labels		    [1, 1]
+	    Points		    [0, 107; -14, 0]
+	  }
+	  Branch {
+	    ZOrder		    17
+	    DstBlock		    "pwm_skalning"
+	    DstPort		    1
+	  }
 	}
       }
+    }
+    Block {
+      BlockType		      Quantizer
+      Name		      "Quantizer"
+      SID		      "702"
+      Position		      [925, 555, 955, 585]
+      ZOrder		      241
+      BlockMirror	      on
+      QuantizationInterval    "Ts"
+    }
+    Block {
+      BlockType		      Quantizer
+      Name		      "Quantizer1"
+      SID		      "741"
+      Position		      [265, 55, 295, 85]
+      ZOrder		      245
+      QuantizationInterval    "Ts"
     }
     Block {
       BlockType		      SubSystem
@@ -3988,7 +2535,7 @@ Model {
       Tag		      "struct('RTIDataServer',struct('RTIDataServerVs','2','RTIModelDescription','struct(''main'',''motor_i"
       "o'',''sub'','''',''isMp'',0)'))"
       Ports		      []
-      Position		      [15, 15, 66, 27]
+      Position		      [15, 245, 66, 257]
       ZOrder		      -2
       ForegroundColor	      "[0.501961, 0.501961, 0.501961]"
       BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
@@ -4011,7 +2558,7 @@ Model {
       RequestExecContextInheritance off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		21
+	$ObjectID		20
 	$ClassName		"Simulink.Mask"
 	Type			"RTI_DATA_HOST"
 	Description		"RTI Data Block.\nThis block is used by RTI to store internal model-dependent data.\nPlease keep this bl"
@@ -4039,26 +2586,27 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "RTI Data Store"
-	  SID			  "635"
+	  SID			  "759"
 	  Tag			  "struct('public',struct('sub',struct('name',{{'motor_io'}},'data',{{struct('TH',struct('thTaskInfo',struct("
 	  "'taskType',{'TIMER','HWINT','TMRINT','SWINT','GLINT'},'tasksNumOf',{1,0,0,0,0},'srcIds',{{'TIMERA'},{},{},{},{}},'t"
 	  "askNames',{{['Timer Task 1']},{},{},{},{}})),'th_tc',struct('dataType','TASK','taskGroupId','','taskGroupList',{{}}"
 	  ",'taskSchedulingPolicy','FCFS','taskType','TIMER','blkh',-1,'srcId','TIMERA','srcSgnName',['Timer A interrupt'],'sr"
-	  "cCpuName','','taskName',['Timer Task 1  [0.02] s'],'taskNameDisplayExt','','smplTime',0.02,'smplTimeOffs',0,'hasFix"
-	  "edPriority',0,'priority',1,'hasFixedOvc',0,'ovcType',1,'ovcMax',1),'tc_th',struct('dataType','TASK','taskGroupId','"
-	  "','taskGroupList',{{}},'taskSchedulingPolicy','FCFS','taskType','TIMER','blkh',-1,'srcId','TIMERA','srcSgnName',['T"
-	  "imer A interrupt'],'srcCpuName','','taskName',['Timer Task 1  [0.02] s'],'taskNameDisplayExt','','smplTime',0.02,'s"
-	  "mplTimeOffs',0,'hasFixedPriority',0,'priority',1,'hasFixedOvc',0,'ovcType',1,'ovcMax',1))}})),'private',struct('ver"
-	  "sion',struct('dsVer',uint32(2)),'access',struct('modified',['04-Mar-2016 16:52:32'],'type','Model','isPerm',1)))"
+	  "cCpuName','','taskName',['Timer Task 1  [0.002] s'],'taskNameDisplayExt','','smplTime',0.002,'smplTimeOffs',0,'hasF"
+	  "ixedPriority',0,'priority',1,'hasFixedOvc',0,'ovcType',1,'ovcMax',1),'tc_th',struct('dataType','TASK','taskGroupId'"
+	  ",'','taskGroupList',{{}},'taskSchedulingPolicy','FCFS','taskType','TIMER','blkh',-1,'srcId','TIMERA','srcSgnName',["
+	  "'Timer A interrupt'],'srcCpuName','','taskName',['Timer Task 1  [0.002] s'],'taskNameDisplayExt','','smplTime',0.00"
+	  "2,'smplTimeOffs',0,'hasFixedPriority',0,'priority',1,'hasFixedOvc',0,'ovcType',1,'ovcMax',1))}})),'private',struct("
+	  "'version',struct('dsVer',uint32(2)),'access',struct('modified',['06-Mar-2016 16:13:59'],'type','Model','isPerm',1))"
+	  ")"
 	  Ports			  []
 	  Position		  [146, 12, 181, 25]
-	  ZOrder		  18
+	  ZOrder		  25
 	  ForegroundColor	  "white"
 	  ShowName		  off
 	  RequestExecContextInheritance	off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    22
+	    $ObjectID		    21
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "RTI_DATA_STORE"
 	    Description		    "RTI Data Store Block. This block is used by RTI to store internal model dependent data. Deletin"
@@ -4087,16 +2635,16 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "RTI Data Store"
-	      SID		      "636"
+	      SID		      "760"
 	      Ports		      []
 	      Position		      [146, 12, 181, 25]
-	      ZOrder		      19
+	      ZOrder		      26
 	      ForegroundColor	      "white"
 	      ShowName		      off
 	      RequestExecContextInheritance off
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		23
+		$ObjectID		22
 		$ClassName		"Simulink.Mask"
 		Type			"RTI_DATA_STORE"
 		Description		"RTI Data Store Block. This block is used by RTI to store internal model dependent data. Deleting this "
@@ -4125,16 +2673,16 @@ Model {
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "RTI Data Store"
-		  SID			  "637"
+		  SID			  "761"
 		  Ports			  []
 		  Position		  [146, 12, 181, 25]
-		  ZOrder		  20
+		  ZOrder		  27
 		  ForegroundColor	  "white"
 		  ShowName		  off
 		  RequestExecContextInheritance	off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    24
+		    $ObjectID		    23
 		    $ClassName		    "Simulink.Mask"
 		    Type		    "RTI_DATA_STORE"
 		    Description		    "RTI Data Store Block. This block is used by RTI to store internal model dependent data. Deleti"
@@ -4163,16 +2711,16 @@ Model {
 		    Block {
 		    BlockType		    SubSystem
 		    Name		    "RTI Data Store"
-		    SID			    "638"
+		    SID			    "762"
 		    Ports		    []
 		    Position		    [146, 12, 181, 25]
-		    ZOrder		    21
+		    ZOrder		    28
 		    ForegroundColor	    "white"
 		    ShowName		    off
 		    RequestExecContextInheritance off
 		    Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    25
+		    $ObjectID		    24
 		    $ClassName		    "Simulink.Mask"
 		    Type		    "RTI_DATA_STORE"
 		    Description		    "RTI Data Store Block. This block is used by RTI to store internal model dependent data. Deleti"
@@ -4209,10 +2757,43 @@ Model {
       }
     }
     Block {
+      BlockType		      Scope
+      Name		      "Scope1"
+      SID		      "703"
+      Ports		      [2]
+      Position		      [1560, 624, 1610, 726]
+      ZOrder		      237
+      Floating		      off
+      Location		      [-9, 209, 1418, 1084]
+      Open		      off
+      NumInputPorts	      "2"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      YMin		      "-5e+10~-1e+12"
+      YMax		      "2e+11~3e+12"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      ScrollMode	      off
+    }
+    Block {
       BlockType		      Constant
       Name		      "SignalSelector[0Square,1Sine]"
       SID		      "116"
-      Position		      [255, 125, 285, 155]
+      Position		      [255, 355, 285, 385]
       ZOrder		      4
     }
     Block {
@@ -4220,7 +2801,7 @@ Model {
       Name		      "SinGenerator"
       SID		      "101"
       Ports		      [0, 1]
-      Position		      [280, 35, 310, 65]
+      Position		      [280, 265, 310, 295]
       ZOrder		      1
       Amplitude		      "0"
       Units		      "rad/sec"
@@ -4230,28 +2811,81 @@ Model {
       Name		      "SquareGenerator"
       SID		      "114"
       Ports		      [0, 1]
-      Position		      [270, 210, 300, 240]
+      Position		      [270, 440, 300, 470]
       ZOrder		      2
       WaveForm		      "square"
       Amplitude		      "0"
       Units		      "rad/sec"
     }
     Block {
+      BlockType		      Sum
+      Name		      "Sum1"
+      SID		      "733"
+      Ports		      [2, 1]
+      Position		      [630, 635, 650, 655]
+      ZOrder		      234
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum2"
+      SID		      "743"
+      Ports		      [2, 1]
+      Position		      [465, 60, 485, 80]
+      ZOrder		      246
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      Switch
       Name		      "Switch"
       SID		      "115"
-      Position		      [370, 120, 420, 160]
+      Position		      [370, 350, 420, 390]
       ZOrder		      3
       Criteria		      "u2 ~= 0"
       InputSameDT	      off
       SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"ref"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      ZeroOrderHold
+      Name		      "Zero-Order\nHold"
+      SID		      "736"
+      Position		      [875, 660, 910, 690]
+      ZOrder		      240
+      SampleTime	      "Ts"
+    }
+    Block {
+      BlockType		      ZeroOrderHold
+      Name		      "Zero-Order\nHold1"
+      SID		      "740"
+      Position		      [585, 210, 620, 240]
+      ZOrder		      243
+      SampleTime	      "Ts"
     }
     Block {
       BlockType		      SubSystem
       Name		      "enc I/F"
       SID		      "76"
       Ports		      [0, 2]
-      Position		      [115, 104, 165, 171]
+      Position		      [120, 19, 170, 86]
       ZOrder		      -3
       RequestExecContextInheritance off
       System {
@@ -4425,30 +3059,19 @@ Model {
       }
     }
     Block {
-      BlockType		      Gain
-      Name		      "k/R\n"
-      SID		      "612"
-      Position		      [675, 229, 730, 271]
-      ZOrder		      130
-      Gain		      "motor.k/motor.R"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
       BlockType		      Outport
-      Name		      "Pos"
-      SID		      "632"
-      Position		      [1270, 258, 1300, 272]
-      ZOrder		      190
+      Name		      "Vel1"
+      SID		      "737"
+      Position		      [1400, 753, 1430, 767]
+      ZOrder		      233
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Outport
-      Name		      "Vel"
-      SID		      "633"
-      Position		      [1260, 158, 1290, 172]
-      ZOrder		      191
+      Name		      "Pos1"
+      SID		      "738"
+      Position		      [1450, 598, 1480, 612]
+      ZOrder		      235
       Port		      "2"
       IconDisplay	      "Port number"
     }
@@ -4476,138 +3099,154 @@ Model {
       DstPort		      2
     }
     Line {
-      ZOrder		      4
-      SrcBlock		      "Switch"
-      SrcPort		      1
-      Points		      [83, 0]
-      Branch {
-	ZOrder			196
-	Points			[0, 90]
-	DstBlock		"Add"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			195
-	DstBlock		"Gain"
-	DstPort			1
-      }
-    }
-    Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
-      ZOrder		      179
-      SrcBlock		      "Gain1"
-      SrcPort		      1
-      Points		      [-120, 0]
-      DstBlock		      "Add"
-      DstPort		      2
-    }
-    Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
-      ZOrder		      180
-      SrcBlock		      "Add"
-      SrcPort		      1
-      DstBlock		      "k/R\n"
-      DstPort		      1
-    }
-    Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
-      ZOrder		      181
-      SrcBlock		      "k/R\n"
-      SrcPort		      1
-      DstBlock		      "Add1"
-      DstPort		      1
-    }
-    Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
-      ZOrder		      184
-      SrcBlock		      "Add1"
-      SrcPort		      1
-      DstBlock		      "1/J"
-      DstPort		      1
-    }
-    Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
-      ZOrder		      187
-      SrcBlock		      "1/J"
-      SrcPort		      1
-      DstBlock		      "Integrator"
-      DstPort		      1
-    }
-    Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
-      ZOrder		      192
-      SrcBlock		      "Integrator"
-      SrcPort		      1
-      Points		      [58, 0]
-      Branch {
-	ZOrder			232
-	Points			[0, 90]
-	Branch {
-	  ZOrder		  228
-	  DstBlock		  "Motor viscous friction"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  230
-	  Points		  [0, 80]
-	  DstBlock		  "Gain1"
-	  DstPort		  1
-	}
-      }
-      Branch {
-	ZOrder			190
-	Points			[38, 0]
-	Branch {
-	  ZOrder		  237
-	  Points		  [0, -100]
-	  DstBlock		  "Vel"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  235
-	  DstBlock		  "Integrator1"
-	  DstPort		  1
-	}
-      }
-    }
-    Line {
-      ZOrder		      229
-      SrcBlock		      "Motor viscous friction"
-      SrcPort		      1
-      Points		      [-90, 0; 0, -80]
-      DstBlock		      "Add1"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      234
-      SrcBlock		      "Integrator1"
-      SrcPort		      1
-      DstBlock		      "Pos"
-      DstPort		      1
-    }
-    Line {
       ZOrder		      238
       SrcBlock		      "Gain"
       SrcPort		      1
       DstBlock		      "PWM"
+      DstPort		      1
+    }
+    Line {
+      Name		      "ref"
+      ZOrder		      4
+      SrcBlock		      "Switch"
+      SrcPort		      1
+      Points		      [22, 0]
+      Branch {
+	ZOrder			365
+	Points			[0, -127; -33, 0; 0, -185; 36, 0]
+	DstBlock		"Sum2"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			364
+	Labels			[0, 0]
+	Points			[60, 0; 0, 250]
+	DstBlock		"Sum1"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      386
+      Points		      [605, 1360; 26, 0]
+    }
+    Line {
+      ZOrder		      350
+      SrcBlock		      "Motor"
+      SrcPort		      1
+      Points		      [124, 0]
+      Branch {
+	ZOrder			407
+	Points			[0, -80]
+	DstBlock		"Quantizer"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			406
+	Points			[84, 0]
+	Branch {
+	  ZOrder		  417
+	  Points		  [0, -45]
+	  DstBlock		  "Pos1"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  348
+	  DstBlock		  "Scope1"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      ZOrder		      355
+      SrcBlock		      "Motor"
+      SrcPort		      2
+      Points		      [132, 0]
+      Branch {
+	ZOrder			414
+	DstBlock		"Scope1"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			413
+	Points			[0, 60]
+	DstBlock		"Vel1"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      378
+      SrcBlock		      "Sum1"
+      SrcPort		      1
+      Points		      [0, 15]
+      DstBlock		      "PID Model "
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      425
+      SrcBlock		      "Zero-Order\nHold"
+      SrcPort		      1
+      DstBlock		      "Motor"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      382
+      SrcBlock		      "Quantizer"
+      SrcPort		      1
+      Points		      [-256, 0; 0, 75]
+      DstBlock		      "Sum1"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      404
+      SrcBlock		      "enc I/F"
+      SrcPort		      2
+      Points		      [-5, 0; 34, 0; 0, 0]
+    }
+    Line {
+      ZOrder		      392
+      SrcBlock		      "Quantizer1"
+      SrcPort		      1
+      Points		      [35, 0; 0, 25]
+      DstBlock		      "Sum2"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      388
+      SrcBlock		      "Sum2"
+      SrcPort		      1
+      Points		      [78, 0; 0, 25]
+      DstBlock		      "PID Real"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      379
+      SrcBlock		      "PID Model "
+      SrcPort		      1
+      DstBlock		      "Zero-Order\nHold"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      389
+      SrcBlock		      "PID Real"
+      SrcPort		      1
+      Points		      [20, 0; 0, 73; -97, 0; 0, 57]
+      DstBlock		      "Zero-Order\nHold1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      405
+      SrcBlock		      "enc I/F"
+      SrcPort		      1
+      Points		      [43, 0; 0, 35]
+      DstBlock		      "Quantizer1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      426
+      SrcBlock		      "Zero-Order\nHold1"
+      SrcPort		      1
+      Points		      [7, 0; 0, 145]
+      DstBlock		      "Gain"
       DstPort		      1
     }
   }

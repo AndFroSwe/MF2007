@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root>
+	<creator type="key">ControlDesk NG 5.3</creator>
+	<project>
+		<Creator type="key">ControlDesk NG</Creator>
+		<Name type="key">WorkshopA.CDP</Name>
+		<DisplayName type="key">WorkshopA</DisplayName>
+		<Flags type="key">4096</Flags>
+		<Type type="key">1</Type>
+		<UniqueID type="key">169757185</UniqueID>
+		<EntityID type="key">{C7D2309B-35C1-4168-AA9E-B6AFB0738A94}</EntityID>
+		<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+		<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+		<ItemInfoDescr type="key"/>
+		<ItemInfoAddInfoDb type="key"/>
+		<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+		<item>
+			<Targets type="key">project</Targets>
+			<Name type="key">WorkshopA</Name>
+			<DisplayName type="key">WorkshopA</DisplayName>
+			<Path type="key">..</Path>
+			<Flags type="key">4100</Flags>
+			<Type type="key">3</Type>
+			<UniqueID type="key">411179819</UniqueID>
+			<EntityID type="key">{ABB93E8C-F7D4-4072-817A-4544CAE001E1}</EntityID>
+			<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			<item>
+				<Docs type="key">.doc,.docx,.pdf</Docs>
+				<Name type="key">Specifications</Name>
+				<DisplayName type="key">Specifications</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">279587991</UniqueID>
+				<EntityID type="key">{F580D115-A563-4B84-BE70-9BA7FD4534D9}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.doc,.docx,.pdf</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			</item>
+			<item>
+				<Docs type="key">.mpp</Docs>
+				<Name type="key">Project Plans</Name>
+				<DisplayName type="key">Project Plans</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">806467940</UniqueID>
+				<EntityID type="key">{63A32FE7-086E-45BE-A21D-D875AD7BA884}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.mpp</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">datasetmanager_global</Targets>
+				<Name type="key">Global Data Sets</Name>
+				<DisplayName type="key">Global Data Sets</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">29</Type>
+				<UniqueID type="key">321668082</UniqueID>
+				<EntityID type="key">{EF3B9999-10DD-42AF-A36D-2077E405B1E7}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">variablesmanagement</Targets>
+				<Name type="key">Variable Descriptions</Name>
+				<DisplayName type="key">Variable Descriptions</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">933571889</UniqueID>
+				<EntityID type="key">{F54BF161-382A-41AE-98EF-1B80C2147807}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+				<item>
+					<Component type="key">VariablesManagement</Component>
+					<Name type="key">WorkshopA.vdb</Name>
+					<DisplayName type="key">C:\Users\gabras\Documents\dSPACE\ControlDeskNG\5.3\WorkshopA\Variable Descriptions\WorkshopA.vdb</DisplayName>
+					<Path type="key">.\Variable Descriptions</Path>
+					<Flags type="key">276</Flags>
+					<Type type="key">18</Type>
+					<UniqueID type="key">185451085</UniqueID>
+					<EntityID type="key">{8FE9E932-4FFC-4A79-96E5-AF1819D82A31}</EntityID>
+					<ItemInfoDate type="key">2016-03-04 14:13:52</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+				</item>
+				<item>
+					<Component type="key">VariablesManagement</Component>
+					<Name type="key">motor_io.sdf</Name>
+					<DisplayName type="key">motor_io.sdf</DisplayName>
+					<Path type="key">.\Variable Descriptions\motor_io.sdf</Path>
+					<Flags type="key">18688</Flags>
+					<Type type="key">7</Type>
+					<UniqueID type="key">697627666</UniqueID>
+					<EntityID type="key">{5C13A453-B677-4BDF-8760-0D4AC156E6EC}</EntityID>
+					<ItemInfoDate type="key">2016-03-04 14:13:52</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoLog type="key">
+Original file added from ..\..\..\..\..\Desktop\MF2007\DynamicPart3\motor_io.sdf [2016-3-4 13:13:20 (UTC)]
+
+Variable description reloaded on 04.03.2016 14:31:58 (C:\Users\gabras\Desktop\MF2007\DynamicPart3\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\MF2007\DynamicPart3\motor_io.sdf [2016-3-4 13:13:20 (UTC)]
+
+Variable description reloaded on 04.03.2016 14:35:15 (C:\Users\gabras\Desktop\MF2007\DynamicPart3\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\MF2007\DynamicPart3\motor_io.sdf [2016-3-4 13:13:20 (UTC)]
+
+Variable description reloaded on 04.03.2016 14:50:43 (C:\Users\gabras\Desktop\MF2007\DynamicPart3\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\MF2007\DynamicPart3\motor_io.sdf [2016-3-4 13:13:20 (UTC)]
+
+Variable description reloaded on 04.03.2016 14:51:42 (C:\Users\gabras\Desktop\MF2007\DynamicPart3\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\MF2007\DynamicPart3\motor_io.sdf [2016-3-4 13:13:20 (UTC)]
+
+Variable description reloaded on 04.03.2016 14:53:47 (C:\Users\gabras\Desktop\MF2007\DynamicPart3\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\MF2007\DynamicPart3\motor_io.sdf [2016-3-4 13:13:20 (UTC)]
+
+Variable description reloaded on 04.03.2016 14:54:45 (C:\Users\gabras\Desktop\MF2007\DynamicPart3\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\MF2007\DynamicPart3\motor_io.sdf [2016-3-4 13:13:20 (UTC)]
+</ItemInfoLog>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+					<item>
+						<Component type="key">VariablesManagement</Component>
+						<Name type="key">motor_io.trc</Name>
+						<DisplayName type="key">motor_io.trc</DisplayName>
+						<Path type="key">.\Variable Descriptions\motor_io.sdf</Path>
+						<Flags type="key">18692</Flags>
+						<ExtendedFlags type="key">1</ExtendedFlags>
+						<Type type="key">4</Type>
+						<UniqueID type="key">213602252</UniqueID>
+						<EntityID type="key">{2D4E1753-E239-4777-92D1-E58EA98A810E}</EntityID>
+						<ItemInfoDate type="key">2016-03-04 14:54:45</ItemInfoDate>
+						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+						<ItemInfoDescr type="key"/>
+						<ItemInfoAddInfoDb type="key"/>
+						<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+					</item>
+					<item>
+						<Component type="key">VariablesManagement</Component>
+						<Name type="key">motor_io.map</Name>
+						<DisplayName type="key">motor_io.map</DisplayName>
+						<Path type="key">.\Variable Descriptions\motor_io.sdf</Path>
+						<Flags type="key">18692</Flags>
+						<ExtendedFlags type="key">1</ExtendedFlags>
+						<Type type="key">4</Type>
+						<UniqueID type="key">741383061</UniqueID>
+						<EntityID type="key">{F26FFE18-C783-477F-AD56-A3AF7F6E016A}</EntityID>
+						<ItemInfoDate type="key">2016-03-04 14:54:45</ItemInfoDate>
+						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+						<ItemInfoDescr type="key"/>
+						<ItemInfoAddInfoDb type="key"/>
+						<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+					</item>
+					<item>
+						<Component type="key">VariablesManagement</Component>
+						<Name type="key">motor_io.ppc</Name>
+						<DisplayName type="key">motor_io.ppc</DisplayName>
+						<Path type="key">.\Variable Descriptions\motor_io.sdf</Path>
+						<Flags type="key">18692</Flags>
+						<ExtendedFlags type="key">1</ExtendedFlags>
+						<Type type="key">30</Type>
+						<UniqueID type="key">603567778</UniqueID>
+						<EntityID type="key">{5E5AE555-29E4-442B-A547-B3670DCAB7E7}</EntityID>
+						<ItemInfoDate type="key">2016-03-04 14:54:45</ItemInfoDate>
+						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+						<ItemInfoDescr type="key"/>
+						<ItemInfoAddInfoDb type="key"/>
+						<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+					</item>
+				</item>
+				<item>
+					<Component type="key">VariablesManagement</Component>
+					<Name type="key">motor_io.sdf</Name>
+					<DisplayName type="key">motor_io.sdf(#1)</DisplayName>
+					<Path type="key">.\Variable Descriptions\motor_io.sdf(#1)</Path>
+					<Flags type="key">18704</Flags>
+					<Type type="key">7</Type>
+					<UniqueID type="key">491611439</UniqueID>
+					<EntityID type="key">{9642AA32-816F-4EED-8419-C52F0CADADD9}</EntityID>
+					<ItemInfoDate type="key">2016-03-04 15:06:17</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 14:5:55 (UTC)]
+
+Variable description reloaded on 04.03.2016 15:12:47 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 14:5:55 (UTC)]
+
+Variable description reloaded on 04.03.2016 15:14:45 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 14:14:38 (UTC)]
+
+Variable description reloaded on 04.03.2016 15:16:59 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 14:14:38 (UTC)]
+
+Variable description reloaded on 04.03.2016 15:20:13 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 14:20:7 (UTC)]
+
+Variable description reloaded on 04.03.2016 15:27:19 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 14:27:4 (UTC)]
+
+Variable description reloaded on 04.03.2016 15:42:51 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 14:42:45 (UTC)]
+
+Variable description reloaded on 04.03.2016 15:46:29 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 14:46:18 (UTC)]
+
+Variable description reloaded on 04.03.2016 15:53:26 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 14:52:43 (UTC)]
+
+Variable description reloaded on 04.03.2016 16:01:16 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 15:1:6 (UTC)]
+
+Variable description reloaded on 04.03.2016 16:21:57 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 15:21:29 (UTC)]
+
+Variable description reloaded on 04.03.2016 16:41:45 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 15:41:28 (UTC)]
+
+Variable description reloaded on 04.03.2016 16:43:24 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 15:42:46 (UTC)]
+
+Variable description reloaded on 04.03.2016 16:47:17 (C:\Users\gabras\Desktop\Workshop1\motor_io.sdf)
+Original file added from ..\..\..\..\..\Desktop\Workshop1\motor_io.sdf [2016-3-4 15:47:6 (UTC)]
+</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+					<item>
+						<Component type="key">VariablesManagement</Component>
+						<Name type="key">motor_io.trc</Name>
+						<DisplayName type="key">motor_io.trc</DisplayName>
+						<Path type="key">.\Variable Descriptions\motor_io.sdf(#1)</Path>
+						<Flags type="key">18692</Flags>
+						<ExtendedFlags type="key">1</ExtendedFlags>
+						<Type type="key">4</Type>
+						<UniqueID type="key">136223960</UniqueID>
+						<EntityID type="key">{2EA6810E-A7A1-4313-8518-B15EA086896E}</EntityID>
+						<ItemInfoDate type="key">2016-03-04 16:47:17</ItemInfoDate>
+						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+						<ItemInfoDescr type="key"/>
+						<ItemInfoAddInfoDb type="key"/>
+						<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+					</item>
+					<item>
+						<Component type="key">VariablesManagement</Component>
+						<Name type="key">motor_io.map</Name>
+						<DisplayName type="key">motor_io.map</DisplayName>
+						<Path type="key">.\Variable Descriptions\motor_io.sdf(#1)</Path>
+						<Flags type="key">18692</Flags>
+						<ExtendedFlags type="key">1</ExtendedFlags>
+						<Type type="key">4</Type>
+						<UniqueID type="key">761912421</UniqueID>
+						<EntityID type="key">{9ECF20BE-A06B-4F5F-B392-3D3DCD610F1E}</EntityID>
+						<ItemInfoDate type="key">2016-03-04 16:47:17</ItemInfoDate>
+						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+						<ItemInfoDescr type="key"/>
+						<ItemInfoAddInfoDb type="key"/>
+						<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+					</item>
+					<item>
+						<Component type="key">VariablesManagement</Component>
+						<Name type="key">motor_io.ppc</Name>
+						<DisplayName type="key">motor_io.ppc</DisplayName>
+						<Path type="key">.\Variable Descriptions\motor_io.sdf(#1)</Path>
+						<Flags type="key">18692</Flags>
+						<ExtendedFlags type="key">1</ExtendedFlags>
+						<Type type="key">30</Type>
+						<UniqueID type="key">691738981</UniqueID>
+						<EntityID type="key">{D1534F63-D7E8-4E6E-BB99-E0EAF16A57EF}</EntityID>
+						<ItemInfoDate type="key">2016-03-04 16:47:17</ItemInfoDate>
+						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+						<ItemInfoDescr type="key"/>
+						<ItemInfoAddInfoDb type="key"/>
+						<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+					</item>
+				</item>
+			</item>
+			<item>
+				<Targets type="key">datasetmanager</Targets>
+				<Name type="key">Data Sets</Name>
+				<DisplayName type="key">Data Sets</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">4</Flags>
+				<Type type="key">29</Type>
+				<UniqueID type="key">884384192</UniqueID>
+				<EntityID type="key">{AF2B28D7-CBEC-4B59-8B02-E3EB8E58763A}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">.vfe</Targets>
+				<Name type="key">Variable Filters</Name>
+				<DisplayName type="key">Variable Filters</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">2304</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">655345363</UniqueID>
+				<EntityID type="key">{B37226E9-9549-445C-A734-8BC489F4C1CB}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">.lab</Targets>
+				<Docs type="key">.lab,.txt</Docs>
+				<Name type="key">Label Lists</Name>
+				<DisplayName type="key">Label Lists</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">255072814</UniqueID>
+				<EntityID type="key">{D59F9786-4893-4F1F-BFF2-6A2E69CBC770}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.lab,.txt</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">devicemanagement,platformmanagement</Targets>
+				<Name type="key">Global Devices</Name>
+				<DisplayName type="key">Global Devices</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">385457501</UniqueID>
+				<EntityID type="key">{D631FAC3-3D4F-4FC6-8A22-80BADCDE25F6}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">interpreter,.py</Targets>
+				<Docs type="key">.py</Docs>
+				<Name type="key">Python Scripts</Name>
+				<DisplayName type="key">Python Scripts</DisplayName>
+				<Path type="key">.</Path>
+				<ExtendedFlags type="key">128</ExtendedFlags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">583273628</UniqueID>
+				<EntityID type="key">{59A85C95-5C5A-4D45-AD4C-728E98335EC1}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.py</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">busnavigator,.xml</Targets>
+				<Name type="key">BusNavigator</Name>
+				<DisplayName type="key">BusNavigator</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">4</Flags>
+				<ExtendedFlags type="key">256</ExtendedFlags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">200252154</UniqueID>
+				<EntityID type="key">{E3E36F70-D3E2-4E01-9DEB-317A46017AFD}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">signaleditor</Targets>
+				<Name type="key">Signal Description Sets</Name>
+				<DisplayName type="key">Signal Description Sets</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">896166883</UniqueID>
+				<EntityID type="key">{52FB0A41-C250-44AE-8200-880D46001F44}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			</item>
+		</item>
+		<item>
+			<Name type="key">Events</Name>
+			<DisplayName type="key">Events</DisplayName>
+			<Path type="key">.</Path>
+			<Flags type="key">4</Flags>
+			<Type type="key">3</Type>
+			<UniqueID type="key">389137633</UniqueID>
+			<EntityID type="key">{DE7F1679-404B-4D1D-82A1-8CAEEBC7DA92}</EntityID>
+			<ItemInfoDate type="key">2016-03-04 14:13:52</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			<item>
+				<Name type="key">Project.events</Name>
+				<DisplayName type="key">Project.events</DisplayName>
+				<Path type="key">.\Events</Path>
+				<Flags type="key">4</Flags>
+				<Type type="key">52</Type>
+				<UniqueID type="key">595744549</UniqueID>
+				<EntityID type="key">{64ABEE2A-1777-4F0C-B1C9-FE94149910ED}</EntityID>
+				<ItemInfoDate type="key">2016-03-04 14:13:52</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+			</item>
+		</item>
+	</project>
+	<experiments>
+		<experiment>
+			<Creator type="key">ControlDesk NG</Creator>
+			<Name type="key">WorkshopA.CDE</Name>
+			<DisplayName type="key">WorkshopA</DisplayName>
+			<Path type="key">.\WorkshopA</Path>
+			<Flags type="key">4096</Flags>
+			<Type type="key">2</Type>
+			<UniqueID type="key">978243692</UniqueID>
+			<EntityID type="key">{B4333E04-57B6-4A6F-9072-7357DD3062DF}</EntityID>
+			<ItemInfoDate type="key">2016-03-04 14:13:51</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+		</experiment>
+		<experiment>
+			<Creator type="key">ControlDesk NG</Creator>
+			<Name type="key">Workshop.CDE</Name>
+			<DisplayName type="key">Workshop</DisplayName>
+			<Path type="key">.\Workshop</Path>
+			<Flags type="key">4096</Flags>
+			<Type type="key">2</Type>
+			<UniqueID type="key">967447044</UniqueID>
+			<EntityID type="key">{DBB0C607-D011-45B8-BFBF-2421CEB162EF}</EntityID>
+			<ItemInfoDate type="key">2016-03-04 15:06:16</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">gabras</ItemInfoAuthor>
+		</experiment>
+	</experiments>
+	<UserManager/>
+	<Interpreter/>
+	<VariablesManagement Version="4">
+		<CreatorVersion type="key">503000486</CreatorVersion>
+	</VariablesManagement>
+	<ProjectExperiment>
+		<LastActiveExperiment type="key">Workshop</LastActiveExperiment>
+	</ProjectExperiment>
+	<MeasuredDataNavigator/>
+	<MeasureDataManagement Version="4"/>
+	<Instrumentation Version="1">
+		<UniqueIds Version="3">
+			<Count type="key">2</Count>
+			<File1 type="key">WorkshopA/Layout1</File1>
+			<Id1 type="key">0</Id1>
+			<File2 type="key">Workshop/Layout1</File2>
+			<Id2 type="key">1</Id2>
+		</UniqueIds>
+	</Instrumentation>
+	<DiagnosticsManagement/>
+	<PlatformManagement Version="5"/>
+	<DataSetManager>
+		<Version>
+			<Version type="key">2</Version>
+		</Version>
+		<Work/>
+		<ActiveWork/>
+		<Reference/>
+		<ActiveReference/>
+		<Master/>
+		<ActiveMaster/>
+		<InitialMaster/>
+		<Incomplete/>
+		<IncompleteReadonly/>
+		<DataSet/>
+		<Readonly/>
+		<LabelListFilter>
+			<LabelListFilterFile type="key"/>
+			<LabelListFilterActive type="key">0</LabelListFilterActive>
+		</LabelListFilter>
+		<AutomaticDownload/>
+	</DataSetManager>
+</Root>

@@ -3,9 +3,9 @@
  *
  * Code generation for model "motor_io".
  *
- * Model version              : 1.22
+ * Model version              : 1.26
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Fri Mar 04 16:46:50 2016
+ * C source code generated on : Sun Mar 06 14:16:21 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -787,57 +787,100 @@
 
 /* Block signals (auto storage) */
 typedef struct {
-  real_T Integrator1;                  /* '<Root>/Integrator1' */
-  real_T Integrator;                   /* '<Root>/Integrator' */
+  real_T Integrator;                   /* '<S1>/Integrator' */
+  real_T Integrator1;                  /* '<S1>/Integrator1' */
   real_T SinGenerator;                 /* '<Root>/SinGenerator' */
   real_T SquareGenerator;              /* '<Root>/SquareGenerator' */
-  real_T Switch;                       /* '<Root>/Switch' */
-  real_T Gain;                         /* '<Root>/Gain' */
-  real_T Saturation;                   /* '<S3>/Saturation' */
-  real_T pwm_skalning;                 /* '<S3>/pwm_skalning' */
+  real_T ref;                          /* '<Root>/Switch' */
+  real_T SFunction1;                   /* '<S14>/S-Function1' */
+  real_T fi1_scaling;                  /* '<S6>/fi1_scaling' */
+  real_T Quantizer1;                   /* '<Root>/Quantizer1' */
+  real_T Sum2;                         /* '<Root>/Sum2' */
+  real_T ProportionalGain;             /* '<S3>/Proportional Gain' */
+  real_T Integrator_m;                 /* '<S3>/Integrator' */
+  real_T DerivativeGain;               /* '<S3>/Derivative Gain' */
+  real_T Filter;                       /* '<S3>/Filter' */
+  real_T SumD;                         /* '<S3>/SumD' */
+  real_T FilterCoefficient;            /* '<S3>/Filter Coefficient' */
   real_T Sum;                          /* '<S3>/Sum' */
-  real_T Gain1;                        /* '<Root>/Gain1' */
-  real_T Add;                          /* '<Root>/Add' */
-  real_T kR;                           /* '<Root>/k//R ' */
-  real_T Motorviscousfriction;         /* '<Root>/Motor viscous friction' */
-  real_T Add1;                         /* '<Root>/Add1' */
-  real_T J;                            /* '<Root>/1//J' */
-  real_T SFunction1;                   /* '<S19>/S-Function1' */
-  real_T SFunction2;                   /* '<S19>/S-Function2' */
-  real_T fi1_scaling;                  /* '<S5>/fi1_scaling' */
-  real_T w1_scaling;                   /* '<S5>/w1_scaling' */
-  boolean_T DataTypeConversion;        /* '<S3>/Data Type Conversion' */
+  real_T ZeroOrderHold1;               /* '<Root>/Zero-Order Hold1' */
+  real_T Gain;                         /* '<Root>/Gain' */
+  real_T Volt;                         /* '<S4>/Saturation' */
+  real_T pwm_skalning;                 /* '<S4>/pwm_skalning' */
+  real_T Sum_f;                        /* '<S4>/Sum' */
+  real_T Quantizer;                    /* '<Root>/Quantizer' */
+  real_T Sum1;                         /* '<Root>/Sum1' */
+  real_T ProportionalGain_k;           /* '<S2>/Proportional Gain' */
+  real_T Integrator_b;                 /* '<S2>/Integrator' */
+  real_T DerivativeGain_o;             /* '<S2>/Derivative Gain' */
+  real_T Filter_e;                     /* '<S2>/Filter' */
+  real_T SumD_g;                       /* '<S2>/SumD' */
+  real_T FilterCoefficient_g;          /* '<S2>/Filter Coefficient' */
+  real_T Sum_h;                        /* '<S2>/Sum' */
+  real_T ZeroOrderHold;                /* '<Root>/Zero-Order Hold' */
+  real_T Saturation;                   /* '<S1>/Saturation' */
+  real_T Gain1;                        /* '<S1>/Gain1' */
+  real_T Add;                          /* '<S1>/Add' */
+  real_T kR;                           /* '<S1>/k//R ' */
+  real_T Switch1;                      /* '<S7>/Switch1' */
+  real_T Stickslipregion;              /* '<S7>/Saturate to Fc' */
+  real_T Abs;                          /* '<S7>/Abs' */
+  real_T Vicousfriction;               /* '<S7>/Vicous friction' */
+  real_T Sign;                         /* '<S7>/Sign' */
+  real_T Product;                      /* '<S7>/Product' */
+  real_T Viscousregion;                /* '<S7>/Add' */
+  real_T Friction;                     /* '<S7>/Switch' */
+  real_T Add1;                         /* '<S1>/Add1' */
+  real_T J;                            /* '<S1>/1//J' */
+  real_T IntegralGain;                 /* '<S2>/Integral Gain' */
+  real_T IntegralGain_j;               /* '<S3>/Integral Gain' */
+  real_T SFunction2;                   /* '<S14>/S-Function2' */
+  real_T w1_scaling;                   /* '<S6>/w1_scaling' */
+  boolean_T DataTypeConversion;        /* '<S4>/Data Type Conversion' */
+  boolean_T Compare;                   /* '<S8>/Compare' */
 } B_motor_io_T;
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
-  int_T SFunction1_IWORK[4];           /* '<S15>/S-Function1' */
-  int_T SFunction2_IWORK[4];           /* '<S15>/S-Function2' */
-  int_T SFunction3_IWORK[4];           /* '<S15>/S-Function3' */
-  int_T SFunction4_IWORK[4];           /* '<S15>/S-Function4' */
+  real_T Integrator_DSTATE;            /* '<S3>/Integrator' */
+  real_T Filter_DSTATE;                /* '<S3>/Filter' */
+  real_T Integrator_DSTATE_g;          /* '<S2>/Integrator' */
+  real_T Filter_DSTATE_a;              /* '<S2>/Filter' */
+  struct {
+    void *LoggedData;
+  } Scope1_PWORK;                      /* '<Root>/Scope1' */
+
+  struct {
+    void *LoggedData;
+  } Scope2_PWORK;                      /* '<S7>/Scope2' */
+
+  int_T SFunction1_IWORK[4];           /* '<S10>/S-Function1' */
+  int_T SFunction2_IWORK[4];           /* '<S10>/S-Function2' */
+  int_T SFunction3_IWORK[4];           /* '<S10>/S-Function3' */
+  int_T SFunction4_IWORK[4];           /* '<S10>/S-Function4' */
 } DW_motor_io_T;
 
 /* Continuous states (auto storage) */
 typedef struct {
-  real_T Integrator1_CSTATE;           /* '<Root>/Integrator1' */
-  real_T Integrator_CSTATE;            /* '<Root>/Integrator' */
+  real_T Integrator_CSTATE;            /* '<S1>/Integrator' */
+  real_T Integrator1_CSTATE;           /* '<S1>/Integrator1' */
 } X_motor_io_T;
 
 /* State derivatives (auto storage) */
 typedef struct {
-  real_T Integrator1_CSTATE;           /* '<Root>/Integrator1' */
-  real_T Integrator_CSTATE;            /* '<Root>/Integrator' */
+  real_T Integrator_CSTATE;            /* '<S1>/Integrator' */
+  real_T Integrator1_CSTATE;           /* '<S1>/Integrator1' */
 } XDot_motor_io_T;
 
 /* State disabled  */
 typedef struct {
-  boolean_T Integrator1_CSTATE;        /* '<Root>/Integrator1' */
-  boolean_T Integrator_CSTATE;         /* '<Root>/Integrator' */
+  boolean_T Integrator_CSTATE;         /* '<S1>/Integrator' */
+  boolean_T Integrator1_CSTATE;        /* '<S1>/Integrator1' */
 } XDis_motor_io_T;
 
 /* Zero-crossing (trigger) state */
 typedef struct {
-  ZCSigState DS1104ENC_SET_POS_C1_Trig_ZCE;/* '<S5>/DS1104ENC_SET_POS_C1' */
+  ZCSigState DS1104ENC_SET_POS_C1_Trig_ZCE;/* '<S6>/DS1104ENC_SET_POS_C1' */
 } PrevZCX_motor_io_T;
 
 #ifndef ODE1_INTG
@@ -852,8 +895,8 @@ typedef struct {
 
 /* External outputs (root outports fed by signals with auto storage) */
 typedef struct {
-  real_T Pos;                          /* '<Root>/Pos' */
-  real_T Vel;                          /* '<Root>/Vel' */
+  real_T Vel1;                         /* '<Root>/Vel1' */
+  real_T Pos1;                         /* '<Root>/Pos1' */
 } ExtY_motor_io_T;
 
 /* Backward compatible GRT Identifiers */
@@ -876,11 +919,22 @@ typedef struct {
 
 /* Parameters (auto storage) */
 struct P_motor_io_T_ {
-  real_T Integrator1_IC;               /* Expression: 0
-                                        * Referenced by: '<Root>/Integrator1'
+  real_T F_c;                          /* Variable: F_c
+                                        * Referenced by:
+                                        *   '<S7>/Constant'
+                                        *   '<S7>/Couloumb friction'
+                                        *   '<S7>/Saturate to Fc'
+                                        */
+  real_T Ts;                           /* Variable: Ts
+                                        * Referenced by:
+                                        *   '<Root>/Quantizer'
+                                        *   '<Root>/Quantizer1'
                                         */
   real_T Integrator_IC;                /* Expression: 0
-                                        * Referenced by: '<Root>/Integrator'
+                                        * Referenced by: '<S1>/Integrator'
+                                        */
+  real_T Integrator1_IC;               /* Expression: 0
+                                        * Referenced by: '<S1>/Integrator1'
                                         */
   real_T SinGenerator_Amplitude;       /* Expression: 0
                                         * Referenced by: '<Root>/SinGenerator'
@@ -897,44 +951,110 @@ struct P_motor_io_T_ {
   real_T SquareGenerator_Frequency;    /* Computed Parameter: SquareGenerator_Frequency
                                         * Referenced by: '<Root>/SquareGenerator'
                                         */
+  real_T fi1_scaling_Gain;             /* Expression: 2*pi/(1000)
+                                        * Referenced by: '<S6>/fi1_scaling'
+                                        */
+  real_T ProportionalGain_Gain;        /* Expression: P
+                                        * Referenced by: '<S3>/Proportional Gain'
+                                        */
+  real_T Integrator_gainval;           /* Computed Parameter: Integrator_gainval
+                                        * Referenced by: '<S3>/Integrator'
+                                        */
+  real_T Integrator_IC_h;              /* Expression: InitialConditionForIntegrator
+                                        * Referenced by: '<S3>/Integrator'
+                                        */
+  real_T DerivativeGain_Gain;          /* Expression: D
+                                        * Referenced by: '<S3>/Derivative Gain'
+                                        */
+  real_T Filter_gainval;               /* Computed Parameter: Filter_gainval
+                                        * Referenced by: '<S3>/Filter'
+                                        */
+  real_T Filter_IC;                    /* Expression: InitialConditionForFilter
+                                        * Referenced by: '<S3>/Filter'
+                                        */
+  real_T FilterCoefficient_Gain;       /* Expression: N
+                                        * Referenced by: '<S3>/Filter Coefficient'
+                                        */
   real_T Gain_Gain;                    /* Expression: -1
                                         * Referenced by: '<Root>/Gain'
                                         */
   real_T Saturation_UpperSat;          /* Expression: 24
-                                        * Referenced by: '<S3>/Saturation'
+                                        * Referenced by: '<S4>/Saturation'
                                         */
   real_T Saturation_LowerSat;          /* Expression: -24
-                                        * Referenced by: '<S3>/Saturation'
+                                        * Referenced by: '<S4>/Saturation'
                                         */
   real_T pwm_skalning_Gain;            /* Expression: 1/48
-                                        * Referenced by: '<S3>/pwm_skalning'
+                                        * Referenced by: '<S4>/pwm_skalning'
                                         */
   real_T pwm_offstet_Value;            /* Expression: 0.5
-                                        * Referenced by: '<S3>/pwm_offstet'
+                                        * Referenced by: '<S4>/pwm_offstet'
                                         */
   real_T Enable1_Off0_On_Value;        /* Expression: 1
-                                        * Referenced by: '<S3>/Enable[1_Off, 0_On]'
+                                        * Referenced by: '<S4>/Enable[1_Off, 0_On]'
+                                        */
+  real_T ProportionalGain_Gain_l;      /* Expression: P
+                                        * Referenced by: '<S2>/Proportional Gain'
+                                        */
+  real_T Integrator_gainval_a;         /* Computed Parameter: Integrator_gainval_a
+                                        * Referenced by: '<S2>/Integrator'
+                                        */
+  real_T Integrator_IC_l;              /* Expression: InitialConditionForIntegrator
+                                        * Referenced by: '<S2>/Integrator'
+                                        */
+  real_T DerivativeGain_Gain_l;        /* Expression: D
+                                        * Referenced by: '<S2>/Derivative Gain'
+                                        */
+  real_T Filter_gainval_l;             /* Computed Parameter: Filter_gainval_l
+                                        * Referenced by: '<S2>/Filter'
+                                        */
+  real_T Filter_IC_j;                  /* Expression: InitialConditionForFilter
+                                        * Referenced by: '<S2>/Filter'
+                                        */
+  real_T FilterCoefficient_Gain_p;     /* Expression: N
+                                        * Referenced by: '<S2>/Filter Coefficient'
+                                        */
+  real_T Saturation_UpperSat_f;        /* Expression: 24
+                                        * Referenced by: '<S1>/Saturation'
+                                        */
+  real_T Saturation_LowerSat_b;        /* Expression: -24
+                                        * Referenced by: '<S1>/Saturation'
                                         */
   real_T Gain1_Gain;                   /* Expression: motor.k
-                                        * Referenced by: '<Root>/Gain1'
+                                        * Referenced by: '<S1>/Gain1'
                                         */
   real_T kR_Gain;                      /* Expression: motor.k/motor.R
-                                        * Referenced by: '<Root>/k//R '
+                                        * Referenced by: '<S1>/k//R '
                                         */
-  real_T Motorviscousfriction_Gain;    /* Expression: motor.d
-                                        * Referenced by: '<Root>/Motor viscous friction'
+  real_T Constant1_Value;              /* Expression: 0
+                                        * Referenced by: '<S7>/Constant1'
+                                        */
+  real_T Switch1_Threshold;            /* Expression: 0
+                                        * Referenced by: '<S7>/Switch1'
+                                        */
+  real_T SaturatetoFc_LowerSat;        /* Expression: -F_c
+                                        * Referenced by: '<S7>/Saturate to Fc'
+                                        */
+  real_T Constant_Value;               /* Expression: const
+                                        * Referenced by: '<S8>/Constant'
+                                        */
+  real_T Vicousfriction_Gain;          /* Expression: motor.d
+                                        * Referenced by: '<S7>/Vicous friction'
                                         */
   real_T J_Gain;                       /* Expression: 1/Jtot
-                                        * Referenced by: '<Root>/1//J'
+                                        * Referenced by: '<S1>/1//J'
                                         */
-  real_T fi1_scaling_Gain;             /* Expression: 2*pi/(1000)
-                                        * Referenced by: '<S5>/fi1_scaling'
+  real_T IntegralGain_Gain;            /* Expression: I
+                                        * Referenced by: '<S2>/Integral Gain'
+                                        */
+  real_T IntegralGain_Gain_e;          /* Expression: I
+                                        * Referenced by: '<S3>/Integral Gain'
                                         */
   real_T w1_scaling_Gain;              /* Expression: 2*pi/(1000)/Ts
-                                        * Referenced by: '<S5>/w1_scaling'
+                                        * Referenced by: '<S6>/w1_scaling'
                                         */
   real_T Resetenc_Value;               /* Expression: 0
-                                        * Referenced by: '<S5>/Reset enc'
+                                        * Referenced by: '<S6>/Reset enc'
                                         */
 };
 
@@ -1101,26 +1221,21 @@ extern RT_MODEL_motor_io_T *const motor_io_M;
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'motor_io'
- * '<S1>'   : 'motor_io/Model Motor'
- * '<S2>'   : 'motor_io/Motor'
- * '<S3>'   : 'motor_io/PWM'
- * '<S4>'   : 'motor_io/RTI Data'
- * '<S5>'   : 'motor_io/enc I//F'
- * '<S6>'   : 'motor_io/Model Motor/Dc motor with friction'
- * '<S7>'   : 'motor_io/Model Motor/Gearbox'
- * '<S8>'   : 'motor_io/Model Motor/Dc motor with friction/DC motor model'
- * '<S9>'   : 'motor_io/Model Motor/Dc motor with friction/Inertia and resistance model '
- * '<S10>'  : 'motor_io/Model Motor/Dc motor with friction/Motor'
- * '<S11>'  : 'motor_io/Model Motor/Dc motor with friction/Inertia and resistance model /Karnop friction1'
- * '<S12>'  : 'motor_io/Model Motor/Dc motor with friction/Inertia and resistance model /Karnop friction1/Velocity threshold '
- * '<S13>'  : 'motor_io/Motor/Gearbox'
- * '<S14>'  : 'motor_io/PWM/DS1104BIT_OUT_C0'
- * '<S15>'  : 'motor_io/PWM/DS1104SL_DSP_PWM'
- * '<S16>'  : 'motor_io/RTI Data/RTI Data Store'
- * '<S17>'  : 'motor_io/RTI Data/RTI Data Store/RTI Data Store'
- * '<S18>'  : 'motor_io/RTI Data/RTI Data Store/RTI Data Store/RTI Data Store'
- * '<S19>'  : 'motor_io/enc I//F/DS1104ENC_POS_C1'
- * '<S20>'  : 'motor_io/enc I//F/DS1104ENC_SETUP'
- * '<S21>'  : 'motor_io/enc I//F/DS1104ENC_SET_POS_C1'
+ * '<S1>'   : 'motor_io/Motor'
+ * '<S2>'   : 'motor_io/PID Model '
+ * '<S3>'   : 'motor_io/PID Real'
+ * '<S4>'   : 'motor_io/PWM'
+ * '<S5>'   : 'motor_io/RTI Data'
+ * '<S6>'   : 'motor_io/enc I//F'
+ * '<S7>'   : 'motor_io/Motor/Karnop friction1'
+ * '<S8>'   : 'motor_io/Motor/Karnop friction1/Velocity threshold '
+ * '<S9>'   : 'motor_io/PWM/DS1104BIT_OUT_C0'
+ * '<S10>'  : 'motor_io/PWM/DS1104SL_DSP_PWM'
+ * '<S11>'  : 'motor_io/RTI Data/RTI Data Store'
+ * '<S12>'  : 'motor_io/RTI Data/RTI Data Store/RTI Data Store'
+ * '<S13>'  : 'motor_io/RTI Data/RTI Data Store/RTI Data Store/RTI Data Store'
+ * '<S14>'  : 'motor_io/enc I//F/DS1104ENC_POS_C1'
+ * '<S15>'  : 'motor_io/enc I//F/DS1104ENC_SETUP'
+ * '<S16>'  : 'motor_io/enc I//F/DS1104ENC_SET_POS_C1'
  */
 #endif                                 /* RTW_HEADER_motor_io_h_ */

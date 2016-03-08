@@ -1,0 +1,29 @@
+%implements s1_b0_h9qnd_InitializeConditions "C"
+
+%function InitializeConditions(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* InitializeConditions for Integrator: '<S1>/Integrator' */
+motor_io_X.Integrator_CSTATE = motor_io_P.Integrator_IC;
+/* InitializeConditions for Integrator: '<S1>/Integrator1' */
+motor_io_X.Integrator1_CSTATE = motor_io_P.Integrator1_IC;
+/* InitializeConditions for DiscreteIntegrator: '<S3>/Integrator' */
+motor_io_DW.Integrator_DSTATE = motor_io_P.Integrator_IC_h;
+/* InitializeConditions for DiscreteIntegrator: '<S3>/Filter' */
+motor_io_DW.Filter_DSTATE = motor_io_P.Filter_IC;
+/* InitializeConditions for DiscreteIntegrator: '<S2>/Integrator' */
+motor_io_DW.Integrator_DSTATE_g = motor_io_P.Integrator_IC_l;
+/* InitializeConditions for DiscreteIntegrator: '<S2>/Filter' */
+motor_io_DW.Filter_DSTATE_a = motor_io_P.Filter_IC_j;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void InitializeConditions(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction

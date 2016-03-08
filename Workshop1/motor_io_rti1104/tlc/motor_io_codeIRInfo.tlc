@@ -1,5 +1,5 @@
 %function FcnLoadCodeIRInfo() Output 
-codeIRInfoStruct = load('C:/Users/gabras/Desktop/Workshop1/motor_io_rti1104/tlc/codeIRInfo.mat');
+codeIRInfoStruct = load('C:/Users/gabras/Desktop/MF2007/Workshop1/motor_io_rti1104/tlc/codeIRInfo.mat');
 codeInfo = codeIRInfoStruct.codeInfo;
 %endfunction
 
@@ -29,7 +29,7 @@ codeInfo = codeIRInfoStruct.codeInfo;
 %endfunction
 
 %function FcnGetUnsetParamIdxFromIRInfo() void
-%assign tmpIdx = []
+%assign tmpIdx = Matrix(2,2)[[0, 0]; [1, 1]; ]
 %return tmpIdx 
 %endfunction
 
