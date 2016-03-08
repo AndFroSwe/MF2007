@@ -29,13 +29,14 @@ motor_pars.k = 69.7e-3;    % Torque constant [Nm/A]
 motor_pars.J_m = 7.46e-7;  % Rotor inertia
 
 %% Exercise 1
-disp('Exercise 1')
 motor = motor_pars;
-
 J = motor.J_m + (J1 + J2)/n^2; % Calculate total inertia on motor
+
+
+disp('Exercise 1')
 disp('x1 = i, x2 = omega')
-% State space representation
-disp('State space of motor')
+
+%-- State space representation
 motor.A = [-motor.R/motor.L  -motor.k/motor.L;
     motor.k/J    -motor.d/J];
 motor.B = [1/motor.L;
@@ -52,17 +53,14 @@ disp(motor.B)
 disp('C')
 disp(motor.C)
 
+%Deriving transfer functions
 [num, den] = ss2tf(motor.A, motor.B, [1 0], 0); % Returns tf from V to i
-disp('tf for i')
 motor.tf_i = tf(num, den);
-motor.tf_i
 [num, den] = ss2tf(motor.A, motor.B, [0 1], 0); % Returns tf from V to omega
-disp('tf for w')
 motor.tf_w = tf(num, den);
-motor.tf_w
 clearvars num den   % Remove variable form workspace
 
-% get poles and zeros of both i and w
+%-- Gets poles and zeros of both i and w
 [motor.i_zeros, motor.i_poles] = zpkdata(motor.tf_i);
 [motor.w_zeros, motor.w_poles] = zpkdata(motor.tf_w);
 % for i
@@ -96,13 +94,22 @@ title('Bode for w')
 
 % Simulink model
 simtime = 0.3;    % Simulation time in seconds
-sim('sim_ex1')
+sim('ex1_sim')
 figure
-subplot(3,1,1)
+subplot(2,2,1)
 plot(sim_ex1_i)
 title('Simulink: Step response for i [A]')
-subplot(3,1,2)
+subplot(2,2,2)
 plot(sim_ex1_w)
+<<<<<<< HEAD
+title('Simulink: Step response for \omega [rad/s]')
+subplot(2,2,3)
+plot(sim_ex1_ss_i)
+title('Simulink: Step response for state space i [A]')
+subplot(2,2,4)
+plot(sim_ex1_ss_w)
+title('Simulink: Step response for state space \omega [rad/s]')
+=======
 title('Simulink: Step response for w [rad/s]')
 subplot(3,1,3)
 
@@ -222,4 +229,5 @@ simtime = 10;
 
 
 
+>>>>>>> 5e42c612c2b0898fd3c49ea7bc9d621a37b1c8d1
 
