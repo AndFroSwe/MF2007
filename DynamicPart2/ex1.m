@@ -160,10 +160,10 @@ enable_karnop = 1;
 
 % Create atomatic string for title
 if enable_sin
-    title_string = sprintf('Sine input with f=%0.1f rad/s and A=%0.1f V with Karnopp',...
+    title_string = sprintf('Sine input with f=%0.1f rad/s and A=%0.1f V with Karnop',...
         sim_sin_freq, sim_sin_amp);
 else
-    title_string = sprintf('Step input with A=%0.1f V with Karnopp',...
+    title_string = sprintf('Step input with A=%0.1f V with Karnop',...
         sim_step_v);
 end
 simtime = 10;
@@ -180,14 +180,14 @@ enable_sin = 0;
 sim('sim_ex2.slx')
 figure
 plot(sim_ex2_v_w.Time,sim_ex2_v_w.Data);
-title('Step input with A=1 V with Karnopp')
+title('Step input with A=1 V with Karnop')
 
 sim_step_v=10;
 sim('sim_ex2.slx')
 
 figure
 plot(sim_ex2_v_w.Time,sim_ex2_v_w.Data);
-title('Step input with A=10 V with Karnopp')
+title('Step input with A=10 V with Karnop')
 simtime = 10;
 % %% part 4: Quantizing
 % % Set parameters
