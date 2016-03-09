@@ -6,7 +6,7 @@
    the hardware and software interrupts used.
 
    RTI1104 7.3 (02-Nov-2014)
-   Fri Mar 04 16:46:50 2016
+   Sun Mar 06 14:16:21 2016
 
    (c) Copyright 2006, dSPACE GmbH. All rights reserved.
 
@@ -135,17 +135,17 @@ static void rti_mdl_initialize_io_boards(void)
 
 static void rti_mdl_initialize_io_units(void)
 {
+  /* dSPACE I/O Board DS1104 #1 Unit:ENC_POS */
+  ds1104_inc_position_write(1, 0, DS1104_INC_LINE_SUBDIV_4);
+
+  /* dSPACE I/O Board DS1104 #1 Unit:BIT_IO Group:BIT_OUT_SET */
+  ds1104_bit_io_set(DS1104_DIO0);
+
   /* dSPACE I/O Board DS1104SLAVE #1 Unit:PWM */
   rti_slv1104_taskqueue_error[0] = ds1104_slave_dsp_pwm_duty_write(0,
     rti_slv1104_fcn_index[6], 0.5);
   rti_slv1104_taskqueue_error_check(0);
   ds1104_slave_dsp_pwm_start(0, SLVDSP1104_PWM_CH1_MSK);
-
-  /* dSPACE I/O Board DS1104 #1 Unit:BIT_IO Group:BIT_OUT_SET */
-  ds1104_bit_io_set(DS1104_DIO0);
-
-  /* dSPACE I/O Board DS1104 #1 Unit:ENC_POS */
-  ds1104_inc_position_write(1, 0, DS1104_INC_LINE_SUBDIV_4);
 }
 
 /* Function rti_mdl_acknowledge_interrupts() is empty */
@@ -169,7 +169,7 @@ static void rti_mdl_background(void)
 
 __INLINE void rti_mdl_sample_input(void)
 {
-  /* Calls for base sample time: [0.02, 0] */
+  /* Calls for base sample time: [0.002, 0] */
   /* dSPACE I/O Board DS1104 #1 Unit:ENC_POS Group:POS */
   motor_io_B.SFunction1 = (real_T) ds1104_inc_position_read(1,
     DS1104_INC_LINE_SUBDIV_4);

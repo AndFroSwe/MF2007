@@ -24,9 +24,9 @@ Andreas Fr\"oderberg \\ 880730-7577
 \begin{document}
 \maketitle
 
-\subsection*{Parameter identification}
+\section*{Parameter identification}
 
-\subsubsection*{Level 1}
+\subsection*{Level 1}
 The parameters that was modeled originally was not very good and in
 table \ref{tab:parameters} both the original and new parameters is
 given.
@@ -54,11 +54,11 @@ the velocity is changed, the model will differ from reality.
     \centering
       \includegraphics[scale = 0.6]{par_level1.png}
       \caption{The velocity output for the model and the real motor}
-      \label{fig:par_level1.png}
+      \label{fig:par_level1}
     \end{figure}
 \end{center}
 
-\subsubsection*{Level 2}
+\subsection*{Level 2}
 The parameters from Level 1 and the coulomb friction can be seen in
 table \ref{tab:parametersL2}.
 \begin{center}
@@ -87,9 +87,40 @@ figure \ref{fig:par_level2}.
     \includegraphics[scale=0.6]{par_level2.png}
     \caption{Velocity output for the model when including coulomb
     friction for sinus- and square wave input}
-    \label{fig:par_level2.png}
+    \label{fig:par_level2}
     \end{figure}
 \end{center}
 
+\section*{Velocity Control}
+  \subsection*{Level 1}
+  The calculated control law is given by ...
+  With the calculated control law we get the response seen in figure
+  \ref. Here we can see that the requirements are met with no overshoot
+  ant a maximum steady state error of $0.5$
+  \begin{center}
 
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{41SqVo.png}
+        \caption{A: Square wave response, B: Voltage }
+        \label{fig:41SqVo}
+      \end{figure}
+      
+      
+      
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{41SiVo.png}
+        \caption{A: Sine wave response, B: Voltage}
+        \label{fig:41SiVo}
+      \end{figure}
+
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{41SiVoBr.png}
+        \caption{A: Breaking Sine wave response, B: Voltage }
+        \label{fig:41SiVoBr}
+      \end{figure}
+  \end{center}
+ 
 \end{document}

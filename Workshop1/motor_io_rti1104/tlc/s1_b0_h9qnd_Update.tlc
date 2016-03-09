@@ -1,0 +1,28 @@
+%implements s1_b0_h9qnd_Update "C"
+
+%function Update(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Header")>\
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Body")>\
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* Update for DiscreteIntegrator: '<S3>/Integrator' */
+    motor_io_DW.Integrator_DSTATE += motor_io_P.Integrator_gainval * motor_io_B.IntegralGain_j;
+    /* Update for DiscreteIntegrator: '<S3>/Filter' */
+    motor_io_DW.Filter_DSTATE += motor_io_P.Filter_gainval * motor_io_B.FilterCoefficient;
+    /* Update for DiscreteIntegrator: '<S2>/Integrator' */
+    motor_io_DW.Integrator_DSTATE_g += motor_io_P.Integrator_gainval_a * motor_io_B.IntegralGain;
+    /* Update for DiscreteIntegrator: '<S2>/Filter' */
+    motor_io_DW.Filter_DSTATE_a += motor_io_P.Filter_gainval_l * motor_io_B.FilterCoefficient_g;
+}
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Trailer")>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%endfunction

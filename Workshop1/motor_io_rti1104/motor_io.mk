@@ -106,7 +106,7 @@ EXT_MODE                       = 0
 MULTITASKING                   = 0
 # Support for parallel computing
 MASTER_ANCHOR_DIR              = 
-START_DIR                      = C:\Users\gabras\Desktop\Workshop1
+START_DIR                      = C:\Users\gabras\Desktop\MF2007\Workshop1
 # Shared library for utility code
 RTW_SHARED_LIB_SRCS_WILD       = 
 RTW_SHARED_LIB_SRCS_DIR        = 
