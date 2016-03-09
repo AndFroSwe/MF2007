@@ -1,4 +1,4 @@
-clear all, close all;
+clear all, close all; clc;
 %% Define parameters
 n = 5; %Gearbox ratio
 J1 = 1.8e-5; %Load inertia 1
@@ -45,7 +45,7 @@ Gtot = tf(Gs * s * Gm);
 Gtot2 = tf(Gs2 * s * Gm);
 
 %1
-[A, B, C, D] = tf2ss(Gtot.num{1},Gtot.den{1});
+[A2, B2, C2, D2] = tf2ss(Gtot.num{1},Gtot.den{1});
 
 %2
 figure(2)
@@ -55,9 +55,9 @@ pzmap(Gtot2)
 
 %3
 figure(4)
-step(Gtot)
+step(Gtot) %Load
 figure(6)
-step(Gtot2)
+step(Gtot2) %Motor
 figure(7)
 bode(Gtot)
 figure(8)

@@ -73,8 +73,21 @@ C = [1 0 0; 0 1 0; 0 0 1];
 D = [0 0; 0 0; 0 0];
 sys = ss(A,B,C,D);
 [NUM,DEN] = ss2tf(A,B,C,D,1);
-Fe = 10000;
 
+%Ploting poles and zeros for velocity and pressure
+GsVel = tf(NUM(1,:), DEN);
+GsP1 = tf(NUM(2,:), DEN);
+GsP2 = tf(NUM(3,:), DEN);
+GsP3 = tf([0], DEN);
+figure
+pzmap(GsVel)
+figure
+pzmap(GsP1)
+figure
+pzmap(GsP2)
+legend('Velocity', 'Pressure 1', 'Pressure 2')
+
+Fe = 10000;
 A1 = Am;
 A2 = Am;
 sim('hydraulic.slx')
