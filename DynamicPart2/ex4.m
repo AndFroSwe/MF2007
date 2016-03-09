@@ -28,6 +28,9 @@ motor_pars.d = 3.8e-6; %Viscous friction in brushes
 motor_pars.k = 69.7e-3;    % Torque constant [Nm/A]
 motor_pars.J_m = 7.46e-7;  % Rotor inertia
 
+motor_L = motor_pars
+motor = motor_pars
+J = J1+J2
 %% part 4: Quantizing
 % Set parameters
 enable_sin = 0;     % Set 1 to enable sine input
@@ -42,12 +45,14 @@ sim_zoh_sample_time = zoh_sample_time*1e-3;  % Sample time, from ms to s
 
 % Simulate
 simtime = 1; % Sim for 1 s
+sim_step_v = 10;
 sim('ex2_sim.slx')
+sim('ex4_sim.slx')
 % Plot of unquantized signal
 figure
-plot(sim_ex2_v_w.Time, sim_ex2_v_w.Data)
+plot(sim_ex2_v_w)
 hold on
-stairs(sim_ex2_v_w_sampled.Time, sim_ex2_v_w_sampled.Data, 'r')
+stairs(ex4_sim_v_disc.Time, ex4_sim_v_disc.Data, 'r')
 grid on
 title('Motor control with and without quantization')
 xlabel('Time [s]')

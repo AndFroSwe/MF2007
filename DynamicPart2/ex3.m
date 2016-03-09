@@ -31,6 +31,7 @@ motor_pars.J_m = 7.46e-7;  % Rotor inertia
 
 %% Ex 3 With Karnopp model for friction
 motor_L = motor_pars;
+motor = motor_pars;
 J = J1+J2;
 
 %For step inputs

@@ -30,6 +30,7 @@ motor_pars.J_m = 7.46e-7;  % Rotor inertia
 
 %% Exercise 2
 J = (J1 + J2);
+motor = motor_pars
 disp('Exercise 2')
 motor_L = motor_pars;
 motor_L.L = 0;
