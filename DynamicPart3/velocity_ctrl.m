@@ -36,7 +36,7 @@ Jtot = motor.J + J/n^2; % Total inertia including load inertia after gear
 % Transfer function of system, without control
 s = tf('s');
 G_nom = motor.k;
-G_den = (s*Jtot + motor.d)*(motor.R) + motor.k;
+G_den = (s*Jtot + motor.d)*(motor.R) + motor.k^2;
 G = G_nom/G_den;
 disp('Transfer function of motor without inductance and inertial load with viscous friction')
 G
@@ -110,7 +110,7 @@ ylabel('\omega [rad/s]')
 % Solved on paper beforehand
 omega = abs(p1);
 zeta = 0.7;
-P = (2*Jtot*motor.R*omega*zeta - motor.k - motor.d*motor.R)/motor.k;
+P = (2*Jtot*motor.R*omega*zeta - motor.k^2 - motor.d*motor.R)/motor.k;
 I = (Jtot*motor.R*omega^2)/motor.k;
 
 
@@ -138,7 +138,7 @@ plot(sim_reference)
 hold on 
 grid on
 plot(sim_output)
-title('Closed loop PI controller for DC motor, output velocity')
+title('Error feedback: Closed loop PI controller for DC motor, output velocity')
 legend('Reference', 'Output')
 xlabel('Time [s]')
 ylabel('\omega [rad/s]')
@@ -150,13 +150,16 @@ r = motor.R;
 d = motor.d
 
 % Set desired poles
-omega1 =800;
-omega2 = 800;
+omega1 =500;
+omega2 = 600;
 Am = [1 omega1]
 A0 = s + omega2
 
+Fo_PI = P + (1/s)*I;
+Gco_PI = minreal(Fo_PI*G/(1 + Fo_PI*G));
+
 % Calculate parameters
-P =(Jtot*omega1*r+Jtot*omega2*r-d*r-k)/k;
+P =(Jtot*omega1*r+Jtot*omega2*r-d*r-k^2)/k;
 I = omega1*omega2*J*r/k;
 
 % Output feedback parameters
@@ -168,17 +171,17 @@ disp('DC gain is')
 t0inverse = dcgain(tf(G.num{1}/G.den{1}(1), Am))
 t0 = t0inverse^-1
 % Define T
-T = t0*A0.num{1}
+T =29* A0.num{1} %t0*A0.num{1}
 
 enable_sin = 0;
-simtime = 0.5;
+simtime = 5;
 sim('motor_velocity_2dof.slx')
 figure
 plot(sim_reference)
 hold on 
 grid on
 plot(sim_output)
-title('Closed loop PI controller for DC motor, output velocity')
+title('Output feedback: Closed loop PI controller for DC motor, output velocity')
 legend('Reference', 'Output')
 xlabel('Time [s]')
 ylabel('\omega [rad/s]')
