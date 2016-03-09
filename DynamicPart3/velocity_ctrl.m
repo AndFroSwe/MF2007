@@ -45,7 +45,10 @@ G_stepinfo = stepinfo(G);
 G_stepinfo.RiseTime
 
 %% P-control
-P = 3; % OBS! This value is chosen from the command rlocfind, explained below
+P = 1; % OBS! This value is chosen from the command rlocfind, explained below
+r0 = 0;
+I = 0;
+D = 0;
 % Plot root locus
 figure
 rlocus(G)
@@ -55,7 +58,7 @@ grid on
 % run command "P = rlocfind(G) to find desired P value in plot
 % OBS
 % Closed loop system
-F_P= P;
+F_P = P;
 
 Gc_P = minreal(F_P*G/(1 + F_P*G));
 Gc_P_stepinfo = stepinfo(Gc_P);
@@ -84,10 +87,10 @@ T = P;
 S = P; 
 R = 1;
 
-simtime = 10;
+simtime = 20;
 enable_sin = 1;
-sim_sin_amp = 200;
-sim_sin_freq = 10;
+sim_sin_amp = 20;
+sim_sin_freq = 0.2;
 I = 0;
 D = 0;
 % Run simulation
@@ -106,13 +109,13 @@ ylabel('\omega [rad/s]')
 % PI controller, placing double poles in same position as in P controller
 % Solved on paper beforehand
 omega = abs(p1);
-zeta = 0.9;
-P = (2*motor.J*motor.R*omega*zeta - motor.k - motor.d*motor.R)/motor.k%-(2*p1*motor.R*Jtot + motor.k + motor.d*motor.R)/motor.k
-I = (motor.J*motor.R*omega^2)/motor.k%(p1^2*Jtot*motor.R)/motor.k
+zeta = 0.7;
+P = (2*Jtot*motor.R*omega*zeta - motor.k - motor.d*motor.R)/motor.k;
+I = (Jtot*motor.R*omega^2)/motor.k;
 
 
-F_PI = P + 1/s*I;
-Gc_PI = minreal(F_PI*G);
+F_PI = P + (1/s)*I;
+Gc_PI = minreal(F_PI*G/(1 + F_PI*G));
 disp('Transfer function of closed system with PI controller is')
 Gc_PI
 disp('With poles in')
@@ -129,7 +132,47 @@ R = [1 0];    % = s
 
 enable_sin = 0;
 simtime = 0.5;
-sim('motor_velocity.slx')
+sim('motor_velocity_2dof.slx')
+figure
+plot(sim_reference)
+hold on 
+grid on
+plot(sim_output)
+title('Closed loop PI controller for DC motor, output velocity')
+legend('Reference', 'Output')
+xlabel('Time [s]')
+ylabel('\omega [rad/s]')
+
+%% Output feedback
+% redifine parameters
+k = motor.k;
+r = motor.R;
+d = motor.d
+
+% Set desired poles
+omega1 =800;
+omega2 = 800;
+Am = [1 omega1]
+A0 = s + omega2
+
+% Calculate parameters
+P =(Jtot*omega1*r+Jtot*omega2*r-d*r-k)/k;
+I = omega1*omega2*J*r/k;
+
+% Output feedback parameters
+S = [P I];  % = Ps + I
+R = [1 0];    % = s
+
+% DC gain in B/Am
+disp('DC gain is')
+t0inverse = dcgain(tf(G.num{1}/G.den{1}(1), Am))
+t0 = t0inverse^-1
+% Define T
+T = t0*A0.num{1}
+
+enable_sin = 0;
+simtime = 0.5;
+sim('motor_velocity_2dof.slx')
 figure
 plot(sim_reference)
 hold on 

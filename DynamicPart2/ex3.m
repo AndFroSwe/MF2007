@@ -54,7 +54,7 @@ else
         sim_step_v);
 end
 
-% simtime = 0.5;
+simtime = 0.5;
 % %Step with 1V
 % sim_step_v = 1;
 % enable_sin = 0;
@@ -71,10 +71,11 @@ end
 % title('Step input with A=10 V with Karnopp')
 
 enable_sin = 1;
-sim_sin_amp = 2;
+sim_sin_amp = 20;
 sim_sin_freq = 2;
 simtime = 6;
 sim('ex3_sim.slx')
+
 figure
 % Plot resulting velocity
 plot(sim_ex3_v_w.Time, sim_ex3_v_w.Data);
