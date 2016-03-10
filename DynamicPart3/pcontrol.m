@@ -4,7 +4,7 @@ warning('off', 'all')
 % Load parameters
 load('motor_parameters.mat')
 m = motor_pars;
-
+I = 0;
 %% Create model function
 Jtot = m.J + (J1 + J2)/n^2;
 
@@ -90,19 +90,51 @@ plot(sim_reference.Time, sim_reference.Data)
 title(sprintf('Feedback with P controller, P=%0.2f', P))
 legend('Output', 'Reference')
 
+%% Discrete time controller
+F = P;
+% Set parameters
+enable_karnop = 0;  % Dont use karnop
+enable_sin = 1;     % Set 1 to enable sine input
+sim_sin_amp = 10;
+sim_sin_freq = 1;
+sim_v = 1;
+sim_zoh = 0.002;
+pulses_per_rev = 1000;   % Pulses per revolution [-]
+simtime = 10;
+% Calculated parameters
+sim_quantization_interval = 2*pi/pulses_per_rev;    % Ppr to degrees
 
+% Simulate
+sim('motor_discrete_velocity.slx')
+figure
+plot(sim_reference) 
+hold on 
+grid on
+plot(sim_output)
+title('Discrete feedback: Closed loop PI controller for DC motor, output velocity')
+legend('Reference', 'Output')
+xlabel('Time [s]')
+ylabel('\omega [rad/s]')
 
+% sample time 0.02
+G_d1 = c2d(Go,0.02,'zoh');
+F_d1 = F;
+Gc_d1 =minreal( G_d1*F_d1/(1+G_d1*F_d1));
+figure
+step(Gc_d1)
+figure
+pzmap(Gc_d1)
+grid on
 
+% Sample time 0.002
+G_d2 = c2d(Go,0.002,'zoh');
+F_d2 = P;
+Gc_d2 =minreal( G_d2*F_d2/(1+G_d2*F_d2));
+figure
+step(Gc_d2)
 
-
-
-
-
-
-
-
-
-
-
+figure
+pzmap(Gc_d2)
+grid on
 
 
