@@ -56,7 +56,8 @@ enable_sin = 0;
 T = 1;
 S = P;
 R = 1;
-Gc = P*Go/(1 + P*Go)
+Gc = minreal(P*Go/(1 + P*Go))
+fprintf('Pole in %0.2f\n', pole(Gc))
 sim('twodof_velocity')
 figure
 hold on
