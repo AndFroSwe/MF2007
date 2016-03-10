@@ -4,31 +4,32 @@ warning('off', 'all')
 % Load parameters
 load('motor_parameters.mat')
 m = motor_pars;
-
+s = tf('s');
 %% Create model function
 Jtot = m.J + (J1 + J2)/n^2;
 
 disp('Open loop system')
 % Transfer of motor without indctance
 Go = tf([m.k/(m.R*Jtot)], [1 (m.d/Jtot + m.k^2/(m.R*Jtot))]);
-Go = Go*1/n % Add this to get gear box in model
+Go = minreal(Go*1/n*1/s) % Add this to get gear box in model
 
 
 % Error feedback
 % Place poles
-omega1 = 400;
-omega2 = 500;
-
-
-P = n*(Jtot*omega1*m.R+Jtot*omega2*m.R-m.d*m.R-m.k^2)/m.k
-I = omega1*omega2*n*Jtot*m.R/m.k
-
+omega1 = 30;
+omega2 = 40;
+a = Go.num{1}(3)
+b = Go.den{1}(2)
+Zeta = 0.7
+r0 = 2*Zeta*omega1-b+omega2;
+s0 = omega1^2*omega2/a; 
+s1 = (-2*Zeta*b*omega1+2*Zeta*omega1*omega2+b^2-b*omega2+omega1^2)/a;
 
 % Controller parameters
 s = tf('s');
-S = [P I];
+S = [s1 s0];
 T = S;
-R = [1 0];
+R = [1 r0];
 
 % Controller tf
 F = tf(S, R);
@@ -45,49 +46,13 @@ sim_sin_amp = 20;
 sim_sin_freq = 2;
 sim_v = 10;
 simtime = 10;
-sim('twodof_velocity')
+sim('twodof_position')
 figure(100)
 plot(sim_output.Time, sim_output.Data, 'b')
 grid on
 hold on
 plot(sim_reference.Time, sim_reference.Data, 'r')
-title(sprintf('Error feedback with PI controller, P=%0.2f and I=%0.2f', P, I))
-
-% Output feedback
-% Calculate T
-t0 = dcgain(tf(Go.num{1}, [1 omega1])/n)^-1;
-T = t0*[1 omega2];
-
-a = tf(Go.den{1}, [1]);
-b = tf(Go.num{1}, [1]);
-t = tf(T, [1]);
-r = tf(R, [1]);
-s = tf(S, [1]);
-Gc_output = minreal((b*t)/(a*r + b*s))
-figure
-pzmap(Gc_output)
-title('Output feedpag pole zero map')
-grid on
-
-% Simulate
-enable_karnop = 0;
-enable_sin = 1;
-sim_v = 10;
-simtime = 0.5;
-sim('twodof_velocity')
-figure(100)
-plot(sim_output.Time, sim_output.Data, 'g')
-grid on
-hold on
-title(sprintf('Output feedback with PI controller, P=%0.2f and I=%0.2f', P, I))
-legend('Error feedback', 'Reference', 'Output feedback')
-
-% Step responses
-figure
-step(Gc_output)
-hold on
-step(Gc_error)
-title('Step response')
+title(sprintf('Error feedback with PD controller, s1=%0.2f, s0=%0.2f and r0=%0.2f', s1, s0, r0))
 
 %% Discrete time controller
 close all
@@ -104,13 +69,13 @@ simtime = 10;
 sim_quantization_interval = 2*pi/pulses_per_rev;    % Ppr to degrees
 
 % Simulate
-sim('motor_discrete_velocity.slx')
+sim('motor_discrete_position.slx')
 figure
 plot(sim_reference) 
 hold on 
 grid on
 plot(sim_output)
-title('Discrete feedback: Closed loop PI controller for DC motor, output velocity')
+title('Discrete feedback: Closed loop PD controller for DC motor, output velocity')
 legend('Reference', 'Output')
 xlabel('Time [s]')
 ylabel('\omega [rad/s]')
