@@ -65,6 +65,30 @@ plot(sim_output.Time, sim_output.Data)
 title(sprintf('Feedback with P controller, P=%0.2f', P))
 Gc_info = stepinfo(Gc);
 fprintf('Rise time of closed system %0.2f\n', Gc_info.RiseTime)
+figure 
+bode(Gc)
+title('Bode of closed system')
+
+
+% Plot with sine wave
+disp('Closed loop')
+simtime = 30;
+enable_karnop = 0;
+enable_sin = 1;
+sim_sin_amp = 20;
+sim_sin_freq = 0.2;
+T = P;
+S = P;
+R = 1;
+sim('twodof_velocity')
+figure
+plot(sim_output.Time, sim_output.Data)
+grid on
+hold on
+plot(sim_reference.Time, sim_reference.Data)
+title(sprintf('Feedback with P controller, P=%0.2f', P))
+legend('Output', 'Reference')
+
 
 
 
