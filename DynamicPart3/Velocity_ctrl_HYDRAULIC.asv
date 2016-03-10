@@ -112,9 +112,9 @@ A2 = Am;
 close all;
 s = tf('s');
 
-a = G.NUM{1}(3);
-b = G.DEN{1}(2);
-c = G.DEN{1}(3);
+a = Go.NUM{1}(3);
+b = Go.DEN{1}(2);
+c = Go.DEN{1}(3);
 Ba1 = a;
 Aa1 = s^2 + b*s +c;
 
@@ -169,15 +169,20 @@ Gyr_d = minreal((Gd*TRd)/(1+Gd*SRd));
 step(Gyr_d)
 
 %% Discrete Position Control
-Gc_p_info = stepinfo(Gc_p);
-Ts2 = Gc_p_info.RiseTime/10
-Gd_p = c2d(Go_p,Ts2,'zoh');
+
+Go_pStepInfo = stepinfo(Go_p);
+Ts2 = Go_pStepInfo.RiseTime/6;
+Gd_p = c2d(Go_p,Ts,'zoh');
 z_p = tf('z');
+Bd_p = Gd.NUM{1}(2)*z + Gd.NUM{1}(3);
+Ad = Gd.NUM{1}(1)*z^2 + Gd.NUM{1}(2)*z + Gd.NUM{1}(3);
 
-F_PI_d = c2d(F_PI,Ts2,'zoh');
+SRd = c2d(S/R,Ts,'zoh');
+TRd = c2d(T/R,Ts,'zoh');
 
-Gc_p_d = minreal((Gd_p*F_PI_d)/(1+Gd_p*F_PI_d));
-step(Gc_p_d)
+
+Gyr_d = minreal((Gd*TRd)/(1+Gd*SRd));
+step(Gyr_d)
 
 
 
