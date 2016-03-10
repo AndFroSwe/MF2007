@@ -36,32 +36,43 @@ C2 = [0 0 0 1];
 [num, den] = ss2tf(A, B, C, 0, 1);
 [num2, den2] = ss2tf(A, B, C2, 0, 1);
 
-Gs=tf(num, den);
+Gs=tf(num, den); 
 Gs2 = tf(num2, den2);
 
 s = tf('s');
 
-Gtot = tf(Gs * s * Gm);
-Gtot2 = tf(Gs2 * s * Gm);
+Gtot = tf(Gs * s * Gm); % Transfer for load velocity
+Gtot2 = tf(Gs2 * s * Gm); % Transfer for motor velocity
 
 %1
 [A2, B2, C2, D2] = tf2ss(Gtot.num{1},Gtot.den{1});
 
 %2
-figure(2)
+figure
+subplot(2,1,1)
 pzmap(Gtot)
-figure(5)
+title('Pzmap for the Load velocity model')
+% figure
+subplot(2,1,2)
 pzmap(Gtot2)
-
+title('Pzmap for the Motor velocity model')
 %3
-figure(4)
+figure
+subplot(2,1,1)
 step(Gtot) %Load
-figure(6)
+title('Step response for the Load velocity model')
+% figure
+subplot(2,1,2)
 step(Gtot2) %Motor
-figure(7)
+title('Step response for the Motor velocity model')
+figure
+subplot(2,1,1)
 bode(Gtot)
-figure(8)
+title('Bode plot for the Load velocity model')
+% figure
+subplot(2,1,2)
 bode(Gtot2)
+title('Bode plot for the Motor velocity model')
 
 %4
 %See above

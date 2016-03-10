@@ -55,39 +55,43 @@ else
 end
 
 simtime = 0.5;
-% %Step with 1V
-% sim_step_v = 1;
-% enable_sin = 0;
-% sim('ex3_sim.slx')
-% figure
-% plot(sim_ex3_v_w.Time,sim_ex3_v_w.Data);
-% title('Step input with A=1 V with Karnopp')
-% 
-% %Step with 10V
-% sim_step_v=10;
-% sim('ex3_sim.slx')
-% figure
-% plot(sim_ex3_v_w.Time,sim_ex3_v_w.Data);
-% title('Step input with A=10 V with Karnopp')
+%Step with 1V
+sim_step_v = 1;
+enable_sin = 0;
+sim('ex3_sim.slx')
+figure
+plot(sim_ex3_v_w.Time,sim_ex3_v_w.Data);
+title('Step input with A=1 V with Karnopp')
+
+%Step with 10V
+sim_step_v=10;
+sim('ex3_sim.slx')
+figure
+plot(sim_ex3_v_w.Time,sim_ex3_v_w.Data);
+title('Step input with A=10 V with Karnopp')
 
 enable_sin = 1;
 sim_sin_amp = 20;
 sim_sin_freq = 2;
 simtime = 6;
 sim('ex3_sim.slx')
-
+title_string = sprintf('Sine input with A=%0.1f V with frequency = %0.1f ',...
+        sim_sin_amp,sim_sin_freq);
 figure
 % Plot resulting velocity
 plot(sim_ex3_v_w.Time, sim_ex3_v_w.Data);
-title('Sin input amp 2, freq 1')
+ 
+title(title_string)
 grid on
 
 simtime = 6;
 sim_sin_amp = 5;
 sim('ex3_sim.slx')
+title_string = sprintf('Sine input with A=%0.1f V with frequency = %0.1f ',...
+        sim_sin_amp,sim_sin_freq);
 figure
 plot(sim_ex3_v_trq)
 hold on
 plot(sim_ex3_v_clb)
 legend('Torque', 'Friction')
-
+title('Plot of applied force and friction')

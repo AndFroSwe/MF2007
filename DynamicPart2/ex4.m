@@ -61,6 +61,9 @@ for enc = [512 8192]
         
         subplot(3,2,pos)
         plot(sim_ex2_v_w)
+        title_string = sprintf('Encoder: %1.0f, Sampling time: %0.3f' ,...
+        enc,sim_zoh_sample_time);
+        title(title_string)
         hold on
         stairs(ex4_sim_v_disc.Time, ex4_sim_v_disc.Data, 'r')
         

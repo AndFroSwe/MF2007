@@ -37,7 +37,7 @@ motor_L.L = 0;
 
 % Simulate model to get data
 disp('Simulating ex2...')
-simtime = 5;
+simtime = 1;
 sim_step_v = 1;
 enable_sin = 0;
 sim('ex2_sim.slx');

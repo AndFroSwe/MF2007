@@ -90,23 +90,6 @@ P = 0.5;
 % Run simulation model
 A1 = Am;
 A2 = Am;
-% sim('hydraulic_ex3.slx')
-% figure
-% plot(sim_p1)
-% hold on
-% grid on
-% plot(sim_p2)
-% p1lin = sim_linear.Data(:,2)+p10;
-% p2lin = sim_linear.Data(:,3)+p20;
-% 
-% plot(sim_linear.Time,p1lin)
-% plot(sim_linear.Time,p2lin)
-% legend('P1sim','P2sim','P1lin','P2lin')
-% figure
-% plot(sim_velocity)
-% hold on
-% plot(sim_linear.Time,sim_linear.Data(:,1))
-% legend('Velocity simulated','Velocity Linear')
 
 %% Velocity Control Output
 close all;
