@@ -1,9 +1,0 @@
--- ******** User variables from model_usr.trc *********************************
--- RTI_USR_TRC_BEGIN
-
-group "User Variables"
-{
- flags: COLLAPSED
-}
-
--- Contents of file motor_io_usr.trc:
