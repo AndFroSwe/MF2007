@@ -103,17 +103,17 @@ fprintf('Rise time is %0.2f ms\n', Gc_info.RiseTime*1000)
 sample_time = Gc_info.RiseTime/samples_per_risetime
 % Parameter for program. Set manually after viewing the above
 Ts = 5.5e-2;
-
 % Make discrete
-Go_d  = c2d(Go, Ts,'zoh')
-Gff_d = c2d(T/R, Ts, 'tustin')
-Gfb_d = c2d(S/R, Ts, 'tustin')
+Go_d  = minreal(c2d(Go, Ts,'zoh'))
+Gff_d = minreal(c2d(T/R, Ts, 'tustin'))
+Gfb_d = minreal(c2d(S/R, Ts, 'tustin'))
 
 % Model parameters
 pulses_per_rev = 1000; % Defined on motor
 quant = 2*pi/pulses_per_rev;    % Ppr to degrees
 
-Gyr_d = minreal((Go*Gff_d)/(1+Go*Gfb_d))
+% Discrete system
+Gyr_d = minreal((Go_d*Gff_d)/(1+Go_d*Gfb_d))
 figure
 pzmap(Gyr_d)
 grid on
