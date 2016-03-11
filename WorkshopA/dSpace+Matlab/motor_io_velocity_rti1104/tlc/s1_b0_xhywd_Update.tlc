@@ -1,0 +1,32 @@
+%implements s1_b0_xhywd_Update "C"
+
+%function Update(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Header")>\
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Body")>\
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* Update for UnitDelay: '<S15>/UD' */
+    motor_io_velocity_DW.UD_DSTATE = motor_io_velocity_B.TSamp;
+    /* Update for DiscreteTransferFcn: '<Root>/Gfbreal' */
+    motor_io_velocity_DW.Gfbreal_states = motor_io_velocity_DW.Gfbreal_tmp;
+    /* Update for DiscreteTransferFcn: '<Root>/Gffreal' */
+    motor_io_velocity_DW.Gffreal_states = motor_io_velocity_DW.Gffreal_tmp;
+    /* Update for DiscreteTransferFcn: '<Root>/Gff' */
+    motor_io_velocity_DW.Gff_states = motor_io_velocity_DW.Gff_tmp;
+    /* Update for UnitDelay: '<S14>/UD' */
+    motor_io_velocity_DW.UD_DSTATE_b = motor_io_velocity_B.TSamp_e;
+    /* Update for DiscreteTransferFcn: '<Root>/Gfb' */
+    motor_io_velocity_DW.Gfb_states = motor_io_velocity_DW.Gfb_tmp;
+}
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Trailer")>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%endfunction

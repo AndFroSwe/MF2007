@@ -29,8 +29,7 @@ codeInfo = codeIRInfoStruct.codeInfo;
 %endfunction
 
 %function FcnGetUnsetParamIdxFromIRInfo() void
-%assign tmpIdx = Matrix(6,2)[[0, 0]; [1, 1]; [2, 2]; [3, 3]; ...
-[4, 4]; [5, 5]; ]
+%assign tmpIdx = Matrix(3,2)[[0, 0]; [1, 1]; [2, 2]; ]
 %return tmpIdx 
 %endfunction
 

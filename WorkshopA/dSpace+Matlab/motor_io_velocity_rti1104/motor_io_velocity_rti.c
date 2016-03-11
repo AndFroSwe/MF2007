@@ -6,7 +6,7 @@
    the hardware and software interrupts used.
 
    RTI1104 7.3 (02-Nov-2014)
-   Fri Mar 11 10:25:49 2016
+   Fri Mar 11 13:31:00 2016
 
    (c) Copyright 2006, dSPACE GmbH. All rights reserved.
 
@@ -169,7 +169,7 @@ static void rti_mdl_background(void)
 
 __INLINE void rti_mdl_sample_input(void)
 {
-  /* Calls for base sample time: [0.00055, 0] */
+  /* Calls for base sample time: [0.021970064966318415, 0] */
   /* dSPACE I/O Board DS1104 #1 Unit:ENC_POS Group:POS */
   motor_io_velocity_B.SFunction1 = (real_T) ds1104_inc_position_read(1,
     DS1104_INC_LINE_SUBDIV_4);

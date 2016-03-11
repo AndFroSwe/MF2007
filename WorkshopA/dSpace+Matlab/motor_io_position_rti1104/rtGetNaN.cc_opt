@@ -1,0 +1,60 @@
+-c -KE
+-nKu
+-nKv
+-nKia
+-p603E
+-o
+rtGetNaN.o03
+-nQi
+-QmsC0001
+-Qms0111
+-QmsC0177
+-QmsC0186
+-QmsC0188
+-QmsC0191
+-QmsC0193
+-QmeC0223
+-QmeC0233
+-QmsC0236
+-QmsC0237
+-QmwC0260
+-QmsC0340
+-QmsC0381
+-QmsC0514
+-Qms0550
+-QmsC0826
+-Qms1430
+-Qms1457
+-Ot
+-Oi
+-Or
+-Ox
+-D_INLINE
+-DSSTATE=RUN
+-DSMODE=RTSIM
+-DUSE_RTMODEL
+-DMODEL=motor_io_position
+-DMT=0
+-DRT
+-DNUMST=2
+-DNCSTATES=2
+-DTID01EQ=1
+-DNO_PRINTF
+-D_DS1104
+-DRTI_BUILD
+-DRTI_ASSERTION_MODE=RTI_ASSERTION_MODE_OFF
+-J.
+-J..
+"-JC:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\INC"
+"-JC:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel"
+"-JC:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib"
+"-JC:\Program Files (x86)\dSPACE RCPHIL 2014-B\MATLAB\RTI\RTI\C"
+"-JC:\Program Files (x86)\dSPACE RCPHIL 2014-B\MATLAB\RTI\RTI\SFcn"
+"-JC:\Program Files (x86)\dSPACE RCPHIL 2014-B\MATLAB\RTI\RTI1104\C"
+"-JC:\Program Files (x86)\dSPACE RCPHIL 2014-B\MATLAB\RTI\RTI1104\SFcn"
+-JC:\PROGRA~2\MATLAB\R2014b\simulink\include
+-JC:\PROGRA~2\MATLAB\R2014b\extern\include
+-JC:\PROGRA~2\MATLAB\R2014b\rtw\c\src
+-JC:\PROGRA~2\MATLAB\R2014b\rtw\c\src\ext_mode\common
+-JC:\Users\gabras\Desktop\MF2007\WorkshopA\dSpace+Matlab\motor_io_position_rti1104
+-JC:\Users\gabras\Desktop\MF2007\WorkshopA\dSpace+Matlab 

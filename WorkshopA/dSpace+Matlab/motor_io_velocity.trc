@@ -3,7 +3,7 @@
 --  Trace file: motor_io_velocity.trc
 --
 --  RTI1104 7.3 (02-Nov-2014)
---  Fri Mar 11 10:25:49 2016
+--  Fri Mar 11 13:31:00 2016
 --
 --  Used options:
 --    TRCGenerateVirtualBlocks      = 1
@@ -27,7 +27,7 @@
 
 _genname     "RTI"
 _genversion  "7.3"
-_gendate     "03/11/2016 10:25:51"
+_gendate     "03/11/2016 13:31:03"
 _description ""
 _author      "RTI1104 7.3 (02-Nov-2014)"
 _model       "motor_io_velocity.mdl"
@@ -39,9 +39,9 @@ _integer_type(32)
 -- No Data Capture blocks within model: use base sample time as sampling period
 sampling_period[0]
 {
-  value:       0.00055
+  value:       0.021970064966318415
   alias:       "HostService"
-  increment:   0.00055
+  increment:   0.021970064966318415
   unit:        "s"
 }
 
@@ -139,14 +139,14 @@ group "Model Root"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_velocity_real_T_0[8]
+		p_0_motor_io_velocity_real_T_0[13]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 desc:    ""
 		 flags:   OUTPUT|READONLY
 		}
-		p_1_motor_io_velocity_real_T_0[17]
+		p_1_motor_io_velocity_real_T_0[21]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Gain"
@@ -156,50 +156,26 @@ group "Model Root"
 
 	endgroup -- block-group "Gain"
 
-	group "Quantizer" -- block-group
-	{
-	 block: "Quantizer"
-	 desc:  ""
-	 flags: BLOCK|COLLAPSED
-	}
-		p_0_motor_io_velocity_real_T_0[14]
-		{
-		 type:    flt(64,IEEE)*
-		 alias:   "Out1"
-		 desc:    ""
-		 flags:   OUTPUT|READONLY
-		}
-		p_1_motor_io_velocity_real_T_0[8]
-		{
-		 type:    flt(64,IEEE)*
-		 alias:   "QuantizationInterval"
-		 flags:   PARAM
-		 origin:  "quant"
-		}
-
-
-	endgroup -- block-group "Quantizer"
-
 	group "Saturation" -- block-group
 	{
 	 block: "Saturate"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_velocity_real_T_0[17]
+		p_0_motor_io_velocity_real_T_0[26]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 desc:    ""
 		 flags:   OUTPUT|READONLY
 		}
-		p_1_motor_io_velocity_real_T_0[26]
+		p_1_motor_io_velocity_real_T_0[40]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "UpperLimit"
 		 flags:   PARAM
 		}
-		p_1_motor_io_velocity_real_T_0[27]
+		p_1_motor_io_velocity_real_T_0[41]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "LowerLimit"
@@ -215,7 +191,7 @@ group "Model Root"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_velocity_real_T_0[3]
+		p_0_motor_io_velocity_real_T_0[8]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -245,7 +221,7 @@ group "Model Root"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_velocity_real_T_0[4]
+		p_0_motor_io_velocity_real_T_0[9]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -275,7 +251,7 @@ group "Model Root"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_velocity_real_T_0[7]
+		p_0_motor_io_velocity_real_T_0[12]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -292,7 +268,7 @@ group "Model Root"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_velocity_real_T_0[16]
+		p_0_motor_io_velocity_real_T_0[25]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -309,7 +285,7 @@ group "Model Root"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_velocity_real_T_0[5]
+		p_0_motor_io_velocity_real_T_0[10]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -320,71 +296,32 @@ group "Model Root"
 
 	endgroup -- block-group "Switch"
 
-	group "G_fb_real" -- block-group
-	{
-	 block: "DiscreteTransferFcn"
-	 desc:  ""
-	 flags: BLOCK|COLLAPSED
-	}
-		p_0_motor_io_velocity_real_T_0[2]
-		{
-		 type:    flt(64,IEEE)*
-		 alias:   "Out1"
-		 desc:    ""
-		 flags:   OUTPUT|READONLY
-		}
-		p_1_motor_io_velocity_real_T_0[4]
-		{
-		 type:    motor_io_velocity_ArrayDT0_2*
-		 alias:   "Numerator"
-		 flags:   PARAM
-		 origin:  "S_vector"
-		}
-		p_1_motor_io_velocity_real_T_0[2]
-		{
-		 type:    motor_io_velocity_ArrayDT0_2*
-		 alias:   "Denominator"
-		 flags:   PARAM
-		 origin:  "R_vector"
-		}
-		p_1_motor_io_velocity_real_T_0[10]
-		{
-		 type:    flt(64,IEEE)*
-		 alias:   "InitialStates"
-		 flags:   PARAM
-		}
-
-
-	endgroup -- block-group "G_fb_real"
-
 	group "Gfb" -- block-group
 	{
 	 block: "DiscreteTransferFcn"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_velocity_real_T_0[15]
+		p_0_motor_io_velocity_real_T_0[24]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 desc:    ""
 		 flags:   OUTPUT|READONLY
 		}
-		p_1_motor_io_velocity_real_T_0[4]
+		p_1_motor_io_velocity_real_T_0[35]
 		{
 		 type:    motor_io_velocity_ArrayDT0_2*
 		 alias:   "Numerator"
 		 flags:   PARAM
-		 origin:  "S_vector"
 		}
-		p_1_motor_io_velocity_real_T_0[2]
+		p_1_motor_io_velocity_real_T_0[37]
 		{
 		 type:    motor_io_velocity_ArrayDT0_2*
 		 alias:   "Denominator"
 		 flags:   PARAM
-		 origin:  "R_vector"
 		}
-		p_1_motor_io_velocity_real_T_0[25]
+		p_1_motor_io_velocity_real_T_0[39]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "InitialStates"
@@ -394,13 +331,13 @@ group "Model Root"
 
 	endgroup -- block-group "Gfb"
 
-	group "Gff" -- block-group
+	group "Gfbreal" -- block-group
 	{
 	 block: "DiscreteTransferFcn"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_velocity_real_T_0[12]
+		p_0_motor_io_velocity_real_T_0[7]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -412,16 +349,49 @@ group "Model Root"
 		 type:    motor_io_velocity_ArrayDT0_2*
 		 alias:   "Numerator"
 		 flags:   PARAM
-		 origin:  "T_vector"
 		}
-		p_1_motor_io_velocity_real_T_0[2]
+		p_1_motor_io_velocity_real_T_0[8]
 		{
 		 type:    motor_io_velocity_ArrayDT0_2*
 		 alias:   "Denominator"
 		 flags:   PARAM
-		 origin:  "R_vector"
 		}
-		p_1_motor_io_velocity_real_T_0[23]
+		p_1_motor_io_velocity_real_T_0[10]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "InitialStates"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Gfbreal"
+
+	group "Gff" -- block-group
+	{
+	 block: "DiscreteTransferFcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_0_motor_io_velocity_real_T_0[17]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_motor_io_velocity_real_T_0[27]
+		{
+		 type:    motor_io_velocity_ArrayDT0_2*
+		 alias:   "Numerator"
+		 flags:   PARAM
+		}
+		p_1_motor_io_velocity_real_T_0[29]
+		{
+		 type:    motor_io_velocity_ArrayDT0_2*
+		 alias:   "Denominator"
+		 flags:   PARAM
+		}
+		p_1_motor_io_velocity_real_T_0[31]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "InitialStates"
@@ -431,34 +401,32 @@ group "Model Root"
 
 	endgroup -- block-group "Gff"
 
-	group "Gff_real" -- block-group
+	group "Gffreal" -- block-group
 	{
 	 block: "DiscreteTransferFcn"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_velocity_real_T_0[6]
+		p_0_motor_io_velocity_real_T_0[11]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 desc:    ""
 		 flags:   OUTPUT|READONLY
 		}
-		p_1_motor_io_velocity_real_T_0[6]
+		p_1_motor_io_velocity_real_T_0[16]
 		{
 		 type:    motor_io_velocity_ArrayDT0_2*
 		 alias:   "Numerator"
 		 flags:   PARAM
-		 origin:  "T_vector"
 		}
-		p_1_motor_io_velocity_real_T_0[2]
+		p_1_motor_io_velocity_real_T_0[18]
 		{
 		 type:    motor_io_velocity_ArrayDT0_2*
 		 alias:   "Denominator"
 		 flags:   PARAM
-		 origin:  "R_vector"
 		}
-		p_1_motor_io_velocity_real_T_0[16]
+		p_1_motor_io_velocity_real_T_0[20]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "InitialStates"
@@ -466,7 +434,7 @@ group "Model Root"
 		}
 
 
-	endgroup -- block-group "Gff_real"
+	endgroup -- block-group "Gffreal"
 
   
   
@@ -476,14 +444,14 @@ group "Model Root"
 	 desc:  ""
 	}
 
-		p_0_motor_io_velocity_real_T_0[32]
+		p_0_motor_io_velocity_real_T_0[18]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Position"
 		 desc:    ""
 		 flags:   OUTPUT|READONLY
 		}
-		p_0_motor_io_velocity_real_T_0[13]
+		p_0_motor_io_velocity_real_T_0[27]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Velocity"
@@ -497,7 +465,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[17]
+			p_0_motor_io_velocity_real_T_0[26]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -533,7 +501,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_velocity_real_T_0[34]
+			p_1_motor_io_velocity_real_T_0[49]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -549,14 +517,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[18]
+			p_0_motor_io_velocity_real_T_0[28]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_velocity_real_T_0[28]
+			p_1_motor_io_velocity_real_T_0[43]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -572,14 +540,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[29]
+			p_0_motor_io_velocity_real_T_0[39]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_velocity_real_T_0[33]
+			p_1_motor_io_velocity_real_T_0[48]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -595,14 +563,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[20]
+			p_0_motor_io_velocity_real_T_0[30]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_velocity_real_T_0[29]
+			p_1_motor_io_velocity_real_T_0[44]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -618,14 +586,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[13]
+			p_0_motor_io_velocity_real_T_0[27]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_velocity_real_T_0[24]
+			p_1_motor_io_velocity_real_T_0[42]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
@@ -641,14 +609,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[32]
+			p_0_motor_io_velocity_real_T_0[18]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_velocity_real_T_0[35]
+			p_1_motor_io_velocity_real_T_0[32]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
@@ -664,7 +632,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[31]
+			p_0_motor_io_velocity_real_T_0[41]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -681,7 +649,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[19]
+			p_0_motor_io_velocity_real_T_0[29]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -698,7 +666,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[28]
+			p_0_motor_io_velocity_real_T_0[38]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -715,7 +683,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[30]
+			p_0_motor_io_velocity_real_T_0[40]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -734,7 +702,7 @@ group "Model Root"
 		 desc:  ""
 		}
 
-			p_0_motor_io_velocity_real_T_0[27]
+			p_0_motor_io_velocity_real_T_0[37]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Friction"
@@ -748,7 +716,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_velocity_real_T_0[13]
+				p_0_motor_io_velocity_real_T_0[27]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -765,7 +733,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_velocity_real_T_0[20]
+				p_0_motor_io_velocity_real_T_0[30]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -782,7 +750,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_velocity_real_T_0[22]
+				p_0_motor_io_velocity_real_T_0[32]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -800,7 +768,7 @@ group "Model Root"
 			 flags: BLOCK|COLLAPSED
 			}
 				-- Skipping output Out1
-				p_1_motor_io_velocity_real_T_0[36]
+				p_1_motor_io_velocity_real_T_0[50]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Value"
@@ -834,14 +802,14 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_velocity_real_T_0[23]
+				p_0_motor_io_velocity_real_T_0[33]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 desc:    ""
 				 flags:   OUTPUT|READONLY
 				}
-				p_1_motor_io_velocity_real_T_0[32]
+				p_1_motor_io_velocity_real_T_0[47]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Gain"
@@ -857,7 +825,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_velocity_real_T_0[25]
+				p_0_motor_io_velocity_real_T_0[35]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -874,7 +842,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_velocity_real_T_0[21]
+				p_0_motor_io_velocity_real_T_0[31]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -888,7 +856,7 @@ group "Model Root"
 				 flags:   PARAM
 				 origin:  "F_c"
 				}
-				p_1_motor_io_velocity_real_T_0[30]
+				p_1_motor_io_velocity_real_T_0[45]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "LowerLimit"
@@ -904,7 +872,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_velocity_real_T_0[27]
+				p_0_motor_io_velocity_real_T_0[37]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "In1"
@@ -920,21 +888,21 @@ group "Model Root"
 				 bitmask: 0x01
 				 flags:   SINK|READONLY
 				}
-				p_0_motor_io_velocity_real_T_0[21]
+				p_0_motor_io_velocity_real_T_0[31]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "In3"
 				 desc:    ""
 				 flags:   SINK|READONLY
 				}
-				p_0_motor_io_velocity_real_T_0[26]
+				p_0_motor_io_velocity_real_T_0[36]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "In4"
 				 desc:    ""
 				 flags:   SINK|READONLY
 				}
-				p_0_motor_io_velocity_real_T_0[13]
+				p_0_motor_io_velocity_real_T_0[27]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "In5"
@@ -952,7 +920,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_velocity_real_T_0[24]
+				p_0_motor_io_velocity_real_T_0[34]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -969,7 +937,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_velocity_real_T_0[26]
+				p_0_motor_io_velocity_real_T_0[36]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -986,7 +954,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_velocity_real_T_0[27]
+				p_0_motor_io_velocity_real_T_0[37]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1003,14 +971,14 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_velocity_real_T_0[33]
+				p_0_motor_io_velocity_real_T_0[42]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 desc:    ""
 				 flags:   OUTPUT|READONLY
 				}
-				p_1_motor_io_velocity_real_T_0[37]
+				p_1_motor_io_velocity_real_T_0[51]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Threshold"
@@ -1044,7 +1012,7 @@ group "Model Root"
 				 desc:  ""
 				 flags: BLOCK|COLLAPSED
 				}
-					p_0_motor_io_velocity_real_T_0[22]
+					p_0_motor_io_velocity_real_T_0[32]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -1062,7 +1030,7 @@ group "Model Root"
 				 flags: BLOCK|COLLAPSED
 				}
 					-- Skipping output Out1
-					p_1_motor_io_velocity_real_T_0[31]
+					p_1_motor_io_velocity_real_T_0[46]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Value"
@@ -1104,28 +1072,28 @@ group "Model Root"
 			 origin:  "motor_io_velocity/DC motor/Karnop friction1/Velocity threshold\n/y"
 			 flags:   LABEL|READONLY
 			}
-			p_0_motor_io_velocity_real_T_0[27]
+			p_0_motor_io_velocity_real_T_0[37]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Friction"
 			 origin:  "motor_io_velocity/DC motor/Karnop friction1/Switch/Out1"
 			 flags:   LABEL|READONLY
 			}
-			p_0_motor_io_velocity_real_T_0[21]
+			p_0_motor_io_velocity_real_T_0[31]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Stick slip region\n"
 			 origin:  "motor_io_velocity/DC motor/Karnop friction1/Saturate to Fc/Out1"
 			 flags:   LABEL|READONLY
 			}
-			p_0_motor_io_velocity_real_T_0[13]
+			p_0_motor_io_velocity_real_T_0[27]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Velocity"
 			 origin:  "motor_io_velocity/DC motor/Karnop friction1/Angular \nvelcoity/Out1"
 			 flags:   LABEL|READONLY
 			}
-			p_0_motor_io_velocity_real_T_0[26]
+			p_0_motor_io_velocity_real_T_0[36]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Viscous region"
@@ -1152,7 +1120,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[8]
+			p_0_motor_io_velocity_real_T_0[13]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -1170,7 +1138,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_velocity_real_T_0[22]
+			p_1_motor_io_velocity_real_T_0[26]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -1187,7 +1155,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_velocity_real_T_0[21]
+			p_1_motor_io_velocity_real_T_0[25]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -1222,14 +1190,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[10]
+			p_0_motor_io_velocity_real_T_0[15]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_velocity_real_T_0[20]
+			p_1_motor_io_velocity_real_T_0[24]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -1278,20 +1246,20 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[9]
+			p_0_motor_io_velocity_real_T_0[14]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_velocity_real_T_0[18]
+			p_1_motor_io_velocity_real_T_0[22]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "UpperLimit"
 			 flags:   PARAM
 			}
-			p_1_motor_io_velocity_real_T_0[19]
+			p_1_motor_io_velocity_real_T_0[23]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "LowerLimit"
@@ -1307,7 +1275,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[11]
+			p_0_motor_io_velocity_real_T_0[16]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -1339,7 +1307,7 @@ group "Model Root"
 
 		endgroup -- subsystem-group "DS1104SL_DSP_PWM"
 
-		p_0_motor_io_velocity_real_T_0[9]
+		p_0_motor_io_velocity_real_T_0[14]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Volt"
@@ -1360,20 +1328,450 @@ group "Model Root"
 	endgroup -- subsystem-group "RTI Data"
   
   
+	group "Sensor\n1" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_0_motor_io_velocity_real_T_0[23]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "In1" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_velocity_real_T_0[18]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In1"
+
+		group "Quantizer" -- block-group
+		{
+		 block: "Quantizer"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_velocity_real_T_0[19]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_velocity_real_T_0[2]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "QuantizationInterval"
+			 flags:   PARAM
+			 origin:  "quant"
+			}
+
+
+		endgroup -- block-group "Quantizer"
+
+		group "Zero-Order\nHold" -- block-group
+		{
+		 block: "ZeroOrderHold"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_velocity_real_T_0[20]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Zero-Order\nHold"
+
+  
+  
+		group "Discrete Derivative" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+			p_0_motor_io_velocity_real_T_0[23]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Y"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+			group "U" -- block-group
+			{
+			 block: "Inport"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_0_motor_io_velocity_real_T_0[20]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "U"
+
+			group "Diff" -- block-group
+			{
+			 block: "Sum"
+			 desc:  "\nAdd in CPU"
+			 flags: BLOCK|COLLAPSED
+			}
+				p_0_motor_io_velocity_real_T_0[23]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Diff"
+
+			group "Data Type\nDuplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_0_motor_io_velocity_real_T_0[23]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In1"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_0_motor_io_velocity_real_T_0[21]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In2"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_0_motor_io_velocity_real_T_0[22]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In3"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+
+
+
+			endgroup -- block-group "Data Type\nDuplicate"
+
+			group "TSamp" -- block-group
+			{
+			 block: "SampleTimeMath"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_0_motor_io_velocity_real_T_0[21]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+				p_1_motor_io_velocity_real_T_0[33]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "WtEt"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "TSamp"
+
+			group "UD" -- block-group
+			{
+			 block: "UnitDelay"
+			 desc:  "\nStore in Global RAM"
+			 flags: BLOCK|COLLAPSED
+			}
+				p_0_motor_io_velocity_real_T_0[22]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+				p_1_motor_io_velocity_real_T_0[34]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "InitialCondition"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "UD"
+
+
+			p_0_motor_io_velocity_real_T_0[22]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "U(k-1)"
+			 origin:  "motor_io_velocity/Sensor\n1/Discrete Derivative/UD/Out1"
+			 flags:   LABEL|READONLY
+			}
+
+		endgroup -- subsystem-group "Discrete Derivative"
+
+
+	endgroup -- subsystem-group "Sensor\n1"
+  
+  
+	group "Sensor\n2" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_0_motor_io_velocity_real_T_0[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "In1" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_velocity_real_T_0[1]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In1"
+
+		group "Quantizer" -- block-group
+		{
+		 block: "Quantizer"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_velocity_real_T_0[2]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_velocity_real_T_0[2]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "QuantizationInterval"
+			 flags:   PARAM
+			 origin:  "quant"
+			}
+
+
+		endgroup -- block-group "Quantizer"
+
+		group "Zero-Order\nHold" -- block-group
+		{
+		 block: "ZeroOrderHold"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_velocity_real_T_0[3]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Zero-Order\nHold"
+
+  
+  
+		group "Discrete Derivative" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+			p_0_motor_io_velocity_real_T_0[6]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Y"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+			group "U" -- block-group
+			{
+			 block: "Inport"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_0_motor_io_velocity_real_T_0[3]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "U"
+
+			group "Diff" -- block-group
+			{
+			 block: "Sum"
+			 desc:  "\nAdd in CPU"
+			 flags: BLOCK|COLLAPSED
+			}
+				p_0_motor_io_velocity_real_T_0[6]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Diff"
+
+			group "Data Type\nDuplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_0_motor_io_velocity_real_T_0[6]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In1"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_0_motor_io_velocity_real_T_0[4]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In2"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_0_motor_io_velocity_real_T_0[5]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In3"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+
+
+
+			endgroup -- block-group "Data Type\nDuplicate"
+
+			group "TSamp" -- block-group
+			{
+			 block: "SampleTimeMath"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_0_motor_io_velocity_real_T_0[4]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+				p_1_motor_io_velocity_real_T_0[4]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "WtEt"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "TSamp"
+
+			group "UD" -- block-group
+			{
+			 block: "UnitDelay"
+			 desc:  "\nStore in Global RAM"
+			 flags: BLOCK|COLLAPSED
+			}
+				p_0_motor_io_velocity_real_T_0[5]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+				p_1_motor_io_velocity_real_T_0[5]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "InitialCondition"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "UD"
+
+
+			p_0_motor_io_velocity_real_T_0[5]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "U(k-1)"
+			 origin:  "motor_io_velocity/Sensor\n2/Discrete Derivative/UD/Out1"
+			 flags:   LABEL|READONLY
+			}
+
+		endgroup -- subsystem-group "Discrete Derivative"
+
+
+	endgroup -- subsystem-group "Sensor\n2"
+  
+  
 	group "enc I//F" -- subsystem-group
 	{
 	 flags: COLLAPSED
 	 desc:  ""
 	}
 
-		p_0_motor_io_velocity_real_T_0[35]
+		p_0_motor_io_velocity_real_T_0[1]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "fi1"
 		 desc:    ""
 		 flags:   OUTPUT|READONLY
 		}
-		p_0_motor_io_velocity_real_T_0[1]
+		p_0_motor_io_velocity_real_T_0[44]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "w1"
@@ -1388,7 +1786,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_velocity_real_T_0[39]
+			p_1_motor_io_velocity_real_T_0[53]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -1404,14 +1802,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[35]
+			p_0_motor_io_velocity_real_T_0[1]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_velocity_real_T_0[38]
+			p_1_motor_io_velocity_real_T_0[3]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -1427,14 +1825,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_velocity_real_T_0[1]
+			p_0_motor_io_velocity_real_T_0[44]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_velocity_real_T_0[9]
+			p_1_motor_io_velocity_real_T_0[52]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -1452,14 +1850,14 @@ group "Model Root"
 		 desc:  ""
 		}
 
-			p_0_motor_io_velocity_real_T_0[34]
+			p_0_motor_io_velocity_real_T_0[0]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Enc position"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_0_motor_io_velocity_real_T_0[0]
+			p_0_motor_io_velocity_real_T_0[43]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Enc delta position"
@@ -1492,7 +1890,7 @@ group "Model Root"
 
 	endgroup -- subsystem-group "enc I//F"
 
-	p_0_motor_io_velocity_real_T_0[5]
+	p_0_motor_io_velocity_real_T_0[10]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "ref"
@@ -1523,24 +1921,6 @@ group "Tunable Parameters"
 	 flags:   PARAM
 	}
 	p_1_motor_io_velocity_real_T_0[2]
-	{
-	 type:    motor_io_velocity_ArrayDT0_2*
-	 alias:   "R_vector"
-	 flags:   PARAM
-	}
-	p_1_motor_io_velocity_real_T_0[4]
-	{
-	 type:    motor_io_velocity_ArrayDT0_2*
-	 alias:   "S_vector"
-	 flags:   PARAM
-	}
-	p_1_motor_io_velocity_real_T_0[6]
-	{
-	 type:    motor_io_velocity_ArrayDT0_2*
-	 alias:   "T_vector"
-	 flags:   PARAM
-	}
-	p_1_motor_io_velocity_real_T_0[8]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "quant"
@@ -1575,42 +1955,56 @@ group "Labels"
 	 origin:  "motor_io_velocity/DC motor/Karnop friction1/Velocity threshold\n/y"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[27]
+	p_0_motor_io_velocity_real_T_0[37]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Friction"
 	 origin:  "motor_io_velocity/DC motor/Karnop friction1/Switch/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[21]
+	p_0_motor_io_velocity_real_T_0[31]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Stick slip region\n"
 	 origin:  "motor_io_velocity/DC motor/Karnop friction1/Saturate to Fc/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[13]
+	p_0_motor_io_velocity_real_T_0[22]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "U(k-1){Occurence1}"
+	 origin:  "motor_io_velocity/Sensor\n1/Discrete Derivative/UD/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_velocity_real_T_0[5]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "U(k-1){Occurence2}"
+	 origin:  "motor_io_velocity/Sensor\n2/Discrete Derivative/UD/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_velocity_real_T_0[27]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Velocity"
 	 origin:  "motor_io_velocity/DC motor/Karnop friction1/Angular \nvelcoity/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[26]
+	p_0_motor_io_velocity_real_T_0[36]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Viscous region"
 	 origin:  "motor_io_velocity/DC motor/Karnop friction1/Add/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[9]
+	p_0_motor_io_velocity_real_T_0[14]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Volt"
 	 origin:  "motor_io_velocity/PWM/Saturation/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[5]
+	p_0_motor_io_velocity_real_T_0[10]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "ref"

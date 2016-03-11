@@ -1,0 +1,33 @@
+%implements s1_b0_sm2wd_InitializeConditions "C"
+
+%function InitializeConditions(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* InitializeConditions for DiscreteTransferFcn: '<Root>/Gfbreal' */
+motor_io_position_DW.Gfbreal_states[0] = motor_io_position_P.Gfbreal_InitialStates;
+motor_io_position_DW.Gfbreal_states[1] = motor_io_position_P.Gfbreal_InitialStates;
+/* InitializeConditions for DiscreteTransferFcn: '<Root>/Gffreal' */
+motor_io_position_DW.Gffreal_states[0] = motor_io_position_P.Gffreal_InitialStates;
+motor_io_position_DW.Gffreal_states[1] = motor_io_position_P.Gffreal_InitialStates;
+/* InitializeConditions for DiscreteTransferFcn: '<Root>/Gff' */
+motor_io_position_DW.Gff_states[0] = motor_io_position_P.Gff_InitialStates;
+motor_io_position_DW.Gff_states[1] = motor_io_position_P.Gff_InitialStates;
+/* InitializeConditions for Integrator: '<S1>/Integrator1' */
+motor_io_position_X.Integrator1_CSTATE = motor_io_position_P.Integrator1_IC;
+/* InitializeConditions for DiscreteTransferFcn: '<Root>/Gfb' */
+motor_io_position_DW.Gfb_states[0] = motor_io_position_P.Gfb_InitialStates;
+motor_io_position_DW.Gfb_states[1] = motor_io_position_P.Gfb_InitialStates;
+/* InitializeConditions for Integrator: '<S1>/Integrator' */
+motor_io_position_X.Integrator_CSTATE = motor_io_position_P.Integrator_IC;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void InitializeConditions(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction

@@ -1,0 +1,33 @@
+%implements s1_b0_xhywd_InitializeConditions "C"
+
+%function InitializeConditions(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* InitializeConditions for UnitDelay: '<S15>/UD' */
+motor_io_velocity_DW.UD_DSTATE = motor_io_velocity_P.UD_InitialCondition;
+/* InitializeConditions for DiscreteTransferFcn: '<Root>/Gfbreal' */
+motor_io_velocity_DW.Gfbreal_states = motor_io_velocity_P.Gfbreal_InitialStates;
+/* InitializeConditions for DiscreteTransferFcn: '<Root>/Gffreal' */
+motor_io_velocity_DW.Gffreal_states = motor_io_velocity_P.Gffreal_InitialStates;
+/* InitializeConditions for DiscreteTransferFcn: '<Root>/Gff' */
+motor_io_velocity_DW.Gff_states = motor_io_velocity_P.Gff_InitialStates;
+/* InitializeConditions for Integrator: '<S1>/Integrator1' */
+motor_io_velocity_X.Integrator1_CSTATE = motor_io_velocity_P.Integrator1_IC;
+/* InitializeConditions for UnitDelay: '<S14>/UD' */
+motor_io_velocity_DW.UD_DSTATE_b = motor_io_velocity_P.UD_InitialCondition_c;
+/* InitializeConditions for DiscreteTransferFcn: '<Root>/Gfb' */
+motor_io_velocity_DW.Gfb_states = motor_io_velocity_P.Gfb_InitialStates;
+/* InitializeConditions for Integrator: '<S1>/Integrator' */
+motor_io_velocity_X.Integrator_CSTATE = motor_io_velocity_P.Integrator_IC;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void InitializeConditions(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction

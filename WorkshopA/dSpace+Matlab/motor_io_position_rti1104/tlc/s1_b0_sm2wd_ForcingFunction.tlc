@@ -1,0 +1,24 @@
+%implements s1_b0_sm2wd_ForcingFunction "C"
+
+%function ForcingFunction(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+XDot_motor_io_position_T *_rtXdot;
+%closefile localVarDecl
+_rtXdot = %<(SLibCG_SE(SLibGetContStatesDerivativeStructPtr()))>;
+/* ForcingFunction for Integrator: '<S1>/Integrator1' */
+_rtXdot->Integrator1_CSTATE = motor_io_position_B.Integrator;
+/* ForcingFunction for Integrator: '<S1>/Integrator' */
+_rtXdot->Integrator_CSTATE = motor_io_position_B.Inertias1J;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ForcingFunction(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 6, fcnProtoType)>
+%<LibSetSystemField(system, "CachedForcingFunctionLocalVars", localVarDecl)>
+%endfunction

@@ -3,9 +3,9 @@
  *
  * Code generation for model "motor_io_velocity".
  *
- * Model version              : 1.31
+ * Model version              : 1.32
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Fri Mar 11 10:25:49 2016
+ * C source code generated on : Fri Mar 11 13:31:00 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -104,23 +104,47 @@ void motor_io_velocity_output(void)
   }
 
   if (rtmIsMajorTimeStep(motor_io_velocity_M)) {
-    /* S-Function (rti_commonblock): '<S12>/S-Function2' */
+    /* S-Function (rti_commonblock): '<S16>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
-    /* Gain: '<S4>/w1_scaling' */
-    motor_io_velocity_B.w1_scaling = motor_io_velocity_P.w1_scaling_Gain *
-      motor_io_velocity_B.SFunction2;
+    /* Gain: '<S6>/fi1_scaling' */
+    motor_io_velocity_B.fi1_scaling = motor_io_velocity_P.fi1_scaling_Gain *
+      motor_io_velocity_B.SFunction1;
 
-    /* DiscreteTransferFcn: '<Root>/G_fb_real' */
-    temp = motor_io_velocity_B.w1_scaling;
-    temp -= motor_io_velocity_P.R_vector[1] *
-      motor_io_velocity_DW.G_fb_real_states;
-    temp /= motor_io_velocity_P.R_vector[0];
-    motor_io_velocity_DW.G_fb_real_tmp = temp;
-    temp = motor_io_velocity_P.S_vector[0] * motor_io_velocity_DW.G_fb_real_tmp;
-    temp += motor_io_velocity_P.S_vector[1] *
-      motor_io_velocity_DW.G_fb_real_states;
-    motor_io_velocity_B.G_fb_real = temp;
+    /* Quantizer: '<S5>/Quantizer' */
+    temp = motor_io_velocity_B.fi1_scaling;
+    motor_io_velocity_B.Quantizer = rt_roundd_snf(temp /
+      motor_io_velocity_P.quant) * motor_io_velocity_P.quant;
+
+    /* ZeroOrderHold: '<S5>/Zero-Order Hold' */
+    motor_io_velocity_B.ZeroOrderHold = motor_io_velocity_B.Quantizer;
+
+    /* SampleTimeMath: '<S15>/TSamp'
+     *
+     * About '<S15>/TSamp':
+     *  y = u * K where K = 1 / ( w * Ts )
+     */
+    motor_io_velocity_B.TSamp = motor_io_velocity_B.ZeroOrderHold *
+      motor_io_velocity_P.TSamp_WtEt;
+
+    /* UnitDelay: '<S15>/UD' */
+    motor_io_velocity_B.Uk1 = motor_io_velocity_DW.UD_DSTATE;
+
+    /* Sum: '<S15>/Diff' */
+    motor_io_velocity_B.Diff = motor_io_velocity_B.TSamp -
+      motor_io_velocity_B.Uk1;
+
+    /* DiscreteTransferFcn: '<Root>/Gfbreal' */
+    temp = motor_io_velocity_B.Diff;
+    temp -= motor_io_velocity_P.Gfbreal_DenCoef[1] *
+      motor_io_velocity_DW.Gfbreal_states;
+    temp /= motor_io_velocity_P.Gfbreal_DenCoef[0];
+    motor_io_velocity_DW.Gfbreal_tmp = temp;
+    temp = motor_io_velocity_P.Gfbreal_NumCoef[0] *
+      motor_io_velocity_DW.Gfbreal_tmp;
+    temp += motor_io_velocity_P.Gfbreal_NumCoef[1] *
+      motor_io_velocity_DW.Gfbreal_states;
+    motor_io_velocity_B.Gfbreal = temp;
   }
 
   /* SignalGenerator: '<Root>/SinGenerator' */
@@ -152,20 +176,21 @@ void motor_io_velocity_output(void)
 
   /* End of Switch: '<Root>/Switch' */
   if (rtmIsMajorTimeStep(motor_io_velocity_M)) {
-    /* DiscreteTransferFcn: '<Root>/Gff_real' */
+    /* DiscreteTransferFcn: '<Root>/Gffreal' */
     temp = motor_io_velocity_B.ref;
-    temp -= motor_io_velocity_P.R_vector[1] *
-      motor_io_velocity_DW.Gff_real_states;
-    temp /= motor_io_velocity_P.R_vector[0];
-    motor_io_velocity_DW.Gff_real_tmp = temp;
-    temp = motor_io_velocity_P.T_vector[0] * motor_io_velocity_DW.Gff_real_tmp;
-    temp += motor_io_velocity_P.T_vector[1] *
-      motor_io_velocity_DW.Gff_real_states;
-    motor_io_velocity_B.Gff_real = temp;
+    temp -= motor_io_velocity_P.Gffreal_DenCoef[1] *
+      motor_io_velocity_DW.Gffreal_states;
+    temp /= motor_io_velocity_P.Gffreal_DenCoef[0];
+    motor_io_velocity_DW.Gffreal_tmp = temp;
+    temp = motor_io_velocity_P.Gffreal_NumCoef[0] *
+      motor_io_velocity_DW.Gffreal_tmp;
+    temp += motor_io_velocity_P.Gffreal_NumCoef[1] *
+      motor_io_velocity_DW.Gffreal_states;
+    motor_io_velocity_B.Gffreal = temp;
 
     /* Sum: '<Root>/Sum' */
-    motor_io_velocity_B.Sum = motor_io_velocity_B.Gff_real -
-      motor_io_velocity_B.G_fb_real;
+    motor_io_velocity_B.Sum = motor_io_velocity_B.Gffreal -
+      motor_io_velocity_B.Gfbreal;
 
     /* Gain: '<Root>/Gain' */
     motor_io_velocity_B.Gain = motor_io_velocity_P.Gain_Gain *
@@ -195,20 +220,20 @@ void motor_io_velocity_output(void)
     motor_io_velocity_B.Sum_f = motor_io_velocity_B.pwm_skalning +
       motor_io_velocity_P.pwm_offstet_Value;
 
-    /* S-Function (rti_commonblock): '<S8>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S10>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
     /* dSPACE I/O Board DS1104 #1 Unit:PWM Group:PWM */
     ds1104_slave_dsp_pwm_duty_write(0, rti_slv1104_fcn_index[6],
       motor_io_velocity_B.Sum_f);
 
-    /* S-Function (rti_commonblock): '<S8>/S-Function2' */
+    /* S-Function (rti_commonblock): '<S10>/S-Function2' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S8>/S-Function3' */
+    /* S-Function (rti_commonblock): '<S10>/S-Function3' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S8>/S-Function4' */
+    /* S-Function (rti_commonblock): '<S10>/S-Function4' */
     /* This comment workarounds a code generation problem */
 
     /* DataTypeConversion: '<S2>/Data Type Conversion' incorporates:
@@ -217,7 +242,7 @@ void motor_io_velocity_output(void)
     motor_io_velocity_B.DataTypeConversion =
       (motor_io_velocity_P.Enable1_Off0_On_Value != 0.0);
 
-    /* S-Function (rti_commonblock): '<S7>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S9>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
     /* dSPACE I/O Board DS1104 #1 Unit:BIT_IO Group:BIT_OUT */
@@ -229,29 +254,47 @@ void motor_io_velocity_output(void)
 
     /* DiscreteTransferFcn: '<Root>/Gff' */
     temp = motor_io_velocity_B.ref;
-    temp -= motor_io_velocity_P.R_vector[1] * motor_io_velocity_DW.Gff_states;
-    temp /= motor_io_velocity_P.R_vector[0];
+    temp -= motor_io_velocity_P.Gff_DenCoef[1] * motor_io_velocity_DW.Gff_states;
+    temp /= motor_io_velocity_P.Gff_DenCoef[0];
     motor_io_velocity_DW.Gff_tmp = temp;
-    temp = motor_io_velocity_P.T_vector[0] * motor_io_velocity_DW.Gff_tmp;
-    temp += motor_io_velocity_P.T_vector[1] * motor_io_velocity_DW.Gff_states;
+    temp = motor_io_velocity_P.Gff_NumCoef[0] * motor_io_velocity_DW.Gff_tmp;
+    temp += motor_io_velocity_P.Gff_NumCoef[1] * motor_io_velocity_DW.Gff_states;
     motor_io_velocity_B.Gff = temp;
   }
 
-  /* Integrator: '<S1>/Integrator' */
-  motor_io_velocity_B.Integrator = motor_io_velocity_X.Integrator_CSTATE;
+  /* Integrator: '<S1>/Integrator1' */
+  motor_io_velocity_B.Integrator1 = motor_io_velocity_X.Integrator1_CSTATE;
 
-  /* Quantizer: '<Root>/Quantizer' */
-  temp = motor_io_velocity_B.Integrator;
-  motor_io_velocity_B.Quantizer = rt_roundd_snf(temp / motor_io_velocity_P.quant)
-    * motor_io_velocity_P.quant;
+  /* Quantizer: '<S4>/Quantizer' */
+  temp = motor_io_velocity_B.Integrator1;
+  motor_io_velocity_B.Quantizer_n = rt_roundd_snf(temp /
+    motor_io_velocity_P.quant) * motor_io_velocity_P.quant;
   if (rtmIsMajorTimeStep(motor_io_velocity_M)) {
+    /* ZeroOrderHold: '<S4>/Zero-Order Hold' */
+    motor_io_velocity_B.ZeroOrderHold_g = motor_io_velocity_B.Quantizer_n;
+
+    /* SampleTimeMath: '<S14>/TSamp'
+     *
+     * About '<S14>/TSamp':
+     *  y = u * K where K = 1 / ( w * Ts )
+     */
+    motor_io_velocity_B.TSamp_e = motor_io_velocity_B.ZeroOrderHold_g *
+      motor_io_velocity_P.TSamp_WtEt_b;
+
+    /* UnitDelay: '<S14>/UD' */
+    motor_io_velocity_B.Uk1_f = motor_io_velocity_DW.UD_DSTATE_b;
+
+    /* Sum: '<S14>/Diff' */
+    motor_io_velocity_B.Diff_d = motor_io_velocity_B.TSamp_e -
+      motor_io_velocity_B.Uk1_f;
+
     /* DiscreteTransferFcn: '<Root>/Gfb' */
-    temp = motor_io_velocity_B.Quantizer;
-    temp -= motor_io_velocity_P.R_vector[1] * motor_io_velocity_DW.Gfb_states;
-    temp /= motor_io_velocity_P.R_vector[0];
+    temp = motor_io_velocity_B.Diff_d;
+    temp -= motor_io_velocity_P.Gfb_DenCoef[1] * motor_io_velocity_DW.Gfb_states;
+    temp /= motor_io_velocity_P.Gfb_DenCoef[0];
     motor_io_velocity_DW.Gfb_tmp = temp;
-    temp = motor_io_velocity_P.S_vector[0] * motor_io_velocity_DW.Gfb_tmp;
-    temp += motor_io_velocity_P.S_vector[1] * motor_io_velocity_DW.Gfb_states;
+    temp = motor_io_velocity_P.Gfb_NumCoef[0] * motor_io_velocity_DW.Gfb_tmp;
+    temp += motor_io_velocity_P.Gfb_NumCoef[1] * motor_io_velocity_DW.Gfb_states;
     motor_io_velocity_B.Gfb = temp;
 
     /* Sum: '<Root>/Sum1' */
@@ -272,6 +315,9 @@ void motor_io_velocity_output(void)
     /* End of Saturate: '<Root>/Saturation' */
   }
 
+  /* Integrator: '<S1>/Integrator' */
+  motor_io_velocity_B.Integrator = motor_io_velocity_X.Integrator_CSTATE;
+
   /* Gain: '<S1>/Gain1' */
   motor_io_velocity_B.Gain1 = motor_io_velocity_P.Gain1_Gain *
     motor_io_velocity_B.Integrator;
@@ -283,7 +329,7 @@ void motor_io_velocity_output(void)
   /* Gain: '<S1>/k//R ' */
   motor_io_velocity_B.kR = motor_io_velocity_P.kR_Gain * motor_io_velocity_B.Add;
 
-  /* Saturate: '<S5>/Saturate to Fc' */
+  /* Saturate: '<S7>/Saturate to Fc' */
   temp = motor_io_velocity_B.kR;
   u1 = motor_io_velocity_P.SaturatetoFc_LowerSat;
   u2 = motor_io_velocity_P.F_c;
@@ -295,22 +341,22 @@ void motor_io_velocity_output(void)
     motor_io_velocity_B.Stickslipregion = temp;
   }
 
-  /* End of Saturate: '<S5>/Saturate to Fc' */
+  /* End of Saturate: '<S7>/Saturate to Fc' */
 
-  /* Abs: '<S5>/Abs' */
+  /* Abs: '<S7>/Abs' */
   motor_io_velocity_B.Abs = fabs(motor_io_velocity_B.Integrator);
 
-  /* RelationalOperator: '<S6>/Compare' incorporates:
-   *  Constant: '<S6>/Constant'
+  /* RelationalOperator: '<S8>/Compare' incorporates:
+   *  Constant: '<S8>/Constant'
    */
   motor_io_velocity_B.Compare = (motor_io_velocity_B.Abs <=
     motor_io_velocity_P.Constant_Value);
 
-  /* Gain: '<S5>/Vicous friction' */
+  /* Gain: '<S7>/Vicous friction' */
   motor_io_velocity_B.Vicousfriction = motor_io_velocity_P.Vicousfriction_Gain *
     motor_io_velocity_B.Integrator;
 
-  /* Signum: '<S5>/Sign' */
+  /* Signum: '<S7>/Sign' */
   temp = motor_io_velocity_B.Integrator;
   if (temp < 0.0) {
     motor_io_velocity_B.Sign = -1.0;
@@ -322,26 +368,26 @@ void motor_io_velocity_output(void)
     motor_io_velocity_B.Sign = temp;
   }
 
-  /* End of Signum: '<S5>/Sign' */
+  /* End of Signum: '<S7>/Sign' */
 
-  /* Product: '<S5>/Product' incorporates:
-   *  Constant: '<S5>/F_c'
+  /* Product: '<S7>/Product' incorporates:
+   *  Constant: '<S7>/F_c'
    */
   motor_io_velocity_B.Product = motor_io_velocity_P.F_c *
     motor_io_velocity_B.Sign;
 
-  /* Sum: '<S5>/Add' */
+  /* Sum: '<S7>/Add' */
   motor_io_velocity_B.Viscousregion = motor_io_velocity_B.Vicousfriction +
     motor_io_velocity_B.Product;
 
-  /* Switch: '<S5>/Switch' */
+  /* Switch: '<S7>/Switch' */
   if (motor_io_velocity_B.Compare) {
     motor_io_velocity_B.Friction = motor_io_velocity_B.Stickslipregion;
   } else {
     motor_io_velocity_B.Friction = motor_io_velocity_B.Viscousregion;
   }
 
-  /* End of Switch: '<S5>/Switch' */
+  /* End of Switch: '<S7>/Switch' */
 
   /* Sum: '<S1>/Add1' */
   motor_io_velocity_B.Add1 = motor_io_velocity_B.kR -
@@ -363,15 +409,12 @@ void motor_io_velocity_output(void)
   /* Product: '<S1>/Inertias 1//J' */
   motor_io_velocity_B.Inertias1J = 1.0 / motor_io_velocity_B.Add2 *
     motor_io_velocity_B.Add1;
-
-  /* Integrator: '<S1>/Integrator1' */
-  motor_io_velocity_B.Integrator1 = motor_io_velocity_X.Integrator1_CSTATE;
   if (rtmIsMajorTimeStep(motor_io_velocity_M)) {
   }
 
-  /* Switch: '<S5>/Switch1' incorporates:
-   *  Constant: '<S5>/Constant1'
-   *  Constant: '<S5>/F_c'
+  /* Switch: '<S7>/Switch1' incorporates:
+   *  Constant: '<S7>/Constant1'
+   *  Constant: '<S7>/F_c'
    */
   if (motor_io_velocity_B.Integrator > motor_io_velocity_P.Switch1_Threshold) {
     motor_io_velocity_B.Switch1 = motor_io_velocity_P.F_c;
@@ -379,25 +422,25 @@ void motor_io_velocity_output(void)
     motor_io_velocity_B.Switch1 = motor_io_velocity_P.Constant1_Value;
   }
 
-  /* End of Switch: '<S5>/Switch1' */
+  /* End of Switch: '<S7>/Switch1' */
   if (rtmIsMajorTimeStep(motor_io_velocity_M)) {
-    /* S-Function (rti_commonblock): '<S12>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S16>/S-Function2' */
     /* This comment workarounds a code generation problem */
 
-    /* Gain: '<S4>/fi1_scaling' */
-    motor_io_velocity_B.fi1_scaling = motor_io_velocity_P.fi1_scaling_Gain *
-      motor_io_velocity_B.SFunction1;
+    /* Gain: '<S6>/w1_scaling' */
+    motor_io_velocity_B.w1_scaling = motor_io_velocity_P.w1_scaling_Gain *
+      motor_io_velocity_B.SFunction2;
 
-    /* Outputs for Triggered SubSystem: '<S4>/DS1104ENC_SET_POS_C1' incorporates:
-     *  TriggerPort: '<S14>/Trigger'
+    /* Outputs for Triggered SubSystem: '<S6>/DS1104ENC_SET_POS_C1' incorporates:
+     *  TriggerPort: '<S18>/Trigger'
      */
     if (rtmIsMajorTimeStep(motor_io_velocity_M)) {
-      /* Constant: '<S4>/Reset enc' */
+      /* Constant: '<S6>/Reset enc' */
       zcEvent = rt_ZCFcn(RISING_ZERO_CROSSING,
                          &motor_io_velocity_PrevZCX.DS1104ENC_SET_POS_C1_Trig_ZCE,
                          (motor_io_velocity_P.Resetenc_Value));
       if (zcEvent != NO_ZCEVENT) {
-        /* S-Function (rti_commonblock): '<S14>/S-Function1' */
+        /* S-Function (rti_commonblock): '<S18>/S-Function1' */
         /* This comment workarounds a code generation problem */
 
         /* dSPACE I/O Board DS1104 Unit:ENC_SET */
@@ -405,12 +448,12 @@ void motor_io_velocity_output(void)
       }
     }
 
-    /* End of Outputs for SubSystem: '<S4>/DS1104ENC_SET_POS_C1' */
+    /* End of Outputs for SubSystem: '<S6>/DS1104ENC_SET_POS_C1' */
 
-    /* S-Function (rti_commonblock): '<S13>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S17>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S13>/S-Function2' */
+    /* S-Function (rti_commonblock): '<S17>/S-Function2' */
     /* This comment workarounds a code generation problem */
   }
 }
@@ -419,14 +462,20 @@ void motor_io_velocity_output(void)
 void motor_io_velocity_update(void)
 {
   if (rtmIsMajorTimeStep(motor_io_velocity_M)) {
-    /* Update for DiscreteTransferFcn: '<Root>/G_fb_real' */
-    motor_io_velocity_DW.G_fb_real_states = motor_io_velocity_DW.G_fb_real_tmp;
+    /* Update for UnitDelay: '<S15>/UD' */
+    motor_io_velocity_DW.UD_DSTATE = motor_io_velocity_B.TSamp;
 
-    /* Update for DiscreteTransferFcn: '<Root>/Gff_real' */
-    motor_io_velocity_DW.Gff_real_states = motor_io_velocity_DW.Gff_real_tmp;
+    /* Update for DiscreteTransferFcn: '<Root>/Gfbreal' */
+    motor_io_velocity_DW.Gfbreal_states = motor_io_velocity_DW.Gfbreal_tmp;
+
+    /* Update for DiscreteTransferFcn: '<Root>/Gffreal' */
+    motor_io_velocity_DW.Gffreal_states = motor_io_velocity_DW.Gffreal_tmp;
 
     /* Update for DiscreteTransferFcn: '<Root>/Gff' */
     motor_io_velocity_DW.Gff_states = motor_io_velocity_DW.Gff_tmp;
+
+    /* Update for UnitDelay: '<S14>/UD' */
+    motor_io_velocity_DW.UD_DSTATE_b = motor_io_velocity_B.TSamp_e;
 
     /* Update for DiscreteTransferFcn: '<Root>/Gfb' */
     motor_io_velocity_DW.Gfb_states = motor_io_velocity_DW.Gfb_tmp;
@@ -453,7 +502,7 @@ void motor_io_velocity_update(void)
     (&motor_io_velocity_M->solverInfo);
 
   {
-    /* Update absolute timer for sample time: [0.00055s, 0.0s] */
+    /* Update absolute timer for sample time: [0.021970064966318415s, 0.0s] */
     /* The "clockTick1" counts the number of times the code of this task has
      * been executed. The absolute time is the multiplication of "clockTick1"
      * and "Timing.stepSize1". Size of "clockTick1" ensures timer will not
@@ -479,41 +528,47 @@ void motor_io_velocity_derivatives(void)
   XDot_motor_io_velocity_T *_rtXdot;
   _rtXdot = ((XDot_motor_io_velocity_T *) motor_io_velocity_M->ModelData.derivs);
 
-  /* Derivatives for Integrator: '<S1>/Integrator' */
-  _rtXdot->Integrator_CSTATE = motor_io_velocity_B.Inertias1J;
-
   /* Derivatives for Integrator: '<S1>/Integrator1' */
   _rtXdot->Integrator1_CSTATE = motor_io_velocity_B.Integrator;
+
+  /* Derivatives for Integrator: '<S1>/Integrator' */
+  _rtXdot->Integrator_CSTATE = motor_io_velocity_B.Inertias1J;
 }
 
 /* Model initialize function */
 void motor_io_velocity_initialize(void)
 {
-  /* Start for S-Function (rti_commonblock): '<S8>/S-Function1' */
+  /* Start for S-Function (rti_commonblock): '<S10>/S-Function1' */
 
   /* dSPACE I/O Board DS1104 #1 Unit:PWM Group:PWM */
   motor_io_velocity_DW.SFunction1_IWORK[0] = 0;
   motor_io_velocity_PrevZCX.DS1104ENC_SET_POS_C1_Trig_ZCE = UNINITIALIZED_ZCSIG;
 
-  /* InitializeConditions for DiscreteTransferFcn: '<Root>/G_fb_real' */
-  motor_io_velocity_DW.G_fb_real_states =
-    motor_io_velocity_P.G_fb_real_InitialStates;
+  /* InitializeConditions for UnitDelay: '<S15>/UD' */
+  motor_io_velocity_DW.UD_DSTATE = motor_io_velocity_P.UD_InitialCondition;
 
-  /* InitializeConditions for DiscreteTransferFcn: '<Root>/Gff_real' */
-  motor_io_velocity_DW.Gff_real_states =
-    motor_io_velocity_P.Gff_real_InitialStates;
+  /* InitializeConditions for DiscreteTransferFcn: '<Root>/Gfbreal' */
+  motor_io_velocity_DW.Gfbreal_states =
+    motor_io_velocity_P.Gfbreal_InitialStates;
+
+  /* InitializeConditions for DiscreteTransferFcn: '<Root>/Gffreal' */
+  motor_io_velocity_DW.Gffreal_states =
+    motor_io_velocity_P.Gffreal_InitialStates;
 
   /* InitializeConditions for DiscreteTransferFcn: '<Root>/Gff' */
   motor_io_velocity_DW.Gff_states = motor_io_velocity_P.Gff_InitialStates;
 
-  /* InitializeConditions for Integrator: '<S1>/Integrator' */
-  motor_io_velocity_X.Integrator_CSTATE = motor_io_velocity_P.Integrator_IC;
+  /* InitializeConditions for Integrator: '<S1>/Integrator1' */
+  motor_io_velocity_X.Integrator1_CSTATE = motor_io_velocity_P.Integrator1_IC;
+
+  /* InitializeConditions for UnitDelay: '<S14>/UD' */
+  motor_io_velocity_DW.UD_DSTATE_b = motor_io_velocity_P.UD_InitialCondition_c;
 
   /* InitializeConditions for DiscreteTransferFcn: '<Root>/Gfb' */
   motor_io_velocity_DW.Gfb_states = motor_io_velocity_P.Gfb_InitialStates;
 
-  /* InitializeConditions for Integrator: '<S1>/Integrator1' */
-  motor_io_velocity_X.Integrator1_CSTATE = motor_io_velocity_P.Integrator1_IC;
+  /* InitializeConditions for Integrator: '<S1>/Integrator' */
+  motor_io_velocity_X.Integrator_CSTATE = motor_io_velocity_P.Integrator_IC;
 }
 
 /* Model terminate function */
@@ -635,7 +690,7 @@ RT_MODEL_motor_io_velocity_T *motor_io_velocity(void)
 
     /* task periods */
     motor_io_velocity_M->Timing.sampleTimes[0] = (0.0);
-    motor_io_velocity_M->Timing.sampleTimes[1] = (0.00055);
+    motor_io_velocity_M->Timing.sampleTimes[1] = (0.021970064966318415);
 
     /* task offsets */
     motor_io_velocity_M->Timing.offsetTimes[0] = (0.0);
@@ -652,11 +707,11 @@ RT_MODEL_motor_io_velocity_T *motor_io_velocity(void)
   }
 
   rtmSetTFinal(motor_io_velocity_M, -1);
-  motor_io_velocity_M->Timing.stepSize0 = 0.00055;
-  motor_io_velocity_M->Timing.stepSize1 = 0.00055;
+  motor_io_velocity_M->Timing.stepSize0 = 0.021970064966318415;
+  motor_io_velocity_M->Timing.stepSize1 = 0.021970064966318415;
   motor_io_velocity_M->solverInfoPtr = (&motor_io_velocity_M->solverInfo);
-  motor_io_velocity_M->Timing.stepSize = (0.00055);
-  rtsiSetFixedStepSize(&motor_io_velocity_M->solverInfo, 0.00055);
+  motor_io_velocity_M->Timing.stepSize = (0.021970064966318415);
+  rtsiSetFixedStepSize(&motor_io_velocity_M->solverInfo, 0.021970064966318415);
   rtsiSetSolverMode(&motor_io_velocity_M->solverInfo, SOLVER_MODE_SINGLETASKING);
 
   /* block I/O */
@@ -665,24 +720,34 @@ RT_MODEL_motor_io_velocity_T *motor_io_velocity(void)
                 sizeof(B_motor_io_velocity_T));
 
   {
-    motor_io_velocity_B.SFunction2 = 0.0;
-    motor_io_velocity_B.w1_scaling = 0.0;
-    motor_io_velocity_B.G_fb_real = 0.0;
+    motor_io_velocity_B.SFunction1 = 0.0;
+    motor_io_velocity_B.fi1_scaling = 0.0;
+    motor_io_velocity_B.Quantizer = 0.0;
+    motor_io_velocity_B.ZeroOrderHold = 0.0;
+    motor_io_velocity_B.TSamp = 0.0;
+    motor_io_velocity_B.Uk1 = 0.0;
+    motor_io_velocity_B.Diff = 0.0;
+    motor_io_velocity_B.Gfbreal = 0.0;
     motor_io_velocity_B.SinGenerator = 0.0;
     motor_io_velocity_B.SquareGenerator = 0.0;
     motor_io_velocity_B.ref = 0.0;
-    motor_io_velocity_B.Gff_real = 0.0;
+    motor_io_velocity_B.Gffreal = 0.0;
     motor_io_velocity_B.Sum = 0.0;
     motor_io_velocity_B.Gain = 0.0;
     motor_io_velocity_B.Volt = 0.0;
     motor_io_velocity_B.pwm_skalning = 0.0;
     motor_io_velocity_B.Sum_f = 0.0;
     motor_io_velocity_B.Gff = 0.0;
-    motor_io_velocity_B.Integrator = 0.0;
-    motor_io_velocity_B.Quantizer = 0.0;
+    motor_io_velocity_B.Integrator1 = 0.0;
+    motor_io_velocity_B.Quantizer_n = 0.0;
+    motor_io_velocity_B.ZeroOrderHold_g = 0.0;
+    motor_io_velocity_B.TSamp_e = 0.0;
+    motor_io_velocity_B.Uk1_f = 0.0;
+    motor_io_velocity_B.Diff_d = 0.0;
     motor_io_velocity_B.Gfb = 0.0;
     motor_io_velocity_B.Sum1 = 0.0;
     motor_io_velocity_B.Saturation = 0.0;
+    motor_io_velocity_B.Integrator = 0.0;
     motor_io_velocity_B.Gain1 = 0.0;
     motor_io_velocity_B.Add = 0.0;
     motor_io_velocity_B.kR = 0.0;
@@ -697,10 +762,9 @@ RT_MODEL_motor_io_velocity_T *motor_io_velocity(void)
     motor_io_velocity_B.Gain2 = 0.0;
     motor_io_velocity_B.Add2 = 0.0;
     motor_io_velocity_B.Inertias1J = 0.0;
-    motor_io_velocity_B.Integrator1 = 0.0;
     motor_io_velocity_B.Switch1 = 0.0;
-    motor_io_velocity_B.SFunction1 = 0.0;
-    motor_io_velocity_B.fi1_scaling = 0.0;
+    motor_io_velocity_B.SFunction2 = 0.0;
+    motor_io_velocity_B.w1_scaling = 0.0;
   }
 
   /* parameters */
@@ -718,12 +782,14 @@ RT_MODEL_motor_io_velocity_T *motor_io_velocity(void)
   motor_io_velocity_M->ModelData.dwork = ((void *) &motor_io_velocity_DW);
   (void) memset((void *)&motor_io_velocity_DW, 0,
                 sizeof(DW_motor_io_velocity_T));
-  motor_io_velocity_DW.G_fb_real_states = 0.0;
-  motor_io_velocity_DW.Gff_real_states = 0.0;
+  motor_io_velocity_DW.UD_DSTATE = 0.0;
+  motor_io_velocity_DW.Gfbreal_states = 0.0;
+  motor_io_velocity_DW.Gffreal_states = 0.0;
   motor_io_velocity_DW.Gff_states = 0.0;
+  motor_io_velocity_DW.UD_DSTATE_b = 0.0;
   motor_io_velocity_DW.Gfb_states = 0.0;
-  motor_io_velocity_DW.G_fb_real_tmp = 0.0;
-  motor_io_velocity_DW.Gff_real_tmp = 0.0;
+  motor_io_velocity_DW.Gfbreal_tmp = 0.0;
+  motor_io_velocity_DW.Gffreal_tmp = 0.0;
   motor_io_velocity_DW.Gff_tmp = 0.0;
   motor_io_velocity_DW.Gfb_tmp = 0.0;
 
@@ -740,9 +806,9 @@ RT_MODEL_motor_io_velocity_T *motor_io_velocity(void)
   motor_io_velocity_M->Sizes.numU = (0);/* Number of model inputs */
   motor_io_velocity_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
   motor_io_velocity_M->Sizes.numSampTimes = (2);/* Number of sample times */
-  motor_io_velocity_M->Sizes.numBlocks = (57);/* Number of blocks */
-  motor_io_velocity_M->Sizes.numBlockIO = (38);/* Number of block outputs */
-  motor_io_velocity_M->Sizes.numBlockPrms = (40);/* Sum of parameter "widths" */
+  motor_io_velocity_M->Sizes.numBlocks = (68);/* Number of blocks */
+  motor_io_velocity_M->Sizes.numBlockIO = (47);/* Number of block outputs */
+  motor_io_velocity_M->Sizes.numBlockPrms = (54);/* Sum of parameter "widths" */
   return motor_io_velocity_M;
 }
 

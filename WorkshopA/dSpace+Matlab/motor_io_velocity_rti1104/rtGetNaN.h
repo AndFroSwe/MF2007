@@ -3,9 +3,9 @@
  *
  * Code generation for model "motor_io_velocity".
  *
- * Model version              : 1.31
+ * Model version              : 1.32
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Fri Mar 11 10:25:49 2016
+ * C source code generated on : Fri Mar 11 13:31:00 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
