@@ -1,0 +1,55 @@
+%implements s1_b0_7wmwd_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS1B2 = OpaqueTLCBlockFcn("Start", 1, 2, 0, 0)
+%assign tlcStartFcnOfS1B3 = OpaqueTLCBlockFcn("Start", 1, 3, 0, 0)
+%assign tlcStartFcnOfS1B4 = OpaqueTLCBlockFcn("Start", 1, 4, 0, 0)
+%assign tlcStartFcnOfS1B5 = OpaqueTLCBlockFcn("Start", 1, 5, 0, 0)
+%assign tlcStartFcnOfS1B7 = OpaqueTLCBlockFcn("Start", 1, 7, 0, 0)
+%assign tlcStartFcnOfS1B12 = OpaqueTLCBlockFcn("Start", 1, 12, 0, 0)
+%assign tlcStartFcnOfS1B14 = OpaqueTLCBlockFcn("Start", 1, 14, 0, 0)
+%assign tlcStartFcnOfS1B15 = OpaqueTLCBlockFcn("Start", 1, 15, 0, 0)
+%assign tlcStartFcnOfS0B0 = OpaqueTLCBlockFcn("Start", 0, 0, 0, 0)
+%assign tlcStartFcnOfS1B18 = OpaqueTLCBlockFcn("Start", 1, 18, 0, 0)
+%assign tlcStartFcnOfS1B19 = OpaqueTLCBlockFcn("Start", 1, 19, 0, 0)
+%<tlcStartFcnOfS1B2>\
+%<tlcStartFcnOfS1B3>\
+%<tlcStartFcnOfS1B4>\
+%<tlcStartFcnOfS1B5>\
+%<tlcStartFcnOfS1B7>\
+%<tlcStartFcnOfS1B12>\
+%<tlcStartFcnOfS1B14>\
+%<tlcStartFcnOfS1B15>\
+%assign   Start_open_DS1104ENC_SET_POS_C1_1_45 = ""
+%openfile Start_open_DS1104ENC_SET_POS_C1_1_45
+
+/* Start for Triggered SubSystem: '<S4>/DS1104ENC_SET_POS_C1' */
+%closefile Start_open_DS1104ENC_SET_POS_C1_1_45
+
+%assign    Start_body_DS1104ENC_SET_POS_C1_1_45 = ""
+%openfile  Start_body_DS1104ENC_SET_POS_C1_1_45
+
+%<tlcStartFcnOfS0B0>\
+%closefile Start_body_DS1104ENC_SET_POS_C1_1_45
+
+%assign    Start_close_DS1104ENC_SET_POS_C1_1_45 = ""
+%openfile  Start_close_DS1104ENC_SET_POS_C1_1_45
+
+/* End of Start for SubSystem: '<S4>/DS1104ENC_SET_POS_C1' */
+%closefile Start_close_DS1104ENC_SET_POS_C1_1_45
+%<SLibCG_DumpSSCode(Start_open_DS1104ENC_SET_POS_C1_1_45, Start_body_DS1104ENC_SET_POS_C1_1_45, Start_close_DS1104ENC_SET_POS_C1_1_45)>
+
+%<tlcStartFcnOfS1B18>\
+%<tlcStartFcnOfS1B19>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%endfunction

@@ -3,7 +3,7 @@
 --  Trace file: motor_io.trc
 --
 --  RTI1104 7.3 (02-Nov-2014)
---  Sun Mar 06 14:16:21 2016
+--  Fri Mar 11 09:20:59 2016
 --
 --  Used options:
 --    TRCGenerateVirtualBlocks      = 1
@@ -27,7 +27,7 @@
 
 _genname     "RTI"
 _genversion  "7.3"
-_gendate     "03/06/2016 14:16:23"
+_gendate     "03/11/2016 09:21:01"
 _description ""
 _author      "RTI1104 7.3 (02-Nov-2014)"
 _model       "motor_io.mdl"

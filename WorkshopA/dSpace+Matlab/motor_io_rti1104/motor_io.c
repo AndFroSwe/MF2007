@@ -3,9 +3,9 @@
  *
  * Code generation for model "motor_io".
  *
- * Model version              : 1.26
+ * Model version              : 1.27
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Sun Mar 06 14:16:21 2016
+ * C source code generated on : Fri Mar 11 09:20:59 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -28,9 +28,6 @@ DW_motor_io_T motor_io_DW;
 
 /* Previous zero-crossings (trigger) states */
 PrevZCX_motor_io_T motor_io_PrevZCX;
-
-/* External outputs (root outports fed by signals with auto storage) */
-ExtY_motor_io_T motor_io_Y;
 
 /* Real-time model */
 RT_MODEL_motor_io_T motor_io_M_;
@@ -61,24 +58,6 @@ static void rt_ertODEUpdateContinuousStates(RTWSolverInfo *si )
   rtsiSetSimTimeStep(si,MAJOR_TIME_STEP);
 }
 
-real_T rt_roundd_snf(real_T u)
-{
-  real_T y;
-  if (fabs(u) < 4.503599627370496E+15) {
-    if (u >= 0.5) {
-      y = floor(u + 0.5);
-    } else if (u > -0.5) {
-      y = u * 0.0;
-    } else {
-      y = ceil(u - 0.5);
-    }
-  } else {
-    y = u;
-  }
-
-  return y;
-}
-
 /* Model output function */
 void motor_io_output(void)
 {
@@ -105,18 +84,6 @@ void motor_io_output(void)
     motor_io_M->Timing.t[0] = rtsiGetT(&motor_io_M->solverInfo);
   }
 
-  /* Integrator: '<S1>/Integrator' */
-  motor_io_B.Integrator = motor_io_X.Integrator_CSTATE;
-
-  /* Outport: '<Root>/Vel1' */
-  motor_io_Y.Vel1 = motor_io_B.Integrator;
-
-  /* Integrator: '<S1>/Integrator1' */
-  motor_io_B.Integrator1 = motor_io_X.Integrator1_CSTATE;
-
-  /* Outport: '<Root>/Pos1' */
-  motor_io_Y.Pos1 = motor_io_B.Integrator1;
-
   /* SignalGenerator: '<Root>/SinGenerator' */
   motor_io_B.SinGenerator = sin(motor_io_P.SinGenerator_Frequency *
     motor_io_M->Timing.t[0]) * motor_io_P.SinGenerator_Amplitude;
@@ -141,95 +108,53 @@ void motor_io_output(void)
   }
 
   /* End of Switch: '<Root>/Switch' */
-  if (rtmIsMajorTimeStep(motor_io_M)) {
-    /* S-Function (rti_commonblock): '<S14>/S-Function1' */
-    /* This comment workarounds a code generation problem */
 
-    /* Gain: '<S6>/fi1_scaling' */
-    motor_io_B.fi1_scaling = motor_io_P.fi1_scaling_Gain * motor_io_B.SFunction1;
+  /* Gain: '<Root>/Gain' */
+  motor_io_B.Gain = motor_io_P.Gain_Gain * motor_io_B.ref;
 
-    /* Quantizer: '<Root>/Quantizer1' */
-    temp = motor_io_B.fi1_scaling;
-    motor_io_B.Quantizer1 = rt_roundd_snf(temp / motor_io_P.Ts) * motor_io_P.Ts;
+  /* Saturate: '<S2>/Saturation' */
+  temp = motor_io_B.Gain;
+  u1 = motor_io_P.Saturation_LowerSat;
+  u2 = motor_io_P.Saturation_UpperSat;
+  if (temp > u2) {
+    motor_io_B.Volt = u2;
+  } else if (temp < u1) {
+    motor_io_B.Volt = u1;
+  } else {
+    motor_io_B.Volt = temp;
   }
 
-  /* Sum: '<Root>/Sum2' */
-  motor_io_B.Sum2 = motor_io_B.ref - motor_io_B.Quantizer1;
+  /* End of Saturate: '<S2>/Saturation' */
+
+  /* Gain: '<S2>/pwm_skalning' */
+  motor_io_B.pwm_skalning = motor_io_P.pwm_skalning_Gain * motor_io_B.Volt;
+
+  /* Sum: '<S2>/Sum' incorporates:
+   *  Constant: '<S2>/pwm_offstet'
+   */
+  motor_io_B.Sum = motor_io_B.pwm_skalning + motor_io_P.pwm_offstet_Value;
   if (rtmIsMajorTimeStep(motor_io_M)) {
-    /* Gain: '<S3>/Proportional Gain' */
-    motor_io_B.ProportionalGain = motor_io_P.ProportionalGain_Gain *
-      motor_io_B.Sum2;
-
-    /* DiscreteIntegrator: '<S3>/Integrator' */
-    motor_io_B.Integrator_m = motor_io_DW.Integrator_DSTATE;
-
-    /* Gain: '<S3>/Derivative Gain' */
-    motor_io_B.DerivativeGain = motor_io_P.DerivativeGain_Gain * motor_io_B.Sum2;
-
-    /* DiscreteIntegrator: '<S3>/Filter' */
-    motor_io_B.Filter = motor_io_DW.Filter_DSTATE;
-
-    /* Sum: '<S3>/SumD' */
-    motor_io_B.SumD = motor_io_B.DerivativeGain - motor_io_B.Filter;
-
-    /* Gain: '<S3>/Filter Coefficient' */
-    motor_io_B.FilterCoefficient = motor_io_P.FilterCoefficient_Gain *
-      motor_io_B.SumD;
-
-    /* Sum: '<S3>/Sum' */
-    motor_io_B.Sum = (motor_io_B.ProportionalGain + motor_io_B.Integrator_m) +
-      motor_io_B.FilterCoefficient;
-
-    /* ZeroOrderHold: '<Root>/Zero-Order Hold1' */
-    motor_io_B.ZeroOrderHold1 = motor_io_B.Sum;
-
-    /* Gain: '<Root>/Gain' */
-    motor_io_B.Gain = motor_io_P.Gain_Gain * motor_io_B.ZeroOrderHold1;
-
-    /* Saturate: '<S4>/Saturation' */
-    temp = motor_io_B.Gain;
-    u1 = motor_io_P.Saturation_LowerSat;
-    u2 = motor_io_P.Saturation_UpperSat;
-    if (temp > u2) {
-      motor_io_B.Volt = u2;
-    } else if (temp < u1) {
-      motor_io_B.Volt = u1;
-    } else {
-      motor_io_B.Volt = temp;
-    }
-
-    /* End of Saturate: '<S4>/Saturation' */
-
-    /* Gain: '<S4>/pwm_skalning' */
-    motor_io_B.pwm_skalning = motor_io_P.pwm_skalning_Gain * motor_io_B.Volt;
-
-    /* Sum: '<S4>/Sum' incorporates:
-     *  Constant: '<S4>/pwm_offstet'
-     */
-    motor_io_B.Sum_f = motor_io_B.pwm_skalning + motor_io_P.pwm_offstet_Value;
-
-    /* S-Function (rti_commonblock): '<S10>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S8>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
     /* dSPACE I/O Board DS1104 #1 Unit:PWM Group:PWM */
-    ds1104_slave_dsp_pwm_duty_write(0, rti_slv1104_fcn_index[6],
-      motor_io_B.Sum_f);
+    ds1104_slave_dsp_pwm_duty_write(0, rti_slv1104_fcn_index[6], motor_io_B.Sum);
 
-    /* S-Function (rti_commonblock): '<S10>/S-Function2' */
+    /* S-Function (rti_commonblock): '<S8>/S-Function2' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S10>/S-Function3' */
+    /* S-Function (rti_commonblock): '<S8>/S-Function3' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S10>/S-Function4' */
+    /* S-Function (rti_commonblock): '<S8>/S-Function4' */
     /* This comment workarounds a code generation problem */
 
-    /* DataTypeConversion: '<S4>/Data Type Conversion' incorporates:
-     *  Constant: '<S4>/Enable[1_Off, 0_On]'
+    /* DataTypeConversion: '<S2>/Data Type Conversion' incorporates:
+     *  Constant: '<S2>/Enable[1_Off, 0_On]'
      */
     motor_io_B.DataTypeConversion = (motor_io_P.Enable1_Off0_On_Value != 0.0);
 
-    /* S-Function (rti_commonblock): '<S9>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S7>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
     /* dSPACE I/O Board DS1104 #1 Unit:BIT_IO Group:BIT_OUT */
@@ -240,79 +165,20 @@ void motor_io_output(void)
     }
   }
 
-  /* Quantizer: '<Root>/Quantizer' */
-  temp = motor_io_B.Integrator1;
-  motor_io_B.Quantizer = rt_roundd_snf(temp / motor_io_P.Ts) * motor_io_P.Ts;
-
-  /* Sum: '<Root>/Sum1' */
-  motor_io_B.Sum1 = motor_io_B.ref - motor_io_B.Quantizer;
-  if (rtmIsMajorTimeStep(motor_io_M)) {
-    /* Gain: '<S2>/Proportional Gain' */
-    motor_io_B.ProportionalGain_k = motor_io_P.ProportionalGain_Gain_l *
-      motor_io_B.Sum1;
-
-    /* DiscreteIntegrator: '<S2>/Integrator' */
-    motor_io_B.Integrator_b = motor_io_DW.Integrator_DSTATE_g;
-
-    /* Gain: '<S2>/Derivative Gain' */
-    motor_io_B.DerivativeGain_o = motor_io_P.DerivativeGain_Gain_l *
-      motor_io_B.Sum1;
-
-    /* DiscreteIntegrator: '<S2>/Filter' */
-    motor_io_B.Filter_e = motor_io_DW.Filter_DSTATE_a;
-
-    /* Sum: '<S2>/SumD' */
-    motor_io_B.SumD_g = motor_io_B.DerivativeGain_o - motor_io_B.Filter_e;
-
-    /* Gain: '<S2>/Filter Coefficient' */
-    motor_io_B.FilterCoefficient_g = motor_io_P.FilterCoefficient_Gain_p *
-      motor_io_B.SumD_g;
-
-    /* Sum: '<S2>/Sum' */
-    motor_io_B.Sum_h = (motor_io_B.ProportionalGain_k + motor_io_B.Integrator_b)
-      + motor_io_B.FilterCoefficient_g;
-
-    /* ZeroOrderHold: '<Root>/Zero-Order Hold' */
-    motor_io_B.ZeroOrderHold = motor_io_B.Sum_h;
-
-    /* Saturate: '<S1>/Saturation' */
-    temp = motor_io_B.ZeroOrderHold;
-    u1 = motor_io_P.Saturation_LowerSat_b;
-    u2 = motor_io_P.Saturation_UpperSat_f;
-    if (temp > u2) {
-      motor_io_B.Saturation = u2;
-    } else if (temp < u1) {
-      motor_io_B.Saturation = u1;
-    } else {
-      motor_io_B.Saturation = temp;
-    }
-
-    /* End of Saturate: '<S1>/Saturation' */
-  }
+  /* Integrator: '<S1>/Integrator' */
+  motor_io_B.Integrator = motor_io_X.Integrator_CSTATE;
 
   /* Gain: '<S1>/Gain1' */
   motor_io_B.Gain1 = motor_io_P.Gain1_Gain * motor_io_B.Integrator;
 
   /* Sum: '<S1>/Add' */
-  motor_io_B.Add = motor_io_B.Saturation - motor_io_B.Gain1;
+  motor_io_B.Add = motor_io_B.ref - motor_io_B.Gain1;
 
   /* Gain: '<S1>/k//R ' */
   motor_io_B.kR = motor_io_P.kR_Gain * motor_io_B.Add;
 
-  /* Switch: '<S7>/Switch1' incorporates:
-   *  Constant: '<S7>/Constant'
-   *  Constant: '<S7>/Constant1'
-   */
-  if (motor_io_B.Integrator > motor_io_P.Switch1_Threshold) {
-    motor_io_B.Switch1 = motor_io_P.F_c;
-  } else {
-    motor_io_B.Switch1 = motor_io_P.Constant1_Value;
-  }
-
-  /* End of Switch: '<S7>/Switch1' */
-
-  /* Saturate: '<S7>/Saturate to Fc' */
-  temp = motor_io_B.Switch1;
+  /* Saturate: '<S5>/Saturate to Fc' */
+  temp = motor_io_B.kR;
   u1 = motor_io_P.SaturatetoFc_LowerSat;
   u2 = motor_io_P.F_c;
   if (temp > u2) {
@@ -323,21 +189,21 @@ void motor_io_output(void)
     motor_io_B.Stickslipregion = temp;
   }
 
-  /* End of Saturate: '<S7>/Saturate to Fc' */
+  /* End of Saturate: '<S5>/Saturate to Fc' */
 
-  /* Abs: '<S7>/Abs' */
+  /* Abs: '<S5>/Abs' */
   motor_io_B.Abs = fabs(motor_io_B.Integrator);
 
-  /* RelationalOperator: '<S8>/Compare' incorporates:
-   *  Constant: '<S8>/Constant'
+  /* RelationalOperator: '<S6>/Compare' incorporates:
+   *  Constant: '<S6>/Constant'
    */
   motor_io_B.Compare = (motor_io_B.Abs <= motor_io_P.Constant_Value);
 
-  /* Gain: '<S7>/Vicous friction' */
+  /* Gain: '<S5>/Vicous friction' */
   motor_io_B.Vicousfriction = motor_io_P.Vicousfriction_Gain *
     motor_io_B.Integrator;
 
-  /* Signum: '<S7>/Sign' */
+  /* Signum: '<S5>/Sign' */
   temp = motor_io_B.Integrator;
   if (temp < 0.0) {
     motor_io_B.Sign = -1.0;
@@ -349,53 +215,81 @@ void motor_io_output(void)
     motor_io_B.Sign = temp;
   }
 
-  /* End of Signum: '<S7>/Sign' */
+  /* End of Signum: '<S5>/Sign' */
 
-  /* Product: '<S7>/Product' incorporates:
-   *  Constant: '<S7>/Couloumb friction'
+  /* Product: '<S5>/Product' incorporates:
+   *  Constant: '<S5>/Constant'
    */
   motor_io_B.Product = motor_io_P.F_c * motor_io_B.Sign;
 
-  /* Sum: '<S7>/Add' */
+  /* Sum: '<S5>/Add' */
   motor_io_B.Viscousregion = motor_io_B.Vicousfriction + motor_io_B.Product;
 
-  /* Switch: '<S7>/Switch' */
+  /* Switch: '<S5>/Switch' */
   if (motor_io_B.Compare) {
     motor_io_B.Friction = motor_io_B.Stickslipregion;
   } else {
     motor_io_B.Friction = motor_io_B.Viscousregion;
   }
 
-  /* End of Switch: '<S7>/Switch' */
+  /* End of Switch: '<S5>/Switch' */
 
   /* Sum: '<S1>/Add1' */
   motor_io_B.Add1 = motor_io_B.kR - motor_io_B.Friction;
-
-  /* Gain: '<S1>/1//J' */
-  motor_io_B.J = motor_io_P.J_Gain * motor_io_B.Add1;
   if (rtmIsMajorTimeStep(motor_io_M)) {
-    /* Gain: '<S2>/Integral Gain' */
-    motor_io_B.IntegralGain = motor_io_P.IntegralGain_Gain * motor_io_B.Sum1;
+    /* Gain: '<S1>/Gain2' incorporates:
+     *  Constant: '<S1>/Load inertia'
+     */
+    motor_io_B.Gain2 = motor_io_P.Gain2_Gain * motor_io_P.J1;
 
-    /* Gain: '<S3>/Integral Gain' */
-    motor_io_B.IntegralGain_j = motor_io_P.IntegralGain_Gain_e * motor_io_B.Sum2;
+    /* Sum: '<S1>/Add2' incorporates:
+     *  Constant: '<S1>/Motor inertia'
+     */
+    motor_io_B.Add2 = motor_io_B.Gain2 + motor_io_P.Motorinertia_Value;
+  }
 
-    /* S-Function (rti_commonblock): '<S14>/S-Function2' */
+  /* Product: '<S1>/Inertias 1//J' */
+  motor_io_B.Inertias1J = 1.0 / motor_io_B.Add2 * motor_io_B.Add1;
+
+  /* Integrator: '<S1>/Integrator1' */
+  motor_io_B.Integrator1 = motor_io_X.Integrator1_CSTATE;
+  if (rtmIsMajorTimeStep(motor_io_M)) {
+  }
+
+  /* Switch: '<S5>/Switch1' incorporates:
+   *  Constant: '<S5>/Constant'
+   *  Constant: '<S5>/Constant1'
+   */
+  if (motor_io_B.Integrator > motor_io_P.Switch1_Threshold) {
+    motor_io_B.Switch1 = motor_io_P.F_c;
+  } else {
+    motor_io_B.Switch1 = motor_io_P.Constant1_Value;
+  }
+
+  /* End of Switch: '<S5>/Switch1' */
+  if (rtmIsMajorTimeStep(motor_io_M)) {
+    /* S-Function (rti_commonblock): '<S12>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
-    /* Gain: '<S6>/w1_scaling' */
+    /* S-Function (rti_commonblock): '<S12>/S-Function2' */
+    /* This comment workarounds a code generation problem */
+
+    /* Gain: '<S4>/fi1_scaling' */
+    motor_io_B.fi1_scaling = motor_io_P.fi1_scaling_Gain * motor_io_B.SFunction1;
+
+    /* Gain: '<S4>/w1_scaling' */
     motor_io_B.w1_scaling = motor_io_P.w1_scaling_Gain * motor_io_B.SFunction2;
 
-    /* Outputs for Triggered SubSystem: '<S6>/DS1104ENC_SET_POS_C1' incorporates:
-     *  TriggerPort: '<S16>/Trigger'
+    /* Outputs for Triggered SubSystem: '<S4>/DS1104ENC_SET_POS_C1' incorporates:
+     *  TriggerPort: '<S14>/Trigger'
      */
     if (rtmIsMajorTimeStep(motor_io_M)) {
-      /* Constant: '<S6>/Reset enc' */
+      /* Constant: '<S4>/Reset enc' */
       zcEvent = rt_ZCFcn(RISING_ZERO_CROSSING,
                          &motor_io_PrevZCX.DS1104ENC_SET_POS_C1_Trig_ZCE,
                          (motor_io_P.Resetenc_Value));
       if (zcEvent != NO_ZCEVENT) {
-        /* S-Function (rti_commonblock): '<S16>/S-Function1' */
+        /* S-Function (rti_commonblock): '<S14>/S-Function1' */
         /* This comment workarounds a code generation problem */
 
         /* dSPACE I/O Board DS1104 Unit:ENC_SET */
@@ -403,12 +297,12 @@ void motor_io_output(void)
       }
     }
 
-    /* End of Outputs for SubSystem: '<S6>/DS1104ENC_SET_POS_C1' */
+    /* End of Outputs for SubSystem: '<S4>/DS1104ENC_SET_POS_C1' */
 
-    /* S-Function (rti_commonblock): '<S15>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S13>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S15>/S-Function2' */
+    /* S-Function (rti_commonblock): '<S13>/S-Function2' */
     /* This comment workarounds a code generation problem */
   }
 }
@@ -416,24 +310,6 @@ void motor_io_output(void)
 /* Model update function */
 void motor_io_update(void)
 {
-  if (rtmIsMajorTimeStep(motor_io_M)) {
-    /* Update for DiscreteIntegrator: '<S3>/Integrator' */
-    motor_io_DW.Integrator_DSTATE += motor_io_P.Integrator_gainval *
-      motor_io_B.IntegralGain_j;
-
-    /* Update for DiscreteIntegrator: '<S3>/Filter' */
-    motor_io_DW.Filter_DSTATE += motor_io_P.Filter_gainval *
-      motor_io_B.FilterCoefficient;
-
-    /* Update for DiscreteIntegrator: '<S2>/Integrator' */
-    motor_io_DW.Integrator_DSTATE_g += motor_io_P.Integrator_gainval_a *
-      motor_io_B.IntegralGain;
-
-    /* Update for DiscreteIntegrator: '<S2>/Filter' */
-    motor_io_DW.Filter_DSTATE_a += motor_io_P.Filter_gainval_l *
-      motor_io_B.FilterCoefficient_g;
-  }
-
   if (rtmIsMajorTimeStep(motor_io_M)) {
     rt_ertODEUpdateContinuousStates(&motor_io_M->solverInfo);
   }
@@ -480,7 +356,7 @@ void motor_io_derivatives(void)
   _rtXdot = ((XDot_motor_io_T *) motor_io_M->ModelData.derivs);
 
   /* Derivatives for Integrator: '<S1>/Integrator' */
-  _rtXdot->Integrator_CSTATE = motor_io_B.J;
+  _rtXdot->Integrator_CSTATE = motor_io_B.Inertias1J;
 
   /* Derivatives for Integrator: '<S1>/Integrator1' */
   _rtXdot->Integrator1_CSTATE = motor_io_B.Integrator;
@@ -489,7 +365,7 @@ void motor_io_derivatives(void)
 /* Model initialize function */
 void motor_io_initialize(void)
 {
-  /* Start for S-Function (rti_commonblock): '<S10>/S-Function1' */
+  /* Start for S-Function (rti_commonblock): '<S8>/S-Function1' */
 
   /* dSPACE I/O Board DS1104 #1 Unit:PWM Group:PWM */
   motor_io_DW.SFunction1_IWORK[0] = 0;
@@ -500,18 +376,6 @@ void motor_io_initialize(void)
 
   /* InitializeConditions for Integrator: '<S1>/Integrator1' */
   motor_io_X.Integrator1_CSTATE = motor_io_P.Integrator1_IC;
-
-  /* InitializeConditions for DiscreteIntegrator: '<S3>/Integrator' */
-  motor_io_DW.Integrator_DSTATE = motor_io_P.Integrator_IC_h;
-
-  /* InitializeConditions for DiscreteIntegrator: '<S3>/Filter' */
-  motor_io_DW.Filter_DSTATE = motor_io_P.Filter_IC;
-
-  /* InitializeConditions for DiscreteIntegrator: '<S2>/Integrator' */
-  motor_io_DW.Integrator_DSTATE_g = motor_io_P.Integrator_IC_l;
-
-  /* InitializeConditions for DiscreteIntegrator: '<S2>/Filter' */
-  motor_io_DW.Filter_DSTATE_a = motor_io_P.Filter_IC_j;
 }
 
 /* Model terminate function */
@@ -657,42 +521,17 @@ RT_MODEL_motor_io_T *motor_io(void)
                 sizeof(B_motor_io_T));
 
   {
-    motor_io_B.Integrator = 0.0;
-    motor_io_B.Integrator1 = 0.0;
     motor_io_B.SinGenerator = 0.0;
     motor_io_B.SquareGenerator = 0.0;
     motor_io_B.ref = 0.0;
-    motor_io_B.SFunction1 = 0.0;
-    motor_io_B.fi1_scaling = 0.0;
-    motor_io_B.Quantizer1 = 0.0;
-    motor_io_B.Sum2 = 0.0;
-    motor_io_B.ProportionalGain = 0.0;
-    motor_io_B.Integrator_m = 0.0;
-    motor_io_B.DerivativeGain = 0.0;
-    motor_io_B.Filter = 0.0;
-    motor_io_B.SumD = 0.0;
-    motor_io_B.FilterCoefficient = 0.0;
-    motor_io_B.Sum = 0.0;
-    motor_io_B.ZeroOrderHold1 = 0.0;
     motor_io_B.Gain = 0.0;
     motor_io_B.Volt = 0.0;
     motor_io_B.pwm_skalning = 0.0;
-    motor_io_B.Sum_f = 0.0;
-    motor_io_B.Quantizer = 0.0;
-    motor_io_B.Sum1 = 0.0;
-    motor_io_B.ProportionalGain_k = 0.0;
-    motor_io_B.Integrator_b = 0.0;
-    motor_io_B.DerivativeGain_o = 0.0;
-    motor_io_B.Filter_e = 0.0;
-    motor_io_B.SumD_g = 0.0;
-    motor_io_B.FilterCoefficient_g = 0.0;
-    motor_io_B.Sum_h = 0.0;
-    motor_io_B.ZeroOrderHold = 0.0;
-    motor_io_B.Saturation = 0.0;
+    motor_io_B.Sum = 0.0;
+    motor_io_B.Integrator = 0.0;
     motor_io_B.Gain1 = 0.0;
     motor_io_B.Add = 0.0;
     motor_io_B.kR = 0.0;
-    motor_io_B.Switch1 = 0.0;
     motor_io_B.Stickslipregion = 0.0;
     motor_io_B.Abs = 0.0;
     motor_io_B.Vicousfriction = 0.0;
@@ -701,10 +540,14 @@ RT_MODEL_motor_io_T *motor_io(void)
     motor_io_B.Viscousregion = 0.0;
     motor_io_B.Friction = 0.0;
     motor_io_B.Add1 = 0.0;
-    motor_io_B.J = 0.0;
-    motor_io_B.IntegralGain = 0.0;
-    motor_io_B.IntegralGain_j = 0.0;
+    motor_io_B.Gain2 = 0.0;
+    motor_io_B.Add2 = 0.0;
+    motor_io_B.Inertias1J = 0.0;
+    motor_io_B.Integrator1 = 0.0;
+    motor_io_B.Switch1 = 0.0;
+    motor_io_B.SFunction1 = 0.0;
     motor_io_B.SFunction2 = 0.0;
+    motor_io_B.fi1_scaling = 0.0;
     motor_io_B.w1_scaling = 0.0;
   }
 
@@ -723,15 +566,6 @@ RT_MODEL_motor_io_T *motor_io(void)
   motor_io_M->ModelData.dwork = ((void *) &motor_io_DW);
   (void) memset((void *)&motor_io_DW, 0,
                 sizeof(DW_motor_io_T));
-  motor_io_DW.Integrator_DSTATE = 0.0;
-  motor_io_DW.Filter_DSTATE = 0.0;
-  motor_io_DW.Integrator_DSTATE_g = 0.0;
-  motor_io_DW.Filter_DSTATE_a = 0.0;
-
-  /* external outputs */
-  motor_io_M->ModelData.outputs = (&motor_io_Y);
-  motor_io_Y.Vel1 = 0.0;
-  motor_io_Y.Pos1 = 0.0;
 
   {
     /* user code (registration function declaration) */
@@ -742,13 +576,13 @@ RT_MODEL_motor_io_T *motor_io(void)
 
   /* Initialize Sizes */
   motor_io_M->Sizes.numContStates = (2);/* Number of continuous states */
-  motor_io_M->Sizes.numY = (2);        /* Number of model outputs */
+  motor_io_M->Sizes.numY = (0);        /* Number of model outputs */
   motor_io_M->Sizes.numU = (0);        /* Number of model inputs */
   motor_io_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
   motor_io_M->Sizes.numSampTimes = (2);/* Number of sample times */
-  motor_io_M->Sizes.numBlocks = (72);  /* Number of blocks */
-  motor_io_M->Sizes.numBlockIO = (51); /* Number of block outputs */
-  motor_io_M->Sizes.numBlockPrms = (44);/* Sum of parameter "widths" */
+  motor_io_M->Sizes.numBlocks = (49);  /* Number of blocks */
+  motor_io_M->Sizes.numBlockIO = (30); /* Number of block outputs */
+  motor_io_M->Sizes.numBlockPrms = (27);/* Sum of parameter "widths" */
   return motor_io_M;
 }
 

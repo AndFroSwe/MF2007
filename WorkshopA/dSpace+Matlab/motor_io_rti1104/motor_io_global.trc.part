@@ -14,7 +14,7 @@ group "Tunable Parameters"
 	p_1_motor_io_real_T_0[1]
 	{
 	 type:    flt(64,IEEE)*
-	 alias:   "Ts"
+	 alias:   "J1"
 	 flags:   PARAM
 	}
 
@@ -43,45 +43,45 @@ group "Labels"
 	 alias:   "Activator"
 	 bitmask: 0x01
 	 range:   < 0 ; 1 >
-	 origin:  "motor_io/Motor/Karnop friction1/Velocity threshold\n/y"
+	 origin:  "motor_io/DC motor/Karnop friction1/Velocity threshold\n/y"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_real_T_0[42]
+	p_0_motor_io_real_T_0[17]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Friction"
-	 origin:  "motor_io/Motor/Karnop friction1/Switch/Out1"
+	 origin:  "motor_io/DC motor/Karnop friction1/Switch/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_real_T_0[36]
+	p_0_motor_io_real_T_0[11]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Stick slip region\n"
-	 origin:  "motor_io/Motor/Karnop friction1/Saturate to Fc/Out1"
+	 origin:  "motor_io/DC motor/Karnop friction1/Saturate to Fc/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_real_T_0[0]
+	p_0_motor_io_real_T_0[7]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Velocity"
-	 origin:  "motor_io/Motor/Karnop friction1/Angular \nvelcoity/Out1"
+	 origin:  "motor_io/DC motor/Karnop friction1/Angular \nvelcoity/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_real_T_0[41]
+	p_0_motor_io_real_T_0[16]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Viscous region"
-	 origin:  "motor_io/Motor/Karnop friction1/Add/Out1"
+	 origin:  "motor_io/DC motor/Karnop friction1/Add/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_real_T_0[18]
+	p_0_motor_io_real_T_0[4]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Volt"
 	 origin:  "motor_io/PWM/Saturation/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_real_T_0[4]
+	p_0_motor_io_real_T_0[2]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "ref"
