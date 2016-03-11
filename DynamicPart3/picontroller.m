@@ -90,7 +90,6 @@ step(Gc_error)
 title('Step response')
 
 %% Discrete time controller
-close all
 % Set parameters
 enable_karnop = 0;  % Dont use karnop
 enable_sin = 1;     % Set 1 to enable sine input

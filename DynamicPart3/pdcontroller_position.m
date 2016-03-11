@@ -55,7 +55,6 @@ plot(sim_reference.Time, sim_reference.Data, 'r')
 title(sprintf('Error feedback with PD controller, s1=%0.2f, s0=%0.2f and r0=%0.2f', s1, s0, r0))
 
 %% Discrete time controller
-close all
 % Set parameters
 enable_karnop = 0;  % Dont use karnop
 enable_sin = 1;     % Set 1 to enable sine input
