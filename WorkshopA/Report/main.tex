@@ -27,11 +27,51 @@ This section covers the methods behind finding the parameters to enter into the
 model to get the biggest similarity to the physical plant.
 
 \subsection*{Level 1}
-To identify the parameters, a series of tests are run to evaluate the model. The
-model performance is plotted next to the performance of the real plant to
-compare. Firstly, a model with a linear friction is used, that is no Karnop
-model. To identify the linear friction, a square wave with amplitude of a
-frequency in the middle of the available volt spectrum is used, more
-specifically $10~\text{V}$. 
- 
+To identify the parameters of the DC motor, firstly an idealized model is
+studied theoretically to understand which physical parameters that affect the
+performance of the motor. In the Laplace frequency domain, a model of the motor
+without inductance can be expressed as 
+\begin{equation}
+    \label{eq:motormodel}
+    X = \frac {k (1 + \frac{1}{Rd})} {s \frac {J_t} { \frac {k^2} {R} + d} + 1}
+    U,
+\end{equation}
+where $X$ is the rotational speed, $U$ is the input voltage, $k$, $R$ and $d$
+are the electric motor constant, internal resistance and the viscous friction.
+The variable $J_t$ represents the total inertia of the motor and the load. With
+the load inertia after a gear with gear ratio $n$, the total inertia is
+\begin{equation}
+    \label{eq:inertia}
+    J_t = J + \frac{J_{load}}{n^2}.
+\end{equation}
+Here, the load inertia and the inertia of the motor are separated and the motor
+inertia from the datasheet is presumed to be correct, leaving only the load
+inertia as an unknown.  Now the relations between the motor parameters and the
+time performance can be seen. The time constant is given by the term
+\begin{equation*}
+    \label{eq:timeconstant}
+    \frac {J_t} { \frac {k^2} {R} + d}
+\end{equation*}
+and as such contains all the parameters of the motor. According to the final
+value theorem, the steady state value from a step input is given by setting
+$s=0$ and therefore the steady state gain is given by 
+\begin{equation*}
+    \label{eq:steadystate}
+    k (1 + \frac{1}{Rd}).
+\end{equation*}
+This contatiains only one unknown parameter. Therefore, to estimate the viscous
+friction parameter $d$, it is suitable to examine and match the steady state
+rotational speed of the real system and the model. Since this model contains no
+static friction which is probably present in the real system, the test is
+conducted at maximum permissable input voltage to minimize the disturbances in
+the test data. Since the desired value does not depend on frequency, only a
+square wave input is used to simulate steps in both directions. 
+% INPUT DATA HERE 
+Now that the friction parameter is presumed to be correct and fixed, the time
+constant in Equation (\ref{eq:timeconstant}) only has one unknown, the load
+inertia. This is estimated from taking the time constant from step inputs,
+simulated by a square wave signal. Again, to minimize model disturbances caused
+by the static friction present in the real system, the square wave is run at a
+full 24 V.
+
 \end{document}
