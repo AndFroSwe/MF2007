@@ -72,6 +72,16 @@ constant in Equation (\ref{eq:timeconstant}) only has one unknown, the load
 inertia. This is estimated from taking the time constant from step inputs,
 simulated by a square wave signal. Again, to minimize model disturbances caused
 by the static friction present in the real system, the square wave is run at a
-full 24 V.
+full 24 V. 
+% INPUT DATA HERE
+% ADD DISCUSSION HERE
+\subsection*{Level 2}
+\label{sub:level_2}
+As could be seen in the earlier friction model, it did not incorporate the
+effects of static friction which led to inaccuracy in the model when varying the
+rotational speed. A model which captures the real behaviour of the system is
+used here, called the Karnop friction model. In addition to the linear friction,
+the static friction is taken into account by adding a stick-slip zone where the
+friciton tourque is equal to the applied torque. 
 
 \end{document}
