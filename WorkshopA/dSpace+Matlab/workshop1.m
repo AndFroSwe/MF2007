@@ -99,6 +99,7 @@ title('Output feedback pole zero map')
 grid on
 
 %% Discretization
+close all
 disp('discrete velocity controller')
 % Calculate sample time
 samples_per_risetime = 10;
@@ -134,9 +135,9 @@ t0 = dcgain(a/(z-p1))^-1;
 Td = (z-p2)*t0;
 
 % add polynomials for simulation in simulate_motor_controllers.slx
-T = Td.num{1};
-R = Rd.num{1};
-S = Sd.num{1};
+T_sim = Td.num{1};
+R_sim = Rd.num{1};
+S_sim = Sd.num{1};
 
 % closed loop polynomial
 Gff_dead = Td/Rd;
@@ -160,11 +161,11 @@ hold on
 step(Gyr_dead)
 legend('discreizised', 'discrete pole placement')
 % Compare continuous and discrete
-figure
-step(Gc_output)
-hold on
-grid on
-step(Gyr_d)
+% figure
+% step(Gc_output)
+% hold on
+% grid on
+% step(Gyr_d)
 
 
 %% 4.2: Position Controller
