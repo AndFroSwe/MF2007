@@ -31,20 +31,22 @@ motor_pars.k = 69.7e-3;    % Torque constant [Nm/A]
 motor_pars.J = 7.46e-7;  % Rotor inertia
 
 motor = motor_pars;
+Ts = 0.002
 
 %% 1: Parameter identification
 
 % Estimated parameters
-J1 = 0.00075;  % Load inertia (separated from motor inertia
-motor.d = 3e-5; % Measured at amplitude 10
+J1 = 0.00006;  % Load inertia (separated from motor inertia
+motor.d = 1.35e-5; % Measured at amplitude 24
 
 %% 2: parameter identification, with karnop
 % Start with high speed, 24 v,  and estimating d. Fc has lower effect there.
 % Then go down to 5 v and find Fc lower and upper.
-J1 = 0.0006;  % Load inertia (separated from motor inertia
-motor.d = 1.5e-5; % Measured at amplitude 10
-F_c_upper = 1.5e-3; % Upper static friction limit
-F_c_lower = 0.5e-3; % Lower static friction limit
+ J1 = 0.0006;  % Load inertia (separated from motor inertia
+ motor.d = 1e-5; % Measured at amplitude 24
+ F_c_upper = 1.5e-3; % Upper static friction limit
+ F_c_lower = 1.5e-3; % Lower static friction limit
+ F_c = 1.5e-3;
 
 %% 4: Controlling the motor
 %% 4.1: Velocity Controller

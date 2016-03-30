@@ -52,56 +52,42 @@ group "Labels"
 	 origin:  "motor_io_velocity/DC motor/Karnop friction1/Velocity threshold\n/y"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[37]
+	p_0_motor_io_velocity_real_T_0[27]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Friction"
 	 origin:  "motor_io_velocity/DC motor/Karnop friction1/Switch/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[31]
+	p_0_motor_io_velocity_real_T_0[21]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Stick slip region\n"
 	 origin:  "motor_io_velocity/DC motor/Karnop friction1/Saturate to Fc/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[22]
-	{
-	 type:    flt(64,IEEE)*
-	 alias:   "U(k-1){Occurence1}"
-	 origin:  "motor_io_velocity/Sensor\n1/Discrete Derivative/UD/Out1"
-	 flags:   LABEL|READONLY
-	}
-	p_0_motor_io_velocity_real_T_0[5]
-	{
-	 type:    flt(64,IEEE)*
-	 alias:   "U(k-1){Occurence2}"
-	 origin:  "motor_io_velocity/Sensor\n2/Discrete Derivative/UD/Out1"
-	 flags:   LABEL|READONLY
-	}
-	p_0_motor_io_velocity_real_T_0[27]
+	p_0_motor_io_velocity_real_T_0[13]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Velocity"
 	 origin:  "motor_io_velocity/DC motor/Karnop friction1/Angular \nvelcoity/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[36]
+	p_0_motor_io_velocity_real_T_0[26]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Viscous region"
 	 origin:  "motor_io_velocity/DC motor/Karnop friction1/Add/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[14]
+	p_0_motor_io_velocity_real_T_0[9]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Volt"
 	 origin:  "motor_io_velocity/PWM/Saturation/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_velocity_real_T_0[10]
+	p_0_motor_io_velocity_real_T_0[5]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "ref"

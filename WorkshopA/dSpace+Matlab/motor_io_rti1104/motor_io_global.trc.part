@@ -14,6 +14,12 @@ group "Tunable Parameters"
 	p_1_motor_io_real_T_0[1]
 	{
 	 type:    flt(64,IEEE)*
+	 alias:   "F_c_upper"
+	 flags:   PARAM
+	}
+	p_1_motor_io_real_T_0[2]
+	{
+	 type:    flt(64,IEEE)*
 	 alias:   "J1"
 	 flags:   PARAM
 	}

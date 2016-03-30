@@ -1,0 +1,256 @@
+%implements s1_b0_6u7ve_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+real_T temp;
+ZCEventType zcEvent;
+real_T u1;
+real_T u2;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS1B0 = OpaqueTLCBlockFcn("Outputs", 1, 0, 0, 3)
+%assign tlcOutputsFcnOfS1B3 = OpaqueTLCBlockFcn("Outputs", 1, 3, 0, 3)
+%assign tlcOutputsFcnOfS1B4 = OpaqueTLCBlockFcn("Outputs", 1, 4, 0, 3)
+%assign tlcOutputsFcnOfS1B5 = OpaqueTLCBlockFcn("Outputs", 1, 5, 0, 3)
+%assign tlcOutputsFcnOfS1B6 = OpaqueTLCBlockFcn("Outputs", 1, 6, 0, 3)
+%assign tlcOutputsFcnOfS1B8 = OpaqueTLCBlockFcn("Outputs", 1, 8, 0, 3)
+%assign tlcOutputsFcnOfS1B13 = OpaqueTLCBlockFcn("Outputs", 1, 13, 0, 3)
+%assign tlcOutputsFcnOfS1B15 = OpaqueTLCBlockFcn("Outputs", 1, 15, 0, 3)
+%assign tlcOutputsFcnOfS0B0 = OpaqueTLCBlockFcn("Outputs", 0, 0, 0, 3)
+%assign tlcOutputsFcnOfS1B18 = OpaqueTLCBlockFcn("Outputs", 1, 18, 0, 3)
+%assign tlcOutputsFcnOfS1B19 = OpaqueTLCBlockFcn("Outputs", 1, 19, 0, 3)
+%<SLibCGIRDumpSystemUserCode(1, "Output", "Header")>\
+%<SLibCGIRDumpSystemUserCode(1, "Output", "Body")>\
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+%<tlcOutputsFcnOfS1B0>\
+    /* Gain: '<S4>/w1_scaling' */
+    motor_io_velocity_B.w1_scaling = motor_io_velocity_P.w1_scaling_Gain * motor_io_velocity_B.SFunction2;
+    /* DiscreteTransferFcn: '<Root>/G_fb_real' */
+    temp = motor_io_velocity_B.w1_scaling;
+    temp -= motor_io_velocity_P.G_fb_real_DenCoef[1] * motor_io_velocity_DW.G_fb_real_states;
+    temp /= motor_io_velocity_P.G_fb_real_DenCoef[0];
+    motor_io_velocity_DW.G_fb_real_tmp = temp;
+    temp = motor_io_velocity_P.G_fb_real_NumCoef[0] * motor_io_velocity_DW.G_fb_real_tmp;
+    temp += motor_io_velocity_P.G_fb_real_NumCoef[1] * motor_io_velocity_DW.G_fb_real_states;
+    motor_io_velocity_B.G_fb_real = temp;
+}
+/* SignalGenerator: '<Root>/SinGenerator' */
+motor_io_velocity_B.SinGenerator = sin(motor_io_velocity_P.SinGenerator_Frequency * %<(SLibCG_SE(LibGetT()))>) * motor_io_velocity_P.SinGenerator_Amplitude;
+/* SignalGenerator: '<Root>/SquareGenerator' */
+temp = motor_io_velocity_P.SquareGenerator_Frequency * %<(SLibCG_SE(LibGetT()))>;
+if (temp - floor(temp) >= 0.5) {
+    motor_io_velocity_B.SquareGenerator = motor_io_velocity_P.SquareGenerator_Amplitude;
+} else {
+    motor_io_velocity_B.SquareGenerator = -motor_io_velocity_P.SquareGenerator_Amplitude;
+}
+/* End of SignalGenerator: '<Root>/SquareGenerator' */
+
+/* Switch: '<Root>/Switch' incorporates:
+ *  Constant: '<Root>/SignalSelector[0Square,1Sine]'
+ */
+if (motor_io_velocity_P.SignalSelector0Square1Sine_Valu != 0.0) {
+    motor_io_velocity_B.ref = motor_io_velocity_B.SinGenerator;
+} else {
+    motor_io_velocity_B.ref = motor_io_velocity_B.SquareGenerator;
+}
+/* End of Switch: '<Root>/Switch' */
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* DiscreteTransferFcn: '<Root>/Gff_real' */
+    temp = motor_io_velocity_B.ref;
+    temp -= motor_io_velocity_P.Gff_real_DenCoef[1] * motor_io_velocity_DW.Gff_real_states;
+    temp /= motor_io_velocity_P.Gff_real_DenCoef[0];
+    motor_io_velocity_DW.Gff_real_tmp = temp;
+    temp = motor_io_velocity_P.Gff_real_NumCoef[0] * motor_io_velocity_DW.Gff_real_tmp;
+    temp += motor_io_velocity_P.Gff_real_NumCoef[1] * motor_io_velocity_DW.Gff_real_states;
+    motor_io_velocity_B.Gff_real = temp;
+    /* Sum: '<Root>/Sum' */
+    motor_io_velocity_B.Sum = motor_io_velocity_B.Gff_real - motor_io_velocity_B.G_fb_real;
+    /* Gain: '<Root>/Gain' */
+    motor_io_velocity_B.Gain = motor_io_velocity_P.Gain_Gain * motor_io_velocity_B.Sum;
+    /* Saturate: '<S2>/Saturation' */
+    temp = motor_io_velocity_B.Gain;
+    u1 = motor_io_velocity_P.Saturation_LowerSat;
+    u2 = motor_io_velocity_P.Saturation_UpperSat;
+    if (temp > u2) {
+        motor_io_velocity_B.Volt = u2;
+    } else if (temp < u1) {
+        motor_io_velocity_B.Volt = u1;
+    } else {
+        motor_io_velocity_B.Volt = temp;
+    }
+    /* End of Saturate: '<S2>/Saturation' */
+
+    /* Gain: '<S2>/pwm_skalning' */
+    motor_io_velocity_B.pwm_skalning = motor_io_velocity_P.pwm_skalning_Gain * motor_io_velocity_B.Volt;
+    /* Sum: '<S2>/Sum' incorporates:
+ *  Constant: '<S2>/pwm_offstet'
+ */
+    motor_io_velocity_B.Sum_f = motor_io_velocity_B.pwm_skalning + motor_io_velocity_P.pwm_offstet_Value;
+%<tlcOutputsFcnOfS1B3>\
+%<tlcOutputsFcnOfS1B4>\
+%<tlcOutputsFcnOfS1B5>\
+%<tlcOutputsFcnOfS1B6>\
+    /* DataTypeConversion: '<S2>/Data Type Conversion' incorporates:
+ *  Constant: '<S2>/Enable[1_Off, 0_On]'
+ */
+    motor_io_velocity_B.DataTypeConversion = (motor_io_velocity_P.Enable1_Off0_On_Value != 0.0);
+%<tlcOutputsFcnOfS1B8>\
+    /* DiscreteTransferFcn: '<Root>/Gff1' */
+    temp = motor_io_velocity_B.ref;
+    temp -= motor_io_velocity_P.Gff1_DenCoef[1] * motor_io_velocity_DW.Gff1_states;
+    temp /= motor_io_velocity_P.Gff1_DenCoef[0];
+    motor_io_velocity_DW.Gff1_tmp = temp;
+    temp = motor_io_velocity_P.Gff1_NumCoef[0] * motor_io_velocity_DW.Gff1_tmp;
+    temp += motor_io_velocity_P.Gff1_NumCoef[1] * motor_io_velocity_DW.Gff1_states;
+    motor_io_velocity_B.Gff1 = temp;
+}
+/* Integrator: '<S1>/Integrator' */
+motor_io_velocity_B.Integrator = motor_io_velocity_X.Integrator_CSTATE;
+/* Quantizer: '<Root>/Quantizer' */
+temp = motor_io_velocity_B.Integrator;
+motor_io_velocity_B.Quantizer = %<(SLibCGCallSubFcn("rt_roundd_snf", ["temp / motor_io_velocity_P.quant"], 0, 3, 0))> * motor_io_velocity_P.quant;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* DiscreteTransferFcn: '<Root>/Gfb1' */
+    temp = motor_io_velocity_B.Quantizer;
+    temp -= motor_io_velocity_P.Gfb1_DenCoef[1] * motor_io_velocity_DW.Gfb1_states;
+    temp /= motor_io_velocity_P.Gfb1_DenCoef[0];
+    motor_io_velocity_DW.Gfb1_tmp = temp;
+    temp = motor_io_velocity_P.Gfb1_NumCoef[0] * motor_io_velocity_DW.Gfb1_tmp;
+    temp += motor_io_velocity_P.Gfb1_NumCoef[1] * motor_io_velocity_DW.Gfb1_states;
+    motor_io_velocity_B.Gfb1 = temp;
+    /* Sum: '<Root>/Sum1' */
+    motor_io_velocity_B.Sum1 = motor_io_velocity_B.Gff1 - motor_io_velocity_B.Gfb1;
+    /* Saturate: '<Root>/Saturation' */
+    temp = motor_io_velocity_B.Sum1;
+    u1 = motor_io_velocity_P.Saturation_LowerSat_c;
+    u2 = motor_io_velocity_P.Saturation_UpperSat_p;
+    if (temp > u2) {
+        motor_io_velocity_B.Saturation = u2;
+    } else if (temp < u1) {
+        motor_io_velocity_B.Saturation = u1;
+    } else {
+        motor_io_velocity_B.Saturation = temp;
+    }
+    /* End of Saturate: '<Root>/Saturation' */
+}
+/* Gain: '<S1>/Gain1' */
+motor_io_velocity_B.Gain1 = motor_io_velocity_P.Gain1_Gain * motor_io_velocity_B.Integrator;
+/* Sum: '<S1>/Add' */
+motor_io_velocity_B.Add = motor_io_velocity_B.Saturation - motor_io_velocity_B.Gain1;
+/* Gain: '<S1>/k//R ' */
+motor_io_velocity_B.kR = motor_io_velocity_P.kR_Gain * motor_io_velocity_B.Add;
+/* Saturate: '<S5>/Saturate to Fc' */
+temp = motor_io_velocity_B.kR;
+u1 = motor_io_velocity_P.SaturatetoFc_LowerSat;
+u2 = motor_io_velocity_P.F_c;
+if (temp > u2) {
+    motor_io_velocity_B.Stickslipregion = u2;
+} else if (temp < u1) {
+    motor_io_velocity_B.Stickslipregion = u1;
+} else {
+    motor_io_velocity_B.Stickslipregion = temp;
+}
+/* End of Saturate: '<S5>/Saturate to Fc' */
+
+/* Abs: '<S5>/Abs' */
+motor_io_velocity_B.Abs = fabs(motor_io_velocity_B.Integrator);
+/* RelationalOperator: '<S6>/Compare' incorporates:
+ *  Constant: '<S6>/Constant'
+ */
+motor_io_velocity_B.Compare = (motor_io_velocity_B.Abs <= motor_io_velocity_P.Constant_Value);
+/* Gain: '<S5>/Vicous friction' */
+motor_io_velocity_B.Vicousfriction = motor_io_velocity_P.Vicousfriction_Gain * motor_io_velocity_B.Integrator;
+/* Signum: '<S5>/Sign' */
+temp = motor_io_velocity_B.Integrator;
+if (temp < 0.0) {
+    motor_io_velocity_B.Sign = -1.0;
+} else if (temp > 0.0) {
+    motor_io_velocity_B.Sign = 1.0;
+} else if (temp == 0.0) {
+    motor_io_velocity_B.Sign = 0.0;
+} else {
+    motor_io_velocity_B.Sign = temp;
+}
+/* End of Signum: '<S5>/Sign' */
+
+/* Product: '<S5>/Product' incorporates:
+ *  Constant: '<S5>/F_c'
+ */
+motor_io_velocity_B.Product = motor_io_velocity_P.F_c * motor_io_velocity_B.Sign;
+/* Sum: '<S5>/Add' */
+motor_io_velocity_B.Viscousregion = motor_io_velocity_B.Vicousfriction + motor_io_velocity_B.Product;
+/* Switch: '<S5>/Switch' */
+if (motor_io_velocity_B.Compare) {
+    motor_io_velocity_B.Friction = motor_io_velocity_B.Stickslipregion;
+} else {
+    motor_io_velocity_B.Friction = motor_io_velocity_B.Viscousregion;
+}
+/* End of Switch: '<S5>/Switch' */
+
+/* Sum: '<S1>/Add1' */
+motor_io_velocity_B.Add1 = motor_io_velocity_B.kR - motor_io_velocity_B.Friction;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* Gain: '<S1>/Gain2' incorporates:
+ *  Constant: '<S1>/Load inertia'
+ */
+    motor_io_velocity_B.Gain2 = motor_io_velocity_P.Gain2_Gain * motor_io_velocity_P.J1;
+    /* Sum: '<S1>/Add2' incorporates:
+ *  Constant: '<S1>/Motor inertia'
+ */
+    motor_io_velocity_B.Add2 = motor_io_velocity_B.Gain2 + motor_io_velocity_P.Motorinertia_Value;
+}
+/* Product: '<S1>/Inertias 1//J' */
+motor_io_velocity_B.Inertias1J = 1.0 / motor_io_velocity_B.Add2 * motor_io_velocity_B.Add1;
+/* Integrator: '<S1>/Integrator1' */
+motor_io_velocity_B.Integrator1 = motor_io_velocity_X.Integrator1_CSTATE;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+%<tlcOutputsFcnOfS1B13>\
+}
+/* Switch: '<S5>/Switch1' incorporates:
+ *  Constant: '<S5>/Constant1'
+ *  Constant: '<S5>/F_c'
+ */
+if (motor_io_velocity_B.Integrator > motor_io_velocity_P.Switch1_Threshold) {
+    motor_io_velocity_B.Switch1 = motor_io_velocity_P.F_c;
+} else {
+    motor_io_velocity_B.Switch1 = motor_io_velocity_P.Constant1_Value;
+}
+/* End of Switch: '<S5>/Switch1' */
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+%<tlcOutputsFcnOfS1B15>\
+    /* Gain: '<S4>/fi1_scaling' */
+    motor_io_velocity_B.fi1_scaling = motor_io_velocity_P.fi1_scaling_Gain * motor_io_velocity_B.SFunction1;
+    /* Outputs for Triggered SubSystem: '<S4>/DS1104ENC_SET_POS_C1' incorporates:
+ *  TriggerPort: '<S14>/Trigger'
+ */
+    if (%<(LibIsMajorTimeStep())>) {
+        /* Constant: '<S4>/Reset enc' */
+        zcEvent = %<(SLibCG_SE(SLibCGIRZCFcn("RISING_ZERO_CROSSING", "motor_io_velocity_PrevZCX.DS1104ENC_SET_POS_C1_Trig_ZCE", "motor_io_velocity_P.Resetenc_Value", 0)))>;
+        if (zcEvent != NO_ZCEVENT) {
+%<SLibCGIRDumpSystemUserCode(0, "Output", "Header")>\
+%<SLibCGIRDumpSystemUserCode(0, "Output", "Body")>\
+%<tlcOutputsFcnOfS0B0>\
+%<SLibCGIRDumpSystemUserCode(0, "Output", "Trailer")>\
+%<SLibCGIRDumpSystemUserCode(0, "Update", "Header")>\
+%<SLibCGIRDumpSystemUserCode(0, "Update", "Body")>\
+%<SLibCGIRDumpSystemUserCode(0, "Update", "Trailer")>\
+        }
+    }
+    /* End of Outputs for SubSystem: '<S4>/DS1104ENC_SET_POS_C1' */
+%<tlcOutputsFcnOfS1B18>\
+%<tlcOutputsFcnOfS1B19>\
+}
+%<SLibCGIRDumpSystemUserCode(1, "Output", "Trailer")>\
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
