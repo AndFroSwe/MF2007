@@ -3,7 +3,7 @@
 --  Trace file: motor_io_velocity.trc
 --
 --  RTI1104 7.3 (02-Nov-2014)
---  Fri Mar 11 13:31:00 2016
+--  Wed Mar 30 14:29:22 2016
 --
 --  Used options:
 --    TRCGenerateVirtualBlocks      = 1
@@ -27,7 +27,7 @@
 
 _genname     "RTI"
 _genversion  "7.3"
-_gendate     "03/11/2016 13:31:03"
+_gendate     "03/30/2016 14:29:24"
 _description ""
 _author      "RTI1104 7.3 (02-Nov-2014)"
 _model       "motor_io_velocity.mdl"
@@ -39,9 +39,9 @@ _integer_type(32)
 -- No Data Capture blocks within model: use base sample time as sampling period
 sampling_period[0]
 {
-  value:       0.021970064966318415
+  value:       0.021970064966318436
   alias:       "HostService"
-  increment:   0.021970064966318415
+  increment:   0.021970064966318436
   unit:        "s"
 }
 

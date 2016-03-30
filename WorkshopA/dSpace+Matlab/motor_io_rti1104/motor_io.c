@@ -5,7 +5,7 @@
  *
  * Model version              : 1.27
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Fri Mar 11 09:20:59 2016
+ * C source code generated on : Wed Mar 30 14:02:15 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -180,7 +180,7 @@ void motor_io_output(void)
   /* Saturate: '<S5>/Saturate to Fc' */
   temp = motor_io_B.kR;
   u1 = motor_io_P.SaturatetoFc_LowerSat;
-  u2 = motor_io_P.F_c;
+  u2 = motor_io_P.F_c_upper;
   if (temp > u2) {
     motor_io_B.Stickslipregion = u2;
   } else if (temp < u1) {
@@ -218,7 +218,7 @@ void motor_io_output(void)
   /* End of Signum: '<S5>/Sign' */
 
   /* Product: '<S5>/Product' incorporates:
-   *  Constant: '<S5>/Constant'
+   *  Constant: '<S5>/F_c'
    */
   motor_io_B.Product = motor_io_P.F_c * motor_io_B.Sign;
 
@@ -253,20 +253,6 @@ void motor_io_output(void)
 
   /* Integrator: '<S1>/Integrator1' */
   motor_io_B.Integrator1 = motor_io_X.Integrator1_CSTATE;
-  if (rtmIsMajorTimeStep(motor_io_M)) {
-  }
-
-  /* Switch: '<S5>/Switch1' incorporates:
-   *  Constant: '<S5>/Constant'
-   *  Constant: '<S5>/Constant1'
-   */
-  if (motor_io_B.Integrator > motor_io_P.Switch1_Threshold) {
-    motor_io_B.Switch1 = motor_io_P.F_c;
-  } else {
-    motor_io_B.Switch1 = motor_io_P.Constant1_Value;
-  }
-
-  /* End of Switch: '<S5>/Switch1' */
   if (rtmIsMajorTimeStep(motor_io_M)) {
     /* S-Function (rti_commonblock): '<S12>/S-Function1' */
     /* This comment workarounds a code generation problem */
@@ -330,7 +316,7 @@ void motor_io_update(void)
   motor_io_M->Timing.t[0] = rtsiGetSolverStopTime(&motor_io_M->solverInfo);
 
   {
-    /* Update absolute timer for sample time: [0.002s, 0.0s] */
+    /* Update absolute timer for sample time: [0.036424631028033456s, 0.0s] */
     /* The "clockTick1" counts the number of times the code of this task has
      * been executed. The absolute time is the multiplication of "clockTick1"
      * and "Timing.stepSize1". Size of "clockTick1" ensures timer will not
@@ -491,7 +477,7 @@ RT_MODEL_motor_io_T *motor_io(void)
 
     /* task periods */
     motor_io_M->Timing.sampleTimes[0] = (0.0);
-    motor_io_M->Timing.sampleTimes[1] = (0.002);
+    motor_io_M->Timing.sampleTimes[1] = (0.036424631028033456);
 
     /* task offsets */
     motor_io_M->Timing.offsetTimes[0] = (0.0);
@@ -508,11 +494,11 @@ RT_MODEL_motor_io_T *motor_io(void)
   }
 
   rtmSetTFinal(motor_io_M, -1);
-  motor_io_M->Timing.stepSize0 = 0.002;
-  motor_io_M->Timing.stepSize1 = 0.002;
+  motor_io_M->Timing.stepSize0 = 0.036424631028033456;
+  motor_io_M->Timing.stepSize1 = 0.036424631028033456;
   motor_io_M->solverInfoPtr = (&motor_io_M->solverInfo);
-  motor_io_M->Timing.stepSize = (0.002);
-  rtsiSetFixedStepSize(&motor_io_M->solverInfo, 0.002);
+  motor_io_M->Timing.stepSize = (0.036424631028033456);
+  rtsiSetFixedStepSize(&motor_io_M->solverInfo, 0.036424631028033456);
   rtsiSetSolverMode(&motor_io_M->solverInfo, SOLVER_MODE_SINGLETASKING);
 
   /* block I/O */
@@ -544,7 +530,6 @@ RT_MODEL_motor_io_T *motor_io(void)
     motor_io_B.Add2 = 0.0;
     motor_io_B.Inertias1J = 0.0;
     motor_io_B.Integrator1 = 0.0;
-    motor_io_B.Switch1 = 0.0;
     motor_io_B.SFunction1 = 0.0;
     motor_io_B.SFunction2 = 0.0;
     motor_io_B.fi1_scaling = 0.0;
@@ -580,9 +565,9 @@ RT_MODEL_motor_io_T *motor_io(void)
   motor_io_M->Sizes.numU = (0);        /* Number of model inputs */
   motor_io_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
   motor_io_M->Sizes.numSampTimes = (2);/* Number of sample times */
-  motor_io_M->Sizes.numBlocks = (49);  /* Number of blocks */
-  motor_io_M->Sizes.numBlockIO = (30); /* Number of block outputs */
-  motor_io_M->Sizes.numBlockPrms = (27);/* Sum of parameter "widths" */
+  motor_io_M->Sizes.numBlocks = (47);  /* Number of blocks */
+  motor_io_M->Sizes.numBlockIO = (29); /* Number of block outputs */
+  motor_io_M->Sizes.numBlockPrms = (26);/* Sum of parameter "widths" */
   return motor_io_M;
 }
 

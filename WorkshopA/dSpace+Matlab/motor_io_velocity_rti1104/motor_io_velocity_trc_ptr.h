@@ -5,7 +5,7 @@
    Declaration of function that initializes the global TRC pointers
 
    RTI1104 7.3 (02-Nov-2014)
-   Fri Mar 11 13:31:00 2016
+   Wed Mar 30 14:29:22 2016
 
    (c) Copyright 2008, dSPACE GmbH. All rights reserved.
 
@@ -37,11 +37,11 @@
               EXTERN_C volatile  real_T *p_3_motor_io_velocity_real_T_0;
 
    #define RTI_INIT_TRC_POINTERS() \
-              p_0_motor_io_velocity_real_T_0 = &motor_io_velocity_B.SFunction1;\
+              p_0_motor_io_velocity_real_T_0 = &motor_io_velocity_B.SFunction2;\
               p_0_motor_io_velocity_boolean_T_1 = &motor_io_velocity_B.DataTypeConversion;\
               p_1_motor_io_velocity_real_T_0 = &motor_io_velocity_P.F_c;\
-              p_2_motor_io_velocity_real_T_0 = &motor_io_velocity_DW.UD_DSTATE;\
+              p_2_motor_io_velocity_real_T_0 = &motor_io_velocity_DW.G_fb_real_states;\
               p_2_motor_io_velocity_int_T_2 = &motor_io_velocity_DW.SFunction1_IWORK[0];\
-              p_3_motor_io_velocity_real_T_0 = &motor_io_velocity_X.Integrator1_CSTATE;\
+              p_3_motor_io_velocity_real_T_0 = &motor_io_velocity_X.Integrator_CSTATE;\
 
    #endif                       /* RTI_HEADER_motor_io_velocity_trc_ptr_h_ */

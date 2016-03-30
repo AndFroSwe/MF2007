@@ -11,7 +11,7 @@ group "Model Root"
 	 flags: BLOCK|COLLAPSED
 	}
 		-- Skipping output Out1
-		p_1_motor_io_real_T_0[4]
+		p_1_motor_io_real_T_0[5]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -34,7 +34,7 @@ group "Model Root"
 		 desc:    ""
 		 flags:   OUTPUT|READONLY
 		}
-		p_1_motor_io_real_T_0[7]
+		p_1_motor_io_real_T_0[8]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Gain"
@@ -58,13 +58,13 @@ group "Model Root"
 		 flags:   OUTPUT|READONLY
 		}
 
-		p_1_motor_io_real_T_0[2]
+		p_1_motor_io_real_T_0[3]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Amplitude"
 		 flags:   PARAM
 		}
-		p_1_motor_io_real_T_0[3]
+		p_1_motor_io_real_T_0[4]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Frequency"
@@ -88,13 +88,13 @@ group "Model Root"
 		 flags:   OUTPUT|READONLY
 		}
 
-		p_1_motor_io_real_T_0[5]
+		p_1_motor_io_real_T_0[6]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Amplitude"
 		 flags:   PARAM
 		}
-		p_1_motor_io_real_T_0[6]
+		p_1_motor_io_real_T_0[7]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Frequency"
@@ -168,7 +168,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_real_T_0[1]
+			p_1_motor_io_real_T_0[2]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -186,7 +186,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_real_T_0[20]
+			p_1_motor_io_real_T_0[21]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -209,7 +209,7 @@ group "Model Root"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_real_T_0[14]
+			p_1_motor_io_real_T_0[15]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -232,7 +232,7 @@ group "Model Root"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_real_T_0[19]
+			p_1_motor_io_real_T_0[20]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -255,7 +255,7 @@ group "Model Root"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_real_T_0[15]
+			p_1_motor_io_real_T_0[16]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -278,7 +278,7 @@ group "Model Root"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_real_T_0[13]
+			p_1_motor_io_real_T_0[14]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
@@ -301,7 +301,7 @@ group "Model Root"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_real_T_0[21]
+			p_1_motor_io_real_T_0[22]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
@@ -446,7 +446,7 @@ group "Model Root"
 
 			endgroup -- block-group "Abs"
 
-			group "Constant" -- block-group
+			group "F_c" -- block-group
 			{
 			 block: "Constant"
 			 desc:  ""
@@ -462,24 +462,7 @@ group "Model Root"
 				}
 
 
-			endgroup -- block-group "Constant"
-
-			group "Constant1" -- block-group
-			{
-			 block: "Constant"
-			 desc:  ""
-			 flags: BLOCK|COLLAPSED
-			}
-				-- Skipping output Out1
-				p_1_motor_io_real_T_0[22]
-				{
-				 type:    flt(64,IEEE)*
-				 alias:   "Value"
-				 flags:   PARAM
-				}
-
-
-			endgroup -- block-group "Constant1"
+			endgroup -- block-group "F_c"
 
 			group "Vicous friction" -- block-group
 			{
@@ -494,7 +477,7 @@ group "Model Root"
 				 desc:    ""
 				 flags:   OUTPUT|READONLY
 				}
-				p_1_motor_io_real_T_0[18]
+				p_1_motor_io_real_T_0[19]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Gain"
@@ -534,14 +517,14 @@ group "Model Root"
 				 desc:    ""
 				 flags:   OUTPUT|READONLY
 				}
-				p_1_motor_io_real_T_0[0]
+				p_1_motor_io_real_T_0[1]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "UpperLimit"
 				 flags:   PARAM
-				 origin:  "F_c"
+				 origin:  "F_c_upper"
 				}
-				p_1_motor_io_real_T_0[16]
+				p_1_motor_io_real_T_0[17]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "LowerLimit"
@@ -650,29 +633,6 @@ group "Model Root"
 
 			endgroup -- block-group "Switch"
 
-			group "Switch1" -- block-group
-			{
-			 block: "Switch"
-			 desc:  ""
-			 flags: BLOCK|COLLAPSED
-			}
-				p_0_motor_io_real_T_0[23]
-				{
-				 type:    flt(64,IEEE)*
-				 alias:   "Out1"
-				 desc:    ""
-				 flags:   OUTPUT|READONLY
-				}
-				p_1_motor_io_real_T_0[23]
-				{
-				 type:    flt(64,IEEE)*
-				 alias:   "Threshold"
-				 flags:   PARAM
-				}
-
-
-			endgroup -- block-group "Switch1"
-
   
   
 			group "Velocity threshold\n" -- subsystem-group
@@ -715,7 +675,7 @@ group "Model Root"
 				 flags: BLOCK|COLLAPSED
 				}
 					-- Skipping output Out1
-					p_1_motor_io_real_T_0[17]
+					p_1_motor_io_real_T_0[18]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Value"
@@ -823,7 +783,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_real_T_0[12]
+			p_1_motor_io_real_T_0[13]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -840,7 +800,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_real_T_0[11]
+			p_1_motor_io_real_T_0[12]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -882,7 +842,7 @@ group "Model Root"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_real_T_0[10]
+			p_1_motor_io_real_T_0[11]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -938,13 +898,13 @@ group "Model Root"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_real_T_0[8]
+			p_1_motor_io_real_T_0[9]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "UpperLimit"
 			 flags:   PARAM
 			}
-			p_1_motor_io_real_T_0[9]
+			p_1_motor_io_real_T_0[10]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "LowerLimit"
@@ -1019,14 +979,14 @@ group "Model Root"
 	 desc:  ""
 	}
 
-		p_0_motor_io_real_T_0[26]
+		p_0_motor_io_real_T_0[25]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "fi1"
 		 desc:    ""
 		 flags:   OUTPUT|READONLY
 		}
-		p_0_motor_io_real_T_0[27]
+		p_0_motor_io_real_T_0[26]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "w1"
@@ -1041,7 +1001,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_real_T_0[26]
+			p_1_motor_io_real_T_0[25]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -1052,6 +1012,29 @@ group "Model Root"
 		endgroup -- block-group "Reset enc"
 
 		group "fi1_scaling" -- block-group
+		{
+		 block: "Gain"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_real_T_0[25]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_real_T_0[23]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "fi1_scaling"
+
+		group "w1_scaling" -- block-group
 		{
 		 block: "Gain"
 		 desc:  ""
@@ -1072,29 +1055,6 @@ group "Model Root"
 			}
 
 
-		endgroup -- block-group "fi1_scaling"
-
-		group "w1_scaling" -- block-group
-		{
-		 block: "Gain"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_real_T_0[27]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_real_T_0[25]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Gain"
-			 flags:   PARAM
-			}
-
-
 		endgroup -- block-group "w1_scaling"
 
   
@@ -1105,14 +1065,14 @@ group "Model Root"
 		 desc:  ""
 		}
 
-			p_0_motor_io_real_T_0[24]
+			p_0_motor_io_real_T_0[23]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Enc position"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_0_motor_io_real_T_0[25]
+			p_0_motor_io_real_T_0[24]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Enc delta position"

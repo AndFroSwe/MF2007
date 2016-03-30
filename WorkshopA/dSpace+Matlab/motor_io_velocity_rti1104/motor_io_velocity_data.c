@@ -3,9 +3,9 @@
  *
  * Code generation for model "motor_io_velocity".
  *
- * Model version              : 1.32
+ * Model version              : 1.33
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Fri Mar 11 13:31:00 2016
+ * C source code generated on : Wed Mar 30 14:29:22 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -18,40 +18,32 @@
 
 /* Block parameters (auto storage) */
 P_motor_io_velocity_T motor_io_velocity_P = {
-  0.001,                               /* Variable: F_c
+  0.0015,                              /* Variable: F_c
                                         * Referenced by:
-                                        *   '<S7>/F_c'
-                                        *   '<S7>/Saturate to Fc'
+                                        *   '<S5>/F_c'
+                                        *   '<S5>/Saturate to Fc'
                                         */
   0.0006,                              /* Variable: J1
                                         * Referenced by: '<S1>/Load inertia'
                                         */
   0.0062831853071795866,               /* Variable: quant
-                                        * Referenced by:
-                                        *   '<S4>/Quantizer'
-                                        *   '<S5>/Quantizer'
+                                        * Referenced by: '<Root>/Quantizer'
                                         */
-  0.0062831853071795866,               /* Expression: 2*pi/(1000)
-                                        * Referenced by: '<S6>/fi1_scaling'
-                                        */
-  45.5164789695919,                    /* Computed Parameter: TSamp_WtEt
-                                        * Referenced by: '<S15>/TSamp'
-                                        */
-  0.0,                                 /* Expression: ICPrevScaledInput
-                                        * Referenced by: '<S15>/UD'
+  0.28598847189628823,                 /* Expression: 2*pi/(1000)/Ts
+                                        * Referenced by: '<S4>/w1_scaling'
                                         */
 
   /*  Expression: Gfb_d.num{1}
-   * Referenced by: '<Root>/Gfbreal'
+   * Referenced by: '<Root>/G_fb_real'
    */
-  { 0.52449740943239931, -0.480816507353827 },
+  { 0.53253184271790877, -0.48885094063933648 },
 
   /*  Expression: Gfb_d.den{1}
-   * Referenced by: '<Root>/Gfbreal'
+   * Referenced by: '<Root>/G_fb_real'
    */
   { 1.0, -1.0 },
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<Root>/Gfbreal'
+                                        * Referenced by: '<Root>/G_fb_real'
                                         */
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<Root>/SinGenerator'
@@ -70,16 +62,16 @@ P_motor_io_velocity_T motor_io_velocity_P = {
                                         */
 
   /*  Expression: Gff_d.num{1}
-   * Referenced by: '<Root>/Gffreal'
+   * Referenced by: '<Root>/Gff_real'
    */
   { 0.41948062320571367, -0.37579972112714138 },
 
   /*  Expression: Gff_d.den{1}
-   * Referenced by: '<Root>/Gffreal'
+   * Referenced by: '<Root>/Gff_real'
    */
   { 1.0, -1.0 },
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<Root>/Gffreal'
+                                        * Referenced by: '<Root>/Gff_real'
                                         */
   -1.0,                                /* Expression: -1
                                         * Referenced by: '<Root>/Gain'
@@ -101,38 +93,32 @@ P_motor_io_velocity_T motor_io_velocity_P = {
                                         */
 
   /*  Expression: Gff_d.num{1}
-   * Referenced by: '<Root>/Gff'
+   * Referenced by: '<Root>/Gff1'
    */
   { 0.41948062320571367, -0.37579972112714138 },
 
   /*  Expression: Gff_d.den{1}
-   * Referenced by: '<Root>/Gff'
+   * Referenced by: '<Root>/Gff1'
    */
   { 1.0, -1.0 },
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<Root>/Gff'
+                                        * Referenced by: '<Root>/Gff1'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S1>/Integrator1'
-                                        */
-  45.5164789695919,                    /* Computed Parameter: TSamp_WtEt_b
-                                        * Referenced by: '<S14>/TSamp'
-                                        */
-  0.0,                                 /* Expression: ICPrevScaledInput
-                                        * Referenced by: '<S14>/UD'
+                                        * Referenced by: '<S1>/Integrator'
                                         */
 
   /*  Expression: Gfb_d.num{1}
-   * Referenced by: '<Root>/Gfb'
+   * Referenced by: '<Root>/Gfb1'
    */
-  { 0.52449740943239931, -0.480816507353827 },
+  { 0.53253184271790877, -0.48885094063933648 },
 
   /*  Expression: Gfb_d.den{1}
-   * Referenced by: '<Root>/Gfb'
+   * Referenced by: '<Root>/Gfb1'
    */
   { 1.0, -1.0 },
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<Root>/Gfb'
+                                        * Referenced by: '<Root>/Gfb1'
                                         */
   24.0,                                /* Expression: 24
                                         * Referenced by: '<Root>/Saturation'
@@ -140,23 +126,20 @@ P_motor_io_velocity_T motor_io_velocity_P = {
   -24.0,                               /* Expression: -24
                                         * Referenced by: '<Root>/Saturation'
                                         */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S1>/Integrator'
-                                        */
   0.0697,                              /* Expression: motor.k
                                         * Referenced by: '<S1>/Gain1'
                                         */
   0.00062232142857142857,              /* Expression: motor.k/motor.R
                                         * Referenced by: '<S1>/k//R '
                                         */
-  -0.001,                              /* Expression: -F_c
-                                        * Referenced by: '<S7>/Saturate to Fc'
+  -0.0015,                             /* Expression: -F_c
+                                        * Referenced by: '<S5>/Saturate to Fc'
                                         */
   3.0,                                 /* Expression: const
-                                        * Referenced by: '<S8>/Constant'
+                                        * Referenced by: '<S6>/Constant'
                                         */
-  1.5E-5,                              /* Expression: motor.d
-                                        * Referenced by: '<S7>/Vicous friction'
+  1.0E-5,                              /* Expression: motor.d
+                                        * Referenced by: '<S5>/Vicous friction'
                                         */
   0.04,                                /* Expression: n^-2
                                         * Referenced by: '<S1>/Gain2'
@@ -165,15 +148,18 @@ P_motor_io_velocity_T motor_io_velocity_P = {
                                         * Referenced by: '<S1>/Motor inertia'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S7>/Constant1'
+                                        * Referenced by: '<S1>/Integrator1'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S7>/Switch1'
+                                        * Referenced by: '<S5>/Constant1'
                                         */
-  0.28598847189628851,                 /* Expression: 2*pi/(1000)/Ts
-                                        * Referenced by: '<S6>/w1_scaling'
+  0.0,                                 /* Expression: 0
+                                        * Referenced by: '<S5>/Switch1'
+                                        */
+  0.0062831853071795866,               /* Expression: 2*pi/(1000)
+                                        * Referenced by: '<S4>/fi1_scaling'
                                         */
   0.0                                  /* Expression: 0
-                                        * Referenced by: '<S6>/Reset enc'
+                                        * Referenced by: '<S4>/Reset enc'
                                         */
 };

@@ -5,7 +5,7 @@
  *
  * Model version              : 1.27
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Fri Mar 11 09:20:59 2016
+ * C source code generated on : Wed Mar 30 14:02:15 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -19,11 +19,12 @@
 /* Block parameters (auto storage) */
 P_motor_io_T motor_io_P = {
   0.001,                               /* Variable: F_c
-                                        * Referenced by:
-                                        *   '<S5>/Constant'
-                                        *   '<S5>/Saturate to Fc'
+                                        * Referenced by: '<S5>/F_c'
                                         */
-  0.00075,                             /* Variable: J1
+  0.00115,                             /* Variable: F_c_upper
+                                        * Referenced by: '<S5>/Saturate to Fc'
+                                        */
+  0.0006,                              /* Variable: J1
                                         * Referenced by: '<S1>/Load inertia'
                                         */
   0.0,                                 /* Expression: 0
@@ -68,13 +69,13 @@ P_motor_io_T motor_io_P = {
   0.00062232142857142857,              /* Expression: motor.k/motor.R
                                         * Referenced by: '<S1>/k//R '
                                         */
-  -0.001,                              /* Expression: -F_c
+  -0.00115,                            /* Expression: -F_c_lower
                                         * Referenced by: '<S5>/Saturate to Fc'
                                         */
   3.0,                                 /* Expression: const
                                         * Referenced by: '<S6>/Constant'
                                         */
-  3.0E-5,                              /* Expression: motor.d
+  1.35E-5,                             /* Expression: motor.d
                                         * Referenced by: '<S5>/Vicous friction'
                                         */
   0.04,                                /* Expression: n^-2
@@ -86,16 +87,10 @@ P_motor_io_T motor_io_P = {
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S1>/Integrator1'
                                         */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S5>/Constant1'
-                                        */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S5>/Switch1'
-                                        */
   0.0062831853071795866,               /* Expression: 2*pi/(1000)
                                         * Referenced by: '<S4>/fi1_scaling'
                                         */
-  3.1415926535897931,                  /* Expression: 2*pi/(1000)/Ts
+  0.17249825543445765,                 /* Expression: 2*pi/(1000)/Ts
                                         * Referenced by: '<S4>/w1_scaling'
                                         */
   0.0                                  /* Expression: 0

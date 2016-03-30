@@ -3,9 +3,9 @@
  *
  * Code generation for model "motor_io_velocity".
  *
- * Model version              : 1.32
+ * Model version              : 1.33
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Fri Mar 11 13:31:00 2016
+ * C source code generated on : Wed Mar 30 14:29:22 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -787,98 +787,87 @@
 
 /* Block signals (auto storage) */
 typedef struct {
-  real_T SFunction1;                   /* '<S16>/S-Function1' */
-  real_T fi1_scaling;                  /* '<S6>/fi1_scaling' */
-  real_T Quantizer;                    /* '<S5>/Quantizer' */
-  real_T ZeroOrderHold;                /* '<S5>/Zero-Order Hold' */
-  real_T TSamp;                        /* '<S15>/TSamp' */
-  real_T Uk1;                          /* '<S15>/UD' */
-  real_T Diff;                         /* '<S15>/Diff' */
-  real_T Gfbreal;                      /* '<Root>/Gfbreal' */
+  real_T SFunction2;                   /* '<S12>/S-Function2' */
+  real_T w1_scaling;                   /* '<S4>/w1_scaling' */
+  real_T G_fb_real;                    /* '<Root>/G_fb_real' */
   real_T SinGenerator;                 /* '<Root>/SinGenerator' */
   real_T SquareGenerator;              /* '<Root>/SquareGenerator' */
   real_T ref;                          /* '<Root>/Switch' */
-  real_T Gffreal;                      /* '<Root>/Gffreal' */
+  real_T Gff_real;                     /* '<Root>/Gff_real' */
   real_T Sum;                          /* '<Root>/Sum' */
   real_T Gain;                         /* '<Root>/Gain' */
   real_T Volt;                         /* '<S2>/Saturation' */
   real_T pwm_skalning;                 /* '<S2>/pwm_skalning' */
   real_T Sum_f;                        /* '<S2>/Sum' */
-  real_T Gff;                          /* '<Root>/Gff' */
-  real_T Integrator1;                  /* '<S1>/Integrator1' */
-  real_T Quantizer_n;                  /* '<S4>/Quantizer' */
-  real_T ZeroOrderHold_g;              /* '<S4>/Zero-Order Hold' */
-  real_T TSamp_e;                      /* '<S14>/TSamp' */
-  real_T Uk1_f;                        /* '<S14>/UD' */
-  real_T Diff_d;                       /* '<S14>/Diff' */
-  real_T Gfb;                          /* '<Root>/Gfb' */
+  real_T Gff1;                         /* '<Root>/Gff1' */
+  real_T Integrator;                   /* '<S1>/Integrator' */
+  real_T Quantizer;                    /* '<Root>/Quantizer' */
+  real_T Gfb1;                         /* '<Root>/Gfb1' */
   real_T Sum1;                         /* '<Root>/Sum1' */
   real_T Saturation;                   /* '<Root>/Saturation' */
-  real_T Integrator;                   /* '<S1>/Integrator' */
   real_T Gain1;                        /* '<S1>/Gain1' */
   real_T Add;                          /* '<S1>/Add' */
   real_T kR;                           /* '<S1>/k//R ' */
-  real_T Stickslipregion;              /* '<S7>/Saturate to Fc' */
-  real_T Abs;                          /* '<S7>/Abs' */
-  real_T Vicousfriction;               /* '<S7>/Vicous friction' */
-  real_T Sign;                         /* '<S7>/Sign' */
-  real_T Product;                      /* '<S7>/Product' */
-  real_T Viscousregion;                /* '<S7>/Add' */
-  real_T Friction;                     /* '<S7>/Switch' */
+  real_T Stickslipregion;              /* '<S5>/Saturate to Fc' */
+  real_T Abs;                          /* '<S5>/Abs' */
+  real_T Vicousfriction;               /* '<S5>/Vicous friction' */
+  real_T Sign;                         /* '<S5>/Sign' */
+  real_T Product;                      /* '<S5>/Product' */
+  real_T Viscousregion;                /* '<S5>/Add' */
+  real_T Friction;                     /* '<S5>/Switch' */
   real_T Add1;                         /* '<S1>/Add1' */
   real_T Gain2;                        /* '<S1>/Gain2' */
   real_T Add2;                         /* '<S1>/Add2' */
   real_T Inertias1J;                   /* '<S1>/Inertias 1//J' */
-  real_T Switch1;                      /* '<S7>/Switch1' */
-  real_T SFunction2;                   /* '<S16>/S-Function2' */
-  real_T w1_scaling;                   /* '<S6>/w1_scaling' */
+  real_T Integrator1;                  /* '<S1>/Integrator1' */
+  real_T Switch1;                      /* '<S5>/Switch1' */
+  real_T SFunction1;                   /* '<S12>/S-Function1' */
+  real_T fi1_scaling;                  /* '<S4>/fi1_scaling' */
   boolean_T DataTypeConversion;        /* '<S2>/Data Type Conversion' */
-  boolean_T Compare;                   /* '<S8>/Compare' */
+  boolean_T Compare;                   /* '<S6>/Compare' */
 } B_motor_io_velocity_T;
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
-  real_T UD_DSTATE;                    /* '<S15>/UD' */
-  real_T Gfbreal_states;               /* '<Root>/Gfbreal' */
-  real_T Gffreal_states;               /* '<Root>/Gffreal' */
-  real_T Gff_states;                   /* '<Root>/Gff' */
-  real_T UD_DSTATE_b;                  /* '<S14>/UD' */
-  real_T Gfb_states;                   /* '<Root>/Gfb' */
-  real_T Gfbreal_tmp;                  /* '<Root>/Gfbreal' */
-  real_T Gffreal_tmp;                  /* '<Root>/Gffreal' */
-  real_T Gff_tmp;                      /* '<Root>/Gff' */
-  real_T Gfb_tmp;                      /* '<Root>/Gfb' */
+  real_T G_fb_real_states;             /* '<Root>/G_fb_real' */
+  real_T Gff_real_states;              /* '<Root>/Gff_real' */
+  real_T Gff1_states;                  /* '<Root>/Gff1' */
+  real_T Gfb1_states;                  /* '<Root>/Gfb1' */
+  real_T G_fb_real_tmp;                /* '<Root>/G_fb_real' */
+  real_T Gff_real_tmp;                 /* '<Root>/Gff_real' */
+  real_T Gff1_tmp;                     /* '<Root>/Gff1' */
+  real_T Gfb1_tmp;                     /* '<Root>/Gfb1' */
   struct {
     void *LoggedData;
-  } Scope2_PWORK;                      /* '<S7>/Scope2' */
+  } Scope2_PWORK;                      /* '<S5>/Scope2' */
 
-  int_T SFunction1_IWORK[4];           /* '<S10>/S-Function1' */
-  int_T SFunction2_IWORK[4];           /* '<S10>/S-Function2' */
-  int_T SFunction3_IWORK[4];           /* '<S10>/S-Function3' */
-  int_T SFunction4_IWORK[4];           /* '<S10>/S-Function4' */
+  int_T SFunction1_IWORK[4];           /* '<S8>/S-Function1' */
+  int_T SFunction2_IWORK[4];           /* '<S8>/S-Function2' */
+  int_T SFunction3_IWORK[4];           /* '<S8>/S-Function3' */
+  int_T SFunction4_IWORK[4];           /* '<S8>/S-Function4' */
 } DW_motor_io_velocity_T;
 
 /* Continuous states (auto storage) */
 typedef struct {
-  real_T Integrator1_CSTATE;           /* '<S1>/Integrator1' */
   real_T Integrator_CSTATE;            /* '<S1>/Integrator' */
+  real_T Integrator1_CSTATE;           /* '<S1>/Integrator1' */
 } X_motor_io_velocity_T;
 
 /* State derivatives (auto storage) */
 typedef struct {
-  real_T Integrator1_CSTATE;           /* '<S1>/Integrator1' */
   real_T Integrator_CSTATE;            /* '<S1>/Integrator' */
+  real_T Integrator1_CSTATE;           /* '<S1>/Integrator1' */
 } XDot_motor_io_velocity_T;
 
 /* State disabled  */
 typedef struct {
-  boolean_T Integrator1_CSTATE;        /* '<S1>/Integrator1' */
   boolean_T Integrator_CSTATE;         /* '<S1>/Integrator' */
+  boolean_T Integrator1_CSTATE;        /* '<S1>/Integrator1' */
 } XDis_motor_io_velocity_T;
 
 /* Zero-crossing (trigger) state */
 typedef struct {
-  ZCSigState DS1104ENC_SET_POS_C1_Trig_ZCE;/* '<S6>/DS1104ENC_SET_POS_C1' */
+  ZCSigState DS1104ENC_SET_POS_C1_Trig_ZCE;/* '<S4>/DS1104ENC_SET_POS_C1' */
 } PrevZCX_motor_io_velocity_T;
 
 #ifndef ODE1_INTG
@@ -911,34 +900,26 @@ typedef struct {
 struct P_motor_io_velocity_T_ {
   real_T F_c;                          /* Variable: F_c
                                         * Referenced by:
-                                        *   '<S7>/F_c'
-                                        *   '<S7>/Saturate to Fc'
+                                        *   '<S5>/F_c'
+                                        *   '<S5>/Saturate to Fc'
                                         */
   real_T J1;                           /* Variable: J1
                                         * Referenced by: '<S1>/Load inertia'
                                         */
   real_T quant;                        /* Variable: quant
-                                        * Referenced by:
-                                        *   '<S4>/Quantizer'
-                                        *   '<S5>/Quantizer'
+                                        * Referenced by: '<Root>/Quantizer'
                                         */
-  real_T fi1_scaling_Gain;             /* Expression: 2*pi/(1000)
-                                        * Referenced by: '<S6>/fi1_scaling'
+  real_T w1_scaling_Gain;              /* Expression: 2*pi/(1000)/Ts
+                                        * Referenced by: '<S4>/w1_scaling'
                                         */
-  real_T TSamp_WtEt;                   /* Computed Parameter: TSamp_WtEt
-                                        * Referenced by: '<S15>/TSamp'
+  real_T G_fb_real_NumCoef[2];         /* Expression: Gfb_d.num{1}
+                                        * Referenced by: '<Root>/G_fb_real'
                                         */
-  real_T UD_InitialCondition;          /* Expression: ICPrevScaledInput
-                                        * Referenced by: '<S15>/UD'
+  real_T G_fb_real_DenCoef[2];         /* Expression: Gfb_d.den{1}
+                                        * Referenced by: '<Root>/G_fb_real'
                                         */
-  real_T Gfbreal_NumCoef[2];           /* Expression: Gfb_d.num{1}
-                                        * Referenced by: '<Root>/Gfbreal'
-                                        */
-  real_T Gfbreal_DenCoef[2];           /* Expression: Gfb_d.den{1}
-                                        * Referenced by: '<Root>/Gfbreal'
-                                        */
-  real_T Gfbreal_InitialStates;        /* Expression: 0
-                                        * Referenced by: '<Root>/Gfbreal'
+  real_T G_fb_real_InitialStates;      /* Expression: 0
+                                        * Referenced by: '<Root>/G_fb_real'
                                         */
   real_T SinGenerator_Amplitude;       /* Expression: 0
                                         * Referenced by: '<Root>/SinGenerator'
@@ -955,14 +936,14 @@ struct P_motor_io_velocity_T_ {
   real_T SquareGenerator_Frequency;    /* Computed Parameter: SquareGenerator_Frequency
                                         * Referenced by: '<Root>/SquareGenerator'
                                         */
-  real_T Gffreal_NumCoef[2];           /* Expression: Gff_d.num{1}
-                                        * Referenced by: '<Root>/Gffreal'
+  real_T Gff_real_NumCoef[2];          /* Expression: Gff_d.num{1}
+                                        * Referenced by: '<Root>/Gff_real'
                                         */
-  real_T Gffreal_DenCoef[2];           /* Expression: Gff_d.den{1}
-                                        * Referenced by: '<Root>/Gffreal'
+  real_T Gff_real_DenCoef[2];          /* Expression: Gff_d.den{1}
+                                        * Referenced by: '<Root>/Gff_real'
                                         */
-  real_T Gffreal_InitialStates;        /* Expression: 0
-                                        * Referenced by: '<Root>/Gffreal'
+  real_T Gff_real_InitialStates;       /* Expression: 0
+                                        * Referenced by: '<Root>/Gff_real'
                                         */
   real_T Gain_Gain;                    /* Expression: -1
                                         * Referenced by: '<Root>/Gain'
@@ -982,41 +963,32 @@ struct P_motor_io_velocity_T_ {
   real_T Enable1_Off0_On_Value;        /* Expression: 1
                                         * Referenced by: '<S2>/Enable[1_Off, 0_On]'
                                         */
-  real_T Gff_NumCoef[2];               /* Expression: Gff_d.num{1}
-                                        * Referenced by: '<Root>/Gff'
+  real_T Gff1_NumCoef[2];              /* Expression: Gff_d.num{1}
+                                        * Referenced by: '<Root>/Gff1'
                                         */
-  real_T Gff_DenCoef[2];               /* Expression: Gff_d.den{1}
-                                        * Referenced by: '<Root>/Gff'
+  real_T Gff1_DenCoef[2];              /* Expression: Gff_d.den{1}
+                                        * Referenced by: '<Root>/Gff1'
                                         */
-  real_T Gff_InitialStates;            /* Expression: 0
-                                        * Referenced by: '<Root>/Gff'
+  real_T Gff1_InitialStates;           /* Expression: 0
+                                        * Referenced by: '<Root>/Gff1'
                                         */
-  real_T Integrator1_IC;               /* Expression: 0
-                                        * Referenced by: '<S1>/Integrator1'
+  real_T Integrator_IC;                /* Expression: 0
+                                        * Referenced by: '<S1>/Integrator'
                                         */
-  real_T TSamp_WtEt_b;                 /* Computed Parameter: TSamp_WtEt_b
-                                        * Referenced by: '<S14>/TSamp'
+  real_T Gfb1_NumCoef[2];              /* Expression: Gfb_d.num{1}
+                                        * Referenced by: '<Root>/Gfb1'
                                         */
-  real_T UD_InitialCondition_c;        /* Expression: ICPrevScaledInput
-                                        * Referenced by: '<S14>/UD'
+  real_T Gfb1_DenCoef[2];              /* Expression: Gfb_d.den{1}
+                                        * Referenced by: '<Root>/Gfb1'
                                         */
-  real_T Gfb_NumCoef[2];               /* Expression: Gfb_d.num{1}
-                                        * Referenced by: '<Root>/Gfb'
-                                        */
-  real_T Gfb_DenCoef[2];               /* Expression: Gfb_d.den{1}
-                                        * Referenced by: '<Root>/Gfb'
-                                        */
-  real_T Gfb_InitialStates;            /* Expression: 0
-                                        * Referenced by: '<Root>/Gfb'
+  real_T Gfb1_InitialStates;           /* Expression: 0
+                                        * Referenced by: '<Root>/Gfb1'
                                         */
   real_T Saturation_UpperSat_p;        /* Expression: 24
                                         * Referenced by: '<Root>/Saturation'
                                         */
   real_T Saturation_LowerSat_c;        /* Expression: -24
                                         * Referenced by: '<Root>/Saturation'
-                                        */
-  real_T Integrator_IC;                /* Expression: 0
-                                        * Referenced by: '<S1>/Integrator'
                                         */
   real_T Gain1_Gain;                   /* Expression: motor.k
                                         * Referenced by: '<S1>/Gain1'
@@ -1025,13 +997,13 @@ struct P_motor_io_velocity_T_ {
                                         * Referenced by: '<S1>/k//R '
                                         */
   real_T SaturatetoFc_LowerSat;        /* Expression: -F_c
-                                        * Referenced by: '<S7>/Saturate to Fc'
+                                        * Referenced by: '<S5>/Saturate to Fc'
                                         */
   real_T Constant_Value;               /* Expression: const
-                                        * Referenced by: '<S8>/Constant'
+                                        * Referenced by: '<S6>/Constant'
                                         */
   real_T Vicousfriction_Gain;          /* Expression: motor.d
-                                        * Referenced by: '<S7>/Vicous friction'
+                                        * Referenced by: '<S5>/Vicous friction'
                                         */
   real_T Gain2_Gain;                   /* Expression: n^-2
                                         * Referenced by: '<S1>/Gain2'
@@ -1039,17 +1011,20 @@ struct P_motor_io_velocity_T_ {
   real_T Motorinertia_Value;           /* Expression: motor.J
                                         * Referenced by: '<S1>/Motor inertia'
                                         */
+  real_T Integrator1_IC;               /* Expression: 0
+                                        * Referenced by: '<S1>/Integrator1'
+                                        */
   real_T Constant1_Value;              /* Expression: 0
-                                        * Referenced by: '<S7>/Constant1'
+                                        * Referenced by: '<S5>/Constant1'
                                         */
   real_T Switch1_Threshold;            /* Expression: 0
-                                        * Referenced by: '<S7>/Switch1'
+                                        * Referenced by: '<S5>/Switch1'
                                         */
-  real_T w1_scaling_Gain;              /* Expression: 2*pi/(1000)/Ts
-                                        * Referenced by: '<S6>/w1_scaling'
+  real_T fi1_scaling_Gain;             /* Expression: 2*pi/(1000)
+                                        * Referenced by: '<S4>/fi1_scaling'
                                         */
   real_T Resetenc_Value;               /* Expression: 0
-                                        * Referenced by: '<S6>/Reset enc'
+                                        * Referenced by: '<S4>/Reset enc'
                                         */
 };
 
@@ -1216,20 +1191,16 @@ extern RT_MODEL_motor_io_velocity_T *const motor_io_velocity_M;
  * '<S1>'   : 'motor_io_velocity/DC motor'
  * '<S2>'   : 'motor_io_velocity/PWM'
  * '<S3>'   : 'motor_io_velocity/RTI Data'
- * '<S4>'   : 'motor_io_velocity/Sensor 1'
- * '<S5>'   : 'motor_io_velocity/Sensor 2'
- * '<S6>'   : 'motor_io_velocity/enc I//F'
- * '<S7>'   : 'motor_io_velocity/DC motor/Karnop friction1'
- * '<S8>'   : 'motor_io_velocity/DC motor/Karnop friction1/Velocity threshold '
- * '<S9>'   : 'motor_io_velocity/PWM/DS1104BIT_OUT_C0'
- * '<S10>'  : 'motor_io_velocity/PWM/DS1104SL_DSP_PWM'
- * '<S11>'  : 'motor_io_velocity/RTI Data/RTI Data Store'
- * '<S12>'  : 'motor_io_velocity/RTI Data/RTI Data Store/RTI Data Store'
- * '<S13>'  : 'motor_io_velocity/RTI Data/RTI Data Store/RTI Data Store/RTI Data Store'
- * '<S14>'  : 'motor_io_velocity/Sensor 1/Discrete Derivative'
- * '<S15>'  : 'motor_io_velocity/Sensor 2/Discrete Derivative'
- * '<S16>'  : 'motor_io_velocity/enc I//F/DS1104ENC_POS_C1'
- * '<S17>'  : 'motor_io_velocity/enc I//F/DS1104ENC_SETUP'
- * '<S18>'  : 'motor_io_velocity/enc I//F/DS1104ENC_SET_POS_C1'
+ * '<S4>'   : 'motor_io_velocity/enc I//F'
+ * '<S5>'   : 'motor_io_velocity/DC motor/Karnop friction1'
+ * '<S6>'   : 'motor_io_velocity/DC motor/Karnop friction1/Velocity threshold '
+ * '<S7>'   : 'motor_io_velocity/PWM/DS1104BIT_OUT_C0'
+ * '<S8>'   : 'motor_io_velocity/PWM/DS1104SL_DSP_PWM'
+ * '<S9>'   : 'motor_io_velocity/RTI Data/RTI Data Store'
+ * '<S10>'  : 'motor_io_velocity/RTI Data/RTI Data Store/RTI Data Store'
+ * '<S11>'  : 'motor_io_velocity/RTI Data/RTI Data Store/RTI Data Store/RTI Data Store'
+ * '<S12>'  : 'motor_io_velocity/enc I//F/DS1104ENC_POS_C1'
+ * '<S13>'  : 'motor_io_velocity/enc I//F/DS1104ENC_SETUP'
+ * '<S14>'  : 'motor_io_velocity/enc I//F/DS1104ENC_SET_POS_C1'
  */
 #endif                                 /* RTW_HEADER_motor_io_velocity_h_ */

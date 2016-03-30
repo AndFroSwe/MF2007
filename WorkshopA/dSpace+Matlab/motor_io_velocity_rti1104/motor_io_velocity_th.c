@@ -5,7 +5,7 @@
    Task Configuration file for model : motor_io_velocity
 
    RTI1104 7.3 (02-Nov-2014)/2.6
-   11-Mar-2016 13:31:00
+   30-Mar-2016 14:29:21
 
    MATLAB 8.4.0.150421 (R2014b)
 
@@ -119,7 +119,7 @@ static void rti_th_initialize(void)
   rtith_bind_interrupt( /* --- Bind interrupt to task. ----- */
       service, subentry,         /*  RTK service, RTK subentry.       */
       pTask1,             /*  Task (TCB pointer).              */
-      (0.02197006496631842 * RTI_TIMER_TASK_TIME_SCALE),             /*  Sample time or period.           */
+      (0.02197006496631844 * RTI_TIMER_TASK_TIME_SCALE),             /*  Sample time or period.           */
       C_LOCAL,             /*  RTK channel.                     */
       -1,             /*  Logical interrupt number.        */
       NULL);            /*  Hook function.                   */

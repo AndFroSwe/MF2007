@@ -5,7 +5,7 @@
  *
  * Model version              : 1.27
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Fri Mar 11 09:20:59 2016
+ * C source code generated on : Wed Mar 30 14:02:15 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -810,7 +810,6 @@ typedef struct {
   real_T Add2;                         /* '<S1>/Add2' */
   real_T Inertias1J;                   /* '<S1>/Inertias 1//J' */
   real_T Integrator1;                  /* '<S1>/Integrator1' */
-  real_T Switch1;                      /* '<S5>/Switch1' */
   real_T SFunction1;                   /* '<S12>/S-Function1' */
   real_T SFunction2;                   /* '<S12>/S-Function2' */
   real_T fi1_scaling;                  /* '<S4>/fi1_scaling' */
@@ -883,9 +882,10 @@ typedef struct {
 /* Parameters (auto storage) */
 struct P_motor_io_T_ {
   real_T F_c;                          /* Variable: F_c
-                                        * Referenced by:
-                                        *   '<S5>/Constant'
-                                        *   '<S5>/Saturate to Fc'
+                                        * Referenced by: '<S5>/F_c'
+                                        */
+  real_T F_c_upper;                    /* Variable: F_c_upper
+                                        * Referenced by: '<S5>/Saturate to Fc'
                                         */
   real_T J1;                           /* Variable: J1
                                         * Referenced by: '<S1>/Load inertia'
@@ -932,7 +932,7 @@ struct P_motor_io_T_ {
   real_T kR_Gain;                      /* Expression: motor.k/motor.R
                                         * Referenced by: '<S1>/k//R '
                                         */
-  real_T SaturatetoFc_LowerSat;        /* Expression: -F_c
+  real_T SaturatetoFc_LowerSat;        /* Expression: -F_c_lower
                                         * Referenced by: '<S5>/Saturate to Fc'
                                         */
   real_T Constant_Value;               /* Expression: const
@@ -949,12 +949,6 @@ struct P_motor_io_T_ {
                                         */
   real_T Integrator1_IC;               /* Expression: 0
                                         * Referenced by: '<S1>/Integrator1'
-                                        */
-  real_T Constant1_Value;              /* Expression: 0
-                                        * Referenced by: '<S5>/Constant1'
-                                        */
-  real_T Switch1_Threshold;            /* Expression: 0
-                                        * Referenced by: '<S5>/Switch1'
                                         */
   real_T fi1_scaling_Gain;             /* Expression: 2*pi/(1000)
                                         * Referenced by: '<S4>/fi1_scaling'
