@@ -99,49 +99,56 @@ title('Output feedback pole zero map')
 grid on
 
 %% Discretization
+disp('discrete velocity controller')
 % Calculate sample time
 samples_per_risetime = 10;
 Gc_info = stepinfo(Gc_output);
 fprintf('Rise time is %0.2f ms\n', Gc_info.RiseTime*1000)
-sample_time = Gc_info.RiseTime/samples_per_risetime
-% Parameter for program. Set manually after viewing the above
-Ts = 5.5e-2;
-Ts = sample_time;
+sample_time = Gc_info.RiseTime/samples_per_risetime;
+% Parameter for program
+Ts = sample_time
 % Make discrete
+disp('discretiziced controller')
 Go_d  = minreal(c2d(Go, Ts,'zoh'))
 Gff_d = minreal(c2d(T/R, Ts, 'tustin'))
 Gfb_d = minreal(c2d(S/R, Ts, 'tustin'))
-% DeadBeat controller
+% place discrete poles
 z = tf('z')
 
-
+% parameters for maple
 b = Go_d.den{1}(2);
 a = Go_d.num{1}(2);
 
+% pole placement
 p1 = 0.65;
 p2 = 0.95;
-s0 = (p1*p2+b)/a;
 
+% from maple
+s0 = (p1*p2+b)/a;
 s1 = -(b+p1+p2-1)/a;
 
+% output feedback polynomials
 Sd = s1*z + s0;
 Rd = z-1;
-
 t0 = dcgain(a/(z-p1))^-1;
 Td = (z-p2)*t0;
 
+% add polynomials for simulation in simulate_motor_controllers.slx
+T = Td.num{1};
+R = Rd.num{1};
+S = Sd.num{1};
+
+% closed loop polynomial
 Gff_dead = Td/Rd;
 Gfb_dead = Sd/Rd;
 Gyr_dead = minreal((Go_d*Gff_dead)/(1+Go_d*Gfb_dead));
-
-Bd = a;
-Ad = z+b;
 
 % Model parameters
 pulses_per_rev = 1000; % Defined on motor
 quant = 2*pi/pulses_per_rev;    % Ppr to degrees
 
 % Discrete system
+% discretiziced continuous system
 Gyr_d = minreal((Go_d*Gff_d)/(1+Go_d*Gfb_d))
 figure
 pzmap(Gyr_d)
@@ -151,7 +158,7 @@ figure
 step(Gyr_d)
 hold on
 step(Gyr_dead)
-legend('not dead', 'dead but not really')
+legend('discreizised', 'discrete pole placement')
 % Compare continuous and discrete
 figure
 step(Gc_output)
