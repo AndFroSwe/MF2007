@@ -4,7 +4,7 @@ CompiledModel {
   Version		  "8.7 (R2014b) 08-Sep-2014"
   SimulinkVersion	  "8.4"
   ModelVersion		  "1.33"
-  GeneratedOn		  "Wed Mar 30 14:29:20 2016"
+  GeneratedOn		  "Wed Mar 30 15:57:58 2016"
   HasSimStructVars	  0
   HasCodeVariants	  0
   PreserveExternInFcnDecls 1
@@ -465,7 +465,7 @@ CompiledModel {
     tlcLanguage		    "C"
     tlcTargetType	    "RT"
   }
-  RTWContext		  [-2097394056, 0]
+  RTWContext		  [-1972664424, 0]
   RTWCGIR		  1
   TLCBlkFcnInCGIR	  1
   SLCI			  off
@@ -1414,14 +1414,14 @@ CompiledModel {
 	  Name			  "Numerator"
 	  SLName		  "Numerator"
 	  _idx			  4
-	  String		  "Gfb_d.num{1}"
+	  String		  "Gfb_dead.num{1}"
 	  StringType		  "Expression"
 	}
 	Parameter {
 	  Name			  "Denominator"
 	  SLName		  "Denominator"
 	  _idx			  5
-	  String		  "Gfb_d.den{1}"
+	  String		  "Gfb_dead.den{1}"
 	  StringType		  "Expression"
 	}
 	Parameter {
@@ -1464,14 +1464,14 @@ CompiledModel {
 	  Name			  "Numerator"
 	  SLName		  "Numerator"
 	  _idx			  25
-	  String		  "Gfb_d.num{1}"
+	  String		  "Gfb_dead.num{1}"
 	  StringType		  "Expression"
 	}
 	Parameter {
 	  Name			  "Denominator"
 	  SLName		  "Denominator"
 	  _idx			  26
-	  String		  "Gfb_d.den{1}"
+	  String		  "Gfb_dead.den{1}"
 	  StringType		  "Expression"
 	}
 	Parameter {
@@ -1514,14 +1514,14 @@ CompiledModel {
 	  Name			  "Numerator"
 	  SLName		  "Numerator"
 	  _idx			  21
-	  String		  "Gff_d.num{1}"
+	  String		  "Gff_dead.num{1}"
 	  StringType		  "Expression"
 	}
 	Parameter {
 	  Name			  "Denominator"
 	  SLName		  "Denominator"
 	  _idx			  22
-	  String		  "Gff_d.den{1}"
+	  String		  "Gff_dead.den{1}"
 	  StringType		  "Expression"
 	}
 	Parameter {
@@ -1564,14 +1564,14 @@ CompiledModel {
 	  Name			  "Numerator"
 	  SLName		  "Numerator"
 	  _idx			  12
-	  String		  "Gff_d.num{1}"
+	  String		  "Gff_dead.num{1}"
 	  StringType		  "Expression"
 	}
 	Parameter {
 	  Name			  "Denominator"
 	  SLName		  "Denominator"
 	  _idx			  13
-	  String		  "Gff_d.den{1}"
+	  String		  "Gff_dead.den{1}"
 	  StringType		  "Expression"
 	}
 	Parameter {
@@ -4357,7 +4357,7 @@ CompiledModel {
     NumInMdlRefGlobal	    0
     StructAlignment	    0
     CollapsedTunableParameters ["F_c", "Ts", "motor", "n"]
-    GlobalParamsList	    ["F_c", "Gfb_d", "Gff_d", "J1", "Ts", "motor", "n", "quant"]
+    GlobalParamsList	    ["F_c", "Gfb_dead", "Gff_dead", "J1", "Ts", "motor", "n", "quant"]
     ParameterDefaults {
       RecordType	      ModelParameter
       MemoryMapIdx	      [-1, -1, -1]
@@ -4441,7 +4441,7 @@ CompiledModel {
     Parameter {
       Identifier	      "G_fb_real_NumCoef"
       LogicalSrc	      P4
-      Value		      [0.53253184271790877, -0.48885094063933648]
+      Value		      [0.65548760427168773, -0.62305763367231948]
       CGTypeIdx		      23
       ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
@@ -4544,7 +4544,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff_real_NumCoef"
       LogicalSrc	      P12
-      Value		      [0.41948062320571367, -0.37579972112714138]
+      Value		      [0.648599411987368, -0.61616944138799956]
       CGTypeIdx		      23
       ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
@@ -4662,7 +4662,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff1_NumCoef"
       LogicalSrc	      P21
-      Value		      [0.41948062320571367, -0.37579972112714138]
+      Value		      [0.648599411987368, -0.61616944138799956]
       CGTypeIdx		      23
       ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
@@ -4714,7 +4714,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Gfb1_NumCoef"
       LogicalSrc	      P25
-      Value		      [0.53253184271790877, -0.48885094063933648]
+      Value		      [0.65548760427168773, -0.62305763367231948]
       CGTypeIdx		      23
       ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
@@ -6762,7 +6762,7 @@ CompiledModel {
 	Width			1
       }
       NumDataOutputPorts      0
-      TLCFileName	      "s1_b0_6u7ve"
+      TLCFileName	      "s1_b0_wybwe"
       OpaqueBlockMethode {
 	HasStart		1
 	HasInitializeConditions	1
@@ -6786,10 +6786,10 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		4
-	Value			[0.53253184271790877, -0.48885094063933648]
+	Value			[0.65548760427168773, -0.62305763367231948]
 	CGTypeIdx		23
 	ContainerCGTypeIdx	22
-	String			"Gfb_d.num{1}"
+	String			"Gfb_dead.num{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
       }
@@ -6799,7 +6799,7 @@ CompiledModel {
 	Value			[1.0, -1.0]
 	CGTypeIdx		23
 	ContainerCGTypeIdx	22
-	String			"Gfb_d.den{1}"
+	String			"Gfb_dead.den{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
       }
@@ -6852,10 +6852,10 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		12
-	Value			[0.41948062320571367, -0.37579972112714138]
+	Value			[0.648599411987368, -0.61616944138799956]
 	CGTypeIdx		23
 	ContainerCGTypeIdx	22
-	String			"Gff_d.num{1}"
+	String			"Gff_dead.num{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
       }
@@ -6865,7 +6865,7 @@ CompiledModel {
 	Value			[1.0, -1.0]
 	CGTypeIdx		23
 	ContainerCGTypeIdx	22
-	String			"Gff_d.den{1}"
+	String			"Gff_dead.den{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
       }
@@ -6930,10 +6930,10 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		21
-	Value			[0.41948062320571367, -0.37579972112714138]
+	Value			[0.648599411987368, -0.61616944138799956]
 	CGTypeIdx		23
 	ContainerCGTypeIdx	22
-	String			"Gff_d.num{1}"
+	String			"Gff_dead.num{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
       }
@@ -6943,7 +6943,7 @@ CompiledModel {
 	Value			[1.0, -1.0]
 	CGTypeIdx		23
 	ContainerCGTypeIdx	22
-	String			"Gff_d.den{1}"
+	String			"Gff_dead.den{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
       }
@@ -6972,10 +6972,10 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		25
-	Value			[0.53253184271790877, -0.48885094063933648]
+	Value			[0.65548760427168773, -0.62305763367231948]
 	CGTypeIdx		23
 	ContainerCGTypeIdx	22
-	String			"Gfb_d.num{1}"
+	String			"Gfb_dead.num{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
       }
@@ -6985,7 +6985,7 @@ CompiledModel {
 	Value			[1.0, -1.0]
 	CGTypeIdx		23
 	ContainerCGTypeIdx	22
-	String			"Gfb_d.den{1}"
+	String			"Gfb_dead.den{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
       }
@@ -7150,7 +7150,7 @@ CompiledModel {
   }
   StateflowAutoEnumInfoList {
   }
-  BlockParamChecksum	  ["3745158530U", "2358474177U", "2672972981U", "2626739707U"]
+  BlockParamChecksum	  ["3687110619U", "4204861181U", "3880301593U", "329133048U"]
   ModelChecksum		  ["626506991U", "2136008245U", "1073697899U", "1332038878U"]
   IncludeCodeGenSettings  1
   CGTypes {
@@ -7753,55 +7753,55 @@ CompiledModel {
     TestInterfaceFcnIdx	    -1
     RTWCGModule {
       RateGrouping	      0
-      TLCFileName	      "s1_b0_6u7ve"
+      TLCFileName	      "s1_b0_wybwe"
       RTWFcnConst {
 	HasInstanceSetup	"no"
 	Start_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_6u7ve_Start"
+	  TLCFileName		  "s1_b0_wybwe_Start"
 	  StackSize		  0
 	}
 	InitializeConditions_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_6u7ve_InitializeConditions"
+	  TLCFileName		  "s1_b0_wybwe_InitializeConditions"
 	  StackSize		  0
 	}
 	Outputs_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_6u7ve_Outputs"
+	  TLCFileName		  "s1_b0_wybwe_Outputs"
 	  StackSize		  28
 	}
 	Update_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_6u7ve_Update"
+	  TLCFileName		  "s1_b0_wybwe_Update"
 	  StackSize		  0
 	}
 	Derivatives_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_6u7ve_Derivatives"
+	  TLCFileName		  "s1_b0_wybwe_Derivatives"
 	  StackSize		  0
 	}
 	ForcingFunction_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_6u7ve_ForcingFunction"
+	  TLCFileName		  "s1_b0_wybwe_ForcingFunction"
 	  StackSize		  0
 	}
 	Terminate_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_6u7ve_Terminate"
+	  TLCFileName		  "s1_b0_wybwe_Terminate"
 	  StackSize		  0
 	}
 	ModelPrevZCStateInit_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_6u7ve_ModelPrevZCStateInit"
+	  TLCFileName		  "s1_b0_wybwe_ModelPrevZCStateInit"
 	  StackSize		  0
 	}
       }

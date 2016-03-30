@@ -111,6 +111,31 @@ Ts = sample_time;
 Go_d  = minreal(c2d(Go, Ts,'zoh'))
 Gff_d = minreal(c2d(T/R, Ts, 'tustin'))
 Gfb_d = minreal(c2d(S/R, Ts, 'tustin'))
+% DeadBeat controller
+z = tf('z')
+
+
+b = Go_d.den{1}(2);
+a = Go_d.num{1}(2);
+
+p1 = 0.65;
+p2 = 0.95;
+s0 = (p1*p2+b)/a;
+
+s1 = -(b+p1+p2-1)/a;
+
+Sd = s1*z + s0;
+Rd = z-1;
+
+t0 = dcgain(a/(z-p1))^-1;
+Td = (z-p2)*t0;
+
+Gff_dead = Td/Rd;
+Gfb_dead = Sd/Rd;
+Gyr_dead = minreal((Go_d*Gff_dead)/(1+Go_d*Gfb_dead));
+
+Bd = a;
+Ad = z+b;
 
 % Model parameters
 pulses_per_rev = 1000; % Defined on motor
@@ -124,7 +149,9 @@ grid on
 title('Discrete poles of output feedback')
 figure
 step(Gyr_d)
-
+hold on
+step(Gyr_dead)
+legend('not dead', 'dead but not really')
 % Compare continuous and discrete
 figure
 step(Gc_output)
@@ -200,6 +227,41 @@ Ts_p = sample_time;
 Go_d_p  = minreal(c2d(Go_p, Ts_p,'zoh'))
 Gff_d_p = minreal(c2d(T_p/R_p, Ts_p, 'tustin'))
 Gfb_d_p = minreal(c2d(S_p/R_p, Ts_p, 'tustin'))
+
+
+%DISCRETE POLE PLACEMENT
+a = Go_d_p.num{1}(2);
+b = Go_d_p.num{1}(3);
+c = Go_d_p.den{1}(2);
+d = Go_d_p.den{1}(3);
+
+B = z*a+b;
+A = z^2+z*c+d;
+R = (z-1)*(z+r0);
+S = s2*z^2+s1*z+s0;
+
+omega1 = 0.5;
+omega2 = 0.5;
+zeta1 = 0.7;
+zeta2 = 0.7;
+
+r0 = -(4*Zeta1*Zeta2*a*b^2*omega1*omega2-2*Zeta1*a^2*b*omega1*omega2^2-2*Zeta2*a^2*b*omega1^2*omega2+a^3*omega1^2*omega2^2-2*Zeta1*b^3*omega1-2*Zeta2*...
+    b^3*omega2+a*b^2*omega1^2+a*b^2*omega2^2-a^2*b*d+a*b^2*c-a*b^2*d+b^3*c-b^3)/(a^3*d-a^2*b*c+a^2*b*d-a*b^2*c+a*b^2+b^3)
+
+s0 = -(4*Zeta1*Zeta2*a*b*d*omega1*omega2-2*Zeta1*a^2*d*omega1*omega2^2-2*Zeta2*a^2*d*omega1^2*omega2+a^2*c*omega1^2*omega2^2-a^2*d*omega1^2*omega2^2+a*b*c*omega1^2*omega2^2-a*b*omega1^2*omega2^2-b^2*omega1^2*omega2^2-2*Zeta1*b^2*d*omega1-2*Zeta2*b^2*...
+    d*omega2+a*b*d*omega1^2+a*b*d*omega2^2-a^2*d^2+a*b*c*d-a*b*d^2+b^2*c*d-b^2*d)/(a^3*d-a^2*b*c+a^2*b*d-a*b^2*c+a*b^2+b^3)
+s1 = (4*Zeta1*Zeta2*a^2*d*omega1*omega2-4*Zeta1*Zeta2*a*b*c*omega1*omega2+4*Zeta1*Zeta2*a*b*d*omega1*omega2-2*Zeta1*a*b*c*omega1*omega2^2-2*Zeta2*a*b*c*omega1^2*omega2+a^2*c*omega1^2*omega2^2+2*Zeta1*a*b*omega1*omega2^2+2*Zeta1*b^2*omega1*omega2^2+2*Zeta2*a*b*omega1^2*omega2+2*Zeta2*b^2*omega1^2*omega2-a^2*omega1^2*omega2^2-a*b*omega1^2*omega2^2-2*Zeta1*a*b*d*omega1+2*Zeta1*b^2*c*omega1-2*Zeta1*b^2*d*omega1-2*Zeta2*a*b*d*omega2+2*Zeta2*b^2*c*omega2-2*Zeta2*b^2*d*omega2+a^2*d*omega1^2+a^2*d*omega2^2-a*b*c*omega1^2-a*b*c*omega2^2+a*b*d*omega1^2+a*...
+b*d*omega2^2+a^2*c*d-a^2*d^2-a*b*c^2+2*a*b*c*d-a*b*d^2-b^2*c^2+b^2*c*d+b^2*c)/(a^3*d-a^2*b*c+a^2*b*d-a*b^2*c+a*b^2+b^3);
+
+s2 = -1/(a^3*d-a^2*b*c+a^2*b*d-a*b^2*c+a*b^2+b^3)*(-4*Zeta1*Zeta2*b^2*omega1*omega2+2*Zeta1*a*b*omega1*omega2^2+2*Zeta2*a*b*omega1^2*omega2-a^2*omega1^2*omega2^2-2*Zeta1*a^2*d*omega1+2*Zeta1*a*b*c*omega1-2*Zeta1*a*b*d*omega1+2*Zeta1*b^2*c*omega1-2*Zeta2*a^2*d*omega2+2*Zeta2*a*b*c*omega2-2*Zeta2*a*b*d*omega2+2*Zeta2*b^2*c*omega2-2*Zeta1*b^2*omega1-2*Zeta2*b^2*omega2+a^2*c*d-a*b*c^2+a*b*c*d-b^2*c^2-b^2*omega1^2-b^2*omega2^2-a^2*d+a*b*c+b^2*c+b^2*d-b^2)
+
+B = z*a+b;
+A = z^2+z*c+d;
+R = (z-1)*(z+r0);
+S = s2*z^2+s1*z+s0;
+
+t0 = dcgain(a+b/(z-p1))^-1;
+Td = (z-p2)*t0;
 
 % Model parameters
 pulses_per_rev = 1000; % Defined on motor

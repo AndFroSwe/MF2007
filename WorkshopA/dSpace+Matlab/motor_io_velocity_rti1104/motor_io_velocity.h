@@ -5,7 +5,7 @@
  *
  * Model version              : 1.33
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Wed Mar 30 14:29:22 2016
+ * C source code generated on : Wed Mar 30 15:57:58 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -912,10 +912,10 @@ struct P_motor_io_velocity_T_ {
   real_T w1_scaling_Gain;              /* Expression: 2*pi/(1000)/Ts
                                         * Referenced by: '<S4>/w1_scaling'
                                         */
-  real_T G_fb_real_NumCoef[2];         /* Expression: Gfb_d.num{1}
+  real_T G_fb_real_NumCoef[2];         /* Expression: Gfb_dead.num{1}
                                         * Referenced by: '<Root>/G_fb_real'
                                         */
-  real_T G_fb_real_DenCoef[2];         /* Expression: Gfb_d.den{1}
+  real_T G_fb_real_DenCoef[2];         /* Expression: Gfb_dead.den{1}
                                         * Referenced by: '<Root>/G_fb_real'
                                         */
   real_T G_fb_real_InitialStates;      /* Expression: 0
@@ -936,10 +936,10 @@ struct P_motor_io_velocity_T_ {
   real_T SquareGenerator_Frequency;    /* Computed Parameter: SquareGenerator_Frequency
                                         * Referenced by: '<Root>/SquareGenerator'
                                         */
-  real_T Gff_real_NumCoef[2];          /* Expression: Gff_d.num{1}
+  real_T Gff_real_NumCoef[2];          /* Expression: Gff_dead.num{1}
                                         * Referenced by: '<Root>/Gff_real'
                                         */
-  real_T Gff_real_DenCoef[2];          /* Expression: Gff_d.den{1}
+  real_T Gff_real_DenCoef[2];          /* Expression: Gff_dead.den{1}
                                         * Referenced by: '<Root>/Gff_real'
                                         */
   real_T Gff_real_InitialStates;       /* Expression: 0
@@ -963,10 +963,10 @@ struct P_motor_io_velocity_T_ {
   real_T Enable1_Off0_On_Value;        /* Expression: 1
                                         * Referenced by: '<S2>/Enable[1_Off, 0_On]'
                                         */
-  real_T Gff1_NumCoef[2];              /* Expression: Gff_d.num{1}
+  real_T Gff1_NumCoef[2];              /* Expression: Gff_dead.num{1}
                                         * Referenced by: '<Root>/Gff1'
                                         */
-  real_T Gff1_DenCoef[2];              /* Expression: Gff_d.den{1}
+  real_T Gff1_DenCoef[2];              /* Expression: Gff_dead.den{1}
                                         * Referenced by: '<Root>/Gff1'
                                         */
   real_T Gff1_InitialStates;           /* Expression: 0
@@ -975,10 +975,10 @@ struct P_motor_io_velocity_T_ {
   real_T Integrator_IC;                /* Expression: 0
                                         * Referenced by: '<S1>/Integrator'
                                         */
-  real_T Gfb1_NumCoef[2];              /* Expression: Gfb_d.num{1}
+  real_T Gfb1_NumCoef[2];              /* Expression: Gfb_dead.num{1}
                                         * Referenced by: '<Root>/Gfb1'
                                         */
-  real_T Gfb1_DenCoef[2];              /* Expression: Gfb_d.den{1}
+  real_T Gfb1_DenCoef[2];              /* Expression: Gfb_dead.den{1}
                                         * Referenced by: '<Root>/Gfb1'
                                         */
   real_T Gfb1_InitialStates;           /* Expression: 0

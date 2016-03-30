@@ -5,7 +5,7 @@
  *
  * Model version              : 1.33
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Wed Mar 30 14:29:22 2016
+ * C source code generated on : Wed Mar 30 15:57:58 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -33,12 +33,12 @@ P_motor_io_velocity_T motor_io_velocity_P = {
                                         * Referenced by: '<S4>/w1_scaling'
                                         */
 
-  /*  Expression: Gfb_d.num{1}
+  /*  Expression: Gfb_dead.num{1}
    * Referenced by: '<Root>/G_fb_real'
    */
-  { 0.53253184271790877, -0.48885094063933648 },
+  { 0.65548760427168773, -0.62305763367231948 },
 
-  /*  Expression: Gfb_d.den{1}
+  /*  Expression: Gfb_dead.den{1}
    * Referenced by: '<Root>/G_fb_real'
    */
   { 1.0, -1.0 },
@@ -61,12 +61,12 @@ P_motor_io_velocity_T motor_io_velocity_P = {
                                         * Referenced by: '<Root>/SquareGenerator'
                                         */
 
-  /*  Expression: Gff_d.num{1}
+  /*  Expression: Gff_dead.num{1}
    * Referenced by: '<Root>/Gff_real'
    */
-  { 0.41948062320571367, -0.37579972112714138 },
+  { 0.648599411987368, -0.61616944138799956 },
 
-  /*  Expression: Gff_d.den{1}
+  /*  Expression: Gff_dead.den{1}
    * Referenced by: '<Root>/Gff_real'
    */
   { 1.0, -1.0 },
@@ -92,12 +92,12 @@ P_motor_io_velocity_T motor_io_velocity_P = {
                                         * Referenced by: '<S2>/Enable[1_Off, 0_On]'
                                         */
 
-  /*  Expression: Gff_d.num{1}
+  /*  Expression: Gff_dead.num{1}
    * Referenced by: '<Root>/Gff1'
    */
-  { 0.41948062320571367, -0.37579972112714138 },
+  { 0.648599411987368, -0.61616944138799956 },
 
-  /*  Expression: Gff_d.den{1}
+  /*  Expression: Gff_dead.den{1}
    * Referenced by: '<Root>/Gff1'
    */
   { 1.0, -1.0 },
@@ -108,12 +108,12 @@ P_motor_io_velocity_T motor_io_velocity_P = {
                                         * Referenced by: '<S1>/Integrator'
                                         */
 
-  /*  Expression: Gfb_d.num{1}
+  /*  Expression: Gfb_dead.num{1}
    * Referenced by: '<Root>/Gfb1'
    */
-  { 0.53253184271790877, -0.48885094063933648 },
+  { 0.65548760427168773, -0.62305763367231948 },
 
-  /*  Expression: Gfb_d.den{1}
+  /*  Expression: Gfb_dead.den{1}
    * Referenced by: '<Root>/Gfb1'
    */
   { 1.0, -1.0 },

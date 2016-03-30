@@ -3,9 +3,9 @@
  *
  * Code generation for model "motor_io_position".
  *
- * Model version              : 1.36
+ * Model version              : 1.37
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Wed Mar 30 13:09:28 2016
+ * C source code generated on : Wed Mar 30 16:20:48 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -18,7 +18,7 @@
 
 /* Block parameters (auto storage) */
 P_motor_io_position_T motor_io_position_P = {
-  0.001,                               /* Variable: F_c
+  0.0015,                              /* Variable: F_c
                                         * Referenced by:
                                         *   '<S6>/F_c'
                                         *   '<S6>/Saturate to Fc'
@@ -36,12 +36,12 @@ P_motor_io_position_T motor_io_position_P = {
   /*  Expression: Gfb_d_p.num{1}
    * Referenced by: '<Root>/Gfbreal'
    */
-  { 71.908604653933878, -110.97253176497472, 43.237547882271912 },
+  { 72.067040337537165, -111.33655280171139, 43.437141858572595 },
 
   /*  Expression: Gfb_d_p.den{1}
    * Referenced by: '<Root>/Gfbreal'
    */
-  { 1.0, -0.78133517755683024, -0.21866482244316982 },
+  { 1.0, -0.7802135439111374, -0.21978645608886263 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<Root>/Gfbreal'
                                         */
@@ -64,12 +64,12 @@ P_motor_io_position_T motor_io_position_P = {
   /*  Expression: Gff_d_p.num{1}
    * Referenced by: '<Root>/Gffreal'
    */
-  { 4.5933482453411276, -0.42978067602387926, 0.010053201913815757 },
+  { 4.5867543352160673, -0.42916371101277578, 0.010038770195089438 },
 
   /*  Expression: Gff_d_p.den{1}
    * Referenced by: '<Root>/Gffreal'
    */
-  { 1.0, -0.78133517755683024, -0.21866482244316982 },
+  { 1.0, -0.7802135439111374, -0.21978645608886263 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<Root>/Gffreal'
                                         */
@@ -95,12 +95,12 @@ P_motor_io_position_T motor_io_position_P = {
   /*  Expression: Gff_d_p.num{1}
    * Referenced by: '<Root>/Gff'
    */
-  { 4.5933482453411276, -0.42978067602387926, 0.010053201913815757 },
+  { 4.5867543352160673, -0.42916371101277578, 0.010038770195089438 },
 
   /*  Expression: Gff_d_p.den{1}
    * Referenced by: '<Root>/Gff'
    */
-  { 1.0, -0.78133517755683024, -0.21866482244316982 },
+  { 1.0, -0.7802135439111374, -0.21978645608886263 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<Root>/Gff'
                                         */
@@ -111,12 +111,12 @@ P_motor_io_position_T motor_io_position_P = {
   /*  Expression: Gfb_d_p.num{1}
    * Referenced by: '<Root>/Gfb'
    */
-  { 71.908604653933878, -110.97253176497472, 43.237547882271912 },
+  { 72.067040337537165, -111.33655280171139, 43.437141858572595 },
 
   /*  Expression: Gfb_d_p.den{1}
    * Referenced by: '<Root>/Gfb'
    */
-  { 1.0, -0.78133517755683024, -0.21866482244316982 },
+  { 1.0, -0.7802135439111374, -0.21978645608886263 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<Root>/Gfb'
                                         */
@@ -135,13 +135,13 @@ P_motor_io_position_T motor_io_position_P = {
   0.00062232142857142857,              /* Expression: motor.k/motor.R
                                         * Referenced by: '<S1>/k//R '
                                         */
-  -0.001,                              /* Expression: -F_c
+  -0.0015,                             /* Expression: -F_c
                                         * Referenced by: '<S6>/Saturate to Fc'
                                         */
   3.0,                                 /* Expression: const
                                         * Referenced by: '<S7>/Constant'
                                         */
-  1.5E-5,                              /* Expression: motor.d
+  1.0E-5,                              /* Expression: motor.d
                                         * Referenced by: '<S6>/Vicous friction'
                                         */
   0.04,                                /* Expression: n^-2

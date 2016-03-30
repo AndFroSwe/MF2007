@@ -3,9 +3,9 @@
  *
  * Code generation for model "motor_io_position".
  *
- * Model version              : 1.36
+ * Model version              : 1.37
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Wed Mar 30 13:09:28 2016
+ * C source code generated on : Wed Mar 30 16:20:48 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

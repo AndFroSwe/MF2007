@@ -1,4 +1,4 @@
-%implements s1_b0_053ve_Terminate "C"
+%implements s1_b0_y0cwe_Terminate "C"
 
 %function Terminate(block, system) Output
 %assign cfgTxt = ""

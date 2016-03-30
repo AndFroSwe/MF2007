@@ -1,4 +1,4 @@
-%implements s1_b0_6u7ve_Outputs "C"
+%implements s1_b0_wybwe_Outputs "C"
 
 %function Outputs(block, system) Output
 %assign cfgTxt = ""
