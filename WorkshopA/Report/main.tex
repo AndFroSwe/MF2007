@@ -48,25 +48,24 @@ Here, the load inertia and the inertia of the motor are separated and the motor
 inertia from the datasheet is presumed to be correct, leaving only the load
 inertia as an unknown.  Now the relations between the motor parameters and the
 time performance can be seen. The time constant is given by the term
-\begin{equation*}
+\begin{equation}
     \label{eq:timeconstant}
     \frac {J_t} { \frac {k^2} {R} + d}
-\end{equation*}
+\end{equation}
 and as such contains all the parameters of the motor. According to the final
 value theorem, the steady state value from a step input is given by setting
 $s=0$ and therefore the steady state gain is given by 
-\begin{equation*}
+\begin{equation}
     \label{eq:steadystate}
     k (1 + \frac{1}{Rd}).
-\end{equation*}
+\end{equation}
 This contatiains only one unknown parameter. Therefore, to estimate the viscous
 friction parameter $d$, it is suitable to examine and match the steady state
 rotational speed of the real system and the model. Since this model contains no
 static friction which is probably present in the real system, the test is
 conducted at maximum permissable input voltage to minimize the disturbances in
 the test data. Since the desired value does not depend on frequency, only a
-square wave input is used to simulate steps in both directions. 
-% INPUT DATA HERE 
+square wave input is used to simulate steps in both directions. \par
 Now that the friction parameter is presumed to be correct and fixed, the time
 constant in Equation (\ref{eq:timeconstant}) only has one unknown, the load
 inertia. This is estimated from taking the time constant from step inputs,
@@ -82,6 +81,22 @@ effects of static friction which led to inaccuracy in the model when varying the
 rotational speed. A model which captures the real behaviour of the system is
 used here, called the Karnop friction model. In addition to the linear friction,
 the static friction is taken into account by adding a stick-slip zone where the
-friciton tourque is equal to the applied torque. 
+friction tourque is equal to the applied torque. The model is given by the
+equation
+\begin{equation}
+    \label{eq:karnop}
+    M_f = d \dot{\phi} + F_c sgn(\dot{\phi}),
+\end{equation}
+with the friction torque $M_f$ and the static friction $F_c$. This friction is
+the maximum static friction torque that can be applied in the stick slip zone.
+There is now one more design parameter that needs to be tuned, $F_c$.
+\par
+The linear friction is still most prominent when at high velocities and the
+static friction is the strongest when at low velocities. The inertia is decided
+solely from the rise time and should not differ much from the previous model.
+Firstly, the step response to a 5 V square wave is examined to determine the
+static friction. When the static friction is set, the response to a square wave
+at 24 V is examined and $d$ is adjusted to fit the static friction. A sine of
+low amplitude is then run to test the behaviour around the turning points.
 
 \end{document}
