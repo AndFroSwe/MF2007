@@ -169,137 +169,19 @@ legend('discreizised', 'discrete pole placement')
 
 
 %% 4.2: Position Controller
+% Cascaded position controller with model from last part.
+% output feedback
+
 s = tf('s');
+
 % Transfer of motor without indctance
-Go_p = Go*1/s
+Go_p = 1/s       % position is velocity integrated 
 
+% Make system discrete
 
-% Parameters for Maple
-a_p = Go_p.num{1}(3);
-b_p = Go_p.den{1}(2);
+% output feedback
+% Place poles of  discrete closed system
+p1 = 9; % Am polynomial
+p2 = 50; % Ao polynomial
 
-% Error feedback
-% Place poles
-omega1 = 9;
-omega2 = 50;
-
-Zeta1 = 1;
-Zeta2 = 0.7;
-
-r0 = 2*Zeta1*omega1+2*Zeta2*omega2-b_p;
-s0 = omega1^2*omega2^2/a_p;
-s1 = 2*omega1*omega2*(Zeta1*omega2+Zeta2*omega1)/a_p;
-s2 = (4*Zeta1*Zeta2*omega1*omega2-2*Zeta1*b_p*omega1-2*Zeta2*b_p*omega2+b_p^2+omega1^2+omega2^2)/a_p;
-
-% Controller parameters, PID controller
-S_vector_p = [s2 s1 s0];
-R_vector_p = [1 r0 0];
-
-% Controller tf
-F_p = tf(S_vector_p, R_vector_p);
-disp('Error feedback closed loop')
-Gc_error_p = minreal(F_p*Go_p/(1 + F_p*Go_p))
-figure
-pzmap(Gc_error_p)
-grid on
-title('PZ map for error feedback system')
-
-% Output feedback
-% Calculate T
-t0_p = dcgain(tf(Go_p.num{1}, [1 2*Zeta1*omega1 omega1^2]))^-1;
-T_vector_p = t0_p*[1 2*Zeta1*omega2 omega2^2];
-
-% Controller polynomials
-A_p = tf(Go_p.den{1}, [1]);
-B_p = tf(Go_p.num{1}, [1]);
-T_p = tf(T_vector_p, [1]);
-R_p = tf(R_vector_p, [1]);
-S_p = tf(S_vector_p, [1]);
-Gc_output_p = minreal((B_p*T_p)/(A_p*R_p + B_p*S_p))
-figure
-pzmap(Gc_output_p)
-title('Output feedback pole zero map')
-grid on
-
-%% Discretization
-% Calculate sample time
-samples_per_risetime = 10;
-Gc_info_p = stepinfo(Gc_output_p);
-fprintf('Rise time is %0.2f ms\n', Gc_info_p.RiseTime*1000)
-sample_time = Gc_info_p.RiseTime/samples_per_risetime
-
-% Parameter for program. Set manually after viewing the above
-Ts_p = sample_time;
-
-% Make discrete
-Go_d_p  = minreal(c2d(Go_p, Ts_p,'zoh'))
-Gff_d_p = minreal(c2d(T_p/R_p, Ts_p, 'tustin'))
-Gfb_d_p = minreal(c2d(S_p/R_p, Ts_p, 'tustin'))
-
-
-%DISCRETE POLE PLACEMENT
-a = Go_d_p.num{1}(2);
-b = Go_d_p.num{1}(3);
-c = Go_d_p.den{1}(2);
-d = Go_d_p.den{1}(3);
-
-B = z*a+b;
-A = z^2+z*c+d;
-R = (z-1)*(z+r0);
-S = s2*z^2+s1*z+s0;
-
-omega1 = 0.5;
-omega2 = 0.5;
-zeta1 = 0.7;
-zeta2 = 0.7;
-
-r0 = -(4*Zeta1*Zeta2*a*b^2*omega1*omega2-2*Zeta1*a^2*b*omega1*omega2^2-2*Zeta2*a^2*b*omega1^2*omega2+a^3*omega1^2*omega2^2-2*Zeta1*b^3*omega1-2*Zeta2*...
-    b^3*omega2+a*b^2*omega1^2+a*b^2*omega2^2-a^2*b*d+a*b^2*c-a*b^2*d+b^3*c-b^3)/(a^3*d-a^2*b*c+a^2*b*d-a*b^2*c+a*b^2+b^3)
-
-s0 = -(4*Zeta1*Zeta2*a*b*d*omega1*omega2-2*Zeta1*a^2*d*omega1*omega2^2-2*Zeta2*a^2*d*omega1^2*omega2+a^2*c*omega1^2*omega2^2-a^2*d*omega1^2*omega2^2+a*b*c*omega1^2*omega2^2-a*b*omega1^2*omega2^2-b^2*omega1^2*omega2^2-2*Zeta1*b^2*d*omega1-2*Zeta2*b^2*...
-    d*omega2+a*b*d*omega1^2+a*b*d*omega2^2-a^2*d^2+a*b*c*d-a*b*d^2+b^2*c*d-b^2*d)/(a^3*d-a^2*b*c+a^2*b*d-a*b^2*c+a*b^2+b^3)
-s1 = (4*Zeta1*Zeta2*a^2*d*omega1*omega2-4*Zeta1*Zeta2*a*b*c*omega1*omega2+4*Zeta1*Zeta2*a*b*d*omega1*omega2-2*Zeta1*a*b*c*omega1*omega2^2-2*Zeta2*a*b*c*omega1^2*omega2+a^2*c*omega1^2*omega2^2+2*Zeta1*a*b*omega1*omega2^2+2*Zeta1*b^2*omega1*omega2^2+2*Zeta2*a*b*omega1^2*omega2+2*Zeta2*b^2*omega1^2*omega2-a^2*omega1^2*omega2^2-a*b*omega1^2*omega2^2-2*Zeta1*a*b*d*omega1+2*Zeta1*b^2*c*omega1-2*Zeta1*b^2*d*omega1-2*Zeta2*a*b*d*omega2+2*Zeta2*b^2*c*omega2-2*Zeta2*b^2*d*omega2+a^2*d*omega1^2+a^2*d*omega2^2-a*b*c*omega1^2-a*b*c*omega2^2+a*b*d*omega1^2+a*...
-b*d*omega2^2+a^2*c*d-a^2*d^2-a*b*c^2+2*a*b*c*d-a*b*d^2-b^2*c^2+b^2*c*d+b^2*c)/(a^3*d-a^2*b*c+a^2*b*d-a*b^2*c+a*b^2+b^3);
-
-s2 = -1/(a^3*d-a^2*b*c+a^2*b*d-a*b^2*c+a*b^2+b^3)*(-4*Zeta1*Zeta2*b^2*omega1*omega2+2*Zeta1*a*b*omega1*omega2^2+2*Zeta2*a*b*omega1^2*omega2-a^2*omega1^2*omega2^2-2*Zeta1*a^2*d*omega1+2*Zeta1*a*b*c*omega1-2*Zeta1*a*b*d*omega1+2*Zeta1*b^2*c*omega1-2*Zeta2*a^2*d*omega2+2*Zeta2*a*b*c*omega2-2*Zeta2*a*b*d*omega2+2*Zeta2*b^2*c*omega2-2*Zeta1*b^2*omega1-2*Zeta2*b^2*omega2+a^2*c*d-a*b*c^2+a*b*c*d-b^2*c^2-b^2*omega1^2-b^2*omega2^2-a^2*d+a*b*c+b^2*c+b^2*d-b^2)
-
-B = z*a+b;
-A = z^2+z*c+d;
-R = (z-1)*(z+r0);
-S = s2*z^2+s1*z+s0;
-
-t0 = dcgain(a+b/(z-p1))^-1;
-Td = (z-p2)*t0;
-
-% Model parameters
-pulses_per_rev = 1000; % Defined on motor
-quant = 2*pi/pulses_per_rev;    % Ppr to degrees
-
-% Discrete system
-Gyr_d_p = minreal((Go_d_p*Gff_d_p)/(1+Go_d_p*Gfb_d_p))
-figure
-pzmap(Gyr_d_p)
-grid on
-title('Discrete poles of output feedback')
-
-
-% Compare continuous and discrete
-figure
-step(Gc_output_p)
-hold on
-grid on
-step(Gyr_d_p)
-title('Comparison between discrete and continuous output feedback system')
-stepinfo(Gyr_d_p)
-
-% Sensitivity Function
-G_s = 1/(1+(Go_p*(S_p/R_p))); %Sensitivity Function
-G_k = 1 - G_s;
-figure
-bode(G_s)
-grid on
-hold on
-bode(G_k)
-legend('Sensitivity','Complementary')
-title('Sensitivy function check')
-Ts = Ts_p
+% Controller polynomials, P controller

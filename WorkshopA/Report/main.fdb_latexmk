@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1459342109 "main.tex" "main.pdf" "main" 1459342110
+["pdflatex"] 1459342109 "main.tex" "main.pdf" "main" 1459440468
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -66,6 +66,6 @@
   "main.aux" 1459342110 368 8c4dc30fa74493267cf0953ef1dc51da ""
   "main.tex" 1459342097 4611 2a1198e202fc4e93af0513a8cf1cc25f ""
   (generated)
-  "main.aux"
   "main.pdf"
   "main.log"
+  "main.aux"
