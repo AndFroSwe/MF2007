@@ -82,17 +82,6 @@ step(Gc_error_p)
 
 %% Finding Max acceleration and velocity
 
-% If max input torque is +Mmax then max acceleration is
-% amax = Mmax/Jtot
-%Max velocity is Msat/(d+Fc)
-% TODO: find maximum torque
-% TODO: xxx calulate maximum speed
-% TODO: xxx calculate maximum acceleration
-% TODO: xxx build signal block in simulink
-% TODO: find t1
-% TODO: find t2
-% TODO: incorporate trajectory control with model
-
 vmax = 252;
 amax = 369;
 amin = -amax;
