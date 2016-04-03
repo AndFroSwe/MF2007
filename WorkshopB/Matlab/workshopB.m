@@ -82,10 +82,39 @@ step(Gc_error_p)
 
 %% Finding Max acceleration and velocity
 
-vmax = 55;% 252;
-amax = 70; %369;
+vmax = 270;
+amax = 255;
 amin = -amax;
 rs = 100;
 t1 = sqrt(rs/amax)
 t2 = t1
 t3 = t1+t2
+
+%% Plots
+close all;
+simtime = 2;
+sim('trajectory_planner.slx');
+
+%Data from Trajectory Planner
+figure
+plot(trajectoryBlock)
+hold on
+plot(trajectoryFunc)
+legend('a-block','v-block','p-block','a-code','v-code','p-code')
+title('Trajectory Planner: Block and Code')
+
+%Output after Model following
+figure
+plot(folBlock)
+hold on
+plot(folFunc)
+legend('Block model','Code')
+title('Voltage level after Model Following')
+
+%Position after motor model
+figure
+plot(posBlock)
+hold on
+plot(posFunc)
+legend('Block','Code')
+title('Position of DC motor: Block and Code')
