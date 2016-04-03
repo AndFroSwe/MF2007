@@ -86,15 +86,17 @@ step(Gc_error_p)
 % amax = Mmax/Jtot
 %Max velocity is Msat/(d+Fc)
 % TODO: find maximum torque
-% TODO: calulate maximum speed
-% TODO: calculate maximum acceleration
-% TODO: build signal block in simulink
+% TODO: xxx calulate maximum speed
+% TODO: xxx calculate maximum acceleration
+% TODO: xxx build signal block in simulink
 % TODO: find t1
 % TODO: find t2
-% TODO: xxx incorporate trajectory control with model
+% TODO: incorporate trajectory control with model
 
-v_max = 230;
-a_max = 543;
-t1 = v_max/a_max
+vmax = 252;
+amax = 369;
+amin = -amax;
 rs = 100;
-t2 = rs/v_max - v_max/a_max + t1
+t1 = sqrt(rs/amax)
+t2 = t1
+t3 = t1+t2
