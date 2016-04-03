@@ -169,24 +169,39 @@ legend('discreizised', 'discrete pole placement')
 
 
 %% 4.2: Position Controller
-% Cascaded position controller with model from last part.
+% PID position controller
 % output feedback
 
 s = tf('s');
 Ts = 1; % Sampling time
 % Transfer of motor without indctance
-Go_p = 1/s       % position is velocity integrated 
+Go_p = Go*1/s       % position is velocity integrated 
 
 % Make system discrete
 Go_z = c2d(Go_p, Ts, 'zoh')
 
 % output feedback
 % Place poles of  discrete closed system
-p1 = 9; % Am pole
+p1 = 0.5; % Am pole 1
+p2 = 0.4;   % Am pole 2
 
-% Controller polynomials, P controller
+omega = 0.5; % observer polynomial poles
+Zeta = 1;   
 
+% calulate pid parameters
+r0 = -b+1-p1-p2;
+s0 = omega*p1*p2*(omega+2*Zeta)/a;
+s1 = -(2*Zeta*omega*p1+2*Zeta*omega*p2+omega^2*p1+omega^2*p2+b^2+b*p1+b*p2-b)/a;
+s2 = (2*Zeta*omega+b^2+b*p1+b*p2+omega^2+p1*p2-b-p1-p2+1)/a;
+
+% Controller polynomials, PID controller
+Sd = s2*z^2 + s1*z + s0;
+Rd = (z - 1)*(z + r0);
+
+%%
 % calculate t0
+t0 = dcgain(tf(B, [1 r0-1 -r0]))^-1;
+Td = (z-p2)*t0;
 
 % calculate T
 

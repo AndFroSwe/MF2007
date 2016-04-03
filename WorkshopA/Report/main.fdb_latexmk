@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1459486203 "main.tex" "main.pdf" "main" 1459486205
+["pdflatex"] 1459703172 "main.tex" "main.pdf" "main" 1459703172
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233955448 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233955454 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -22,6 +22,7 @@
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/cm/cmtt12.tfm" 1136768653 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1247596667 32001 6aeea3afe875097b1eb0da29acd61e28 ""
+  "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247596666 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
@@ -29,6 +30,8 @@
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247596667 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
+  "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1247596666 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
   "C:/Program Files (x86)/MiKTeX 2.9/tex/context/base/supp-pdf.mkii" 1306918461 71592 fe353e1fbd982ffc647f3e98ff74da96 ""
   "C:/Program Files (x86)/MiKTeX 2.9/tex/generic/babel/babel.def" 1452792148 51412 827c718405977184804c36eeb6ce2b2f ""
@@ -67,9 +70,9 @@
   "C:/Program Files (x86)/MiKTeX 2.9/tex/latex/pdftex-def/pdftex.def" 1306444860 55368 3c8a0d99822330f2dfabc0dfb09ce897 ""
   "C:/Users/Andreas/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1457897441 3708308 25b7089ba46f6b6b8028593a55fdf5f3 ""
   "C:/Users/Andreas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1458214974 72707 f588ad7f01fe06fd83e0054897eae5ea ""
-  "main.aux" 1459486204 529 157fb620124f2793b0cb659eeb117148 ""
-  "main.tex" 1459486184 5675 6a9d6fa5ed9d921653d306357065f83c ""
+  "main.aux" 1459703172 843 ac547e2afaff1afb728f3fbb22e12ca2 ""
+  "main.tex" 1459703171 7934 90bec67334ee5fab334f6016ff9dcf09 ""
   (generated)
-  "main.log"
   "main.pdf"
+  "main.log"
   "main.aux"

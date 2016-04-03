@@ -100,7 +100,7 @@ at 24 V is examined and $d$ is adjusted to fit the static friction. A sine of
 low amplitude is then run to test the behaviour around the stick slip area, i.e.
 at low speeds.
 
-\section{Velocity control}
+\section*{Velocity control}
 \label{sec:velocity_control}
 The parameters generated in the previous section are used to design the
 controller for the motor. For the design, a simplified model without motor
@@ -114,13 +114,78 @@ verification of plant model and controller.
 Controlling the velocity is done with a PI controller. To best control the
 performance, the controller is designed in discrete time. \par
 The thumb rule for sample time of a system states that the system should be
-sampled at 4-10 times the rise time of the plant. Using the simplified model in
-\textsc{Matlab} and the commando \texttt{stepinfo}, the rise time is extracted
-and the sampling time is decided. 
-
-
-
-
+sampled at 4-10 times the rise time of the plant in open loop. Using the
+simplified model in \textsc{Matlab} and the commando \texttt{stepinfo}, the rise
+time is extracted and the sampling time is set to 10 times the rise time. \par
+To get the desired performance of the closed loop system, the poles are placed
+directly in the discrete plane. First, the plant is converted from continuous to
+discrete space by Zero Order Hold (ZOH), with the sampling time derived
+earlier.The new sytem matrices are given by the equations
+\begin{equation}
+    \label{eq:phi}
+    \Phi = e^{AT_s}
+\end{equation}
+and 
+\begin{equation}
+    \label{eq:gamma}
+    \Gamma = \int_0^{T_s}{e^{A(t-s)}B\text{ds}}.
+\end{equation}
+Output feedback is used to create the closed loop system. 
+% Insert figure of output feedback here
+The model of the plant is given in (\ref{eq:motormodel}) and is here rewritten as
+\begin{equation}
+    \label{eq:motorsimple}
+    \frac{B}{A}=\frac{a}{s + b}
+\end{equation}
+to simplify the equations. 
+Firstly, the feedback polynomial $\frac{S}{R}$ is derived. This is given by
+\begin{equation}
+    \label{eq:feedback_vel}
+    \frac{S}{R}=\frac{s_1z + s_0}{z - 1}.
+\end{equation}
+The system is then closed, yielding the pole polynomial
+\begin{equation}
+    \label{eq:polepolynomial_vel}
+    AR + BS = z^2+(as_1+b-1)z+as_0-b.
+\end{equation}
+The system is of order one so one closed loop pole given by 
+\begin{equation}
+    \label{eq:am_vel}
+    A_m = z - p_1
+\end{equation}
+is placed with an additional pole given by the observer polynomial 
+\begin{equation}
+    \label{eq:ao_vel}
+    A_o = z - p_2
+\end{equation}
+This yields the Diophantine equation
+\begin{equation}
+    \label{eq:diophantine_vel}
+    A_mA_o = AR + BS.
+\end{equation}
+Solving for (\ref{eq:diophantine_vel}) the unknown controller parameters $s_0$
+and $s_1$ are found to be
+\begin{equation}
+    \label{eq:s0_vel}
+    s_0 = \frac{p1p2+b}{a}
+\end{equation}
+and
+\begin{equation}
+    \label{eq:s1_vel}
+    s_1 = -\frac{b + p_1 + p_2 -1}{a}.
+\end{equation}
+The $T$ polynomial is given by 
+\begin{equation}
+    \label{eq:T_vel}
+    T = t_0A_0
+\end{equation}
+where $t_0$ is a static value so that the steady state gain of the closed loop
+system is 1. Using the final-value theorem for discrete systems, one yields
+\begin{equation}
+    \label{eq:t0_vel}
+    t0 = \left (\frac{B}{A_m} \right )^{-1}
+\end{equation}
+evaluated in $z=1$. 
 
 
 
