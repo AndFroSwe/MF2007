@@ -173,15 +173,50 @@ legend('discreizised', 'discrete pole placement')
 % output feedback
 
 s = tf('s');
-
+Ts = 1; % Sampling time
 % Transfer of motor without indctance
 Go_p = 1/s       % position is velocity integrated 
 
 % Make system discrete
+Go_z = c2d(Go_p, Ts, 'zoh')
 
 % output feedback
 % Place poles of  discrete closed system
-p1 = 9; % Am polynomial
-p2 = 50; % Ao polynomial
+p1 = 9; % Am pole
 
 % Controller polynomials, P controller
+
+% calculate t0
+
+% calculate T
+
+% closed loop system
+
+% pzmaps and step responses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

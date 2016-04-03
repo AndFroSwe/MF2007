@@ -109,8 +109,11 @@ INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 OUTPUT main.pdf
 INPUT C:/Users/Andreas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
+INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/cm/cmcsc10.tfm
+INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/cm/cmtt12.tfm
 INPUT main.aux
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
@@ -118,3 +121,4 @@ INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb

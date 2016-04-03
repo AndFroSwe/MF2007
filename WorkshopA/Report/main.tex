@@ -97,6 +97,31 @@ solely from the rise time and should not differ much from the previous model.
 Firstly, the step response to a 5 V square wave is examined to determine the
 static friction. When the static friction is set, the response to a square wave
 at 24 V is examined and $d$ is adjusted to fit the static friction. A sine of
-low amplitude is then run to test the behaviour around the turning points.
+low amplitude is then run to test the behaviour around the stick slip area, i.e.
+at low speeds.
+
+\section{Velocity control}
+\label{sec:velocity_control}
+The parameters generated in the previous section are used to design the
+controller for the motor. For the design, a simplified model without motor
+inductance is used in \textsc{Matlab} to place the poles and estimate the
+behaviour of the system. Furthermore, a non-linear model with Karnop friction is
+used in \textsc{Simulink} to simulate the behaviour of the system with the
+controller implemented. Finally, the design is run on the actual motor for
+verification of plant model and controller.
+\subsection*{Level 1}
+\label{sub:velocity_level_1}
+Controlling the velocity is done with a PI controller. To best control the
+performance, the controller is designed in discrete time. \par
+The thumb rule for sample time of a system states that the system should be
+sampled at 4-10 times the rise time of the plant. Using the simplified model in
+\textsc{Matlab} and the commando \texttt{stepinfo}, the rise time is extracted
+and the sampling time is decided. 
+
+
+
+
+
+
 
 \end{document}
