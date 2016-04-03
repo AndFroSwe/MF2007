@@ -82,8 +82,8 @@ step(Gc_error_p)
 
 %% Finding Max acceleration and velocity
 
-vmax = 252;
-amax = 369;
+vmax = 55;% 252;
+amax = 70; %369;
 amin = -amax;
 rs = 100;
 t1 = sqrt(rs/amax)
