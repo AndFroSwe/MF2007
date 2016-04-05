@@ -17,10 +17,7 @@ F_c = 1e-3;
 d_v = 1;
 enable_sin = 1;
 enable_karnop = 1;
-sim_sin_amp = 1;
-sim_sin_freq = 1;
-sim_quantization_interval = 0;
-sim_zoh_sample_time = 0;
+
 r0 = 0;     % Filter coefficient in controller model
 % Motor parameters
 motor_pars = struct(); % Create empty struct for motor
@@ -31,7 +28,7 @@ motor_pars.k = 69.7e-3;    % Torque constant [Nm/A]
 motor_pars.J = 7.46e-7;  % Rotor inertia
 
 motor = motor_pars;
-Ts = 0.002
+Ts = 0.01;
 
  J1 = 0.0006;  % Load inertia (separated from motor inertia
  motor.d = 1e-5; % Measured at amplitude 24
