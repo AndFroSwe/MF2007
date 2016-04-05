@@ -1,10 +1,24 @@
-\section{Writing Controller Code}
-This section blablabla
-\subsection{Level 1}
-The code equivalent to the Simulink block gave similar results which can be seen in Figure \ref{fig:task2_traj} and Figure \ref{fig:task2_pos}. A sampling time of 10 ms was used for the code. Different sampling times were tested and it was noticed that when using a lower sampling time the impact on the trajectory planner increased. When a lower sampling time is used the change of acceleration is missed by a few milliseconds and therefore impact the velocity and position. This gives the difference in the position of the motor which is seen in Figure \ref{fig:task2_pos}.
+%\documentclass[12pt,a4paper]{article}
+%
+%\usepackage{amsmath, amssymb}
+%\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+%\usepackage{graphicx}
+%\usepackage[margin=0.5in]{geometry}
+%\usepackage{float}
+%
+%\graphicspath{{fig/}}
+
+
+%\begin{document}
+
+%\section{Writing Controller Code}
+\subsection*{Level 1}
+The code equivalent to the Simulink blocks gave similar results which can be seen in Figure \ref{fig:task2_traj} and Figure \ref{fig:task2_pos}. A sampling time of 10 ms was used for the code. Different sampling times were tested and it was noticed that when using a higher sampling time the impact on the trajectory planner increased. When a higher sampling time is used the change of acceleration is missed by a few milliseconds and therefore impact the velocity and position. This gives the difference in the position of the motor which is seen in Figure \ref{fig:task2_pos}.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=80mm]{task2_traj.png}
+	
+		\includegraphics[width=\linewidth]{task2_traj.png}
 		\caption{Trajectory planner signal comparison}
 		\label{fig:task2_traj}
 	\end{center}
@@ -14,8 +28,24 @@ The code equivalent to the Simulink block gave similar results which can be seen
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=80mm]{task2_position.png}
+	
+		\includegraphics[width=\linewidth]{task2_position.png}
 		\caption{Motor position comparison}
 		\label{fig:task2_pos}
 	\end{center}
 \end{figure}
+
+A close-up of the sampling time problem is shown in Figure \ref{fig:task2_closeup}. When the velocity increases it the code signal follows the curve perfectly but when the change in acceleration happens the velocity code signal gets "out-of-sync".
+
+\begin{figure}[H]
+	\begin{center}
+	
+		\includegraphics[width=\linewidth]{task2_closeup.png}
+		\caption{Close-up of trajectory planner signal}
+		\label{fig:task2_closeup}
+	\end{center}
+\end{figure}
+
+
+
+%\end{document}
