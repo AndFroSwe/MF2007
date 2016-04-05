@@ -178,7 +178,7 @@ Ts = 1; % Sampling time
 % Transfer of motor without indctance
 Go_p = Go*1/s       % position is velocity integrated 
 wb = 5.78;          % bandwidth of open loop system [rad/s]
-ws = 20*wb;
+ws = 30*wb;
 Ts = 2*pi/ws
 
 % Make system discrete
