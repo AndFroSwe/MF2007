@@ -8,8 +8,6 @@ d = 1.988;
 omega1 = 10;
 omega2 = 5;
 
-
-
 A = s+b;
 B = a;
 R = s;
