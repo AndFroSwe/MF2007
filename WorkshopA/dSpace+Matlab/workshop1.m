@@ -192,15 +192,18 @@ B = tf([0 b1 b0], [0 0 1], Ts)
 % denominator
 a1 = Go_z.den{1}(2)
 a0 = Go_z.den{1}(3)
-A = tf([0 a1 a0], [0 0 1], Ts)
+A = tf([1 a1 a0], [0 0 1], Ts)
 
 % output feedback
 % Place poles of  discrete closed system
 p1 = 0.5; % Am pole 1
 p2 = 0.4;   % Am pole 2
+Am = tf([1 -p1-p2 p1*p2], [0 1], Ts)
 
-omega = 0.5; % observer polynomial poles
+% omega must be set negatively because reasons
+omega = -0.1; % observer polynomial poles
 Zeta = 1;   
+Ao = tf([1 2*omega*Zeta omega^2], [0 1], Ts)
 
 % calulate pid parameters
 r0 = (-2*Zeta*b1^3*omega*p1*p2-b1^3*omega^2*p1*p2-2*Zeta*b0*b1^2*omega*p1-...
@@ -242,17 +245,20 @@ s2 = -(-2*Zeta*b1^2*omega*p1*p2-b1^2*omega^2*p1*p2-2*Zeta*b0*b1*omega*p1-...
 Sd = s2*z^2 + s1*z + s0;
 Rd = (z - 1)*(z + r0);
 
-%%
-% calculate t0
-t0 = dcgain(tf(B, [1 r0-1 -r0]))^-1;
-Td = (z-p2)*t0;
-
 % calculate T
+t0 = dcgain(B/(Am))^-1;
+Td = Ao*t0;
 
 % closed loop system
+Gc_z = minreal(B*t0/(Am))
 
 % pzmaps and step responses
-
+disp('closed loop poles')
+pole(Gc_z)
+disp('observer poles')
+zero(Ao)
+figure
+step(Gc_z)
 
 
 
