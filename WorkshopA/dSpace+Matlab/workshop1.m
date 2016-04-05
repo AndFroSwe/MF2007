@@ -196,13 +196,13 @@ A = tf([1 a1 a0], [0 0 1], Ts)
 
 % output feedback
 % Place poles of  discrete closed system
-p1 = 0.5; % Am pole 1
-p2 = 0.4;   % Am pole 2
+p1 = 0.2; % Am pole 1
+p2 = 0.2;   % Am pole 2
 Am = tf([1 -p1-p2 p1*p2], [0 1], Ts)
 
 % omega must be set negatively because reasons
-omega = -0.1; % observer polynomial poles
-Zeta = 1;   
+omega = -0.5; % observer polynomial poles
+Zeta = 0.7;   
 Ao = tf([1 2*omega*Zeta omega^2], [0 1], Ts)
 
 % calulate pid parameters
@@ -260,6 +260,36 @@ zero(Ao)
 figure
 step(Gc_z)
 
+% add polynomials for controller
+T_sim = Td.num{1};
+R_sim = Rd.num{1};
+S_sim = Sd.num{1};
+
+% run simulation
+simtime = 5;
+sim('Simulate_position_motor_controllers')
+
+% plot response
+figure
+subplot(3,1,1)
+plot(sim_reference.Time, sim_reference.Data)
+hold on
+grid on
+plot(sim_position.Time, sim_position.Data)
+title('step response for position')
+legend('reference', 'position')
+xlabel('t')
+ylabel('position [rad]')
+
+% plot saturation
+subplot(3,1,2)
+plot(sim_saturation.Time, sim_saturation.Data)
+title('saturation')
+
+% plot pzmap
+subplot(3,1,3)
+pzmap(Gc_z)
+grid on
 
 
 
