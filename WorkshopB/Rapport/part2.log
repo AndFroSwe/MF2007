@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.4)  5 APR 2016 13:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.4)  5 APR 2016 15:37
 entering extended mode
 **part2.tex
 (part2.tex
@@ -456,24 +456,39 @@ LaTeX Font Info:    ... okay on input line 13.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-[1
+<fig/task2_traj.png, id=1, 1626.075pt x 975.645pt>
+File: fig/task2_traj.png Graphic file (type png)
+ <use fig/task2_traj.png>
+Package pdftex.def Info: fig/task2_traj.png used on input line 22.
+(pdftex.def)             Requested size: 325.20924pt x 195.12553pt.
 
-{C:/Users/Gabriel/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(part2.aux) ) 
+<fig/task2_position.png, id=2, 1626.075pt x 975.645pt>
+File: fig/task2_position.png Graphic file (type png)
+
+<use fig/task2_position.png>
+Package pdftex.def Info: fig/task2_position.png used on input line 33.
+(pdftex.def)             Requested size: 325.20924pt x 195.12553pt.
+ [1
+
+{C:/Users/Gabriel/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./fig/tas
+k2_traj.png (PNG copy)> <./fig/task2_position.png (PNG copy)>] (part2.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3135 strings out of 493673
- 39441 string characters out of 3141524
- 108515 words of memory out of 3000000
- 6462 multiletter control sequences out of 15000+200000
- 4543 words of font info for 17 fonts, out of 3000000 for 9000
+ 3153 strings out of 493673
+ 39765 string characters out of 3141524
+ 109531 words of memory out of 3000000
+ 6475 multiletter control sequences out of 15000+200000
+ 5149 words of font info for 19 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 27i,4n,32p,252b,111s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r12.pfb>
-Output written on part2.pdf (1 page, 18003 bytes).
+ 27i,7n,32p,604b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on part2.pdf (1 page, 112097 bytes).
 PDF statistics:
- 14 PDF objects out of 1000 (max. 8388607)
+ 16 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
