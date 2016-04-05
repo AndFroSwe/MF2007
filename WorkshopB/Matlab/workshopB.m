@@ -115,3 +115,4 @@ hold on
 plot(posFunc)
 legend('Block','Code')
 title('Position of DC motor: Block and Code')
+
