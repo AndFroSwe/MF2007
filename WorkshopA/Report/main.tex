@@ -245,20 +245,61 @@ system is 1. Using the final-value theorem for discrete systems, one yields
     \label{eq:t0_vel}
     t0 = \left (\frac{B}{A_m} \right )^{-1}
 \end{equation}
-evaluated in $z=1$. 
-from square wave with 50 rad/s and 0.5Hz.
+evaluated in $z=1$. \\
+
+In Figure~\ref{fig:T2_a50_f05:a} is the response from a square wave with
+50 rad/s and 0.5Hz shown. It can also be seen in the plot that the
+steady state error is less than the specified 0.5 rad/s. In
+Figure~\ref{fig:T2_a50_f05:b} the voltage response for the same input is
+ploted.
 \begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.45\linewidth}
     \includegraphics[width=\linewidth]{T2_a50_f05.png}
     \caption{Velocity response }
-    \label{fig:T2_a50_f05.png}
+    \label{fig:T2_a50_f05:a}
   \end{subfigure}
   \begin{subfigure}[b]{0.45\linewidth}
     \includegraphics[width=\linewidth]{T2_V_a50_f05.png}
     \caption{Voltage response }
-    \label{fig:T2_V_a50_f05}
+    \label{fig:T2_a50_f05:b}
   \end{subfigure}
+  \caption{Response for square wave 50 rad/s and 0.5Hz}
+  \label{fig:T2_a50_f05}
+\end{figure}
+In Figure~\ref{fig:T2_a10_f02:a} is the response from input of
+$\varphi_{ref}=10sin(2\phi 0.2t)$ shown.
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_a10_f02.png}
+    \caption{Velocity response }
+    \label{fig:T2_a10_f02:a}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_V_a10_f02.png}
+    \caption{Voltage response }
+    \label{fig:T2_a10_f02:b}
+  \end{subfigure}
+  \caption{Response for sine wave 10 rad/s and 0.2Hz}
+  \label{fig:T2_a10_f02}
+\end{figure}
+In Figure~\ref{fig:T2_a10_f02_load:a} is the response from input of
+$\varphi_{ref}=10sin(2\pi 0.2t)$ with added torque by holding it shown.
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_a10_f02_load.png}
+    \caption{Velocity response }
+    \label{fig:T2_a10_f02_load:a}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_V_a10_f02_load.png}
+    \caption{Voltage response }
+    \label{fig:T2_a10_f02_load:b}
+  \end{subfigure}
+  \caption{Response for sine wave 10 rad/s and 0.2Hz}
+  \label{fig:T2_a10_f02_load}
 \end{figure}
 
 
