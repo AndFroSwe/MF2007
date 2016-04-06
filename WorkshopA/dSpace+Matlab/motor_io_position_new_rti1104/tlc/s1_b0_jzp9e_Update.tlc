@@ -1,0 +1,64 @@
+%implements s1_b0_jzp9e_Update "C"
+
+%function Update(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+real_T denAccum;
+%closefile localVarDecl
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Header")>\
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Body")>\
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* Update for DiscreteTransferFcn: '<S2>/Gff' */
+    motor_io_position_new_DW.Gff_states = motor_io_position_new_DW.Gff_tmp;
+    /* Update for DiscreteTransferFcn: '<S2>/I part1' */
+    denAccum = motor_io_position_new_B.Sum5_a;
+    denAccum -= motor_io_position_new_P.Ipart1_DenCoef[1] * motor_io_position_new_DW.Ipart1_states;
+    denAccum /= motor_io_position_new_P.Ipart1_DenCoef[0];
+    motor_io_position_new_DW.Ipart1_states = denAccum;
+    /* Update for DiscreteTransferFcn: '<S2>/I part' */
+    denAccum = motor_io_position_new_B.Sum4_b;
+    denAccum -= motor_io_position_new_P.Ipart_DenCoef[1] * motor_io_position_new_DW.Ipart_states;
+    denAccum /= motor_io_position_new_P.Ipart_DenCoef[0];
+    motor_io_position_new_DW.Ipart_states = denAccum;
+    /* Update for DiscreteTransferFcn: '<S2>/PD part' */
+    motor_io_position_new_DW.PDpart_states = motor_io_position_new_DW.PDpart_tmp;
+    /* Update for DiscreteTransferFcn: '<S1>/Gff' */
+    motor_io_position_new_DW.Gff_states_d = motor_io_position_new_DW.Gff_tmp_k;
+    /* Update for DiscreteTransferFcn: '<S1>/I part1' */
+    denAccum = motor_io_position_new_B.Sum5;
+    denAccum -= motor_io_position_new_P.Ipart1_DenCoef_n[1] * motor_io_position_new_DW.Ipart1_states_o;
+    denAccum /= motor_io_position_new_P.Ipart1_DenCoef_n[0];
+    motor_io_position_new_DW.Ipart1_states_o = denAccum;
+    /* Update for DiscreteTransferFcn: '<S1>/I part' */
+    denAccum = motor_io_position_new_B.Sum4;
+    denAccum -= motor_io_position_new_P.Ipart_DenCoef_n[1] * motor_io_position_new_DW.Ipart_states_f;
+    denAccum /= motor_io_position_new_P.Ipart_DenCoef_n[0];
+    motor_io_position_new_DW.Ipart_states_f = denAccum;
+    /* Update for DiscreteTransferFcn: '<S1>/PD part' */
+    motor_io_position_new_DW.PDpart_states_j = motor_io_position_new_DW.PDpart_tmp_m;
+    /* Update for DiscreteTransferFcn: '<S1>/Gff1' */
+    motor_io_position_new_DW.Gff1_states[1] = motor_io_position_new_DW.Gff1_states[0];
+    motor_io_position_new_DW.Gff1_states[0] = motor_io_position_new_DW.Gff1_tmp;
+    /* Update for DiscreteTransferFcn: '<S1>/Gff2' */
+    motor_io_position_new_DW.Gff2_states[1] = motor_io_position_new_DW.Gff2_states[0];
+    motor_io_position_new_DW.Gff2_states[0] = motor_io_position_new_DW.Gff2_tmp;
+    /* Update for DiscreteTransferFcn: '<S2>/Gff1' */
+    motor_io_position_new_DW.Gff1_states_n[1] = motor_io_position_new_DW.Gff1_states_n[0];
+    motor_io_position_new_DW.Gff1_states_n[0] = motor_io_position_new_DW.Gff1_tmp_o;
+    /* Update for DiscreteTransferFcn: '<S2>/Gff2' */
+    motor_io_position_new_DW.Gff2_states_b[1] = motor_io_position_new_DW.Gff2_states_b[0];
+    motor_io_position_new_DW.Gff2_states_b[0] = motor_io_position_new_DW.Gff2_tmp_k;
+}
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Trailer")>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%<LibSetSystemField(system, "CachedUpdateLocalVars", localVarDecl)>
+%endfunction

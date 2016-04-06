@@ -1,0 +1,33 @@
+%implements s1_b0_0ch9e_InitializeConditions "C"
+
+%function InitializeConditions(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* InitializeConditions for DiscreteTransferFcn: '<S2>/Gff' */
+motor_io_position_GABRIEL_DW.Gff_states[0] = motor_io_position_GABRIEL_P.Gff_InitialStates;
+motor_io_position_GABRIEL_DW.Gff_states[1] = motor_io_position_GABRIEL_P.Gff_InitialStates;
+/* InitializeConditions for DiscreteTransferFcn: '<S2>/Gfb' */
+motor_io_position_GABRIEL_DW.Gfb_states[0] = motor_io_position_GABRIEL_P.Gfb_InitialStates;
+motor_io_position_GABRIEL_DW.Gfb_states[1] = motor_io_position_GABRIEL_P.Gfb_InitialStates;
+/* InitializeConditions for Integrator: '<S3>/Integrator1' */
+motor_io_position_GABRIEL_X.Integrator1_CSTATE = motor_io_position_GABRIEL_P.Integrator1_IC;
+/* InitializeConditions for DiscreteTransferFcn: '<S1>/Gfb' */
+motor_io_position_GABRIEL_DW.Gfb_states_p[0] = motor_io_position_GABRIEL_P.Gfb_InitialStates_k;
+motor_io_position_GABRIEL_DW.Gfb_states_p[1] = motor_io_position_GABRIEL_P.Gfb_InitialStates_k;
+/* InitializeConditions for DiscreteTransferFcn: '<S1>/Gff' */
+motor_io_position_GABRIEL_DW.Gff_states_c[0] = motor_io_position_GABRIEL_P.Gff_InitialStates_d;
+motor_io_position_GABRIEL_DW.Gff_states_c[1] = motor_io_position_GABRIEL_P.Gff_InitialStates_d;
+/* InitializeConditions for Integrator: '<S3>/Integrator' */
+motor_io_position_GABRIEL_X.Integrator_CSTATE = motor_io_position_GABRIEL_P.Integrator_IC;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void InitializeConditions(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction

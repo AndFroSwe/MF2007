@@ -1,0 +1,1 @@
+-- call "C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\BIN\lnkppc.exe"  -K0 -QmsA0314 -QmeA0307 -QmeA0329 -m..\motor_io_position_new.map -o ..\motor_io_position_new.ppc -c _tmp_motor_io_position_new.lk 

@@ -1,0 +1,352 @@
+%implements s1_b0_jzp9e_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+real_T temp;
+ZCEventType zcEvent;
+real_T u1;
+real_T u2;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS1B0 = OpaqueTLCBlockFcn("Outputs", 1, 0, 0, 3)
+%assign tlcOutputsFcnOfS1B3 = OpaqueTLCBlockFcn("Outputs", 1, 3, 0, 3)
+%assign tlcOutputsFcnOfS1B4 = OpaqueTLCBlockFcn("Outputs", 1, 4, 0, 3)
+%assign tlcOutputsFcnOfS1B5 = OpaqueTLCBlockFcn("Outputs", 1, 5, 0, 3)
+%assign tlcOutputsFcnOfS1B6 = OpaqueTLCBlockFcn("Outputs", 1, 6, 0, 3)
+%assign tlcOutputsFcnOfS1B8 = OpaqueTLCBlockFcn("Outputs", 1, 8, 0, 3)
+%assign tlcOutputsFcnOfS1B9 = OpaqueTLCBlockFcn("Outputs", 1, 9, 0, 3)
+%assign tlcOutputsFcnOfS1B10 = OpaqueTLCBlockFcn("Outputs", 1, 10, 0, 3)
+%assign tlcOutputsFcnOfS1B15 = OpaqueTLCBlockFcn("Outputs", 1, 15, 0, 3)
+%assign tlcOutputsFcnOfS1B16 = OpaqueTLCBlockFcn("Outputs", 1, 16, 0, 3)
+%assign tlcOutputsFcnOfS0B0 = OpaqueTLCBlockFcn("Outputs", 0, 0, 0, 3)
+%assign tlcOutputsFcnOfS1B19 = OpaqueTLCBlockFcn("Outputs", 1, 19, 0, 3)
+%assign tlcOutputsFcnOfS1B20 = OpaqueTLCBlockFcn("Outputs", 1, 20, 0, 3)
+%<SLibCGIRDumpSystemUserCode(1, "Output", "Header")>\
+%<SLibCGIRDumpSystemUserCode(1, "Output", "Body")>\
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+%<tlcOutputsFcnOfS1B0>\
+    /* Gain: '<S7>/fi1_scaling' */
+    motor_io_position_new_B.fi1_scaling = motor_io_position_new_P.fi1_scaling_Gain * motor_io_position_new_B.SFunction1;
+    /* DiscreteTransferFcn: '<S2>/Gff' */
+    temp = motor_io_position_new_B.fi1_scaling;
+    temp -= motor_io_position_new_P.Gff_DenCoef[1] * motor_io_position_new_DW.Gff_states;
+    temp /= motor_io_position_new_P.Gff_DenCoef[0];
+    motor_io_position_new_DW.Gff_tmp = temp;
+    temp = motor_io_position_new_P.Gff_NumCoef[0] * motor_io_position_new_DW.Gff_tmp;
+    temp += motor_io_position_new_P.Gff_NumCoef[1] * motor_io_position_new_DW.Gff_states;
+    motor_io_position_new_B.Gff = temp;
+    /* DiscreteTransferFcn: '<S2>/I part1' */
+    temp = motor_io_position_new_P.Ipart1_NumCoef[1] * motor_io_position_new_DW.Ipart1_states;
+    motor_io_position_new_B.Ipart1 = temp;
+    /* Sum: '<S2>/Sum1' */
+    motor_io_position_new_B.Sum1 = motor_io_position_new_B.Gff + motor_io_position_new_B.Ipart1;
+    /* DiscreteTransferFcn: '<S2>/I part' */
+    temp = motor_io_position_new_P.Ipart_NumCoef[1] * motor_io_position_new_DW.Ipart_states;
+    motor_io_position_new_B.Ipart = temp;
+}
+/* SignalGenerator: '<Root>/SinGenerator' */
+motor_io_position_new_B.SinGenerator = sin(motor_io_position_new_P.SinGenerator_Frequency * %<(SLibCG_SE(LibGetT()))>) * motor_io_position_new_P.SinGenerator_Amplitude;
+/* SignalGenerator: '<Root>/SquareGenerator' */
+temp = motor_io_position_new_P.SquareGenerator_Frequency * %<(SLibCG_SE(LibGetT()))>;
+if (temp - floor(temp) >= 0.5) {
+    motor_io_position_new_B.SquareGenerator = motor_io_position_new_P.SquareGenerator_Amplitude;
+} else {
+    motor_io_position_new_B.SquareGenerator = -motor_io_position_new_P.SquareGenerator_Amplitude;
+}
+/* End of SignalGenerator: '<Root>/SquareGenerator' */
+
+/* Switch: '<Root>/Switch' incorporates:
+ *  Constant: '<Root>/SignalSelector[0Square,1Sine]'
+ */
+if (motor_io_position_new_P.SignalSelector0Square1Sine_Valu != 0.0) {
+    motor_io_position_new_B.ref = motor_io_position_new_B.SinGenerator;
+} else {
+    motor_io_position_new_B.ref = motor_io_position_new_B.SquareGenerator;
+}
+/* End of Switch: '<Root>/Switch' */
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* DiscreteTransferFcn: '<S2>/PD part' */
+    temp = motor_io_position_new_B.ref;
+    temp -= motor_io_position_new_P.PDpart_DenCoef[1] * motor_io_position_new_DW.PDpart_states;
+    temp /= motor_io_position_new_P.PDpart_DenCoef[0];
+    motor_io_position_new_DW.PDpart_tmp = temp;
+    temp = motor_io_position_new_P.PDpart_NumCoef[0] * motor_io_position_new_DW.PDpart_tmp;
+    temp += motor_io_position_new_P.PDpart_NumCoef[1] * motor_io_position_new_DW.PDpart_states;
+    motor_io_position_new_B.PDpart = temp;
+    /* Sum: '<S2>/Sum' */
+    motor_io_position_new_B.Sum = motor_io_position_new_B.Ipart + motor_io_position_new_B.PDpart;
+    /* Sum: '<S2>/Sum2' */
+    motor_io_position_new_B.Sum2 = motor_io_position_new_B.Sum1 - motor_io_position_new_B.Sum;
+    /* Saturate: '<S2>/Voltage Saturation ' */
+    temp = motor_io_position_new_B.Sum2;
+    u1 = motor_io_position_new_P.VoltageSaturation_LowerSat;
+    u2 = motor_io_position_new_P.VoltageSaturation_UpperSat;
+    if (temp > u2) {
+        motor_io_position_new_B.VoltageSaturation = u2;
+    } else if (temp < u1) {
+        motor_io_position_new_B.VoltageSaturation = u1;
+    } else {
+        motor_io_position_new_B.VoltageSaturation = temp;
+    }
+    /* End of Saturate: '<S2>/Voltage Saturation ' */
+
+    /* Gain: '<Root>/Gain' */
+    motor_io_position_new_B.Gain = motor_io_position_new_P.Gain_Gain * motor_io_position_new_B.VoltageSaturation;
+    /* Saturate: '<S4>/Saturation' */
+    temp = motor_io_position_new_B.Gain;
+    u1 = motor_io_position_new_P.Saturation_LowerSat;
+    u2 = motor_io_position_new_P.Saturation_UpperSat;
+    if (temp > u2) {
+        motor_io_position_new_B.Volt = u2;
+    } else if (temp < u1) {
+        motor_io_position_new_B.Volt = u1;
+    } else {
+        motor_io_position_new_B.Volt = temp;
+    }
+    /* End of Saturate: '<S4>/Saturation' */
+
+    /* Gain: '<S4>/pwm_skalning' */
+    motor_io_position_new_B.pwm_skalning = motor_io_position_new_P.pwm_skalning_Gain * motor_io_position_new_B.Volt;
+    /* Sum: '<S4>/Sum' incorporates:
+ *  Constant: '<S4>/pwm_offstet'
+ */
+    motor_io_position_new_B.Sum_f = motor_io_position_new_B.pwm_skalning + motor_io_position_new_P.pwm_offstet_Value;
+%<tlcOutputsFcnOfS1B3>\
+%<tlcOutputsFcnOfS1B4>\
+%<tlcOutputsFcnOfS1B5>\
+%<tlcOutputsFcnOfS1B6>\
+    /* DataTypeConversion: '<S4>/Data Type Conversion' incorporates:
+ *  Constant: '<S4>/Enable[1_Off, 0_On]'
+ */
+    motor_io_position_new_B.DataTypeConversion = (motor_io_position_new_P.Enable1_Off0_On_Value != 0.0);
+%<tlcOutputsFcnOfS1B8>\
+    /* DiscreteTransferFcn: '<S1>/Gff' */
+    temp = motor_io_position_new_B.ref;
+    temp -= motor_io_position_new_P.Gff_DenCoef_h[1] * motor_io_position_new_DW.Gff_states_d;
+    temp /= motor_io_position_new_P.Gff_DenCoef_h[0];
+    motor_io_position_new_DW.Gff_tmp_k = temp;
+    temp = motor_io_position_new_P.Gff_NumCoef_k[0] * motor_io_position_new_DW.Gff_tmp_k;
+    temp += motor_io_position_new_P.Gff_NumCoef_k[1] * motor_io_position_new_DW.Gff_states_d;
+    motor_io_position_new_B.Gff_e = temp;
+    /* DiscreteTransferFcn: '<S1>/I part1' */
+    temp = motor_io_position_new_P.Ipart1_NumCoef_o[1] * motor_io_position_new_DW.Ipart1_states_o;
+    motor_io_position_new_B.Ipart1_d = temp;
+    /* Sum: '<S1>/Sum1' */
+    motor_io_position_new_B.Sum1_e = motor_io_position_new_B.Gff_e + motor_io_position_new_B.Ipart1_d;
+    /* DiscreteTransferFcn: '<S1>/I part' */
+    temp = motor_io_position_new_P.Ipart_NumCoef_f[1] * motor_io_position_new_DW.Ipart_states_f;
+    motor_io_position_new_B.Ipart_a = temp;
+}
+/* Integrator: '<S3>/Integrator1' */
+motor_io_position_new_B.Integrator1 = motor_io_position_new_X.Integrator1_CSTATE;
+/* Quantizer: '<S6>/Quantizer' */
+temp = motor_io_position_new_B.Integrator1;
+motor_io_position_new_B.Quantizer = %<(SLibCGCallSubFcn("rt_roundd_snf", ["temp / motor_io_position_new_P.quant"], 0, 3, 0))> * motor_io_position_new_P.quant;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* ZeroOrderHold: '<S6>/Zero-Order Hold' */
+    motor_io_position_new_B.ZeroOrderHold = motor_io_position_new_B.Quantizer;
+    /* DiscreteTransferFcn: '<S1>/PD part' */
+    temp = motor_io_position_new_B.ZeroOrderHold;
+    temp -= motor_io_position_new_P.PDpart_DenCoef_h[1] * motor_io_position_new_DW.PDpart_states_j;
+    temp /= motor_io_position_new_P.PDpart_DenCoef_h[0];
+    motor_io_position_new_DW.PDpart_tmp_m = temp;
+    temp = motor_io_position_new_P.PDpart_NumCoef_o[0] * motor_io_position_new_DW.PDpart_tmp_m;
+    temp += motor_io_position_new_P.PDpart_NumCoef_o[1] * motor_io_position_new_DW.PDpart_states_j;
+    motor_io_position_new_B.PDpart_k = temp;
+    /* Sum: '<S1>/Sum' */
+    motor_io_position_new_B.Sum_e = motor_io_position_new_B.Ipart_a + motor_io_position_new_B.PDpart_k;
+    /* Sum: '<S1>/Sum2' */
+    motor_io_position_new_B.Sum2_n = motor_io_position_new_B.Sum1_e - motor_io_position_new_B.Sum_e;
+    /* Saturate: '<S1>/Voltage Saturation ' */
+    temp = motor_io_position_new_B.Sum2_n;
+    u1 = motor_io_position_new_P.VoltageSaturation_LowerSat_h;
+    u2 = motor_io_position_new_P.VoltageSaturation_UpperSat_g;
+    if (temp > u2) {
+        motor_io_position_new_B.VoltageSaturation_j = u2;
+    } else if (temp < u1) {
+        motor_io_position_new_B.VoltageSaturation_j = u1;
+    } else {
+        motor_io_position_new_B.VoltageSaturation_j = temp;
+    }
+    /* End of Saturate: '<S1>/Voltage Saturation ' */
+
+    /* Sum: '<S1>/Sum3' */
+    motor_io_position_new_B.Sum3 = motor_io_position_new_B.VoltageSaturation_j - motor_io_position_new_B.Sum2_n;
+%<tlcOutputsFcnOfS1B9>\
+    /* Gain: '<S1>/Gain' */
+    motor_io_position_new_B.Gain_m = motor_io_position_new_P.c0 * motor_io_position_new_B.ZeroOrderHold;
+}
+/* Gain: '<S1>/Gain1' */
+motor_io_position_new_B.Gain1 = motor_io_position_new_P.c0_ * motor_io_position_new_B.ref;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* Gain: '<S1>/Gain2' */
+    motor_io_position_new_B.Gain2 = motor_io_position_new_P.Kb * motor_io_position_new_B.Sum3;
+    /* Sum: '<S1>/Sum4' */
+    motor_io_position_new_B.Sum4 = motor_io_position_new_B.Gain2 + motor_io_position_new_B.Gain_m;
+}
+/* Sum: '<S1>/Sum5' */
+motor_io_position_new_B.Sum5 = motor_io_position_new_B.Gain1 + motor_io_position_new_B.Gain2;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* DiscreteTransferFcn: '<S1>/Gff1' */
+    temp = 0.0 - motor_io_position_new_P.R_sim[1] * motor_io_position_new_DW.Gff1_states[0];
+    temp -= motor_io_position_new_P.R_sim[2] * motor_io_position_new_DW.Gff1_states[1];
+    temp /= motor_io_position_new_P.R_sim[0];
+    motor_io_position_new_DW.Gff1_tmp = temp;
+    temp = motor_io_position_new_P.T_sim[0] * motor_io_position_new_DW.Gff1_tmp;
+    temp += motor_io_position_new_P.T_sim[1] * motor_io_position_new_DW.Gff1_states[0];
+    temp += motor_io_position_new_P.T_sim[2] * motor_io_position_new_DW.Gff1_states[1];
+    motor_io_position_new_B.Gff1 = temp;
+    /* DiscreteTransferFcn: '<S1>/Gff2' */
+    temp = 0.0 - motor_io_position_new_P.R_sim[1] * motor_io_position_new_DW.Gff2_states[0];
+    temp -= motor_io_position_new_P.R_sim[2] * motor_io_position_new_DW.Gff2_states[1];
+    temp /= motor_io_position_new_P.R_sim[0];
+    motor_io_position_new_DW.Gff2_tmp = temp;
+    temp = motor_io_position_new_P.S_sim[0] * motor_io_position_new_DW.Gff2_tmp;
+    temp += motor_io_position_new_P.S_sim[1] * motor_io_position_new_DW.Gff2_states[0];
+    temp += motor_io_position_new_P.S_sim[2] * motor_io_position_new_DW.Gff2_states[1];
+    motor_io_position_new_B.Gff2 = temp;
+    /* Sum: '<S2>/Sum3' */
+    motor_io_position_new_B.Sum3_o = motor_io_position_new_B.VoltageSaturation - motor_io_position_new_B.Sum2;
+%<tlcOutputsFcnOfS1B10>\
+}
+/* Gain: '<S2>/Gain' */
+motor_io_position_new_B.Gain_g = motor_io_position_new_P.c0 * motor_io_position_new_B.ref;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* Gain: '<S2>/Gain1' */
+    motor_io_position_new_B.Gain1_k = motor_io_position_new_P.c0_ * motor_io_position_new_B.fi1_scaling;
+    /* Gain: '<S2>/Gain2' */
+    motor_io_position_new_B.Gain2_n = motor_io_position_new_P.Kb * motor_io_position_new_B.Sum3_o;
+}
+/* Sum: '<S2>/Sum4' */
+motor_io_position_new_B.Sum4_b = motor_io_position_new_B.Gain2_n + motor_io_position_new_B.Gain_g;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* Sum: '<S2>/Sum5' */
+    motor_io_position_new_B.Sum5_a = motor_io_position_new_B.Gain1_k + motor_io_position_new_B.Gain2_n;
+    /* DiscreteTransferFcn: '<S2>/Gff1' */
+    temp = 0.0 - motor_io_position_new_P.R_sim[1] * motor_io_position_new_DW.Gff1_states_n[0];
+    temp -= motor_io_position_new_P.R_sim[2] * motor_io_position_new_DW.Gff1_states_n[1];
+    temp /= motor_io_position_new_P.R_sim[0];
+    motor_io_position_new_DW.Gff1_tmp_o = temp;
+    temp = motor_io_position_new_P.T_sim[0] * motor_io_position_new_DW.Gff1_tmp_o;
+    temp += motor_io_position_new_P.T_sim[1] * motor_io_position_new_DW.Gff1_states_n[0];
+    temp += motor_io_position_new_P.T_sim[2] * motor_io_position_new_DW.Gff1_states_n[1];
+    motor_io_position_new_B.Gff1_p = temp;
+    /* DiscreteTransferFcn: '<S2>/Gff2' */
+    temp = 0.0 - motor_io_position_new_P.R_sim[1] * motor_io_position_new_DW.Gff2_states_b[0];
+    temp -= motor_io_position_new_P.R_sim[2] * motor_io_position_new_DW.Gff2_states_b[1];
+    temp /= motor_io_position_new_P.R_sim[0];
+    motor_io_position_new_DW.Gff2_tmp_k = temp;
+    temp = motor_io_position_new_P.S_sim[0] * motor_io_position_new_DW.Gff2_tmp_k;
+    temp += motor_io_position_new_P.S_sim[1] * motor_io_position_new_DW.Gff2_states_b[0];
+    temp += motor_io_position_new_P.S_sim[2] * motor_io_position_new_DW.Gff2_states_b[1];
+    motor_io_position_new_B.Gff2_p = temp;
+}
+/* Integrator: '<S3>/Integrator' */
+motor_io_position_new_B.Integrator = motor_io_position_new_X.Integrator_CSTATE;
+/* Gain: '<S3>/Gain1' */
+motor_io_position_new_B.Gain1_b = motor_io_position_new_P.Gain1_Gain * motor_io_position_new_B.Integrator;
+/* Sum: '<S3>/Add' */
+motor_io_position_new_B.Add = motor_io_position_new_B.VoltageSaturation_j - motor_io_position_new_B.Gain1_b;
+/* Gain: '<S3>/k//R ' */
+motor_io_position_new_B.kR = motor_io_position_new_P.kR_Gain * motor_io_position_new_B.Add;
+/* Saturate: '<S8>/Saturate to Fc' */
+temp = motor_io_position_new_B.kR;
+u1 = motor_io_position_new_P.SaturatetoFc_LowerSat;
+u2 = motor_io_position_new_P.F_c_upper;
+if (temp > u2) {
+    motor_io_position_new_B.Stickslipregion = u2;
+} else if (temp < u1) {
+    motor_io_position_new_B.Stickslipregion = u1;
+} else {
+    motor_io_position_new_B.Stickslipregion = temp;
+}
+/* End of Saturate: '<S8>/Saturate to Fc' */
+
+/* Abs: '<S8>/Abs' */
+motor_io_position_new_B.Abs = fabs(motor_io_position_new_B.Integrator);
+/* RelationalOperator: '<S9>/Compare' incorporates:
+ *  Constant: '<S9>/Constant'
+ */
+motor_io_position_new_B.Compare = (motor_io_position_new_B.Abs <= motor_io_position_new_P.Constant_Value);
+/* Gain: '<S8>/Vicous friction' */
+motor_io_position_new_B.Vicousfriction = motor_io_position_new_P.Vicousfriction_Gain * motor_io_position_new_B.Integrator;
+/* Signum: '<S8>/Sign' */
+temp = motor_io_position_new_B.Integrator;
+if (temp < 0.0) {
+    motor_io_position_new_B.Sign = -1.0;
+} else if (temp > 0.0) {
+    motor_io_position_new_B.Sign = 1.0;
+} else if (temp == 0.0) {
+    motor_io_position_new_B.Sign = 0.0;
+} else {
+    motor_io_position_new_B.Sign = temp;
+}
+/* End of Signum: '<S8>/Sign' */
+
+/* Product: '<S8>/Product' incorporates:
+ *  Constant: '<S8>/F_c'
+ */
+motor_io_position_new_B.Product = motor_io_position_new_P.F_c * motor_io_position_new_B.Sign;
+/* Sum: '<S8>/Add' */
+motor_io_position_new_B.Viscousregion = motor_io_position_new_B.Vicousfriction + motor_io_position_new_B.Product;
+/* Switch: '<S8>/Switch' */
+if (motor_io_position_new_B.Compare) {
+    motor_io_position_new_B.Friction = motor_io_position_new_B.Stickslipregion;
+} else {
+    motor_io_position_new_B.Friction = motor_io_position_new_B.Viscousregion;
+}
+/* End of Switch: '<S8>/Switch' */
+
+/* Sum: '<S3>/Add1' */
+motor_io_position_new_B.Add1 = motor_io_position_new_B.kR - motor_io_position_new_B.Friction;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* Gain: '<S3>/Gain2' incorporates:
+ *  Constant: '<S3>/Load inertia'
+ */
+    motor_io_position_new_B.Gain2_j = motor_io_position_new_P.Gain2_Gain * motor_io_position_new_P.J1;
+    /* Sum: '<S3>/Add2' incorporates:
+ *  Constant: '<S3>/Motor inertia'
+ */
+    motor_io_position_new_B.Add2 = motor_io_position_new_B.Gain2_j + motor_io_position_new_P.Motorinertia_Value;
+}
+/* Product: '<S3>/Inertias 1//J' */
+motor_io_position_new_B.Inertias1J = 1.0 / motor_io_position_new_B.Add2 * motor_io_position_new_B.Add1;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+%<tlcOutputsFcnOfS1B15>\
+%<tlcOutputsFcnOfS1B16>\
+    /* Gain: '<S7>/w1_scaling' */
+    motor_io_position_new_B.w1_scaling = motor_io_position_new_P.w1_scaling_Gain * motor_io_position_new_B.SFunction2;
+    /* Outputs for Triggered SubSystem: '<S7>/DS1104ENC_SET_POS_C1' incorporates:
+ *  TriggerPort: '<S17>/Trigger'
+ */
+    if (%<(LibIsMajorTimeStep())>) {
+        /* Constant: '<S7>/Reset enc' */
+        zcEvent = %<(SLibCG_SE(SLibCGIRZCFcn("RISING_ZERO_CROSSING", "motor_io_position_new_PrevZCX.DS1104ENC_SET_POS_C1_Trig_ZCE", "motor_io_position_new_P.Resetenc_Value", 0)))>;
+        if (zcEvent != NO_ZCEVENT) {
+%<SLibCGIRDumpSystemUserCode(0, "Output", "Header")>\
+%<SLibCGIRDumpSystemUserCode(0, "Output", "Body")>\
+%<tlcOutputsFcnOfS0B0>\
+%<SLibCGIRDumpSystemUserCode(0, "Output", "Trailer")>\
+%<SLibCGIRDumpSystemUserCode(0, "Update", "Header")>\
+%<SLibCGIRDumpSystemUserCode(0, "Update", "Body")>\
+%<SLibCGIRDumpSystemUserCode(0, "Update", "Trailer")>\
+        }
+    }
+    /* End of Outputs for SubSystem: '<S7>/DS1104ENC_SET_POS_C1' */
+%<tlcOutputsFcnOfS1B19>\
+%<tlcOutputsFcnOfS1B20>\
+}
+%<SLibCGIRDumpSystemUserCode(1, "Output", "Trailer")>\
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
