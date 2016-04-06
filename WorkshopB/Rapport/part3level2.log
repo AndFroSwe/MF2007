@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.16)  6 APR 2016 18:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.4)  6 APR 2016 15:57
 entering extended mode
-**./main.tex
-(main.tex
-LaTeX2e <2015/10/01> patch level 2
+**part3level2.tex
+(part3level2.tex
+LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 69 languages loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -20,20 +20,25 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
+
 For additional information on amsmath, use the `?' option.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks14
 \ex@=\dimen103
-)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen104
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count87
@@ -73,31 +78,34 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \mathdisplay@stack=\toks18
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks19
 \inpenc@posthook=\toks20
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2015/09/07 v1.1p UTF-8 support for inputenc
+File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
-File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
+File: t1enc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00AB (decimal 171)
-   defining Unicode char U+00AD (decimal 173)
    defining Unicode char U+00BB (decimal 187)
    defining Unicode char U+00BF (decimal 191)
    defining Unicode char U+00C0 (decimal 192)
@@ -218,10 +226,6 @@ File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+016F (decimal 367)
    defining Unicode char U+0170 (decimal 368)
    defining Unicode char U+0171 (decimal 369)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
    defining Unicode char U+0178 (decimal 376)
    defining Unicode char U+0179 (decimal 377)
    defining Unicode char U+017A (decimal 378)
@@ -229,10 +233,6 @@ File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+017C (decimal 380)
    defining Unicode char U+017D (decimal 381)
    defining Unicode char U+017E (decimal 382)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
    defining Unicode char U+200C (decimal 8204)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
@@ -250,12 +250,11 @@ File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
-File: ot1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
+File: ot1enc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AD (decimal 173)
    defining Unicode char U+00B8 (decimal 184)
    defining Unicode char U+00BF (decimal 191)
    defining Unicode char U+00C5 (decimal 197)
@@ -273,14 +272,6 @@ File: ot1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+0142 (decimal 322)
    defining Unicode char U+0152 (decimal 338)
    defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
    defining Unicode char U+2018 (decimal 8216)
@@ -290,8 +281,9 @@ File: ot1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
 )
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
-File: omsenc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
+File: omsenc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -313,15 +305,19 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2015/08/03 3.9m The Babel package
+
 *************************************
 * Local config file bblopts.cfg used
 *
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
 Language: english 2012/08/20 v3.3p English support from the babel system
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2015/08/03 3.9m Babel common definitions
 \babel@savecnt=\count99
@@ -330,39 +326,51 @@ File: babel.def 2015/08/03 3.9m Babel common definitions
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
-)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count100
 ))
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count101
@@ -377,61 +385,42 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen121
 \Gm@layoutvoffset=\dimen122
 \Gm@dimlist=\toks22
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg")) ("C:\Pro
-gram Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count104
 \float@exts=\toks23
 \float@box=\box28
 \@float@everytoks=\toks24
 \@floatcapt=\box29
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
-Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen123
-\captionmargin@=\dimen124
-\captionwidth=\dimen125
-\caption@tempdima=\dimen126
-\caption@indent=\dimen127
-\caption@parindent=\dimen128
-\caption@hangindent=\dimen129
 )
-\c@ContinuedFloat=\count105
-Package caption Info: float package is loaded.
-)
-\c@subfigure=\count106
-\c@subtable=\count107
-) (main.aux)
-\openout1 = `main.aux'.
+(part3level2.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count108
-\scratchdimen=\dimen130
+\scratchcounter=\count105
+\scratchdimen=\dimen123
 \scratchbox=\box30
-\nofMPsegments=\count109
-\nofMParguments=\count110
+\nofMPsegments=\count106
+\nofMParguments=\count107
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count111
-\MPscratchDim=\dimen131
-\MPnumerator=\count112
-\makeMPintoPDFobject=\count113
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen124
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
 \everyMPtoPDFconversion=\toks26
 )
 *geometry* driver: auto-detecting
@@ -468,153 +457,60 @@ LaTeX Font Info:    ... okay on input line 26.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+LaTeX Font Info:    Try loading font information for U+msa on input line 20.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) <fig/l1_sq_a24_f016_dtuned.png, id=1, 526.96875pt x 395.22656pt>
-File: fig/l1_sq_a24_f016_dtuned.png Graphic file (type png)
-<use fig/l1_sq_a24_f016_dtuned.png>
-Package pdftex.def Info: fig/l1_sq_a24_f016_dtuned.png used on input line 83.
-(pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
-[1
+)
+<fig/task3_1_1000.png, id=1, 1011.78pt x 420.82219pt>
+File: fig/task3_1_1000.png Graphic file (type png)
 
-{C:/Users/Lamn/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] <fig/l1_sq_a
-24_f016.png, id=14, 526.96875pt x 395.22656pt>
-File: fig/l1_sq_a24_f016.png Graphic file (type png)
-<use fig/l1_sq_a24_f016.png>
-Package pdftex.def Info: fig/l1_sq_a24_f016.png used on input line 94.
-(pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
-[2 <./fig/l1_sq_a24_f016_dtuned.png (PNG copy)> <./fig/l1_sq_a24_f016.png (PNG 
-copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 116--129
+<use fig/task3_1_1000.png>
+Package pdftex.def Info: fig/task3_1_1000.png used on input line 37.
+(pdftex.def)             Requested size: 525.23788pt x 218.46278pt.
+File: fig/task3_1_1000.png Graphic file (type png)
+ <use fig/task3_1_1000.png>
+Package pdftex.def Info: fig/task3_1_1000.png used on input line 48.
+(pdftex.def)             Requested size: 525.23788pt x 218.46278pt.
+ [1
 
- []
+{C:/Users/Gabriel/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./fig/tas
+k3_1_1000.png>]
+<fig/task3_3_1000_freq_1700.png, id=12, 1021.56656pt x 395.22656pt>
+File: fig/task3_3_1000_freq_1700.png Graphic file (type png)
 
-<fig/l2_sq_a5_f016_fcTuned.png, id=18, 526.96875pt x 395.22656pt>
-File: fig/l2_sq_a5_f016_fcTuned.png Graphic file (type png)
-<use fig/l2_sq_a5_f016_fcTuned.png>
-Package pdftex.def Info: fig/l2_sq_a5_f016_fcTuned.png used on input line 134.
-(pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
-<fig/l2_sq_a24_f016_fcTuned.png, id=19, 526.96875pt x 395.22656pt>
-File: fig/l2_sq_a24_f016_fcTuned.png Graphic file (type png)
-<use fig/l2_sq_a24_f016_fcTuned.png>
-Package pdftex.def Info: fig/l2_sq_a24_f016_fcTuned.png used on input line 143.
+<use fig/task3_3_1000_freq_1700.png>
+Package pdftex.def Info: fig/task3_3_1000_freq_1700.png used on input line 60.
+(pdftex.def)             Requested size: 525.23788pt x 203.20322pt.
 
-(pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
-<fig/l2_sin_a5_f1.png, id=20, 526.96875pt x 395.22656pt>
-File: fig/l2_sin_a5_f1.png Graphic file (type png)
-<use fig/l2_sin_a5_f1.png>
-Package pdftex.def Info: fig/l2_sin_a5_f1.png used on input line 153.
-(pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
-[3 <./fig/l2_sq_a5_f016_fcTuned.png (PNG copy)> <./fig/l2_sq_a24_f016_fcTuned.p
-ng (PNG copy)>] [4 <./fig/l2_sin_a5_f1.png (PNG copy)>]
-! Double subscript.
-l.215 _
-       \end{equation}
-I treat `x_1_2' essentially like `x_1{}_2'.
+<fig/task3_3_bode.png, id=13, 736.25063pt x 585.68813pt>
+File: fig/task3_3_bode.png Graphic file (type png)
 
-! Missing { inserted.
-<to be read again> 
-                   \gdef 
-l.215 _\end{equation}
-                     
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-! You can't use `\eqno' in math mode.
-\endmathdisplay@a ...\df@tag \@empty \else \veqno 
-                                                  \alt@tag \df@tag \fi \ifx ...
-l.215 _\end{equation}
-                     
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.215 _\end{equation}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
-
- []
-
-<fig/T2_a50_f05.png, id=31, 526.96875pt x 395.22656pt>
-File: fig/T2_a50_f05.png Graphic file (type png)
-<use fig/T2_a50_f05.png>
-Package pdftex.def Info: fig/T2_a50_f05.png used on input line 258.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-<fig/T2_V_a50_f05.png, id=32, 526.96875pt x 395.22656pt>
-File: fig/T2_V_a50_f05.png Graphic file (type png)
-<use fig/T2_V_a50_f05.png>
-Package pdftex.def Info: fig/T2_V_a50_f05.png used on input line 263.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-<fig/T2_a10_f02.png, id=34, 526.96875pt x 395.22656pt>
-File: fig/T2_a10_f02.png Graphic file (type png)
-<use fig/T2_a10_f02.png>
-Package pdftex.def Info: fig/T2_a10_f02.png used on input line 275.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-<fig/T2_V_a10_f02.png, id=35, 526.96875pt x 395.22656pt>
-File: fig/T2_V_a10_f02.png Graphic file (type png)
-<use fig/T2_V_a10_f02.png>
-Package pdftex.def Info: fig/T2_V_a10_f02.png used on input line 280.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-[5 <./fig/T2_a50_f05.png (PNG copy)> <./fig/T2_V_a50_f05.png>] <fig/T2_a10_f02_
-load.png, id=42, 526.96875pt x 395.22656pt>
-File: fig/T2_a10_f02_load.png Graphic file (type png)
-<use fig/T2_a10_f02_load.png>
-Package pdftex.def Info: fig/T2_a10_f02_load.png used on input line 292.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-<fig/T2_V_a10_f02_load.png, id=43, 526.96875pt x 395.22656pt>
-File: fig/T2_V_a10_f02_load.png Graphic file (type png)
-<use fig/T2_V_a10_f02_load.png>
-Package pdftex.def Info: fig/T2_V_a10_f02_load.png used on input line 297.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-[6 <./fig/T2_a10_f02.png (PNG copy)> <./fig/T2_V_a10_f02.png (PNG copy)> <./fig
-/T2_a10_f02_load.png (PNG copy)> <./fig/T2_V_a10_f02_load.png (PNG copy)>] (mai
-n.aux) ) 
+<use fig/task3_3_bode.png>
+Package pdftex.def Info: fig/task3_3_bode.png used on input line 71.
+(pdftex.def)             Requested size: 368.1244pt x 292.84334pt.
+ [2 <./fig/task3_3_1000_freq_1700.png>] [3 <./fig/task3_3_bode.png (PNG copy)>]
+ (part3level2.aux) ) 
 Here is how much of TeX's memory you used:
- 4420 strings out of 493634
- 62848 string characters out of 3141316
- 136436 words of memory out of 3000000
- 7739 multiletter control sequences out of 15000+200000
- 12866 words of font info for 50 fonts, out of 3000000 for 9000
+ 3200 strings out of 493673
+ 40638 string characters out of 3141524
+ 110547 words of memory out of 3000000
+ 6503 multiletter control sequences out of 15000+200000
+ 8890 words of font info for 34 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 42i,8n,40p,270b,443s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx1
-2.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on C:/Users/Lamn/Desktop/MF2007/WorkshopA/Report/main.pdf (6 pag
-es, 445825 bytes).
+ 27i,7n,32p,491b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr8.pfb>
+Output written on part3level2.pdf (3 pages, 141695 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
+ 34 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

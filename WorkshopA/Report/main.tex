@@ -1,3 +1,5 @@
+% Compiler:     pdflatex
+
 \documentclass[12pt,a4paper]{article}
 
 \usepackage{amsmath, amssymb}
@@ -6,6 +8,8 @@
 \usepackage{graphicx}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{float}
+\usepackage{subcaption}
+\usepackage{caption}
 
 \graphicspath{{fig/}}
 
@@ -21,11 +25,9 @@ Andreas Fr\"oderberg \\ 880730-7577
 
 \begin{document}
 \maketitle
-
 \section*{Parameter identification}
 This section covers the methods behind finding the parameters to enter into the
-model to get the biggest similarity to the physical plant.
-
+model to get the biggest similarity to the physical plant
 \subsection*{Level 1}
 To identify the parameters of the DC motor, firstly an idealized model is
 studied theoretically to understand which physical parameters that affect the
@@ -59,7 +61,7 @@ $s=0$ and therefore the steady state gain is given by
     \label{eq:steadystate}
     k (1 + \frac{1}{Rd}).
 \end{equation}
-This contatiains only one unknown parameter. Therefore, to estimate the viscous
+This contains only one unknown parameter. Therefore, to estimate the viscous
 friction parameter $d$, it is suitable to examine and match the steady state
 rotational speed of the real system and the model. Since this model contains no
 static friction which is probably present in the real system, the test is
@@ -71,9 +73,34 @@ constant in Equation (\ref{eq:timeconstant}) only has one unknown, the load
 inertia. This is estimated from taking the time constant from step inputs,
 simulated by a square wave signal. Again, to minimize model disturbances caused
 by the static friction present in the real system, the square wave is run at a
-full 24 V. 
-% INPUT DATA HERE
-% ADD DISCUSSION HERE
+full 24 V.\\
+The tuning can be seen in Figure~\ref{fig:l1_sq_a24_f016_dtuned} and
+Figure~\ref{fig:l1_sq_a24_f016}. In
+Figure~\ref{fig:l1_sq_a24_f016_dtuned}, the model been tuned to take the
+viscous friction into account.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=100mm]{l1_sq_a24_f016_dtuned.png}
+    \caption{Velocity output from the motor and the model when tuned
+t    for viscous friction.}
+    \label{fig:l1_sq_a24_f016_dtuned}
+\end{figure}
+After the viscous friction is modeled, values on the inertia of the
+system is adjusted to fit the real motor. The end result after the
+parameters have been tuned can be seen in
+Figure~\ref{fig:l1_sq_a24_f016}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=100mm]{l1_sq_a24_f016.png}
+    \caption{Velocity output from the motor and the model when tuned for
+    both viscous friction and inertia.}
+    \label{fig:l1_sq_a24_f016}
+\end{figure}
+
+We can clearly see that the model is a much better approximation of the
+real motor after the model parameters have been tuned to fit the
+real motor. Even though they are not perfect, will the model give a good
+sense of the real motor.
 \subsection*{Level 2}
 \label{sub:level_2}
 As could be seen in the earlier friction model, it did not incorporate the
@@ -82,24 +109,57 @@ rotational speed. A model which captures the real behaviour of the system is
 used here, called the Karnop friction model. In addition to the linear friction,
 the static friction is taken into account by adding a stick-slip zone where the
 friction tourque is equal to the applied torque. The model is given by the
-equation
+nequation
 \begin{equation}
     \label{eq:karnop}
     M_f = d \dot{\phi} + F_c sgn(\dot{\phi}),
 \end{equation}
-with the friction torque $M_f$ and the static friction $F_c$. This friction is
-the maximum static friction torque that can be applied in the stick slip zone.
-There is now one more design parameter that needs to be tuned, $F_c$.
-\par
-The linear friction is still most prominent when at high velocities and the
-static friction is the strongest when at low velocities. The inertia is decided
-solely from the rise time and should not differ much from the previous model.
-Firstly, the step response to a 5 V square wave is examined to determine the
-static friction. When the static friction is set, the response to a square wave
-at 24 V is examined and $d$ is adjusted to fit the static friction. A sine of
-low amplitude is then run to test the behaviour around the stick slip area, i.e.
-at low speeds.
+with the friction torque $M_f$ and the static friction $F_c$. This
+friction is the maximum static friction torque that can be applied in
+the stick slip zone.  There is now one more design parameter that needs
+to be tuned, $F_c$.  The linear friction is still most prominent when at
+high velocities and the static friction is the strongest when at low
+velocities. The inertia is decided solely from the rise time and should
+not differ much from the previous model.  Firstly, the step response to
+a 5 V square wave is examined to determine the static friction. When the
+static friction is set, the response to a square wave at 24 V is
+examined and $d$ is adjusted to fit the static friction. A sine of low
+amplitude is then run to test the behaviour around the stick slip area,
+i.e.  at low speeds.\\
 
+In Figure~\ref{fig:l2_sq_a5_f016_fcTuned} the model
+have been tuned for static friction. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=100mm]{l2_sq_a5_f016_fcTuned.png}
+    \caption{Velocity response of motor and model at 5V amplitude when
+    tuned for static friction.}
+    \label{fig:l2_sq_a5_f016_fcTuned}
+\end{figure}
+In Figure~\ref{fig:l2_sq_a24_f016_fcTuned} the amplitude has been
+raised to 24V and the model also have been tuned for static friction.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=100mm]{l2_sq_a24_f016_fcTuned.png}
+    \caption{Velocity response of motor and model at 24V amplitude when
+    tuned for both static and dynamic friction.}
+    \label{fig:l2_sq_a24_f016_fcTuned}
+\end{figure}
+After the model have been tuned, is the model compared to the motor when
+the input is a 5V sine wave which can be seen in
+Figure~\ref{fig:l2_sin_a5_f1}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=100mm]{l2_sin_a5_f1.png}
+    \caption{Velocity response of a sine wave at 5V amplitude of the
+    motor and tuned model}
+    \label{fig:l2_sin_a5_f1}
+\end{figure} 
+The lack of a good model for the static friction made the
+motor in level 1 be much less accurate when changing the amplitude.
+Therefor it had to retuned when a change was made. In level 2 when
+introducing the static friction this has now been improved and the model
+will now give a much better approximation when changing amplitude.
 \section*{Velocity control}
 \label{sec:velocity_control}
 The parameters generated in the previous section are used to design the
@@ -113,7 +173,7 @@ verification of plant model and controller.
 \label{sub:velocity_level_1}
 Controlling the velocity is done with a PI controller. To best control the
 performance, the controller is designed in discrete time. \par
-The thumb rule for sample time of a system states that the system should be
+The rule of thumb for sample time of a system states that the system should be
 sampled at 4-10 times the rise time of the plant in open loop. Using the
 simplified model in \textsc{Matlab} and the commando \texttt{stepinfo}, the rise
 time is extracted and the sampling time is set to 10 times the rise time. \par
@@ -152,7 +212,7 @@ The system is of order one so one closed loop pole given by
 \begin{equation}
     \label{eq:am_vel}
     A_m = z - p_1
-\end{equation}
+_\end{equation}
 is placed with an additional pole given by the observer polynomial 
 \begin{equation}
     \label{eq:ao_vel}
@@ -185,8 +245,62 @@ system is 1. Using the final-value theorem for discrete systems, one yields
     \label{eq:t0_vel}
     t0 = \left (\frac{B}{A_m} \right )^{-1}
 \end{equation}
-evaluated in $z=1$. 
+evaluated in $z=1$. \\
 
+In Figure~\ref{fig:T2_a50_f05:a} is the response from a square wave with
+50 rad/s and 0.5Hz shown. It can also be seen in the plot that the
+steady state error is less than the specified 0.5 rad/s. In
+Figure~\ref{fig:T2_a50_f05:b} the voltage response for the same input is
+ploted.
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_a50_f05.png}
+    \caption{Velocity response }
+    \label{fig:T2_a50_f05:a}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_V_a50_f05.png}
+    \caption{Voltage response }
+    \label{fig:T2_a50_f05:b}
+  \end{subfigure}
+  \caption{Response for square wave 50 rad/s and 0.5Hz}
+  \label{fig:T2_a50_f05}
+\end{figure}
+In Figure~\ref{fig:T2_a10_f02:a} is the response from input of
+$\varphi_{ref}=10sin(2\phi 0.2t)$ shown.
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_a10_f02.png}
+    \caption{Velocity response }
+    \label{fig:T2_a10_f02:a}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_V_a10_f02.png}
+    \caption{Voltage response }
+    \label{fig:T2_a10_f02:b}
+  \end{subfigure}
+  \caption{Response for sine wave 10 rad/s and 0.2Hz}
+  \label{fig:T2_a10_f02}
+\end{figure}
+In Figure~\ref{fig:T2_a10_f02_load:a} is the response from input of
+$\varphi_{ref}=10sin(2\pi 0.2t)$ with added torque by holding it shown.
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_a10_f02_load.png}
+    \caption{Velocity response }
+    \label{fig:T2_a10_f02_load:a}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_V_a10_f02_load.png}
+    \caption{Voltage response }
+    \label{fig:T2_a10_f02_load:b}
+  \end{subfigure}
+  \caption{Response for sine wave 10 rad/s and 0.2Hz}
+  \label{fig:T2_a10_f02_load}
+\end{figure}
 
 
 \end{document}
