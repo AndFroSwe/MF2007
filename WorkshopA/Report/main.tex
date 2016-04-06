@@ -1,3 +1,5 @@
+% Compiler:     pdflatex
+
 \documentclass[12pt,a4paper]{article}
 
 \usepackage{amsmath, amssymb}
@@ -21,10 +23,10 @@ Andreas Fr\"oderberg \\ 880730-7577
 
 \begin{document}
 \maketitle
-
+http://www.hemnet.se/bostad/villa-7rum-segerstad-karlstads-kommun-karra-310-8630315
 \section*{Parameter identification}
 This section covers the methods behind finding the parameters to enter into the
-model to get the biggest similarity to the physical plant.
+model to get the biggest similarity to the physical plant.http://www.hemnet.se/bostad/villa-7rum-segerstad-karlstads-kommun-karra-310-8630315
 
 \subsection*{Level 1}
 To identify the parameters of the DC motor, firstly an idealized model is
@@ -71,9 +73,35 @@ constant in Equation (\ref{eq:timeconstant}) only has one unknown, the load
 inertia. This is estimated from taking the time constant from step inputs,
 simulated by a square wave signal. Again, to minimize model disturbances caused
 by the static friction present in the real system, the square wave is run at a
-full 24 V. 
-% INPUT DATA HERE
-% ADD DISCUSSION HERE
+full 24 V.\\
+
+The tuning can be seen in Figure~\ref{fig:l1_sq_a24_f016_dtuned} and
+Figure~\ref{fig:l1_sq_a24_f016}. In
+Figure~\ref{fig:l1_sq_a24_f016_dtuned}, the model been tuned to take the
+viscous friction into account.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=100mm]{l1_sq_a24_f016_dtuned.png}
+    \caption{Velocity output from the motor and the model when tuned
+t    for viscous friction.}
+    \label{fig:l1_sq_a24_f016_dtuned}
+\end{figure}
+After the viscous friction is modeled, values on the inertia of the
+system is adjusted to fit the real motor. The end result after the
+parameters have been tuned can be seen in
+Figure~\ref{fig:l1_sq_a24_f016}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=100mm]{l1_sq_a24_f016.png}
+    \caption{Velocity output from the motor and the model when tuned for
+    both viscous friction and inertia.}
+    \label{fig:l1_sq_a24_f016}
+\end{figure}
+
+We can clearly see that the model is a much better approximation of the
+real motor after the model parameters have been tuned to fit the
+real motor. Even though they are not perfect, will the model give a good
+sense of the real motor.
 \subsection*{Level 2}
 \label{sub:level_2}
 As could be seen in the earlier friction model, it did not incorporate the
@@ -82,24 +110,57 @@ rotational speed. A model which captures the real behaviour of the system is
 used here, called the Karnop friction model. In addition to the linear friction,
 the static friction is taken into account by adding a stick-slip zone where the
 friction tourque is equal to the applied torque. The model is given by the
-equation
+nequation
 \begin{equation}
     \label{eq:karnop}
     M_f = d \dot{\phi} + F_c sgn(\dot{\phi}),
 \end{equation}
-with the friction torque $M_f$ and the static friction $F_c$. This friction is
-the maximum static friction torque that can be applied in the stick slip zone.
-There is now one more design parameter that needs to be tuned, $F_c$.
-\par
-The linear friction is still most prominent when at high velocities and the
-static friction is the strongest when at low velocities. The inertia is decided
-solely from the rise time and should not differ much from the previous model.
-Firstly, the step response to a 5 V square wave is examined to determine the
-static friction. When the static friction is set, the response to a square wave
-at 24 V is examined and $d$ is adjusted to fit the static friction. A sine of
-low amplitude is then run to test the behaviour around the stick slip area, i.e.
-at low speeds.
+with the friction torque $M_f$ and the static friction $F_c$. This
+friction is the maximum static friction torque that can be applied in
+the stick slip zone.  There is now one more design paameter that needs
+to be tuned, $F_c$.  The linear friction is still most prominent when at
+high velocities and the static friction is the strongest when at low
+velocities. The inertia is decided solely from the rise time and should
+not differ much from the previous model.  Firstly, the step response to
+a 5 V square wave is examined to determine the static friction. When the
+static friction is set, the response to a square wave at 24 V is
+examined and $d$ is adjusted to fit the static friction. A sine of low
+amplitude is then run to test the behaviour around the stick slip area,
+i.e.  at low speeds.\\
 
+In Figure~\ref{fig:l2_sq_a5_f016_fcTuned} the model
+have been tuned for static friction. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=100mm]{l2_sq_a5_f016_fcTuned.png}
+    \caption{Velocity response of motor and model at 5V amplitude when
+    tuned for static friction.}
+    \label{fig:l2_sq_a5_f016_fcTuned}
+\end{figure}
+In Figure~\ref{fig:l2_sq_a24_f016_fcTuned} the amplitude has been
+raised to 24V and the model also have been tuned for static friction.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=100mm]{l2_sq_a24_f016_fcTuned.png}
+    \caption{Velocity response of motor and model at 24V amplitude when
+    tuned for both static and dynamic friction.}
+    \label{fig:l2_sq_a24_f016_fcTuned}
+\end{figure}
+After the model have been tuned, is the model compared to the motor when
+the input is a 5V sine wave which can be seen in
+Figure~\ref{fig:l2_sin_a5_f1}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=100mm]{l2_sin_a5_f1.png}
+    \caption{Velocity response of a sine wave at 5V amplitude of the
+    motor and tuned model}
+    \label{fig:l2_sin_a5_f1}
+\end{figure} 
+The lack of a good model for the static friction made the
+motor in level 1 be much less accurate when changing the amplitude.
+Therefor it had to retuned when a change was made. In level 2 when
+introducing the static friction this has now been improved and the model
+will now give a much better approximation when changing amplitude.
 \section*{Velocity control}
 \label{sec:velocity_control}
 The parameters generated in the previous section are used to design the
@@ -124,7 +185,7 @@ earlier.The new sytem matrices are given by the equations
 \begin{equation}
     \label{eq:phi}
     \Phi = e^{AT_s}
-\end{equation}
+\end{equation}http://www.hemnet.se/bostad/villa-7rum-segerstad-karlstads-kommun-karra-310-8630315
 and 
 \begin{equation}
     \label{eq:gamma}
