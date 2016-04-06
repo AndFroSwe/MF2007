@@ -1,17 +1,32 @@
 % vim:tw=72 sw=2 ft=tex
-%         File: main.tex
-% Date Created: 2016 Apr 05
-%  Last Change: 2016 Apr 05
 %     Compiler: pdflatex
-%       Author: Lamn
 \documentclass[12pt,a4paper]{article}
 \usepackage{amsmath, amssymb}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{graphicx}
+\usepackage{float}
+
+\graphicspath{{./fig/}}
+
+\title{MF2007 - Workshop B}
+
+\author{
+Adam Lang \\ 861110-3956
+\and
+Gabriel Andersson Santiago \\ 910706-4538
+\and 
+Andreas Fr\"oderberg \\ 880730-7577
+}
 
 \begin{document}
-
+\maketitle
+\section*{Task 1}
+  \input{part1}
+\section*{Task 2: Writing Controller Code}
+  \input{part2}
+\section*{Task 3: Robustness to parameter uncertainty and sensor noise}
+  \input{part3}
 
 \end{document}

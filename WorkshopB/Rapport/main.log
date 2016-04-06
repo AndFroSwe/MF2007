@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.4)  5 APR 2016 13:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.4)  5 APR 2016 20:28
 entering extended mode
 **main.tex
 (main.tex
@@ -366,45 +366,109 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
 )
-(main.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
-\scratchdimen=\dimen115
-\scratchbox=\box28
-\nofMPsegments=\count102
-\nofMParguments=\count103
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count104
-\MPscratchDim=\dimen116
-\MPnumerator=\count105
-\makeMPintoPDFobject=\count106
-\everyMPtoPDFconversion=\toks23
-) (main.aux) ) 
-Here is how much of TeX's memory you used:
- 2781 strings out of 493673
- 32705 string characters out of 3141524
- 91763 words of memory out of 3000000
- 6125 multiletter control sequences out of 15000+200000
- 4702 words of font info for 16 fonts, out of 3000000 for 9000
- 1025 hyphenation exceptions out of 8191
- 27i,1n,26p,227b,38s stack positions out of 5000i,500n,10000p,200000b,50000s
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count101
+\float@exts=\toks22
+\float@box=\box28
+\@float@everytoks=\toks23
+\@floatcapt=\box29
+) (main.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
-No pages of output.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count102
+\scratchdimen=\dimen115
+\scratchbox=\box30
+\nofMPsegments=\count103
+\nofMParguments=\count104
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen116
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
+\everyMPtoPDFconversion=\toks25
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 24.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (part1.tex)
+(part2.tex <./fig/task2_traj.png, id=1, 1626.075pt x 975.645pt>
+File: ./fig/task2_traj.png Graphic file (type png)
+
+<use ./fig/task2_traj.png>
+Package pdftex.def Info: ./fig/task2_traj.png used on input line 21.
+(pdftex.def)             Requested size: 390.0pt x 233.99582pt.
+ [1
+
+{C:/Users/Gabriel/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] <./fig/ta
+sk2_position.png, id=11, 1626.075pt x 975.645pt>
+File: ./fig/task2_position.png Graphic file (type png)
+
+<use ./fig/task2_position.png>
+Package pdftex.def Info: ./fig/task2_position.png used on input line 32.
+(pdftex.def)             Requested size: 390.0pt x 233.99582pt.
+ [2 <./fig/task2_traj.png (PNG copy)> <./fig/task2_position.png (PNG copy)>]
+<./fig/task2_closeup.png, id=15, 1626.075pt x 975.645pt>
+File: ./fig/task2_closeup.png Graphic file (type png)
+
+<use ./fig/task2_closeup.png>
+Package pdftex.def Info: ./fig/task2_closeup.png used on input line 43.
+(pdftex.def)             Requested size: 390.0pt x 233.99582pt.
+) (part3.tex
+<./fig/plot31org.png, id=16, 526.96875pt x 395.22656pt>
+File: ./fig/plot31org.png Graphic file (type png)
+
+<use ./fig/plot31org.png>
+Package pdftex.def Info: ./fig/plot31org.png used on input line 19.
+(pdftex.def)             Requested size: 390.0pt x 292.5113pt.
+ [3 <./fig/task2_closeup.png (PNG copy)>]
+<./fig/plot31fast.png, id=24, 526.96875pt x 395.22656pt>
+File: ./fig/plot31fast.png Graphic file (type png)
+
+<use ./fig/plot31fast.png>
+Package pdftex.def Info: ./fig/plot31fast.png used on input line 27.
+(pdftex.def)             Requested size: 390.0pt x 292.5113pt.
+ [4 <./fig/plot31org.png (PNG copy)>]) [5 <./fig/plot31fast.png (PNG copy)>] (m
+ain.aux) ) 
+Here is how much of TeX's memory you used:
+ 2950 strings out of 493673
+ 35188 string characters out of 3141524
+ 95288 words of memory out of 3000000
+ 6248 multiletter control sequences out of 15000+200000
+ 15508 words of font info for 49 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 27i,8n,26p,622b,272s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Gabriel\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecrm1200.pk> <C:\Users\Gabriel\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
+ur\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Gabriel\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Gabriel\AppData\Local\
+MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Gabriel\Ap
+pData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+Output written on main.pdf (5 pages, 281657 bytes).
 PDF statistics:
- 0 PDF objects out of 1000 (max. 8388607)
+ 183 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
