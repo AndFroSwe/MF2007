@@ -87,7 +87,7 @@ y2 = sq_amp24_freq016_d_J_tuned.Y(:,2);
 figure
 plot(x.Data,y2.Data,x.Data,y1.Data)
 legend('Real','Model')
-title('Square Wave amp: 24V, freq: 0.16Hz, J-tuned')
+title('Square Wave amp: 24V, freq: 0.16Hz, J&d-tuned')
 ylabel('Velocity')
 xlabel('Time')
 
@@ -102,7 +102,7 @@ y2 = sq_amp24_freq016_d_tuned.Y(:,2);
 figure
 plot(x.Data,y2.Data,x.Data,y1.Data)
 legend('Real','Model')
-title('Square Wave amp: 24V, freq: 0.16Hz, tuned')
+title('Square Wave amp: 24V, freq: 0.16Hz, d-tuned')
 ylabel('Velocity')
 xlabel('Time')
 
