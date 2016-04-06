@@ -1,0 +1,102 @@
+-- ******** Tunable Parameters ************************************************
+
+group "Tunable Parameters"
+{
+ flags: COLLAPSED
+}
+
+	p_1_motor_io_real_T_0[0]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "F_c"
+	 flags:   PARAM
+	}
+	p_1_motor_io_real_T_0[1]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "F_c_upper"
+	 flags:   PARAM
+	}
+	p_1_motor_io_real_T_0[2]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "J1"
+	 flags:   PARAM
+	}
+
+endgroup
+
+
+-- ******** State Machine Data ************************************************
+
+group "State Machine Data"
+{
+ flags: COLLAPSED
+}
+
+
+endgroup
+
+
+-- ******** Data Store Memories ***********************************************
+
+-- No Data Store Memories within the model.
+
+
+-- ******** Labels ************************************************************
+
+group "Labels"
+{
+ flags: COLLAPSED
+}
+	p_0_motor_io_boolean_T_1[1]
+	{
+	 type:    uint(8)*
+	 alias:   "Activator"
+	 bitmask: 0x01
+	 range:   < 0 ; 1 >
+	 origin:  "motor_io/DC motor/Karnop friction1/Velocity threshold\n/y"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_real_T_0[17]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "Friction"
+	 origin:  "motor_io/DC motor/Karnop friction1/Switch/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_real_T_0[11]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "Stick slip region\n"
+	 origin:  "motor_io/DC motor/Karnop friction1/Saturate to Fc/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_real_T_0[7]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "Velocity"
+	 origin:  "motor_io/DC motor/Karnop friction1/Angular \nvelcoity/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_real_T_0[16]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "Viscous region"
+	 origin:  "motor_io/DC motor/Karnop friction1/Add/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_real_T_0[3]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "Volt"
+	 origin:  "motor_io/PWM/Saturation/Out1"
+	 flags:   LABEL|READONLY
+	}
+
+endgroup
+
+-- ******** RTT Dynamic Variables *********************************************
+
+-- Generation of RTT Dynamic Variables turned off with EnableRealTimeTesting option.
+

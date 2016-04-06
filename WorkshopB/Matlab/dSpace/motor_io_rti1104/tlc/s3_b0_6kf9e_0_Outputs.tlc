@@ -1,0 +1,170 @@
+%implements s3_b0_6kf9e_0_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+real_T velocity;
+real_T position;
+real_T voltFollowing;
+real_T err;
+real_T t1;
+int32_T out2;
+int32_T out3;
+int32_T out4;
+%closefile localVarDecl
+/* MATLAB Function 'Traject_and_Model_function 1': '<S4>:1' */
+/*  PERSISTENT VARIABLES */
+/* Update "time" */
+if (rtu_reset == 1.0) {
+    /* '<S4>:1:29' */
+    /* '<S4>:1:33' */
+    localDW->time = 0.0;
+}
+if (rtu_rs_in != localDW->rs) {
+    /* '<S4>:1:35' */
+    /* '<S4>:1:39' */
+    localDW->oldPos = 0.0;
+    /* '<S4>:1:40' */
+    localDW->oldVel = 0.0;
+    /* '<S4>:1:41' */
+    /* '<S4>:1:42' */
+    localDW->time = 0.0;
+}
+/* '<S4>:1:44' */
+localDW->rs = rtu_rs_in;
+/*  Trajectory Planner Variables */
+/* '<S4>:1:47' */
+/*  252; */
+/* '<S4>:1:49' */
+/* 369; */
+/* '<S4>:1:50' */
+/* '<S4>:1:51' */
+t1 = sqrt(localDW->rs / 255.0);
+/* '<S4>:1:53' */
+/* '<S4>:1:54' */
+/* Initial Value block */
+/* '<S4>:1:57' */
+/* %<"\%SIGNAL GENERATOR"> */
+/* Reset to 0 at t1 block */
+/* '<S4>:1:60' */
+out2 = 0;
+if (localDW->time >= t1) {
+    /* '<S4>:1:61' */
+    /* '<S4>:1:62' */
+    out2 = -255;
+}
+/* retardation at t2 block */
+/* '<S4>:1:66' */
+out3 = 0;
+if (localDW->time >= t1) {
+    /* '<S4>:1:67' */
+    /* '<S4>:1:68' */
+    out3 = -255;
+}
+/*  Reset at t3 block */
+/* '<S4>:1:72' */
+out4 = 255;
+if (localDW->time >= t1 + t1) {
+    /* '<S4>:1:73' */
+    /* '<S4>:1:74' */
+    out4 = 510;
+}
+/* '<S4>:1:77' */
+out2 = (out2 + out3) + out4;
+/* '<S4>:1:78' */
+/* %<"\% INTEGRATOR PARTS"> */
+/* For velocity */
+/* '<S4>:1:81' */
+velocity = (real_T)(out2 + out2) * 0.01 / 2.0 + localDW->oldVel;
+/* '<S4>:1:82' */
+localDW->oldVel = velocity;
+/* For position */
+/* '<S4>:1:85' */
+position = (velocity + localDW->oldVel) * 0.01 / 2.0 + localDW->oldPos;
+/* '<S4>:1:87' */
+localDW->oldPos = position;
+/* %<"\% MODEL FOLLOWING PART"> */
+/*  Model Following variables */
+/* %<"\% Input Acceleration Part"> */
+/* '<S4>:1:100' */
+/* %<"\% Input Velocity Part"> */
+/* '<S4>:1:104' */
+/* '<S4>:1:105' */
+/* %<"\%Output"> */
+/* '<S4>:1:109' */
+voltFollowing = ((real_T)out2 * 2.4745999999999997E-5 + velocity * 1.0E-5) * 112.0 / 0.0697 + velocity * 0.0697;
+/* %<"\% PID CONTROLLER"> */
+/*  PERSISTENT VARIABLES */
+/*  PID parameters */
+/*  Error */
+/* '<S4>:1:138' */
+err = position - rtu_feedback;
+/* %<"\%PID"> */
+/* '<S4>:1:141' */
+t1 = (((1348.0 * err + -1899.0 * localDW->oldErr) + 692.0 * localDW->olderErr) + 0.89 * localDW->olderPIDVolt) - -0.10999999999999999 * localDW->oldPIDVolt;
+/* '<S4>:1:142' */
+localDW->olderPIDVolt = localDW->oldPIDVolt;
+/* '<S4>:1:143' */
+localDW->oldPIDVolt = t1;
+/* '<S4>:1:144' */
+localDW->olderErr = localDW->oldErr;
+/* '<S4>:1:145' */
+localDW->oldErr = err;
+/* %<"\% OUTPUT"> */
+/* '<S4>:1:148' */
+t1 += voltFollowing;
+if (t1 >= 24.0) {
+    /* '<S4>:1:150' */
+    /* '<S4>:1:151' */
+    t1 = 24.0;
+} else {
+    if (t1 <= -24.0) {
+        /* '<S4>:1:152' */
+        /* '<S4>:1:153' */
+        t1 = -24.0;
+    }
+}
+/* '<S4>:1:157' */
+localDW->time += 0.01;
+localB->acceleration = out2;
+localB->velocity = velocity;
+localB->position = position;
+localB->voltFollowing = voltFollowing;
+localB->volt = t1;
+localB->err = err;
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, SLibSystemFcnPeriodicRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(0, 1, 0)>
+%endif
+%if SLibCG_ArgAccessed(0, 1, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, SLibSystemFcnPeriodicRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface))
+%<SLibCG_UndoAccessArg(0, 1, 0)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void mot_Traject_and_Model_function1(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 1, 0)
+%<comma>%<tSimStructType> * const %<tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>real_T rtu_reset\
+%assign comma = ", "
+%<comma>real_T rtu_rs_in\
+%assign comma = ", "
+%<comma>real_T rtu_feedback\
+%assign comma = ", "
+%<comma>B_Traject_and_Model_function1_T *localB\
+%assign comma = ", "
+%<comma>DW_Traject_and_Model_function_T *localDW\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction

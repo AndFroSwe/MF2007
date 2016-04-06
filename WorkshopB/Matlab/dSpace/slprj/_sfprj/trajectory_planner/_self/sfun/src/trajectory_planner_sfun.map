@@ -1,0 +1,766 @@
+ trajectory_planner_sfun
+
+ Timestamp is 57052e53 (Wed Apr 06 17:42:11 2016)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0001f064H .text                   CODE
+ 0002:00000000 0000023cH .idata$5                DATA
+ 0002:0000023c 00000004H .CRT$XCA                DATA
+ 0002:00000240 00000004H .CRT$XCZ                DATA
+ 0002:00000244 00000004H .CRT$XIA                DATA
+ 0002:00000248 00000004H .CRT$XIAA               DATA
+ 0002:0000024c 00000004H .CRT$XIC                DATA
+ 0002:00000250 00000004H .CRT$XIZ                DATA
+ 0002:00000258 00000788H .rdata                  DATA
+ 0002:000009e0 00000004H .rdata$sxdata           DATA
+ 0002:000009e4 00000004H .rtc$IAA                DATA
+ 0002:000009e8 00000004H .rtc$IZZ                DATA
+ 0002:000009ec 00000004H .rtc$TAA                DATA
+ 0002:000009f0 00000004H .rtc$TZZ                DATA
+ 0002:000009f8 00000064H .xdata$x                DATA
+ 0002:00000a5c 0000008cH .idata$2                DATA
+ 0002:00000ae8 00000014H .idata$3                DATA
+ 0002:00000afc 0000023cH .idata$4                DATA
+ 0002:00000d38 00000c6eH .idata$6                DATA
+ 0002:000019b0 0000005dH .edata                  DATA
+ 0003:00000000 00009140H .data                   DATA
+ 0003:00009140 00000458H .bss                    DATA
+
+  Address         Publics by Value              Rva+Base       Lib:Object
+
+ 0000:00000000       __except_list              00000000     <absolute>
+ 0000:00000001       ___safe_se_handler_count   00000001     <absolute>
+ 0000:00009876       __fltused                  00009876     <absolute>
+ 0000:00009876       __ldused                   00009876     <absolute>
+ 0000:00000000       ___ImageBase               10000000     <linker-defined>
+ 0001:00000000       _trajectory_planner_initializer 10001000 f   trajectory_planner_sfun.obj
+ 0001:00000010       _trajectory_planner_terminator 10001010 f   trajectory_planner_sfun.obj
+ 0001:00000020       _sf_trajectory_planner_method_dispatcher 10001020 f   trajectory_planner_sfun.obj
+ 0001:00000090       _sf_trajectory_planner_uses_exported_functions 10001090 f   trajectory_planner_sfun.obj
+ 0001:000000b0       _sf_trajectory_planner_process_check_sum_call 100010b0 f   trajectory_planner_sfun.obj
+ 0001:00000480       _sf_trajectory_planner_autoinheritance_info 10001480 f   trajectory_planner_sfun.obj
+ 0001:00000620       _sf_trajectory_planner_get_eml_resolved_functions_info 10001620 f   trajectory_planner_sfun.obj
+ 0001:00000770       _sf_trajectory_planner_third_party_uses_info 10001770 f   trajectory_planner_sfun.obj
+ 0001:00000900       _sf_trajectory_planner_jit_fallback_info 10001900 f   trajectory_planner_sfun.obj
+ 0001:00000a90       _sf_trajectory_planner_updateBuildInfo_args_info 10001a90 f   trajectory_planner_sfun.obj
+ 0001:00000c20       _sf_trajectory_planner_get_post_codegen_info 10001c20 f   trajectory_planner_sfun.obj
+ 0001:00000d20       _trajectory_planner_debug_initialize 10001d20 f   trajectory_planner_sfun.obj
+ 0001:00000d80       _trajectory_planner_register_exported_symbols 10001d80 f   trajectory_planner_sfun.obj
+ 0001:00000d90       _load_trajectory_planner_optimization_info 10001d90 f   trajectory_planner_sfun.obj
+ 0001:00000dd0       _unload_trajectory_planner_optimization_info 10001dd0 f   trajectory_planner_sfun.obj
+ 0001:00000e00       _sf_c1_trajectory_planner_get_eml_resolved_functions_info 10001e00 f   c1_trajectory_planner.obj
+ 0001:00003520       _sf_c1_trajectory_planner_get_check_sum 10004520 f   c1_trajectory_planner.obj
+ 0001:00003580       _sf_c1_trajectory_planner_get_autoinheritance_info 10004580 f   c1_trajectory_planner.obj
+ 0001:000039b0       _sf_c1_trajectory_planner_third_party_uses_info 100049b0 f   c1_trajectory_planner.obj
+ 0001:000039d0       _sf_c1_trajectory_planner_jit_fallback_info 100049d0 f   c1_trajectory_planner.obj
+ 0001:00003a80       _sf_c1_trajectory_planner_updateBuildInfo_args_info 10004a80 f   c1_trajectory_planner.obj
+ 0001:00003aa0       _sf_c1_trajectory_planner_get_post_codegen_info 10004aa0 f   c1_trajectory_planner.obj
+ 0001:00003b40       _c1_trajectory_planner_method_dispatcher 10004b40 f   c1_trajectory_planner.obj
+ 0001:000056c0       _sf_c3_trajectory_planner_get_eml_resolved_functions_info 100066c0 f   c3_trajectory_planner.obj
+ 0001:000083c0       _sf_c3_trajectory_planner_get_check_sum 100093c0 f   c3_trajectory_planner.obj
+ 0001:00008420       _sf_c3_trajectory_planner_get_autoinheritance_info 10009420 f   c3_trajectory_planner.obj
+ 0001:00008ec0       _sf_c3_trajectory_planner_third_party_uses_info 10009ec0 f   c3_trajectory_planner.obj
+ 0001:00008ee0       _sf_c3_trajectory_planner_jit_fallback_info 10009ee0 f   c3_trajectory_planner.obj
+ 0001:00008f90       _sf_c3_trajectory_planner_updateBuildInfo_args_info 10009f90 f   c3_trajectory_planner.obj
+ 0001:00008fb0       _sf_c3_trajectory_planner_get_post_codegen_info 10009fb0 f   c3_trajectory_planner.obj
+ 0001:00009050       _c3_trajectory_planner_method_dispatcher 1000a050 f   c3_trajectory_planner.obj
+ 0001:0000fd70       _sf_c4_trajectory_planner_get_eml_resolved_functions_info 10010d70 f   c4_trajectory_planner.obj
+ 0001:00012a70       _sf_c4_trajectory_planner_get_check_sum 10013a70 f   c4_trajectory_planner.obj
+ 0001:00012ad0       _sf_c4_trajectory_planner_get_autoinheritance_info 10013ad0 f   c4_trajectory_planner.obj
+ 0001:00013350       _sf_c4_trajectory_planner_third_party_uses_info 10014350 f   c4_trajectory_planner.obj
+ 0001:00013370       _sf_c4_trajectory_planner_jit_fallback_info 10014370 f   c4_trajectory_planner.obj
+ 0001:00013420       _sf_c4_trajectory_planner_updateBuildInfo_args_info 10014420 f   c4_trajectory_planner.obj
+ 0001:00013440       _sf_c4_trajectory_planner_get_post_codegen_info 10014440 f   c4_trajectory_planner.obj
+ 0001:000134e0       _c4_trajectory_planner_method_dispatcher 100144e0 f   c4_trajectory_planner.obj
+ 0001:00019480       _sf_process_check_sum_call 1001a480 f   trajectory_planner_sfun_registry.obj
+ 0001:000194b0       _sf_process_machine_uses_exported_functions_call 1001a4b0 f   trajectory_planner_sfun_registry.obj
+ 0001:000195b0       _sf_process_autoinheritance_call 1001a5b0 f   trajectory_planner_sfun_registry.obj
+ 0001:000196f0       _sf_process_get_third_party_uses_info_call 1001a6f0 f   trajectory_planner_sfun_registry.obj
+ 0001:00019830       _sf_process_get_jit_fallback_info_call 1001a830 f   trajectory_planner_sfun_registry.obj
+ 0001:00019970       _sf_process_get_updateBuildInfo_args_info_call 1001a970 f   trajectory_planner_sfun_registry.obj
+ 0001:00019ab0       _sf_process_get_eml_resolved_functions_info_call 1001aab0 f   trajectory_planner_sfun_registry.obj
+ 0001:00019bd0       _sf_process_get_post_codegen_info 1001abd0 f   trajectory_planner_sfun_registry.obj
+ 0001:00019cd0       _sf_mex_unlock_call        1001acd0 f   trajectory_planner_sfun_registry.obj
+ 0001:00019d60       _sf_machine_global_initializer_called 1001ad60 f   trajectory_planner_sfun_registry.obj
+ 0001:00019d80       _sf_machine_global_method_dispatcher 1001ad80 f   trajectory_planner_sfun_registry.obj
+ 0001:00019dc0       _sf_machine_global_terminator 1001adc0 f   trajectory_planner_sfun_registry.obj
+ 0001:00019e00       _sf_register_machine_exported_symbols 1001ae00 f   trajectory_planner_sfun_registry.obj
+ 0001:00019e20       _callCustomFcn             1001ae20 f   trajectory_planner_sfun_registry.obj
+ 0001:00019e30       _sf_machine_global_initializer 1001ae30 f   trajectory_planner_sfun_registry.obj
+ 0001:00019ea0       _mdlGetSimState            1001aea0 f   trajectory_planner_sfun_registry.obj
+ 0001:00019f00       _mdlSetSimState            1001af00 f   trajectory_planner_sfun_registry.obj
+ 0001:00019f30       __ssSetStateAbsTol         1001af30 f   trajectory_planner_sfun_registry.obj
+ 0001:00019fd0       __ssGetAbsTol              1001afd0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a020       __ssSetInputPortMatrixDimensions 1001b020 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a0d0       __ssSetOutputPortMatrixDimensions 1001b0d0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a180       __ssSetInputPortVectorDimension 1001b180 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a200       __ssSetOutputPortVectorDimension 1001b200 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a280       _ssIsRunTimeParamTunable   1001b280 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a2e0       _ssGetSFuncBlockHandle     1001b2e0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a330       __ssGetCurrentInputPortWidth 1001b330 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a400       __ssGetCurrentOutputPortWidth 1001b400 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a4d0       __ssGetCallSystemNumFcnCallDestinations 1001b4d0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a530       _ssWarning                 1001b530 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a610       _ssGetIsZeroCrossControlDisabled 1001b610 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a670       _ssSetIsInputPortUsedForContZcSignal 1001b670 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a6c0       _ssSetZcSignalIsZcElementDisc 1001b6c0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a740       _ssSetZcSignalName         1001b740 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a790       _ssSetZcSignalWidth        1001b790 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a7e0       _ssSetZcSignalZcEventType  1001b7e0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a830       _ssSetZcSignalType         1001b830 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a880       _ssSetZcSignalZcTol        1001b880 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a8d0       _ssSetZcSignalNeedsEventNotification 1001b8d0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a920       _ssCreateAndAddZcSignalInfo 1001b920 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a980       _ssCloneAndAddZcSignalInfo 1001b980 f   trajectory_planner_sfun_registry.obj
+ 0001:0001a9e0       _ssGetNumZcSignals         1001b9e0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001aa40       _ssGetZcSignalVector       1001ba40 f   trajectory_planner_sfun_registry.obj
+ 0001:0001aaa0       _ssGetZcSignalZcEvents     1001baa0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001ab00       _ssGetZcSignalName         1001bb00 f   trajectory_planner_sfun_registry.obj
+ 0001:0001ab60       _ssGetZcSignalWidth        1001bb60 f   trajectory_planner_sfun_registry.obj
+ 0001:0001abc0       _ssGetZcSignalZcEventType  1001bbc0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001ac20       _ssGetZcSignalType         1001bc20 f   trajectory_planner_sfun_registry.obj
+ 0001:0001ac80       _ssGetZcSignalZcTol        1001bc80 f   trajectory_planner_sfun_registry.obj
+ 0001:0001ace0       _ssGetZcSignalNeedsEventNotification 1001bce0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001ad40       _ssGetZcSignalIsZcElementDisc 1001bd40 f   trajectory_planner_sfun_registry.obj
+ 0001:0001adc0       _ssGetIsInputPortElementContinuous 1001bdc0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001ae40       __ssGetInputPortSignalPtrsFcn 1001be40 f   trajectory_planner_sfun_registry.obj
+ 0001:0001b040       __ssGetInputPortSignalFcn  1001c040 f   trajectory_planner_sfun_registry.obj
+ 0001:0001b1d0       __ssSetInputPortDirectFeedThroughFcn 1001c1d0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001b300       __ssSetInputPortReusableFcn 1001c300 f   trajectory_planner_sfun_registry.obj
+ 0001:0001b390       __ssSetOutputPortReusableFcn 1001c390 f   trajectory_planner_sfun_registry.obj
+ 0001:0001b420       _ssGetDTypeIdFromMxArray   1001c420 f   trajectory_planner_sfun_registry.obj
+ 0001:0001b510       _ssWriteRTWStr             1001c510 f   trajectory_planner_sfun_registry.obj
+ 0001:0001b550       _ssWriteRTWMxVectParam     1001c550 f   trajectory_planner_sfun_registry.obj
+ 0001:0001b590       _ssWriteRTWMx2dMatParam    1001c590 f   trajectory_planner_sfun_registry.obj
+ 0001:0001b5d0       _ssWriteRTWNameValuePair   1001c5d0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001b940       _ssWriteRTWParameters      1001c940 f   trajectory_planner_sfun_registry.obj
+ 0001:0001bce0       _ssWriteRTWParamSettings   1001cce0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001c190       _ssWriteRTWWorkVect        1001d190 f   trajectory_planner_sfun_registry.obj
+ 0001:0001c520       _mexFunction               1001d520 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e300       _ProcessMexSfunctionEveryCall 1001f300 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e41e       _sf_debug_set_machine_data_thresholds 1001f41e f   sf_runtime:sf_runtime.dll
+ 0001:0001e424       _sf_debug_set_machine_event_thresholds 1001f424 f   sf_runtime:sf_runtime.dll
+ 0001:0001e42a       _sf_debug_initialize_machine 1001f42a f   sf_runtime:sf_runtime.dll
+ 0001:0001e430       _sf_load_rtw_optimization_info 1001f430 f   sf_runtime:sf_runtime.dll
+ 0001:0001e436       _sf_mex_emlrtNameCapturePostProcessR2012a 1001f436 f   sf_runtime:sf_runtime.dll
+ 0001:0001e43c       _sf_mex_assign             1001f43c f   sf_runtime:sf_runtime.dll
+ 0001:0001e442       _sf_mex_createstruct       1001f442 f   sf_runtime:sf_runtime.dll
+ 0001:0001e448       _sf_mex_destroy            1001f448 f   sf_runtime:sf_runtime.dll
+ 0001:0001e44e       _sf_mex_duplicatearraysafe 1001f44e f   sf_runtime:sf_runtime.dll
+ 0001:0001e454       _sf_mex_createcellmatrix   1001f454 f   sf_runtime:sf_runtime.dll
+ 0001:0001e45a       _sf_mex_addfield           1001f45a f   sf_runtime:sf_runtime.dll
+ 0001:0001e460       _sf_mex_create             1001f460 f   sf_runtime:sf_runtime.dll
+ 0001:0001e466       _sf_mex_error_message      1001f466 f   sf_runtime:sf_runtime.dll
+ 0001:0001e46c       _sf_set_rtw_dwork_info     1001f46c f   sf_runtime:sf_runtime.dll
+ 0001:0001e472       _sf_mark_chart_reusable_outputs 1001f472 f   sf_runtime:sf_runtime.dll
+ 0001:0001e478       _sf_mark_chart_expressionable_inputs 1001f478 f   sf_runtime:sf_runtime.dll
+ 0001:0001e47e       _sf_update_buildInfo       1001f47e f   sf_runtime:sf_runtime.dll
+ 0001:0001e484       _sf_rtw_info_uint_prop     1001f484 f   sf_runtime:sf_runtime.dll
+ 0001:0001e48a       _sf_is_chart_inlinable     1001f48a f   sf_runtime:sf_runtime.dll
+ 0001:0001e490       _sim_mode_is_external      1001f490 f   sf_runtime:sf_runtime.dll
+ 0001:0001e496       _sim_mode_is_rtw_gen       1001f496 f   sf_runtime:sf_runtime.dll
+ 0001:0001e49c       _ssGetInputPortSignal_wrapper 1001f49c f   sf_runtime:sf_runtime.dll
+ 0001:0001e4a2       _ssGetOutputPortSignal_wrapper 1001f4a2 f   sf_runtime:sf_runtime.dll
+ 0001:0001e4a8       _sf_mex_decode_encoded_mx_struct_array 1001f4a8 f   sf_runtime:sf_runtime.dll
+ 0001:0001e4ae       _sf_debug_reset_current_state_configuration 1001f4ae f   sf_runtime:sf_runtime.dll
+ 0001:0001e4b4       _sf_debug_set_instance_data_value_ptr 1001f4b4 f   sf_runtime:sf_runtime.dll
+ 0001:0001e4ba       _sf_debug_set_chart_data_compiled_props 1001f4ba f   sf_runtime:sf_runtime.dll
+ 0001:0001e4c0       _cv_eml_init_fcn           1001f4c0 f   sf_runtime:sf_runtime.dll
+ 0001:0001e4c6       _cv_eml_init_script        1001f4c6 f   sf_runtime:sf_runtime.dll
+ 0001:0001e4cc       _sf_debug_cv_init_trans    1001f4cc f   sf_runtime:sf_runtime.dll
+ 0001:0001e4d2       _sf_debug_cv_init_state    1001f4d2 f   sf_runtime:sf_runtime.dll
+ 0001:0001e4d8       _sf_debug_cv_init_chart    1001f4d8 f   sf_runtime:sf_runtime.dll
+ 0001:0001e4de       _sf_debug_set_chart_decomposition 1001f4de f   sf_runtime:sf_runtime.dll
+ 0001:0001e4e4       _sf_debug_set_chart_substate_count 1001f4e4 f   sf_runtime:sf_runtime.dll
+ 0001:0001e4ea       _sf_debug_set_chart_state_info 1001f4ea f   sf_runtime:sf_runtime.dll
+ 0001:0001e4f0       _sf_debug_set_chart_data_props 1001f4f0 f   sf_runtime:sf_runtime.dll
+ 0001:0001e4f6       _sf_debug_set_chart_event_thresholds 1001f4f6 f   sf_runtime:sf_runtime.dll
+ 0001:0001e4fc       _sf_debug_set_chart_disable_implicit_casting 1001f4fc f   sf_runtime:sf_runtime.dll
+ 0001:0001e502       _sf_debug_initialize_chart 1001f502 f   sf_runtime:sf_runtime.dll
+ 0001:0001e508       _sf_mex_dup                1001f508 f   sf_runtime:sf_runtime.dll
+ 0001:0001e50e       _sf_mex_import             1001f50e f   sf_runtime:sf_runtime.dll
+ 0001:0001e514       _sf_get_time               1001f514 f   sf_runtime:sf_runtime.dll
+ 0001:0001e51a       _sf_debug_data_range_wrapper 1001f51a f   sf_runtime:sf_runtime.dll
+ 0001:0001e520       _sf_debug_check_for_state_inconsistency 1001f520 f   sf_runtime:sf_runtime.dll
+ 0001:0001e526       _sf_debug_symbol_scope_pop 1001f526 f   sf_runtime:sf_runtime.dll
+ 0001:0001e52c       _eml_debug_line_call       1001f52c f   sf_runtime:sf_runtime.dll
+ 0001:0001e532       _cv_eml_eval               1001f532 f   sf_runtime:sf_runtime.dll
+ 0001:0001e538       _sf_debug_symbol_scope_add_eml_importable 1001f538 f   sf_runtime:sf_runtime.dll
+ 0001:0001e53e       _sf_debug_symbol_scope_add_eml 1001f53e f   sf_runtime:sf_runtime.dll
+ 0001:0001e544       _sf_debug_symbol_scope_push_eml 1001f544 f   sf_runtime:sf_runtime.dll
+ 0001:0001e54a       _sf_debug_call             1001f54a f   sf_runtime:sf_runtime.dll
+ 0001:0001e550       _sf_debug_symbol_scope_push 1001f550 f   sf_runtime:sf_runtime.dll
+ 0001:0001e556       _sf_mex_setcell            1001f556 f   sf_runtime:sf_runtime.dll
+ 0001:0001e55c       _sf_mex_getcell            1001f55c f   sf_runtime:sf_runtime.dll
+ 0001:0001e562       _sf_clear_rtw_identifier   1001f562 f   sf_runtime:sf_runtime.dll
+ 0001:0001e568       _cv_eml_init_relational    1001f568 f   sf_runtime:sf_runtime.dll
+ 0001:0001e56e       _cv_eml_init_if            1001f56e f   sf_runtime:sf_runtime.dll
+ 0001:0001e574       _cv_eval_relational        1001f574 f   sf_runtime:sf_runtime.dll
+ 0001:0001e57a       _sf_mex_call_debug         1001f57a f   sf_runtime:sf_runtime.dll
+ 0001:0001e580       _sf_debug_terminate        1001f580 f   sf_runtime:sf_runtime.dll
+ 0001:0001e586       _sf_debug_create_debug_instance_struct 1001f586 f   sf_runtime:sf_runtime.dll
+ 0001:0001e58c       _sf_debug_api              1001f58c f   sf_runtime:sf_runtime.dll
+ 0001:0001e592       _callMdlMethodAndReportError 1001f592 f   sf_runtime:sf_runtime.dll
+ 0001:0001e598       _call_sf_machine_global_method_dispatcher 1001f598 f   sf_runtime:sf_runtime.dll
+ 0001:0001e59e       _sf_clear_error_manager_info 1001f59e f   sf_runtime:sf_runtime.dll
+ 0001:0001e5a4       _sf_mex_error_direct_call  1001f5a4 f   sf_runtime:sf_runtime.dll
+ 0001:0001e5aa       _mxCreateLogicalScalar     1001f5aa f   libmx:libmx.dll
+ 0001:0001e5b0       _mxGetScalar               1001f5b0 f   libmx:libmx.dll
+ 0001:0001e5b6       _mxGetPr                   1001f5b6 f   libmx:libmx.dll
+ 0001:0001e5bc       _mxCreateDoubleMatrix_730  1001f5bc f   libmx:libmx.dll
+ 0001:0001e5c2       _mxGetString_730           1001f5c2 f   libmx:libmx.dll
+ 0001:0001e5c8       _mxIsChar                  1001f5c8 f   libmx:libmx.dll
+ 0001:0001e5ce       _mxDestroyArray            1001f5ce f   libmx:libmx.dll
+ 0001:0001e5d4       _mxDuplicateArray          1001f5d4 f   libmx:libmx.dll
+ 0001:0001e5da       _mxCreateDoubleScalar      1001f5da f   libmx:libmx.dll
+ 0001:0001e5e0       _mxSetField_730            1001f5e0 f   libmx:libmx.dll
+ 0001:0001e5e6       _mxCreateString            1001f5e6 f   libmx:libmx.dll
+ 0001:0001e5ec       _mxCreateStructMatrix_730  1001f5ec f   libmx:libmx.dll
+ 0001:0001e5f2       _mxCreateCellMatrix_730    1001f5f2 f   libmx:libmx.dll
+ 0001:0001e5f8       _mxCreateCellArray_730     1001f5f8 f   libmx:libmx.dll
+ 0001:0001e5fe       _mxCreateStructArray_730   1001f5fe f   libmx:libmx.dll
+ 0001:0001e604       _mxIsEmpty                 1001f604 f   libmx:libmx.dll
+ 0001:0001e60a       _mxGetClassID              1001f60a f   libmx:libmx.dll
+ 0001:0001e610       _mxIsNumeric               1001f610 f   libmx:libmx.dll
+ 0001:0001e616       _mxIsComplex               1001f616 f   libmx:libmx.dll
+ 0001:0001e61c       _mxGetN                    1001f61c f   libmx:libmx.dll
+ 0001:0001e622       _mxGetM                    1001f622 f   libmx:libmx.dll
+ 0001:0001e628       _mxCalloc                  1001f628 f   libmx:libmx.dll
+ 0001:0001e62e       _mexMakeArrayPersistent    1001f62e f   libmex:libmex.dll
+ 0001:0001e634       _mexUnlock                 1001f634 f   libmex:libmex.dll
+ 0001:0001e63a       _mexIsLocked               1001f63a f   libmex:libmex.dll
+ 0001:0001e640       _mexWarnMsgTxt             1001f640 f   libmex:libmex.dll
+ 0001:0001e646       _mexCallMATLABWithObject   1001f646 f   libmex:libmex.dll
+ 0001:0001e64c       _mexErrMsgTxt              1001f64c f   libmex:libmex.dll
+ 0001:0001e652       _mexLock                   1001f652 f   libmex:libmex.dll
+ 0001:0001e658       _utMalloc                  1001f658 f   libut:libut.dll
+ 0001:0001e65e       _utFree                    1001f65e f   libut:libut.dll
+ 0001:0001e664       _muDoubleScalarSqrt        1001f664 f   libmwmathutil:libmwmathutil.dll
+ 0001:0001e66a       _strcmp                    1001f66a f   MSVCRT:MSVCR100.dll
+ 0001:0001e670       @__security_check_cookie@4 1001f670 f   MSVCRT:secchk.obj
+ 0001:0001e680       _strlen                    1001f680 f   MSVCRT:MSVCR100.dll
+ 0001:0001e686       _memset                    1001f686 f   MSVCRT:MSVCR100.dll
+ 0001:0001e68c       _free                      1001f68c f   MSVCRT:MSVCR100.dll
+ 0001:0001e692       _sprintf                   1001f692 f   MSVCRT:MSVCR100.dll
+ 0001:0001e698       _malloc                    1001f698 f   MSVCRT:MSVCR100.dll
+ 0001:0001e69e       _strcat                    1001f69e f   MSVCRT:MSVCR100.dll
+ 0001:0001e6b0       __ftol2_sse                1001f6b0 f   MSVCRT:ftol2.obj
+ 0001:0001e6b9       __ftol2_pentium4           1001f6b9 f   MSVCRT:ftol2.obj
+ 0001:0001e6cc       __ftol2_sse_excpt          1001f6cc f   MSVCRT:ftol2.obj
+ 0001:0001e6e6       __ftol2                    1001f6e6 f   MSVCRT:ftol2.obj
+ 0001:0001e75c       _memcpy                    1001f75c f   MSVCRT:MSVCR100.dll
+ 0001:0001e762       _NtCurrentTeb              1001f762 f i MSVCRT:crtdll.obj
+ 0001:0001e7b7       __CRT_INIT@12              1001f7b7 f   MSVCRT:crtdll.obj
+ 0001:0001ead7       __DllMainCRTStartup@12     1001fad7 f   MSVCRT:crtdll.obj
+ 0001:0001eafa       ___report_gsfailure        1001fafa f   MSVCRT:gs_report.obj
+ 0001:0001ec00       ___sse2_available_init     1001fc00 f   MSVCRT:cpu_disp.obj
+ 0001:0001ec10       ___clean_type_info_names   1001fc10 f   MSVCRT:tncleanup.obj
+ 0001:0001ec1c       __onexit                   1001fc1c f   MSVCRT:atonexit.obj
+ 0001:0001ecbd       _atexit                    1001fcbd f   MSVCRT:atonexit.obj
+ 0001:0001ecd4       __RTC_Initialize           1001fcd4 f   MSVCRT:_initsect_.obj
+ 0001:0001ecfa       __RTC_Terminate            1001fcfa f   MSVCRT:_initsect_.obj
+ 0001:0001ed20       __malloc_crt               1001fd20 f   MSVCRT:MSVCR100.dll
+ 0001:0001ed26       __encoded_null             1001fd26 f   MSVCRT:MSVCR100.dll
+ 0001:0001ed30       __ValidateImageBase        1001fd30 f   MSVCRT:pesect.obj
+ 0001:0001ed70       __FindPESection            1001fd70 f   MSVCRT:pesect.obj
+ 0001:0001edc0       __IsNonwritableInCurrentImage 1001fdc0 f   MSVCRT:pesect.obj
+ 0001:0001ee7c       __initterm                 1001fe7c f   MSVCRT:MSVCR100.dll
+ 0001:0001ee82       __initterm_e               1001fe82 f   MSVCRT:MSVCR100.dll
+ 0001:0001ee88       __amsg_exit                1001fe88 f   MSVCRT:MSVCR100.dll
+ 0001:0001ee8e       ___CppXcptFilter           1001fe8e f   MSVCRT:MSVCR100.dll
+ 0001:0001ee94       _DllMain@12                1001fe94 f   MSVCRT:dllmain.obj
+ 0001:0001eec0       __SEH_prolog4              1001fec0 f   MSVCRT:sehprolg4.obj
+ 0001:0001ef05       __SEH_epilog4              1001ff05 f   MSVCRT:sehprolg4.obj
+ 0001:0001ef19       __except_handler4          1001ff19 f   MSVCRT:chandler4gs.obj
+ 0001:0001ef3e       ___security_init_cookie    1001ff3e f   MSVCRT:gs_support.obj
+ 0001:0001efda       __crt_debugger_hook        1001ffda f   MSVCRT:MSVCR100.dll
+ 0001:0001efe0       ___clean_type_info_names_internal 1001ffe0 f   MSVCRT:MSVCR100.dll
+ 0001:0001efe6       __unlock                   1001ffe6 f   MSVCRT:MSVCR100.dll
+ 0001:0001efec       ___dllonexit               1001ffec f   MSVCRT:MSVCR100.dll
+ 0001:0001eff2       __lock                     1001fff2 f   MSVCRT:MSVCR100.dll
+ 0001:0001eff8       __except_handler4_common   1001fff8 f   MSVCRT:MSVCR100.dll
+ 0001:0001effe       _EncodePointer@4           1001fffe f   kernel32:KERNEL32.dll
+ 0001:0001f004       _DecodePointer@4           10020004 f   kernel32:KERNEL32.dll
+ 0001:0001f00a       _InterlockedExchange@8     1002000a f   kernel32:KERNEL32.dll
+ 0001:0001f010       _Sleep@4                   10020010 f   kernel32:KERNEL32.dll
+ 0001:0001f016       _InterlockedCompareExchange@12 10020016 f   kernel32:KERNEL32.dll
+ 0001:0001f01c       _TerminateProcess@8        1002001c f   kernel32:KERNEL32.dll
+ 0001:0001f022       _GetCurrentProcess@0       10020022 f   kernel32:KERNEL32.dll
+ 0001:0001f028       _UnhandledExceptionFilter@4 10020028 f   kernel32:KERNEL32.dll
+ 0001:0001f02e       _SetUnhandledExceptionFilter@4 1002002e f   kernel32:KERNEL32.dll
+ 0001:0001f034       _IsDebuggerPresent@0       10020034 f   kernel32:KERNEL32.dll
+ 0001:0001f03a       _IsProcessorFeaturePresent@4 1002003a f   kernel32:KERNEL32.dll
+ 0001:0001f040       _DisableThreadLibraryCalls@4 10020040 f   kernel32:KERNEL32.dll
+ 0001:0001f046       _QueryPerformanceCounter@4 10020046 f   kernel32:KERNEL32.dll
+ 0001:0001f04c       _GetTickCount@0            1002004c f   kernel32:KERNEL32.dll
+ 0001:0001f052       _GetCurrentThreadId@0      10020052 f   kernel32:KERNEL32.dll
+ 0001:0001f058       _GetCurrentProcessId@0     10020058 f   kernel32:KERNEL32.dll
+ 0001:0001f05e       _GetSystemTimeAsFileTime@4 1002005e f   kernel32:KERNEL32.dll
+ 0002:00000000       __imp__GetSystemTimeAsFileTime@4 10021000     kernel32:KERNEL32.dll
+ 0002:00000004       __imp__GetCurrentProcessId@0 10021004     kernel32:KERNEL32.dll
+ 0002:00000008       __imp__GetCurrentThreadId@0 10021008     kernel32:KERNEL32.dll
+ 0002:0000000c       __imp__GetTickCount@0      1002100c     kernel32:KERNEL32.dll
+ 0002:00000010       __imp__QueryPerformanceCounter@4 10021010     kernel32:KERNEL32.dll
+ 0002:00000014       __imp__DisableThreadLibraryCalls@4 10021014     kernel32:KERNEL32.dll
+ 0002:00000018       __imp__IsProcessorFeaturePresent@4 10021018     kernel32:KERNEL32.dll
+ 0002:0000001c       __imp__IsDebuggerPresent@0 1002101c     kernel32:KERNEL32.dll
+ 0002:00000020       __imp__SetUnhandledExceptionFilter@4 10021020     kernel32:KERNEL32.dll
+ 0002:00000024       __imp__UnhandledExceptionFilter@4 10021024     kernel32:KERNEL32.dll
+ 0002:00000028       __imp__GetCurrentProcess@0 10021028     kernel32:KERNEL32.dll
+ 0002:0000002c       __imp__TerminateProcess@8  1002102c     kernel32:KERNEL32.dll
+ 0002:00000030       __imp__InterlockedCompareExchange@12 10021030     kernel32:KERNEL32.dll
+ 0002:00000034       __imp__Sleep@4             10021034     kernel32:KERNEL32.dll
+ 0002:00000038       __imp__InterlockedExchange@8 10021038     kernel32:KERNEL32.dll
+ 0002:0000003c       __imp__DecodePointer@4     1002103c     kernel32:KERNEL32.dll
+ 0002:00000040       __imp__EncodePointer@4     10021040     kernel32:KERNEL32.dll
+ 0002:00000044       \177KERNEL32_NULL_THUNK_DATA 10021044     kernel32:KERNEL32.dll
+ 0002:00000048       __imp___except_handler4_common 10021048     MSVCRT:MSVCR100.dll
+ 0002:0000004c       __imp___onexit             1002104c     MSVCRT:MSVCR100.dll
+ 0002:00000050       __imp___lock               10021050     MSVCRT:MSVCR100.dll
+ 0002:00000054       __imp____dllonexit         10021054     MSVCRT:MSVCR100.dll
+ 0002:00000058       __imp___unlock             10021058     MSVCRT:MSVCR100.dll
+ 0002:0000005c       __imp____clean_type_info_names_internal 1002105c     MSVCRT:MSVCR100.dll
+ 0002:00000060       __imp___crt_debugger_hook  10021060     MSVCRT:MSVCR100.dll
+ 0002:00000064       __imp____CppXcptFilter     10021064     MSVCRT:MSVCR100.dll
+ 0002:00000068       __imp___amsg_exit          10021068     MSVCRT:MSVCR100.dll
+ 0002:0000006c       __imp___initterm_e         1002106c     MSVCRT:MSVCR100.dll
+ 0002:00000070       __imp___initterm           10021070     MSVCRT:MSVCR100.dll
+ 0002:00000074       __imp___encoded_null       10021074     MSVCRT:MSVCR100.dll
+ 0002:00000078       __imp___malloc_crt         10021078     MSVCRT:MSVCR100.dll
+ 0002:0000007c       __imp__memcpy              1002107c     MSVCRT:MSVCR100.dll
+ 0002:00000080       __imp__strcat              10021080     MSVCRT:MSVCR100.dll
+ 0002:00000084       __imp__malloc              10021084     MSVCRT:MSVCR100.dll
+ 0002:00000088       __imp__sprintf             10021088     MSVCRT:MSVCR100.dll
+ 0002:0000008c       __imp__free                1002108c     MSVCRT:MSVCR100.dll
+ 0002:00000090       __imp__memset              10021090     MSVCRT:MSVCR100.dll
+ 0002:00000094       __imp__strlen              10021094     MSVCRT:MSVCR100.dll
+ 0002:00000098       __imp__strcmp              10021098     MSVCRT:MSVCR100.dll
+ 0002:0000009c       \177MSVCR100_NULL_THUNK_DATA 1002109c     MSVCRT:MSVCR100.dll
+ 0002:000000a0       __imp__mexCallMATLABWithObject 100210a0     libmex:libmex.dll
+ 0002:000000a4       __imp__mexUnlock           100210a4     libmex:libmex.dll
+ 0002:000000a8       __imp__mexLock             100210a8     libmex:libmex.dll
+ 0002:000000ac       __imp__mexErrMsgTxt        100210ac     libmex:libmex.dll
+ 0002:000000b0       __imp__mexMakeArrayPersistent 100210b0     libmex:libmex.dll
+ 0002:000000b4       __imp__mexWarnMsgTxt       100210b4     libmex:libmex.dll
+ 0002:000000b8       __imp__mexIsLocked         100210b8     libmex:libmex.dll
+ 0002:000000bc       \177libmex_NULL_THUNK_DATA 100210bc     libmex:libmex.dll
+ 0002:000000c0       __imp__muDoubleScalarSqrt  100210c0     libmwmathutil:libmwmathutil.dll
+ 0002:000000c4       \177libmwmathutil_NULL_THUNK_DATA 100210c4     libmwmathutil:libmwmathutil.dll
+ 0002:000000c8       __imp__mxCalloc            100210c8     libmx:libmx.dll
+ 0002:000000cc       __imp__mxGetM              100210cc     libmx:libmx.dll
+ 0002:000000d0       __imp__mxGetN              100210d0     libmx:libmx.dll
+ 0002:000000d4       __imp__mxIsComplex         100210d4     libmx:libmx.dll
+ 0002:000000d8       __imp__mxIsNumeric         100210d8     libmx:libmx.dll
+ 0002:000000dc       __imp__mxGetClassID        100210dc     libmx:libmx.dll
+ 0002:000000e0       __imp__mxIsEmpty           100210e0     libmx:libmx.dll
+ 0002:000000e4       __imp__mxCreateStructArray_730 100210e4     libmx:libmx.dll
+ 0002:000000e8       __imp__mxCreateCellArray_730 100210e8     libmx:libmx.dll
+ 0002:000000ec       __imp__mxCreateCellMatrix_730 100210ec     libmx:libmx.dll
+ 0002:000000f0       __imp__mxCreateStructMatrix_730 100210f0     libmx:libmx.dll
+ 0002:000000f4       __imp__mxCreateString      100210f4     libmx:libmx.dll
+ 0002:000000f8       __imp__mxSetField_730      100210f8     libmx:libmx.dll
+ 0002:000000fc       __imp__mxCreateDoubleScalar 100210fc     libmx:libmx.dll
+ 0002:00000100       __imp__mxDuplicateArray    10021100     libmx:libmx.dll
+ 0002:00000104       __imp__mxDestroyArray      10021104     libmx:libmx.dll
+ 0002:00000108       __imp__mxCreateLogicalScalar 10021108     libmx:libmx.dll
+ 0002:0000010c       __imp__mxGetScalar         1002110c     libmx:libmx.dll
+ 0002:00000110       __imp__mxGetPr             10021110     libmx:libmx.dll
+ 0002:00000114       __imp__mxCreateDoubleMatrix_730 10021114     libmx:libmx.dll
+ 0002:00000118       __imp__mxGetString_730     10021118     libmx:libmx.dll
+ 0002:0000011c       __imp__mxIsChar            1002111c     libmx:libmx.dll
+ 0002:00000120       \177libmx_NULL_THUNK_DATA  10021120     libmx:libmx.dll
+ 0002:00000124       __imp__utMalloc            10021124     libut:libut.dll
+ 0002:00000128       __imp__utFree              10021128     libut:libut.dll
+ 0002:0000012c       \177libut_NULL_THUNK_DATA  1002112c     libut:libut.dll
+ 0002:00000130       __imp__call_sf_machine_global_method_dispatcher 10021130     sf_runtime:sf_runtime.dll
+ 0002:00000134       __imp__callMdlMethodAndReportError 10021134     sf_runtime:sf_runtime.dll
+ 0002:00000138       __imp__sf_debug_api        10021138     sf_runtime:sf_runtime.dll
+ 0002:0000013c       __imp__sf_debug_create_debug_instance_struct 1002113c     sf_runtime:sf_runtime.dll
+ 0002:00000140       __imp__sf_debug_terminate  10021140     sf_runtime:sf_runtime.dll
+ 0002:00000144       __imp__sf_mex_call_debug   10021144     sf_runtime:sf_runtime.dll
+ 0002:00000148       __imp__cv_eval_relational  10021148     sf_runtime:sf_runtime.dll
+ 0002:0000014c       __imp__cv_eml_init_if      1002114c     sf_runtime:sf_runtime.dll
+ 0002:00000150       __imp__cv_eml_init_relational 10021150     sf_runtime:sf_runtime.dll
+ 0002:00000154       __imp__sf_clear_rtw_identifier 10021154     sf_runtime:sf_runtime.dll
+ 0002:00000158       __imp__sf_clear_error_manager_info 10021158     sf_runtime:sf_runtime.dll
+ 0002:0000015c       __imp__sf_mex_setcell      1002115c     sf_runtime:sf_runtime.dll
+ 0002:00000160       __imp__sf_debug_symbol_scope_push 10021160     sf_runtime:sf_runtime.dll
+ 0002:00000164       __imp__sf_debug_call       10021164     sf_runtime:sf_runtime.dll
+ 0002:00000168       __imp__sf_debug_symbol_scope_push_eml 10021168     sf_runtime:sf_runtime.dll
+ 0002:0000016c       __imp__sf_debug_symbol_scope_add_eml 1002116c     sf_runtime:sf_runtime.dll
+ 0002:00000170       __imp__sf_debug_symbol_scope_add_eml_importable 10021170     sf_runtime:sf_runtime.dll
+ 0002:00000174       __imp__cv_eml_eval         10021174     sf_runtime:sf_runtime.dll
+ 0002:00000178       __imp__eml_debug_line_call 10021178     sf_runtime:sf_runtime.dll
+ 0002:0000017c       __imp__sf_debug_symbol_scope_pop 1002117c     sf_runtime:sf_runtime.dll
+ 0002:00000180       __imp__sf_debug_check_for_state_inconsistency 10021180     sf_runtime:sf_runtime.dll
+ 0002:00000184       __imp__sf_debug_data_range_wrapper 10021184     sf_runtime:sf_runtime.dll
+ 0002:00000188       __imp__sf_mex_error_direct_call 10021188     sf_runtime:sf_runtime.dll
+ 0002:0000018c       __imp__sf_mex_getcell      1002118c     sf_runtime:sf_runtime.dll
+ 0002:00000190       __imp__sf_get_time         10021190     sf_runtime:sf_runtime.dll
+ 0002:00000194       __imp__sf_mex_import       10021194     sf_runtime:sf_runtime.dll
+ 0002:00000198       __imp__sf_mex_dup          10021198     sf_runtime:sf_runtime.dll
+ 0002:0000019c       __imp__sf_debug_initialize_chart 1002119c     sf_runtime:sf_runtime.dll
+ 0002:000001a0       __imp__sf_debug_set_chart_disable_implicit_casting 100211a0     sf_runtime:sf_runtime.dll
+ 0002:000001a4       __imp__sf_debug_set_chart_event_thresholds 100211a4     sf_runtime:sf_runtime.dll
+ 0002:000001a8       __imp__sf_debug_set_chart_data_props 100211a8     sf_runtime:sf_runtime.dll
+ 0002:000001ac       __imp__sf_debug_set_chart_state_info 100211ac     sf_runtime:sf_runtime.dll
+ 0002:000001b0       __imp__sf_debug_set_chart_substate_count 100211b0     sf_runtime:sf_runtime.dll
+ 0002:000001b4       __imp__sf_debug_set_chart_decomposition 100211b4     sf_runtime:sf_runtime.dll
+ 0002:000001b8       __imp__sf_debug_cv_init_chart 100211b8     sf_runtime:sf_runtime.dll
+ 0002:000001bc       __imp__sf_debug_cv_init_state 100211bc     sf_runtime:sf_runtime.dll
+ 0002:000001c0       __imp__sf_debug_cv_init_trans 100211c0     sf_runtime:sf_runtime.dll
+ 0002:000001c4       __imp__cv_eml_init_script  100211c4     sf_runtime:sf_runtime.dll
+ 0002:000001c8       __imp__cv_eml_init_fcn     100211c8     sf_runtime:sf_runtime.dll
+ 0002:000001cc       __imp__sf_debug_set_chart_data_compiled_props 100211cc     sf_runtime:sf_runtime.dll
+ 0002:000001d0       __imp__sf_debug_set_instance_data_value_ptr 100211d0     sf_runtime:sf_runtime.dll
+ 0002:000001d4       __imp__sf_debug_reset_current_state_configuration 100211d4     sf_runtime:sf_runtime.dll
+ 0002:000001d8       __imp__sf_mex_decode_encoded_mx_struct_array 100211d8     sf_runtime:sf_runtime.dll
+ 0002:000001dc       __imp__ssGetOutputPortSignal_wrapper 100211dc     sf_runtime:sf_runtime.dll
+ 0002:000001e0       __imp__ssGetInputPortSignal_wrapper 100211e0     sf_runtime:sf_runtime.dll
+ 0002:000001e4       __imp__sim_mode_is_rtw_gen 100211e4     sf_runtime:sf_runtime.dll
+ 0002:000001e8       __imp__sim_mode_is_external 100211e8     sf_runtime:sf_runtime.dll
+ 0002:000001ec       __imp__sf_is_chart_inlinable 100211ec     sf_runtime:sf_runtime.dll
+ 0002:000001f0       __imp__sf_rtw_info_uint_prop 100211f0     sf_runtime:sf_runtime.dll
+ 0002:000001f4       __imp__sf_update_buildInfo 100211f4     sf_runtime:sf_runtime.dll
+ 0002:000001f8       __imp__sf_mark_chart_expressionable_inputs 100211f8     sf_runtime:sf_runtime.dll
+ 0002:000001fc       __imp__sf_mark_chart_reusable_outputs 100211fc     sf_runtime:sf_runtime.dll
+ 0002:00000200       __imp__sf_set_rtw_dwork_info 10021200     sf_runtime:sf_runtime.dll
+ 0002:00000204       __imp__sf_mex_error_message 10021204     sf_runtime:sf_runtime.dll
+ 0002:00000208       __imp__sf_mex_create       10021208     sf_runtime:sf_runtime.dll
+ 0002:0000020c       __imp__sf_mex_addfield     1002120c     sf_runtime:sf_runtime.dll
+ 0002:00000210       __imp__sf_mex_createcellmatrix 10021210     sf_runtime:sf_runtime.dll
+ 0002:00000214       __imp__sf_mex_duplicatearraysafe 10021214     sf_runtime:sf_runtime.dll
+ 0002:00000218       __imp__sf_mex_destroy      10021218     sf_runtime:sf_runtime.dll
+ 0002:0000021c       __imp__sf_mex_createstruct 1002121c     sf_runtime:sf_runtime.dll
+ 0002:00000220       __imp__sf_mex_assign       10021220     sf_runtime:sf_runtime.dll
+ 0002:00000224       __imp__sf_mex_emlrtNameCapturePostProcessR2012a 10021224     sf_runtime:sf_runtime.dll
+ 0002:00000228       __imp__sf_load_rtw_optimization_info 10021228     sf_runtime:sf_runtime.dll
+ 0002:0000022c       __imp__sf_debug_initialize_machine 1002122c     sf_runtime:sf_runtime.dll
+ 0002:00000230       __imp__sf_debug_set_machine_event_thresholds 10021230     sf_runtime:sf_runtime.dll
+ 0002:00000234       __imp__sf_debug_set_machine_data_thresholds 10021234     sf_runtime:sf_runtime.dll
+ 0002:00000238       \177sf_runtime_NULL_THUNK_DATA 10021238     sf_runtime:sf_runtime.dll
+ 0002:0000023c       ___xc_a                    1002123c     MSVCRT:cinitexe.obj
+ 0002:00000240       ___xc_z                    10021240     MSVCRT:cinitexe.obj
+ 0002:00000244       ___xi_a                    10021244     MSVCRT:cinitexe.obj
+ 0002:00000250       ___xi_z                    10021250     MSVCRT:cinitexe.obj
+ 0002:00000258       __real@41e70990c5000000    10021258     trajectory_planner_sfun.obj
+ 0002:00000260       __real@41b3d1d7fe000000    10021260     trajectory_planner_sfun.obj
+ 0002:00000268       __real@41dbbf9664c00000    10021268     trajectory_planner_sfun.obj
+ 0002:00000270       __real@41de5fe2dd800000    10021270     trajectory_planner_sfun.obj
+ 0002:00000278       __real@41e5402795600000    10021278     trajectory_planner_sfun.obj
+ 0002:00000280       __real@41ecff6f22400000    10021280     trajectory_planner_sfun.obj
+ 0002:00000288       __real@41c09410e0000000    10021288     trajectory_planner_sfun.obj
+ 0002:00000290       __real@41db7f625a000000    10021290     trajectory_planner_sfun.obj
+ 0002:00000298       __real@41ed777756000000    10021298     trajectory_planner_sfun.obj
+ 0002:000002a0       __real@41abbfb656000000    100212a0     trajectory_planner_sfun.obj
+ 0002:000002a8       __real@41ee72ebca400000    100212a8     trajectory_planner_sfun.obj
+ 0002:000002b0       __real@41d467855c000000    100212b0     trajectory_planner_sfun.obj
+ 0002:000002b8       __real@0000000000000000    100212b8     trajectory_planner_sfun.obj
+ 0002:000002c0       __real@41e256b453a00000    100212c0     trajectory_planner_sfun.obj
+ 0002:000002c8       __real@41bf86c3a0000000    100212c8     trajectory_planner_sfun.obj
+ 0002:000002d0       __real@41d5177139400000    100212d0     trajectory_planner_sfun.obj
+ 0002:000002d8       __real@41d8c55998400000    100212d8     trajectory_planner_sfun.obj
+ 0002:000002e0       __real@41cf7c391f800000    100212e0     c1_trajectory_planner.obj
+ 0002:000002e8       __real@41e3550f2a800000    100212e8     c1_trajectory_planner.obj
+ 0002:000002f0       __real@41e2dd6585a00000    100212f0     c1_trajectory_planner.obj
+ 0002:000002f8       __real@41c1b4e3c2000000    100212f8     c1_trajectory_planner.obj
+ 0002:00000300       __real@4024000000000000    10021300     c1_trajectory_planner.obj
+ 0002:00000308       __real@3ff0000000000000    10021308     c1_trajectory_planner.obj
+ 0002:00000310       __real@3ef9f2b42bdae908    10021310     c1_trajectory_planner.obj
+ 0002:00000318       __real@3ee4f8b588e368f1    10021318     c1_trajectory_planner.obj
+ 0002:00000320       __real@405c000000000000    10021320     c1_trajectory_planner.obj
+ 0002:00000328       __real@3fb1d7dbf487fcb9    10021328     c1_trajectory_planner.obj
+ 0002:00000330       __real@4014000000000000    10021330     c1_trajectory_planner.obj
+ 0002:00000338       __real@3ea90817594096a7    10021338     c1_trajectory_planner.obj
+ 0002:00000340       __real@3f43a92a30553261    10021340     c1_trajectory_planner.obj
+ 0002:00000348       __real@4000000000000000    10021348     c1_trajectory_planner.obj
+ 0002:00000350       __real@41c72dc1fc000000    10021350     c3_trajectory_planner.obj
+ 0002:00000358       __real@41e9fe8601200000    10021358     c3_trajectory_planner.obj
+ 0002:00000360       __real@41ef937070e00000    10021360     c3_trajectory_planner.obj
+ 0002:00000368       __real@41ef14a984600000    10021368     c3_trajectory_planner.obj
+ 0002:00000370       __real@bfbc28f5c28f5c28    10021370     c3_trajectory_planner.obj
+ 0002:00000378       __real@3fec7ae147ae147b    10021378     c3_trajectory_planner.obj
+ 0002:00000380       __real@4085a00000000000    10021380     c3_trajectory_planner.obj
+ 0002:00000388       __real@c09dac0000000000    10021388     c3_trajectory_planner.obj
+ 0002:00000390       __real@4095100000000000    10021390     c3_trajectory_planner.obj
+ 0002:00000398       __real@4038000000000000    10021398     c3_trajectory_planner.obj
+ 0002:000003a0       __real@406fe00000000000    100213a0     c3_trajectory_planner.obj
+ 0002:000003a8       __real@4070e00000000000    100213a8     c3_trajectory_planner.obj
+ 0002:000003b0       __real@3f847ae147ae147b    100213b0     c3_trajectory_planner.obj
+ 0002:000003b8       __real@4018000000000000    100213b8     c3_trajectory_planner.obj
+ 0002:000003c0       __real@4008000000000000    100213c0     c3_trajectory_planner.obj
+ 0002:000003c8       __real@41efc444e5200000    100213c8     c4_trajectory_planner.obj
+ 0002:000003d0       __real@41d98e33ba800000    100213d0     c4_trajectory_planner.obj
+ 0002:000003d8       __real@41e7171252400000    100213d8     c4_trajectory_planner.obj
+ 0002:000003e0       __real@41ebca54c7e00000    100213e0     c4_trajectory_planner.obj
+ 0002:000003e8       __real@3fd9191919191919    100213e8     c4_trajectory_planner.obj
+ 0002:000003f0       __real@4059000000000000    100213f0     c4_trajectory_planner.obj
+ 0002:000003f8       _DYNAMIC_DIMENSION_DEF     100213f8     trajectory_planner_sfun_registry.obj
+ 0002:00000408       __ssBadLevel2InputAccessMsg 10021408     trajectory_planner_sfun_registry.obj
+ 0002:00000590       __ssBadLevel2DirectFeedMsg 10021590     trajectory_planner_sfun_registry.obj
+ 0002:000006d0       __ssBadLevel2DirectFeedSolutionMsg 100216d0     trajectory_planner_sfun_registry.obj
+ 0002:00000740       __ssBadLevel2ZeroDirectFeedMsg 10021740     trajectory_planner_sfun_registry.obj
+ 0002:00000880       __ssBadLevel2ZeroDirectFeedMsg2 10021880     trajectory_planner_sfun_registry.obj
+ 0002:00000968       __real@bff0000000000000    10021968     trajectory_planner_sfun_registry.obj
+ 0002:00000970       __real@4153d65940000000    10021970     trajectory_planner_sfun_registry.obj
+ 0002:00000978       __pDefaultRawDllMain       10021978     MSVCRT:crtdll.obj
+ 0002:00000978       __pRawDllMain              10021978     MSVCRT:crtdll.obj
+ 0002:00000984       ?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB 10021984     MSVCRT:tncleanup.obj
+ 0002:00000988       ?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB 10021988     MSVCRT:tncleanup.obj
+ 0002:0000098c       ?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB 1002198c     MSVCRT:tncleanup.obj
+ 0002:00000990       ?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB 10021990     MSVCRT:tncleanup.obj
+ 0002:00000994       ?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB 10021994     MSVCRT:tncleanup.obj
+ 0002:00000998       __load_config_used         10021998     MSVCRT:loadcfg.obj
+ 0002:000009e0       ___safe_se_handler_table   100219e0     <linker-defined>
+ 0002:000009e4       ___rtc_iaa                 100219e4     MSVCRT:_initsect_.obj
+ 0002:000009e8       ___rtc_izz                 100219e8     MSVCRT:_initsect_.obj
+ 0002:000009ec       ___rtc_taa                 100219ec     MSVCRT:_initsect_.obj
+ 0002:000009f0       ___rtc_tzz                 100219f0     MSVCRT:_initsect_.obj
+ 0002:00000a5c       __IMPORT_DESCRIPTOR_sf_runtime 10021a5c     sf_runtime:sf_runtime.dll
+ 0002:00000a70       __IMPORT_DESCRIPTOR_libmx  10021a70     libmx:libmx.dll
+ 0002:00000a84       __IMPORT_DESCRIPTOR_libmex 10021a84     libmex:libmex.dll
+ 0002:00000a98       __IMPORT_DESCRIPTOR_libut  10021a98     libut:libut.dll
+ 0002:00000aac       __IMPORT_DESCRIPTOR_libmwmathutil 10021aac     libmwmathutil:libmwmathutil.dll
+ 0002:00000ac0       __IMPORT_DESCRIPTOR_MSVCR100 10021ac0     MSVCRT:MSVCR100.dll
+ 0002:00000ad4       __IMPORT_DESCRIPTOR_KERNEL32 10021ad4     kernel32:KERNEL32.dll
+ 0002:00000ae8       __NULL_IMPORT_DESCRIPTOR   10021ae8     sf_runtime:sf_runtime.dll
+ 0003:0000859c       _DYNAMIC_DIMENSION         1002b59c     trajectory_planner_sfun_registry.obj
+ 0003:00009128       ___security_cookie         1002c128     MSVCRT:gs_cookie.obj
+ 0003:0000912c       ___security_cookie_complement 1002c12c     MSVCRT:gs_cookie.obj
+ 0003:00009130       ___native_dllmain_reason   1002c130     MSVCRT:natstart.obj
+ 0003:00009134       ___native_vcclrit_reason   1002c134     MSVCRT:natstart.obj
+ 0003:00009240       _sfGlobalDebugInstanceStruct 1002c240     trajectory_planner_sfun_registry.obj
+ 0003:00009574       ?__type_info_root_node@@3U__type_info_node@@A 1002c574     MSVCRT:tncleanup.obj
+ 0003:0000957c       __trajectory_plannerMachineNumber_ 1002c57c     <common>
+ 0003:00009580       ___native_startup_state    1002c580     <common>
+ 0003:00009584       ___native_startup_lock     1002c584     <common>
+ 0003:00009588       ___onexitend               1002c588     <common>
+ 0003:0000958c       ___onexitbegin             1002c58c     <common>
+ 0003:00009590       ___sse2_available          1002c590     <common>
+ 0003:00009594       ___dyn_tls_init_callback   1002c594     <common>
+
+ entry point at        0001:0001ead7
+
+ Static symbols
+
+ 0001:00000e60       _c1_info_helper            10001e60 f   c1_trajectory_planner.obj
+ 0001:00003470       _c1_emlrt_marshallOut      10004470 f   c1_trajectory_planner.obj
+ 0001:000034d0       _c1_b_emlrt_marshallOut    100044d0 f   c1_trajectory_planner.obj
+ 0001:00003ba0       _mdlProcessParameters_c1_trajectory_planner 10004ba0 f   c1_trajectory_planner.obj
+ 0001:00003c50       _initialize_params_c1_trajectory_planner 10004c50 f   c1_trajectory_planner.obj
+ 0001:00003c60       _mdlSetWorkWidths_c1_trajectory_planner 10004c60 f   c1_trajectory_planner.obj
+ 0001:00004000       _sf_get_instance_specialization 10005000 f   c1_trajectory_planner.obj
+ 0001:00004010       _mdlStart_c1_trajectory_planner 10005010 f   c1_trajectory_planner.obj
+ 0001:000041f0       _init_dsm_address_info     100051f0 f   c1_trajectory_planner.obj
+ 0001:00004200       _init_simulink_io_address  10005200 f   c1_trajectory_planner.obj
+ 0001:00004250       _sf_get_sim_state_info_c1_trajectory_planner 10005250 f   c1_trajectory_planner.obj
+ 0001:000042f0       _chart_debug_initialization 100052f0 f   c1_trajectory_planner.obj
+ 0001:000047e0       _init_script_number_translation 100057e0 f   c1_trajectory_planner.obj
+ 0001:000047f0       _c1_sf_marshallOut         100057f0 f   c1_trajectory_planner.obj
+ 0001:00004870       _c1_sf_marshallIn          10005870 f   c1_trajectory_planner.obj
+ 0001:000048f0       _c1_b_emlrt_marshallIn     100058f0 f   c1_trajectory_planner.obj
+ 0001:00004940       _sf_opaque_initialize_c1_trajectory_planner 10005940 f   c1_trajectory_planner.obj
+ 0001:00004970       _initialize_c1_trajectory_planner 10005970 f   c1_trajectory_planner.obj
+ 0001:000049a0       _sf_opaque_enable_c1_trajectory_planner 100059a0 f   c1_trajectory_planner.obj
+ 0001:000049c0       _enable_c1_trajectory_planner 100059c0 f   c1_trajectory_planner.obj
+ 0001:000049e0       _sf_opaque_disable_c1_trajectory_planner 100059e0 f   c1_trajectory_planner.obj
+ 0001:00004a00       _disable_c1_trajectory_planner 10005a00 f   c1_trajectory_planner.obj
+ 0001:00004a20       _sf_opaque_gateway_c1_trajectory_planner 10005a20 f   c1_trajectory_planner.obj
+ 0001:00004a40       _sf_gateway_c1_trajectory_planner 10005a40 f   c1_trajectory_planner.obj
+ 0001:00005290       _sf_opaque_get_sim_state_c1_trajectory_planner 10006290 f   c1_trajectory_planner.obj
+ 0001:000052c0       _get_sim_state_c1_trajectory_planner 100062c0 f   c1_trajectory_planner.obj
+ 0001:000053d0       _sf_opaque_set_sim_state_c1_trajectory_planner 100063d0 f   c1_trajectory_planner.obj
+ 0001:00005410       _set_sim_state_c1_trajectory_planner 10006410 f   c1_trajectory_planner.obj
+ 0001:000054c0       _c1_update_debugger_state_c1_trajectory_planner 100064c0 f   c1_trajectory_planner.obj
+ 0001:000054d0       _c1_emlrt_marshallIn       100064d0 f   c1_trajectory_planner.obj
+ 0001:00005520       _c1_d_emlrt_marshallIn     10006520 f   c1_trajectory_planner.obj
+ 0001:00005570       _c1_e_emlrt_marshallIn     10006570 f   c1_trajectory_planner.obj
+ 0001:000055c0       _sf_opaque_terminate_c1_trajectory_planner 100065c0 f   c1_trajectory_planner.obj
+ 0001:00005650       _finalize_c1_trajectory_planner 10006650 f   c1_trajectory_planner.obj
+ 0001:00005660       _sf_opaque_init_subchart_simstructs 10006660 f   c1_trajectory_planner.obj
+ 0001:00005680       _initSimStructsc1_trajectory_planner 10006680 f   c1_trajectory_planner.obj
+ 0001:00005690       _mdlRTW_c1_trajectory_planner 10006690 f   c1_trajectory_planner.obj
+ 0001:00005720       _c3_info_helper            10006720 f   c3_trajectory_planner.obj
+ 0001:00008310       _c3_emlrt_marshallOut      10009310 f   c3_trajectory_planner.obj
+ 0001:00008370       _c3_b_emlrt_marshallOut    10009370 f   c3_trajectory_planner.obj
+ 0001:000090b0       _mdlProcessParameters_c3_trajectory_planner 1000a0b0 f   c3_trajectory_planner.obj
+ 0001:00009160       _initialize_params_c3_trajectory_planner 1000a160 f   c3_trajectory_planner.obj
+ 0001:00009170       _mdlSetWorkWidths_c3_trajectory_planner 1000a170 f   c3_trajectory_planner.obj
+ 0001:00009540       _sf_get_instance_specialization 1000a540 f   c3_trajectory_planner.obj
+ 0001:00009550       _mdlStart_c3_trajectory_planner 1000a550 f   c3_trajectory_planner.obj
+ 0001:00009730       _init_dsm_address_info     1000a730 f   c3_trajectory_planner.obj
+ 0001:00009740       _init_simulink_io_address  1000a740 f   c3_trajectory_planner.obj
+ 0001:00009830       _sf_get_sim_state_info_c3_trajectory_planner 1000a830 f   c3_trajectory_planner.obj
+ 0001:000098d0       _chart_debug_initialization 1000a8d0 f   c3_trajectory_planner.obj
+ 0001:0000a7c0       _init_script_number_translation 1000b7c0 f   c3_trajectory_planner.obj
+ 0001:0000a7d0       _c3_j_sf_marshallOut       1000b7d0 f   c3_trajectory_planner.obj
+ 0001:0000a850       _c3_j_sf_marshallIn        1000b850 f   c3_trajectory_planner.obj
+ 0001:0000a8d0       _c3_t_emlrt_marshallIn     1000b8d0 f   c3_trajectory_planner.obj
+ 0001:0000a920       _sf_opaque_initialize_c3_trajectory_planner 1000b920 f   c3_trajectory_planner.obj
+ 0001:0000a950       _initialize_c3_trajectory_planner 1000b950 f   c3_trajectory_planner.obj
+ 0001:0000a9e0       _sf_opaque_enable_c3_trajectory_planner 1000b9e0 f   c3_trajectory_planner.obj
+ 0001:0000aa00       _enable_c3_trajectory_planner 1000ba00 f   c3_trajectory_planner.obj
+ 0001:0000aa20       _sf_opaque_disable_c3_trajectory_planner 1000ba20 f   c3_trajectory_planner.obj
+ 0001:0000aa40       _disable_c3_trajectory_planner 1000ba40 f   c3_trajectory_planner.obj
+ 0001:0000aa60       _sf_opaque_gateway_c3_trajectory_planner 1000ba60 f   c3_trajectory_planner.obj
+ 0001:0000aa80       _sf_gateway_c3_trajectory_planner 1000ba80 f   c3_trajectory_planner.obj
+ 0001:0000ad80       _c3_chartstep_c3_trajectory_planner 1000bd80 f   c3_trajectory_planner.obj
+ 0001:0000da60       _c3_sf_marshallOut         1000ea60 f   c3_trajectory_planner.obj
+ 0001:0000db10       _c3_sf_marshallIn          1000eb10 f   c3_trajectory_planner.obj
+ 0001:0000db90       _c3_b_emlrt_marshallIn     1000eb90 f   c3_trajectory_planner.obj
+ 0001:0000dc10       _c3_b_sf_marshallOut       1000ec10 f   c3_trajectory_planner.obj
+ 0001:0000dcc0       _c3_b_sf_marshallIn        1000ecc0 f   c3_trajectory_planner.obj
+ 0001:0000dd40       _c3_d_emlrt_marshallIn     1000ed40 f   c3_trajectory_planner.obj
+ 0001:0000ddc0       _c3_c_sf_marshallOut       1000edc0 f   c3_trajectory_planner.obj
+ 0001:0000de70       _c3_c_sf_marshallIn        1000ee70 f   c3_trajectory_planner.obj
+ 0001:0000def0       _c3_f_emlrt_marshallIn     1000eef0 f   c3_trajectory_planner.obj
+ 0001:0000df70       _c3_d_sf_marshallOut       1000ef70 f   c3_trajectory_planner.obj
+ 0001:0000e020       _c3_d_sf_marshallIn        1000f020 f   c3_trajectory_planner.obj
+ 0001:0000e0a0       _c3_h_emlrt_marshallIn     1000f0a0 f   c3_trajectory_planner.obj
+ 0001:0000e120       _c3_e_sf_marshallOut       1000f120 f   c3_trajectory_planner.obj
+ 0001:0000e1d0       _c3_e_sf_marshallIn        1000f1d0 f   c3_trajectory_planner.obj
+ 0001:0000e250       _c3_j_emlrt_marshallIn     1000f250 f   c3_trajectory_planner.obj
+ 0001:0000e2d0       _c3_f_sf_marshallOut       1000f2d0 f   c3_trajectory_planner.obj
+ 0001:0000e380       _c3_f_sf_marshallIn        1000f380 f   c3_trajectory_planner.obj
+ 0001:0000e400       _c3_l_emlrt_marshallIn     1000f400 f   c3_trajectory_planner.obj
+ 0001:0000e480       _c3_g_sf_marshallOut       1000f480 f   c3_trajectory_planner.obj
+ 0001:0000e530       _c3_g_sf_marshallIn        1000f530 f   c3_trajectory_planner.obj
+ 0001:0000e5b0       _c3_n_emlrt_marshallIn     1000f5b0 f   c3_trajectory_planner.obj
+ 0001:0000e630       _c3_h_sf_marshallOut       1000f630 f   c3_trajectory_planner.obj
+ 0001:0000e6e0       _c3_h_sf_marshallIn        1000f6e0 f   c3_trajectory_planner.obj
+ 0001:0000e760       _c3_p_emlrt_marshallIn     1000f760 f   c3_trajectory_planner.obj
+ 0001:0000e7e0       _c3_i_sf_marshallOut       1000f7e0 f   c3_trajectory_planner.obj
+ 0001:0000e890       _c3_i_sf_marshallIn        1000f890 f   c3_trajectory_planner.obj
+ 0001:0000e910       _c3_r_emlrt_marshallIn     1000f910 f   c3_trajectory_planner.obj
+ 0001:0000e990       _c3_b_sqrt                 1000f990 f   c3_trajectory_planner.obj
+ 0001:0000e9d0       _c3_eml_error              1000f9d0 f   c3_trajectory_planner.obj
+ 0001:0000eb00       _sf_opaque_get_sim_state_c3_trajectory_planner 1000fb00 f   c3_trajectory_planner.obj
+ 0001:0000eb30       _get_sim_state_c3_trajectory_planner 1000fb30 f   c3_trajectory_planner.obj
+ 0001:0000f4d0       _sf_opaque_set_sim_state_c3_trajectory_planner 100104d0 f   c3_trajectory_planner.obj
+ 0001:0000f510       _set_sim_state_c3_trajectory_planner 10010510 f   c3_trajectory_planner.obj
+ 0001:0000f890       _c3_update_debugger_state_c3_trajectory_planner 10010890 f   c3_trajectory_planner.obj
+ 0001:0000f8a0       _c3_emlrt_marshallIn       100108a0 f   c3_trajectory_planner.obj
+ 0001:0000f8f0       _c3_c_emlrt_marshallIn     100108f0 f   c3_trajectory_planner.obj
+ 0001:0000f940       _c3_e_emlrt_marshallIn     10010940 f   c3_trajectory_planner.obj
+ 0001:0000f990       _c3_g_emlrt_marshallIn     10010990 f   c3_trajectory_planner.obj
+ 0001:0000f9e0       _c3_i_emlrt_marshallIn     100109e0 f   c3_trajectory_planner.obj
+ 0001:0000fa30       _c3_k_emlrt_marshallIn     10010a30 f   c3_trajectory_planner.obj
+ 0001:0000fa80       _c3_m_emlrt_marshallIn     10010a80 f   c3_trajectory_planner.obj
+ 0001:0000fad0       _c3_o_emlrt_marshallIn     10010ad0 f   c3_trajectory_planner.obj
+ 0001:0000fb20       _c3_q_emlrt_marshallIn     10010b20 f   c3_trajectory_planner.obj
+ 0001:0000fb70       _c3_s_emlrt_marshallIn     10010b70 f   c3_trajectory_planner.obj
+ 0001:0000fbc0       _c3_v_emlrt_marshallIn     10010bc0 f   c3_trajectory_planner.obj
+ 0001:0000fc10       _c3_w_emlrt_marshallIn     10010c10 f   c3_trajectory_planner.obj
+ 0001:0000fc60       _sf_opaque_terminate_c3_trajectory_planner 10010c60 f   c3_trajectory_planner.obj
+ 0001:0000fcf0       _finalize_c3_trajectory_planner 10010cf0 f   c3_trajectory_planner.obj
+ 0001:0000fd00       _sf_opaque_init_subchart_simstructs 10010d00 f   c3_trajectory_planner.obj
+ 0001:0000fd20       _initSimStructsc3_trajectory_planner 10010d20 f   c3_trajectory_planner.obj
+ 0001:0000fd30       _mdlRTW_c3_trajectory_planner 10010d30 f   c3_trajectory_planner.obj
+ 0001:0000fdd0       _c4_info_helper            10010dd0 f   c4_trajectory_planner.obj
+ 0001:000129c0       _c4_emlrt_marshallOut      100139c0 f   c4_trajectory_planner.obj
+ 0001:00012a20       _c4_b_emlrt_marshallOut    10013a20 f   c4_trajectory_planner.obj
+ 0001:00013540       _mdlProcessParameters_c4_trajectory_planner 10014540 f   c4_trajectory_planner.obj
+ 0001:000135f0       _initialize_params_c4_trajectory_planner 100145f0 f   c4_trajectory_planner.obj
+ 0001:00013600       _mdlSetWorkWidths_c4_trajectory_planner 10014600 f   c4_trajectory_planner.obj
+ 0001:00013980       _sf_get_instance_specialization 10014980 f   c4_trajectory_planner.obj
+ 0001:00013990       _mdlStart_c4_trajectory_planner 10014990 f   c4_trajectory_planner.obj
+ 0001:00013b70       _init_dsm_address_info     10014b70 f   c4_trajectory_planner.obj
+ 0001:00013b80       _init_simulink_io_address  10014b80 f   c4_trajectory_planner.obj
+ 0001:00013c40       _sf_get_sim_state_info_c4_trajectory_planner 10014c40 f   c4_trajectory_planner.obj
+ 0001:00013ce0       _chart_debug_initialization 10014ce0 f   c4_trajectory_planner.obj
+ 0001:00014940       _init_script_number_translation 10015940 f   c4_trajectory_planner.obj
+ 0001:00014950       _c4_i_sf_marshallOut       10015950 f   c4_trajectory_planner.obj
+ 0001:000149d0       _c4_i_sf_marshallIn        100159d0 f   c4_trajectory_planner.obj
+ 0001:00014a50       _c4_r_emlrt_marshallIn     10015a50 f   c4_trajectory_planner.obj
+ 0001:00014aa0       _sf_opaque_initialize_c4_trajectory_planner 10015aa0 f   c4_trajectory_planner.obj
+ 0001:00014ad0       _initialize_c4_trajectory_planner 10015ad0 f   c4_trajectory_planner.obj
+ 0001:00014b50       _sf_opaque_enable_c4_trajectory_planner 10015b50 f   c4_trajectory_planner.obj
+ 0001:00014b70       _enable_c4_trajectory_planner 10015b70 f   c4_trajectory_planner.obj
+ 0001:00014b90       _sf_opaque_disable_c4_trajectory_planner 10015b90 f   c4_trajectory_planner.obj
+ 0001:00014bb0       _disable_c4_trajectory_planner 10015bb0 f   c4_trajectory_planner.obj
+ 0001:00014bd0       _sf_opaque_gateway_c4_trajectory_planner 10015bd0 f   c4_trajectory_planner.obj
+ 0001:00014bf0       _sf_gateway_c4_trajectory_planner 10015bf0 f   c4_trajectory_planner.obj
+ 0001:00014e70       _c4_chartstep_c4_trajectory_planner 10015e70 f   c4_trajectory_planner.obj
+ 0001:000174f0       _c4_sf_marshallOut         100184f0 f   c4_trajectory_planner.obj
+ 0001:000175a0       _c4_sf_marshallIn          100185a0 f   c4_trajectory_planner.obj
+ 0001:00017620       _c4_b_emlrt_marshallIn     10018620 f   c4_trajectory_planner.obj
+ 0001:000176a0       _c4_b_sf_marshallOut       100186a0 f   c4_trajectory_planner.obj
+ 0001:00017750       _c4_b_sf_marshallIn        10018750 f   c4_trajectory_planner.obj
+ 0001:000177d0       _c4_d_emlrt_marshallIn     100187d0 f   c4_trajectory_planner.obj
+ 0001:00017850       _c4_c_sf_marshallOut       10018850 f   c4_trajectory_planner.obj
+ 0001:00017900       _c4_c_sf_marshallIn        10018900 f   c4_trajectory_planner.obj
+ 0001:00017980       _c4_f_emlrt_marshallIn     10018980 f   c4_trajectory_planner.obj
+ 0001:00017a00       _c4_d_sf_marshallOut       10018a00 f   c4_trajectory_planner.obj
+ 0001:00017ab0       _c4_d_sf_marshallIn        10018ab0 f   c4_trajectory_planner.obj
+ 0001:00017b30       _c4_h_emlrt_marshallIn     10018b30 f   c4_trajectory_planner.obj
+ 0001:00017bb0       _c4_e_sf_marshallOut       10018bb0 f   c4_trajectory_planner.obj
+ 0001:00017c60       _c4_e_sf_marshallIn        10018c60 f   c4_trajectory_planner.obj
+ 0001:00017ce0       _c4_j_emlrt_marshallIn     10018ce0 f   c4_trajectory_planner.obj
+ 0001:00017d60       _c4_f_sf_marshallOut       10018d60 f   c4_trajectory_planner.obj
+ 0001:00017e10       _c4_f_sf_marshallIn        10018e10 f   c4_trajectory_planner.obj
+ 0001:00017e90       _c4_l_emlrt_marshallIn     10018e90 f   c4_trajectory_planner.obj
+ 0001:00017f10       _c4_g_sf_marshallOut       10018f10 f   c4_trajectory_planner.obj
+ 0001:00017fc0       _c4_g_sf_marshallIn        10018fc0 f   c4_trajectory_planner.obj
+ 0001:00018040       _c4_n_emlrt_marshallIn     10019040 f   c4_trajectory_planner.obj
+ 0001:000180c0       _c4_h_sf_marshallOut       100190c0 f   c4_trajectory_planner.obj
+ 0001:00018170       _c4_h_sf_marshallIn        10019170 f   c4_trajectory_planner.obj
+ 0001:000181f0       _c4_p_emlrt_marshallIn     100191f0 f   c4_trajectory_planner.obj
+ 0001:00018270       _c4_eml_error              10019270 f   c4_trajectory_planner.obj
+ 0001:000183a0       _sf_opaque_get_sim_state_c4_trajectory_planner 100193a0 f   c4_trajectory_planner.obj
+ 0001:000183d0       _get_sim_state_c4_trajectory_planner 100193d0 f   c4_trajectory_planner.obj
+ 0001:00018c80       _sf_opaque_set_sim_state_c4_trajectory_planner 10019c80 f   c4_trajectory_planner.obj
+ 0001:00018cc0       _set_sim_state_c4_trajectory_planner 10019cc0 f   c4_trajectory_planner.obj
+ 0001:00019000       _c4_update_debugger_state_c4_trajectory_planner 1001a000 f   c4_trajectory_planner.obj
+ 0001:00019010       _c4_emlrt_marshallIn       1001a010 f   c4_trajectory_planner.obj
+ 0001:00019060       _c4_c_emlrt_marshallIn     1001a060 f   c4_trajectory_planner.obj
+ 0001:000190b0       _c4_e_emlrt_marshallIn     1001a0b0 f   c4_trajectory_planner.obj
+ 0001:00019100       _c4_g_emlrt_marshallIn     1001a100 f   c4_trajectory_planner.obj
+ 0001:00019150       _c4_i_emlrt_marshallIn     1001a150 f   c4_trajectory_planner.obj
+ 0001:000191a0       _c4_k_emlrt_marshallIn     1001a1a0 f   c4_trajectory_planner.obj
+ 0001:000191f0       _c4_m_emlrt_marshallIn     1001a1f0 f   c4_trajectory_planner.obj
+ 0001:00019240       _c4_o_emlrt_marshallIn     1001a240 f   c4_trajectory_planner.obj
+ 0001:00019290       _c4_q_emlrt_marshallIn     1001a290 f   c4_trajectory_planner.obj
+ 0001:000192e0       _c4_t_emlrt_marshallIn     1001a2e0 f   c4_trajectory_planner.obj
+ 0001:00019330       _c4_u_emlrt_marshallIn     1001a330 f   c4_trajectory_planner.obj
+ 0001:00019380       _sf_opaque_terminate_c4_trajectory_planner 1001a380 f   c4_trajectory_planner.obj
+ 0001:00019410       _finalize_c4_trajectory_planner 1001a410 f   c4_trajectory_planner.obj
+ 0001:00019420       _sf_opaque_init_subchart_simstructs 1001a420 f   c4_trajectory_planner.obj
+ 0001:00019440       _initSimStructsc4_trajectory_planner 1001a440 f   c4_trajectory_planner.obj
+ 0001:00019450       _mdlRTW_c4_trajectory_planner 1001a450 f   c4_trajectory_planner.obj
+ 0001:00019ed0       _getChartInfoFromSimStruct 1001aed0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001afd0       __ssFatalError             1001bfd0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d330       _ProcessMexSfunctionCmdLineCall 1001e330 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d4c0       _sf_debug_api_wrapper      1001e4c0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d4f0       _mdlStart                  1001e4f0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d510       _mdl_start_processing      1001e510 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d5a0       _mdlTerminate              1001e5a0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d5c0       _mdl_terminate_processing  1001e5c0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d630       _mdlInitializeSampleTimes  1001e630 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d650       _mdlZeroCrossings          1001e650 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d670       _mdl_zeroCrossings_processing 1001e670 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d6a0       _mdlDerivatives            1001e6a0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d6c0       _mdl_derivatives_processing 1001e6c0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d700       _mdlInitializeConditions   1001e700 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d720       _mdl_initialize_conditions_processing 1001e720 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d760       _mdlEnable                 1001e760 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d780       _mdl_enable_processing     1001e780 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d7b0       _mdlDisable                1001e7b0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d7d0       _mdl_disable_processing    1001e7d0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d800       _mdlOutputs                1001e800 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d820       _mdl_outputs_processing    1001e820 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d8f0       _mdl_outputs_continuous_legacy 1001e8f0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001d9c0       _mdlGetTimeOfNextVarHit    1001e9c0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001da00       __ProcessMexSfunctionCmdLineCall 1001ea00 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e020       _mdlSetWorkWidths          1001f020 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e040       _mdlProcessParameters      1001f040 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e060       _mdlInitializeSizes        1001f060 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e080       _mdlExtModeExec            1001f080 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e0a0       _mdl_ext_mode_exec_processing 1001f0a0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e0e0       _mdlRTW                    1001f0e0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e110       __CreateSimStruct          1001f110 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e240       __RegNumInputPortsCB       1001f240 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e2a0       __RegNumOutputPortsCB      1001f2a0 f   trajectory_planner_sfun_registry.obj
+ 0001:0001e769       _pre_c_init                1001f769 f   MSVCRT:crtdll.obj
+ 0001:0001e9c1       ___DllMainCRTStartup       1001f9c1 f   MSVCRT:crtdll.obj

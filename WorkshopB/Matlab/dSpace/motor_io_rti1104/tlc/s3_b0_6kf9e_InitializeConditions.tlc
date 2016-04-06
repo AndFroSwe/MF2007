@@ -1,0 +1,41 @@
+%implements s3_b0_6kf9e_InitializeConditions "C"
+
+%function InitializeConditions(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign _modelSS = ""
+
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[0], "Initialize",0)
+/* InitializeConditions for MATLAB Function: '<Root>/Traject_and_Model_function 1' */
+%if SLibCG_SystemFcnArgAccessed("Traject_and_Model_function_Init",0,0)
+%assign _modelSS = RTMGetModelSSFromIR()
+%endif
+
+%<SLibCGIRGenReusableSysCall("Traject_and_Model_function_Init", ["%<_modelSS>", "&motor_io_DW.sf_Traject_and_Model_function1"], 0, 0, 2, 0, 2, 2)>\
+
+%endif
+/* InitializeConditions for Integrator: '<S1>/Integrator1' */
+motor_io_X.Integrator1_CSTATE = motor_io_P.Integrator1_IC;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[0], "Initialize",0)
+/* InitializeConditions for MATLAB Function: '<Root>/Traject_and_Model_function 3' */
+%if SLibCG_SystemFcnArgAccessed("Traject_and_Model_function_Init",0,0)
+%assign _modelSS = RTMGetModelSSFromIR()
+%endif
+
+%<SLibCGIRGenReusableSysCall("Traject_and_Model_function_Init", ["%<_modelSS>", "&motor_io_DW.sf_Traject_and_Model_function3"], 0, 1, 2, 0, 2, 2)>\
+
+%endif
+/* InitializeConditions for Integrator: '<S1>/Integrator' */
+motor_io_X.Integrator_CSTATE = motor_io_P.Integrator_IC;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void InitializeConditions(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 1, fcnProtoType)>
+%endfunction

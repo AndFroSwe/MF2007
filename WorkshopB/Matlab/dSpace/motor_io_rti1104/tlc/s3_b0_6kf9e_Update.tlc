@@ -1,0 +1,18 @@
+%implements s3_b0_6kf9e_Update "C"
+
+%function Update(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCGIRDumpSystemUserCode(2, "Update", "Header")>\
+%<SLibCGIRDumpSystemUserCode(2, "Update", "Body")>\
+%<SLibCGIRDumpSystemUserCode(2, "Update", "Trailer")>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 3, fcnProtoType)>
+%endfunction
