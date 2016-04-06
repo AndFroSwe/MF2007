@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.4)  6 APR 2016 20:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.4)  6 APR 2016 20:14
 entering extended mode
-**main.tex
-(main.tex
+**part1.tex
+(part1.tex
 LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 69 languages loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -306,13 +306,6 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2015/08/03 3.9m The Babel package
 
@@ -366,14 +359,6 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count101
-\float@exts=\toks22
-\float@box=\box28
-\@float@everytoks=\toks23
-\@floatcapt=\box29
-)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
@@ -388,9 +373,9 @@ Package ifvtex Info: VTeX not detected.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count102
-\Gm@cntv=\count103
-\c@Gm@tempcnt=\count104
+\Gm@cnth=\count101
+\Gm@cntv=\count102
+\c@Gm@tempcnt=\count103
 \Gm@bindingoffset=\dimen115
 \Gm@wd@mp=\dimen116
 \Gm@odd@mp=\dimen117
@@ -399,60 +384,42 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutheight=\dimen120
 \Gm@layouthoffset=\dimen121
 \Gm@layoutvoffset=\dimen122
-\Gm@dimlist=\toks24
+\Gm@dimlist=\toks22
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count104
+\float@exts=\toks23
+\float@box=\box28
+\@float@everytoks=\toks24
+\@floatcapt=\box29
+) (part1.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen123
-\captionmargin@=\dimen124
-\captionwidth=\dimen125
-\caption@tempdima=\dimen126
-\caption@indent=\dimen127
-\caption@parindent=\dimen128
-\caption@hangindent=\dimen129
-)
-\c@ContinuedFloat=\count105
-Package caption Info: float package is loaded.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
-Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
-\c@subfigure=\count106
-\c@subtable=\count107
-)
-(main.aux
-
-LaTeX Warning: Label `fig:task2_pos' multiply defined.
-
-)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count108
-\scratchdimen=\dimen130
+\scratchcounter=\count105
+\scratchdimen=\dimen123
 \scratchbox=\box30
-\nofMPsegments=\count109
-\nofMParguments=\count110
+\nofMPsegments=\count106
+\nofMParguments=\count107
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count111
-\MPscratchDim=\dimen131
-\MPnumerator=\count112
-\makeMPintoPDFobject=\count113
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen124
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
 \everyMPtoPDFconversion=\toks26
 )
 *geometry* driver: auto-detecting
@@ -489,152 +456,45 @@ LaTeX Font Info:    ... okay on input line 26.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+LaTeX Font Info:    Try loading font information for U+msa on input line 17.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+LaTeX Font Info:    Try loading font information for U+msb on input line 17.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (part1.tex
+)
 Underfull \hbox (badness 10000) in paragraph at lines 15--18
 
  []
 
-<./fig/task1_traj_rs10.png, id=1, 1011.78pt x 395.22656pt>
-File: ./fig/task1_traj_rs10.png Graphic file (type png)
+<fig/task1_traj_rs10.png, id=1, 1011.78pt x 395.22656pt>
+File: fig/task1_traj_rs10.png Graphic file (type png)
 
-<use ./fig/task1_traj_rs10.png>
-Package pdftex.def Info: ./fig/task1_traj_rs10.png used on input line 32.
+<use fig/task1_traj_rs10.png>
+Package pdftex.def Info: fig/task1_traj_rs10.png used on input line 32.
 (pdftex.def)             Requested size: 525.23788pt x 205.17523pt.
-) (part2.tex
-<./fig/task2_traj.png, id=3, 1626.075pt x 975.645pt>
-File: ./fig/task2_traj.png Graphic file (type png)
-
-<use ./fig/task2_traj.png>
-Package pdftex.def Info: ./fig/task2_traj.png used on input line 21.
-(pdftex.def)             Requested size: 525.23788pt x 315.13066pt.
  [1
 
 {C:/Users/Gabriel/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./fig/tas
-k1_traj_rs10.png>]
-<./fig/task2_position.png, id=16, 1626.075pt x 975.645pt>
-File: ./fig/task2_position.png Graphic file (type png)
-
-<use ./fig/task2_position.png>
-Package pdftex.def Info: ./fig/task2_position.png used on input line 32.
-(pdftex.def)             Requested size: 525.23788pt x 315.13066pt.
- [2 <./fig/task2_traj.png (PNG copy)>]
-<./fig/task2_closeup.png, id=20, 1626.075pt x 975.645pt>
-File: ./fig/task2_closeup.png Graphic file (type png)
-
-<use ./fig/task2_closeup.png>
-Package pdftex.def Info: ./fig/task2_closeup.png used on input line 43.
-(pdftex.def)             Requested size: 525.23788pt x 315.13066pt.
- [3 <./fig/task2_position.png (PNG copy)> <./fig/task2_closeup.png (PNG copy)>]
-
-<./fig/task2_traj_l2.png, id=24, 421.575pt x 316.18124pt>
-File: ./fig/task2_traj_l2.png Graphic file (type png)
-
-<use ./fig/task2_traj_l2.png>
-Package pdftex.def Info: ./fig/task2_traj_l2.png used on input line 57.
-(pdftex.def)             Requested size: 525.23788pt x 393.93742pt.
-) (part3.tex
-<./fig/plot31org.png, id=25, 526.96875pt x 395.22656pt>
-File: ./fig/plot31org.png Graphic file (type png)
-
-<use ./fig/plot31org.png>
-Package pdftex.def Info: ./fig/plot31org.png used on input line 19.
-(pdftex.def)             Requested size: 525.23788pt x 393.94708pt.
- [4 <./fig/task2_traj_l2.png (PNG copy)>]
-<./fig/plot31fast.png, id=31, 526.96875pt x 395.22656pt>
-File: ./fig/plot31fast.png Graphic file (type png)
-
-<use ./fig/plot31fast.png>
-Package pdftex.def Info: ./fig/plot31fast.png used on input line 27.
-(pdftex.def)             Requested size: 525.23788pt x 393.94708pt.
- [5 <./fig/plot31org.png (PNG copy)>])
-(part3level2.tex <./fig/task3_1_1000.png, id=35, 526.96875pt x 395.22656pt>
-File: ./fig/task3_1_1000.png Graphic file (type png)
-
-<use ./fig/task3_1_1000.png>
-Package pdftex.def Info: ./fig/task3_1_1000.png used on input line 40.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-
-<./fig/task3_1_2000.png, id=36, 526.96875pt x 395.22656pt>
-File: ./fig/task3_1_2000.png Graphic file (type png)
-
-<use ./fig/task3_1_2000.png>
-Package pdftex.def Info: ./fig/task3_1_2000.png used on input line 43.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
- [6 <./fig/plot31fast.png (PNG copy)>]
-<./fig/task3_2_1000.png, id=40, 526.96875pt x 395.22656pt>
-File: ./fig/task3_2_1000.png Graphic file (type png)
-
-<use ./fig/task3_2_1000.png>
-Package pdftex.def Info: ./fig/task3_2_1000.png used on input line 55.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-
-<./fig/task3_2_2000.png, id=41, 526.96875pt x 395.22656pt>
-File: ./fig/task3_2_2000.png Graphic file (type png)
-
-<use ./fig/task3_2_2000.png>
-Package pdftex.def Info: ./fig/task3_2_2000.png used on input line 58.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-
-<./fig/task3_3_1000_freq_1700.png, id=42, 526.96875pt x 395.22656pt>
-File: ./fig/task3_3_1000_freq_1700.png Graphic file (type png)
-
-<use ./fig/task3_3_1000_freq_1700.png>
-Package pdftex.def Info: ./fig/task3_3_1000_freq_1700.png used on input line 71
-.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-
-<./fig/task3_3_2000_freq_1700.png, id=43, 526.96875pt x 395.22656pt>
-File: ./fig/task3_3_2000_freq_1700.png Graphic file (type png)
-
-<use ./fig/task3_3_2000_freq_1700.png>
-Package pdftex.def Info: ./fig/task3_3_2000_freq_1700.png used on input line 74
-.
-(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
- [7 <./fig/task3_1_1000.png (PNG copy)> <./fig/task3_1_2000.png (PNG copy)> <./
-fig/task3_2_1000.png (PNG copy)> <./fig/task3_2_2000.png (PNG copy)>]
-<./fig/task3_3_bode.png, id=48, 736.25063pt x 585.68813pt>
-File: ./fig/task3_3_bode.png Graphic file (type png)
-
-<use ./fig/task3_3_bode.png>
-Package pdftex.def Info: ./fig/task3_3_bode.png used on input line 85.
-(pdftex.def)             Requested size: 368.1244pt x 292.84334pt.
-) [8 <./fig/task3_3_1000_freq_1700.png (PNG copy)> <./fig/task3_3_2000_freq_170
-0.png (PNG copy)> <./fig/task3_3_bode.png (PNG copy)>] (main.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+k1_traj_rs10.png>] (part1.aux) ) 
 Here is how much of TeX's memory you used:
- 4601 strings out of 493673
- 64007 string characters out of 3141524
- 134000 words of memory out of 3000000
- 7863 multiletter control sequences out of 15000+200000
- 15508 words of font info for 49 fonts, out of 3000000 for 9000
+ 3187 strings out of 493673
+ 40246 string characters out of 3141524
+ 110523 words of memory out of 3000000
+ 6492 multiletter control sequences out of 15000+200000
+ 8890 words of font info for 34 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 36i,8n,39p,622b,386s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Gabriel\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
-0\ecrm1200.pk> <C:\Users\Gabriel\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
-pen\ec\dpi600\ecbx1440.pk> <C:\Users\Gabriel\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Gabriel\AppData\Local\MiKTeX\2
-.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Gabriel\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on main.pdf (8 pages, 509792 bytes).
+ 27i,8n,32p,510b,265s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr12.pfb>
+Output written on part1.pdf (1 page, 68032 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
+ 25 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

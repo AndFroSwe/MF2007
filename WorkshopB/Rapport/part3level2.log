@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.4)  6 APR 2016 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.4)  6 APR 2016 20:34
 entering extended mode
 **part3level2.tex
 (part3level2.tex
@@ -395,32 +395,54 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks24
 \@floatcapt=\box29
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen123
+\captionmargin@=\dimen124
+\captionwidth=\dimen125
+\caption@tempdima=\dimen126
+\caption@indent=\dimen127
+\caption@parindent=\dimen128
+\caption@hangindent=\dimen129
+)
+\c@ContinuedFloat=\count105
+Package caption Info: float package is loaded.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+\c@subfigure=\count106
+\c@subtable=\count107
+)
 (part3level2.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count105
-\scratchdimen=\dimen123
+\scratchcounter=\count108
+\scratchdimen=\dimen130
 \scratchbox=\box30
-\nofMPsegments=\count106
-\nofMParguments=\count107
+\nofMPsegments=\count109
+\nofMParguments=\count110
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count108
-\MPscratchDim=\dimen124
-\MPnumerator=\count109
-\makeMPintoPDFobject=\count110
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen131
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
 \everyMPtoPDFconversion=\toks26
 )
 *geometry* driver: auto-detecting
@@ -457,60 +479,87 @@ LaTeX Font Info:    ... okay on input line 13.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 22.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+LaTeX Font Info:    Try loading font information for U+msb on input line 22.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<fig/task3_1_1000.png, id=1, 1011.78pt x 420.82219pt>
+<fig/task3_1_1000.png, id=1, 526.96875pt x 395.22656pt>
 File: fig/task3_1_1000.png Graphic file (type png)
 
 <use fig/task3_1_1000.png>
-Package pdftex.def Info: fig/task3_1_1000.png used on input line 37.
-(pdftex.def)             Requested size: 525.23788pt x 218.46278pt.
-File: fig/task3_1_1000.png Graphic file (type png)
- <use fig/task3_1_1000.png>
-Package pdftex.def Info: fig/task3_1_1000.png used on input line 48.
-(pdftex.def)             Requested size: 525.23788pt x 218.46278pt.
- [1
+Package pdftex.def Info: fig/task3_1_1000.png used on input line 40.
+(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
-{C:/Users/Gabriel/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./fig/tas
-k3_1_1000.png>]
-<fig/task3_3_1000_freq_1700.png, id=12, 1021.56656pt x 395.22656pt>
+<fig/task3_1_2000.png, id=2, 526.96875pt x 395.22656pt>
+File: fig/task3_1_2000.png Graphic file (type png)
+
+<use fig/task3_1_2000.png>
+Package pdftex.def Info: fig/task3_1_2000.png used on input line 43.
+(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
+
+<fig/task3_2_1000.png, id=3, 526.96875pt x 395.22656pt>
+File: fig/task3_2_1000.png Graphic file (type png)
+
+<use fig/task3_2_1000.png>
+Package pdftex.def Info: fig/task3_2_1000.png used on input line 55.
+(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
+
+<fig/task3_2_2000.png, id=4, 526.96875pt x 395.22656pt>
+File: fig/task3_2_2000.png Graphic file (type png)
+
+<use fig/task3_2_2000.png>
+Package pdftex.def Info: fig/task3_2_2000.png used on input line 58.
+(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
+
+<fig/task3_3_1000_freq_1700.png, id=5, 526.96875pt x 395.22656pt>
 File: fig/task3_3_1000_freq_1700.png Graphic file (type png)
 
 <use fig/task3_3_1000_freq_1700.png>
-Package pdftex.def Info: fig/task3_3_1000_freq_1700.png used on input line 60.
-(pdftex.def)             Requested size: 525.23788pt x 203.20322pt.
+Package pdftex.def Info: fig/task3_3_1000_freq_1700.png used on input line 71.
+(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
-<fig/task3_3_bode.png, id=13, 736.25063pt x 585.68813pt>
+<fig/task3_3_2000_freq_1700.png, id=6, 526.96875pt x 395.22656pt>
+File: fig/task3_3_2000_freq_1700.png Graphic file (type png)
+
+<use fig/task3_3_2000_freq_1700.png>
+Package pdftex.def Info: fig/task3_3_2000_freq_1700.png used on input line 74.
+(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
+ [1
+
+{C:/Users/Gabriel/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./fig/tas
+k3_1_1000.png (PNG copy)> <./fig/task3_1_2000.png (PNG copy)> <./fig/task3_2_10
+00.png (PNG copy)> <./fig/task3_2_2000.png (PNG copy)>] <fig/task3_3_bode.png, 
+id=15, 736.25063pt x 585.68813pt>
 File: fig/task3_3_bode.png Graphic file (type png)
 
 <use fig/task3_3_bode.png>
-Package pdftex.def Info: fig/task3_3_bode.png used on input line 71.
+Package pdftex.def Info: fig/task3_3_bode.png used on input line 85.
 (pdftex.def)             Requested size: 368.1244pt x 292.84334pt.
- [2 <./fig/task3_3_1000_freq_1700.png>] [3 <./fig/task3_3_bode.png (PNG copy)>]
- (part3level2.aux) ) 
+ [2 <./fig/task3_3_1000_freq_1700.png (PNG copy)> <./fig/task3_3_2000_freq_1700
+.png (PNG copy)> <./fig/task3_3_bode.png (PNG copy)>] (part3level2.aux) ) 
 Here is how much of TeX's memory you used:
- 3200 strings out of 493673
- 40638 string characters out of 3141524
- 110547 words of memory out of 3000000
- 6503 multiletter control sequences out of 15000+200000
+ 4322 strings out of 493673
+ 61141 string characters out of 3141524
+ 132931 words of memory out of 3000000
+ 7613 multiletter control sequences out of 15000+200000
  8890 words of font info for 34 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 27i,7n,32p,491b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr8.pfb>
-Output written on part3level2.pdf (3 pages, 141695 bytes).
+ 36i,7n,39p,492b,380s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+Output written on part3level2.pdf (2 pages, 217555 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
+ 32 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

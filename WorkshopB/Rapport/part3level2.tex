@@ -7,6 +7,8 @@
 %\usepackage[margin=0.5in]{geometry}
 %\usepackage{float}
 %
+%\usepackage{caption}
+%\usepackage{subcaption}
 %\graphicspath{{fig/}}
 %
 %
@@ -29,38 +31,50 @@ The velocity controller from Exercise 3 was used as controller. Following the fi
 
 \end{center}
 
-\subsection{}
+\subsection*{1}
 Figure \ref{fig:task3_1_1000} shows the step responses for two different values of Ao. A force of 5000 N is applied at the time 0.03 seconds.
+
 \begin{figure}[H]
-	\begin{center}
-	
-		\includegraphics[width=\linewidth]{task3_1_1000.png}
-		\caption{Comparison between the two different Ao values}
-		\label{fig:task3_1_1000}
-	\end{center}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{task3_1_1000.png}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{task3_1_2000.png}
+    \end{subfigure}
+	\caption{Comparison between the two different Ao values}
+	\label{fig:task3_1_1000}
 \end{figure}
 
-\subsection{}
+\subsection*{2}
 Figure \ref{fig:task3_2_1000} shows the step responses for two different values of Ao and now with a mass of 200 kg instead of 100 kg. The system behaves more or less the same as with a mass of 100 kg.
+
 \begin{figure}[H]
-	\begin{center}
-	
-		\includegraphics[width=\linewidth]{task3_1_1000.png}
-		\caption{Comparison between the two different Ao values}
-		\label{fig:task3_2_1000}
-	\end{center}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{task3_2_1000.png}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{task3_2_2000.png}
+    \end{subfigure}
+	\caption{Comparison between the two different Ao values}
+	\label{fig:task3_2_1000}
 \end{figure}
 
-\subsection{}
+\subsection*{3}
 
 Figure \ref{fig:task3_3_1000_freq_1700} shows the step responses for two different values of Ao with a sine wave as noise. The sine wave has a frequency of 1700 rad/s.
+
 \begin{figure}[H]
-	\begin{center}
-	
-		\includegraphics[width=\linewidth]{task3_3_1000_freq_1700.png}
-		\caption{Comparison between the two different Ao values}
-		\label{fig:task3_3_1000_freq_1700}
-	\end{center}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{task3_3_1000_freq_1700.png}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{task3_3_2000_freq_1700.png}
+    \end{subfigure}
+	\caption{Comparison between the two different Ao values}
+	\label{fig:task3_3_1000_freq_1700}
 \end{figure}
 
 Figure \ref{fig:task3_3_bode} shows the complementary sensitivity function for the two different Ao values. The magnitude when the frequency is 1700 rad/s is shown which shows that a lower Ao value dampens the noise more. It was hard to find a frequency were the noise dampening were very noticeable but the dampening can be seen in Figure \ref{fig:task3_3_1000_freq_1700} were the noise affects the system less when Ao=1000 compared to Ao=2000.
@@ -69,7 +83,7 @@ Figure \ref{fig:task3_3_bode} shows the complementary sensitivity function for t
 	\begin{center}
 	
 		\includegraphics[scale=0.5]{task3_3_bode.png}
-		\caption{Comparison between the two different Ao values}
+		\caption{Comparison between the complementary sensitivity functions}
 		\label{fig:task3_3_bode}
 	\end{center}
 \end{figure}
