@@ -8,6 +8,8 @@
 \usepackage{graphicx}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{float}
+\usepackage{subcaption}
+\usepackage{caption}
 
 \graphicspath{{fig/}}
 
@@ -23,11 +25,9 @@ Andreas Fr\"oderberg \\ 880730-7577
 
 \begin{document}
 \maketitle
-http://www.hemnet.se/bostad/villa-7rum-segerstad-karlstads-kommun-karra-310-8630315
 \section*{Parameter identification}
 This section covers the methods behind finding the parameters to enter into the
-model to get the biggest similarity to the physical plant.http://www.hemnet.se/bostad/villa-7rum-segerstad-karlstads-kommun-karra-310-8630315
-
+model to get the biggest similarity to the physical plant
 \subsection*{Level 1}
 To identify the parameters of the DC motor, firstly an idealized model is
 studied theoretically to understand which physical parameters that affect the
@@ -61,7 +61,7 @@ $s=0$ and therefore the steady state gain is given by
     \label{eq:steadystate}
     k (1 + \frac{1}{Rd}).
 \end{equation}
-This contatiains only one unknown parameter. Therefore, to estimate the viscous
+This contains only one unknown parameter. Therefore, to estimate the viscous
 friction parameter $d$, it is suitable to examine and match the steady state
 rotational speed of the real system and the model. Since this model contains no
 static friction which is probably present in the real system, the test is
@@ -74,7 +74,6 @@ inertia. This is estimated from taking the time constant from step inputs,
 simulated by a square wave signal. Again, to minimize model disturbances caused
 by the static friction present in the real system, the square wave is run at a
 full 24 V.\\
-
 The tuning can be seen in Figure~\ref{fig:l1_sq_a24_f016_dtuned} and
 Figure~\ref{fig:l1_sq_a24_f016}. In
 Figure~\ref{fig:l1_sq_a24_f016_dtuned}, the model been tuned to take the
@@ -117,7 +116,7 @@ nequation
 \end{equation}
 with the friction torque $M_f$ and the static friction $F_c$. This
 friction is the maximum static friction torque that can be applied in
-the stick slip zone.  There is now one more design paameter that needs
+the stick slip zone.  There is now one more design parameter that needs
 to be tuned, $F_c$.  The linear friction is still most prominent when at
 high velocities and the static friction is the strongest when at low
 velocities. The inertia is decided solely from the rise time and should
@@ -174,7 +173,7 @@ verification of plant model and controller.
 \label{sub:velocity_level_1}
 Controlling the velocity is done with a PI controller. To best control the
 performance, the controller is designed in discrete time. \par
-The thumb rule for sample time of a system states that the system should be
+The rule of thumb for sample time of a system states that the system should be
 sampled at 4-10 times the rise time of the plant in open loop. Using the
 simplified model in \textsc{Matlab} and the commando \texttt{stepinfo}, the rise
 time is extracted and the sampling time is set to 10 times the rise time. \par
@@ -185,7 +184,7 @@ earlier.The new sytem matrices are given by the equations
 \begin{equation}
     \label{eq:phi}
     \Phi = e^{AT_s}
-\end{equation}http://www.hemnet.se/bostad/villa-7rum-segerstad-karlstads-kommun-karra-310-8630315
+\end{equation}
 and 
 \begin{equation}
     \label{eq:gamma}
@@ -213,7 +212,7 @@ The system is of order one so one closed loop pole given by
 \begin{equation}
     \label{eq:am_vel}
     A_m = z - p_1
-\end{equation}
+_\end{equation}
 is placed with an additional pole given by the observer polynomial 
 \begin{equation}
     \label{eq:ao_vel}
@@ -247,7 +246,20 @@ system is 1. Using the final-value theorem for discrete systems, one yields
     t0 = \left (\frac{B}{A_m} \right )^{-1}
 \end{equation}
 evaluated in $z=1$. 
-
+from square wave with 50 rad/s and 0.5Hz.
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_a50_f05.png}
+    \caption{Velocity response }
+    \label{fig:T2_a50_f05.png}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{T2_V_a50_f05.png}
+    \caption{Voltage response }
+    \label{fig:T2_V_a50_f05}
+  \end{subfigure}
+\end{figure}
 
 
 \end{document}
