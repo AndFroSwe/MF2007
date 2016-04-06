@@ -89,7 +89,7 @@ t3 = t1+t2
 
 %% Plots
 close all;
-simtime = 2;
+simtime = 1.5;
 sim('trajectory_planner.slx');
 
 %Data from Trajectory Planner
@@ -116,3 +116,7 @@ plot(posFunc)
 legend('Block','Code')
 title('Position of DC motor: Block and Code')
 
+figure
+plot(trajectoryBlock)
+legend('Acceleration','Velocity','Position')
+title('Trajectory planner signal with Rs=100')
