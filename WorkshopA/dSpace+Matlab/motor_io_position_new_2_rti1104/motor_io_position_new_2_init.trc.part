@@ -3,7 +3,7 @@
 --  Trace file: motor_io_position_new_2.trc
 --
 --  RTI1104 7.3 (02-Nov-2014)
---  Thu Apr 07 00:29:48 2016
+--  Thu Apr 07 00:48:33 2016
 --
 --  Used options:
 --    TRCGenerateVirtualBlocks      = 1
@@ -27,7 +27,7 @@
 
 _genname     "RTI"
 _genversion  "7.3"
-_gendate     "04/07/2016 00:29:51"
+_gendate     "04/07/2016 00:48:35"
 _description ""
 _author      "RTI1104 7.3 (02-Nov-2014)"
 _model       "motor_io_position_new_2.mdl"
@@ -39,16 +39,15 @@ _integer_type(32)
 -- No Data Capture blocks within model: use base sample time as sampling period
 sampling_period[0]
 {
-  value:       0.017951958020513102
+  value:       0.036235209383965315
   alias:       "HostService"
-  increment:   0.017951958020513102
+  increment:   0.036235209383965315
   unit:        "s"
 }
 
 
 
 -- Type definitions for arrays
-typedef motor_io_position_new_2_ArrayDT0_3 flt(64,IEEE)[3]
 typedef motor_io_position_new_2_ArrayDT0_2 flt(64,IEEE)[2]
 typedef motor_io_position_new_2_ArrayDT10_4 int(32)[4]
 

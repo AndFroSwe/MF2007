@@ -1,17 +1,17 @@
-%implements s1_b0_b5s9e_ForcingFunction "C"
+%implements s1_b0_66y9e_ForcingFunction "C"
 
 %function ForcingFunction(block, system) Output
 %assign cfgTxt = ""
 %openfile cfgTxt
 %assign localVarDecl = ""
 %openfile localVarDecl
-XDot_motor_io_position_new_T *_rtXdot;
+XDot_motor_io_position_new_2_T *_rtXdot;
 %closefile localVarDecl
 _rtXdot = %<(SLibCG_SE(SLibGetContStatesDerivativeStructPtr()))>;
-/* ForcingFunction for Integrator: '<S5>/Integrator1' */
-_rtXdot->Integrator1_CSTATE = motor_io_position_new_B.Integrator;
-/* ForcingFunction for Integrator: '<S5>/Integrator' */
-_rtXdot->Integrator_CSTATE = motor_io_position_new_B.Inertias1J;
+/* ForcingFunction for Integrator: '<S3>/Integrator1' */
+_rtXdot->Integrator1_CSTATE = motor_io_position_new_2_B.Integrator;
+/* ForcingFunction for Integrator: '<S3>/Integrator' */
+_rtXdot->Integrator_CSTATE = motor_io_position_new_2_B.Inertias1J;
 %closefile cfgTxt
 %<cfgTxt>
 %assign fcnProtoType = ""

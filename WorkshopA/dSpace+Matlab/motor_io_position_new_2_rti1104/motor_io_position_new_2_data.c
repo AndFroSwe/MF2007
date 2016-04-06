@@ -5,7 +5,7 @@
  *
  * Model version              : 1.30
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Thu Apr 07 00:29:48 2016
+ * C source code generated on : Thu Apr 07 00:48:33 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -49,12 +49,12 @@ P_motor_io_position_new_2_T motor_io_position_new_2_P = {
   /*  Expression: Gff_d.num{1}
    * Referenced by: '<S1>/Gff'
    */
-  { 7.2354040433067208, -7.5521056774356321, 1.9706674230555381 },
+  { 0.41948062320571367, -0.37579972112714138 },
 
   /*  Expression: Gff_d.den{1}
    * Referenced by: '<S1>/Gff'
    */
-  { 1.0, -1.0751039479871995, 0.075103947987199479 },
+  { 1.0, -1.0 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S1>/Gff'
                                         */
@@ -65,12 +65,12 @@ P_motor_io_position_new_2_T motor_io_position_new_2_P = {
   /*  Expression: Gfb_d.num{1}
    * Referenced by: '<S1>/Gfb'
    */
-  { 77.4775540698646, -134.87456417992342, 59.050975898985449 },
+  { 0.53253184271790877, -0.48885094063933648 },
 
   /*  Expression: Gfb_d.den{1}
    * Referenced by: '<S1>/Gfb'
    */
-  { 1.0, -1.0751039479871995, 0.075103947987199479 },
+  { 1.0, -1.0 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S1>/Gfb'
                                         */
@@ -105,12 +105,12 @@ P_motor_io_position_new_2_T motor_io_position_new_2_P = {
   /*  Expression: Gfb_d.num{1}
    * Referenced by: '<S2>/Gfb'
    */
-  { 77.4775540698646, -134.87456417992342, 59.050975898985449 },
+  { 0.53253184271790877, -0.48885094063933648 },
 
   /*  Expression: Gfb_d.den{1}
    * Referenced by: '<S2>/Gfb'
    */
-  { 1.0, -1.0751039479871995, 0.075103947987199479 },
+  { 1.0, -1.0 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S2>/Gfb'
                                         */
@@ -118,12 +118,12 @@ P_motor_io_position_new_2_T motor_io_position_new_2_P = {
   /*  Expression: Gff_d.num{1}
    * Referenced by: '<S2>/Gff'
    */
-  { 7.2354040433067208, -7.5521056774356321, 1.9706674230555381 },
+  { 0.41948062320571367, -0.37579972112714138 },
 
   /*  Expression: Gff_d.den{1}
    * Referenced by: '<S2>/Gff'
    */
-  { 1.0, -1.0751039479871995, 0.075103947987199479 },
+  { 1.0, -1.0 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S2>/Gff'
                                         */
@@ -157,7 +157,7 @@ P_motor_io_position_new_2_T motor_io_position_new_2_P = {
   7.46E-7,                             /* Expression: motor.J
                                         * Referenced by: '<S3>/Motor inertia'
                                         */
-  0.35000000000000003,                 /* Expression: 2*pi/(1000)/Ts
+  0.17340000000000003,                 /* Expression: 2*pi/(1000)/Ts
                                         * Referenced by: '<S7>/w1_scaling'
                                         */
   0.0                                  /* Expression: 0

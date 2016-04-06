@@ -1,4 +1,4 @@
-%implements s1_b0_xby9e_Outputs "C"
+%implements s1_b0_66y9e_Outputs "C"
 
 %function Outputs(block, system) Output
 %assign cfgTxt = ""
@@ -46,26 +46,22 @@ if (motor_io_position_new_2_P.SignalSelector0Square1Sine_Valu != 0.0) {
 if (%<(SLibCGIRIsSampleHit(1, 1))>) {
     /* DiscreteTransferFcn: '<S1>/Gff' */
     temp = motor_io_position_new_2_B.ref;
-    temp -= motor_io_position_new_2_P.Gff_DenCoef[1] * motor_io_position_new_2_DW.Gff_states[0];
-    temp -= motor_io_position_new_2_P.Gff_DenCoef[2] * motor_io_position_new_2_DW.Gff_states[1];
+    temp -= motor_io_position_new_2_P.Gff_DenCoef[1] * motor_io_position_new_2_DW.Gff_states;
     temp /= motor_io_position_new_2_P.Gff_DenCoef[0];
     motor_io_position_new_2_DW.Gff_tmp = temp;
     temp = motor_io_position_new_2_P.Gff_NumCoef[0] * motor_io_position_new_2_DW.Gff_tmp;
-    temp += motor_io_position_new_2_P.Gff_NumCoef[1] * motor_io_position_new_2_DW.Gff_states[0];
-    temp += motor_io_position_new_2_P.Gff_NumCoef[2] * motor_io_position_new_2_DW.Gff_states[1];
+    temp += motor_io_position_new_2_P.Gff_NumCoef[1] * motor_io_position_new_2_DW.Gff_states;
     motor_io_position_new_2_B.Gff = temp;
 %<tlcOutputsFcnOfS1B1>\
     /* Gain: '<S7>/fi1_scaling' */
     motor_io_position_new_2_B.fi1_scaling = motor_io_position_new_2_P.fi1_scaling_Gain * motor_io_position_new_2_B.SFunction1;
     /* DiscreteTransferFcn: '<S1>/Gfb' */
     temp = motor_io_position_new_2_B.fi1_scaling;
-    temp -= motor_io_position_new_2_P.Gfb_DenCoef[1] * motor_io_position_new_2_DW.Gfb_states[0];
-    temp -= motor_io_position_new_2_P.Gfb_DenCoef[2] * motor_io_position_new_2_DW.Gfb_states[1];
+    temp -= motor_io_position_new_2_P.Gfb_DenCoef[1] * motor_io_position_new_2_DW.Gfb_states;
     temp /= motor_io_position_new_2_P.Gfb_DenCoef[0];
     motor_io_position_new_2_DW.Gfb_tmp = temp;
     temp = motor_io_position_new_2_P.Gfb_NumCoef[0] * motor_io_position_new_2_DW.Gfb_tmp;
-    temp += motor_io_position_new_2_P.Gfb_NumCoef[1] * motor_io_position_new_2_DW.Gfb_states[0];
-    temp += motor_io_position_new_2_P.Gfb_NumCoef[2] * motor_io_position_new_2_DW.Gfb_states[1];
+    temp += motor_io_position_new_2_P.Gfb_NumCoef[1] * motor_io_position_new_2_DW.Gfb_states;
     motor_io_position_new_2_B.Gfb = temp;
     /* Sum: '<S1>/Sum1' */
     motor_io_position_new_2_B.Sum1 = motor_io_position_new_2_B.Gff - motor_io_position_new_2_B.Gfb;
@@ -123,23 +119,19 @@ if (%<(SLibCGIRIsSampleHit(1, 1))>) {
     motor_io_position_new_2_B.ZeroOrderHold = motor_io_position_new_2_B.Quantizer;
     /* DiscreteTransferFcn: '<S2>/Gfb' */
     temp = motor_io_position_new_2_B.ZeroOrderHold;
-    temp -= motor_io_position_new_2_P.Gfb_DenCoef_f[1] * motor_io_position_new_2_DW.Gfb_states_a[0];
-    temp -= motor_io_position_new_2_P.Gfb_DenCoef_f[2] * motor_io_position_new_2_DW.Gfb_states_a[1];
+    temp -= motor_io_position_new_2_P.Gfb_DenCoef_f[1] * motor_io_position_new_2_DW.Gfb_states_a;
     temp /= motor_io_position_new_2_P.Gfb_DenCoef_f[0];
     motor_io_position_new_2_DW.Gfb_tmp_e = temp;
     temp = motor_io_position_new_2_P.Gfb_NumCoef_b[0] * motor_io_position_new_2_DW.Gfb_tmp_e;
-    temp += motor_io_position_new_2_P.Gfb_NumCoef_b[1] * motor_io_position_new_2_DW.Gfb_states_a[0];
-    temp += motor_io_position_new_2_P.Gfb_NumCoef_b[2] * motor_io_position_new_2_DW.Gfb_states_a[1];
+    temp += motor_io_position_new_2_P.Gfb_NumCoef_b[1] * motor_io_position_new_2_DW.Gfb_states_a;
     motor_io_position_new_2_B.Gfb_n = temp;
     /* DiscreteTransferFcn: '<S2>/Gff' */
     temp = motor_io_position_new_2_B.ref;
-    temp -= motor_io_position_new_2_P.Gff_DenCoef_f[1] * motor_io_position_new_2_DW.Gff_states_g[0];
-    temp -= motor_io_position_new_2_P.Gff_DenCoef_f[2] * motor_io_position_new_2_DW.Gff_states_g[1];
+    temp -= motor_io_position_new_2_P.Gff_DenCoef_f[1] * motor_io_position_new_2_DW.Gff_states_g;
     temp /= motor_io_position_new_2_P.Gff_DenCoef_f[0];
     motor_io_position_new_2_DW.Gff_tmp_k = temp;
     temp = motor_io_position_new_2_P.Gff_NumCoef_l[0] * motor_io_position_new_2_DW.Gff_tmp_k;
-    temp += motor_io_position_new_2_P.Gff_NumCoef_l[1] * motor_io_position_new_2_DW.Gff_states_g[0];
-    temp += motor_io_position_new_2_P.Gff_NumCoef_l[2] * motor_io_position_new_2_DW.Gff_states_g[1];
+    temp += motor_io_position_new_2_P.Gff_NumCoef_l[1] * motor_io_position_new_2_DW.Gff_states_g;
     motor_io_position_new_2_B.Gff_e = temp;
     /* Sum: '<S2>/Sum1' */
     motor_io_position_new_2_B.Sum1_m = motor_io_position_new_2_B.Gff_e - motor_io_position_new_2_B.Gfb_n;

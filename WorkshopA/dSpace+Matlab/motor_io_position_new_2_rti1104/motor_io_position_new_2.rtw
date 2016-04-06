@@ -4,7 +4,7 @@ CompiledModel {
   Version		  "8.7 (R2014b) 08-Sep-2014"
   SimulinkVersion	  "8.4"
   ModelVersion		  "1.30"
-  GeneratedOn		  "Thu Apr 07 00:29:47 2016"
+  GeneratedOn		  "Thu Apr 07 00:48:32 2016"
   HasSimStructVars	  0
   HasCodeVariants	  0
   PreserveExternInFcnDecls 1
@@ -428,7 +428,7 @@ CompiledModel {
   SolverUpdateJacobianAtReset no
   FixedStepOpts {
     SolverMode		    SingleTasking
-    FixedStep		    0.017951958020513102
+    FixedStep		    0.036235209383965315
     ExtrapolationOrder	    -1
     NumberNewtonIterations  -1
     TID01EQ		    1
@@ -465,7 +465,7 @@ CompiledModel {
     tlcLanguage		    "C"
     tlcTargetType	    "RT"
   }
-  RTWContext		  [1382274280, 0]
+  RTWContext		  [1382273376, 0]
   RTWCGIR		  1
   TLCBlkFcnInCGIR	  1
   SLCI			  off
@@ -499,7 +499,7 @@ CompiledModel {
   NumZCEvents		  1
   ZCVectorlength	  1
   NumBlockSignals	  47
-  NumBlockParams	  59
+  NumBlockParams	  51
   NumAlgebraicLoops	  0
   HasRootTriggerPort	  no
   HasRootEnablePort	  no
@@ -514,8 +514,8 @@ CompiledModel {
   NumSimulinkFunctions	  0
   PositivePriority	  no
   ConcurrentTasks	  no
-  SingleTimeDomainApplication "ClockDomain {\n_task0 : { \nSampleTime [0, 0]\nSampleTime [0, 1]\nSampleTime [0.0179519"
-  "580205131, 0]\n }\n }\n"
+  SingleTimeDomainApplication "ClockDomain {\n_task0 : { \nSampleTime [0, 0]\nSampleTime [0, 1]\nSampleTime [0.0362352"
+  "0938396532, 0]\n }\n }\n"
   AllSampleTimesInherited no
   ModelSampleTimeInheritanceDetails {
     AllowedOverall	    no
@@ -533,7 +533,7 @@ CompiledModel {
   HasNonVirtualConstantTs no
   FixedStepSizeBasedOnHeuristic	no
   InvariantConstants	  no
-  FundamentalStepSize	  0.017951958020513102
+  FundamentalStepSize	  0.036235209383965315
   SingleRate		  no
   NumSampleTimes	  2
   SampleTime {
@@ -548,7 +548,7 @@ CompiledModel {
     TimeSource		    Self_internal
     AsyncPromotedTID	    0
     TimerUpdateCode	    ""
-    ClockTickStepSize	    0.017951958020513102
+    ClockTickStepSize	    0.036235209383965315
     NeedAbsoluteTime	    yes
     IsInlined		    no
     NeedFloatTime	    yes
@@ -562,14 +562,14 @@ CompiledModel {
     TID			    1
     PriorityAssigned	    yes
     Priority		    40
-    PeriodAndOffset	    [0.017951958020513102, 0.0]
+    PeriodAndOffset	    [0.036235209383965315, 0.0]
     Asynchronous	    no
     IsUnionTs		    no
     IsVirtualTs		    no
     TimeSource		    Self_internal
     AsyncPromotedTID	    1
     TimerUpdateCode	    ""
-    ClockTickStepSize	    0.017951958020513102
+    ClockTickStepSize	    0.036235209383965315
     NeedAbsoluteTime	    yes
     IsInlined		    no
     NeedFloatTime	    no
@@ -791,31 +791,31 @@ CompiledModel {
       NumElements	      5
       Elements {
 	Name			"R"
-	CGTypeIdx		32
+	CGTypeIdx		31
 	ContainerCGTypeIdx	0
 	Offset			0
       }
       Elements {
 	Name			"L"
-	CGTypeIdx		32
+	CGTypeIdx		31
 	ContainerCGTypeIdx	0
 	Offset			8
       }
       Elements {
 	Name			"d"
-	CGTypeIdx		32
+	CGTypeIdx		31
 	ContainerCGTypeIdx	0
 	Offset			16
       }
       Elements {
 	Name			"k"
-	CGTypeIdx		32
+	CGTypeIdx		31
 	ContainerCGTypeIdx	0
 	Offset			24
       }
       Elements {
 	Name			"J"
-	CGTypeIdx		32
+	CGTypeIdx		31
 	ContainerCGTypeIdx	0
 	Offset			32
       }
@@ -843,7 +843,7 @@ CompiledModel {
       NumElements	      1
       Elements {
 	Name			"OutputPortsWidth"
-	CGTypeIdx		33
+	CGTypeIdx		32
 	ContainerCGTypeIdx	6
 	Offset			0
       }
@@ -862,7 +862,7 @@ CompiledModel {
       NumElements	      1
       Elements {
 	Name			"InputPortsWidth"
-	CGTypeIdx		33
+	CGTypeIdx		32
 	ContainerCGTypeIdx	6
 	Offset			0
       }
@@ -1516,7 +1516,6 @@ CompiledModel {
 	}
 	NumParameters		3
 	DiscState {
-	  Dimensions		  [1, 2]
 	  _idx			  1
 	}
 	NumDiscStates		1
@@ -1567,7 +1566,6 @@ CompiledModel {
 	}
 	NumParameters		3
 	DiscState {
-	  Dimensions		  [1, 2]
 	  _idx			  0
 	}
 	NumDiscStates		1
@@ -1731,7 +1729,6 @@ CompiledModel {
 	}
 	NumParameters		3
 	DiscState {
-	  Dimensions		  [1, 2]
 	  _idx			  2
 	}
 	NumDiscStates		1
@@ -1782,7 +1779,6 @@ CompiledModel {
 	}
 	NumParameters		3
 	DiscState {
-	  Dimensions		  [1, 2]
 	  _idx			  3
 	}
 	NumDiscStates		1
@@ -4155,7 +4151,6 @@ CompiledModel {
     NumNonLocalDWorks	    13
     DWork {
       VarGroupIdx	      [1, 0]
-      CGTypeIdx		      21
       Name		      "states"
       LogicalSrc	      D0
       UsedAs		      "DSTATE"
@@ -4166,7 +4161,6 @@ CompiledModel {
     }
     DWork {
       VarGroupIdx	      [1, 1]
-      CGTypeIdx		      21
       Name		      "states"
       LogicalSrc	      D1
       UsedAs		      "DSTATE"
@@ -4177,7 +4171,6 @@ CompiledModel {
     }
     DWork {
       VarGroupIdx	      [1, 2]
-      CGTypeIdx		      21
       Name		      "states"
       LogicalSrc	      D2
       UsedAs		      "DSTATE"
@@ -4188,7 +4181,6 @@ CompiledModel {
     }
     DWork {
       VarGroupIdx	      [1, 3]
-      CGTypeIdx		      21
       Name		      "states"
       LogicalSrc	      D3
       UsedAs		      "DSTATE"
@@ -4241,7 +4233,7 @@ CompiledModel {
     }
     DWork {
       VarGroupIdx	      [1, 9]
-      CGTypeIdx		      22
+      CGTypeIdx		      21
       Name		      "IWORK"
       LogicalSrc	      D9
       Origin		      "IWORK"
@@ -4251,7 +4243,7 @@ CompiledModel {
     }
     DWork {
       VarGroupIdx	      [1, 10]
-      CGTypeIdx		      22
+      CGTypeIdx		      21
       Name		      "IWORK"
       LogicalSrc	      D10
       Origin		      "IWORK"
@@ -4261,7 +4253,7 @@ CompiledModel {
     }
     DWork {
       VarGroupIdx	      [1, 11]
-      CGTypeIdx		      22
+      CGTypeIdx		      21
       Name		      "IWORK"
       LogicalSrc	      D11
       Origin		      "IWORK"
@@ -4271,7 +4263,7 @@ CompiledModel {
     }
     DWork {
       VarGroupIdx	      [1, 12]
-      CGTypeIdx		      22
+      CGTypeIdx		      21
       Name		      "IWORK"
       LogicalSrc	      D12
       Origin		      "IWORK"
@@ -4438,7 +4430,7 @@ CompiledModel {
     ArgDefIdx		    -1
     MemoryMapIdx	    [-1, -1, -1]
     OriginalDataTypeIdx	    0
-    CGTypeIdx		    32
+    CGTypeIdx		    31
     Tunable		    on
     OrigIdentifier	    ""
     StorageClass	    Auto
@@ -4588,7 +4580,7 @@ CompiledModel {
       MemoryMapIdx	      [-1, -1, -1]
       HasObject		      0
       OriginalDataTypeIdx     0
-      CGTypeIdx		      32
+      CGTypeIdx		      31
       WorkspaceVarName	      ""
       IsPseudoWorkspaceVar    no
       Tunable		      yes
@@ -4616,7 +4608,7 @@ CompiledModel {
       LogicalSrc	      P0
       WorkspaceVarName	      "F_c"
       Value		      [0.0015]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 10, 0];]
       GraphicalRef	      Matrix(1,2)
@@ -4629,7 +4621,7 @@ CompiledModel {
       LogicalSrc	      P1
       WorkspaceVarName	      "F_c_upper"
       Value		      [0.0015]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 33];]
       GraphicalRef	      Matrix(1,2)
@@ -4642,7 +4634,7 @@ CompiledModel {
       LogicalSrc	      P2
       WorkspaceVarName	      "J1"
       Value		      [0.0006]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 11, 0];]
       GraphicalRef	      Matrix(1,2)
@@ -4655,7 +4647,7 @@ CompiledModel {
       LogicalSrc	      P3
       WorkspaceVarName	      "quant"
       Value		      [0.0062831853071795866]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 21];]
       GraphicalRef	      Matrix(1,2)
@@ -4666,7 +4658,7 @@ CompiledModel {
     Parameter {
       Identifier	      "SinGenerator_Amplitude"
       LogicalSrc	      P4
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 0];]
       GraphicalRef	      Matrix(1,2)
@@ -4679,7 +4671,7 @@ CompiledModel {
       Identifier	      "SinGenerator_Frequency"
       LogicalSrc	      P5
       Value		      [1.0]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 1];]
       GraphicalRef	      Matrix(1,2)
@@ -4692,7 +4684,7 @@ CompiledModel {
       Identifier	      "SignalSelector0Square1Sine_Valu"
       LogicalSrc	      P6
       Value		      [1.0]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 0, 0];]
       GraphicalRef	      Matrix(1,2)
@@ -4704,7 +4696,7 @@ CompiledModel {
     Parameter {
       Identifier	      "SquareGenerator_Amplitude"
       LogicalSrc	      P7
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 3];]
       GraphicalRef	      Matrix(1,2)
@@ -4717,7 +4709,7 @@ CompiledModel {
       Identifier	      "SquareGenerator_Frequency"
       LogicalSrc	      P8
       Value		      [0.15915494309189535]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 4];]
       GraphicalRef	      Matrix(1,2)
@@ -4729,9 +4721,9 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff_NumCoef"
       LogicalSrc	      P9
-      Value		      [7.2354040433067208, -7.5521056774356321, 1.9706674230555381]
-      CGTypeIdx		      24
-      ContainerCGTypeIdx      23
+      Value		      [0.41948062320571367, -0.37579972112714138]
+      CGTypeIdx		      23
+      ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 5];]
       GraphicalRef	      Matrix(1,2)
@@ -4743,9 +4735,9 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff_DenCoef"
       LogicalSrc	      P10
-      Value		      [1.0, -1.0751039479871995, 0.075103947987199479]
-      CGTypeIdx		      24
-      ContainerCGTypeIdx      23
+      Value		      [1.0, -1.0]
+      CGTypeIdx		      23
+      ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 6];]
       GraphicalRef	      Matrix(1,2)
@@ -4757,7 +4749,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff_InitialStates"
       LogicalSrc	      P11
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 7];]
       GraphicalRef	      Matrix(1,2)
@@ -4770,7 +4762,7 @@ CompiledModel {
       Identifier	      "fi1_scaling_Gain"
       LogicalSrc	      P12
       Value		      [0.0062831853071795866]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 8];]
       GraphicalRef	      Matrix(1,2)
@@ -4782,9 +4774,9 @@ CompiledModel {
     Parameter {
       Identifier	      "Gfb_NumCoef"
       LogicalSrc	      P13
-      Value		      [77.4775540698646, -134.87456417992342, 59.050975898985449]
-      CGTypeIdx		      24
-      ContainerCGTypeIdx      23
+      Value		      [0.53253184271790877, -0.48885094063933648]
+      CGTypeIdx		      23
+      ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 9];]
       GraphicalRef	      Matrix(1,2)
@@ -4796,9 +4788,9 @@ CompiledModel {
     Parameter {
       Identifier	      "Gfb_DenCoef"
       LogicalSrc	      P14
-      Value		      [1.0, -1.0751039479871995, 0.075103947987199479]
-      CGTypeIdx		      24
-      ContainerCGTypeIdx      23
+      Value		      [1.0, -1.0]
+      CGTypeIdx		      23
+      ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 10];]
       GraphicalRef	      Matrix(1,2)
@@ -4810,7 +4802,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Gfb_InitialStates"
       LogicalSrc	      P15
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 11];]
       GraphicalRef	      Matrix(1,2)
@@ -4823,7 +4815,7 @@ CompiledModel {
       Identifier	      "Saturation_UpperSat"
       LogicalSrc	      P16
       Value		      [24.0]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 12];]
       GraphicalRef	      Matrix(1,2)
@@ -4836,7 +4828,7 @@ CompiledModel {
       Identifier	      "Saturation_LowerSat"
       LogicalSrc	      P17
       Value		      [-24.0]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 13];]
       GraphicalRef	      Matrix(1,2)
@@ -4849,7 +4841,7 @@ CompiledModel {
       Identifier	      "Gain_Gain"
       LogicalSrc	      P18
       Value		      [-1.0]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 14];]
       GraphicalRef	      Matrix(1,2)
@@ -4862,7 +4854,7 @@ CompiledModel {
       Identifier	      "Saturation_UpperSat_l"
       LogicalSrc	      P19
       Value		      [24.0]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 15];]
       GraphicalRef	      Matrix(1,2)
@@ -4875,7 +4867,7 @@ CompiledModel {
       Identifier	      "Saturation_LowerSat_i"
       LogicalSrc	      P20
       Value		      [-24.0]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 16];]
       GraphicalRef	      Matrix(1,2)
@@ -4888,7 +4880,7 @@ CompiledModel {
       Identifier	      "pwm_skalning_Gain"
       LogicalSrc	      P21
       Value		      [0.020833333333333332]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 17];]
       GraphicalRef	      Matrix(1,2)
@@ -4901,7 +4893,7 @@ CompiledModel {
       Identifier	      "pwm_offstet_Value"
       LogicalSrc	      P22
       Value		      [0.5]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 2, 0];]
       GraphicalRef	      Matrix(1,2)
@@ -4914,7 +4906,7 @@ CompiledModel {
       Identifier	      "Enable1_Off0_On_Value"
       LogicalSrc	      P23
       Value		      [1.0]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 7, 0];]
       GraphicalRef	      Matrix(1,2)
@@ -4926,7 +4918,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Integrator1_IC"
       LogicalSrc	      P24
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 20];]
       GraphicalRef	      Matrix(1,2)
@@ -4938,9 +4930,9 @@ CompiledModel {
     Parameter {
       Identifier	      "Gfb_NumCoef_b"
       LogicalSrc	      P25
-      Value		      [77.4775540698646, -134.87456417992342, 59.050975898985449]
-      CGTypeIdx		      24
-      ContainerCGTypeIdx      23
+      Value		      [0.53253184271790877, -0.48885094063933648]
+      CGTypeIdx		      23
+      ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 22];]
       GraphicalRef	      Matrix(1,2)
@@ -4952,9 +4944,9 @@ CompiledModel {
     Parameter {
       Identifier	      "Gfb_DenCoef_f"
       LogicalSrc	      P26
-      Value		      [1.0, -1.0751039479871995, 0.075103947987199479]
-      CGTypeIdx		      24
-      ContainerCGTypeIdx      23
+      Value		      [1.0, -1.0]
+      CGTypeIdx		      23
+      ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 23];]
       GraphicalRef	      Matrix(1,2)
@@ -4966,7 +4958,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Gfb_InitialStates_h"
       LogicalSrc	      P27
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 24];]
       GraphicalRef	      Matrix(1,2)
@@ -4978,9 +4970,9 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff_NumCoef_l"
       LogicalSrc	      P28
-      Value		      [7.2354040433067208, -7.5521056774356321, 1.9706674230555381]
-      CGTypeIdx		      24
-      ContainerCGTypeIdx      23
+      Value		      [0.41948062320571367, -0.37579972112714138]
+      CGTypeIdx		      23
+      ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 25];]
       GraphicalRef	      Matrix(1,2)
@@ -4992,9 +4984,9 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff_DenCoef_f"
       LogicalSrc	      P29
-      Value		      [1.0, -1.0751039479871995, 0.075103947987199479]
-      CGTypeIdx		      24
-      ContainerCGTypeIdx      23
+      Value		      [1.0, -1.0]
+      CGTypeIdx		      23
+      ContainerCGTypeIdx      22
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 26];]
       GraphicalRef	      Matrix(1,2)
@@ -5006,7 +4998,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff_InitialStates_l"
       LogicalSrc	      P30
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 27];]
       GraphicalRef	      Matrix(1,2)
@@ -5019,7 +5011,7 @@ CompiledModel {
       Identifier	      "Saturation_UpperSat_o"
       LogicalSrc	      P31
       Value		      [24.0]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 28];]
       GraphicalRef	      Matrix(1,2)
@@ -5032,7 +5024,7 @@ CompiledModel {
       Identifier	      "Saturation_LowerSat_b"
       LogicalSrc	      P32
       Value		      [-24.0]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 29];]
       GraphicalRef	      Matrix(1,2)
@@ -5044,7 +5036,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Integrator_IC"
       LogicalSrc	      P33
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 30];]
       GraphicalRef	      Matrix(1,2)
@@ -5057,7 +5049,7 @@ CompiledModel {
       Identifier	      "Gain1_Gain"
       LogicalSrc	      P34
       Value		      [0.0697]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 31];]
       GraphicalRef	      Matrix(1,2)
@@ -5070,7 +5062,7 @@ CompiledModel {
       Identifier	      "kR_Gain"
       LogicalSrc	      P35
       Value		      [0.00062232142857142857]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 32];]
       GraphicalRef	      Matrix(1,2)
@@ -5083,7 +5075,7 @@ CompiledModel {
       Identifier	      "SaturatetoFc_LowerSat"
       LogicalSrc	      P36
       Value		      [-0.0015]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 34];]
       GraphicalRef	      Matrix(1,2)
@@ -5096,7 +5088,7 @@ CompiledModel {
       Identifier	      "Constant_Value"
       LogicalSrc	      P37
       Value		      [3.0]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 9, 0];]
       GraphicalRef	      Matrix(1,2)
@@ -5109,7 +5101,7 @@ CompiledModel {
       Identifier	      "Vicousfriction_Gain"
       LogicalSrc	      P38
       Value		      [1.0e-5]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 36];]
       GraphicalRef	      Matrix(1,2)
@@ -5122,7 +5114,7 @@ CompiledModel {
       Identifier	      "Gain2_Gain"
       LogicalSrc	      P39
       Value		      [0.04]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 39];]
       GraphicalRef	      Matrix(1,2)
@@ -5135,7 +5127,7 @@ CompiledModel {
       Identifier	      "Motorinertia_Value"
       LogicalSrc	      P40
       Value		      [7.46e-7]
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 12, 0];]
       GraphicalRef	      Matrix(1,2)
@@ -5147,8 +5139,8 @@ CompiledModel {
     Parameter {
       Identifier	      "w1_scaling_Gain"
       LogicalSrc	      P41
-      Value		      [0.35000000000000003]
-      ContainerCGTypeIdx      34
+      Value		      [0.17340000000000003]
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 41];]
       GraphicalRef	      Matrix(1,2)
@@ -5160,7 +5152,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Resetenc_Value"
       LogicalSrc	      P42
-      ContainerCGTypeIdx      34
+      ContainerCGTypeIdx      33
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 15, 0];]
       GraphicalRef	      Matrix(1,2)
@@ -5652,7 +5644,7 @@ CompiledModel {
   }
   CanonicalPrmArgDefDefaults {
     OriginalDataTypeIdx	    0
-    CGTypeIdx		    32
+    CGTypeIdx		    31
     IsUsed		    yes
     DeclareAsPointer	    no
   }
@@ -5933,7 +5925,7 @@ CompiledModel {
 	  ModelParameterIdx	  6
 	}
 	Value			[1.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"1"
 	StringType		"Expression"
       }
@@ -6033,7 +6025,7 @@ CompiledModel {
 	  ModelParameterIdx	  22
 	}
 	Value			[0.5]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0.5"
 	StringType		"Expression"
       }
@@ -6410,7 +6402,7 @@ CompiledModel {
 	  ModelParameterIdx	  23
 	}
 	Value			[1.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"1"
 	StringType		"Expression"
       }
@@ -6510,7 +6502,7 @@ CompiledModel {
 	  ModelParameterIdx	  37
 	}
 	Value			[3.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"const"
 	StringType		"Expression"
       }
@@ -6545,7 +6537,7 @@ CompiledModel {
 	  ModelParameterIdx	  0
 	}
 	Value			[0.0015]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"F_c"
 	StringType		"Expression"
       }
@@ -6580,7 +6572,7 @@ CompiledModel {
 	  ModelParameterIdx	  2
 	}
 	Value			[0.0006]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"J1"
 	StringType		"Expression"
       }
@@ -6614,7 +6606,7 @@ CompiledModel {
 	  ModelParameterIdx	  40
 	}
 	Value			[7.46e-7]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"motor.J"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -6787,7 +6779,7 @@ CompiledModel {
 	  Op			  SL_NOT_INLINED
 	  ModelParameterIdx	  42
 	}
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0"
 	StringType		"Expression"
       }
@@ -6979,7 +6971,7 @@ CompiledModel {
 	Width			1
       }
       NumDataOutputPorts      0
-      TLCFileName	      "s1_b0_xby9e"
+      TLCFileName	      "s1_b0_66y9e"
       OpaqueBlockMethode {
 	HasStart		1
 	HasInitializeConditions	1
@@ -6990,11 +6982,11 @@ CompiledModel {
 	HasTerminate		1
 	HasModelPrevZCStateInit	1
       }
-      Parameters	      [43, 59]
+      Parameters	      [43, 51]
       Parameter {
 	Name			"Amplitude"
 	MdlPrmIdx		4
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0"
 	StringType		"Expression"
       }
@@ -7002,7 +6994,7 @@ CompiledModel {
 	Name			"Frequency"
 	MdlPrmIdx		5
 	Value			[1.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"1"
 	StringType		"Expression"
       }
@@ -7010,14 +7002,14 @@ CompiledModel {
 	Name			"Value"
 	MdlPrmIdx		6
 	Value			[1.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"1"
 	StringType		"Expression"
       }
       Parameter {
 	Name			"Amplitude"
 	MdlPrmIdx		7
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0"
 	StringType		"Expression"
       }
@@ -7025,7 +7017,7 @@ CompiledModel {
 	Name			"Frequency"
 	MdlPrmIdx		8
 	Value			[0.15915494309189535]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			""
 	StringTransformed	"1"
 	StringType		"Computed"
@@ -7033,9 +7025,9 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		9
-	Value			[7.2354040433067208, -7.5521056774356321, 1.9706674230555381]
-	CGTypeIdx		24
-	ContainerCGTypeIdx	23
+	Value			[0.41948062320571367, -0.37579972112714138]
+	CGTypeIdx		23
+	ContainerCGTypeIdx	22
 	String			"Gff_d.num{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7043,9 +7035,9 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		10
-	Value			[1.0, -1.0751039479871995, 0.075103947987199479]
-	CGTypeIdx		24
-	ContainerCGTypeIdx	23
+	Value			[1.0, -1.0]
+	CGTypeIdx		23
+	ContainerCGTypeIdx	22
 	String			"Gff_d.den{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7053,7 +7045,7 @@ CompiledModel {
       Parameter {
 	Name			"InitialStates"
 	MdlPrmIdx		11
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0"
 	StringType		"Expression"
       }
@@ -7061,16 +7053,16 @@ CompiledModel {
 	Name			"Gain"
 	MdlPrmIdx		12
 	Value			[0.0062831853071795866]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"2*pi/(1000)"
 	StringType		"Expression"
       }
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		13
-	Value			[77.4775540698646, -134.87456417992342, 59.050975898985449]
-	CGTypeIdx		24
-	ContainerCGTypeIdx	23
+	Value			[0.53253184271790877, -0.48885094063933648]
+	CGTypeIdx		23
+	ContainerCGTypeIdx	22
 	String			"Gfb_d.num{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7078,9 +7070,9 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		14
-	Value			[1.0, -1.0751039479871995, 0.075103947987199479]
-	CGTypeIdx		24
-	ContainerCGTypeIdx	23
+	Value			[1.0, -1.0]
+	CGTypeIdx		23
+	ContainerCGTypeIdx	22
 	String			"Gfb_d.den{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7088,7 +7080,7 @@ CompiledModel {
       Parameter {
 	Name			"InitialStates"
 	MdlPrmIdx		15
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0"
 	StringType		"Expression"
       }
@@ -7096,7 +7088,7 @@ CompiledModel {
 	Name			"UpperLimit"
 	MdlPrmIdx		16
 	Value			[24.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"24"
 	StringType		"Expression"
       }
@@ -7104,7 +7096,7 @@ CompiledModel {
 	Name			"LowerLimit"
 	MdlPrmIdx		17
 	Value			[-24.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"-24"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7113,7 +7105,7 @@ CompiledModel {
 	Name			"Gain"
 	MdlPrmIdx		18
 	Value			[-1.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"-1"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7122,7 +7114,7 @@ CompiledModel {
 	Name			"UpperLimit"
 	MdlPrmIdx		19
 	Value			[24.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"24"
 	StringType		"Expression"
       }
@@ -7130,7 +7122,7 @@ CompiledModel {
 	Name			"LowerLimit"
 	MdlPrmIdx		20
 	Value			[-24.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"-24"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7139,7 +7131,7 @@ CompiledModel {
 	Name			"Gain"
 	MdlPrmIdx		21
 	Value			[0.020833333333333332]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"1/48"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7148,7 +7140,7 @@ CompiledModel {
 	Name			"Value"
 	MdlPrmIdx		22
 	Value			[0.5]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0.5"
 	StringType		"Expression"
       }
@@ -7156,14 +7148,14 @@ CompiledModel {
 	Name			"Value"
 	MdlPrmIdx		23
 	Value			[1.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"1"
 	StringType		"Expression"
       }
       Parameter {
 	Name			"InitialCondition"
 	MdlPrmIdx		24
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0"
 	StringType		"Expression"
       }
@@ -7171,16 +7163,16 @@ CompiledModel {
 	Name			"QuantizationInterval"
 	MdlPrmIdx		3
 	Value			[0.0062831853071795866]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"quant"
 	StringType		"Expression"
       }
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		25
-	Value			[77.4775540698646, -134.87456417992342, 59.050975898985449]
-	CGTypeIdx		24
-	ContainerCGTypeIdx	23
+	Value			[0.53253184271790877, -0.48885094063933648]
+	CGTypeIdx		23
+	ContainerCGTypeIdx	22
 	String			"Gfb_d.num{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7188,9 +7180,9 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		26
-	Value			[1.0, -1.0751039479871995, 0.075103947987199479]
-	CGTypeIdx		24
-	ContainerCGTypeIdx	23
+	Value			[1.0, -1.0]
+	CGTypeIdx		23
+	ContainerCGTypeIdx	22
 	String			"Gfb_d.den{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7198,16 +7190,16 @@ CompiledModel {
       Parameter {
 	Name			"InitialStates"
 	MdlPrmIdx		27
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0"
 	StringType		"Expression"
       }
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		28
-	Value			[7.2354040433067208, -7.5521056774356321, 1.9706674230555381]
-	CGTypeIdx		24
-	ContainerCGTypeIdx	23
+	Value			[0.41948062320571367, -0.37579972112714138]
+	CGTypeIdx		23
+	ContainerCGTypeIdx	22
 	String			"Gff_d.num{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7215,9 +7207,9 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		29
-	Value			[1.0, -1.0751039479871995, 0.075103947987199479]
-	CGTypeIdx		24
-	ContainerCGTypeIdx	23
+	Value			[1.0, -1.0]
+	CGTypeIdx		23
+	ContainerCGTypeIdx	22
 	String			"Gff_d.den{1}"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7225,7 +7217,7 @@ CompiledModel {
       Parameter {
 	Name			"InitialStates"
 	MdlPrmIdx		30
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0"
 	StringType		"Expression"
       }
@@ -7233,7 +7225,7 @@ CompiledModel {
 	Name			"UpperLimit"
 	MdlPrmIdx		31
 	Value			[24.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"24"
 	StringType		"Expression"
       }
@@ -7241,7 +7233,7 @@ CompiledModel {
 	Name			"LowerLimit"
 	MdlPrmIdx		32
 	Value			[-24.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"-24"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7249,7 +7241,7 @@ CompiledModel {
       Parameter {
 	Name			"InitialCondition"
 	MdlPrmIdx		33
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0"
 	StringType		"Expression"
       }
@@ -7257,7 +7249,7 @@ CompiledModel {
 	Name			"Gain"
 	MdlPrmIdx		34
 	Value			[0.0697]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"motor.k"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7266,7 +7258,7 @@ CompiledModel {
 	Name			"Gain"
 	MdlPrmIdx		35
 	Value			[0.00062232142857142857]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"motor.k/motor.R"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7275,7 +7267,7 @@ CompiledModel {
 	Name			"UpperLimit"
 	MdlPrmIdx		1
 	Value			[0.0015]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"F_c_upper"
 	StringType		"Expression"
       }
@@ -7283,7 +7275,7 @@ CompiledModel {
 	Name			"LowerLimit"
 	MdlPrmIdx		36
 	Value			[-0.0015]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"-F_c_lower"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7292,7 +7284,7 @@ CompiledModel {
 	Name			"Value"
 	MdlPrmIdx		37
 	Value			[3.0]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"const"
 	StringType		"Expression"
       }
@@ -7300,7 +7292,7 @@ CompiledModel {
 	Name			"Gain"
 	MdlPrmIdx		38
 	Value			[1.0e-5]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"motor.d"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7309,7 +7301,7 @@ CompiledModel {
 	Name			"Value"
 	MdlPrmIdx		0
 	Value			[0.0015]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"F_c"
 	StringType		"Expression"
       }
@@ -7317,7 +7309,7 @@ CompiledModel {
 	Name			"Value"
 	MdlPrmIdx		2
 	Value			[0.0006]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"J1"
 	StringType		"Expression"
       }
@@ -7325,7 +7317,7 @@ CompiledModel {
 	Name			"Gain"
 	MdlPrmIdx		39
 	Value			[0.04]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"n^-2"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7334,7 +7326,7 @@ CompiledModel {
 	Name			"Value"
 	MdlPrmIdx		40
 	Value			[7.46e-7]
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"motor.J"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7342,8 +7334,8 @@ CompiledModel {
       Parameter {
 	Name			"Gain"
 	MdlPrmIdx		41
-	Value			[0.35000000000000003]
-	ContainerCGTypeIdx	34
+	Value			[0.17340000000000003]
+	ContainerCGTypeIdx	33
 	String			"2*pi/(1000)/Ts"
 	StringType		"Expression"
 	NeedParenthesis		1
@@ -7351,7 +7343,7 @@ CompiledModel {
       Parameter {
 	Name			"Value"
 	MdlPrmIdx		42
-	ContainerCGTypeIdx	34
+	ContainerCGTypeIdx	33
 	String			"0"
 	StringType		"Expression"
       }
@@ -7370,8 +7362,8 @@ CompiledModel {
   }
   StateflowAutoEnumInfoList {
   }
-  BlockParamChecksum	  ["1599384197U", "3301772810U", "348394366U", "2198428015U"]
-  ModelChecksum		  ["2108622733U", "727606919U", "2168076363U", "26380314U"]
+  BlockParamChecksum	  ["1577111186U", "2412138979U", "3391758439U", "2428323066U"]
+  ModelChecksum		  ["2507997083U", "965758614U", "1351671701U", "2797198902U"]
   IncludeCodeGenSettings  1
   CGTypes {
     CGTypeDefaults {
@@ -7387,7 +7379,7 @@ CompiledModel {
       CGTypeIdx		      0
       Alignment		      -1
     }
-    NumCGTypes		    35
+    NumCGTypes		    34
     DeclareUsedMultiWordBits 0
     CGType {
       Name		      "real_T"
@@ -7527,12 +7519,6 @@ CompiledModel {
       Constructor	      "enum"
     }
     CGType {
-      Width		      2
-      Constructor	      "matrix"
-      NumDimensions	      1
-      Dimensions	      [2]
-    }
-    CGType {
       Width		      4
       Constructor	      "matrix"
       BaseIdx		      10
@@ -7540,15 +7526,15 @@ CompiledModel {
       Dimensions	      [4]
     }
     CGType {
-      Width		      3
+      Width		      2
       Constructor	      "matrix"
       NumDimensions	      1
-      Dimensions	      [3]
+      Dimensions	      [2]
     }
     CGType {
-      Width		      3
+      Width		      2
       Constructor	      "matrix"
-      Dimensions	      [1, 3]
+      Dimensions	      [1, 2]
     }
     CGType {
       Name		      "B_motor_io_position_new_2_T"
@@ -7683,19 +7669,15 @@ CompiledModel {
 	NumMembers		13
 	Member {
 	  Name			  "Gff_states"
-	  CGTypeIdx		  21
 	}
 	Member {
 	  Name			  "Gfb_states"
-	  CGTypeIdx		  21
 	}
 	Member {
 	  Name			  "Gfb_states_a"
-	  CGTypeIdx		  21
 	}
 	Member {
 	  Name			  "Gff_states_g"
-	  CGTypeIdx		  21
 	}
 	Member {
 	  Name			  "Gff_tmp"
@@ -7715,19 +7697,19 @@ CompiledModel {
 	}
 	Member {
 	  Name			  "SFunction1_IWORK"
-	  CGTypeIdx		  22
+	  CGTypeIdx		  21
 	}
 	Member {
 	  Name			  "SFunction2_IWORK"
-	  CGTypeIdx		  22
+	  CGTypeIdx		  21
 	}
 	Member {
 	  Name			  "SFunction3_IWORK"
-	  CGTypeIdx		  22
+	  CGTypeIdx		  21
 	}
 	Member {
 	  Name			  "SFunction4_IWORK"
-	  CGTypeIdx		  22
+	  CGTypeIdx		  21
 	}
       }
     }
@@ -7765,11 +7747,11 @@ CompiledModel {
 	}
 	Member {
 	  Name			  "Gff_NumCoef"
-	  CGTypeIdx		  23
+	  CGTypeIdx		  22
 	}
 	Member {
 	  Name			  "Gff_DenCoef"
-	  CGTypeIdx		  23
+	  CGTypeIdx		  22
 	}
 	Member {
 	  Name			  "Gff_InitialStates"
@@ -7779,11 +7761,11 @@ CompiledModel {
 	}
 	Member {
 	  Name			  "Gfb_NumCoef"
-	  CGTypeIdx		  23
+	  CGTypeIdx		  22
 	}
 	Member {
 	  Name			  "Gfb_DenCoef"
-	  CGTypeIdx		  23
+	  CGTypeIdx		  22
 	}
 	Member {
 	  Name			  "Gfb_InitialStates"
@@ -7817,22 +7799,22 @@ CompiledModel {
 	}
 	Member {
 	  Name			  "Gfb_NumCoef_b"
-	  CGTypeIdx		  23
+	  CGTypeIdx		  22
 	}
 	Member {
 	  Name			  "Gfb_DenCoef_f"
-	  CGTypeIdx		  23
+	  CGTypeIdx		  22
 	}
 	Member {
 	  Name			  "Gfb_InitialStates_h"
 	}
 	Member {
 	  Name			  "Gff_NumCoef_l"
-	  CGTypeIdx		  23
+	  CGTypeIdx		  22
 	}
 	Member {
 	  Name			  "Gff_DenCoef_f"
-	  CGTypeIdx		  23
+	  CGTypeIdx		  22
 	}
 	Member {
 	  Name			  "Gff_InitialStates_l"
@@ -7989,55 +7971,55 @@ CompiledModel {
     TestInterfaceFcnIdx	    -1
     RTWCGModule {
       RateGrouping	      0
-      TLCFileName	      "s1_b0_xby9e"
+      TLCFileName	      "s1_b0_66y9e"
       RTWFcnConst {
 	HasInstanceSetup	"no"
 	Start_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_xby9e_Start"
+	  TLCFileName		  "s1_b0_66y9e_Start"
 	  StackSize		  0
 	}
 	InitializeConditions_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_xby9e_InitializeConditions"
+	  TLCFileName		  "s1_b0_66y9e_InitializeConditions"
 	  StackSize		  0
 	}
 	Outputs_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_xby9e_Outputs"
+	  TLCFileName		  "s1_b0_66y9e_Outputs"
 	  StackSize		  28
 	}
 	Update_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_xby9e_Update"
+	  TLCFileName		  "s1_b0_66y9e_Update"
 	  StackSize		  0
 	}
 	Derivatives_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_xby9e_Derivatives"
+	  TLCFileName		  "s1_b0_66y9e_Derivatives"
 	  StackSize		  0
 	}
 	ForcingFunction_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_xby9e_ForcingFunction"
+	  TLCFileName		  "s1_b0_66y9e_ForcingFunction"
 	  StackSize		  0
 	}
 	Terminate_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_xby9e_Terminate"
+	  TLCFileName		  "s1_b0_66y9e_Terminate"
 	  StackSize		  0
 	}
 	ModelPrevZCStateInit_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_xby9e_ModelPrevZCStateInit"
+	  TLCFileName		  "s1_b0_66y9e_ModelPrevZCStateInit"
 	  StackSize		  0
 	}
       }
@@ -8140,7 +8122,7 @@ CompiledModel {
       Name		      "motor_io_position_new_2_B"
       SysIdx		      1
       InstanceIdx	      -1
-      CGTypeIdx		      25
+      CGTypeIdx		      24
       GlobalOffset	      0
       NumVarGroupElements     39
       VarGroupElements	      Vector(39)
@@ -8153,7 +8135,7 @@ B25, B26, B27, B28, B29, B30, B31, B32, B33, B34, B35, B36, B37, B38]
       LocalName		      "localDW"
       SysIdx		      1
       InstanceIdx	      -1
-      CGTypeIdx		      26
+      CGTypeIdx		      25
       GlobalOffset	      0
       NumVarGroupElements     13
       VarGroupElements	      [W0, W1, W2, W3, W4, W5, W6, W7, W8, W9, W10, W11, W12]
@@ -8164,7 +8146,7 @@ B25, B26, B27, B28, B29, B30, B31, B32, B33, B34, B35, B36, B37, B38]
       LocalName		      "localP"
       SysIdx		      1
       InstanceIdx	      -1
-      CGTypeIdx		      27
+      CGTypeIdx		      26
       GlobalOffset	      0
       NumVarGroupElements     43
       VarGroupElements	      Vector(43)
@@ -8177,7 +8159,7 @@ P25, P26, P27, P28, P29, P30, P31, P32, P33, P34, P35, P36, P37, P38, P39, P40, 
       LocalName		      "localX"
       SysIdx		      1
       InstanceIdx	      -1
-      CGTypeIdx		      28
+      CGTypeIdx		      27
       NumVarGroupElements     2
       VarGroupElements	      [E0, X0]
     }
@@ -8187,7 +8169,7 @@ P25, P26, P27, P28, P29, P30, P31, P32, P33, P34, P35, P36, P37, P38, P39, P40, 
       LocalName		      "localXdis"
       SysIdx		      1
       InstanceIdx	      -1
-      CGTypeIdx		      29
+      CGTypeIdx		      28
       NumVarGroupElements     2
       VarGroupElements	      [E0, XDI0]
     }
@@ -8197,7 +8179,7 @@ P25, P26, P27, P28, P29, P30, P31, P32, P33, P34, P35, P36, P37, P38, P39, P40, 
       LocalName		      "localXdot"
       SysIdx		      1
       InstanceIdx	      -1
-      CGTypeIdx		      30
+      CGTypeIdx		      29
       NumVarGroupElements     2
       VarGroupElements	      [E0, DX0]
     }
@@ -8207,7 +8189,7 @@ P25, P26, P27, P28, P29, P30, P31, P32, P33, P34, P35, P36, P37, P38, P39, P40, 
       LocalName		      "localZCE"
       SysIdx		      1
       InstanceIdx	      -1
-      CGTypeIdx		      31
+      CGTypeIdx		      30
       NumVarGroupElements     1
       VarGroupElements	      [E0]
     }

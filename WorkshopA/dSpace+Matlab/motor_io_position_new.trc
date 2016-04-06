@@ -3,7 +3,7 @@
 --  Trace file: motor_io_position_new.trc
 --
 --  RTI1104 7.3 (02-Nov-2014)
---  Wed Apr 06 22:37:50 2016
+--  Thu Apr 07 01:32:30 2016
 --
 --  Used options:
 --    TRCGenerateVirtualBlocks      = 1
@@ -27,7 +27,7 @@
 
 _genname     "RTI"
 _genversion  "7.3"
-_gendate     "04/06/2016 22:37:52"
+_gendate     "04/07/2016 01:32:32"
 _description ""
 _author      "RTI1104 7.3 (02-Nov-2014)"
 _model       "motor_io_position_new.mdl"
@@ -39,9 +39,9 @@ _integer_type(32)
 -- No Data Capture blocks within model: use base sample time as sampling period
 sampling_period[0]
 {
-  value:       0.010870562815189595
+  value:       0.036235209383965315
   alias:       "HostService"
-  increment:   0.010870562815189595
+  increment:   0.036235209383965315
   unit:        "s"
 }
 
@@ -124,7 +124,7 @@ group "Model Root"
 	 flags: BLOCK|COLLAPSED
 	}
 		-- Skipping output Out1
-		p_1_motor_io_position_new_real_T_0[68]
+		p_1_motor_io_position_new_real_T_0[18]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -140,14 +140,14 @@ group "Model Root"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_position_new_real_T_0[41]
+		p_0_motor_io_position_new_real_T_0[13]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 desc:    ""
 		 flags:   OUTPUT|READONLY
 		}
-		p_1_motor_io_position_new_real_T_0[74]
+		p_1_motor_io_position_new_real_T_0[44]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Gain"
@@ -163,7 +163,7 @@ group "Model Root"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_position_new_real_T_0[35]
+		p_0_motor_io_position_new_real_T_0[0]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -171,13 +171,13 @@ group "Model Root"
 		 flags:   OUTPUT|READONLY
 		}
 
-		p_1_motor_io_position_new_real_T_0[66]
+		p_1_motor_io_position_new_real_T_0[16]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Amplitude"
 		 flags:   PARAM
 		}
-		p_1_motor_io_position_new_real_T_0[67]
+		p_1_motor_io_position_new_real_T_0[17]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Frequency"
@@ -193,7 +193,7 @@ group "Model Root"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_position_new_real_T_0[36]
+		p_0_motor_io_position_new_real_T_0[1]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -201,13 +201,13 @@ group "Model Root"
 		 flags:   OUTPUT|READONLY
 		}
 
-		p_1_motor_io_position_new_real_T_0[69]
+		p_1_motor_io_position_new_real_T_0[19]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Amplitude"
 		 flags:   PARAM
 		}
-		p_1_motor_io_position_new_real_T_0[70]
+		p_1_motor_io_position_new_real_T_0[20]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Frequency"
@@ -223,7 +223,7 @@ group "Model Root"
 	 desc:  ""
 	 flags: BLOCK|COLLAPSED
 	}
-		p_0_motor_io_position_new_real_T_0[37]
+		p_0_motor_io_position_new_real_T_0[2]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -242,7 +242,7 @@ group "Model Root"
 	 desc:  ""
 	}
 
-		p_0_motor_io_position_new_real_T_0[7]
+		p_0_motor_io_position_new_real_T_0[27]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Voltage"
@@ -253,164 +253,6 @@ group "Model Root"
 		group "reference\n" -- block-group
 		{
 		 block: "Inport"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			-- Skipping output Out1
-
-
-		endgroup -- block-group "reference\n"
-
-		group "feedback" -- block-group
-		{
-		 block: "Inport"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			-- Skipping output Out1
-
-
-		endgroup -- block-group "feedback"
-
-		group "Gain" -- block-group
-		{
-		 block: "Gain"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[9]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[13]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Gain"
-			 flags:   PARAM
-			 origin:  "c0"
-			}
-
-
-		endgroup -- block-group "Gain"
-
-		group "Gain1" -- block-group
-		{
-		 block: "Gain"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[10]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[14]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Gain"
-			 flags:   PARAM
-			 origin:  "c0_"
-			}
-
-
-		endgroup -- block-group "Gain1"
-
-		group "Gain2" -- block-group
-		{
-		 block: "Gain"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[11]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[3]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Gain"
-			 flags:   PARAM
-			 origin:  "Kb"
-			}
-
-
-		endgroup -- block-group "Gain2"
-
-		group "Voltage Saturation\n" -- block-group
-		{
-		 block: "Saturate"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[7]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[36]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "UpperLimit"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[37]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "LowerLimit"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "Voltage Saturation\n"
-
-		group "Scope" -- block-group
-		{
-		 block: "Scope"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[8]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "In1"
-			 desc:    ""
-			 flags:   SINK|READONLY
-			}
-
-
-
-		endgroup -- block-group "Scope"
-
-		group "Sum" -- block-group
-		{
-		 block: "Sum"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[5]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "Sum"
-
-		group "Sum1" -- block-group
-		{
-		 block: "Sum"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
@@ -423,329 +265,6 @@ group "Model Root"
 			}
 
 
-		endgroup -- block-group "Sum1"
-
-		group "Sum2" -- block-group
-		{
-		 block: "Sum"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[6]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "Sum2"
-
-		group "Sum3" -- block-group
-		{
-		 block: "Sum"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[8]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "Sum3"
-
-		group "Sum4" -- block-group
-		{
-		 block: "Sum"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[12]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "Sum4"
-
-		group "Sum5" -- block-group
-		{
-		 block: "Sum"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[13]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "Sum5"
-
-		group "To Workspace" -- block-group
-		{
-		 block: "ToWorkspace"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-
-
-
-		endgroup -- block-group "To Workspace"
-
-		group "Gff" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[0]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[16]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[18]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[20]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "Gff"
-
-		group "Gff1" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[14]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[10]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			 origin:  "T_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[4]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			 origin:  "R_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[38]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "Gff1"
-
-		group "Gff2" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[15]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[7]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			 origin:  "S_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[4]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			 origin:  "R_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[39]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "Gff2"
-
-		group "I part" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[3]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[26]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[28]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[30]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "I part"
-
-		group "I part1" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[1]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[21]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[23]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[25]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "I part1"
-
-		group "PD part" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[4]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[31]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[33]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[35]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "PD part"
-
-
-
-	endgroup -- subsystem-group "2DOF PID with anti windup1"
-  
-  
-	group "2DOF PID with anti windup2" -- subsystem-group
-	{
-	 flags: COLLAPSED
-	 desc:  ""
-	}
-
-		p_0_motor_io_position_new_real_T_0[23]
-		{
-		 type:    flt(64,IEEE)*
-		 alias:   "Voltage"
-		 desc:    ""
-		 flags:   OUTPUT|READONLY
-		}
-
-		group "reference\n" -- block-group
-		{
-		 block: "Inport"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			-- Skipping output Out1
-
-
 		endgroup -- block-group "reference\n"
 
 		group "feedback" -- block-group
@@ -754,7 +273,13 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			-- Skipping output Out1
+			p_0_motor_io_position_new_real_T_0[23]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
 
 
 		endgroup -- block-group "feedback"
@@ -765,7 +290,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[25]
+			p_0_motor_io_position_new_real_T_0[29]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -789,7 +314,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[26]
+			p_0_motor_io_position_new_real_T_0[30]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -813,7 +338,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[27]
+			p_0_motor_io_position_new_real_T_0[31]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -837,20 +362,20 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[23]
+			p_0_motor_io_position_new_real_T_0[27]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_position_new_real_T_0[60]
+			p_1_motor_io_position_new_real_T_0[71]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "UpperLimit"
 			 flags:   PARAM
 			}
-			p_1_motor_io_position_new_real_T_0[61]
+			p_1_motor_io_position_new_real_T_0[72]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "LowerLimit"
@@ -866,7 +391,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[24]
+			p_0_motor_io_position_new_real_T_0[28]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "In1"
@@ -884,7 +409,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[21]
+			p_0_motor_io_position_new_real_T_0[25]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -901,7 +426,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[18]
+			p_0_motor_io_position_new_real_T_0[19]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -918,7 +443,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[22]
+			p_0_motor_io_position_new_real_T_0[26]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -930,23 +455,6 @@ group "Model Root"
 		endgroup -- block-group "Sum2"
 
 		group "Sum3" -- block-group
-		{
-		 block: "Sum"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[24]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "Sum3"
-
-		group "Sum4" -- block-group
 		{
 		 block: "Sum"
 		 desc:  ""
@@ -961,6 +469,23 @@ group "Model Root"
 			}
 
 
+		endgroup -- block-group "Sum3"
+
+		group "Sum4" -- block-group
+		{
+		 block: "Sum"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[32]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
 		endgroup -- block-group "Sum4"
 
 		group "Sum5" -- block-group
@@ -969,7 +494,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[29]
+			p_0_motor_io_position_new_real_T_0[33]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -997,116 +522,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[16]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[40]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[42]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[44]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "Gff"
-
-		group "Gff1" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[30]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[10]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			 origin:  "T_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[4]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			 origin:  "R_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[62]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "Gff1"
-
-		group "Gff2" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[31]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[7]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			 origin:  "S_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[4]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			 origin:  "R_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[63]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "Gff2"
-
-		group "I part" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[19]
+			p_0_motor_io_position_new_real_T_0[17]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -1133,349 +549,7 @@ group "Model Root"
 			}
 
 
-		endgroup -- block-group "I part"
-
-		group "I part1" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[17]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[45]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[47]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[49]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "I part1"
-
-		group "PD part" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[20]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[55]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[57]
-			{
-			 type:    motor_io_position_new_ArrayDT0_2*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[59]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "PD part"
-
-
-
-	endgroup -- subsystem-group "2DOF PID with anti windup2"
-  
-  
-	group "2DOF PID with anti windup3" -- subsystem-group
-	{
-	 flags: COLLAPSED
-	 desc:  ""
-	}
-
-		p_0_motor_io_position_new_real_T_0[51]
-		{
-		 type:    flt(64,IEEE)*
-		 alias:   "Voltage"
-		 desc:    ""
-		 flags:   OUTPUT|READONLY
-		}
-
-		group "reference\n" -- block-group
-		{
-		 block: "Inport"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[37]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "reference\n"
-
-		group "feedback" -- block-group
-		{
-		 block: "Inport"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[48]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "feedback"
-
-		group "Voltage Saturation\n" -- block-group
-		{
-		 block: "Saturate"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[51]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[83]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "UpperLimit"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[84]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "LowerLimit"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "Voltage Saturation\n"
-
-		group "Sum2" -- block-group
-		{
-		 block: "Sum"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[50]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "Sum2"
-
-		group "Gff1" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[45]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[10]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			 origin:  "T_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[4]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			 origin:  "R_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[80]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "Gff1"
-
-		group "Gff2" -- block-group
-		{
-		 block: "DiscreteTransferFcn"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[49]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[7]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Numerator"
-			 flags:   PARAM
-			 origin:  "S_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[4]
-			{
-			 type:    motor_io_position_new_ArrayDT0_3*
-			 alias:   "Denominator"
-			 flags:   PARAM
-			 origin:  "R_sim"
-			}
-			p_1_motor_io_position_new_real_T_0[82]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "InitialStates"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "Gff2"
-
-
-
-	endgroup -- subsystem-group "2DOF PID with anti windup3"
-  
-  
-	group "2DOF PID with anti windup4" -- subsystem-group
-	{
-	 flags: COLLAPSED
-	 desc:  ""
-	}
-
-		p_0_motor_io_position_new_real_T_0[40]
-		{
-		 type:    flt(64,IEEE)*
-		 alias:   "Voltage"
-		 desc:    ""
-		 flags:   OUTPUT|READONLY
-		}
-
-		group "reference\n" -- block-group
-		{
-		 block: "Inport"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[33]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "reference\n"
-
-		group "feedback" -- block-group
-		{
-		 block: "Inport"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[37]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "feedback"
-
-		group "Voltage Saturation\n" -- block-group
-		{
-		 block: "Saturate"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[40]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-			p_1_motor_io_position_new_real_T_0[72]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "UpperLimit"
-			 flags:   PARAM
-			}
-			p_1_motor_io_position_new_real_T_0[73]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "LowerLimit"
-			 flags:   PARAM
-			}
-
-
-		endgroup -- block-group "Voltage Saturation\n"
-
-		group "Sum2" -- block-group
-		{
-		 block: "Sum"
-		 desc:  ""
-		 flags: BLOCK|COLLAPSED
-		}
-			p_0_motor_io_position_new_real_T_0[39]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out1"
-			 desc:    ""
-			 flags:   OUTPUT|READONLY
-			}
-
-
-		endgroup -- block-group "Sum2"
+		endgroup -- block-group "Gff"
 
 		group "Gff1" -- block-group
 		{
@@ -1504,7 +578,7 @@ group "Model Root"
 			 flags:   PARAM
 			 origin:  "R_sim"
 			}
-			p_1_motor_io_position_new_real_T_0[65]
+			p_1_motor_io_position_new_real_T_0[73]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialStates"
@@ -1520,7 +594,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[38]
+			p_0_motor_io_position_new_real_T_0[35]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -1541,7 +615,7 @@ group "Model Root"
 			 flags:   PARAM
 			 origin:  "R_sim"
 			}
-			p_1_motor_io_position_new_real_T_0[71]
+			p_1_motor_io_position_new_real_T_0[74]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialStates"
@@ -1551,9 +625,613 @@ group "Model Root"
 
 		endgroup -- block-group "Gff2"
 
+		group "I part" -- block-group
+		{
+		 block: "DiscreteTransferFcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[20]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[60]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Numerator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[62]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Denominator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[64]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialStates"
+			 flags:   PARAM
+			}
 
 
-	endgroup -- subsystem-group "2DOF PID with anti windup4"
+		endgroup -- block-group "I part"
+
+		group "I part1" -- block-group
+		{
+		 block: "DiscreteTransferFcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[18]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[55]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Numerator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[57]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Denominator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[59]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialStates"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "I part1"
+
+		group "PD part" -- block-group
+		{
+		 block: "DiscreteTransferFcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[24]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[66]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Numerator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[68]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Denominator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[70]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialStates"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "PD part"
+
+
+
+	endgroup -- subsystem-group "2DOF PID with anti windup1"
+  
+  
+	group "2DOF PID with anti windup2" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_0_motor_io_position_new_real_T_0[12]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Voltage"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "reference\n" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[2]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "reference\n"
+
+		group "feedback" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[8]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "feedback"
+
+		group "Gain" -- block-group
+		{
+		 block: "Gain"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[37]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[13]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			 origin:  "c0"
+			}
+
+
+		endgroup -- block-group "Gain"
+
+		group "Gain1" -- block-group
+		{
+		 block: "Gain"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[38]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[14]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			 origin:  "c0_"
+			}
+
+
+		endgroup -- block-group "Gain1"
+
+		group "Gain2" -- block-group
+		{
+		 block: "Gain"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[39]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[3]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			 origin:  "Kb"
+			}
+
+
+		endgroup -- block-group "Gain2"
+
+		group "Voltage Saturation\n" -- block-group
+		{
+		 block: "Saturate"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[12]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[42]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperLimit"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[43]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerLimit"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Voltage Saturation\n"
+
+		group "Scope" -- block-group
+		{
+		 block: "Scope"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[36]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "In1"
+			 desc:    ""
+			 flags:   SINK|READONLY
+			}
+
+
+
+		endgroup -- block-group "Scope"
+
+		group "Sum" -- block-group
+		{
+		 block: "Sum"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[10]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Sum"
+
+		group "Sum1" -- block-group
+		{
+		 block: "Sum"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[5]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Sum1"
+
+		group "Sum2" -- block-group
+		{
+		 block: "Sum"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[11]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Sum2"
+
+		group "Sum3" -- block-group
+		{
+		 block: "Sum"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[36]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Sum3"
+
+		group "Sum4" -- block-group
+		{
+		 block: "Sum"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[40]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Sum4"
+
+		group "Sum5" -- block-group
+		{
+		 block: "Sum"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[41]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Sum5"
+
+		group "To Workspace" -- block-group
+		{
+		 block: "ToWorkspace"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+
+
+
+		endgroup -- block-group "To Workspace"
+
+		group "Gff" -- block-group
+		{
+		 block: "DiscreteTransferFcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[3]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[21]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Numerator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[23]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Denominator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[25]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialStates"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Gff"
+
+		group "Gff1" -- block-group
+		{
+		 block: "DiscreteTransferFcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[42]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[10]
+			{
+			 type:    motor_io_position_new_ArrayDT0_3*
+			 alias:   "Numerator"
+			 flags:   PARAM
+			 origin:  "T_sim"
+			}
+			p_1_motor_io_position_new_real_T_0[4]
+			{
+			 type:    motor_io_position_new_ArrayDT0_3*
+			 alias:   "Denominator"
+			 flags:   PARAM
+			 origin:  "R_sim"
+			}
+			p_1_motor_io_position_new_real_T_0[75]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialStates"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Gff1"
+
+		group "Gff2" -- block-group
+		{
+		 block: "DiscreteTransferFcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[43]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[7]
+			{
+			 type:    motor_io_position_new_ArrayDT0_3*
+			 alias:   "Numerator"
+			 flags:   PARAM
+			 origin:  "S_sim"
+			}
+			p_1_motor_io_position_new_real_T_0[4]
+			{
+			 type:    motor_io_position_new_ArrayDT0_3*
+			 alias:   "Denominator"
+			 flags:   PARAM
+			 origin:  "R_sim"
+			}
+			p_1_motor_io_position_new_real_T_0[76]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialStates"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Gff2"
+
+		group "I part" -- block-group
+		{
+		 block: "DiscreteTransferFcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[6]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[31]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Numerator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[33]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Denominator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[35]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialStates"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "I part"
+
+		group "I part1" -- block-group
+		{
+		 block: "DiscreteTransferFcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[4]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[26]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Numerator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[28]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Denominator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[30]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialStates"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "I part1"
+
+		group "PD part" -- block-group
+		{
+		 block: "DiscreteTransferFcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_0_motor_io_position_new_real_T_0[9]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_motor_io_position_new_real_T_0[37]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Numerator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[39]
+			{
+			 type:    motor_io_position_new_ArrayDT0_2*
+			 alias:   "Denominator"
+			 flags:   PARAM
+			}
+			p_1_motor_io_position_new_real_T_0[41]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialStates"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "PD part"
+
+
+
+	endgroup -- subsystem-group "2DOF PID with anti windup2"
   
   
 	group "DC motor" -- subsystem-group
@@ -1562,14 +1240,14 @@ group "Model Root"
 	 desc:  ""
 	}
 
-		p_0_motor_io_position_new_real_T_0[46]
+		p_0_motor_io_position_new_real_T_0[21]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Position"
 		 desc:    ""
 		 flags:   OUTPUT|READONLY
 		}
-		p_0_motor_io_position_new_real_T_0[52]
+		p_0_motor_io_position_new_real_T_0[44]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Velocity"
@@ -1583,7 +1261,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[51]
+			p_0_motor_io_position_new_real_T_0[27]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -1619,7 +1297,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_position_new_real_T_0[92]
+			p_1_motor_io_position_new_real_T_0[84]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -1635,14 +1313,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[53]
+			p_0_motor_io_position_new_real_T_0[45]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_position_new_real_T_0[86]
+			p_1_motor_io_position_new_real_T_0[78]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -1658,14 +1336,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[64]
+			p_0_motor_io_position_new_real_T_0[56]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_position_new_real_T_0[91]
+			p_1_motor_io_position_new_real_T_0[83]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -1681,14 +1359,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[55]
+			p_0_motor_io_position_new_real_T_0[47]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_position_new_real_T_0[87]
+			p_1_motor_io_position_new_real_T_0[79]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -1704,14 +1382,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[52]
+			p_0_motor_io_position_new_real_T_0[44]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_position_new_real_T_0[85]
+			p_1_motor_io_position_new_real_T_0[77]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
@@ -1727,14 +1405,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[46]
+			p_0_motor_io_position_new_real_T_0[21]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_position_new_real_T_0[81]
+			p_1_motor_io_position_new_real_T_0[65]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
@@ -1750,7 +1428,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[66]
+			p_0_motor_io_position_new_real_T_0[58]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -1767,7 +1445,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[54]
+			p_0_motor_io_position_new_real_T_0[46]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -1784,7 +1462,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[63]
+			p_0_motor_io_position_new_real_T_0[55]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -1801,7 +1479,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[65]
+			p_0_motor_io_position_new_real_T_0[57]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -1820,7 +1498,7 @@ group "Model Root"
 		 desc:  ""
 		}
 
-			p_0_motor_io_position_new_real_T_0[62]
+			p_0_motor_io_position_new_real_T_0[54]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Friction"
@@ -1834,7 +1512,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_position_new_real_T_0[52]
+				p_0_motor_io_position_new_real_T_0[44]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1851,7 +1529,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_position_new_real_T_0[55]
+				p_0_motor_io_position_new_real_T_0[47]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1868,7 +1546,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_position_new_real_T_0[57]
+				p_0_motor_io_position_new_real_T_0[49]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1903,14 +1581,14 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_position_new_real_T_0[58]
+				p_0_motor_io_position_new_real_T_0[50]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 desc:    ""
 				 flags:   OUTPUT|READONLY
 				}
-				p_1_motor_io_position_new_real_T_0[90]
+				p_1_motor_io_position_new_real_T_0[82]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Gain"
@@ -1926,7 +1604,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_position_new_real_T_0[60]
+				p_0_motor_io_position_new_real_T_0[52]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1943,7 +1621,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_position_new_real_T_0[56]
+				p_0_motor_io_position_new_real_T_0[48]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1957,7 +1635,7 @@ group "Model Root"
 				 flags:   PARAM
 				 origin:  "F_c_upper"
 				}
-				p_1_motor_io_position_new_real_T_0[88]
+				p_1_motor_io_position_new_real_T_0[80]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "LowerLimit"
@@ -1973,7 +1651,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_position_new_real_T_0[62]
+				p_0_motor_io_position_new_real_T_0[54]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "In1"
@@ -1989,21 +1667,21 @@ group "Model Root"
 				 bitmask: 0x01
 				 flags:   SINK|READONLY
 				}
-				p_0_motor_io_position_new_real_T_0[56]
+				p_0_motor_io_position_new_real_T_0[48]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "In3"
 				 desc:    ""
 				 flags:   SINK|READONLY
 				}
-				p_0_motor_io_position_new_real_T_0[61]
+				p_0_motor_io_position_new_real_T_0[53]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "In4"
 				 desc:    ""
 				 flags:   SINK|READONLY
 				}
-				p_0_motor_io_position_new_real_T_0[52]
+				p_0_motor_io_position_new_real_T_0[44]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "In5"
@@ -2021,7 +1699,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_position_new_real_T_0[59]
+				p_0_motor_io_position_new_real_T_0[51]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2038,7 +1716,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_position_new_real_T_0[61]
+				p_0_motor_io_position_new_real_T_0[53]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2055,7 +1733,7 @@ group "Model Root"
 			 desc:  ""
 			 flags: BLOCK|COLLAPSED
 			}
-				p_0_motor_io_position_new_real_T_0[62]
+				p_0_motor_io_position_new_real_T_0[54]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2090,7 +1768,7 @@ group "Model Root"
 				 desc:  ""
 				 flags: BLOCK|COLLAPSED
 				}
-					p_0_motor_io_position_new_real_T_0[57]
+					p_0_motor_io_position_new_real_T_0[49]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2108,7 +1786,7 @@ group "Model Root"
 				 flags: BLOCK|COLLAPSED
 				}
 					-- Skipping output Out1
-					p_1_motor_io_position_new_real_T_0[89]
+					p_1_motor_io_position_new_real_T_0[81]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Value"
@@ -2150,28 +1828,28 @@ group "Model Root"
 			 origin:  "motor_io_position_new/DC motor/Karnop friction1/Velocity threshold\n/y"
 			 flags:   LABEL|READONLY
 			}
-			p_0_motor_io_position_new_real_T_0[62]
+			p_0_motor_io_position_new_real_T_0[54]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Friction"
 			 origin:  "motor_io_position_new/DC motor/Karnop friction1/Switch/Out1"
 			 flags:   LABEL|READONLY
 			}
-			p_0_motor_io_position_new_real_T_0[56]
+			p_0_motor_io_position_new_real_T_0[48]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Stick slip region\n"
 			 origin:  "motor_io_position_new/DC motor/Karnop friction1/Saturate to Fc/Out1"
 			 flags:   LABEL|READONLY
 			}
-			p_0_motor_io_position_new_real_T_0[52]
+			p_0_motor_io_position_new_real_T_0[44]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Velocity"
 			 origin:  "motor_io_position_new/DC motor/Karnop friction1/Angular \nvelcoity/Out1"
 			 flags:   LABEL|READONLY
 			}
-			p_0_motor_io_position_new_real_T_0[61]
+			p_0_motor_io_position_new_real_T_0[53]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Viscous region"
@@ -2198,7 +1876,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[41]
+			p_0_motor_io_position_new_real_T_0[13]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -2216,7 +1894,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_position_new_real_T_0[79]
+			p_1_motor_io_position_new_real_T_0[49]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -2233,7 +1911,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_position_new_real_T_0[78]
+			p_1_motor_io_position_new_real_T_0[48]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -2268,14 +1946,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[43]
+			p_0_motor_io_position_new_real_T_0[15]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_position_new_real_T_0[77]
+			p_1_motor_io_position_new_real_T_0[47]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -2324,20 +2002,20 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[42]
+			p_0_motor_io_position_new_real_T_0[14]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_position_new_real_T_0[75]
+			p_1_motor_io_position_new_real_T_0[45]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "UpperLimit"
 			 flags:   PARAM
 			}
-			p_1_motor_io_position_new_real_T_0[76]
+			p_1_motor_io_position_new_real_T_0[46]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "LowerLimit"
@@ -2353,7 +2031,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[44]
+			p_0_motor_io_position_new_real_T_0[16]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -2385,7 +2063,7 @@ group "Model Root"
 
 		endgroup -- subsystem-group "DS1104SL_DSP_PWM"
 
-		p_0_motor_io_position_new_real_T_0[42]
+		p_0_motor_io_position_new_real_T_0[14]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Volt"
@@ -2412,7 +2090,7 @@ group "Model Root"
 	 desc:  ""
 	}
 
-		p_0_motor_io_position_new_real_T_0[48]
+		p_0_motor_io_position_new_real_T_0[23]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -2426,7 +2104,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[46]
+			p_0_motor_io_position_new_real_T_0[21]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -2443,7 +2121,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[47]
+			p_0_motor_io_position_new_real_T_0[22]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -2467,7 +2145,7 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[48]
+			p_0_motor_io_position_new_real_T_0[23]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -2489,14 +2167,14 @@ group "Model Root"
 	 desc:  ""
 	}
 
-		p_0_motor_io_position_new_real_T_0[33]
+		p_0_motor_io_position_new_real_T_0[8]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "fi1"
 		 desc:    ""
 		 flags:   OUTPUT|READONLY
 		}
-		p_0_motor_io_position_new_real_T_0[68]
+		p_0_motor_io_position_new_real_T_0[60]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "w1"
@@ -2511,7 +2189,7 @@ group "Model Root"
 		 flags: BLOCK|COLLAPSED
 		}
 			-- Skipping output Out1
-			p_1_motor_io_position_new_real_T_0[94]
+			p_1_motor_io_position_new_real_T_0[86]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -2527,14 +2205,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[33]
+			p_0_motor_io_position_new_real_T_0[8]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_position_new_real_T_0[64]
+			p_1_motor_io_position_new_real_T_0[36]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -2550,14 +2228,14 @@ group "Model Root"
 		 desc:  ""
 		 flags: BLOCK|COLLAPSED
 		}
-			p_0_motor_io_position_new_real_T_0[68]
+			p_0_motor_io_position_new_real_T_0[60]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_motor_io_position_new_real_T_0[93]
+			p_1_motor_io_position_new_real_T_0[85]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
@@ -2575,14 +2253,14 @@ group "Model Root"
 		 desc:  ""
 		}
 
-			p_0_motor_io_position_new_real_T_0[32]
+			p_0_motor_io_position_new_real_T_0[7]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Enc position"
 			 desc:    ""
 			 flags:   OUTPUT|READONLY
 			}
-			p_0_motor_io_position_new_real_T_0[67]
+			p_0_motor_io_position_new_real_T_0[59]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Enc delta position"
@@ -2615,7 +2293,7 @@ group "Model Root"
 
 	endgroup -- subsystem-group "enc I//F"
 
-	p_0_motor_io_position_new_real_T_0[37]
+	p_0_motor_io_position_new_real_T_0[2]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "ref"
@@ -2722,42 +2400,42 @@ group "Labels"
 	 origin:  "motor_io_position_new/DC motor/Karnop friction1/Velocity threshold\n/y"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_position_new_real_T_0[62]
+	p_0_motor_io_position_new_real_T_0[54]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Friction"
 	 origin:  "motor_io_position_new/DC motor/Karnop friction1/Switch/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_position_new_real_T_0[56]
+	p_0_motor_io_position_new_real_T_0[48]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Stick slip region\n"
 	 origin:  "motor_io_position_new/DC motor/Karnop friction1/Saturate to Fc/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_position_new_real_T_0[52]
+	p_0_motor_io_position_new_real_T_0[44]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Velocity"
 	 origin:  "motor_io_position_new/DC motor/Karnop friction1/Angular \nvelcoity/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_position_new_real_T_0[61]
+	p_0_motor_io_position_new_real_T_0[53]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Viscous region"
 	 origin:  "motor_io_position_new/DC motor/Karnop friction1/Add/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_position_new_real_T_0[42]
+	p_0_motor_io_position_new_real_T_0[14]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Volt"
 	 origin:  "motor_io_position_new/PWM/Saturation/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_position_new_real_T_0[37]
+	p_0_motor_io_position_new_real_T_0[2]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "ref"

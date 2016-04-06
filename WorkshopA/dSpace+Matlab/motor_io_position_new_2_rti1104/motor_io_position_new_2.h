@@ -5,7 +5,7 @@
  *
  * Model version              : 1.30
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Thu Apr 07 00:29:48 2016
+ * C source code generated on : Thu Apr 07 00:48:33 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -830,10 +830,10 @@ typedef struct {
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
-  real_T Gff_states[2];                /* '<S1>/Gff' */
-  real_T Gfb_states[2];                /* '<S1>/Gfb' */
-  real_T Gfb_states_a[2];              /* '<S2>/Gfb' */
-  real_T Gff_states_g[2];              /* '<S2>/Gff' */
+  real_T Gff_states;                   /* '<S1>/Gff' */
+  real_T Gfb_states;                   /* '<S1>/Gfb' */
+  real_T Gfb_states_a;                 /* '<S2>/Gfb' */
+  real_T Gff_states_g;                 /* '<S2>/Gff' */
   real_T Gff_tmp;                      /* '<S1>/Gff' */
   real_T Gfb_tmp;                      /* '<S1>/Gfb' */
   real_T Gfb_tmp_e;                    /* '<S2>/Gfb' */
@@ -926,10 +926,10 @@ struct P_motor_io_position_new_2_T_ {
   real_T SquareGenerator_Frequency;    /* Computed Parameter: SquareGenerator_Frequency
                                         * Referenced by: '<Root>/SquareGenerator'
                                         */
-  real_T Gff_NumCoef[3];               /* Expression: Gff_d.num{1}
+  real_T Gff_NumCoef[2];               /* Expression: Gff_d.num{1}
                                         * Referenced by: '<S1>/Gff'
                                         */
-  real_T Gff_DenCoef[3];               /* Expression: Gff_d.den{1}
+  real_T Gff_DenCoef[2];               /* Expression: Gff_d.den{1}
                                         * Referenced by: '<S1>/Gff'
                                         */
   real_T Gff_InitialStates;            /* Expression: 0
@@ -938,10 +938,10 @@ struct P_motor_io_position_new_2_T_ {
   real_T fi1_scaling_Gain;             /* Expression: 2*pi/(1000)
                                         * Referenced by: '<S7>/fi1_scaling'
                                         */
-  real_T Gfb_NumCoef[3];               /* Expression: Gfb_d.num{1}
+  real_T Gfb_NumCoef[2];               /* Expression: Gfb_d.num{1}
                                         * Referenced by: '<S1>/Gfb'
                                         */
-  real_T Gfb_DenCoef[3];               /* Expression: Gfb_d.den{1}
+  real_T Gfb_DenCoef[2];               /* Expression: Gfb_d.den{1}
                                         * Referenced by: '<S1>/Gfb'
                                         */
   real_T Gfb_InitialStates;            /* Expression: 0
@@ -974,19 +974,19 @@ struct P_motor_io_position_new_2_T_ {
   real_T Integrator1_IC;               /* Expression: 0
                                         * Referenced by: '<S3>/Integrator1'
                                         */
-  real_T Gfb_NumCoef_b[3];             /* Expression: Gfb_d.num{1}
+  real_T Gfb_NumCoef_b[2];             /* Expression: Gfb_d.num{1}
                                         * Referenced by: '<S2>/Gfb'
                                         */
-  real_T Gfb_DenCoef_f[3];             /* Expression: Gfb_d.den{1}
+  real_T Gfb_DenCoef_f[2];             /* Expression: Gfb_d.den{1}
                                         * Referenced by: '<S2>/Gfb'
                                         */
   real_T Gfb_InitialStates_h;          /* Expression: 0
                                         * Referenced by: '<S2>/Gfb'
                                         */
-  real_T Gff_NumCoef_l[3];             /* Expression: Gff_d.num{1}
+  real_T Gff_NumCoef_l[2];             /* Expression: Gff_d.num{1}
                                         * Referenced by: '<S2>/Gff'
                                         */
-  real_T Gff_DenCoef_f[3];             /* Expression: Gff_d.den{1}
+  real_T Gff_DenCoef_f[2];             /* Expression: Gff_d.den{1}
                                         * Referenced by: '<S2>/Gff'
                                         */
   real_T Gff_InitialStates_l;          /* Expression: 0

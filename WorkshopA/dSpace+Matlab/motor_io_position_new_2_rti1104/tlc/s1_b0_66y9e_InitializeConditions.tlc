@@ -1,4 +1,4 @@
-%implements s1_b0_xby9e_InitializeConditions "C"
+%implements s1_b0_66y9e_InitializeConditions "C"
 
 %function InitializeConditions(block, system) Output
 %assign cfgTxt = ""
@@ -7,19 +7,15 @@
 %<SLibInsertAsyncTaskInitializeCode(system)>
 %<SLibWriteMachineInitialize()>
 /* InitializeConditions for DiscreteTransferFcn: '<S1>/Gff' */
-motor_io_position_new_2_DW.Gff_states[0] = motor_io_position_new_2_P.Gff_InitialStates;
-motor_io_position_new_2_DW.Gff_states[1] = motor_io_position_new_2_P.Gff_InitialStates;
+motor_io_position_new_2_DW.Gff_states = motor_io_position_new_2_P.Gff_InitialStates;
 /* InitializeConditions for DiscreteTransferFcn: '<S1>/Gfb' */
-motor_io_position_new_2_DW.Gfb_states[0] = motor_io_position_new_2_P.Gfb_InitialStates;
-motor_io_position_new_2_DW.Gfb_states[1] = motor_io_position_new_2_P.Gfb_InitialStates;
+motor_io_position_new_2_DW.Gfb_states = motor_io_position_new_2_P.Gfb_InitialStates;
 /* InitializeConditions for Integrator: '<S3>/Integrator1' */
 motor_io_position_new_2_X.Integrator1_CSTATE = motor_io_position_new_2_P.Integrator1_IC;
 /* InitializeConditions for DiscreteTransferFcn: '<S2>/Gfb' */
-motor_io_position_new_2_DW.Gfb_states_a[0] = motor_io_position_new_2_P.Gfb_InitialStates_h;
-motor_io_position_new_2_DW.Gfb_states_a[1] = motor_io_position_new_2_P.Gfb_InitialStates_h;
+motor_io_position_new_2_DW.Gfb_states_a = motor_io_position_new_2_P.Gfb_InitialStates_h;
 /* InitializeConditions for DiscreteTransferFcn: '<S2>/Gff' */
-motor_io_position_new_2_DW.Gff_states_g[0] = motor_io_position_new_2_P.Gff_InitialStates_l;
-motor_io_position_new_2_DW.Gff_states_g[1] = motor_io_position_new_2_P.Gff_InitialStates_l;
+motor_io_position_new_2_DW.Gff_states_g = motor_io_position_new_2_P.Gff_InitialStates_l;
 /* InitializeConditions for Integrator: '<S3>/Integrator' */
 motor_io_position_new_2_X.Integrator_CSTATE = motor_io_position_new_2_P.Integrator_IC;
 %closefile cfgTxt

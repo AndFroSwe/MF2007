@@ -5,7 +5,7 @@
  *
  * Model version              : 1.29
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Wed Apr 06 22:37:50 2016
+ * C source code generated on : Thu Apr 07 01:32:30 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -105,250 +105,6 @@ void motor_io_position_new_output(void)
       (&motor_io_position_new_M->solverInfo);
   }
 
-  if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
-    /* DiscreteTransferFcn: '<S1>/Gff' */
-    temp = 0.0 - motor_io_position_new_P.Gff_DenCoef[1] *
-      motor_io_position_new_DW.Gff_states;
-    temp /= motor_io_position_new_P.Gff_DenCoef[0];
-    motor_io_position_new_DW.Gff_tmp = temp;
-    temp = motor_io_position_new_P.Gff_NumCoef[0] *
-      motor_io_position_new_DW.Gff_tmp;
-    temp += motor_io_position_new_P.Gff_NumCoef[1] *
-      motor_io_position_new_DW.Gff_states;
-    motor_io_position_new_B.Gff = temp;
-
-    /* DiscreteTransferFcn: '<S1>/I part1' */
-    temp = motor_io_position_new_P.Ipart1_NumCoef[1] *
-      motor_io_position_new_DW.Ipart1_states;
-    motor_io_position_new_B.Ipart1 = temp;
-
-    /* Sum: '<S1>/Sum1' */
-    motor_io_position_new_B.Sum1 = motor_io_position_new_B.Gff +
-      motor_io_position_new_B.Ipart1;
-
-    /* DiscreteTransferFcn: '<S1>/I part' */
-    temp = motor_io_position_new_P.Ipart_NumCoef[1] *
-      motor_io_position_new_DW.Ipart_states;
-    motor_io_position_new_B.Ipart = temp;
-
-    /* DiscreteTransferFcn: '<S1>/PD part' */
-    temp = 0.0 - motor_io_position_new_P.PDpart_DenCoef[1] *
-      motor_io_position_new_DW.PDpart_states;
-    temp /= motor_io_position_new_P.PDpart_DenCoef[0];
-    motor_io_position_new_DW.PDpart_tmp = temp;
-    temp = motor_io_position_new_P.PDpart_NumCoef[0] *
-      motor_io_position_new_DW.PDpart_tmp;
-    temp += motor_io_position_new_P.PDpart_NumCoef[1] *
-      motor_io_position_new_DW.PDpart_states;
-    motor_io_position_new_B.PDpart = temp;
-
-    /* Sum: '<S1>/Sum' */
-    motor_io_position_new_B.Sum = motor_io_position_new_B.Ipart +
-      motor_io_position_new_B.PDpart;
-
-    /* Sum: '<S1>/Sum2' */
-    motor_io_position_new_B.Sum2 = motor_io_position_new_B.Sum1 -
-      motor_io_position_new_B.Sum;
-
-    /* Saturate: '<S1>/Voltage Saturation ' */
-    temp = motor_io_position_new_B.Sum2;
-    u1 = motor_io_position_new_P.VoltageSaturation_LowerSat;
-    u2 = motor_io_position_new_P.VoltageSaturation_UpperSat;
-    if (temp > u2) {
-      motor_io_position_new_B.VoltageSaturation = u2;
-    } else if (temp < u1) {
-      motor_io_position_new_B.VoltageSaturation = u1;
-    } else {
-      motor_io_position_new_B.VoltageSaturation = temp;
-    }
-
-    /* End of Saturate: '<S1>/Voltage Saturation ' */
-
-    /* Sum: '<S1>/Sum3' */
-    motor_io_position_new_B.Sum3 = motor_io_position_new_B.VoltageSaturation -
-      motor_io_position_new_B.Sum2;
-
-    /* Gain: '<S1>/Gain' */
-    motor_io_position_new_B.Gain = motor_io_position_new_P.c0 * 0.0;
-
-    /* Gain: '<S1>/Gain1' */
-    motor_io_position_new_B.Gain1 = motor_io_position_new_P.c0_ * 0.0;
-
-    /* Gain: '<S1>/Gain2' */
-    motor_io_position_new_B.Gain2 = motor_io_position_new_P.Kb *
-      motor_io_position_new_B.Sum3;
-
-    /* Sum: '<S1>/Sum4' */
-    motor_io_position_new_B.Sum4 = motor_io_position_new_B.Gain2 +
-      motor_io_position_new_B.Gain;
-
-    /* Sum: '<S1>/Sum5' */
-    motor_io_position_new_B.Sum5 = motor_io_position_new_B.Gain1 +
-      motor_io_position_new_B.Gain2;
-
-    /* DiscreteTransferFcn: '<S1>/Gff1' */
-    temp = 0.0 - motor_io_position_new_P.R_sim[1] *
-      motor_io_position_new_DW.Gff1_states[0];
-    temp -= motor_io_position_new_P.R_sim[2] *
-      motor_io_position_new_DW.Gff1_states[1];
-    temp /= motor_io_position_new_P.R_sim[0];
-    motor_io_position_new_DW.Gff1_tmp = temp;
-    temp = motor_io_position_new_P.T_sim[0] * motor_io_position_new_DW.Gff1_tmp;
-    temp += motor_io_position_new_P.T_sim[1] *
-      motor_io_position_new_DW.Gff1_states[0];
-    temp += motor_io_position_new_P.T_sim[2] *
-      motor_io_position_new_DW.Gff1_states[1];
-    motor_io_position_new_B.Gff1 = temp;
-
-    /* DiscreteTransferFcn: '<S1>/Gff2' */
-    temp = 0.0 - motor_io_position_new_P.R_sim[1] *
-      motor_io_position_new_DW.Gff2_states[0];
-    temp -= motor_io_position_new_P.R_sim[2] *
-      motor_io_position_new_DW.Gff2_states[1];
-    temp /= motor_io_position_new_P.R_sim[0];
-    motor_io_position_new_DW.Gff2_tmp = temp;
-    temp = motor_io_position_new_P.S_sim[0] * motor_io_position_new_DW.Gff2_tmp;
-    temp += motor_io_position_new_P.S_sim[1] *
-      motor_io_position_new_DW.Gff2_states[0];
-    temp += motor_io_position_new_P.S_sim[2] *
-      motor_io_position_new_DW.Gff2_states[1];
-    motor_io_position_new_B.Gff2 = temp;
-
-    /* DiscreteTransferFcn: '<S2>/Gff' */
-    temp = 0.0 - motor_io_position_new_P.Gff_DenCoef_f[1] *
-      motor_io_position_new_DW.Gff_states_m;
-    temp /= motor_io_position_new_P.Gff_DenCoef_f[0];
-    motor_io_position_new_DW.Gff_tmp_e = temp;
-    temp = motor_io_position_new_P.Gff_NumCoef_n[0] *
-      motor_io_position_new_DW.Gff_tmp_e;
-    temp += motor_io_position_new_P.Gff_NumCoef_n[1] *
-      motor_io_position_new_DW.Gff_states_m;
-    motor_io_position_new_B.Gff_j = temp;
-
-    /* DiscreteTransferFcn: '<S2>/I part1' */
-    temp = motor_io_position_new_P.Ipart1_NumCoef_n[1] *
-      motor_io_position_new_DW.Ipart1_states_j;
-    motor_io_position_new_B.Ipart1_f = temp;
-
-    /* Sum: '<S2>/Sum1' */
-    motor_io_position_new_B.Sum1_l = motor_io_position_new_B.Gff_j +
-      motor_io_position_new_B.Ipart1_f;
-
-    /* DiscreteTransferFcn: '<S2>/I part' */
-    temp = motor_io_position_new_P.Ipart_NumCoef_a[1] *
-      motor_io_position_new_DW.Ipart_states_d;
-    motor_io_position_new_B.Ipart_l = temp;
-
-    /* DiscreteTransferFcn: '<S2>/PD part' */
-    temp = 0.0 - motor_io_position_new_P.PDpart_DenCoef_n[1] *
-      motor_io_position_new_DW.PDpart_states_e;
-    temp /= motor_io_position_new_P.PDpart_DenCoef_n[0];
-    motor_io_position_new_DW.PDpart_tmp_j = temp;
-    temp = motor_io_position_new_P.PDpart_NumCoef_e[0] *
-      motor_io_position_new_DW.PDpart_tmp_j;
-    temp += motor_io_position_new_P.PDpart_NumCoef_e[1] *
-      motor_io_position_new_DW.PDpart_states_e;
-    motor_io_position_new_B.PDpart_j = temp;
-
-    /* Sum: '<S2>/Sum' */
-    motor_io_position_new_B.Sum_i = motor_io_position_new_B.Ipart_l +
-      motor_io_position_new_B.PDpart_j;
-
-    /* Sum: '<S2>/Sum2' */
-    motor_io_position_new_B.Sum2_k = motor_io_position_new_B.Sum1_l -
-      motor_io_position_new_B.Sum_i;
-
-    /* Saturate: '<S2>/Voltage Saturation ' */
-    temp = motor_io_position_new_B.Sum2_k;
-    u1 = motor_io_position_new_P.VoltageSaturation_LowerSat_o;
-    u2 = motor_io_position_new_P.VoltageSaturation_UpperSat_j;
-    if (temp > u2) {
-      motor_io_position_new_B.VoltageSaturation_j = u2;
-    } else if (temp < u1) {
-      motor_io_position_new_B.VoltageSaturation_j = u1;
-    } else {
-      motor_io_position_new_B.VoltageSaturation_j = temp;
-    }
-
-    /* End of Saturate: '<S2>/Voltage Saturation ' */
-
-    /* Sum: '<S2>/Sum3' */
-    motor_io_position_new_B.Sum3_o = motor_io_position_new_B.VoltageSaturation_j
-      - motor_io_position_new_B.Sum2_k;
-
-    /* Gain: '<S2>/Gain' */
-    motor_io_position_new_B.Gain_g = motor_io_position_new_P.c0 * 0.0;
-
-    /* Gain: '<S2>/Gain1' */
-    motor_io_position_new_B.Gain1_k = motor_io_position_new_P.c0_ * 0.0;
-
-    /* Gain: '<S2>/Gain2' */
-    motor_io_position_new_B.Gain2_n = motor_io_position_new_P.Kb *
-      motor_io_position_new_B.Sum3_o;
-
-    /* Sum: '<S2>/Sum4' */
-    motor_io_position_new_B.Sum4_b = motor_io_position_new_B.Gain2_n +
-      motor_io_position_new_B.Gain_g;
-
-    /* Sum: '<S2>/Sum5' */
-    motor_io_position_new_B.Sum5_a = motor_io_position_new_B.Gain1_k +
-      motor_io_position_new_B.Gain2_n;
-
-    /* DiscreteTransferFcn: '<S2>/Gff1' */
-    temp = 0.0 - motor_io_position_new_P.R_sim[1] *
-      motor_io_position_new_DW.Gff1_states_n[0];
-    temp -= motor_io_position_new_P.R_sim[2] *
-      motor_io_position_new_DW.Gff1_states_n[1];
-    temp /= motor_io_position_new_P.R_sim[0];
-    motor_io_position_new_DW.Gff1_tmp_o = temp;
-    temp = motor_io_position_new_P.T_sim[0] *
-      motor_io_position_new_DW.Gff1_tmp_o;
-    temp += motor_io_position_new_P.T_sim[1] *
-      motor_io_position_new_DW.Gff1_states_n[0];
-    temp += motor_io_position_new_P.T_sim[2] *
-      motor_io_position_new_DW.Gff1_states_n[1];
-    motor_io_position_new_B.Gff1_p = temp;
-
-    /* DiscreteTransferFcn: '<S2>/Gff2' */
-    temp = 0.0 - motor_io_position_new_P.R_sim[1] *
-      motor_io_position_new_DW.Gff2_states_b[0];
-    temp -= motor_io_position_new_P.R_sim[2] *
-      motor_io_position_new_DW.Gff2_states_b[1];
-    temp /= motor_io_position_new_P.R_sim[0];
-    motor_io_position_new_DW.Gff2_tmp_k = temp;
-    temp = motor_io_position_new_P.S_sim[0] *
-      motor_io_position_new_DW.Gff2_tmp_k;
-    temp += motor_io_position_new_P.S_sim[1] *
-      motor_io_position_new_DW.Gff2_states_b[0];
-    temp += motor_io_position_new_P.S_sim[2] *
-      motor_io_position_new_DW.Gff2_states_b[1];
-    motor_io_position_new_B.Gff2_p = temp;
-
-    /* S-Function (rti_commonblock): '<S17>/S-Function1' */
-    /* This comment workarounds a code generation problem */
-
-    /* Gain: '<S9>/fi1_scaling' */
-    motor_io_position_new_B.fi1_scaling =
-      motor_io_position_new_P.fi1_scaling_Gain *
-      motor_io_position_new_B.SFunction1;
-
-    /* DiscreteTransferFcn: '<S4>/Gff1' */
-    temp = motor_io_position_new_B.fi1_scaling;
-    temp -= motor_io_position_new_P.R_sim[1] *
-      motor_io_position_new_DW.Gff1_states_e[0];
-    temp -= motor_io_position_new_P.R_sim[2] *
-      motor_io_position_new_DW.Gff1_states_e[1];
-    temp /= motor_io_position_new_P.R_sim[0];
-    motor_io_position_new_DW.Gff1_tmp_a = temp;
-    temp = motor_io_position_new_P.T_sim[0] *
-      motor_io_position_new_DW.Gff1_tmp_a;
-    temp += motor_io_position_new_P.T_sim[1] *
-      motor_io_position_new_DW.Gff1_states_e[0];
-    temp += motor_io_position_new_P.T_sim[2] *
-      motor_io_position_new_DW.Gff1_states_e[1];
-    motor_io_position_new_B.Gff1_k = temp;
-  }
-
   /* SignalGenerator: '<Root>/SinGenerator' */
   motor_io_position_new_B.SinGenerator = sin
     (motor_io_position_new_P.SinGenerator_Frequency *
@@ -379,46 +135,80 @@ void motor_io_position_new_output(void)
 
   /* End of Switch: '<Root>/Switch' */
   if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
-    /* DiscreteTransferFcn: '<S4>/Gff2' */
+    /* DiscreteTransferFcn: '<S2>/Gff' */
     temp = motor_io_position_new_B.ref;
-    temp -= motor_io_position_new_P.R_sim[1] *
-      motor_io_position_new_DW.Gff2_states_e[0];
-    temp -= motor_io_position_new_P.R_sim[2] *
-      motor_io_position_new_DW.Gff2_states_e[1];
-    temp /= motor_io_position_new_P.R_sim[0];
-    motor_io_position_new_DW.Gff2_tmp_m = temp;
-    temp = motor_io_position_new_P.S_sim[0] *
-      motor_io_position_new_DW.Gff2_tmp_m;
-    temp += motor_io_position_new_P.S_sim[1] *
-      motor_io_position_new_DW.Gff2_states_e[0];
-    temp += motor_io_position_new_P.S_sim[2] *
-      motor_io_position_new_DW.Gff2_states_e[1];
-    motor_io_position_new_B.Gff2_m = temp;
+    temp -= motor_io_position_new_P.Gff_DenCoef[1] *
+      motor_io_position_new_DW.Gff_states;
+    temp /= motor_io_position_new_P.Gff_DenCoef[0];
+    motor_io_position_new_DW.Gff_tmp = temp;
+    temp = motor_io_position_new_P.Gff_NumCoef[0] *
+      motor_io_position_new_DW.Gff_tmp;
+    temp += motor_io_position_new_P.Gff_NumCoef[1] *
+      motor_io_position_new_DW.Gff_states;
+    motor_io_position_new_B.Gff = temp;
 
-    /* Sum: '<S4>/Sum2' */
-    motor_io_position_new_B.Sum2_b = motor_io_position_new_B.Gff1_k -
-      motor_io_position_new_B.Gff2_m;
+    /* DiscreteTransferFcn: '<S2>/I part1' */
+    temp = motor_io_position_new_P.Ipart1_NumCoef[1] *
+      motor_io_position_new_DW.Ipart1_states;
+    motor_io_position_new_B.Ipart1 = temp;
 
-    /* Saturate: '<S4>/Voltage Saturation ' */
-    temp = motor_io_position_new_B.Sum2_b;
-    u1 = motor_io_position_new_P.VoltageSaturation_LowerSat_p;
-    u2 = motor_io_position_new_P.VoltageSaturation_UpperSat_n;
+    /* Sum: '<S2>/Sum1' */
+    motor_io_position_new_B.Sum1 = motor_io_position_new_B.Gff +
+      motor_io_position_new_B.Ipart1;
+
+    /* DiscreteTransferFcn: '<S2>/I part' */
+    temp = motor_io_position_new_P.Ipart_NumCoef[1] *
+      motor_io_position_new_DW.Ipart_states;
+    motor_io_position_new_B.Ipart = temp;
+
+    /* S-Function (rti_commonblock): '<S15>/S-Function1' */
+    /* This comment workarounds a code generation problem */
+
+    /* Gain: '<S7>/fi1_scaling' */
+    motor_io_position_new_B.fi1_scaling =
+      motor_io_position_new_P.fi1_scaling_Gain *
+      motor_io_position_new_B.SFunction1;
+
+    /* DiscreteTransferFcn: '<S2>/PD part' */
+    temp = motor_io_position_new_B.fi1_scaling;
+    temp -= motor_io_position_new_P.PDpart_DenCoef[1] *
+      motor_io_position_new_DW.PDpart_states;
+    temp /= motor_io_position_new_P.PDpart_DenCoef[0];
+    motor_io_position_new_DW.PDpart_tmp = temp;
+    temp = motor_io_position_new_P.PDpart_NumCoef[0] *
+      motor_io_position_new_DW.PDpart_tmp;
+    temp += motor_io_position_new_P.PDpart_NumCoef[1] *
+      motor_io_position_new_DW.PDpart_states;
+    motor_io_position_new_B.PDpart = temp;
+
+    /* Sum: '<S2>/Sum' */
+    motor_io_position_new_B.Sum = motor_io_position_new_B.Ipart +
+      motor_io_position_new_B.PDpart;
+
+    /* Sum: '<S2>/Sum2' */
+    motor_io_position_new_B.Sum2 = motor_io_position_new_B.Sum1 -
+      motor_io_position_new_B.Sum;
+
+    /* Saturate: '<S2>/Voltage Saturation ' */
+    temp = motor_io_position_new_B.Sum2;
+    u1 = motor_io_position_new_P.VoltageSaturation_LowerSat;
+    u2 = motor_io_position_new_P.VoltageSaturation_UpperSat;
     if (temp > u2) {
-      motor_io_position_new_B.VoltageSaturation_m = u2;
+      motor_io_position_new_B.VoltageSaturation = u2;
     } else if (temp < u1) {
-      motor_io_position_new_B.VoltageSaturation_m = u1;
+      motor_io_position_new_B.VoltageSaturation = u1;
     } else {
-      motor_io_position_new_B.VoltageSaturation_m = temp;
+      motor_io_position_new_B.VoltageSaturation = temp;
     }
 
-    /* End of Saturate: '<S4>/Voltage Saturation ' */
+    /* End of Saturate: '<S2>/Voltage Saturation ' */
 
     /* Gain: '<Root>/Gain' */
-    motor_io_position_new_B.Gain_i = motor_io_position_new_P.Gain_Gain *
-      motor_io_position_new_B.VoltageSaturation_m;
+    motor_io_position_new_B.Gain = motor_io_position_new_P.Gain_Gain *
+      motor_io_position_new_B.VoltageSaturation;
 
-    /* Saturate: '<S6>/Saturation' */
-    temp = motor_io_position_new_B.Gain_i;
+    /* Saturate: '<S4>/Saturation' */
+    temp = motor_io_position_new_B.Gain;
     u1 = motor_io_position_new_P.Saturation_LowerSat;
     u2 = motor_io_position_new_P.Saturation_UpperSat;
     if (temp > u2) {
@@ -429,41 +219,41 @@ void motor_io_position_new_output(void)
       motor_io_position_new_B.Volt = temp;
     }
 
-    /* End of Saturate: '<S6>/Saturation' */
+    /* End of Saturate: '<S4>/Saturation' */
 
-    /* Gain: '<S6>/pwm_skalning' */
+    /* Gain: '<S4>/pwm_skalning' */
     motor_io_position_new_B.pwm_skalning =
       motor_io_position_new_P.pwm_skalning_Gain * motor_io_position_new_B.Volt;
 
-    /* Sum: '<S6>/Sum' incorporates:
-     *  Constant: '<S6>/pwm_offstet'
+    /* Sum: '<S4>/Sum' incorporates:
+     *  Constant: '<S4>/pwm_offstet'
      */
     motor_io_position_new_B.Sum_f = motor_io_position_new_B.pwm_skalning +
       motor_io_position_new_P.pwm_offstet_Value;
 
-    /* S-Function (rti_commonblock): '<S13>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S11>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
     /* dSPACE I/O Board DS1104 #1 Unit:PWM Group:PWM */
     ds1104_slave_dsp_pwm_duty_write(0, rti_slv1104_fcn_index[6],
       motor_io_position_new_B.Sum_f);
 
-    /* S-Function (rti_commonblock): '<S13>/S-Function2' */
+    /* S-Function (rti_commonblock): '<S11>/S-Function2' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S13>/S-Function3' */
+    /* S-Function (rti_commonblock): '<S11>/S-Function3' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S13>/S-Function4' */
+    /* S-Function (rti_commonblock): '<S11>/S-Function4' */
     /* This comment workarounds a code generation problem */
 
-    /* DataTypeConversion: '<S6>/Data Type Conversion' incorporates:
-     *  Constant: '<S6>/Enable[1_Off, 0_On]'
+    /* DataTypeConversion: '<S4>/Data Type Conversion' incorporates:
+     *  Constant: '<S4>/Enable[1_Off, 0_On]'
      */
     motor_io_position_new_B.DataTypeConversion =
       (motor_io_position_new_P.Enable1_Off0_On_Value != 0.0);
 
-    /* S-Function (rti_commonblock): '<S12>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S10>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
     /* dSPACE I/O Board DS1104 #1 Unit:BIT_IO Group:BIT_OUT */
@@ -473,86 +263,206 @@ void motor_io_position_new_output(void)
       ds1104_bit_io_clear(DS1104_DIO0);
     }
 
-    /* DiscreteTransferFcn: '<S3>/Gff1' */
+    /* DiscreteTransferFcn: '<S1>/Gff' */
     temp = motor_io_position_new_B.ref;
-    temp -= motor_io_position_new_P.R_sim[1] *
-      motor_io_position_new_DW.Gff1_states_a[0];
-    temp -= motor_io_position_new_P.R_sim[2] *
-      motor_io_position_new_DW.Gff1_states_a[1];
-    temp /= motor_io_position_new_P.R_sim[0];
-    motor_io_position_new_DW.Gff1_tmp_oc = temp;
-    temp = motor_io_position_new_P.T_sim[0] *
-      motor_io_position_new_DW.Gff1_tmp_oc;
-    temp += motor_io_position_new_P.T_sim[1] *
-      motor_io_position_new_DW.Gff1_states_a[0];
-    temp += motor_io_position_new_P.T_sim[2] *
-      motor_io_position_new_DW.Gff1_states_a[1];
-    motor_io_position_new_B.Gff1_b = temp;
+    temp -= motor_io_position_new_P.Gff_DenCoef_h[1] *
+      motor_io_position_new_DW.Gff_states_d;
+    temp /= motor_io_position_new_P.Gff_DenCoef_h[0];
+    motor_io_position_new_DW.Gff_tmp_k = temp;
+    temp = motor_io_position_new_P.Gff_NumCoef_k[0] *
+      motor_io_position_new_DW.Gff_tmp_k;
+    temp += motor_io_position_new_P.Gff_NumCoef_k[1] *
+      motor_io_position_new_DW.Gff_states_d;
+    motor_io_position_new_B.Gff_e = temp;
+
+    /* DiscreteTransferFcn: '<S1>/I part1' */
+    temp = motor_io_position_new_P.Ipart1_NumCoef_o[1] *
+      motor_io_position_new_DW.Ipart1_states_o;
+    motor_io_position_new_B.Ipart1_d = temp;
+
+    /* Sum: '<S1>/Sum1' */
+    motor_io_position_new_B.Sum1_e = motor_io_position_new_B.Gff_e +
+      motor_io_position_new_B.Ipart1_d;
+
+    /* DiscreteTransferFcn: '<S1>/I part' */
+    temp = motor_io_position_new_P.Ipart_NumCoef_f[1] *
+      motor_io_position_new_DW.Ipart_states_f;
+    motor_io_position_new_B.Ipart_a = temp;
   }
 
-  /* Integrator: '<S5>/Integrator1' */
+  /* Integrator: '<S3>/Integrator1' */
   motor_io_position_new_B.Integrator1 =
     motor_io_position_new_X.Integrator1_CSTATE;
 
-  /* Quantizer: '<S8>/Quantizer' */
+  /* Quantizer: '<S6>/Quantizer' */
   temp = motor_io_position_new_B.Integrator1;
   motor_io_position_new_B.Quantizer = rt_roundd_snf(temp /
     motor_io_position_new_P.quant) * motor_io_position_new_P.quant;
   if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
-    /* ZeroOrderHold: '<S8>/Zero-Order Hold' */
+    /* ZeroOrderHold: '<S6>/Zero-Order Hold' */
     motor_io_position_new_B.ZeroOrderHold = motor_io_position_new_B.Quantizer;
 
-    /* DiscreteTransferFcn: '<S3>/Gff2' */
+    /* DiscreteTransferFcn: '<S1>/PD part' */
     temp = motor_io_position_new_B.ZeroOrderHold;
-    temp -= motor_io_position_new_P.R_sim[1] *
-      motor_io_position_new_DW.Gff2_states_f[0];
-    temp -= motor_io_position_new_P.R_sim[2] *
-      motor_io_position_new_DW.Gff2_states_f[1];
-    temp /= motor_io_position_new_P.R_sim[0];
-    motor_io_position_new_DW.Gff2_tmp_l = temp;
-    temp = motor_io_position_new_P.S_sim[0] *
-      motor_io_position_new_DW.Gff2_tmp_l;
-    temp += motor_io_position_new_P.S_sim[1] *
-      motor_io_position_new_DW.Gff2_states_f[0];
-    temp += motor_io_position_new_P.S_sim[2] *
-      motor_io_position_new_DW.Gff2_states_f[1];
-    motor_io_position_new_B.Gff2_j = temp;
+    temp -= motor_io_position_new_P.PDpart_DenCoef_h[1] *
+      motor_io_position_new_DW.PDpart_states_j;
+    temp /= motor_io_position_new_P.PDpart_DenCoef_h[0];
+    motor_io_position_new_DW.PDpart_tmp_m = temp;
+    temp = motor_io_position_new_P.PDpart_NumCoef_o[0] *
+      motor_io_position_new_DW.PDpart_tmp_m;
+    temp += motor_io_position_new_P.PDpart_NumCoef_o[1] *
+      motor_io_position_new_DW.PDpart_states_j;
+    motor_io_position_new_B.PDpart_k = temp;
 
-    /* Sum: '<S3>/Sum2' */
-    motor_io_position_new_B.Sum2_n = motor_io_position_new_B.Gff1_b -
-      motor_io_position_new_B.Gff2_j;
+    /* Sum: '<S1>/Sum' */
+    motor_io_position_new_B.Sum_e = motor_io_position_new_B.Ipart_a +
+      motor_io_position_new_B.PDpart_k;
 
-    /* Saturate: '<S3>/Voltage Saturation ' */
+    /* Sum: '<S1>/Sum2' */
+    motor_io_position_new_B.Sum2_n = motor_io_position_new_B.Sum1_e -
+      motor_io_position_new_B.Sum_e;
+
+    /* Saturate: '<S1>/Voltage Saturation ' */
     temp = motor_io_position_new_B.Sum2_n;
-    u1 = motor_io_position_new_P.VoltageSaturation_LowerSat_j;
-    u2 = motor_io_position_new_P.VoltageSaturation_UpperSat_m;
+    u1 = motor_io_position_new_P.VoltageSaturation_LowerSat_h;
+    u2 = motor_io_position_new_P.VoltageSaturation_UpperSat_g;
     if (temp > u2) {
-      motor_io_position_new_B.VoltageSaturation_h = u2;
+      motor_io_position_new_B.VoltageSaturation_j = u2;
     } else if (temp < u1) {
-      motor_io_position_new_B.VoltageSaturation_h = u1;
+      motor_io_position_new_B.VoltageSaturation_j = u1;
     } else {
-      motor_io_position_new_B.VoltageSaturation_h = temp;
+      motor_io_position_new_B.VoltageSaturation_j = temp;
     }
 
-    /* End of Saturate: '<S3>/Voltage Saturation ' */
+    /* End of Saturate: '<S1>/Voltage Saturation ' */
+
+    /* Sum: '<S1>/Sum3' */
+    motor_io_position_new_B.Sum3 = motor_io_position_new_B.VoltageSaturation_j -
+      motor_io_position_new_B.Sum2_n;
+
+    /* Gain: '<S1>/Gain' */
+    motor_io_position_new_B.Gain_m = motor_io_position_new_P.c0 *
+      motor_io_position_new_B.ZeroOrderHold;
   }
 
-  /* Integrator: '<S5>/Integrator' */
+  /* Gain: '<S1>/Gain1' */
+  motor_io_position_new_B.Gain1 = motor_io_position_new_P.c0_ *
+    motor_io_position_new_B.ref;
+  if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
+    /* Gain: '<S1>/Gain2' */
+    motor_io_position_new_B.Gain2 = motor_io_position_new_P.Kb *
+      motor_io_position_new_B.Sum3;
+
+    /* Sum: '<S1>/Sum4' */
+    motor_io_position_new_B.Sum4 = motor_io_position_new_B.Gain2 +
+      motor_io_position_new_B.Gain_m;
+  }
+
+  /* Sum: '<S1>/Sum5' */
+  motor_io_position_new_B.Sum5 = motor_io_position_new_B.Gain1 +
+    motor_io_position_new_B.Gain2;
+  if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
+    /* DiscreteTransferFcn: '<S1>/Gff1' */
+    temp = 0.0 - motor_io_position_new_P.R_sim[1] *
+      motor_io_position_new_DW.Gff1_states[0];
+    temp -= motor_io_position_new_P.R_sim[2] *
+      motor_io_position_new_DW.Gff1_states[1];
+    temp /= motor_io_position_new_P.R_sim[0];
+    motor_io_position_new_DW.Gff1_tmp = temp;
+    temp = motor_io_position_new_P.T_sim[0] * motor_io_position_new_DW.Gff1_tmp;
+    temp += motor_io_position_new_P.T_sim[1] *
+      motor_io_position_new_DW.Gff1_states[0];
+    temp += motor_io_position_new_P.T_sim[2] *
+      motor_io_position_new_DW.Gff1_states[1];
+    motor_io_position_new_B.Gff1 = temp;
+
+    /* DiscreteTransferFcn: '<S1>/Gff2' */
+    temp = 0.0 - motor_io_position_new_P.R_sim[1] *
+      motor_io_position_new_DW.Gff2_states[0];
+    temp -= motor_io_position_new_P.R_sim[2] *
+      motor_io_position_new_DW.Gff2_states[1];
+    temp /= motor_io_position_new_P.R_sim[0];
+    motor_io_position_new_DW.Gff2_tmp = temp;
+    temp = motor_io_position_new_P.S_sim[0] * motor_io_position_new_DW.Gff2_tmp;
+    temp += motor_io_position_new_P.S_sim[1] *
+      motor_io_position_new_DW.Gff2_states[0];
+    temp += motor_io_position_new_P.S_sim[2] *
+      motor_io_position_new_DW.Gff2_states[1];
+    motor_io_position_new_B.Gff2 = temp;
+
+    /* Sum: '<S2>/Sum3' */
+    motor_io_position_new_B.Sum3_o = motor_io_position_new_B.VoltageSaturation -
+      motor_io_position_new_B.Sum2;
+
+    /* Gain: '<S2>/Gain' */
+    motor_io_position_new_B.Gain_g = motor_io_position_new_P.c0 *
+      motor_io_position_new_B.fi1_scaling;
+  }
+
+  /* Gain: '<S2>/Gain1' */
+  motor_io_position_new_B.Gain1_k = motor_io_position_new_P.c0_ *
+    motor_io_position_new_B.ref;
+  if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
+    /* Gain: '<S2>/Gain2' */
+    motor_io_position_new_B.Gain2_n = motor_io_position_new_P.Kb *
+      motor_io_position_new_B.Sum3_o;
+
+    /* Sum: '<S2>/Sum4' */
+    motor_io_position_new_B.Sum4_b = motor_io_position_new_B.Gain2_n +
+      motor_io_position_new_B.Gain_g;
+  }
+
+  /* Sum: '<S2>/Sum5' */
+  motor_io_position_new_B.Sum5_a = motor_io_position_new_B.Gain1_k +
+    motor_io_position_new_B.Gain2_n;
+  if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
+    /* DiscreteTransferFcn: '<S2>/Gff1' */
+    temp = 0.0 - motor_io_position_new_P.R_sim[1] *
+      motor_io_position_new_DW.Gff1_states_n[0];
+    temp -= motor_io_position_new_P.R_sim[2] *
+      motor_io_position_new_DW.Gff1_states_n[1];
+    temp /= motor_io_position_new_P.R_sim[0];
+    motor_io_position_new_DW.Gff1_tmp_o = temp;
+    temp = motor_io_position_new_P.T_sim[0] *
+      motor_io_position_new_DW.Gff1_tmp_o;
+    temp += motor_io_position_new_P.T_sim[1] *
+      motor_io_position_new_DW.Gff1_states_n[0];
+    temp += motor_io_position_new_P.T_sim[2] *
+      motor_io_position_new_DW.Gff1_states_n[1];
+    motor_io_position_new_B.Gff1_p = temp;
+
+    /* DiscreteTransferFcn: '<S2>/Gff2' */
+    temp = 0.0 - motor_io_position_new_P.R_sim[1] *
+      motor_io_position_new_DW.Gff2_states_b[0];
+    temp -= motor_io_position_new_P.R_sim[2] *
+      motor_io_position_new_DW.Gff2_states_b[1];
+    temp /= motor_io_position_new_P.R_sim[0];
+    motor_io_position_new_DW.Gff2_tmp_k = temp;
+    temp = motor_io_position_new_P.S_sim[0] *
+      motor_io_position_new_DW.Gff2_tmp_k;
+    temp += motor_io_position_new_P.S_sim[1] *
+      motor_io_position_new_DW.Gff2_states_b[0];
+    temp += motor_io_position_new_P.S_sim[2] *
+      motor_io_position_new_DW.Gff2_states_b[1];
+    motor_io_position_new_B.Gff2_p = temp;
+  }
+
+  /* Integrator: '<S3>/Integrator' */
   motor_io_position_new_B.Integrator = motor_io_position_new_X.Integrator_CSTATE;
 
-  /* Gain: '<S5>/Gain1' */
+  /* Gain: '<S3>/Gain1' */
   motor_io_position_new_B.Gain1_b = motor_io_position_new_P.Gain1_Gain *
     motor_io_position_new_B.Integrator;
 
-  /* Sum: '<S5>/Add' */
-  motor_io_position_new_B.Add = motor_io_position_new_B.VoltageSaturation_h -
+  /* Sum: '<S3>/Add' */
+  motor_io_position_new_B.Add = motor_io_position_new_B.VoltageSaturation_j -
     motor_io_position_new_B.Gain1_b;
 
-  /* Gain: '<S5>/k//R ' */
+  /* Gain: '<S3>/k//R ' */
   motor_io_position_new_B.kR = motor_io_position_new_P.kR_Gain *
     motor_io_position_new_B.Add;
 
-  /* Saturate: '<S10>/Saturate to Fc' */
+  /* Saturate: '<S8>/Saturate to Fc' */
   temp = motor_io_position_new_B.kR;
   u1 = motor_io_position_new_P.SaturatetoFc_LowerSat;
   u2 = motor_io_position_new_P.F_c_upper;
@@ -564,23 +474,23 @@ void motor_io_position_new_output(void)
     motor_io_position_new_B.Stickslipregion = temp;
   }
 
-  /* End of Saturate: '<S10>/Saturate to Fc' */
+  /* End of Saturate: '<S8>/Saturate to Fc' */
 
-  /* Abs: '<S10>/Abs' */
+  /* Abs: '<S8>/Abs' */
   motor_io_position_new_B.Abs = fabs(motor_io_position_new_B.Integrator);
 
-  /* RelationalOperator: '<S11>/Compare' incorporates:
-   *  Constant: '<S11>/Constant'
+  /* RelationalOperator: '<S9>/Compare' incorporates:
+   *  Constant: '<S9>/Constant'
    */
   motor_io_position_new_B.Compare = (motor_io_position_new_B.Abs <=
     motor_io_position_new_P.Constant_Value);
 
-  /* Gain: '<S10>/Vicous friction' */
+  /* Gain: '<S8>/Vicous friction' */
   motor_io_position_new_B.Vicousfriction =
     motor_io_position_new_P.Vicousfriction_Gain *
     motor_io_position_new_B.Integrator;
 
-  /* Signum: '<S10>/Sign' */
+  /* Signum: '<S8>/Sign' */
   temp = motor_io_position_new_B.Integrator;
   if (temp < 0.0) {
     motor_io_position_new_B.Sign = -1.0;
@@ -592,65 +502,65 @@ void motor_io_position_new_output(void)
     motor_io_position_new_B.Sign = temp;
   }
 
-  /* End of Signum: '<S10>/Sign' */
+  /* End of Signum: '<S8>/Sign' */
 
-  /* Product: '<S10>/Product' incorporates:
-   *  Constant: '<S10>/F_c'
+  /* Product: '<S8>/Product' incorporates:
+   *  Constant: '<S8>/F_c'
    */
   motor_io_position_new_B.Product = motor_io_position_new_P.F_c *
     motor_io_position_new_B.Sign;
 
-  /* Sum: '<S10>/Add' */
+  /* Sum: '<S8>/Add' */
   motor_io_position_new_B.Viscousregion = motor_io_position_new_B.Vicousfriction
     + motor_io_position_new_B.Product;
 
-  /* Switch: '<S10>/Switch' */
+  /* Switch: '<S8>/Switch' */
   if (motor_io_position_new_B.Compare) {
     motor_io_position_new_B.Friction = motor_io_position_new_B.Stickslipregion;
   } else {
     motor_io_position_new_B.Friction = motor_io_position_new_B.Viscousregion;
   }
 
-  /* End of Switch: '<S10>/Switch' */
+  /* End of Switch: '<S8>/Switch' */
 
-  /* Sum: '<S5>/Add1' */
+  /* Sum: '<S3>/Add1' */
   motor_io_position_new_B.Add1 = motor_io_position_new_B.kR -
     motor_io_position_new_B.Friction;
   if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
-    /* Gain: '<S5>/Gain2' incorporates:
-     *  Constant: '<S5>/Load inertia'
+    /* Gain: '<S3>/Gain2' incorporates:
+     *  Constant: '<S3>/Load inertia'
      */
     motor_io_position_new_B.Gain2_j = motor_io_position_new_P.Gain2_Gain *
       motor_io_position_new_P.J1;
 
-    /* Sum: '<S5>/Add2' incorporates:
-     *  Constant: '<S5>/Motor inertia'
+    /* Sum: '<S3>/Add2' incorporates:
+     *  Constant: '<S3>/Motor inertia'
      */
     motor_io_position_new_B.Add2 = motor_io_position_new_B.Gain2_j +
       motor_io_position_new_P.Motorinertia_Value;
   }
 
-  /* Product: '<S5>/Inertias 1//J' */
+  /* Product: '<S3>/Inertias 1//J' */
   motor_io_position_new_B.Inertias1J = 1.0 / motor_io_position_new_B.Add2 *
     motor_io_position_new_B.Add1;
   if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
-    /* S-Function (rti_commonblock): '<S17>/S-Function2' */
+    /* S-Function (rti_commonblock): '<S15>/S-Function2' */
     /* This comment workarounds a code generation problem */
 
-    /* Gain: '<S9>/w1_scaling' */
+    /* Gain: '<S7>/w1_scaling' */
     motor_io_position_new_B.w1_scaling = motor_io_position_new_P.w1_scaling_Gain
       * motor_io_position_new_B.SFunction2;
 
-    /* Outputs for Triggered SubSystem: '<S9>/DS1104ENC_SET_POS_C1' incorporates:
-     *  TriggerPort: '<S19>/Trigger'
+    /* Outputs for Triggered SubSystem: '<S7>/DS1104ENC_SET_POS_C1' incorporates:
+     *  TriggerPort: '<S17>/Trigger'
      */
     if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
-      /* Constant: '<S9>/Reset enc' */
+      /* Constant: '<S7>/Reset enc' */
       zcEvent = rt_ZCFcn(RISING_ZERO_CROSSING,
                          &motor_io_position_new_PrevZCX.DS1104ENC_SET_POS_C1_Trig_ZCE,
                          (motor_io_position_new_P.Resetenc_Value));
       if (zcEvent != NO_ZCEVENT) {
-        /* S-Function (rti_commonblock): '<S19>/S-Function1' */
+        /* S-Function (rti_commonblock): '<S17>/S-Function1' */
         /* This comment workarounds a code generation problem */
 
         /* dSPACE I/O Board DS1104 Unit:ENC_SET */
@@ -658,12 +568,12 @@ void motor_io_position_new_output(void)
       }
     }
 
-    /* End of Outputs for SubSystem: '<S9>/DS1104ENC_SET_POS_C1' */
+    /* End of Outputs for SubSystem: '<S7>/DS1104ENC_SET_POS_C1' */
 
-    /* S-Function (rti_commonblock): '<S18>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S16>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S18>/S-Function2' */
+    /* S-Function (rti_commonblock): '<S16>/S-Function2' */
     /* This comment workarounds a code generation problem */
   }
 }
@@ -673,25 +583,46 @@ void motor_io_position_new_update(void)
 {
   real_T denAccum;
   if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
-    /* Update for DiscreteTransferFcn: '<S1>/Gff' */
+    /* Update for DiscreteTransferFcn: '<S2>/Gff' */
     motor_io_position_new_DW.Gff_states = motor_io_position_new_DW.Gff_tmp;
 
-    /* Update for DiscreteTransferFcn: '<S1>/I part1' */
-    denAccum = motor_io_position_new_B.Sum5;
+    /* Update for DiscreteTransferFcn: '<S2>/I part1' */
+    denAccum = motor_io_position_new_B.Sum5_a;
     denAccum -= motor_io_position_new_P.Ipart1_DenCoef[1] *
       motor_io_position_new_DW.Ipart1_states;
     denAccum /= motor_io_position_new_P.Ipart1_DenCoef[0];
     motor_io_position_new_DW.Ipart1_states = denAccum;
 
-    /* Update for DiscreteTransferFcn: '<S1>/I part' */
-    denAccum = motor_io_position_new_B.Sum4;
+    /* Update for DiscreteTransferFcn: '<S2>/I part' */
+    denAccum = motor_io_position_new_B.Sum4_b;
     denAccum -= motor_io_position_new_P.Ipart_DenCoef[1] *
       motor_io_position_new_DW.Ipart_states;
     denAccum /= motor_io_position_new_P.Ipart_DenCoef[0];
     motor_io_position_new_DW.Ipart_states = denAccum;
 
-    /* Update for DiscreteTransferFcn: '<S1>/PD part' */
+    /* Update for DiscreteTransferFcn: '<S2>/PD part' */
     motor_io_position_new_DW.PDpart_states = motor_io_position_new_DW.PDpart_tmp;
+
+    /* Update for DiscreteTransferFcn: '<S1>/Gff' */
+    motor_io_position_new_DW.Gff_states_d = motor_io_position_new_DW.Gff_tmp_k;
+
+    /* Update for DiscreteTransferFcn: '<S1>/I part1' */
+    denAccum = motor_io_position_new_B.Sum5;
+    denAccum -= motor_io_position_new_P.Ipart1_DenCoef_n[1] *
+      motor_io_position_new_DW.Ipart1_states_o;
+    denAccum /= motor_io_position_new_P.Ipart1_DenCoef_n[0];
+    motor_io_position_new_DW.Ipart1_states_o = denAccum;
+
+    /* Update for DiscreteTransferFcn: '<S1>/I part' */
+    denAccum = motor_io_position_new_B.Sum4;
+    denAccum -= motor_io_position_new_P.Ipart_DenCoef_n[1] *
+      motor_io_position_new_DW.Ipart_states_f;
+    denAccum /= motor_io_position_new_P.Ipart_DenCoef_n[0];
+    motor_io_position_new_DW.Ipart_states_f = denAccum;
+
+    /* Update for DiscreteTransferFcn: '<S1>/PD part' */
+    motor_io_position_new_DW.PDpart_states_j =
+      motor_io_position_new_DW.PDpart_tmp_m;
 
     /* Update for DiscreteTransferFcn: '<S1>/Gff1' */
     motor_io_position_new_DW.Gff1_states[1] =
@@ -702,27 +633,6 @@ void motor_io_position_new_update(void)
     motor_io_position_new_DW.Gff2_states[1] =
       motor_io_position_new_DW.Gff2_states[0];
     motor_io_position_new_DW.Gff2_states[0] = motor_io_position_new_DW.Gff2_tmp;
-
-    /* Update for DiscreteTransferFcn: '<S2>/Gff' */
-    motor_io_position_new_DW.Gff_states_m = motor_io_position_new_DW.Gff_tmp_e;
-
-    /* Update for DiscreteTransferFcn: '<S2>/I part1' */
-    denAccum = motor_io_position_new_B.Sum5_a;
-    denAccum -= motor_io_position_new_P.Ipart1_DenCoef_h[1] *
-      motor_io_position_new_DW.Ipart1_states_j;
-    denAccum /= motor_io_position_new_P.Ipart1_DenCoef_h[0];
-    motor_io_position_new_DW.Ipart1_states_j = denAccum;
-
-    /* Update for DiscreteTransferFcn: '<S2>/I part' */
-    denAccum = motor_io_position_new_B.Sum4_b;
-    denAccum -= motor_io_position_new_P.Ipart_DenCoef_m[1] *
-      motor_io_position_new_DW.Ipart_states_d;
-    denAccum /= motor_io_position_new_P.Ipart_DenCoef_m[0];
-    motor_io_position_new_DW.Ipart_states_d = denAccum;
-
-    /* Update for DiscreteTransferFcn: '<S2>/PD part' */
-    motor_io_position_new_DW.PDpart_states_e =
-      motor_io_position_new_DW.PDpart_tmp_j;
 
     /* Update for DiscreteTransferFcn: '<S2>/Gff1' */
     motor_io_position_new_DW.Gff1_states_n[1] =
@@ -735,30 +645,6 @@ void motor_io_position_new_update(void)
       motor_io_position_new_DW.Gff2_states_b[0];
     motor_io_position_new_DW.Gff2_states_b[0] =
       motor_io_position_new_DW.Gff2_tmp_k;
-
-    /* Update for DiscreteTransferFcn: '<S4>/Gff1' */
-    motor_io_position_new_DW.Gff1_states_e[1] =
-      motor_io_position_new_DW.Gff1_states_e[0];
-    motor_io_position_new_DW.Gff1_states_e[0] =
-      motor_io_position_new_DW.Gff1_tmp_a;
-
-    /* Update for DiscreteTransferFcn: '<S4>/Gff2' */
-    motor_io_position_new_DW.Gff2_states_e[1] =
-      motor_io_position_new_DW.Gff2_states_e[0];
-    motor_io_position_new_DW.Gff2_states_e[0] =
-      motor_io_position_new_DW.Gff2_tmp_m;
-
-    /* Update for DiscreteTransferFcn: '<S3>/Gff1' */
-    motor_io_position_new_DW.Gff1_states_a[1] =
-      motor_io_position_new_DW.Gff1_states_a[0];
-    motor_io_position_new_DW.Gff1_states_a[0] =
-      motor_io_position_new_DW.Gff1_tmp_oc;
-
-    /* Update for DiscreteTransferFcn: '<S3>/Gff2' */
-    motor_io_position_new_DW.Gff2_states_f[1] =
-      motor_io_position_new_DW.Gff2_states_f[0];
-    motor_io_position_new_DW.Gff2_states_f[0] =
-      motor_io_position_new_DW.Gff2_tmp_l;
   }
 
   if (rtmIsMajorTimeStep(motor_io_position_new_M)) {
@@ -782,7 +668,7 @@ void motor_io_position_new_update(void)
     (&motor_io_position_new_M->solverInfo);
 
   {
-    /* Update absolute timer for sample time: [0.010870562815189595s, 0.0s] */
+    /* Update absolute timer for sample time: [0.036235209383965315s, 0.0s] */
     /* The "clockTick1" counts the number of times the code of this task has
      * been executed. The absolute time is the multiplication of "clockTick1"
      * and "Timing.stepSize1". Size of "clockTick1" ensures timer will not
@@ -810,38 +696,58 @@ void motor_io_position_new_derivatives(void)
   _rtXdot = ((XDot_motor_io_position_new_T *)
              motor_io_position_new_M->ModelData.derivs);
 
-  /* Derivatives for Integrator: '<S5>/Integrator1' */
+  /* Derivatives for Integrator: '<S3>/Integrator1' */
   _rtXdot->Integrator1_CSTATE = motor_io_position_new_B.Integrator;
 
-  /* Derivatives for Integrator: '<S5>/Integrator' */
+  /* Derivatives for Integrator: '<S3>/Integrator' */
   _rtXdot->Integrator_CSTATE = motor_io_position_new_B.Inertias1J;
 }
 
 /* Model initialize function */
 void motor_io_position_new_initialize(void)
 {
-  /* Start for S-Function (rti_commonblock): '<S13>/S-Function1' */
+  /* Start for S-Function (rti_commonblock): '<S11>/S-Function1' */
 
   /* dSPACE I/O Board DS1104 #1 Unit:PWM Group:PWM */
   motor_io_position_new_DW.SFunction1_IWORK[0] = 0;
   motor_io_position_new_PrevZCX.DS1104ENC_SET_POS_C1_Trig_ZCE =
     UNINITIALIZED_ZCSIG;
 
-  /* InitializeConditions for DiscreteTransferFcn: '<S1>/Gff' */
+  /* InitializeConditions for DiscreteTransferFcn: '<S2>/Gff' */
   motor_io_position_new_DW.Gff_states =
     motor_io_position_new_P.Gff_InitialStates;
 
-  /* InitializeConditions for DiscreteTransferFcn: '<S1>/I part1' */
+  /* InitializeConditions for DiscreteTransferFcn: '<S2>/I part1' */
   motor_io_position_new_DW.Ipart1_states =
     motor_io_position_new_P.Ipart1_InitialStates;
 
-  /* InitializeConditions for DiscreteTransferFcn: '<S1>/I part' */
+  /* InitializeConditions for DiscreteTransferFcn: '<S2>/I part' */
   motor_io_position_new_DW.Ipart_states =
     motor_io_position_new_P.Ipart_InitialStates;
 
-  /* InitializeConditions for DiscreteTransferFcn: '<S1>/PD part' */
+  /* InitializeConditions for DiscreteTransferFcn: '<S2>/PD part' */
   motor_io_position_new_DW.PDpart_states =
     motor_io_position_new_P.PDpart_InitialStates;
+
+  /* InitializeConditions for DiscreteTransferFcn: '<S1>/Gff' */
+  motor_io_position_new_DW.Gff_states_d =
+    motor_io_position_new_P.Gff_InitialStates_e;
+
+  /* InitializeConditions for DiscreteTransferFcn: '<S1>/I part1' */
+  motor_io_position_new_DW.Ipart1_states_o =
+    motor_io_position_new_P.Ipart1_InitialStates_h;
+
+  /* InitializeConditions for DiscreteTransferFcn: '<S1>/I part' */
+  motor_io_position_new_DW.Ipart_states_f =
+    motor_io_position_new_P.Ipart_InitialStates_f;
+
+  /* InitializeConditions for Integrator: '<S3>/Integrator1' */
+  motor_io_position_new_X.Integrator1_CSTATE =
+    motor_io_position_new_P.Integrator1_IC;
+
+  /* InitializeConditions for DiscreteTransferFcn: '<S1>/PD part' */
+  motor_io_position_new_DW.PDpart_states_j =
+    motor_io_position_new_P.PDpart_InitialStates_h;
 
   /* InitializeConditions for DiscreteTransferFcn: '<S1>/Gff1' */
   motor_io_position_new_DW.Gff1_states[0] =
@@ -855,22 +761,6 @@ void motor_io_position_new_initialize(void)
   motor_io_position_new_DW.Gff2_states[1] =
     motor_io_position_new_P.Gff2_InitialStates;
 
-  /* InitializeConditions for DiscreteTransferFcn: '<S2>/Gff' */
-  motor_io_position_new_DW.Gff_states_m =
-    motor_io_position_new_P.Gff_InitialStates_h;
-
-  /* InitializeConditions for DiscreteTransferFcn: '<S2>/I part1' */
-  motor_io_position_new_DW.Ipart1_states_j =
-    motor_io_position_new_P.Ipart1_InitialStates_k;
-
-  /* InitializeConditions for DiscreteTransferFcn: '<S2>/I part' */
-  motor_io_position_new_DW.Ipart_states_d =
-    motor_io_position_new_P.Ipart_InitialStates_g;
-
-  /* InitializeConditions for DiscreteTransferFcn: '<S2>/PD part' */
-  motor_io_position_new_DW.PDpart_states_e =
-    motor_io_position_new_P.PDpart_InitialStates_n;
-
   /* InitializeConditions for DiscreteTransferFcn: '<S2>/Gff1' */
   motor_io_position_new_DW.Gff1_states_n[0] =
     motor_io_position_new_P.Gff1_InitialStates_k;
@@ -883,35 +773,7 @@ void motor_io_position_new_initialize(void)
   motor_io_position_new_DW.Gff2_states_b[1] =
     motor_io_position_new_P.Gff2_InitialStates_g;
 
-  /* InitializeConditions for DiscreteTransferFcn: '<S4>/Gff1' */
-  motor_io_position_new_DW.Gff1_states_e[0] =
-    motor_io_position_new_P.Gff1_InitialStates_h;
-  motor_io_position_new_DW.Gff1_states_e[1] =
-    motor_io_position_new_P.Gff1_InitialStates_h;
-
-  /* InitializeConditions for DiscreteTransferFcn: '<S4>/Gff2' */
-  motor_io_position_new_DW.Gff2_states_e[0] =
-    motor_io_position_new_P.Gff2_InitialStates_c;
-  motor_io_position_new_DW.Gff2_states_e[1] =
-    motor_io_position_new_P.Gff2_InitialStates_c;
-
-  /* InitializeConditions for DiscreteTransferFcn: '<S3>/Gff1' */
-  motor_io_position_new_DW.Gff1_states_a[0] =
-    motor_io_position_new_P.Gff1_InitialStates_i;
-  motor_io_position_new_DW.Gff1_states_a[1] =
-    motor_io_position_new_P.Gff1_InitialStates_i;
-
-  /* InitializeConditions for Integrator: '<S5>/Integrator1' */
-  motor_io_position_new_X.Integrator1_CSTATE =
-    motor_io_position_new_P.Integrator1_IC;
-
-  /* InitializeConditions for DiscreteTransferFcn: '<S3>/Gff2' */
-  motor_io_position_new_DW.Gff2_states_f[0] =
-    motor_io_position_new_P.Gff2_InitialStates_l;
-  motor_io_position_new_DW.Gff2_states_f[1] =
-    motor_io_position_new_P.Gff2_InitialStates_l;
-
-  /* InitializeConditions for Integrator: '<S5>/Integrator' */
+  /* InitializeConditions for Integrator: '<S3>/Integrator' */
   motor_io_position_new_X.Integrator_CSTATE =
     motor_io_position_new_P.Integrator_IC;
 }
@@ -1037,7 +899,7 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new(void)
 
     /* task periods */
     motor_io_position_new_M->Timing.sampleTimes[0] = (0.0);
-    motor_io_position_new_M->Timing.sampleTimes[1] = (0.010870562815189595);
+    motor_io_position_new_M->Timing.sampleTimes[1] = (0.036235209383965315);
 
     /* task offsets */
     motor_io_position_new_M->Timing.offsetTimes[0] = (0.0);
@@ -1054,12 +916,12 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new(void)
   }
 
   rtmSetTFinal(motor_io_position_new_M, -1);
-  motor_io_position_new_M->Timing.stepSize0 = 0.010870562815189595;
-  motor_io_position_new_M->Timing.stepSize1 = 0.010870562815189595;
+  motor_io_position_new_M->Timing.stepSize0 = 0.036235209383965315;
+  motor_io_position_new_M->Timing.stepSize1 = 0.036235209383965315;
   motor_io_position_new_M->solverInfoPtr = (&motor_io_position_new_M->solverInfo);
-  motor_io_position_new_M->Timing.stepSize = (0.010870562815189595);
+  motor_io_position_new_M->Timing.stepSize = (0.036235209383965315);
   rtsiSetFixedStepSize(&motor_io_position_new_M->solverInfo,
-                       0.010870562815189595);
+                       0.036235209383965315);
   rtsiSetSolverMode(&motor_io_position_new_M->solverInfo,
                     SOLVER_MODE_SINGLETASKING);
 
@@ -1070,30 +932,42 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new(void)
                 sizeof(B_motor_io_position_new_T));
 
   {
+    motor_io_position_new_B.SinGenerator = 0.0;
+    motor_io_position_new_B.SquareGenerator = 0.0;
+    motor_io_position_new_B.ref = 0.0;
     motor_io_position_new_B.Gff = 0.0;
     motor_io_position_new_B.Ipart1 = 0.0;
     motor_io_position_new_B.Sum1 = 0.0;
     motor_io_position_new_B.Ipart = 0.0;
+    motor_io_position_new_B.SFunction1 = 0.0;
+    motor_io_position_new_B.fi1_scaling = 0.0;
     motor_io_position_new_B.PDpart = 0.0;
     motor_io_position_new_B.Sum = 0.0;
     motor_io_position_new_B.Sum2 = 0.0;
     motor_io_position_new_B.VoltageSaturation = 0.0;
-    motor_io_position_new_B.Sum3 = 0.0;
     motor_io_position_new_B.Gain = 0.0;
+    motor_io_position_new_B.Volt = 0.0;
+    motor_io_position_new_B.pwm_skalning = 0.0;
+    motor_io_position_new_B.Sum_f = 0.0;
+    motor_io_position_new_B.Gff_e = 0.0;
+    motor_io_position_new_B.Ipart1_d = 0.0;
+    motor_io_position_new_B.Sum1_e = 0.0;
+    motor_io_position_new_B.Ipart_a = 0.0;
+    motor_io_position_new_B.Integrator1 = 0.0;
+    motor_io_position_new_B.Quantizer = 0.0;
+    motor_io_position_new_B.ZeroOrderHold = 0.0;
+    motor_io_position_new_B.PDpart_k = 0.0;
+    motor_io_position_new_B.Sum_e = 0.0;
+    motor_io_position_new_B.Sum2_n = 0.0;
+    motor_io_position_new_B.VoltageSaturation_j = 0.0;
+    motor_io_position_new_B.Sum3 = 0.0;
+    motor_io_position_new_B.Gain_m = 0.0;
     motor_io_position_new_B.Gain1 = 0.0;
     motor_io_position_new_B.Gain2 = 0.0;
     motor_io_position_new_B.Sum4 = 0.0;
     motor_io_position_new_B.Sum5 = 0.0;
     motor_io_position_new_B.Gff1 = 0.0;
     motor_io_position_new_B.Gff2 = 0.0;
-    motor_io_position_new_B.Gff_j = 0.0;
-    motor_io_position_new_B.Ipart1_f = 0.0;
-    motor_io_position_new_B.Sum1_l = 0.0;
-    motor_io_position_new_B.Ipart_l = 0.0;
-    motor_io_position_new_B.PDpart_j = 0.0;
-    motor_io_position_new_B.Sum_i = 0.0;
-    motor_io_position_new_B.Sum2_k = 0.0;
-    motor_io_position_new_B.VoltageSaturation_j = 0.0;
     motor_io_position_new_B.Sum3_o = 0.0;
     motor_io_position_new_B.Gain_g = 0.0;
     motor_io_position_new_B.Gain1_k = 0.0;
@@ -1102,26 +976,6 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new(void)
     motor_io_position_new_B.Sum5_a = 0.0;
     motor_io_position_new_B.Gff1_p = 0.0;
     motor_io_position_new_B.Gff2_p = 0.0;
-    motor_io_position_new_B.SFunction1 = 0.0;
-    motor_io_position_new_B.fi1_scaling = 0.0;
-    motor_io_position_new_B.Gff1_k = 0.0;
-    motor_io_position_new_B.SinGenerator = 0.0;
-    motor_io_position_new_B.SquareGenerator = 0.0;
-    motor_io_position_new_B.ref = 0.0;
-    motor_io_position_new_B.Gff2_m = 0.0;
-    motor_io_position_new_B.Sum2_b = 0.0;
-    motor_io_position_new_B.VoltageSaturation_m = 0.0;
-    motor_io_position_new_B.Gain_i = 0.0;
-    motor_io_position_new_B.Volt = 0.0;
-    motor_io_position_new_B.pwm_skalning = 0.0;
-    motor_io_position_new_B.Sum_f = 0.0;
-    motor_io_position_new_B.Gff1_b = 0.0;
-    motor_io_position_new_B.Integrator1 = 0.0;
-    motor_io_position_new_B.Quantizer = 0.0;
-    motor_io_position_new_B.ZeroOrderHold = 0.0;
-    motor_io_position_new_B.Gff2_j = 0.0;
-    motor_io_position_new_B.Sum2_n = 0.0;
-    motor_io_position_new_B.VoltageSaturation_h = 0.0;
     motor_io_position_new_B.Integrator = 0.0;
     motor_io_position_new_B.Gain1_b = 0.0;
     motor_io_position_new_B.Add = 0.0;
@@ -1161,38 +1015,26 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new(void)
   motor_io_position_new_DW.Ipart1_states = 0.0;
   motor_io_position_new_DW.Ipart_states = 0.0;
   motor_io_position_new_DW.PDpart_states = 0.0;
+  motor_io_position_new_DW.Gff_states_d = 0.0;
+  motor_io_position_new_DW.Ipart1_states_o = 0.0;
+  motor_io_position_new_DW.Ipart_states_f = 0.0;
+  motor_io_position_new_DW.PDpart_states_j = 0.0;
   motor_io_position_new_DW.Gff1_states[0] = 0.0;
   motor_io_position_new_DW.Gff1_states[1] = 0.0;
   motor_io_position_new_DW.Gff2_states[0] = 0.0;
   motor_io_position_new_DW.Gff2_states[1] = 0.0;
-  motor_io_position_new_DW.Gff_states_m = 0.0;
-  motor_io_position_new_DW.Ipart1_states_j = 0.0;
-  motor_io_position_new_DW.Ipart_states_d = 0.0;
-  motor_io_position_new_DW.PDpart_states_e = 0.0;
   motor_io_position_new_DW.Gff1_states_n[0] = 0.0;
   motor_io_position_new_DW.Gff1_states_n[1] = 0.0;
   motor_io_position_new_DW.Gff2_states_b[0] = 0.0;
   motor_io_position_new_DW.Gff2_states_b[1] = 0.0;
-  motor_io_position_new_DW.Gff1_states_e[0] = 0.0;
-  motor_io_position_new_DW.Gff1_states_e[1] = 0.0;
-  motor_io_position_new_DW.Gff2_states_e[0] = 0.0;
-  motor_io_position_new_DW.Gff2_states_e[1] = 0.0;
-  motor_io_position_new_DW.Gff1_states_a[0] = 0.0;
-  motor_io_position_new_DW.Gff1_states_a[1] = 0.0;
-  motor_io_position_new_DW.Gff2_states_f[0] = 0.0;
-  motor_io_position_new_DW.Gff2_states_f[1] = 0.0;
   motor_io_position_new_DW.Gff_tmp = 0.0;
   motor_io_position_new_DW.PDpart_tmp = 0.0;
+  motor_io_position_new_DW.Gff_tmp_k = 0.0;
+  motor_io_position_new_DW.PDpart_tmp_m = 0.0;
   motor_io_position_new_DW.Gff1_tmp = 0.0;
   motor_io_position_new_DW.Gff2_tmp = 0.0;
-  motor_io_position_new_DW.Gff_tmp_e = 0.0;
-  motor_io_position_new_DW.PDpart_tmp_j = 0.0;
   motor_io_position_new_DW.Gff1_tmp_o = 0.0;
   motor_io_position_new_DW.Gff2_tmp_k = 0.0;
-  motor_io_position_new_DW.Gff1_tmp_a = 0.0;
-  motor_io_position_new_DW.Gff2_tmp_m = 0.0;
-  motor_io_position_new_DW.Gff1_tmp_oc = 0.0;
-  motor_io_position_new_DW.Gff2_tmp_l = 0.0;
 
   {
     /* user code (registration function declaration) */
@@ -1207,9 +1049,9 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new(void)
   motor_io_position_new_M->Sizes.numU = (0);/* Number of model inputs */
   motor_io_position_new_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
   motor_io_position_new_M->Sizes.numSampTimes = (2);/* Number of sample times */
-  motor_io_position_new_M->Sizes.numBlocks = (91);/* Number of blocks */
-  motor_io_position_new_M->Sizes.numBlockIO = (71);/* Number of block outputs */
-  motor_io_position_new_M->Sizes.numBlockPrms = (95);/* Sum of parameter "widths" */
+  motor_io_position_new_M->Sizes.numBlocks = (83);/* Number of blocks */
+  motor_io_position_new_M->Sizes.numBlockIO = (63);/* Number of block outputs */
+  motor_io_position_new_M->Sizes.numBlockPrms = (87);/* Sum of parameter "widths" */
   return motor_io_position_new_M;
 }
 

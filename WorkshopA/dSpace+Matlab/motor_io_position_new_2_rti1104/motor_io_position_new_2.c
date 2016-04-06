@@ -5,7 +5,7 @@
  *
  * Model version              : 1.30
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Thu Apr 07 00:29:48 2016
+ * C source code generated on : Thu Apr 07 00:48:33 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -138,17 +138,13 @@ void motor_io_position_new_2_output(void)
     /* DiscreteTransferFcn: '<S1>/Gff' */
     temp = motor_io_position_new_2_B.ref;
     temp -= motor_io_position_new_2_P.Gff_DenCoef[1] *
-      motor_io_position_new_2_DW.Gff_states[0];
-    temp -= motor_io_position_new_2_P.Gff_DenCoef[2] *
-      motor_io_position_new_2_DW.Gff_states[1];
+      motor_io_position_new_2_DW.Gff_states;
     temp /= motor_io_position_new_2_P.Gff_DenCoef[0];
     motor_io_position_new_2_DW.Gff_tmp = temp;
     temp = motor_io_position_new_2_P.Gff_NumCoef[0] *
       motor_io_position_new_2_DW.Gff_tmp;
     temp += motor_io_position_new_2_P.Gff_NumCoef[1] *
-      motor_io_position_new_2_DW.Gff_states[0];
-    temp += motor_io_position_new_2_P.Gff_NumCoef[2] *
-      motor_io_position_new_2_DW.Gff_states[1];
+      motor_io_position_new_2_DW.Gff_states;
     motor_io_position_new_2_B.Gff = temp;
 
     /* S-Function (rti_commonblock): '<S15>/S-Function1' */
@@ -162,17 +158,13 @@ void motor_io_position_new_2_output(void)
     /* DiscreteTransferFcn: '<S1>/Gfb' */
     temp = motor_io_position_new_2_B.fi1_scaling;
     temp -= motor_io_position_new_2_P.Gfb_DenCoef[1] *
-      motor_io_position_new_2_DW.Gfb_states[0];
-    temp -= motor_io_position_new_2_P.Gfb_DenCoef[2] *
-      motor_io_position_new_2_DW.Gfb_states[1];
+      motor_io_position_new_2_DW.Gfb_states;
     temp /= motor_io_position_new_2_P.Gfb_DenCoef[0];
     motor_io_position_new_2_DW.Gfb_tmp = temp;
     temp = motor_io_position_new_2_P.Gfb_NumCoef[0] *
       motor_io_position_new_2_DW.Gfb_tmp;
     temp += motor_io_position_new_2_P.Gfb_NumCoef[1] *
-      motor_io_position_new_2_DW.Gfb_states[0];
-    temp += motor_io_position_new_2_P.Gfb_NumCoef[2] *
-      motor_io_position_new_2_DW.Gfb_states[1];
+      motor_io_position_new_2_DW.Gfb_states;
     motor_io_position_new_2_B.Gfb = temp;
 
     /* Sum: '<S1>/Sum1' */
@@ -271,33 +263,25 @@ void motor_io_position_new_2_output(void)
     /* DiscreteTransferFcn: '<S2>/Gfb' */
     temp = motor_io_position_new_2_B.ZeroOrderHold;
     temp -= motor_io_position_new_2_P.Gfb_DenCoef_f[1] *
-      motor_io_position_new_2_DW.Gfb_states_a[0];
-    temp -= motor_io_position_new_2_P.Gfb_DenCoef_f[2] *
-      motor_io_position_new_2_DW.Gfb_states_a[1];
+      motor_io_position_new_2_DW.Gfb_states_a;
     temp /= motor_io_position_new_2_P.Gfb_DenCoef_f[0];
     motor_io_position_new_2_DW.Gfb_tmp_e = temp;
     temp = motor_io_position_new_2_P.Gfb_NumCoef_b[0] *
       motor_io_position_new_2_DW.Gfb_tmp_e;
     temp += motor_io_position_new_2_P.Gfb_NumCoef_b[1] *
-      motor_io_position_new_2_DW.Gfb_states_a[0];
-    temp += motor_io_position_new_2_P.Gfb_NumCoef_b[2] *
-      motor_io_position_new_2_DW.Gfb_states_a[1];
+      motor_io_position_new_2_DW.Gfb_states_a;
     motor_io_position_new_2_B.Gfb_n = temp;
 
     /* DiscreteTransferFcn: '<S2>/Gff' */
     temp = motor_io_position_new_2_B.ref;
     temp -= motor_io_position_new_2_P.Gff_DenCoef_f[1] *
-      motor_io_position_new_2_DW.Gff_states_g[0];
-    temp -= motor_io_position_new_2_P.Gff_DenCoef_f[2] *
-      motor_io_position_new_2_DW.Gff_states_g[1];
+      motor_io_position_new_2_DW.Gff_states_g;
     temp /= motor_io_position_new_2_P.Gff_DenCoef_f[0];
     motor_io_position_new_2_DW.Gff_tmp_k = temp;
     temp = motor_io_position_new_2_P.Gff_NumCoef_l[0] *
       motor_io_position_new_2_DW.Gff_tmp_k;
     temp += motor_io_position_new_2_P.Gff_NumCoef_l[1] *
-      motor_io_position_new_2_DW.Gff_states_g[0];
-    temp += motor_io_position_new_2_P.Gff_NumCoef_l[2] *
-      motor_io_position_new_2_DW.Gff_states_g[1];
+      motor_io_position_new_2_DW.Gff_states_g;
     motor_io_position_new_2_B.Gff_e = temp;
 
     /* Sum: '<S2>/Sum1' */
@@ -458,27 +442,17 @@ void motor_io_position_new_2_update(void)
 {
   if (rtmIsMajorTimeStep(motor_io_position_new_2_M)) {
     /* Update for DiscreteTransferFcn: '<S1>/Gff' */
-    motor_io_position_new_2_DW.Gff_states[1] =
-      motor_io_position_new_2_DW.Gff_states[0];
-    motor_io_position_new_2_DW.Gff_states[0] =
-      motor_io_position_new_2_DW.Gff_tmp;
+    motor_io_position_new_2_DW.Gff_states = motor_io_position_new_2_DW.Gff_tmp;
 
     /* Update for DiscreteTransferFcn: '<S1>/Gfb' */
-    motor_io_position_new_2_DW.Gfb_states[1] =
-      motor_io_position_new_2_DW.Gfb_states[0];
-    motor_io_position_new_2_DW.Gfb_states[0] =
-      motor_io_position_new_2_DW.Gfb_tmp;
+    motor_io_position_new_2_DW.Gfb_states = motor_io_position_new_2_DW.Gfb_tmp;
 
     /* Update for DiscreteTransferFcn: '<S2>/Gfb' */
-    motor_io_position_new_2_DW.Gfb_states_a[1] =
-      motor_io_position_new_2_DW.Gfb_states_a[0];
-    motor_io_position_new_2_DW.Gfb_states_a[0] =
+    motor_io_position_new_2_DW.Gfb_states_a =
       motor_io_position_new_2_DW.Gfb_tmp_e;
 
     /* Update for DiscreteTransferFcn: '<S2>/Gff' */
-    motor_io_position_new_2_DW.Gff_states_g[1] =
-      motor_io_position_new_2_DW.Gff_states_g[0];
-    motor_io_position_new_2_DW.Gff_states_g[0] =
+    motor_io_position_new_2_DW.Gff_states_g =
       motor_io_position_new_2_DW.Gff_tmp_k;
   }
 
@@ -503,7 +477,7 @@ void motor_io_position_new_2_update(void)
     (&motor_io_position_new_2_M->solverInfo);
 
   {
-    /* Update absolute timer for sample time: [0.017951958020513102s, 0.0s] */
+    /* Update absolute timer for sample time: [0.036235209383965315s, 0.0s] */
     /* The "clockTick1" counts the number of times the code of this task has
      * been executed. The absolute time is the multiplication of "clockTick1"
      * and "Timing.stepSize1". Size of "clockTick1" ensures timer will not
@@ -549,15 +523,11 @@ void motor_io_position_new_2_initialize(void)
     UNINITIALIZED_ZCSIG;
 
   /* InitializeConditions for DiscreteTransferFcn: '<S1>/Gff' */
-  motor_io_position_new_2_DW.Gff_states[0] =
-    motor_io_position_new_2_P.Gff_InitialStates;
-  motor_io_position_new_2_DW.Gff_states[1] =
+  motor_io_position_new_2_DW.Gff_states =
     motor_io_position_new_2_P.Gff_InitialStates;
 
   /* InitializeConditions for DiscreteTransferFcn: '<S1>/Gfb' */
-  motor_io_position_new_2_DW.Gfb_states[0] =
-    motor_io_position_new_2_P.Gfb_InitialStates;
-  motor_io_position_new_2_DW.Gfb_states[1] =
+  motor_io_position_new_2_DW.Gfb_states =
     motor_io_position_new_2_P.Gfb_InitialStates;
 
   /* InitializeConditions for Integrator: '<S3>/Integrator1' */
@@ -565,15 +535,11 @@ void motor_io_position_new_2_initialize(void)
     motor_io_position_new_2_P.Integrator1_IC;
 
   /* InitializeConditions for DiscreteTransferFcn: '<S2>/Gfb' */
-  motor_io_position_new_2_DW.Gfb_states_a[0] =
-    motor_io_position_new_2_P.Gfb_InitialStates_h;
-  motor_io_position_new_2_DW.Gfb_states_a[1] =
+  motor_io_position_new_2_DW.Gfb_states_a =
     motor_io_position_new_2_P.Gfb_InitialStates_h;
 
   /* InitializeConditions for DiscreteTransferFcn: '<S2>/Gff' */
-  motor_io_position_new_2_DW.Gff_states_g[0] =
-    motor_io_position_new_2_P.Gff_InitialStates_l;
-  motor_io_position_new_2_DW.Gff_states_g[1] =
+  motor_io_position_new_2_DW.Gff_states_g =
     motor_io_position_new_2_P.Gff_InitialStates_l;
 
   /* InitializeConditions for Integrator: '<S3>/Integrator' */
@@ -702,7 +668,7 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new_2(void)
 
     /* task periods */
     motor_io_position_new_2_M->Timing.sampleTimes[0] = (0.0);
-    motor_io_position_new_2_M->Timing.sampleTimes[1] = (0.017951958020513102);
+    motor_io_position_new_2_M->Timing.sampleTimes[1] = (0.036235209383965315);
 
     /* task offsets */
     motor_io_position_new_2_M->Timing.offsetTimes[0] = (0.0);
@@ -720,13 +686,13 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new_2(void)
   }
 
   rtmSetTFinal(motor_io_position_new_2_M, -1);
-  motor_io_position_new_2_M->Timing.stepSize0 = 0.017951958020513102;
-  motor_io_position_new_2_M->Timing.stepSize1 = 0.017951958020513102;
+  motor_io_position_new_2_M->Timing.stepSize0 = 0.036235209383965315;
+  motor_io_position_new_2_M->Timing.stepSize1 = 0.036235209383965315;
   motor_io_position_new_2_M->solverInfoPtr =
     (&motor_io_position_new_2_M->solverInfo);
-  motor_io_position_new_2_M->Timing.stepSize = (0.017951958020513102);
+  motor_io_position_new_2_M->Timing.stepSize = (0.036235209383965315);
   rtsiSetFixedStepSize(&motor_io_position_new_2_M->solverInfo,
-                       0.017951958020513102);
+                       0.036235209383965315);
   rtsiSetSolverMode(&motor_io_position_new_2_M->solverInfo,
                     SOLVER_MODE_SINGLETASKING);
 
@@ -793,14 +759,10 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new_2(void)
     &motor_io_position_new_2_DW);
   (void) memset((void *)&motor_io_position_new_2_DW, 0,
                 sizeof(DW_motor_io_position_new_2_T));
-  motor_io_position_new_2_DW.Gff_states[0] = 0.0;
-  motor_io_position_new_2_DW.Gff_states[1] = 0.0;
-  motor_io_position_new_2_DW.Gfb_states[0] = 0.0;
-  motor_io_position_new_2_DW.Gfb_states[1] = 0.0;
-  motor_io_position_new_2_DW.Gfb_states_a[0] = 0.0;
-  motor_io_position_new_2_DW.Gfb_states_a[1] = 0.0;
-  motor_io_position_new_2_DW.Gff_states_g[0] = 0.0;
-  motor_io_position_new_2_DW.Gff_states_g[1] = 0.0;
+  motor_io_position_new_2_DW.Gff_states = 0.0;
+  motor_io_position_new_2_DW.Gfb_states = 0.0;
+  motor_io_position_new_2_DW.Gfb_states_a = 0.0;
+  motor_io_position_new_2_DW.Gff_states_g = 0.0;
   motor_io_position_new_2_DW.Gff_tmp = 0.0;
   motor_io_position_new_2_DW.Gfb_tmp = 0.0;
   motor_io_position_new_2_DW.Gfb_tmp_e = 0.0;
@@ -821,7 +783,7 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new_2(void)
   motor_io_position_new_2_M->Sizes.numSampTimes = (2);/* Number of sample times */
   motor_io_position_new_2_M->Sizes.numBlocks = (57);/* Number of blocks */
   motor_io_position_new_2_M->Sizes.numBlockIO = (39);/* Number of block outputs */
-  motor_io_position_new_2_M->Sizes.numBlockPrms = (59);/* Sum of parameter "widths" */
+  motor_io_position_new_2_M->Sizes.numBlockPrms = (51);/* Sum of parameter "widths" */
   return motor_io_position_new_2_M;
 }
 
