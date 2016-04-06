@@ -178,7 +178,7 @@ Ts = 1; % Sampling time
 % Transfer of motor without indctance
 Go_p = Go*1/s       % position is velocity integrated 
 wb = 5.78;          % bandwidth of open loop system [rad/s]
-ws = 30*wb;
+ws = 100*wb;
 Ts = 2*pi/ws
 
 % Make system discrete
@@ -196,50 +196,19 @@ A = tf([1 a1 a0], [0 0 1], Ts)
 
 % output feedback
 % Place poles of  discrete closed system
-p1 = 0.2; % Am pole 1
-p2 = 0.2;   % Am pole 2
+p1 = 0.8; % Am pole 1
+p2 = 0.8;   % Am pole 2
 Am = tf([1 -p1-p2 p1*p2], [0 1], Ts)
 
-% omega must be set negatively because reasons
-omega = -0.5; % observer polynomial poles
-Zeta = 0.7;   
-Ao = tf([1 2*omega*Zeta omega^2], [0 1], Ts)
+p3 = 0.4; % observer polynomial poles
+p4 = 0.4;   
+Ao = tf([1 -p3-p4 p3*p4], [0 1], Ts)
 
 % calulate pid parameters
-r0 = (-2*Zeta*b1^3*omega*p1*p2-b1^3*omega^2*p1*p2-2*Zeta*b0*b1^2*omega*p1-...
-    2*Zeta*b0*b1^2*omega*p2-b0*b1^2*omega^2*p1-b0*b1^2*omega^2*p2-...
-    2*Zeta*b0^2*b1*omega-b0^2*b1*omega^2-b0^2*b1*p1*p2+a0*b0^2*b1+a0*b0*b1^2-...
-    a1*b0^3-a1*b0^2*b1-b0^3*p1-b0^3*p2+b0^3)/...
-    (a0*b0*b1^2+a0*b1^3-a1*b0^2*b1-a1*b0*b1^2+b0^3+b0^2*b1);
-s0 = (2*Zeta*a0*b1^2*omega*p1*p2-2*Zeta*a1*b0*b1*omega*p1*p2-...
-    2*Zeta*a1*b1^2*omega*p1*p2+a0*b1^2*omega^2*p1*p2-...
-    a1*b0*b1*omega^2*p1*p2-a1*b1^2*omega^2*p1*p2-2*Zeta*a0*b1^2*omega*p1-...
-    2*Zeta*a0*b1^2*omega*p2+2*Zeta*b0^2*omega*p1*p2+2*Zeta*b0*b1*omega*p1*p2-...
-    a0*b1^2*omega^2*p1-a0*b1^2*omega^2*p2+b0^2*omega^2*p1*p2+...
-    b0*b1*omega^2*p1*p2-2*Zeta*a0*b0*b1*omega-a0*b0*b1*omega^2-...
-    a0*b0*b1*p1*p2+a0^2*b0*b1+a0^2*b1^2-a0*a1*b0^2-a0*a1*b0*b1-...
-    a0*b0^2*p1-a0*b0^2*p2+a0*b0^2)/...
-    (a0*b0*b1^2+a0*b1^3-a1*b0^2*b1-a1*b0*b1^2+b0^3+b0^2*b1);
-s1 = -(-2*Zeta*a1*b1^2*omega*p1*p2-a1*b1^2*omega^2*p1*p2-...
-    2*Zeta*a1*b0*b1*omega*p1-2*Zeta*a1*b0*b1*omega*p2+...
-    2*Zeta*b0*b1*omega*p1*p2+2*Zeta*b1^2*omega*p1*p2-...
-    a1*b0*b1*omega^2*p1-a1*b0*b1*omega^2*p2+b0*b1*omega^2*p1*p2+b1^2*omega^2*p1*p2-...
-    2*Zeta*a0*b0*b1*omega-2*Zeta*a0*b1^2*omega+2*Zeta*a1*b0*b1*omega+...
-    2*Zeta*b0^2*omega*p1+2*Zeta*b0^2*omega*p2+2*Zeta*b0*b1*omega*p1+...
-    2*Zeta*b0*b1*omega*p2-a0*b0*b1*omega^2-a0*b0*b1*p1*p2-a0*b1^2*omega^2-...
-    a0*b1^2*p1*p2+a1*b0*b1*omega^2+a1*b0*b1*p1*p2+b0^2*omega^2*p1+...
-    b0^2*omega^2*p2+b0*b1*omega^2*p1+b0*b1*omega^2*p2+a0^2*b0*b1+...
-    a0^2*b1^2-a0*a1*b0^2-2*a0*a1*b0*b1-a0*a1*b1^2-a0*b0^2*p1-...
-    a0*b0^2*p2-a0*b0*b1*p1-a0*b0*b1*p2+a1^2*b0^2+a1^2*b0*b1+...
-    a1*b0^2*p1+a1*b0^2*p2-a1*b0^2)/...
-    (a0*b0*b1^2+a0*b1^3-a1*b0^2*b1-a1*b0*b1^2+b0^3+b0^2*b1);
-s2 = -(-2*Zeta*b1^2*omega*p1*p2-b1^2*omega^2*p1*p2-2*Zeta*b0*b1*omega*p1-...
-    2*Zeta*b0*b1*omega*p2-b0*b1*omega^2*p1-b0*b1*omega^2*p2-...
-    2*Zeta*b0^2*omega+a0*a1*b0*b1+a0*a1*b1^2+a0*b0*b1*p1+a0*b0*b1*p2+...
-    a0*b1^2*p1+a0*b1^2*p2-a1^2*b0^2-a1^2*b0*b1-a1*b0^2*p1-a1*b0^2*p2-...
-    a1*b0*b1*p1-a1*b0*b1*p2-b0^2*omega^2-b0^2*p1*p2+a0*b0^2-a0*b1^2+...
-    a1*b0^2+a1*b0*b1+b0^2*p1+b0^2*p2-b0^2)/...
-    (a0*b0*b1^2+a0*b1^3-a1*b0^2*b1-a1*b0*b1^2+b0^3+b0^2*b1);
+r0 = (-b1^3*p1*p2*p3*p4-b0*b1^2*p1*p2*p3-b0*b1^2*p1*p2*p4-b0*b1^2*p1*p3*p4-b0*b1^2*p2*p3*p4-b0^2*b1*p1*p2-b0^2*b1*p1*p3-b0^2*b1*p1*p4-b0^2*b1*p2*p3-b0^2*b1*p2*p4-b0^2*b1*p3*p4+a0*b0^2*b1+a0*b0*b1^2-a1*b0^3-a1*b0^2*b1-b0^3*p1-b0^3*p2-b0^3*p3-b0^3*p4+b0^3)/(a0*b0*b1^2+a0*b1^3-a1*b0^2*b1-a1*b0*b1^2+b0^3+b0^2*b1)
+s0 = (a0*b1^2*p1*p2*p3*p4-a1*b0*b1*p1*p2*p3*p4-a1*b1^2*p1*p2*p3*p4-a0*b1^2*p1*p2*p3-a0*b1^2*p1*p2*p4-a0*b1^2*p1*p3*p4-a0*b1^2*p2*p3*p4+b0^2*p1*p2*p3*p4+b0*b1*p1*p2*p3*p4-a0*b0*b1*p1*p2-a0*b0*b1*p1*p3-a0*b0*b1*p1*p4-a0*b0*b1*p2*p3-a0*b0*b1*p2*p4-a0*b0*b1*p3*p4+a0^2*b0*b1+a0^2*b1^2-a0*a1*b0^2-a0*a1*b0*b1-a0*b0^2*p1-a0*b0^2*p2-a0*b0^2*p3-a0*b0^2*p4+a0*b0^2)/(a0*b0*b1^2+a0*b1^3-a1*b0^2*b1-a1*b0*b1^2+b0^3+b0^2*b1)
+s1 = -(-a1*b1^2*p1*p2*p3*p4-a1*b0*b1*p1*p2*p3-a1*b0*b1*p1*p2*p4-a1*b0*b1*p1*p3*p4-a1*b0*b1*p2*p3*p4+b0*b1*p1*p2*p3*p4+b1^2*p1*p2*p3*p4-a0*b0*b1*p1*p2-a0*b0*b1*p1*p3-a0*b0*b1*p1*p4-a0*b0*b1*p2*p3-a0*b0*b1*p2*p4-a0*b0*b1*p3*p4-a0*b1^2*p1*p2-a0*b1^2*p1*p3-a0*b1^2*p1*p4-a0*b1^2*p2*p3-a0*b1^2*p2*p4-a0*b1^2*p3*p4+a1*b0*b1*p1*p2+a1*b0*b1*p1*p3+a1*b0*b1*p1*p4+a1*b0*b1*p2*p3+a1*b0*b1*p2*p4+a1*b0*b1*p3*p4+b0^2*p1*p2*p3+b0^2*p1*p2*p4+b0^2*p1*p3*p4+b0^2*p2*p3*p4+b0*b1*p1*p2*p3+b0*b1*p1*p2*p4+b0*b1*p1*p3*p4+b0*b1*p2*p3*p4+a0^2*b0*b1+a0^2*b1^2-a0*a1*b0^2-2*a0*a1*b0*b1-a0*a1*b1^2-a0*b0^2*p1-a0*b0^2*p2-a0*b0^2*p3-a0*b0^2*p4-a0*b0*b1*p1-a0*b0*b1*p2-a0*b0*b1*p3-a0*b0*b1*p4+a1^2*b0^2+a1^2*b0*b1+a1*b0^2*p1+a1*b0^2*p2+a1*b0^2*p3+a1*b0^2*p4-a1*b0^2)/(a0*b0*b1^2+a0*b1^3-a1*b0^2*b1-a1*b0*b1^2+b0^3+b0^2*b1)
+s2 = -(-b1^2*p1*p2*p3*p4-b0*b1*p1*p2*p3-b0*b1*p1*p2*p4-b0*b1*p1*p3*p4-b0*b1*p2*p3*p4+a0*a1*b0*b1+a0*a1*b1^2+a0*b0*b1*p1+a0*b0*b1*p2+a0*b0*b1*p3+a0*b0*b1*p4+a0*b1^2*p1+a0*b1^2*p2+a0*b1^2*p3+a0*b1^2*p4-a1^2*b0^2-a1^2*b0*b1-a1*b0^2*p1-a1*b0^2*p2-a1*b0^2*p3-a1*b0^2*p4-a1*b0*b1*p1-a1*b0*b1*p2-a1*b0*b1*p3-a1*b0*b1*p4-b0^2*p1*p2-b0^2*p1*p3-b0^2*p1*p4-b0^2*p2*p3-b0^2*p2*p4-b0^2*p3*p4+a0*b0^2-a0*b1^2+a1*b0^2+a1*b0*b1+b0^2*p1+b0^2*p2+b0^2*p3+b0^2*p4-b0^2)/(a0*b0*b1^2+a0*b1^3-a1*b0^2*b1-a1*b0*b1^2+b0^3+b0^2*b1)
 
 % Controller polynomials, PID controller
 Sd = s2*z^2 + s1*z + s0;
@@ -265,13 +234,31 @@ T_sim = Td.num{1};
 R_sim = Rd.num{1};
 S_sim = Sd.num{1};
 
+% parameters for anti windup of feedback
+c0 = (s2 + s1 + s0)/(1 + r0);
+d1 = s2;
+d0 = (r0*(s1 + s2))/(1 + r0);
+
+% parameters for anti windup of feedback
+s2_ = Td.num{1}(1)
+s1_ = Td.num{1}(2)
+s0_ = Td.num{1}(3)
+
+c0_ = (s2_ + s1_ + s0_)/(1 + r0);
+d1_ = s2_;
+d0_ = (r0*(s1_ + s2_))/(1 + r0);
+
+% parameter for integral feedback
+TI = 0.00000010000;
+
+
 % run simulation
-simtime = 5;
-sim('Simulate_position_motor_controllers')
+simtime = 0.5;
+sim('Simulate_cascsaded_motor_controllers')
 
 % plot response
 figure
-subplot(3,1,1)
+subplot(2,1,1)
 plot(sim_reference.Time, sim_reference.Data)
 hold on
 grid on
@@ -281,15 +268,15 @@ legend('reference', 'position')
 xlabel('t')
 ylabel('position [rad]')
 
-% plot saturation
-subplot(3,1,2)
-plot(sim_saturation.Time, sim_saturation.Data)
-title('saturation')
-
 % plot pzmap
-subplot(3,1,3)
+subplot(2,1,2)
 pzmap(Gc_z)
 grid on
+
+% plot saturation
+figure
+plot(sim_saturation.Time, sim_saturation.Data)
+title('saturation')
 
 
 
