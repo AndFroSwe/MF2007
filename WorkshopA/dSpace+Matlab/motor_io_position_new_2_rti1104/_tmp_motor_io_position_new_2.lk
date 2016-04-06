@@ -1,0 +1,89 @@
+;*************************************************************************
+;  dSPACE MCCPPC Default Linker Command File for DS1104 Controller Board
+;*************************************************************************
+
+LISTMAP PUBLICS,NOLOCALS,CROSSREFS
+PUBLIC DS_PPC_BOARD = 1104
+
+;*************************************************************************
+; Specify starting address
+;*************************************************************************
+EXTERN  _ds1104_reset
+START   _ds1104_reset
+
+;EXTERN _SDA_BASE_
+;EXTERN _SDA2_BASE_
+
+;*************************************************************************
+; These sizes can be changed but its not recommend to do that
+; because performance of the system possibly is decreased then.
+;*************************************************************************
+PUBLIC MIN_HEAP_SIZE    = 0x00070000
+PUBLIC STACK_SIZE       = 0x00020000
+PUBLIC MIN_HOSTMEM_SIZE = 0x00400000
+
+;*************************************************************************
+; This size must not be changed !!!
+; It is reserved for internal use of the RTLib.
+;*************************************************************************
+PUBLIC DS_HEAP_SIZE     = 0x00004000
+PUBLIC CONFIG_SIZE      = 0x00040000
+
+;*************************************************************************
+; MEMORY MAPPING :  do not change anything in the following !!!
+;*************************************************************************
+ALIGN = 4
+;-------------------------------------------------------------------------
+; physical memory
+;-------------------------------------------------------------------------
+ORDER   except_tbl=0x0
+ORDER   startup
+ORDER   .text
+ORDER	  .init
+ORDER	  initdat
+ORDER	  .rodata
+ORDER	  .rodata1
+ORDER   .data
+ORDER   ioports
+ORDER   SYSHOST
+ORDER   .PPC.EMB.procflags
+ORDER   .bss
+
+;-------------------------------------------------------------------------
+; Config section is linked to end of 64 MB address space.
+; On 32 MB board the memory is mirrored.
+;-------------------------------------------------------------------------
+ORDER   config_sect = 0x03FF0000
+;-------------------------------------------------------------------------
+; forbidden memory
+;-------------------------------------------------------------------------
+RESADD  0x04000000, 0x2FFFFFFF
+
+;-------------------------------------------------------------------------
+; imaginary memory (for slave data only)
+;-------------------------------------------------------------------------
+ORDER   SlvFwSection = 0x30000000
+
+;-------------------------------------------------------------------------
+; forbidden memory
+;-------------------------------------------------------------------------
+RESADD  0x38000000, 0xFFFFFFFE
+
+
+LOAD motor_io_position_new_2.o03
+LOAD motor_io_position_new_2_data.o03
+LOAD motor_io_position_new_2_trc_ptr.o03
+LOAD rtGetInf.o03
+LOAD rtGetNaN.o03
+LOAD rt_nonfinite.o03
+LOAD rt_zcfcn.o03
+LOAD rti_sim_engine.o03
+LOAD rti_init_c.o03
+LOAD rt_sim.o03
+LOAD rti_assert.o03
+LOAD rti_slv1104.o03
+LOAD "C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib"
+LOAD "C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib"
+LOAD "C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppc_b.lib"
+LOAD "C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib"
+ 

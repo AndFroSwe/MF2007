@@ -1,0 +1,14 @@
+[System]
+Version=2.2
+SystemType=SingleProcessorSystem
+DAQService=HostService
+Status=Start
+RTP=Master
+
+[Master]
+Type=DS1104
+State=Enabled
+ServiceID=1
+BoardName=unknown
+File=motor_io_position_new_2.ppc
+ID=20DB3DAD-C232-4B80-AAE5-FD5AD25F6D59

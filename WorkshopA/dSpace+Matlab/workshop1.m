@@ -178,8 +178,8 @@ Ts = 1; % Sampling time
 % Transfer of motor without indctance
 Go_p = Go*1/s       % position is velocity integrated 
 wb = 5.78;          % bandwidth of open loop system [rad/s]
-ws = 100*wb;
-Ts = 2*pi/ws
+ws = 10*wb;
+Ts = 2*pi/ws;
 
 % Make system discrete
 Go_z = c2d(Go_p, Ts, 'zoh')
@@ -196,13 +196,16 @@ A = tf([1 a1 a0], [0 0 1], Ts)
 
 % output feedback
 % Place poles of  discrete closed system
-p1 = 0.8; % Am pole 1
-p2 = 0.8;   % Am pole 2
+p1 = 0.1; % Am pole 1
+p2 = 0.1;   % Am pole 2
 Am = tf([1 -p1-p2 p1*p2], [0 1], Ts)
 
-p3 = 0.4; % observer polynomial poles
-p4 = 0.4;   
+p3 = 0.9; % observer polynomial poles
+p4 = 0.9;   
 Ao = tf([1 -p3-p4 p3*p4], [0 1], Ts)
+
+% parameter for integral feedback
+Kb = 10;
 
 % calulate pid parameters
 r0 = (-b1^3*p1*p2*p3*p4-b0*b1^2*p1*p2*p3-b0*b1^2*p1*p2*p4-b0*b1^2*p1*p3*p4-b0*b1^2*p2*p3*p4-b0^2*b1*p1*p2-b0^2*b1*p1*p3-b0^2*b1*p1*p4-b0^2*b1*p2*p3-b0^2*b1*p2*p4-b0^2*b1*p3*p4+a0*b0^2*b1+a0*b0*b1^2-a1*b0^3-a1*b0^2*b1-b0^3*p1-b0^3*p2-b0^3*p3-b0^3*p4+b0^3)/(a0*b0*b1^2+a0*b1^3-a1*b0^2*b1-a1*b0*b1^2+b0^3+b0^2*b1)
@@ -237,7 +240,7 @@ S_sim = Sd.num{1};
 % parameters for anti windup of feedback
 c0 = (s2 + s1 + s0)/(1 + r0);
 d1 = s2;
-d0 = (r0*(s1 + s2))/(1 + r0);
+d0 = (r0*(s1 + s2) - s0)/(1 + r0);
 
 % parameters for anti windup of feedback
 s2_ = Td.num{1}(1)
@@ -248,14 +251,17 @@ c0_ = (s2_ + s1_ + s0_)/(1 + r0);
 d1_ = s2_;
 d0_ = (r0*(s1_ + s2_))/(1 + r0);
 
-% parameter for integral feedback
-TI = 0.00000010000;
 
+
+disp('pbd part')
+tf([d1 d0], [1 r0], Ts) + tf([0 c0], [1 -1], Ts)
+disp('S/R')
+Sd/Rd
 
 % run simulation
-simtime = 0.5;
-sim('Simulate_cascsaded_motor_controllers')
-
+simtime = 1;
+% sim('Simulate_position_motor_controllers.slx')
+sim('Simulate_cascsaded_motor_controllers.slx')
 % plot response
 figure
 subplot(2,1,1)
@@ -273,13 +279,15 @@ subplot(2,1,2)
 pzmap(Gc_z)
 grid on
 
-% plot saturation
-figure
-plot(sim_saturation.Time, sim_saturation.Data)
-title('saturation')
-
-
-
+zero(A*Rd + B*Sd)
+% 
+% % plot saturation
+% figure
+% plot(sim_saturation)
+% title('saturation')
+% 
+% 
+% 
 
 
 

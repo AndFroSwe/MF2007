@@ -5,12 +5,12 @@ function runtlccmd
 % 
 % 	tlc
 % 	-r
-% 	C:\Users\gabras\Desktop\MF2007\WorkshopA\dSpace+Matlab\motor_io_rti1104\motor_io.rtw
+% 	C:\Users\adamlang\Documents\MF2007\WorkshopA\dSpace+Matlab\motor_io_rti1104\motor_io.rtw
 % 	C:\Program Files (x86)\dSPACE RCPHIL 2014-B\MATLAB\RTI\RTI1104\TLC\rti1104.tlc
-% 	-OC:\Users\gabras\Desktop\MF2007\WorkshopA\dSpace+Matlab\motor_io_rti1104
+% 	-OC:\Users\adamlang\Documents\MF2007\WorkshopA\dSpace+Matlab\motor_io_rti1104
 % 	-IC:\Program Files (x86)\dSPACE RCPHIL 2014-B\MATLAB\RTI\RTI1104\TLC
 % 	-IC:\Program Files (x86)\dSPACE RCPHIL 2014-B\MATLAB\RTI\RTI\TLC
-% 	-IC:\Users\gabras\Desktop\MF2007\WorkshopA\dSpace+Matlab\motor_io_rti1104\tlc
+% 	-IC:\Users\adamlang\Documents\MF2007\WorkshopA\dSpace+Matlab\motor_io_rti1104\tlc
 % 	-IC:\Program Files (x86)\MATLAB\R2014b\rtw\c\tlc\mw
 % 	-IC:\Program Files (x86)\MATLAB\R2014b\rtw\c\tlc\lib
 % 	-IC:\Program Files (x86)\MATLAB\R2014b\rtw\c\tlc\blocks
@@ -92,7 +92,7 @@ function runtlccmd
 
    else
 
-      rtwprivate('rtwattic', 'setBuildDir', 'C:\Users\gabras\Desktop\MF2007\WorkshopA\dSpace+Matlab\motor_io_rti1104');
+      rtwprivate('rtwattic', 'setBuildDir', 'C:\Users\adamlang\Documents\MF2007\WorkshopA\dSpace+Matlab\motor_io_rti1104');
       rtwprivate('ec_set_replacement_flag', 'motor_io');
       set_param('motor_io', 'RTWGenSharedUtilitiesWithoutAssert', 0);
       load tlccmd.mat;

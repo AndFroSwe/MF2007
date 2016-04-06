@@ -3,8 +3,8 @@ CompiledModel {
   OrigName		  "motor_io"
   Version		  "8.7 (R2014b) 08-Sep-2014"
   SimulinkVersion	  "8.4"
-  ModelVersion		  "1.27"
-  GeneratedOn		  "Wed Mar 30 14:02:14 2016"
+  ModelVersion		  "1.28"
+  GeneratedOn		  "Wed Apr 06 14:40:21 2016"
   HasSimStructVars	  0
   HasCodeVariants	  0
   PreserveExternInFcnDecls 1
@@ -428,7 +428,7 @@ CompiledModel {
   SolverUpdateJacobianAtReset no
   FixedStepOpts {
     SolverMode		    SingleTasking
-    FixedStep		    0.036424631028033456
+    FixedStep		    0.010870562815189595
     ExtrapolationOrder	    -1
     NumberNewtonIterations  -1
     TID01EQ		    1
@@ -465,13 +465,13 @@ CompiledModel {
     tlcLanguage		    "C"
     tlcTargetType	    "RT"
   }
-  RTWContext		  [-2126949728, 0]
+  RTWContext		  [-2088527592, 0]
   RTWCGIR		  1
   TLCBlkFcnInCGIR	  1
   SLCI			  off
   SubsystemHdlForRightClickBuild 0.0
-  LocalSharedCodeManagerFile "C:/Users/gabras/Desktop/MF2007/WorkshopA/dSpace+Matlab/slprj/rti1104/_sharedutils/shared"
-  "_file.dmr"
+  LocalSharedCodeManagerFile "C:/Users/adamlang/Documents/MF2007/WorkshopA/dSpace+Matlab/slprj/rti1104/_sharedutils/sh"
+  "ared_file.dmr"
   DataLoggingOpts {
     SaveFormat		    0
     MaxRows		    1000
@@ -514,8 +514,8 @@ CompiledModel {
   NumSimulinkFunctions	  0
   PositivePriority	  no
   ConcurrentTasks	  no
-  SingleTimeDomainApplication "ClockDomain {\n_task0 : { \nSampleTime [0, 0]\nSampleTime [0, 1]\nSampleTime [0.0364246"
-  "3102803346, 0]\n }\n }\n"
+  SingleTimeDomainApplication "ClockDomain {\n_task0 : { \nSampleTime [0, 0]\nSampleTime [0, 1]\nSampleTime [0.0108705"
+  "628151896, 0]\n }\n }\n"
   AllSampleTimesInherited no
   ModelSampleTimeInheritanceDetails {
     AllowedOverall	    no
@@ -533,7 +533,7 @@ CompiledModel {
   HasNonVirtualConstantTs no
   FixedStepSizeBasedOnHeuristic	no
   InvariantConstants	  no
-  FundamentalStepSize	  0.036424631028033456
+  FundamentalStepSize	  0.010870562815189595
   SingleRate		  no
   NumSampleTimes	  2
   SampleTime {
@@ -548,7 +548,7 @@ CompiledModel {
     TimeSource		    Self_internal
     AsyncPromotedTID	    0
     TimerUpdateCode	    ""
-    ClockTickStepSize	    0.036424631028033456
+    ClockTickStepSize	    0.010870562815189595
     NeedAbsoluteTime	    yes
     IsInlined		    no
     NeedFloatTime	    yes
@@ -562,14 +562,14 @@ CompiledModel {
     TID			    1
     PriorityAssigned	    yes
     Priority		    40
-    PeriodAndOffset	    [0.036424631028033456, 0.0]
+    PeriodAndOffset	    [0.010870562815189595, 0.0]
     Asynchronous	    no
     IsUnionTs		    no
     IsVirtualTs		    no
     TimeSource		    Self_internal
     AsyncPromotedTID	    1
     TimerUpdateCode	    ""
-    ClockTickStepSize	    0.036424631028033456
+    ClockTickStepSize	    0.010870562815189595
     NeedAbsoluteTime	    yes
     IsInlined		    no
     NeedFloatTime	    no
@@ -1942,7 +1942,7 @@ CompiledModel {
       Block {
 	Name			"<S3>/RTI Data Store"
 	SLName			"RTI Data Store"
-	SID			"763"
+	SID			"806"
 	Type			SubSystem
 	Virtual			1
 	NumDataOutputPorts	0
@@ -2640,7 +2640,7 @@ CompiledModel {
       Block {
 	Name			"<S9>/RTI Data Store"
 	SLName			"RTI Data Store"
-	SID			"764"
+	SID			"807"
 	Type			SubSystem
 	Virtual			1
 	NumDataOutputPorts	0
@@ -2863,7 +2863,7 @@ CompiledModel {
       Block {
 	Name			"<S10>/RTI Data Store"
 	SLName			"RTI Data Store"
-	SID			"765"
+	SID			"808"
 	Type			SubSystem
 	Virtual			1
 	NumDataOutputPorts	0
@@ -2883,7 +2883,7 @@ CompiledModel {
       Block {
 	Name			"<S11>/RTI Data Store"
 	SLName			"RTI Data Store"
-	SID			"766"
+	SID			"809"
 	Type			SubSystem
 	Virtual			1
 	NumDataOutputPorts	0
@@ -3861,7 +3861,7 @@ CompiledModel {
       Identifier	      "F_c"
       LogicalSrc	      P0
       WorkspaceVarName	      "F_c"
-      Value		      [0.001]
+      Value		      [0.0015]
       ContainerCGTypeIdx      31
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 9, 0];]
@@ -3874,7 +3874,7 @@ CompiledModel {
       Identifier	      "F_c_upper"
       LogicalSrc	      P1
       WorkspaceVarName	      "F_c_upper"
-      Value		      [0.00115]
+      Value		      [0.0015]
       ContainerCGTypeIdx      31
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 14];]
@@ -4078,7 +4078,7 @@ CompiledModel {
     Parameter {
       Identifier	      "SaturatetoFc_LowerSat"
       LogicalSrc	      P17
-      Value		      [-0.00115]
+      Value		      [-0.0015]
       ContainerCGTypeIdx      31
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 15];]
@@ -4104,7 +4104,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Vicousfriction_Gain"
       LogicalSrc	      P19
-      Value		      [1.35e-5]
+      Value		      [1.0e-5]
       ContainerCGTypeIdx      31
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 17];]
@@ -4168,7 +4168,7 @@ CompiledModel {
     Parameter {
       Identifier	      "w1_scaling_Gain"
       LogicalSrc	      P24
-      Value		      [0.17249825543445765]
+      Value		      [0.57800000000000007]
       ContainerCGTypeIdx      31
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 19, 24];]
@@ -5489,7 +5489,7 @@ CompiledModel {
 	  Identifier		  "F_c"
 	  ModelParameterIdx	  0
 	}
-	Value			[0.001]
+	Value			[0.0015]
 	ContainerCGTypeIdx	31
 	String			"F_c"
 	StringType		"Expression"
@@ -5990,7 +5990,7 @@ CompiledModel {
 	Width			1
       }
       NumDataOutputPorts      0
-      TLCFileName	      "s1_b0_0l6ve"
+      TLCFileName	      "s1_b0_j168e"
       OpaqueBlockMethode {
 	HasStart		1
 	HasInitializeConditions	1
@@ -6120,7 +6120,7 @@ CompiledModel {
       Parameter {
 	Name			"UpperLimit"
 	MdlPrmIdx		1
-	Value			[0.00115]
+	Value			[0.0015]
 	ContainerCGTypeIdx	31
 	String			"F_c_upper"
 	StringType		"Expression"
@@ -6128,7 +6128,7 @@ CompiledModel {
       Parameter {
 	Name			"LowerLimit"
 	MdlPrmIdx		17
-	Value			[-0.00115]
+	Value			[-0.0015]
 	ContainerCGTypeIdx	31
 	String			"-F_c_lower"
 	StringType		"Expression"
@@ -6145,7 +6145,7 @@ CompiledModel {
       Parameter {
 	Name			"Gain"
 	MdlPrmIdx		19
-	Value			[1.35e-5]
+	Value			[1.0e-5]
 	ContainerCGTypeIdx	31
 	String			"motor.d"
 	StringType		"Expression"
@@ -6154,7 +6154,7 @@ CompiledModel {
       Parameter {
 	Name			"Value"
 	MdlPrmIdx		0
-	Value			[0.001]
+	Value			[0.0015]
 	ContainerCGTypeIdx	31
 	String			"F_c"
 	StringType		"Expression"
@@ -6203,7 +6203,7 @@ CompiledModel {
       Parameter {
 	Name			"Gain"
 	MdlPrmIdx		24
-	Value			[0.17249825543445765]
+	Value			[0.57800000000000007]
 	ContainerCGTypeIdx	31
 	String			"2*pi/(1000)/Ts"
 	StringType		"Expression"
@@ -6231,8 +6231,8 @@ CompiledModel {
   }
   StateflowAutoEnumInfoList {
   }
-  BlockParamChecksum	  ["2020357648U", "248311987U", "1149686381U", "1186336781U"]
-  ModelChecksum		  ["3036167138U", "3555835688U", "373415982U", "3735126555U"]
+  BlockParamChecksum	  ["1252863767U", "3702686230U", "623214857U", "4050356765U"]
+  ModelChecksum		  ["3862476891U", "3104445831U", "3386973038U", "194959326U"]
   IncludeCodeGenSettings  1
   CGTypes {
     CGTypeDefaults {
@@ -6716,55 +6716,55 @@ CompiledModel {
     TestInterfaceFcnIdx	    -1
     RTWCGModule {
       RateGrouping	      0
-      TLCFileName	      "s1_b0_0l6ve"
+      TLCFileName	      "s1_b0_j168e"
       RTWFcnConst {
 	HasInstanceSetup	"no"
 	Start_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_0l6ve_Start"
+	  TLCFileName		  "s1_b0_j168e_Start"
 	  StackSize		  0
 	}
 	InitializeConditions_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_0l6ve_InitializeConditions"
+	  TLCFileName		  "s1_b0_j168e_InitializeConditions"
 	  StackSize		  0
 	}
 	Outputs_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_0l6ve_Outputs"
+	  TLCFileName		  "s1_b0_j168e_Outputs"
 	  StackSize		  28
 	}
 	Update_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_0l6ve_Update"
+	  TLCFileName		  "s1_b0_j168e_Update"
 	  StackSize		  0
 	}
 	Derivatives_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_0l6ve_Derivatives"
+	  TLCFileName		  "s1_b0_j168e_Derivatives"
 	  StackSize		  0
 	}
 	ForcingFunction_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_0l6ve_ForcingFunction"
+	  TLCFileName		  "s1_b0_j168e_ForcingFunction"
 	  StackSize		  0
 	}
 	Terminate_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_0l6ve_Terminate"
+	  TLCFileName		  "s1_b0_j168e_Terminate"
 	  StackSize		  0
 	}
 	ModelPrevZCStateInit_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_0l6ve_ModelPrevZCStateInit"
+	  TLCFileName		  "s1_b0_j168e_ModelPrevZCStateInit"
 	  StackSize		  0
 	}
       }

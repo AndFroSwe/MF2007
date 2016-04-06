@@ -1,5 +1,5 @@
 %function FcnLoadCodeIRInfo() Output 
-codeIRInfoStruct = load('C:/Users/gabras/Desktop/MF2007/WorkshopA/dSpace+Matlab/motor_io_rti1104/tlc/codeIRInfo.mat');
+codeIRInfoStruct = load('C:/Users/adamlang/Documents/MF2007/WorkshopA/dSpace+Matlab/motor_io_rti1104/tlc/codeIRInfo.mat');
 codeInfo = codeIRInfoStruct.codeInfo;
 %endfunction
 

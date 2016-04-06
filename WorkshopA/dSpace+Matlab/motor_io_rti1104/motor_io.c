@@ -3,9 +3,9 @@
  *
  * Code generation for model "motor_io".
  *
- * Model version              : 1.27
+ * Model version              : 1.28
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Wed Mar 30 14:02:15 2016
+ * C source code generated on : Wed Apr 06 14:40:23 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -316,7 +316,7 @@ void motor_io_update(void)
   motor_io_M->Timing.t[0] = rtsiGetSolverStopTime(&motor_io_M->solverInfo);
 
   {
-    /* Update absolute timer for sample time: [0.036424631028033456s, 0.0s] */
+    /* Update absolute timer for sample time: [0.010870562815189595s, 0.0s] */
     /* The "clockTick1" counts the number of times the code of this task has
      * been executed. The absolute time is the multiplication of "clockTick1"
      * and "Timing.stepSize1". Size of "clockTick1" ensures timer will not
@@ -477,7 +477,7 @@ RT_MODEL_motor_io_T *motor_io(void)
 
     /* task periods */
     motor_io_M->Timing.sampleTimes[0] = (0.0);
-    motor_io_M->Timing.sampleTimes[1] = (0.036424631028033456);
+    motor_io_M->Timing.sampleTimes[1] = (0.010870562815189595);
 
     /* task offsets */
     motor_io_M->Timing.offsetTimes[0] = (0.0);
@@ -494,11 +494,11 @@ RT_MODEL_motor_io_T *motor_io(void)
   }
 
   rtmSetTFinal(motor_io_M, -1);
-  motor_io_M->Timing.stepSize0 = 0.036424631028033456;
-  motor_io_M->Timing.stepSize1 = 0.036424631028033456;
+  motor_io_M->Timing.stepSize0 = 0.010870562815189595;
+  motor_io_M->Timing.stepSize1 = 0.010870562815189595;
   motor_io_M->solverInfoPtr = (&motor_io_M->solverInfo);
-  motor_io_M->Timing.stepSize = (0.036424631028033456);
-  rtsiSetFixedStepSize(&motor_io_M->solverInfo, 0.036424631028033456);
+  motor_io_M->Timing.stepSize = (0.010870562815189595);
+  rtsiSetFixedStepSize(&motor_io_M->solverInfo, 0.010870562815189595);
   rtsiSetSolverMode(&motor_io_M->solverInfo, SOLVER_MODE_SINGLETASKING);
 
   /* block I/O */
