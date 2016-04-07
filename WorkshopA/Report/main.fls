@@ -113,20 +113,20 @@ INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam7.
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT fig/l1_sq_a24_f016_dtuned.png
-OUTPUT main.pdf
-INPUT ./fig/l1_sq_a24_f016_dtuned.png
-INPUT ./fig/l1_sq_a24_f016_dtuned.png
-INPUT C:/Users/Andreas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
 INPUT fig/l1_sq_a24_f016.png
+OUTPUT main.pdf
 INPUT ./fig/l1_sq_a24_f016.png
 INPUT ./fig/l1_sq_a24_f016.png
-INPUT fig/l2_sq_a5_f016_fcTuned.png
-INPUT ./fig/l2_sq_a5_f016_fcTuned.png
-INPUT ./fig/l2_sq_a5_f016_fcTuned.png
+INPUT C:/Users/Andreas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
+INPUT fig/l1_sq_a5_f016.png
+INPUT ./fig/l1_sq_a5_f016.png
+INPUT ./fig/l1_sq_a5_f016.png
 INPUT fig/l2_sq_a24_f016_fcTuned.png
 INPUT ./fig/l2_sq_a24_f016_fcTuned.png
 INPUT ./fig/l2_sq_a24_f016_fcTuned.png
+INPUT fig/l2_sq_a5_f016_fctuned.png
+INPUT ./fig/l2_sq_a5_f016_fctuned.png
+INPUT ./fig/l2_sq_a5_f016_fctuned.png
 INPUT fig/l2_sin_a5_f1.png
 INPUT ./fig/l2_sin_a5_f1.png
 INPUT ./fig/l2_sin_a5_f1.png

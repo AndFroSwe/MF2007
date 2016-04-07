@@ -177,15 +177,8 @@ s = tf('s');
 % Transfer of motor without indctance
 Go_p = Go*1/s       % position is velocity integrated 
 wb = 5.78;          % bandwidth of open loop system [rad/s]
-<<<<<<< HEAD
 ws = 10*wb;
-=======
-<<<<<<< HEAD
-ws = 10*wb;
-=======
-ws = 30*wb;
->>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
->>>>>>> origin/master
+
 Ts = 2*pi/ws;
 
 % Make system discrete
@@ -203,34 +196,16 @@ A = tf([1 a1 a0], [0 0 1], Ts)
 
 % output feedback
 % Place poles of  discrete closed system
-<<<<<<< HEAD
-p1 = 0.1; % Am pole 1
-p2 = 0.1;   % Am pole 2
-=======
-<<<<<<< HEAD
 p1 = 0.1; % Am pole 1
 p2 = 0.1;   % Am pole 2
 Am = tf([1 -p1-p2 p1*p2], [0 1], Ts)
 
-p3 = 0.9; % observer polynomial poles
-p4 = 0.9;   
+p3 = 0; % observer polynomial poles
+p4 = 0;   
 Ao = tf([1 -p3-p4 p3*p4], [0 1], Ts)
 
 % parameter for integral feedback
 Kb = 10;
-=======
-p1 = 0.6; % Am pole 1
-p2 = 0.5;   % Am pole 2
->>>>>>> origin/master
-Am = tf([1 -p1-p2 p1*p2], [0 1], Ts)
-
-p3 = 0.; % observer polynomial poles
-p4 = 0.;   
-Ao = tf([1 -p3-p4 p3*p4], [0 1], Ts)
-
-% parameter for integral feedback
-Kb = 100000;
->>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
 
 % calulate pid parameters
 r0 = (-b1^3*p1*p2*p3*p4-b0*b1^2*p1*p2*p3-b0*b1^2*p1*p2*p4-b0*b1^2*p1*p3*p4-b0*b1^2*p2*p3*p4-b0^2*b1*p1*p2-b0^2*b1*p1*p3-b0^2*b1*p1*p4-b0^2*b1*p2*p3-b0^2*b1*p2*p4-b0^2*b1*p3*p4+a0*b0^2*b1+a0*b0*b1^2-a1*b0^3-a1*b0^2*b1-b0^3*p1-b0^3*p2-b0^3*p3-b0^3*p4+b0^3)/(a0*b0*b1^2+a0*b1^3-a1*b0^2*b1-a1*b0*b1^2+b0^3+b0^2*b1)
@@ -312,14 +287,7 @@ zero(A*Rd + B*Sd)
 % title('saturation')
 % 
 % 
-% 
-<<<<<<< HEAD
-
-=======
->>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
-
-
-
+%
 
 
 Ts

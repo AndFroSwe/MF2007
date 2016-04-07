@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1460032498 "main.tex" "main.pdf" "main" 1460032499
+["pdflatex"] 1460040949 "main.tex" "main.pdf" "main" 1460040949
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233955448 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233955454 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -87,12 +87,12 @@
   "fig/continuous_level2.png" 1460031920 15251 fa79d4a643be096ade24afc00dc7400d ""
   "fig/continuous_level2_voltage.png" 1460031991 15431 167c277660efbafab217a6440f10ddfa ""
   "fig/l1_sq_a24_f016.png" 1459944369 27279 ca41693e6d1b0b1966d6d7c381c0d413 ""
-  "fig/l1_sq_a24_f016_dtuned.png" 1460025728 28684 8d7e7c18ff6d15f06de1dfc2ec9fad72 ""
+  "fig/l1_sq_a5_f016.png" 1459944369 29820 15a8dab7a94647ba69667e4dedf6b448 ""
   "fig/l2_sin_a5_f1.png" 1460025728 31845 d5ba72a00be4b2ad6c13d084c11933c5 ""
   "fig/l2_sq_a24_f016_fcTuned.png" 1459944369 26852 a4a9f3d7cb8d4c29d1ef42ee0aeb9f98 ""
-  "fig/l2_sq_a5_f016_fcTuned.png" 1459944369 30558 4b53f30e6003731f1f6a97fbdd324c00 ""
-  "main.aux" 1460032499 4105 3af8ca4a2d85f43ec0c899f874f9ef89 ""
-  "main.tex" 1460032497 17770 7b313c3c45f78fa617ff1e2743f94a71 ""
+  "fig/l2_sq_a5_f016_fctuned.png" 1459944369 30558 4b53f30e6003731f1f6a97fbdd324c00 ""
+  "main.aux" 1460040949 4276 70cff2d9d0eb002b08903a442b512771 ""
+  "main.tex" 1460040947 19328 aab8117e2085dabb6261f09822928893 ""
   (generated)
   "main.pdf"
   "main.log"

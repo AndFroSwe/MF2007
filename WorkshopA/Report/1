@@ -333,32 +333,11 @@ in the continuous case. To find a suitable sampling rate, the bandwidth of the
 open loop controller is examined using a Bode plot and the sampling rate is
 chosen to be 10-30 times faster. With a bandwidth of 5.78, the sampling rate is
 chosen as 10 times this. The final sampling time is then 0.11 s. Finally, before
-the control design is done, the system is sampled with ZOH, yielding the system
-\begin{equation}
-    \label{eq:discretepos}
-    G_0(z) = \frac{a z + b}{z^2 + cz + d},
-\end{equation}
-where the numerical values are discplayed in the table below.
-\begin{table}[H]
-    \centering
-    \caption{Numerical values of discretized closed loop system.}
-    \label{tab:discretetable}
-    \begin{tabular}{|c  | c |}
-        \hline
-        a &  0.138 \\
-        \hline
-        b & 0.127 \\
-        \hline
-        c & -1.79 \\
-        \hline
-        d & 0.791 \\
-        \hline
-    \end{tabular}
-\end{table}
+the 
   \subsection*{Level 1} 
   The control law for the position controller is derived similar to the
   velocity controller with the resulting control law in Equation
-  (\ref{eq:contlaw}) as,
+  \ref{eq:contlaw} as,
   \begin{equation}
       \big((z-1)(z+0.677)\big)u(z)=(71.4z^2-105z+39.9)r(z)-(6.30z^2)y(z)
   \end{equation}
