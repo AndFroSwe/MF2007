@@ -160,6 +160,12 @@ INPUT ./fig/PosCont.png
 INPUT fig/PosCont_V.png
 INPUT ./fig/PosCont_V.png
 INPUT ./fig/PosCont_V.png
+INPUT fig/continuous_level2.png
+INPUT ./fig/continuous_level2.png
+INPUT ./fig/continuous_level2.png
+INPUT fig/continuous_level2_voltage.png
+INPUT ./fig/continuous_level2_voltage.png
+INPUT ./fig/continuous_level2_voltage.png
 INPUT main.aux
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb

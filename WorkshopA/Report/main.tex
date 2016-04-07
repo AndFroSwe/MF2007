@@ -405,6 +405,32 @@ loop poles in $A_o$ are then placed to get the desired performance. The sampling
 rate is first set by the thumbrule that it should be 10-30 times faster than the
 fastest pole in the system, then it is tuned to see what the maximum reachable
 sampling time is while maintaining the perfomance within specifications. The
-resultsing control law, sampling time and perfomance is displayed below. \par
+controllers are approximated using the sampling time and tested on the physical
+plant. The resulting control law, sampling time and perfomance is displayed
+below. \par The control law, given  in the same form as in Equation
+(\ref{eq:contlaw}), is
+\begin{equation}
+    \label{eq:pos_controllaw}
+    (z^2 - 0.895z - 0.105) U(z) = (12.1z^2 - 9.21z + 1.75)R(z) - (114z^2 - 187z
+    + 77.7)Y(z)
+\end{equation}
+with the input $U(z)$, reference $R(z)$ and the output $Y(z)$. The closed loop
+system has a double pole in -18 and the observer polynomial has a real double
+pole in -45. The samlpling time is 0.02 s. The step response with corresponding
+voltage input is given below
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{continuous_level2.png}
+    \caption{Step response of continuous system approximated with Tustin.}
+    \label{fig:continuous_level2}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{continuous_level2_voltage.png}
+    \caption{Voltage input of continuous system approximated with Tustin.}
+    \label{fig:continuous_level2}
+\end{figure}
+This system has a rise time of 0.31 s, an overshoot of 0.02 and no steady state
+error and as such fulfills the system requirements.
 
 \end{document}
