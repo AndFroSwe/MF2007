@@ -7,17 +7,17 @@
 \newlabel{eq:inertia}{{2}{1}}
 \newlabel{eq:timeconstant}{{3}{1}}
 \newlabel{eq:steadystate}{{4}{1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Velocity output from the motor and the model when tuned t for viscous friction.\relax }}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Velocity output from the motor and the model when tuned for both viscous friction and inertia.\relax }}{2}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:l1_sq_a24_f016_dtuned}{{1}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Velocity output from the motor and the model when tuned for both viscous friction and inertia.\relax }}{2}}
-\newlabel{fig:l1_sq_a24_f016}{{2}{2}}
+\newlabel{fig:l1_sq_a24_f016}{{1}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Model performance when not at set point.\relax }}{2}}
+\newlabel{fig:parameter_id_bad}{{2}{2}}
 \newlabel{sub:level_2}{{}{2}}
-\newlabel{eq:karnop}{{5}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Velocity response of motor and model at 5V amplitude when tuned for static friction.\relax }}{3}}
-\newlabel{fig:l2_sq_a5_f016_fcTuned}{{3}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Velocity response of motor and model at 24V amplitude when tuned for both static and dynamic friction.\relax }}{3}}
-\newlabel{fig:l2_sq_a24_f016_fcTuned}{{4}{3}}
+\newlabel{eq:karnop}{{5}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Velocity response of motor and model at 24V amplitude when tuned for both static and dynamic friction.\relax }}{3}}
+\newlabel{fig:l2_sq_a24_f016_fcTuned}{{3}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Model compared to system when at low voltages.\relax }}{3}}
+\newlabel{fig:l2_sq_a5_f016_fctuned}{{4}{3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Velocity response of a sine wave at 5V amplitude of the motor and tuned model\relax }}{4}}
 \newlabel{fig:l2_sin_a5_f1}{{5}{4}}
 \newlabel{sec:velocity_control}{{}{4}}
@@ -25,7 +25,7 @@
 \newlabel{eq:phi}{{6}{4}}
 \newlabel{eq:gamma}{{7}{4}}
 \newlabel{eq:motorsimple}{{8}{4}}
-\newlabel{eq:feedback_vel}{{9}{5}}
+\newlabel{eq:feedback_vel}{{9}{4}}
 \newlabel{eq:polepolynomial_vel}{{10}{5}}
 \newlabel{eq:am_vel}{{11}{5}}
 \newlabel{eq:ao_vel}{{12}{5}}
@@ -55,21 +55,26 @@
 \newlabel{sub@fig:T2_a10_f02_load:b}{{b}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Response for sine wave 10 rad/s and 0.2Hz\relax }}{7}}
 \newlabel{fig:T2_a10_f02_load}{{9}{7}}
-\newlabel{fig:pos_cont:a}{{10a}{7}}
-\newlabel{sub@fig:pos_cont:a}{{a}{7}}
-\newlabel{fig:pos_cont:b}{{10b}{7}}
-\newlabel{sub@fig:pos_cont:b}{{b}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Response from position controller\relax }}{7}}
-\newlabel{fig:pos_cont}{{10}{7}}
-\newlabel{eq:contpid}{{21}{8}}
-\newlabel{eq:r0pos}{{22}{8}}
-\newlabel{eq:s0pos}{{23}{8}}
-\newlabel{eq:s1pos}{{24}{8}}
-\newlabel{eq:s2pos}{{25}{8}}
-\newlabel{eq:contpoles}{{26}{8}}
-\newlabel{eq:cont_feedback}{{27}{8}}
-\newlabel{eq:pos_controllaw}{{28}{8}}
+\newlabel{eq:possystem}{{20}{7}}
+\newlabel{eq:discretepos}{{21}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Numerical values of discretized closed loop system.\relax }}{7}}
+\newlabel{tab:discretetable}{{1}{7}}
+\newlabel{eq:PIDdiscrete}{{22}{7}}
+\newlabel{fig:pos_l1:a}{{10a}{8}}
+\newlabel{sub@fig:pos_l1:a}{{a}{8}}
+\newlabel{fig:pos_l1V:b}{{10b}{8}}
+\newlabel{sub@fig:pos_l1V:b}{{b}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Response from position controller\relax }}{8}}
+\newlabel{fig:pos_cont}{{10}{8}}
+\newlabel{eq:contpid}{{24}{8}}
+\newlabel{eq:r0pos}{{25}{8}}
+\newlabel{eq:s0pos}{{26}{8}}
+\newlabel{eq:s1pos}{{27}{8}}
+\newlabel{eq:s2pos}{{28}{8}}
+\newlabel{eq:contpoles}{{29}{8}}
+\newlabel{eq:cont_feedback}{{30}{8}}
+\newlabel{eq:pos_controllaw}{{31}{9}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Step response of continuous system approximated with Tustin.\relax }}{9}}
 \newlabel{fig:continuous_level2}{{11}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Voltage input of continuous system approximated with Tustin.\relax }}{9}}
-\newlabel{fig:continuous_level2}{{12}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Voltage input of continuous system approximated with Tustin.\relax }}{10}}
+\newlabel{fig:continuous_level2_voltage}{{12}{10}}

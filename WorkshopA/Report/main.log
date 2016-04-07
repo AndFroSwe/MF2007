@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.13)  7 APR 2016 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.13)  7 APR 2016 17:37
 entering extended mode
 **./main.tex
 (main.tex
@@ -438,11 +438,7 @@ Package caption Info: float package is loaded.
 \c@subfigure=\count106
 \c@subtable=\count107
 )
-(main.aux
-
-LaTeX Warning: Label `fig:continuous_level2' multiply defined.
-
-)
+(main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
@@ -516,159 +512,151 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 27.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<fig/l1_sq_a24_f016_dtuned.png, id=1, 526.96875pt x 395.22656pt>
-File: fig/l1_sq_a24_f016_dtuned.png Graphic file (type png)
+<fig/l1_sq_a24_f016.png, id=1, 526.96875pt x 395.22656pt>
+File: fig/l1_sq_a24_f016.png Graphic file (type png)
 
-<use fig/l1_sq_a24_f016_dtuned.png>
-Package pdftex.def Info: fig/l1_sq_a24_f016_dtuned.png used on input line 83.
+<use fig/l1_sq_a24_f016.png>
+Package pdftex.def Info: fig/l1_sq_a24_f016.png used on input line 83.
 (pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
  [1
 
 {C:/Users/Andreas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<fig/l1_sq_a24_f016.png, id=14, 526.96875pt x 395.22656pt>
-File: fig/l1_sq_a24_f016.png Graphic file (type png)
+<fig/l1_sq_a5_f016.png, id=14, 526.96875pt x 395.22656pt>
+File: fig/l1_sq_a5_f016.png Graphic file (type png)
 
-<use fig/l1_sq_a24_f016.png>
-Package pdftex.def Info: fig/l1_sq_a24_f016.png used on input line 94.
-(pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
- [2 <./fig/l1_sq_a24_f016_dtuned.png (PNG copy)> <./fig/l1_sq_a24_f016.png (PNG
- copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 116--129
+<use fig/l1_sq_a5_f016.png>
+Package pdftex.def Info: fig/l1_sq_a5_f016.png used on input line 98.
+(pdftex.def)             Requested size: 262.61894pt x 196.97354pt.
+ [2 <./fig/l1_sq_a24_f016.png (PNG copy)> <./fig/l1_sq_a5_f016.png (PNG copy)>]
 
- []
-
-<fig/l2_sq_a5_f016_fcTuned.png, id=18, 526.96875pt x 395.22656pt>
-File: fig/l2_sq_a5_f016_fcTuned.png Graphic file (type png)
-
-<use fig/l2_sq_a5_f016_fcTuned.png>
-Package pdftex.def Info: fig/l2_sq_a5_f016_fcTuned.png used on input line 134.
-(pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
-
-<fig/l2_sq_a24_f016_fcTuned.png, id=19, 526.96875pt x 395.22656pt>
+<fig/l2_sq_a24_f016_fcTuned.png, id=20, 526.96875pt x 395.22656pt>
 File: fig/l2_sq_a24_f016_fcTuned.png Graphic file (type png)
 
 <use fig/l2_sq_a24_f016_fcTuned.png>
-Package pdftex.def Info: fig/l2_sq_a24_f016_fcTuned.png used on input line 143.
+Package pdftex.def Info: fig/l2_sq_a24_f016_fcTuned.png used on input line 134.
 
 (pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
 
-<fig/l2_sin_a5_f1.png, id=20, 526.96875pt x 395.22656pt>
+<fig/l2_sq_a5_f016_fctuned.png, id=21, 526.96875pt x 395.22656pt>
+File: fig/l2_sq_a5_f016_fctuned.png Graphic file (type png)
+
+<use fig/l2_sq_a5_f016_fctuned.png>
+Package pdftex.def Info: fig/l2_sq_a5_f016_fctuned.png used on input line 144.
+(pdftex.def)             Requested size: 262.61894pt x 196.97354pt.
+
+<fig/l2_sin_a5_f1.png, id=22, 526.96875pt x 395.22656pt>
 File: fig/l2_sin_a5_f1.png Graphic file (type png)
 
 <use fig/l2_sin_a5_f1.png>
 Package pdftex.def Info: fig/l2_sin_a5_f1.png used on input line 153.
 (pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
- [3 <./fig/l2_sq_a5_f016_fcTuned.png (PNG copy)> <./fig/l2_sq_a24_f016_fcTuned.
+ [3 <./fig/l2_sq_a24_f016_fcTuned.png (PNG copy)> <./fig/l2_sq_a5_f016_fctuned.
 png (PNG copy)>] [4 <./fig/l2_sin_a5_f1.png (PNG copy)>] <fig/T2_a50_f05.png, i
-d=31, 526.96875pt x 395.22656pt>
+d=32, 526.96875pt x 395.22656pt>
 File: fig/T2_a50_f05.png Graphic file (type png)
 
 <use fig/T2_a50_f05.png>
-Package pdftex.def Info: fig/T2_a50_f05.png used on input line 267.
+Package pdftex.def Info: fig/T2_a50_f05.png used on input line 263.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
-<fig/T2_V_a50_f05.png, id=32, 526.96875pt x 395.22656pt>
+<fig/T2_V_a50_f05.png, id=33, 526.96875pt x 395.22656pt>
 File: fig/T2_V_a50_f05.png Graphic file (type png)
 
 <use fig/T2_V_a50_f05.png>
-Package pdftex.def Info: fig/T2_V_a50_f05.png used on input line 272.
+Package pdftex.def Info: fig/T2_V_a50_f05.png used on input line 268.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
-<fig/T2_a50_f05_ss.png, id=34, 526.96875pt x 395.22656pt>
+<fig/T2_a50_f05_ss.png, id=35, 526.96875pt x 395.22656pt>
 File: fig/T2_a50_f05_ss.png Graphic file (type png)
 
 <use fig/T2_a50_f05_ss.png>
-Package pdftex.def Info: fig/T2_a50_f05_ss.png used on input line 285.
+Package pdftex.def Info: fig/T2_a50_f05_ss.png used on input line 281.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
  [5 <./fig/T2_a50_f05.png (PNG copy)> <./fig/T2_V_a50_f05.png>] <fig/T2_a10_f02
 .png, id=41, 526.96875pt x 395.22656pt>
 File: fig/T2_a10_f02.png Graphic file (type png)
 
 <use fig/T2_a10_f02.png>
-Package pdftex.def Info: fig/T2_a10_f02.png used on input line 294.
+Package pdftex.def Info: fig/T2_a10_f02.png used on input line 290.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
 <fig/T2_V_a10_f02.png, id=42, 526.96875pt x 395.22656pt>
 File: fig/T2_V_a10_f02.png Graphic file (type png)
 
 <use fig/T2_V_a10_f02.png>
-Package pdftex.def Info: fig/T2_V_a10_f02.png used on input line 299.
+Package pdftex.def Info: fig/T2_V_a10_f02.png used on input line 295.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
 <fig/T2_a10_f02_load.png, id=43, 526.96875pt x 395.22656pt>
 File: fig/T2_a10_f02_load.png Graphic file (type png)
 
 <use fig/T2_a10_f02_load.png>
-Package pdftex.def Info: fig/T2_a10_f02_load.png used on input line 312.
+Package pdftex.def Info: fig/T2_a10_f02_load.png used on input line 308.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
 <fig/T2_V_a10_f02_load.png, id=44, 526.96875pt x 395.22656pt>
 File: fig/T2_V_a10_f02_load.png Graphic file (type png)
 
 <use fig/T2_V_a10_f02_load.png>
-Package pdftex.def Info: fig/T2_V_a10_f02_load.png used on input line 317.
+Package pdftex.def Info: fig/T2_V_a10_f02_load.png used on input line 313.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
  [6 <./fig/T2_a50_f05_ss.png (PNG copy)> <./fig/T2_a10_f02.png (PNG copy)> <./f
-ig/T2_V_a10_f02.png (PNG copy)>]
-<fig/PosCont.png, id=48, 526.96875pt x 395.22656pt>
-File: fig/PosCont.png Graphic file (type png)
- <use fig/PosCont.png>
-Package pdftex.def Info: fig/PosCont.png used on input line 346.
+ig/T2_V_a10_f02.png (PNG copy)>] [7 <./fig/T2_a10_f02_load.png (PNG copy)> <./f
+ig/T2_V_a10_f02_load.png (PNG copy)>]
+<fig/Pos_l1.png, id=52, 526.96875pt x 395.22656pt>
+File: fig/Pos_l1.png Graphic file (type png)
+ <use fig/Pos_l1.png>
+Package pdftex.def Info: fig/Pos_l1.png used on input line 381.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
-<fig/PosCont_V.png, id=49, 526.96875pt x 395.22656pt>
-File: fig/PosCont_V.png Graphic file (type png)
- <use fig/PosCont_V.png>
-Package pdftex.def Info: fig/PosCont_V.png used on input line 351.
+<fig/Pos_l1_V.png, id=53, 526.96875pt x 395.22656pt>
+File: fig/Pos_l1_V.png Graphic file (type png)
+ <use fig/Pos_l1_V.png>
+Package pdftex.def Info: fig/Pos_l1_V.png used on input line 386.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
-[7 <./fig/T2_a10_f02_load.png (PNG copy)> <./fig/T2_V_a10_f02_load.png (PNG cop
-y)> <./fig/PosCont.png (PNG copy)> <./fig/PosCont_V.png (PNG copy)>]
-<fig/continuous_level2.png, id=54, 421.575pt x 316.18124pt>
+[8 <./fig/Pos_l1.png (PNG copy)> <./fig/Pos_l1_V.png (PNG copy)>]
+<fig/continuous_level2.png, id=57, 421.575pt x 316.18124pt>
 File: fig/continuous_level2.png Graphic file (type png)
 
 <use fig/continuous_level2.png>
-Package pdftex.def Info: fig/continuous_level2.png used on input line 423.
+Package pdftex.def Info: fig/continuous_level2.png used on input line 461.
 (pdftex.def)             Requested size: 420.19191pt x 315.14801pt.
 
-<fig/continuous_level2_voltage.png, id=55, 421.575pt x 316.18124pt>
+<fig/continuous_level2_voltage.png, id=58, 421.575pt x 316.18124pt>
 File: fig/continuous_level2_voltage.png Graphic file (type png)
 
 <use fig/continuous_level2_voltage.png>
 Package pdftex.def Info: fig/continuous_level2_voltage.png used on input line 4
-29.
+67.
 (pdftex.def)             Requested size: 420.19191pt x 315.14801pt.
- [8] [9 <./fig/continuous_level2.png (PNG copy)> <./fig/continuous_level2_volta
-ge.png (PNG copy)>] (main.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+ [9 <./fig/continuous_level2.png (PNG copy)>] [10 <./fig/continuous_level2_volt
+age.png (PNG copy)>] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 4462 strings out of 493634
- 63608 string characters out of 3141308
- 136436 words of memory out of 3000000
- 7777 multiletter control sequences out of 15000+200000
+ 4469 strings out of 493634
+ 63669 string characters out of 3141308
+ 137436 words of memory out of 3000000
+ 7784 multiletter control sequences out of 15000+200000
  12866 words of font info for 50 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  42i,8n,40p,270b,443s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (9 pages, 556385 bytes).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (10 pages, 576918 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
+ 109 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

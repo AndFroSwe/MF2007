@@ -333,66 +333,39 @@ in the continuous case. To find a suitable sampling rate, the bandwidth of the
 open loop controller is examined using a Bode plot and the sampling rate is
 chosen to be 10-30 times faster. With a bandwidth of 5.78, the sampling rate is
 chosen as 10 times this. The final sampling time is then 0.11 s. Finally, before
-the control design is done, the system is sampled with ZOH, yielding the system
-\begin{equation}
-    \label{eq:discretepos}
-    G_0(z) = \frac{a z + b}{z^2 + cz + d},
-\end{equation}
-where the numerical values are discplayed in the table below.
-\begin{table}[H]
-    \centering
-    \caption{Numerical values of discretized closed loop system.}
-    \label{tab:discretetable}
-    \begin{tabular}{|c  | c |}
-        \hline
-        a &  0.421 \\
-        \hline
-        b & 0.389 \\
-        \hline
-        c & -0.20 \\
-        \hline
-        d & 0.01 \\
-        \hline
-    \end{tabular}
-\end{table}
+the 
   \subsection*{Level 1} 
-  For this control, a discrete PID controller is used with transfer function
+  The control law for the position controller is derived similar to the
+  velocity controller with the resulting control law in Equation
+  \ref{eq:contlaw} as,
   \begin{equation}
-      \label{eq:PIDdiscrete}
-      \frac{S}{R} = \frac{s_2 z^2 + s_1 z + s_0}{(z-1)(z+r_0)}.
+      \big((z-1)(z+0.677)\big)u(z)=(71.4z^2-105z+39.9)r(z)-(6.30z^2)y(z)
   \end{equation}
-  The control design process is similar to the one used with the velocity
-  controller with the addition of a higher order system. 
-  The resulting control law becomes
-  \begin{equation}
-      \big((z-1)(z+0.784)\big)u(z)=(13.1z^2-14.9z+4.87)r(z)-(3.06z^2)y(z)
-  \end{equation}
-  where the observer polynomial and the closed loop polynomial is,
+  Where the observer polynomial and the closed loop polynomial is,
   \begin{align*}
         &A_m = (z-0.1)(z-0.1)\\
-        &A_o = z^2.
+        &A_o = z^2,
   \end{align*}
-  In Figure~\ref{fig:pos_l1:a} the response from
-  the controller can be seen and in Figure~\ref{fig:pos_l1V:b} the
-  voltage response is plotted. 
+  with sampling time $T_s=0.0362$.
+  In Figure~\ref{fig:pos_cont:a} the response from
+  the controller can be seen and in Figure~\ref{fig:pos_cont:b} the
+  voltage response is plotted. The specifications is met as can be seen
+  in the Figure~\ref{fig:pos_cont:a}
 \begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.45\linewidth}
-    \includegraphics[width=\linewidth]{Pos_l1.png}
+    \includegraphics[width=\linewidth]{PosCont.png}
     \caption{Position response}
-    \label{fig:pos_l1:a}
+    \label{fig:pos_cont:a}
   \end{subfigure}
   \begin{subfigure}[b]{0.45\linewidth}
-    \includegraphics[width=\linewidth]{Pos_l1_V.png}
+    \includegraphics[width=\linewidth]{PosCont_V.png}
     \caption{Voltage response}
-    \label{fig:pos_l1V:b}
+    \label{fig:pos_cont:b}
   \end{subfigure}
   \caption{Response from position controller}
   \label{fig:pos_cont}
 \end{figure}
-This system has a rise time of 0.33 s, overshoot of 0.08 (2\%) and a minimal
-steady state error, though it occasionally, but not always, has some 
-oscillations.
 
 \subsection*{Level 2}
 The controller used in level 1 is designed directly in the discrete plane. To
@@ -452,7 +425,7 @@ below. \par The control law, given  in the same form as in Equation
     (z^2 - 0.895z - 0.105) u(z) = (12.1z^2 - 9.21z + 1.75)r(z) - (114z^2 - 187z
     + 77.7)y(z)
 \end{equation}
-with the input $u(z)$, reference $r(z)$ and the output $y(z)$. The closed loop
+with the input $U(z)$, reference $R(z)$ and the output $Y(z)$. The closed loop
 system has a double pole in -18 and the observer polynomial has a real double
 pole in -45. The samlpling time is 0.02 s. The step response with corresponding
 voltage input is given below
@@ -469,16 +442,6 @@ voltage input is given below
     \label{fig:continuous_level2_voltage}
 \end{figure}
 This system has a rise time of 0.31 s, an overshoot of 0.02 and no steady state
-error and as such fulfills the system requirements. \par
-It can be seen that the sampling period can be made substantially longer when
-designing the system directly in the discrete plane. Since the sampling time in
-the continuous system is set by the fastest poles in the system, it is very
-dependant on the system in question. In this case, the observer polynomial was
-rather fast, greatly limiting the available sampling time. Furthermore, the use
-of approximations for the controllers may cause different mapping of poles
-depending in the sampling rate, putting further constraints on what sampling
-times are available. In this case Tustins approximation is used which always
-maps stable continuous poles to stable discrete poles but the Euler
-approximations are not guaranteed to do this.
+error and as such fulfills the system requirements.
 
 \end{document}
