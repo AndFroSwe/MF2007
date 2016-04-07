@@ -11,4 +11,12 @@ State=Enabled
 ServiceID=1
 BoardName=unknown
 File=motor_io_position_new.ppc
+<<<<<<< HEAD
 ID=19A1C74C-934C-4CB5-B5DC-C3129F4279E0
+=======
+<<<<<<< HEAD
+ID=0BDB808A-9F37-4F37-99BE-BC153BB928FC
+=======
+ID=FA6BEF21-1AEA-4BA2-B0AA-3C4D7D5718E2
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
+>>>>>>> origin/master

@@ -2,7 +2,15 @@
 #  Make include file motor_io_position_new_rti.mk:
 #
 #   RTI1104 7.3 (02-Nov-2014)
+<<<<<<< HEAD
 #   Thu Apr 07 04:07:07 2016
+=======
+<<<<<<< HEAD
+#   Wed Apr 06 22:37:50 2016
+=======
+#   Thu Apr 07 01:32:30 2016
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
+>>>>>>> origin/master
 #
 #   Copyright (c) 1999-2002 dSPACE GmbH, GERMANY
 # =============================================================================

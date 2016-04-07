@@ -5,7 +5,15 @@
  *
  * Model version              : 1.29
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
+<<<<<<< HEAD
  * C source code generated on : Thu Apr 07 04:07:07 2016
+=======
+<<<<<<< HEAD
+ * C source code generated on : Wed Apr 06 22:37:50 2016
+=======
+ * C source code generated on : Thu Apr 07 01:32:30 2016
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
+>>>>>>> origin/master
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -787,6 +795,18 @@
 
 /* Block signals (auto storage) */
 typedef struct {
+<<<<<<< HEAD
+  real_T Gff;                          /* '<S1>/Gff' */
+  real_T Ipart1;                       /* '<S1>/I part1' */
+  real_T Sum1;                         /* '<S1>/Sum1' */
+  real_T Ipart;                        /* '<S1>/I part' */
+  real_T PDpart;                       /* '<S1>/PD part' */
+  real_T Sum;                          /* '<S1>/Sum' */
+  real_T Sum2;                         /* '<S1>/Sum2' */
+  real_T VoltageSaturation;            /* '<S1>/Voltage Saturation ' */
+  real_T Sum3;                         /* '<S1>/Sum3' */
+  real_T Gain;                         /* '<S1>/Gain' */
+=======
   real_T SinGenerator;                 /* '<Root>/SinGenerator' */
   real_T SquareGenerator;              /* '<Root>/SquareGenerator' */
   real_T ref;                          /* '<Root>/Switch' */
@@ -817,12 +837,24 @@ typedef struct {
   real_T VoltageSaturation_j;          /* '<S1>/Voltage Saturation ' */
   real_T Sum3;                         /* '<S1>/Sum3' */
   real_T Gain_m;                       /* '<S1>/Gain' */
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
   real_T Gain1;                        /* '<S1>/Gain1' */
   real_T Gain2;                        /* '<S1>/Gain2' */
   real_T Sum4;                         /* '<S1>/Sum4' */
   real_T Sum5;                         /* '<S1>/Sum5' */
   real_T Gff1;                         /* '<S1>/Gff1' */
   real_T Gff2;                         /* '<S1>/Gff2' */
+<<<<<<< HEAD
+  real_T Gff_j;                        /* '<S2>/Gff' */
+  real_T Ipart1_f;                     /* '<S2>/I part1' */
+  real_T Sum1_l;                       /* '<S2>/Sum1' */
+  real_T Ipart_l;                      /* '<S2>/I part' */
+  real_T PDpart_j;                     /* '<S2>/PD part' */
+  real_T Sum_i;                        /* '<S2>/Sum' */
+  real_T Sum2_k;                       /* '<S2>/Sum2' */
+  real_T VoltageSaturation_j;          /* '<S2>/Voltage Saturation ' */
+=======
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
   real_T Sum3_o;                       /* '<S2>/Sum3' */
   real_T Gain_g;                       /* '<S2>/Gain' */
   real_T Gain1_k;                      /* '<S2>/Gain1' */
@@ -831,6 +863,47 @@ typedef struct {
   real_T Sum5_a;                       /* '<S2>/Sum5' */
   real_T Gff1_p;                       /* '<S2>/Gff1' */
   real_T Gff2_p;                       /* '<S2>/Gff2' */
+<<<<<<< HEAD
+  real_T SFunction1;                   /* '<S17>/S-Function1' */
+  real_T fi1_scaling;                  /* '<S9>/fi1_scaling' */
+  real_T Gff1_k;                       /* '<S4>/Gff1' */
+  real_T SinGenerator;                 /* '<Root>/SinGenerator' */
+  real_T SquareGenerator;              /* '<Root>/SquareGenerator' */
+  real_T ref;                          /* '<Root>/Switch' */
+  real_T Gff2_m;                       /* '<S4>/Gff2' */
+  real_T Sum2_b;                       /* '<S4>/Sum2' */
+  real_T VoltageSaturation_m;          /* '<S4>/Voltage Saturation ' */
+  real_T Gain_i;                       /* '<Root>/Gain' */
+  real_T Volt;                         /* '<S6>/Saturation' */
+  real_T pwm_skalning;                 /* '<S6>/pwm_skalning' */
+  real_T Sum_f;                        /* '<S6>/Sum' */
+  real_T Gff1_b;                       /* '<S3>/Gff1' */
+  real_T Integrator1;                  /* '<S5>/Integrator1' */
+  real_T Quantizer;                    /* '<S8>/Quantizer' */
+  real_T ZeroOrderHold;                /* '<S8>/Zero-Order Hold' */
+  real_T Gff2_j;                       /* '<S3>/Gff2' */
+  real_T Sum2_n;                       /* '<S3>/Sum2' */
+  real_T VoltageSaturation_h;          /* '<S3>/Voltage Saturation ' */
+  real_T Integrator;                   /* '<S5>/Integrator' */
+  real_T Gain1_b;                      /* '<S5>/Gain1' */
+  real_T Add;                          /* '<S5>/Add' */
+  real_T kR;                           /* '<S5>/k//R ' */
+  real_T Stickslipregion;              /* '<S10>/Saturate to Fc' */
+  real_T Abs;                          /* '<S10>/Abs' */
+  real_T Vicousfriction;               /* '<S10>/Vicous friction' */
+  real_T Sign;                         /* '<S10>/Sign' */
+  real_T Product;                      /* '<S10>/Product' */
+  real_T Viscousregion;                /* '<S10>/Add' */
+  real_T Friction;                     /* '<S10>/Switch' */
+  real_T Add1;                         /* '<S5>/Add1' */
+  real_T Gain2_j;                      /* '<S5>/Gain2' */
+  real_T Add2;                         /* '<S5>/Add2' */
+  real_T Inertias1J;                   /* '<S5>/Inertias 1//J' */
+  real_T SFunction2;                   /* '<S17>/S-Function2' */
+  real_T w1_scaling;                   /* '<S9>/w1_scaling' */
+  boolean_T DataTypeConversion;        /* '<S6>/Data Type Conversion' */
+  boolean_T Compare;                   /* '<S11>/Compare' */
+=======
   real_T Integrator;                   /* '<S3>/Integrator' */
   real_T Gain1_b;                      /* '<S3>/Gain1' */
   real_T Add;                          /* '<S3>/Add' */
@@ -850,10 +923,41 @@ typedef struct {
   real_T w1_scaling;                   /* '<S7>/w1_scaling' */
   boolean_T DataTypeConversion;        /* '<S4>/Data Type Conversion' */
   boolean_T Compare;                   /* '<S9>/Compare' */
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
 } B_motor_io_position_new_T;
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
+<<<<<<< HEAD
+  real_T Gff_states;                   /* '<S1>/Gff' */
+  real_T Ipart1_states;                /* '<S1>/I part1' */
+  real_T Ipart_states;                 /* '<S1>/I part' */
+  real_T PDpart_states;                /* '<S1>/PD part' */
+  real_T Gff1_states[2];               /* '<S1>/Gff1' */
+  real_T Gff2_states[2];               /* '<S1>/Gff2' */
+  real_T Gff_states_m;                 /* '<S2>/Gff' */
+  real_T Ipart1_states_j;              /* '<S2>/I part1' */
+  real_T Ipart_states_d;               /* '<S2>/I part' */
+  real_T PDpart_states_e;              /* '<S2>/PD part' */
+  real_T Gff1_states_n[2];             /* '<S2>/Gff1' */
+  real_T Gff2_states_b[2];             /* '<S2>/Gff2' */
+  real_T Gff1_states_e[2];             /* '<S4>/Gff1' */
+  real_T Gff2_states_e[2];             /* '<S4>/Gff2' */
+  real_T Gff1_states_a[2];             /* '<S3>/Gff1' */
+  real_T Gff2_states_f[2];             /* '<S3>/Gff2' */
+  real_T Gff_tmp;                      /* '<S1>/Gff' */
+  real_T PDpart_tmp;                   /* '<S1>/PD part' */
+  real_T Gff1_tmp;                     /* '<S1>/Gff1' */
+  real_T Gff2_tmp;                     /* '<S1>/Gff2' */
+  real_T Gff_tmp_e;                    /* '<S2>/Gff' */
+  real_T PDpart_tmp_j;                 /* '<S2>/PD part' */
+  real_T Gff1_tmp_o;                   /* '<S2>/Gff1' */
+  real_T Gff2_tmp_k;                   /* '<S2>/Gff2' */
+  real_T Gff1_tmp_a;                   /* '<S4>/Gff1' */
+  real_T Gff2_tmp_m;                   /* '<S4>/Gff2' */
+  real_T Gff1_tmp_oc;                  /* '<S3>/Gff1' */
+  real_T Gff2_tmp_l;                   /* '<S3>/Gff2' */
+=======
   real_T Gff_states;                   /* '<S2>/Gff' */
   real_T Ipart1_states;                /* '<S2>/I part1' */
   real_T Ipart_states;                 /* '<S2>/I part' */
@@ -874,6 +978,7 @@ typedef struct {
   real_T Gff2_tmp;                     /* '<S1>/Gff2' */
   real_T Gff1_tmp_o;                   /* '<S2>/Gff1' */
   real_T Gff2_tmp_k;                   /* '<S2>/Gff2' */
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
   struct {
     void *LoggedData;
   } Scope_PWORK;                       /* '<S1>/Scope' */
@@ -884,35 +989,63 @@ typedef struct {
 
   struct {
     void *LoggedData;
+<<<<<<< HEAD
+  } Scope2_PWORK;                      /* '<S10>/Scope2' */
+
+  int_T SFunction1_IWORK[4];           /* '<S13>/S-Function1' */
+  int_T SFunction2_IWORK[4];           /* '<S13>/S-Function2' */
+  int_T SFunction3_IWORK[4];           /* '<S13>/S-Function3' */
+  int_T SFunction4_IWORK[4];           /* '<S13>/S-Function4' */
+=======
   } Scope2_PWORK;                      /* '<S8>/Scope2' */
 
   int_T SFunction1_IWORK[4];           /* '<S11>/S-Function1' */
   int_T SFunction2_IWORK[4];           /* '<S11>/S-Function2' */
   int_T SFunction3_IWORK[4];           /* '<S11>/S-Function3' */
   int_T SFunction4_IWORK[4];           /* '<S11>/S-Function4' */
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
 } DW_motor_io_position_new_T;
 
 /* Continuous states (auto storage) */
 typedef struct {
+<<<<<<< HEAD
+  real_T Integrator1_CSTATE;           /* '<S5>/Integrator1' */
+  real_T Integrator_CSTATE;            /* '<S5>/Integrator' */
+=======
   real_T Integrator1_CSTATE;           /* '<S3>/Integrator1' */
   real_T Integrator_CSTATE;            /* '<S3>/Integrator' */
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
 } X_motor_io_position_new_T;
 
 /* State derivatives (auto storage) */
 typedef struct {
+<<<<<<< HEAD
+  real_T Integrator1_CSTATE;           /* '<S5>/Integrator1' */
+  real_T Integrator_CSTATE;            /* '<S5>/Integrator' */
+=======
   real_T Integrator1_CSTATE;           /* '<S3>/Integrator1' */
   real_T Integrator_CSTATE;            /* '<S3>/Integrator' */
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
 } XDot_motor_io_position_new_T;
 
 /* State disabled  */
 typedef struct {
+<<<<<<< HEAD
+  boolean_T Integrator1_CSTATE;        /* '<S5>/Integrator1' */
+  boolean_T Integrator_CSTATE;         /* '<S5>/Integrator' */
+=======
   boolean_T Integrator1_CSTATE;        /* '<S3>/Integrator1' */
   boolean_T Integrator_CSTATE;         /* '<S3>/Integrator' */
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
 } XDis_motor_io_position_new_T;
 
 /* Zero-crossing (trigger) state */
 typedef struct {
+<<<<<<< HEAD
+  ZCSigState DS1104ENC_SET_POS_C1_Trig_ZCE;/* '<S9>/DS1104ENC_SET_POS_C1' */
+=======
   ZCSigState DS1104ENC_SET_POS_C1_Trig_ZCE;/* '<S7>/DS1104ENC_SET_POS_C1' */
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
 } PrevZCX_motor_io_position_new_T;
 
 #ifndef ODE1_INTG
@@ -944,6 +1077,15 @@ typedef struct {
 /* Parameters (auto storage) */
 struct P_motor_io_position_new_T_ {
   real_T F_c;                          /* Variable: F_c
+<<<<<<< HEAD
+                                        * Referenced by: '<S10>/F_c'
+                                        */
+  real_T F_c_upper;                    /* Variable: F_c_upper
+                                        * Referenced by: '<S10>/Saturate to Fc'
+                                        */
+  real_T J1;                           /* Variable: J1
+                                        * Referenced by: '<S5>/Load inertia'
+=======
                                         * Referenced by: '<S8>/F_c'
                                         */
   real_T F_c_upper;                    /* Variable: F_c_upper
@@ -951,6 +1093,7 @@ struct P_motor_io_position_new_T_ {
                                         */
   real_T J1;                           /* Variable: J1
                                         * Referenced by: '<S3>/Load inertia'
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
                                         */
   real_T Kb;                           /* Variable: Kb
                                         * Referenced by:
@@ -963,16 +1106,33 @@ struct P_motor_io_position_new_T_ {
                                         *   '<S1>/Gff2'
                                         *   '<S2>/Gff1'
                                         *   '<S2>/Gff2'
+<<<<<<< HEAD
+                                        *   '<S3>/Gff1'
+                                        *   '<S3>/Gff2'
+                                        *   '<S4>/Gff1'
+                                        *   '<S4>/Gff2'
+=======
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
                                         */
   real_T S_sim[3];                     /* Variable: S_sim
                                         * Referenced by:
                                         *   '<S1>/Gff2'
                                         *   '<S2>/Gff2'
+<<<<<<< HEAD
+                                        *   '<S3>/Gff2'
+                                        *   '<S4>/Gff2'
+=======
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
                                         */
   real_T T_sim[3];                     /* Variable: T_sim
                                         * Referenced by:
                                         *   '<S1>/Gff1'
                                         *   '<S2>/Gff1'
+<<<<<<< HEAD
+                                        *   '<S3>/Gff1'
+                                        *   '<S4>/Gff1'
+=======
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
                                         */
   real_T c0;                           /* Variable: c0
                                         * Referenced by:
@@ -985,6 +1145,198 @@ struct P_motor_io_position_new_T_ {
                                         *   '<S2>/Gain1'
                                         */
   real_T quant;                        /* Variable: quant
+<<<<<<< HEAD
+                                        * Referenced by: '<S8>/Quantizer'
+                                        */
+  real_T Gff_NumCoef[2];               /* Expression: [d1_ d0_]
+                                        * Referenced by: '<S1>/Gff'
+                                        */
+  real_T Gff_DenCoef[2];               /* Expression: [1 r0]
+                                        * Referenced by: '<S1>/Gff'
+                                        */
+  real_T Gff_InitialStates;            /* Expression: 0
+                                        * Referenced by: '<S1>/Gff'
+                                        */
+  real_T Ipart1_NumCoef[2];            /* Expression: [0 1]
+                                        * Referenced by: '<S1>/I part1'
+                                        */
+  real_T Ipart1_DenCoef[2];            /* Expression: [1 -1]
+                                        * Referenced by: '<S1>/I part1'
+                                        */
+  real_T Ipart1_InitialStates;         /* Expression: 0
+                                        * Referenced by: '<S1>/I part1'
+                                        */
+  real_T Ipart_NumCoef[2];             /* Expression: [0 1]
+                                        * Referenced by: '<S1>/I part'
+                                        */
+  real_T Ipart_DenCoef[2];             /* Expression: [1 -1]
+                                        * Referenced by: '<S1>/I part'
+                                        */
+  real_T Ipart_InitialStates;          /* Expression: 0
+                                        * Referenced by: '<S1>/I part'
+                                        */
+  real_T PDpart_NumCoef[2];            /* Expression: [d1 d0]
+                                        * Referenced by: '<S1>/PD part'
+                                        */
+  real_T PDpart_DenCoef[2];            /* Expression: [1 r0]
+                                        * Referenced by: '<S1>/PD part'
+                                        */
+  real_T PDpart_InitialStates;         /* Expression: 0
+                                        * Referenced by: '<S1>/PD part'
+                                        */
+  real_T VoltageSaturation_UpperSat;   /* Expression: 24
+                                        * Referenced by: '<S1>/Voltage Saturation '
+                                        */
+  real_T VoltageSaturation_LowerSat;   /* Expression: -24
+                                        * Referenced by: '<S1>/Voltage Saturation '
+                                        */
+  real_T Gff1_InitialStates;           /* Expression: 0
+                                        * Referenced by: '<S1>/Gff1'
+                                        */
+  real_T Gff2_InitialStates;           /* Expression: 0
+                                        * Referenced by: '<S1>/Gff2'
+                                        */
+  real_T Gff_NumCoef_n[2];             /* Expression: [d1_ d0_]
+                                        * Referenced by: '<S2>/Gff'
+                                        */
+  real_T Gff_DenCoef_f[2];             /* Expression: [1 r0]
+                                        * Referenced by: '<S2>/Gff'
+                                        */
+  real_T Gff_InitialStates_h;          /* Expression: 0
+                                        * Referenced by: '<S2>/Gff'
+                                        */
+  real_T Ipart1_NumCoef_n[2];          /* Expression: [0 1]
+                                        * Referenced by: '<S2>/I part1'
+                                        */
+  real_T Ipart1_DenCoef_h[2];          /* Expression: [1 -1]
+                                        * Referenced by: '<S2>/I part1'
+                                        */
+  real_T Ipart1_InitialStates_k;       /* Expression: 0
+                                        * Referenced by: '<S2>/I part1'
+                                        */
+  real_T Ipart_NumCoef_a[2];           /* Expression: [0 1]
+                                        * Referenced by: '<S2>/I part'
+                                        */
+  real_T Ipart_DenCoef_m[2];           /* Expression: [1 -1]
+                                        * Referenced by: '<S2>/I part'
+                                        */
+  real_T Ipart_InitialStates_g;        /* Expression: 0
+                                        * Referenced by: '<S2>/I part'
+                                        */
+  real_T PDpart_NumCoef_e[2];          /* Expression: [d1 d0]
+                                        * Referenced by: '<S2>/PD part'
+                                        */
+  real_T PDpart_DenCoef_n[2];          /* Expression: [1 r0]
+                                        * Referenced by: '<S2>/PD part'
+                                        */
+  real_T PDpart_InitialStates_n;       /* Expression: 0
+                                        * Referenced by: '<S2>/PD part'
+                                        */
+  real_T VoltageSaturation_UpperSat_j; /* Expression: 24
+                                        * Referenced by: '<S2>/Voltage Saturation '
+                                        */
+  real_T VoltageSaturation_LowerSat_o; /* Expression: -24
+                                        * Referenced by: '<S2>/Voltage Saturation '
+                                        */
+  real_T Gff1_InitialStates_k;         /* Expression: 0
+                                        * Referenced by: '<S2>/Gff1'
+                                        */
+  real_T Gff2_InitialStates_g;         /* Expression: 0
+                                        * Referenced by: '<S2>/Gff2'
+                                        */
+  real_T fi1_scaling_Gain;             /* Expression: 2*pi/(1000)
+                                        * Referenced by: '<S9>/fi1_scaling'
+                                        */
+  real_T Gff1_InitialStates_h;         /* Expression: 0
+                                        * Referenced by: '<S4>/Gff1'
+                                        */
+  real_T SinGenerator_Amplitude;       /* Expression: 0
+                                        * Referenced by: '<Root>/SinGenerator'
+                                        */
+  real_T SinGenerator_Frequency;       /* Expression: 1
+                                        * Referenced by: '<Root>/SinGenerator'
+                                        */
+  real_T SignalSelector0Square1Sine_Valu;/* Expression: 1
+                                          * Referenced by: '<Root>/SignalSelector[0Square,1Sine]'
+                                          */
+  real_T SquareGenerator_Amplitude;    /* Expression: 0
+                                        * Referenced by: '<Root>/SquareGenerator'
+                                        */
+  real_T SquareGenerator_Frequency;    /* Computed Parameter: SquareGenerator_Frequency
+                                        * Referenced by: '<Root>/SquareGenerator'
+                                        */
+  real_T Gff2_InitialStates_c;         /* Expression: 0
+                                        * Referenced by: '<S4>/Gff2'
+                                        */
+  real_T VoltageSaturation_UpperSat_n; /* Expression: 24
+                                        * Referenced by: '<S4>/Voltage Saturation '
+                                        */
+  real_T VoltageSaturation_LowerSat_p; /* Expression: -24
+                                        * Referenced by: '<S4>/Voltage Saturation '
+                                        */
+  real_T Gain_Gain;                    /* Expression: -1
+                                        * Referenced by: '<Root>/Gain'
+                                        */
+  real_T Saturation_UpperSat;          /* Expression: 24
+                                        * Referenced by: '<S6>/Saturation'
+                                        */
+  real_T Saturation_LowerSat;          /* Expression: -24
+                                        * Referenced by: '<S6>/Saturation'
+                                        */
+  real_T pwm_skalning_Gain;            /* Expression: 1/48
+                                        * Referenced by: '<S6>/pwm_skalning'
+                                        */
+  real_T pwm_offstet_Value;            /* Expression: 0.5
+                                        * Referenced by: '<S6>/pwm_offstet'
+                                        */
+  real_T Enable1_Off0_On_Value;        /* Expression: 1
+                                        * Referenced by: '<S6>/Enable[1_Off, 0_On]'
+                                        */
+  real_T Gff1_InitialStates_i;         /* Expression: 0
+                                        * Referenced by: '<S3>/Gff1'
+                                        */
+  real_T Integrator1_IC;               /* Expression: 0
+                                        * Referenced by: '<S5>/Integrator1'
+                                        */
+  real_T Gff2_InitialStates_l;         /* Expression: 0
+                                        * Referenced by: '<S3>/Gff2'
+                                        */
+  real_T VoltageSaturation_UpperSat_m; /* Expression: 24
+                                        * Referenced by: '<S3>/Voltage Saturation '
+                                        */
+  real_T VoltageSaturation_LowerSat_j; /* Expression: -24
+                                        * Referenced by: '<S3>/Voltage Saturation '
+                                        */
+  real_T Integrator_IC;                /* Expression: 0
+                                        * Referenced by: '<S5>/Integrator'
+                                        */
+  real_T Gain1_Gain;                   /* Expression: motor.k
+                                        * Referenced by: '<S5>/Gain1'
+                                        */
+  real_T kR_Gain;                      /* Expression: motor.k/motor.R
+                                        * Referenced by: '<S5>/k//R '
+                                        */
+  real_T SaturatetoFc_LowerSat;        /* Expression: -F_c_lower
+                                        * Referenced by: '<S10>/Saturate to Fc'
+                                        */
+  real_T Constant_Value;               /* Expression: const
+                                        * Referenced by: '<S11>/Constant'
+                                        */
+  real_T Vicousfriction_Gain;          /* Expression: motor.d
+                                        * Referenced by: '<S10>/Vicous friction'
+                                        */
+  real_T Gain2_Gain;                   /* Expression: n^-2
+                                        * Referenced by: '<S5>/Gain2'
+                                        */
+  real_T Motorinertia_Value;           /* Expression: motor.J
+                                        * Referenced by: '<S5>/Motor inertia'
+                                        */
+  real_T w1_scaling_Gain;              /* Expression: 2*pi/(1000)/Ts
+                                        * Referenced by: '<S9>/w1_scaling'
+                                        */
+  real_T Resetenc_Value;               /* Expression: 0
+                                        * Referenced by: '<S9>/Reset enc'
+=======
                                         * Referenced by: '<S6>/Quantizer'
                                         */
   real_T SinGenerator_Amplitude;       /* Expression: 0
@@ -1151,6 +1503,7 @@ struct P_motor_io_position_new_T_ {
                                         */
   real_T Resetenc_Value;               /* Expression: 0
                                         * Referenced by: '<S7>/Reset enc'
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
                                         */
 };
 
@@ -1316,6 +1669,25 @@ extern RT_MODEL_motor_io_position_ne_T *const motor_io_position_new_M;
  * '<Root>' : 'motor_io_position_new'
  * '<S1>'   : 'motor_io_position_new/2DOF PID with anti windup1'
  * '<S2>'   : 'motor_io_position_new/2DOF PID with anti windup2'
+<<<<<<< HEAD
+ * '<S3>'   : 'motor_io_position_new/2DOF PID with anti windup3'
+ * '<S4>'   : 'motor_io_position_new/2DOF PID with anti windup4'
+ * '<S5>'   : 'motor_io_position_new/DC motor'
+ * '<S6>'   : 'motor_io_position_new/PWM'
+ * '<S7>'   : 'motor_io_position_new/RTI Data'
+ * '<S8>'   : 'motor_io_position_new/Sensor 1'
+ * '<S9>'   : 'motor_io_position_new/enc I//F'
+ * '<S10>'  : 'motor_io_position_new/DC motor/Karnop friction1'
+ * '<S11>'  : 'motor_io_position_new/DC motor/Karnop friction1/Velocity threshold '
+ * '<S12>'  : 'motor_io_position_new/PWM/DS1104BIT_OUT_C0'
+ * '<S13>'  : 'motor_io_position_new/PWM/DS1104SL_DSP_PWM'
+ * '<S14>'  : 'motor_io_position_new/RTI Data/RTI Data Store'
+ * '<S15>'  : 'motor_io_position_new/RTI Data/RTI Data Store/RTI Data Store'
+ * '<S16>'  : 'motor_io_position_new/RTI Data/RTI Data Store/RTI Data Store/RTI Data Store'
+ * '<S17>'  : 'motor_io_position_new/enc I//F/DS1104ENC_POS_C1'
+ * '<S18>'  : 'motor_io_position_new/enc I//F/DS1104ENC_SETUP'
+ * '<S19>'  : 'motor_io_position_new/enc I//F/DS1104ENC_SET_POS_C1'
+=======
  * '<S3>'   : 'motor_io_position_new/DC motor'
  * '<S4>'   : 'motor_io_position_new/PWM'
  * '<S5>'   : 'motor_io_position_new/RTI Data'
@@ -1331,5 +1703,6 @@ extern RT_MODEL_motor_io_position_ne_T *const motor_io_position_new_M;
  * '<S15>'  : 'motor_io_position_new/enc I//F/DS1104ENC_POS_C1'
  * '<S16>'  : 'motor_io_position_new/enc I//F/DS1104ENC_SETUP'
  * '<S17>'  : 'motor_io_position_new/enc I//F/DS1104ENC_SET_POS_C1'
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
  */
 #endif                                 /* RTW_HEADER_motor_io_position_new_h_ */

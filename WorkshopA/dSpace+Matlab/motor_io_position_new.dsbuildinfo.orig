@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<BuildInfo xmlns="urn:dSPACE:BuildInfo"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           version="1">
+<<<<<<< HEAD
+  <ModificationDate>2016-04-06T20:38:07Z</ModificationDate>
+=======
+  <ModificationDate>2016-04-06T23:32:47Z</ModificationDate>
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
+</BuildInfo>

@@ -3,7 +3,15 @@
 --  Trace file: motor_io_position_new.trc
 --
 --  RTI1104 7.3 (02-Nov-2014)
+<<<<<<< HEAD
 --  Thu Apr 07 04:07:07 2016
+=======
+<<<<<<< HEAD
+--  Wed Apr 06 22:37:50 2016
+=======
+--  Thu Apr 07 01:32:30 2016
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
+>>>>>>> origin/master
 --
 --  Used options:
 --    TRCGenerateVirtualBlocks      = 1
@@ -27,7 +35,15 @@
 
 _genname     "RTI"
 _genversion  "7.3"
+<<<<<<< HEAD
 _gendate     "04/07/2016 04:07:10"
+=======
+<<<<<<< HEAD
+_gendate     "04/06/2016 22:37:52"
+=======
+_gendate     "04/07/2016 01:32:32"
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
+>>>>>>> origin/master
 _description ""
 _author      "RTI1104 7.3 (02-Nov-2014)"
 _model       "motor_io_position_new.mdl"
@@ -39,9 +55,21 @@ _integer_type(32)
 -- No Data Capture blocks within model: use base sample time as sampling period
 sampling_period[0]
 {
+<<<<<<< HEAD
   value:       0.10870562815189595
   alias:       "HostService"
   increment:   0.10870562815189595
+=======
+<<<<<<< HEAD
+  value:       0.010870562815189595
+  alias:       "HostService"
+  increment:   0.010870562815189595
+=======
+  value:       0.036235209383965315
+  alias:       "HostService"
+  increment:   0.036235209383965315
+>>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
+>>>>>>> origin/master
   unit:        "s"
 }
 
