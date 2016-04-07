@@ -160,6 +160,8 @@ motor in level 1 be much less accurate when changing the amplitude.
 Therefor it had to retuned when a change was made. In level 2 when
 introducing the static friction this has now been improved and the model
 will now give a much better approximation when changing amplitude.
+
+
 \section*{Velocity control}
 \label{sec:velocity_control}
 The parameters generated in the previous section are used to design the
@@ -197,7 +199,7 @@ The model of the plant is given in (\ref{eq:motormodel}) and is here rewritten a
     \label{eq:motorsimple}
     \frac{B}{A}=\frac{a}{s + b}
 \end{equation}
-to simplify the equations. 
+belowcaptionskip=1\baselineskip,to simplify the equations. 
 Firstly, the feedback polynomial $\frac{S}{R}$ is derived. This is given by
 \begin{equation}
     \label{eq:feedback_vel}
@@ -237,7 +239,7 @@ and
 The $T$ polynomial is given by 
 \begin{equation}
     \label{eq:T_vel}
-    T = t_0A_0
+    T = t_0A_o
 \end{equation}
 where $t_0$ is a static value so that the steady state gain of the closed loop
 system is 1. Using the final-value theorem for discrete systems, one yields
@@ -245,13 +247,20 @@ system is 1. Using the final-value theorem for discrete systems, one yields
     \label{eq:t0_vel}
     t0 = \left (\frac{B}{A_m} \right )^{-1}
 \end{equation}
-evaluated in $z=1$. \\
+evaluated in $z=1$. The control law is then found as,
+\begin{equation}
+    R(z)u(z)=T(z)r(z)-S(z)y(z)
+    \label{eq:contlaw}
+\end{equation}
+and in numerical form,
+\begin{equation}
+    (z-1)u(z)=t_0(z-p2)r(z)-(s_1z + s_0)y(z)
+\end{equation}
+
 
 In Figure~\ref{fig:T2_a50_f05:a} is the response from a square wave with
-50 rad/s and 0.5Hz shown. It can also be seen in the plot that the
-steady state error is less than the specified 0.5 rad/s. In
-Figure~\ref{fig:T2_a50_f05:b} the voltage response for the same input is
-ploted.
+50 rad/s and 0.5Hz shown. In Figure~\ref{fig:T2_a50_f05:b} the voltage
+response for the same input is plotted.
 \begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.45\linewidth}
@@ -266,6 +275,16 @@ ploted.
   \end{subfigure}
   \caption{Response for square wave 50 rad/s and 0.5Hz}
   \label{fig:T2_a50_f05}
+\end{figure}
+ It can also be seen in
+Figure~\ref{fig:T2_a50_f05_ss} the plot that the
+steady state error is less than the specified 0.5 rad/s. And that there
+is no overshoot.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\linewidth]{T2_a50_f05_ss.png}
+    \caption{Zoomed plot of the Velocity response}
+    \label{fig:T2_a50_f05_ss}
 \end{figure}
 In Figure~\ref{fig:T2_a10_f02:a} is the response from input of
 $\varphi_{ref}=10sin(2\phi 0.2t)$ shown.
@@ -284,8 +303,9 @@ $\varphi_{ref}=10sin(2\phi 0.2t)$ shown.
   \caption{Response for sine wave 10 rad/s and 0.2Hz}
   \label{fig:T2_a10_f02}
 \end{figure}
-In Figure~\ref{fig:T2_a10_f02_load:a} is the response from input of
-$\varphi_{ref}=10sin(2\pi 0.2t)$ with added torque by holding it shown.
+In Figure~\ref{fig:T2_a10_f02_load:a} is the response from the reference
+input of $\varphi_{ref}=10sin(2\pi 0.2t)$ shown. In this plot is the
+rotor loaded with a torque by holding it.
 \begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.45\linewidth}
@@ -301,6 +321,26 @@ $\varphi_{ref}=10sin(2\pi 0.2t)$ with added torque by holding it shown.
   \caption{Response for sine wave 10 rad/s and 0.2Hz}
   \label{fig:T2_a10_f02_load}
 \end{figure}
+
+\section*{Position Control}
+  The control law for the position controller is derived similar to the
+  velocity controller with the resulting control law in Equation
+  \ref{eq:contlaw} as,
+  \begin{equation}
+      ((z-1)(z+0.677))u(z)=(71.4z^2-105z+39.9)r(z)-(6.30z^2)y(z)
+  \end{equation}
+  Where the observer polynomial and the closed loop polynomial is,
+  \begin{align*}
+        &A_m = (z-0.6)(z-0.5)\\
+        &A_o = z^2,
+  \end{align*}
+  with sampling time $T_s=0.362$.
+  \subsection*{Level 1}
+
+  \subsection*{Level 2}
+
+
+
 
 
 \end{document}

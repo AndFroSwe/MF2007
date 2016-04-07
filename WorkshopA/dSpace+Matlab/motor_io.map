@@ -1,4 +1,4 @@
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page   1
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page   1
 
 Command line: C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\BIN\lnkppc  -K0 -QmsA0314 -QmeA0307 -QmeA0329 -m..\motor_io.map -o ..\motor_io.ppc -c _tmp_motor_io.lk 
 
@@ -54,7 +54,7 @@ ORDER   .PPC.EMB.procflags
 ORDER   .bss
 
 ;-------------------------------------------------------------------------
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page   2
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page   2
 
 ; Config section is linked to end of 64 MB address space.
 ; On 32 MB board the memory is mirrored.
@@ -110,7 +110,7 @@ except_tbl  TEXT         @TEXT    00000000  00002FFF    00003000    4 BYTES    C
 .cdestr     LIT          @TEXT    00003000  00003000    00000000    4 BYTES    C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(ccondes.obj)
 startup     TEXT         @TEXT    00003000  00004507    00001508    4 BYTES    C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
 .text       TEXT         @TEXT    00004508  0000561F    00001118    4 BYTES    motor_io.o03
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page   3
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page   3
 
 .text       TEXT         @TEXT    00005620  00005737    00000118    4 BYTES    rtGetInf.o03
                          @TEXT    00005738  00005813    000000DC               rtGetNaN.o03
@@ -166,7 +166,7 @@ startup     TEXT         @TEXT    00003000  00004507    00001508    4 BYTES    C
                          @TEXT    00036098  000361A7    00000110               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(memset.obj)
                          @TEXT    000361A8  00036317    00000170               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(realloc.obj)
                          @TEXT    00036318  00036437    00000120               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(s_exit.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page   4
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page   4
 
 .text       TEXT         @TEXT    00036438  00036543    0000010C    4 BYTES    C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(fclose.obj)
                          @TEXT    00036544  00036607    000000C4               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(fflush.obj)
@@ -222,7 +222,7 @@ initdat     LIT          @TEXT    000386B8  000386B8    00000000    4 BYTES    C
                          @TEXT    00038AF8  00038B3F    00000048               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(av9110.o03)
                          @TEXT    00038B40  00038C67    00000128               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(slvdsp1104.o03)
                          @TEXT    00038C68  00038CB7    00000050               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsflash.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page   5
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page   5
 
 .rodata     LIT          @TEXT    00038CB8  00038CD7    00000020    8 BYTES    C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(flash1104.obj)
                          @TEXT    00038CD8  00038CD8    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmem.obj)
@@ -278,7 +278,7 @@ initdat     LIT          @TEXT    000386B8  000386B8    00000000    4 BYTES    C
                          @TEXT    00038F80  00039097    00000118               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(xprintf.obj)
                          @TEXT    00039098  00039098    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(xltostr.obj)
 .rodata1    LIT          @TEXT    00039098  0003909C    00000005    8 BYTES    motor_io.o03
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page   6
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page   6
 
 .rodata1    LIT          @TEXT    000390A0  000390A0    00000000    8 BYTES    motor_io_data.o03
                          @TEXT    000390A0  000390A0    00000000               motor_io_trc_ptr.o03
@@ -334,7 +334,7 @@ initdat     LIT          @TEXT    000386B8  000386B8    00000000    4 BYTES    C
                          @TEXT    0003B8A0  0003B8A0    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(m_misc.obj)
                          @TEXT    0003B8A0  0003B8A0    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(m_nint.obj)
                          @TEXT    0003B8A0  0003B8A0    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(m_sin.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page   7
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page   7
 
 .rodata1    LIT          @TEXT    0003B8A0  0003B8A0    00000000    8 BYTES    C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(malloc.obj)
                          @TEXT    0003B8A0  0003B8A0    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(memcpy.obj)
@@ -390,7 +390,7 @@ initdat     LIT          @TEXT    000386B8  000386B8    00000000    4 BYTES    C
                          @DATA    0003BB58  0003BB58    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dssint.o03)
                          @DATA    0003BB58  0003BB5B    00000004               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmcom.o03)
                          @DATA    0003BB60  0003BB7B    0000001C               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(io1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page   8
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page   8
 
 .data       DATA         @DATA    0003BB80  0003BEFF    00000380    8 BYTES    C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsser.o03)
                          @DATA    0003BF00  0003BF00    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsfifo.o03)
@@ -446,7 +446,7 @@ initdat     LIT          @TEXT    000386B8  000386B8    00000000    4 BYTES    C
                          @DATA    0003C1D0  0003C1D0    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(sysserv.obj)
                          @DATA    0003C1D0  0003C1D0    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(vsnprintf.obj)
                          @DATA    0003C1D0  0003C1D0    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(xftoa.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page   9
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page   9
 
 .data       DATA         @DATA    0003C1D0  0003C1D0    00000000    8 BYTES    C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(m_frexp.obj)
                          @DATA    0003C1D0  0003C1D0    00000000               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(xltoa.obj)
@@ -502,7 +502,7 @@ config_sect  BSS          @DATA    03FF0000  03FFFFFF    00010000    4 BYTES    
                                   0000001B  00000023    00000009               rtGetInf.o03
                                   00000024  0000002C    00000009               rtGetNaN.o03
                                   0000002D  00000035    00000009               rt_nonfinite.o03
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  10
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  10
 
 .libinfo    OTHER                 00000036  0000003E    00000009    4 BYTES    rt_zcfcn.o03
                                   0000003F  00000047    00000009               rti_sim_engine.o03
@@ -558,7 +558,7 @@ config_sect  BSS          @DATA    03FF0000  03FFFFFF    00010000    4 BYTES    
                                   000001D4  000001DB    00000008               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(memmove.obj)
                                   000001DC  000001E3    00000008               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(memset.obj)
                                   000001E4  000001EB    00000008               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(realloc.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  11
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  11
 
 .libinfo    OTHER                 000001EC  000001F3    00000008    4 BYTES    C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(s_exit.obj)
                                   000001F4  000001FB    00000008               C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(cxxconde.obj)
@@ -614,7 +614,7 @@ _c_constructor
 _c_destructor      .text          00035108        
 _denormalize       .text          00035720        
 _ds1104_reset      startup        00003000        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  12
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  12
 
 _exit              startup        000033E4        
 _exit_abort        .text          00036318        
@@ -670,7 +670,7 @@ ds1104_bit_io_init
                    .text          00021E7C        
 ds1104_bit_io_init_with_preset
                    .text          00021EA0        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  13
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  13
 
 ds1104_bit_io_read
                    .text          00021FA4        
@@ -726,7 +726,7 @@ ds1104_inc_position_read
 ds1104_inc_position_read_immediately
                    .text          000221B8        
 ds1104_inc_position_write
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  14
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  14
 
                    .text          000224A0        
 ds1104_inc_set_idxmode
@@ -782,7 +782,7 @@ ds1104_slave_dsp_bit_io_read
                    .text          00026230        
 ds1104_slave_dsp_bit_io_read_new
                    .text          0002627C        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  15
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  15
 
 ds1104_slave_dsp_bit_io_read_register
                    .text          00026124        
@@ -838,7 +838,7 @@ ds1104_slave_dsp_pwm3_start
                    .text          00027C4C        
 ds1104_slave_dsp_pwm3_stop
                    .text          00027C88        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  16
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  16
 
 ds1104_slave_dsp_pwm3sv_duty_write
                    .text          00027B48        
@@ -894,7 +894,7 @@ ds1104_syncin_trigger
                    .text          000214A8        
 ds1104_syncout_edge_setup
                    .text          00021430        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  17
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  17
 
 ds1104_syncout_trigger
                    .text          000214C8        
@@ -950,7 +950,7 @@ dsfifo_clear       .text          00023904
 dsfifo_free        .text          00023948        
 dsfifo_in_count_get
                    .text          0002398C        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  18
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  18
 
 dsfifo_init        .text          00023848        
 dsfifo_read        .text          00023B50        
@@ -1006,7 +1006,7 @@ dsmcom_fifo_error_clear
                    .text          00021080        
 dsmcom_fifo_error_read
                    .text          00021058        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  19
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  19
 
 dsmcom_fifo_init
                    .text          00020B2C        
@@ -1062,7 +1062,7 @@ dsser_error_read
                    .text          000230B0        
 dsser_fifo_realloc
                    .text          00023124        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  20
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  20
 
 dsser_fifo_reset
                    .text          0002320C        
@@ -1118,7 +1118,7 @@ dssint_subint_disable
 dssint_subint_enable
                    .text          0001EF04        
 dssint_subint_reset
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  21
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  21
 
                    .text          0001EF6C        
 dsstd_vcm_register
@@ -1174,7 +1174,7 @@ flash1104_write8
                    .text          0002B9D0        
 floor              .text          00035AE8        
 free               .text          00035178        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  22
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  22
 
 free_global        .text          0002C67C        
 free_global_daq
@@ -1230,7 +1230,7 @@ msg_buffer_get_no_of_entries
 msg_buffer_quit_next_entry
                    .text          0001C104        
 msg_debug_hook_set
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  23
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  23
 
                    .text          0001B520        
 msg_default_dialog_set
@@ -1286,7 +1286,7 @@ ppc_exception_enable
                    .text          0001CBF0        
 ppc_exception_flag_get
                    .text          0001CF70        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  24
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  24
 
 ppc_exception_flag_reset
                    .text          0001CF7C        
@@ -1342,7 +1342,7 @@ rt_ODEUpdateContinuousStates
                    .text          000050C0        
 rt_SimGetNextSampleHit
                    .text          00007570        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  25
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  25
 
 rt_SimInitTimingEngine
                    .text          0000754C        
@@ -1398,7 +1398,7 @@ rtk_adc_eoc4_handler_idle
                    .text          00014034        
 rtk_adc_eoc4_handler_local
                    .text          00013D18        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  26
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  26
 
 rtk_adc_eoc5_disable_fcn
                    .text          00014A58        
@@ -1454,7 +1454,7 @@ rtk_default_overrun_fcn
                    .text          0000D844        
 rtk_define_idle_interrupt
                    .text          0000C634        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  27
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  27
 
 rtk_define_idle_service
                    .text          0000C438        
@@ -1510,7 +1510,7 @@ rtk_ext2_handler_idle
 rtk_ext2_handler_local
                    .text          00011AB8        
 rtk_ext3_disable_fcn
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  28
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  28
 
                    .text          000127F8        
 rtk_ext3_enable_fcn
@@ -1566,7 +1566,7 @@ rtk_ieil2_handler_idle
 rtk_ieil2_handler_local
                    .text          00015F78        
 rtk_init_dec_int
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  29
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  29
 
                    .text          00010BD4        
 rtk_init_ext_int
@@ -1622,7 +1622,7 @@ rtk_service_disable_fcn
                    .text          0000A430        
 rtk_service_enable_fcn
                    .text          0000A3F8        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  30
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  30
 
 rtk_set_task_type
                    .text          0000D874        
@@ -1678,7 +1678,7 @@ rtk_task_task_calls_get
                    .text          0000847C        
 rtk_task_task_name_get
                    .text          00008464        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  31
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  31
 
 rtk_task_user_data_get
                    .text          0000842C        
@@ -1734,7 +1734,7 @@ rtlib_background_hook_process
                    .text          000187BC        
 rtlib_calloc       .text          000188C4        
 rtlib_copy_uuid_to_config_section
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  32
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  32
 
                    .text          00018E60        
 rtlib_free         .text          00018928        
@@ -1790,7 +1790,7 @@ ts_timestamp_read
 ts_timestamp_read_fast
                    .text          0001A2EC        
 unlink             .text          000366C0        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  33
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  33
 
 vcm_cfg_malloc
                    .text          00019D84        
@@ -1846,7 +1846,7 @@ DSFlashEraseSuspendFlag
                    .data          0003BF70        
 DSFlashGlobalExitFlag
                    .data          0003BF5C        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  34
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  34
 
 DSFlashGlobalInit
                    .data          0003BF58        
@@ -1902,7 +1902,7 @@ ds1104_bus_clck
                    .data          0003BB40        
 ds1104_bus_prd
                    .data          0003BB48        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  35
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  35
 
 ds1104_cfg_section
                    .data          0003BB08        
@@ -1958,7 +1958,7 @@ msg_dlg_preset_log
 msg_dlg_preset_warning
                    .data          0003BAF0        
 msg_error_hook
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  36
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  36
 
                    .data          0003BAE0        
 msg_index          .data          0003BAB8        
@@ -2014,7 +2014,7 @@ rtk_dsts_when_idle_mode_was_left
 rtk_end_of_ready_queue
                    .data          0003B9BC        
 rtk_handler_descriptor_table
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  37
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  37
 
                    .data          0003B9CC        
 rtk_hp_registered_task
@@ -2070,7 +2070,7 @@ DSFlashQueueHandle
 DSFlashQueueNum
                    .bss           0003C7B8        
 DSFlashStateHandlePtr
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  38
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  38
 
                    .bss           0003C7D4        
 DsMCmdFunction
@@ -2126,7 +2126,7 @@ __cfg_config_version
 __cfg_config_version_appl
                    config_sect    03FF1768        
 __cfg_cpu_clock
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  39
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  39
 
                    config_sect    03FF0068        
 __cfg_cr_register_dump
@@ -2182,7 +2182,7 @@ __cfg_hostmem_size
 __cfg_hostmem_temp_size
                    config_sect    03FF1740        
 __cfg_iabr         config_sect    03FF03D8        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  40
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  40
 
 __cfg_info_1       config_sect    03FF0078        
 __cfg_key_check_sum
@@ -2238,7 +2238,7 @@ __cfg_msg_offs
 __cfg_pal_error_state
                    config_sect    03FF1624        
 __cfg_pal_program_cycles
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  41
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  41
 
                    config_sect    03FF1628        
 __cfg_pal_revision
@@ -2294,7 +2294,7 @@ _atexit_top        .bss           0003CED0
 _avail             .bss           0003CF00        
 _badlist           .bss           0003CF04        
 _ctbuf             .bss           0003CE10        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  42
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  42
 
 _cxxfini_function
                    .bss           0003CF08        
@@ -2350,7 +2350,7 @@ dsts_vcm_rtlib_ptr
                    .bss           0003C720        
 elog_buffer_index
                    .bss           0003C744        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  43
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  43
 
 elog_buffer_mode
                    .bss           0003C748        
@@ -2406,7 +2406,7 @@ pRti_TIMERA_TCnt
 pRti_TIMERA_TState
                    .bss           0003C5E0        
 pRti_TIMERA_TTime
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  44
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  44
 
                    .bss           0003C5DC        
 ppc_exception_vcm_info
@@ -2462,7 +2462,7 @@ _SDA2_BASE_        (ABSOLUTE)     00000000
 _SDA_BASE_         (ABSOLUTE)     00000000        
 __prelude__        (ABSOLUTE)     00000000        
 _edata             (ABSOLUTE)     0003C1D0        
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  45
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  45
 
 _end               (ABSOLUTE)     0003CF48        
 _etext             (ABSOLUTE)     000386B8        
@@ -2518,7 +2518,7 @@ _exit              startup        - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(s_exit.obj)
 _exit_abort        .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(s_exit.obj)
 _fp_error          .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(m_modf.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  46
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  46
 
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(m_error.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(m_nint.obj)
@@ -2574,7 +2574,7 @@ ds1104_adc_read_ch
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(io1104.o03)
 ds1104_adc_read_ch_immediately
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(io1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  47
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  47
 
 ds1104_adc_read_conv
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(io1104.o03)
@@ -2630,7 +2630,7 @@ ds1104_enable_hardware_int
                    .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(int1104.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(ser1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  48
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  48
 
 ds1104_exit        .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(init1104.o03)
 ds1104_get_interrupt_flag
@@ -2686,7 +2686,7 @@ ds1104_inc_trigger_setup
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(io1104.o03)
 ds1104_init        .text          rti_init_c.o03
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(init1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  49
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  49
 
 ds1104_pal_state_get
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(init1104.o03)
@@ -2742,7 +2742,7 @@ ds1104_set_interrupt_status
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmem.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(hostsvc.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(mastserv.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  50
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  50
 
 ds1104_set_interrupt_vector
                    .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
@@ -2798,7 +2798,7 @@ ds1104_slave_dsp_firmware_rev_read
 ds1104_slave_dsp_pwm2d_init
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(slvdsp1104.o03)
 ds1104_slave_dsp_pwm2d_read
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  51
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  51
 
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(slvdsp1104.o03)
 ds1104_slave_dsp_pwm2d_read_register
@@ -2854,7 +2854,7 @@ ds1104_slave_dsp_subint_request
 ds1104_slave_dsp_user_firmware_rev_read
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(slvdsp1104.o03)
 ds1104_slave_dsp_usrfct_data_read
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  52
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  52
 
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(slvdsp1104.o03)
 ds1104_slave_dsp_usrfct_execute
@@ -2910,7 +2910,7 @@ ds1104_timer1_start
 ds1104_timer1_stop
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(tmr1104.o03)
 ds1104_timer2_period_reload
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  53
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  53
 
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(tmr1104.o03)
 ds1104_timer2_period_set
@@ -2966,7 +2966,7 @@ dsfifo_read_term
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsfifo.o03)
 dsfifo_write       .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsfifo.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(ser1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  54
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  54
 
 dsflash_appl_switch_position_get
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsflash.obj)
@@ -3022,7 +3022,7 @@ dsmcom_fifo_error_clear
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmcom.o03)
 dsmcom_fifo_error_read
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmcom.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  55
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  55
 
 dsmcom_fifo_init
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmcom.o03)
@@ -3078,7 +3078,7 @@ dsmem_init_daq
 dsmem_vcm_register
                    .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(init1104.o03)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmem.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  56
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  56
 
 dsser_bytes2word
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsser.o03)
@@ -3134,7 +3134,7 @@ dssint_acknowledge
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dssint.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(slvdsp1104.o03)
 dssint_decode      .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  57
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  57
 
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dssint.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(slvdsp1104.o03)
@@ -3190,7 +3190,7 @@ exit               .text          rti_sim_engine.o03
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(hostsvc.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(mastserv.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  58
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  58
 
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(ppcstack.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(PpcSysStart.obj)
@@ -3246,7 +3246,7 @@ free               .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS
 free_global        .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dselog.o03)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmem.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(mastserv.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  59
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  59
 
 free_global_daq
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmem.obj)
@@ -3302,7 +3302,7 @@ memcpy             .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsflash.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(mastserv.obj)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(memcpy.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  60
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  60
 
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(memmove.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(realloc.obj)
@@ -3358,7 +3358,7 @@ msg_error_printf
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(init1104.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsser.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(slvdsp1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  61
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  61
 
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsflash.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(ppcstack.o03)
@@ -3414,7 +3414,7 @@ msg_warning_printf
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsserver.obj)
 msg_warning_set
                    .text          rti_slv1104.o03
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  62
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  62
 
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmsg.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(init1104.o03)
@@ -3470,7 +3470,7 @@ ppc_text_section_start_get
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(ppcstack.o03)
 ppc_total_exception_count_get
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(ppcexc.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  63
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  63
 
 ppc_write_backtrace
                    .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(init1104.o03)
@@ -3526,7 +3526,7 @@ rti_slv1104_init_fcn_index
                                   - rti_slv1104.o03
 rti_slv1104_taskqueue_error_all_check
                    .text          rti_sim_engine.o03
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  64
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  64
 
                                   - rti_slv1104.o03
 rti_slv1104_taskqueue_error_all_reset
@@ -3582,7 +3582,7 @@ rtk_background_enter_hook_fcn_set
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
 rtk_background_leave_hook_fcn_set
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  65
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  65
 
 rtk_bind_interrupt
                    .text          rti_sim_engine.o03
@@ -3638,7 +3638,7 @@ rtk_define_subint_mode
 rtk_define_subint_mode_si
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
 rtk_disable_services
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  66
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  66
 
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
 rtk_dispatch_int
@@ -3694,7 +3694,7 @@ rtk_ext3_handler_idle
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
 rtk_ext3_handler_local
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  67
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  67
 
 rtk_get_hook_service
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
@@ -3750,7 +3750,7 @@ rtk_init_ext_int
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
 rtk_init_predefined_services
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  68
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  68
 
 rtk_init_slave_int
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
@@ -3806,7 +3806,7 @@ rtk_service_enable_fcn
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
 rtk_set_task_type
                    .text          rti_sim_engine.o03
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  69
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  69
 
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
 rtk_setup_overrun_handling
@@ -3862,7 +3862,7 @@ rtk_task_task_calls_get
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
 rtk_task_task_name_get
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  70
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  70
 
 rtk_task_user_data_get
                    .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
@@ -3918,7 +3918,7 @@ rtlib_background_hook
 rtlib_background_hook_process
                    .text          rti_sim_engine.o03
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsstd.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  71
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  71
 
 rtlib_calloc       .text          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsstd.o03)
 rtlib_copy_uuid_to_config_section
@@ -3974,7 +3974,7 @@ strlen             .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS
 strncpy            .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsstd.o03)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(strncpy.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  72
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  72
 
 strtol             .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(atoi.obj)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(strtol.obj)
@@ -4030,7 +4030,7 @@ vcm_cfg_malloc
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsvcm.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsts.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(ppcexc.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  73
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  73
 
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dselog.o03)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmcom.o03)
@@ -4086,7 +4086,7 @@ vcm_module_register
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmem.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(hostsvc.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(mastserv.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  74
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  74
 
 vcm_module_status_get
                    .text          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsstd.o03)
@@ -4142,7 +4142,7 @@ DSFlashCmdResultMax
                    .data          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsflash.obj)
 DSFlashCommand
                    .data          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsflash.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  75
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  75
 
 DSFlashCommandRequest
                    .data          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsflash.obj)
@@ -4198,7 +4198,7 @@ _DS_HEAP           .data          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
 _DS_HEAP_END       .data          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmem.obj)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  76
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  76
 
 _DS_HEAP_START
                    .data          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmem.obj)
@@ -4254,7 +4254,7 @@ _syshost_xfer_buffer
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(sysxfer.obj)
 ds1104_bus_clck
                    .data          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(init1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  77
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  77
 
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(tmr1104.o03)
 ds1104_bus_prd
@@ -4310,7 +4310,7 @@ ds1104_tmr_frq
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(tmr1104.o03)
 ds1104_tmr_prd
                    .data          C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(init1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  78
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  78
 
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(tmr1104.o03)
 ds_num_cpu         .data          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(mastserv.obj)
@@ -4366,7 +4366,7 @@ p_0_motor_io_real_T_0
                    .data          motor_io.o03
                                   - motor_io_trc_ptr.o03
 p_1_motor_io_real_T_0
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  79
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  79
 
                    .data          motor_io.o03
                                   - motor_io_trc_ptr.o03
@@ -4422,7 +4422,7 @@ rtk_hp_registered_task
 rtk_idle_data      .data          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
 rtk_interrupt_descriptor_table
                    .data          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  80
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  80
 
 rtk_new_service
                    .data          - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
@@ -4478,7 +4478,7 @@ DSFlashStateHandlePtr
 DsMCmdFunction
                    .bss           - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(mastserv.obj)
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsserver.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  81
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  81
 
 HostServiceStruct
                    .bss           rti_sim_engine.o03
@@ -4534,7 +4534,7 @@ __cfg_config_section_valid_word
 __cfg_config_version
                    config_sect    - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
 __cfg_config_version_appl
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  82
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  82
 
                    config_sect    - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
 __cfg_cpu_clock
@@ -4590,7 +4590,7 @@ __cfg_host_time
                    config_sect    - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
 __cfg_hostmem_size
                    config_sect    C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(flash1104.obj)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  83
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  83
 
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
 __cfg_hostmem_temp_size
@@ -4646,7 +4646,7 @@ __cfg_memptr_malloc_start
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dsmem.obj)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
 __cfg_memptr_program_end
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  84
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  84
 
                    config_sect    C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(flash1104.obj)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
@@ -4702,7 +4702,7 @@ __cfg_vcm_max_name_length
 __cfg_vcm_num_modules
                    config_sect    - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
 __cfg_vcm_valid_word
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  85
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  85
 
                    config_sect    - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(crt0.obj)
 __cfg_vcm_version_high
@@ -4758,7 +4758,7 @@ ds1104_isr_status_timer2
 ds1104_isr_status_timer3
                    .bss           - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(int1104.o03)
 dssint_slvdsp_fw_receiver
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  86
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  86
 
                    .bss           C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(slvdsp1104.o03)
@@ -4814,7 +4814,7 @@ elog_current_category
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dselog.o03)
 elog_event_count
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  87
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  87
 
                    .bss           C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTKernel\rtk1104.lib(rtk1104.o03)
                                   - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(dselog.o03)
@@ -4870,7 +4870,7 @@ pRti_TIMERA_TTime
                    .bss           - rti_sim_engine.o03
 ppc_exception_vcm_info
                    .bss           - C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(ppcexc.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  88
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  88
 
 rtInf              .bss           - rt_nonfinite.o03
 rtInfF             .bss           - rt_nonfinite.o03
@@ -4926,7 +4926,7 @@ slvdsp1104_pwm_period
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\Compiler\PPCTools\LIB\mppchb.lib(ccondes.obj)
 .text.sizeof       (ABSOLUTE)     LINKER-DEFINED
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(ppcexc.o03)
-Microtec LNKPPC V3.7.7          Wed Mar 30 14:02:31 2016  Page  89
+Microtec LNKPPC V3.7.7          Wed Apr 06 14:40:43 2016  Page  89
 
                                   C:\Program Files (x86)\dSPACE RCPHIL 2014-B\DS1104\RTLib\ds1104.lib(ppcstack.o03)
 CONFIG_SIZE        (ABSOLUTE)     USER-DEFINED

@@ -1,0 +1,145 @@
+-- ******** Tunable Parameters ************************************************
+
+group "Tunable Parameters"
+{
+ flags: COLLAPSED
+}
+
+	p_1_motor_io_position_new_real_T_0[0]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "F_c"
+	 flags:   PARAM
+	}
+	p_1_motor_io_position_new_real_T_0[1]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "F_c_upper"
+	 flags:   PARAM
+	}
+	p_1_motor_io_position_new_real_T_0[2]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "J1"
+	 flags:   PARAM
+	}
+	p_1_motor_io_position_new_real_T_0[3]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "Kb"
+	 flags:   PARAM
+	}
+	p_1_motor_io_position_new_real_T_0[4]
+	{
+	 type:    motor_io_position_new_ArrayDT0_3*
+	 alias:   "R_sim"
+	 flags:   PARAM
+	}
+	p_1_motor_io_position_new_real_T_0[7]
+	{
+	 type:    motor_io_position_new_ArrayDT0_3*
+	 alias:   "S_sim"
+	 flags:   PARAM
+	}
+	p_1_motor_io_position_new_real_T_0[10]
+	{
+	 type:    motor_io_position_new_ArrayDT0_3*
+	 alias:   "T_sim"
+	 flags:   PARAM
+	}
+	p_1_motor_io_position_new_real_T_0[13]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "c0"
+	 flags:   PARAM
+	}
+	p_1_motor_io_position_new_real_T_0[14]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "c0_"
+	 flags:   PARAM
+	}
+	p_1_motor_io_position_new_real_T_0[15]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "quant"
+	 flags:   PARAM
+	}
+
+endgroup
+
+
+-- ******** State Machine Data ************************************************
+
+-- No Stateflow chart within the model.
+
+
+-- ******** Data Store Memories ***********************************************
+
+-- No Data Store Memories within the model.
+
+
+-- ******** Labels ************************************************************
+
+group "Labels"
+{
+ flags: COLLAPSED
+}
+	p_0_motor_io_position_new_boolean_T_1[1]
+	{
+	 type:    uint(8)*
+	 alias:   "Activator"
+	 bitmask: 0x01
+	 range:   < 0 ; 1 >
+	 origin:  "motor_io_position_new/DC motor/Karnop friction1/Velocity threshold\n/y"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_position_new_real_T_0[62]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "Friction"
+	 origin:  "motor_io_position_new/DC motor/Karnop friction1/Switch/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_position_new_real_T_0[56]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "Stick slip region\n"
+	 origin:  "motor_io_position_new/DC motor/Karnop friction1/Saturate to Fc/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_position_new_real_T_0[52]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "Velocity"
+	 origin:  "motor_io_position_new/DC motor/Karnop friction1/Angular \nvelcoity/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_position_new_real_T_0[61]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "Viscous region"
+	 origin:  "motor_io_position_new/DC motor/Karnop friction1/Add/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_position_new_real_T_0[42]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "Volt"
+	 origin:  "motor_io_position_new/PWM/Saturation/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_0_motor_io_position_new_real_T_0[37]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "ref"
+	 origin:  "motor_io_position_new/Switch/Out1"
+	 flags:   LABEL|READONLY
+	}
+
+endgroup
+
+-- ******** RTT Dynamic Variables *********************************************
+
+-- Generation of RTT Dynamic Variables turned off with EnableRealTimeTesting option.
+

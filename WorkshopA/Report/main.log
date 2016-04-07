@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.16)  6 APR 2016 18:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.16)  7 APR 2016 01:56
 entering extended mode
 **./main.tex
 (main.tex
@@ -513,16 +513,29 @@ File: fig/l2_sin_a5_f1.png Graphic file (type png)
 Package pdftex.def Info: fig/l2_sin_a5_f1.png used on input line 153.
 (pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
 [3 <./fig/l2_sq_a5_f016_fcTuned.png (PNG copy)> <./fig/l2_sq_a24_f016_fcTuned.p
-ng (PNG copy)>] [4 <./fig/l2_sin_a5_f1.png (PNG copy)>]
+ng (PNG copy)>]
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   t
+l.202 belowcaptionskip=1\baselineskip,to
+                                         simplify the equations.
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+[4 <./fig/l2_sin_a5_f1.png (PNG copy)>]
 ! Double subscript.
-l.215 _
+l.217 _
        \end{equation}
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Missing { inserted.
 <to be read again> 
                    \gdef 
-l.215 _\end{equation}
+l.217 _\end{equation}
                      
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -532,7 +545,7 @@ so that I will find a matching right brace soon.
 ! You can't use `\eqno' in math mode.
 \endmathdisplay@a ...\df@tag \@empty \else \veqno 
                                                   \alt@tag \df@tag \fi \ifx ...
-l.215 _\end{equation}
+l.217 _\end{equation}
                      
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -542,7 +555,7 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.215 _\end{equation}
+l.217 _\end{equation}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -550,71 +563,72 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
-
- []
-
 <fig/T2_a50_f05.png, id=31, 526.96875pt x 395.22656pt>
 File: fig/T2_a50_f05.png Graphic file (type png)
 <use fig/T2_a50_f05.png>
-Package pdftex.def Info: fig/T2_a50_f05.png used on input line 258.
+Package pdftex.def Info: fig/T2_a50_f05.png used on input line 267.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 <fig/T2_V_a50_f05.png, id=32, 526.96875pt x 395.22656pt>
 File: fig/T2_V_a50_f05.png Graphic file (type png)
 <use fig/T2_V_a50_f05.png>
-Package pdftex.def Info: fig/T2_V_a50_f05.png used on input line 263.
+Package pdftex.def Info: fig/T2_V_a50_f05.png used on input line 272.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-<fig/T2_a10_f02.png, id=34, 526.96875pt x 395.22656pt>
+<fig/T2_a50_f05_ss.png, id=34, 526.96875pt x 395.22656pt>
+File: fig/T2_a50_f05_ss.png Graphic file (type png)
+<use fig/T2_a50_f05_ss.png>
+Package pdftex.def Info: fig/T2_a50_f05_ss.png used on input line 285.
+(pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
+[5 <./fig/T2_a50_f05.png (PNG copy)> <./fig/T2_V_a50_f05.png>] <fig/T2_a10_f02.
+png, id=41, 526.96875pt x 395.22656pt>
 File: fig/T2_a10_f02.png Graphic file (type png)
 <use fig/T2_a10_f02.png>
-Package pdftex.def Info: fig/T2_a10_f02.png used on input line 275.
+Package pdftex.def Info: fig/T2_a10_f02.png used on input line 294.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-<fig/T2_V_a10_f02.png, id=35, 526.96875pt x 395.22656pt>
+<fig/T2_V_a10_f02.png, id=42, 526.96875pt x 395.22656pt>
 File: fig/T2_V_a10_f02.png Graphic file (type png)
 <use fig/T2_V_a10_f02.png>
-Package pdftex.def Info: fig/T2_V_a10_f02.png used on input line 280.
+Package pdftex.def Info: fig/T2_V_a10_f02.png used on input line 299.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-[5 <./fig/T2_a50_f05.png (PNG copy)> <./fig/T2_V_a50_f05.png>] <fig/T2_a10_f02_
-load.png, id=42, 526.96875pt x 395.22656pt>
+<fig/T2_a10_f02_load.png, id=43, 526.96875pt x 395.22656pt>
 File: fig/T2_a10_f02_load.png Graphic file (type png)
 <use fig/T2_a10_f02_load.png>
-Package pdftex.def Info: fig/T2_a10_f02_load.png used on input line 292.
+Package pdftex.def Info: fig/T2_a10_f02_load.png used on input line 312.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-<fig/T2_V_a10_f02_load.png, id=43, 526.96875pt x 395.22656pt>
+<fig/T2_V_a10_f02_load.png, id=44, 526.96875pt x 395.22656pt>
 File: fig/T2_V_a10_f02_load.png Graphic file (type png)
 <use fig/T2_V_a10_f02_load.png>
-Package pdftex.def Info: fig/T2_V_a10_f02_load.png used on input line 297.
+Package pdftex.def Info: fig/T2_V_a10_f02_load.png used on input line 317.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-[6 <./fig/T2_a10_f02.png (PNG copy)> <./fig/T2_V_a10_f02.png (PNG copy)> <./fig
-/T2_a10_f02_load.png (PNG copy)> <./fig/T2_V_a10_f02_load.png (PNG copy)>] (mai
-n.aux) ) 
+[6 <./fig/T2_a50_f05_ss.png (PNG copy)> <./fig/T2_a10_f02.png (PNG copy)> <./fi
+g/T2_V_a10_f02.png (PNG copy)> <./fig/T2_a10_f02_load.png (PNG copy)> <./fig/T2
+_V_a10_f02_load.png (PNG copy)>] [7] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 4420 strings out of 493634
- 62848 string characters out of 3141316
+ 4427 strings out of 493634
+ 62999 string characters out of 3141316
  136436 words of memory out of 3000000
- 7739 multiletter control sequences out of 15000+200000
+ 7745 multiletter control sequences out of 15000+200000
  12866 words of font info for 50 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  42i,8n,40p,270b,443s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx1
-2.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on C:/Users/Lamn/Desktop/MF2007/WorkshopA/Report/main.pdf (6 pag
-es, 445825 bytes).
+<C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmtt12.pfb>
+Output written on C:/Users/Lamn/Desktop/MF2007/WorkshopA/Report/main.pdf (7 pag
+es, 480038 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
+ 96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

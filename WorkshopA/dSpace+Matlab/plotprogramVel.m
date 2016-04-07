@@ -4,7 +4,7 @@ close all, clear all, clc
 % Collect data
 load('./Datafiles/VelocityController/sin_amp10_freq02.mat');
 x = sin_amp10_freq02.X(:,1);
-y1 = sin_amp10_freq02.Y(:,1);
+y1 = sin_amp10_freq02.Y(:,3);
 y2 = sin_amp10_freq02.Y(:,2);
 
 % Plotting
@@ -19,7 +19,7 @@ xlabel('Time')
 % Collect data
 load('./Datafiles/VelocityController/sin_amp10_freq02_HOLD.mat');
 x = sin_amp10_freq02_HOLD.X(:,1);
-y1 = sin_amp10_freq02_HOLD.Y(:,1);
+y1 = sin_amp10_freq02_HOLD.Y(:,3);
 y2 = sin_amp10_freq02_HOLD.Y(:,2);
 
 % Plotting
