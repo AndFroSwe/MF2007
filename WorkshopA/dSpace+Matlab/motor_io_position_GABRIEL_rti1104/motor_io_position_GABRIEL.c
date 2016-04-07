@@ -5,7 +5,7 @@
  *
  * Model version              : 1.29
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Wed Apr 06 18:23:15 2016
+ * C source code generated on : Thu Apr 07 03:37:21 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -136,52 +136,52 @@ void motor_io_position_GABRIEL_output(void)
 
   /* End of Switch: '<Root>/Switch' */
   if (rtmIsMajorTimeStep(motor_io_position_GABRIEL_M)) {
-    /* DiscreteTransferFcn: '<S2>/Gff' */
+    /* DiscreteTransferFcn: '<S1>/Gff1' */
     temp = motor_io_position_GABRIEL_B.ref;
-    temp -= motor_io_position_GABRIEL_P.R_sim[1] *
-      motor_io_position_GABRIEL_DW.Gff_states[0];
-    temp -= motor_io_position_GABRIEL_P.R_sim[2] *
-      motor_io_position_GABRIEL_DW.Gff_states[1];
-    temp /= motor_io_position_GABRIEL_P.R_sim[0];
-    motor_io_position_GABRIEL_DW.Gff_tmp = temp;
-    temp = motor_io_position_GABRIEL_P.T_sim[0] *
-      motor_io_position_GABRIEL_DW.Gff_tmp;
-    temp += motor_io_position_GABRIEL_P.T_sim[1] *
-      motor_io_position_GABRIEL_DW.Gff_states[0];
-    temp += motor_io_position_GABRIEL_P.T_sim[2] *
-      motor_io_position_GABRIEL_DW.Gff_states[1];
-    motor_io_position_GABRIEL_B.Gff = temp;
+    temp -= motor_io_position_GABRIEL_P.Gff1_DenCoef[1] *
+      motor_io_position_GABRIEL_DW.Gff1_states[0];
+    temp -= motor_io_position_GABRIEL_P.Gff1_DenCoef[2] *
+      motor_io_position_GABRIEL_DW.Gff1_states[1];
+    temp /= motor_io_position_GABRIEL_P.Gff1_DenCoef[0];
+    motor_io_position_GABRIEL_DW.Gff1_tmp = temp;
+    temp = motor_io_position_GABRIEL_P.Gff1_NumCoef[0] *
+      motor_io_position_GABRIEL_DW.Gff1_tmp;
+    temp += motor_io_position_GABRIEL_P.Gff1_NumCoef[1] *
+      motor_io_position_GABRIEL_DW.Gff1_states[0];
+    temp += motor_io_position_GABRIEL_P.Gff1_NumCoef[2] *
+      motor_io_position_GABRIEL_DW.Gff1_states[1];
+    motor_io_position_GABRIEL_B.Gff1 = temp;
 
-    /* S-Function (rti_commonblock): '<S14>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S15>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
-    /* Gain: '<S6>/fi1_scaling' */
+    /* Gain: '<S7>/fi1_scaling' */
     motor_io_position_GABRIEL_B.fi1_scaling =
       motor_io_position_GABRIEL_P.fi1_scaling_Gain *
       motor_io_position_GABRIEL_B.SFunction1;
 
-    /* DiscreteTransferFcn: '<S2>/Gfb' */
+    /* DiscreteTransferFcn: '<S1>/Gff2' */
     temp = motor_io_position_GABRIEL_B.fi1_scaling;
-    temp -= motor_io_position_GABRIEL_P.R_sim[1] *
-      motor_io_position_GABRIEL_DW.Gfb_states[0];
-    temp -= motor_io_position_GABRIEL_P.R_sim[2] *
-      motor_io_position_GABRIEL_DW.Gfb_states[1];
-    temp /= motor_io_position_GABRIEL_P.R_sim[0];
-    motor_io_position_GABRIEL_DW.Gfb_tmp = temp;
-    temp = motor_io_position_GABRIEL_P.S_sim[0] *
-      motor_io_position_GABRIEL_DW.Gfb_tmp;
-    temp += motor_io_position_GABRIEL_P.S_sim[1] *
-      motor_io_position_GABRIEL_DW.Gfb_states[0];
-    temp += motor_io_position_GABRIEL_P.S_sim[2] *
-      motor_io_position_GABRIEL_DW.Gfb_states[1];
-    motor_io_position_GABRIEL_B.Gfb = temp;
+    temp -= motor_io_position_GABRIEL_P.Gff2_DenCoef[1] *
+      motor_io_position_GABRIEL_DW.Gff2_states[0];
+    temp -= motor_io_position_GABRIEL_P.Gff2_DenCoef[2] *
+      motor_io_position_GABRIEL_DW.Gff2_states[1];
+    temp /= motor_io_position_GABRIEL_P.Gff2_DenCoef[0];
+    motor_io_position_GABRIEL_DW.Gff2_tmp = temp;
+    temp = motor_io_position_GABRIEL_P.Gff2_NumCoef[0] *
+      motor_io_position_GABRIEL_DW.Gff2_tmp;
+    temp += motor_io_position_GABRIEL_P.Gff2_NumCoef[1] *
+      motor_io_position_GABRIEL_DW.Gff2_states[0];
+    temp += motor_io_position_GABRIEL_P.Gff2_NumCoef[2] *
+      motor_io_position_GABRIEL_DW.Gff2_states[1];
+    motor_io_position_GABRIEL_B.Gff2 = temp;
 
-    /* Sum: '<S2>/Sum1' */
-    motor_io_position_GABRIEL_B.Sum1 = motor_io_position_GABRIEL_B.Gff -
-      motor_io_position_GABRIEL_B.Gfb;
+    /* Sum: '<S1>/Sum2' */
+    motor_io_position_GABRIEL_B.Sum2 = motor_io_position_GABRIEL_B.Gff1 -
+      motor_io_position_GABRIEL_B.Gff2;
 
-    /* Saturate: '<S2>/Saturation' */
-    temp = motor_io_position_GABRIEL_B.Sum1;
+    /* Saturate: '<S1>/Saturation' */
+    temp = motor_io_position_GABRIEL_B.Sum2;
     u1 = motor_io_position_GABRIEL_P.Saturation_LowerSat;
     u2 = motor_io_position_GABRIEL_P.Saturation_UpperSat;
     if (temp > u2) {
@@ -192,7 +192,7 @@ void motor_io_position_GABRIEL_output(void)
       motor_io_position_GABRIEL_B.Saturation = temp;
     }
 
-    /* End of Saturate: '<S2>/Saturation' */
+    /* End of Saturate: '<S1>/Saturation' */
 
     /* Gain: '<Root>/Gain' */
     motor_io_position_GABRIEL_B.Gain = motor_io_position_GABRIEL_P.Gain_Gain *
@@ -223,20 +223,20 @@ void motor_io_position_GABRIEL_output(void)
     motor_io_position_GABRIEL_B.Sum = motor_io_position_GABRIEL_B.pwm_skalning +
       motor_io_position_GABRIEL_P.pwm_offstet_Value;
 
-    /* S-Function (rti_commonblock): '<S10>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S11>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
     /* dSPACE I/O Board DS1104 #1 Unit:PWM Group:PWM */
     ds1104_slave_dsp_pwm_duty_write(0, rti_slv1104_fcn_index[6],
       motor_io_position_GABRIEL_B.Sum);
 
-    /* S-Function (rti_commonblock): '<S10>/S-Function2' */
+    /* S-Function (rti_commonblock): '<S11>/S-Function2' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S10>/S-Function3' */
+    /* S-Function (rti_commonblock): '<S11>/S-Function3' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S10>/S-Function4' */
+    /* S-Function (rti_commonblock): '<S11>/S-Function4' */
     /* This comment workarounds a code generation problem */
 
     /* DataTypeConversion: '<S4>/Data Type Conversion' incorporates:
@@ -245,7 +245,7 @@ void motor_io_position_GABRIEL_output(void)
     motor_io_position_GABRIEL_B.DataTypeConversion =
       (motor_io_position_GABRIEL_P.Enable1_Off0_On_Value != 0.0);
 
-    /* S-Function (rti_commonblock): '<S9>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S10>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
     /* dSPACE I/O Board DS1104 #1 Unit:BIT_IO Group:BIT_OUT */
@@ -254,66 +254,70 @@ void motor_io_position_GABRIEL_output(void)
     } else {
       ds1104_bit_io_clear(DS1104_DIO0);
     }
+
+    /* DiscreteTransferFcn: '<S2>/Gff1' */
+    temp = motor_io_position_GABRIEL_B.ref;
+    temp -= motor_io_position_GABRIEL_P.Gff1_DenCoef_j[1] *
+      motor_io_position_GABRIEL_DW.Gff1_states_k[0];
+    temp -= motor_io_position_GABRIEL_P.Gff1_DenCoef_j[2] *
+      motor_io_position_GABRIEL_DW.Gff1_states_k[1];
+    temp /= motor_io_position_GABRIEL_P.Gff1_DenCoef_j[0];
+    motor_io_position_GABRIEL_DW.Gff1_tmp_n = temp;
+    temp = motor_io_position_GABRIEL_P.Gff1_NumCoef_e[0] *
+      motor_io_position_GABRIEL_DW.Gff1_tmp_n;
+    temp += motor_io_position_GABRIEL_P.Gff1_NumCoef_e[1] *
+      motor_io_position_GABRIEL_DW.Gff1_states_k[0];
+    temp += motor_io_position_GABRIEL_P.Gff1_NumCoef_e[2] *
+      motor_io_position_GABRIEL_DW.Gff1_states_k[1];
+    motor_io_position_GABRIEL_B.Gff1_f = temp;
   }
 
   /* Integrator: '<S3>/Integrator1' */
   motor_io_position_GABRIEL_B.Integrator1 =
     motor_io_position_GABRIEL_X.Integrator1_CSTATE;
 
-  /* Quantizer: '<Root>/Quantizer' */
+  /* Quantizer: '<S6>/Quantizer' */
   temp = motor_io_position_GABRIEL_B.Integrator1;
   motor_io_position_GABRIEL_B.Quantizer = rt_roundd_snf(temp /
     motor_io_position_GABRIEL_P.quant) * motor_io_position_GABRIEL_P.quant;
   if (rtmIsMajorTimeStep(motor_io_position_GABRIEL_M)) {
-    /* DiscreteTransferFcn: '<S1>/Gfb' */
-    temp = motor_io_position_GABRIEL_B.Quantizer;
-    temp -= motor_io_position_GABRIEL_P.R_sim[1] *
-      motor_io_position_GABRIEL_DW.Gfb_states_p[0];
-    temp -= motor_io_position_GABRIEL_P.R_sim[2] *
-      motor_io_position_GABRIEL_DW.Gfb_states_p[1];
-    temp /= motor_io_position_GABRIEL_P.R_sim[0];
-    motor_io_position_GABRIEL_DW.Gfb_tmp_l = temp;
-    temp = motor_io_position_GABRIEL_P.S_sim[0] *
-      motor_io_position_GABRIEL_DW.Gfb_tmp_l;
-    temp += motor_io_position_GABRIEL_P.S_sim[1] *
-      motor_io_position_GABRIEL_DW.Gfb_states_p[0];
-    temp += motor_io_position_GABRIEL_P.S_sim[2] *
-      motor_io_position_GABRIEL_DW.Gfb_states_p[1];
-    motor_io_position_GABRIEL_B.Gfb_k = temp;
+    /* ZeroOrderHold: '<S6>/Zero-Order Hold' */
+    motor_io_position_GABRIEL_B.ZeroOrderHold =
+      motor_io_position_GABRIEL_B.Quantizer;
 
-    /* DiscreteTransferFcn: '<S1>/Gff' */
-    temp = motor_io_position_GABRIEL_B.ref;
-    temp -= motor_io_position_GABRIEL_P.R_sim[1] *
-      motor_io_position_GABRIEL_DW.Gff_states_c[0];
-    temp -= motor_io_position_GABRIEL_P.R_sim[2] *
-      motor_io_position_GABRIEL_DW.Gff_states_c[1];
-    temp /= motor_io_position_GABRIEL_P.R_sim[0];
-    motor_io_position_GABRIEL_DW.Gff_tmp_b = temp;
-    temp = motor_io_position_GABRIEL_P.T_sim[0] *
-      motor_io_position_GABRIEL_DW.Gff_tmp_b;
-    temp += motor_io_position_GABRIEL_P.T_sim[1] *
-      motor_io_position_GABRIEL_DW.Gff_states_c[0];
-    temp += motor_io_position_GABRIEL_P.T_sim[2] *
-      motor_io_position_GABRIEL_DW.Gff_states_c[1];
-    motor_io_position_GABRIEL_B.Gff_b = temp;
+    /* DiscreteTransferFcn: '<S2>/Gff2' */
+    temp = motor_io_position_GABRIEL_B.ZeroOrderHold;
+    temp -= motor_io_position_GABRIEL_P.Gff2_DenCoef_d[1] *
+      motor_io_position_GABRIEL_DW.Gff2_states_b[0];
+    temp -= motor_io_position_GABRIEL_P.Gff2_DenCoef_d[2] *
+      motor_io_position_GABRIEL_DW.Gff2_states_b[1];
+    temp /= motor_io_position_GABRIEL_P.Gff2_DenCoef_d[0];
+    motor_io_position_GABRIEL_DW.Gff2_tmp_h = temp;
+    temp = motor_io_position_GABRIEL_P.Gff2_NumCoef_a[0] *
+      motor_io_position_GABRIEL_DW.Gff2_tmp_h;
+    temp += motor_io_position_GABRIEL_P.Gff2_NumCoef_a[1] *
+      motor_io_position_GABRIEL_DW.Gff2_states_b[0];
+    temp += motor_io_position_GABRIEL_P.Gff2_NumCoef_a[2] *
+      motor_io_position_GABRIEL_DW.Gff2_states_b[1];
+    motor_io_position_GABRIEL_B.Gff2_g = temp;
 
-    /* Sum: '<S1>/Sum1' */
-    motor_io_position_GABRIEL_B.Sum1_h = motor_io_position_GABRIEL_B.Gff_b -
-      motor_io_position_GABRIEL_B.Gfb_k;
+    /* Sum: '<S2>/Sum2' */
+    motor_io_position_GABRIEL_B.Sum2_d = motor_io_position_GABRIEL_B.Gff1_f -
+      motor_io_position_GABRIEL_B.Gff2_g;
 
-    /* Saturate: '<S1>/Saturation' */
-    temp = motor_io_position_GABRIEL_B.Sum1_h;
-    u1 = motor_io_position_GABRIEL_P.Saturation_LowerSat_c;
-    u2 = motor_io_position_GABRIEL_P.Saturation_UpperSat_lx;
+    /* Saturate: '<S2>/Saturation' */
+    temp = motor_io_position_GABRIEL_B.Sum2_d;
+    u1 = motor_io_position_GABRIEL_P.Saturation_LowerSat_b;
+    u2 = motor_io_position_GABRIEL_P.Saturation_UpperSat_f;
     if (temp > u2) {
-      motor_io_position_GABRIEL_B.Saturation_f = u2;
+      motor_io_position_GABRIEL_B.Saturation_o = u2;
     } else if (temp < u1) {
-      motor_io_position_GABRIEL_B.Saturation_f = u1;
+      motor_io_position_GABRIEL_B.Saturation_o = u1;
     } else {
-      motor_io_position_GABRIEL_B.Saturation_f = temp;
+      motor_io_position_GABRIEL_B.Saturation_o = temp;
     }
 
-    /* End of Saturate: '<S1>/Saturation' */
+    /* End of Saturate: '<S2>/Saturation' */
   }
 
   /* Integrator: '<S3>/Integrator' */
@@ -325,14 +329,14 @@ void motor_io_position_GABRIEL_output(void)
     motor_io_position_GABRIEL_B.Integrator;
 
   /* Sum: '<S3>/Add' */
-  motor_io_position_GABRIEL_B.Add = motor_io_position_GABRIEL_B.Saturation_f -
+  motor_io_position_GABRIEL_B.Add = motor_io_position_GABRIEL_B.Saturation_o -
     motor_io_position_GABRIEL_B.Gain1;
 
   /* Gain: '<S3>/k//R ' */
   motor_io_position_GABRIEL_B.kR = motor_io_position_GABRIEL_P.kR_Gain *
     motor_io_position_GABRIEL_B.Add;
 
-  /* Saturate: '<S7>/Saturate to Fc' */
+  /* Saturate: '<S8>/Saturate to Fc' */
   temp = motor_io_position_GABRIEL_B.kR;
   u1 = motor_io_position_GABRIEL_P.SaturatetoFc_LowerSat;
   u2 = motor_io_position_GABRIEL_P.F_c_upper;
@@ -344,23 +348,23 @@ void motor_io_position_GABRIEL_output(void)
     motor_io_position_GABRIEL_B.Stickslipregion = temp;
   }
 
-  /* End of Saturate: '<S7>/Saturate to Fc' */
+  /* End of Saturate: '<S8>/Saturate to Fc' */
 
-  /* Abs: '<S7>/Abs' */
+  /* Abs: '<S8>/Abs' */
   motor_io_position_GABRIEL_B.Abs = fabs(motor_io_position_GABRIEL_B.Integrator);
 
-  /* RelationalOperator: '<S8>/Compare' incorporates:
-   *  Constant: '<S8>/Constant'
+  /* RelationalOperator: '<S9>/Compare' incorporates:
+   *  Constant: '<S9>/Constant'
    */
   motor_io_position_GABRIEL_B.Compare = (motor_io_position_GABRIEL_B.Abs <=
     motor_io_position_GABRIEL_P.Constant_Value);
 
-  /* Gain: '<S7>/Vicous friction' */
+  /* Gain: '<S8>/Vicous friction' */
   motor_io_position_GABRIEL_B.Vicousfriction =
     motor_io_position_GABRIEL_P.Vicousfriction_Gain *
     motor_io_position_GABRIEL_B.Integrator;
 
-  /* Signum: '<S7>/Sign' */
+  /* Signum: '<S8>/Sign' */
   temp = motor_io_position_GABRIEL_B.Integrator;
   if (temp < 0.0) {
     motor_io_position_GABRIEL_B.Sign = -1.0;
@@ -372,20 +376,20 @@ void motor_io_position_GABRIEL_output(void)
     motor_io_position_GABRIEL_B.Sign = temp;
   }
 
-  /* End of Signum: '<S7>/Sign' */
+  /* End of Signum: '<S8>/Sign' */
 
-  /* Product: '<S7>/Product' incorporates:
-   *  Constant: '<S7>/F_c'
+  /* Product: '<S8>/Product' incorporates:
+   *  Constant: '<S8>/F_c'
    */
   motor_io_position_GABRIEL_B.Product = motor_io_position_GABRIEL_P.F_c *
     motor_io_position_GABRIEL_B.Sign;
 
-  /* Sum: '<S7>/Add' */
+  /* Sum: '<S8>/Add' */
   motor_io_position_GABRIEL_B.Viscousregion =
     motor_io_position_GABRIEL_B.Vicousfriction +
     motor_io_position_GABRIEL_B.Product;
 
-  /* Switch: '<S7>/Switch' */
+  /* Switch: '<S8>/Switch' */
   if (motor_io_position_GABRIEL_B.Compare) {
     motor_io_position_GABRIEL_B.Friction =
       motor_io_position_GABRIEL_B.Stickslipregion;
@@ -394,7 +398,7 @@ void motor_io_position_GABRIEL_output(void)
       motor_io_position_GABRIEL_B.Viscousregion;
   }
 
-  /* End of Switch: '<S7>/Switch' */
+  /* End of Switch: '<S8>/Switch' */
 
   /* Sum: '<S3>/Add1' */
   motor_io_position_GABRIEL_B.Add1 = motor_io_position_GABRIEL_B.kR -
@@ -417,24 +421,24 @@ void motor_io_position_GABRIEL_output(void)
   motor_io_position_GABRIEL_B.Inertias1J = 1.0 /
     motor_io_position_GABRIEL_B.Add2 * motor_io_position_GABRIEL_B.Add1;
   if (rtmIsMajorTimeStep(motor_io_position_GABRIEL_M)) {
-    /* S-Function (rti_commonblock): '<S14>/S-Function2' */
+    /* S-Function (rti_commonblock): '<S15>/S-Function2' */
     /* This comment workarounds a code generation problem */
 
-    /* Gain: '<S6>/w1_scaling' */
+    /* Gain: '<S7>/w1_scaling' */
     motor_io_position_GABRIEL_B.w1_scaling =
       motor_io_position_GABRIEL_P.w1_scaling_Gain *
       motor_io_position_GABRIEL_B.SFunction2;
 
-    /* Outputs for Triggered SubSystem: '<S6>/DS1104ENC_SET_POS_C1' incorporates:
-     *  TriggerPort: '<S16>/Trigger'
+    /* Outputs for Triggered SubSystem: '<S7>/DS1104ENC_SET_POS_C1' incorporates:
+     *  TriggerPort: '<S17>/Trigger'
      */
     if (rtmIsMajorTimeStep(motor_io_position_GABRIEL_M)) {
-      /* Constant: '<S6>/Reset enc' */
+      /* Constant: '<S7>/Reset enc' */
       zcEvent = rt_ZCFcn(RISING_ZERO_CROSSING,
                          &motor_io_position_GABRI_PrevZCX.DS1104ENC_SET_POS_C1_Trig_ZCE,
                          (motor_io_position_GABRIEL_P.Resetenc_Value));
       if (zcEvent != NO_ZCEVENT) {
-        /* S-Function (rti_commonblock): '<S16>/S-Function1' */
+        /* S-Function (rti_commonblock): '<S17>/S-Function1' */
         /* This comment workarounds a code generation problem */
 
         /* dSPACE I/O Board DS1104 Unit:ENC_SET */
@@ -442,12 +446,12 @@ void motor_io_position_GABRIEL_output(void)
       }
     }
 
-    /* End of Outputs for SubSystem: '<S6>/DS1104ENC_SET_POS_C1' */
+    /* End of Outputs for SubSystem: '<S7>/DS1104ENC_SET_POS_C1' */
 
-    /* S-Function (rti_commonblock): '<S15>/S-Function1' */
+    /* S-Function (rti_commonblock): '<S16>/S-Function1' */
     /* This comment workarounds a code generation problem */
 
-    /* S-Function (rti_commonblock): '<S15>/S-Function2' */
+    /* S-Function (rti_commonblock): '<S16>/S-Function2' */
     /* This comment workarounds a code generation problem */
   }
 }
@@ -456,29 +460,29 @@ void motor_io_position_GABRIEL_output(void)
 void motor_io_position_GABRIEL_update(void)
 {
   if (rtmIsMajorTimeStep(motor_io_position_GABRIEL_M)) {
-    /* Update for DiscreteTransferFcn: '<S2>/Gff' */
-    motor_io_position_GABRIEL_DW.Gff_states[1] =
-      motor_io_position_GABRIEL_DW.Gff_states[0];
-    motor_io_position_GABRIEL_DW.Gff_states[0] =
-      motor_io_position_GABRIEL_DW.Gff_tmp;
+    /* Update for DiscreteTransferFcn: '<S1>/Gff1' */
+    motor_io_position_GABRIEL_DW.Gff1_states[1] =
+      motor_io_position_GABRIEL_DW.Gff1_states[0];
+    motor_io_position_GABRIEL_DW.Gff1_states[0] =
+      motor_io_position_GABRIEL_DW.Gff1_tmp;
 
-    /* Update for DiscreteTransferFcn: '<S2>/Gfb' */
-    motor_io_position_GABRIEL_DW.Gfb_states[1] =
-      motor_io_position_GABRIEL_DW.Gfb_states[0];
-    motor_io_position_GABRIEL_DW.Gfb_states[0] =
-      motor_io_position_GABRIEL_DW.Gfb_tmp;
+    /* Update for DiscreteTransferFcn: '<S1>/Gff2' */
+    motor_io_position_GABRIEL_DW.Gff2_states[1] =
+      motor_io_position_GABRIEL_DW.Gff2_states[0];
+    motor_io_position_GABRIEL_DW.Gff2_states[0] =
+      motor_io_position_GABRIEL_DW.Gff2_tmp;
 
-    /* Update for DiscreteTransferFcn: '<S1>/Gfb' */
-    motor_io_position_GABRIEL_DW.Gfb_states_p[1] =
-      motor_io_position_GABRIEL_DW.Gfb_states_p[0];
-    motor_io_position_GABRIEL_DW.Gfb_states_p[0] =
-      motor_io_position_GABRIEL_DW.Gfb_tmp_l;
+    /* Update for DiscreteTransferFcn: '<S2>/Gff1' */
+    motor_io_position_GABRIEL_DW.Gff1_states_k[1] =
+      motor_io_position_GABRIEL_DW.Gff1_states_k[0];
+    motor_io_position_GABRIEL_DW.Gff1_states_k[0] =
+      motor_io_position_GABRIEL_DW.Gff1_tmp_n;
 
-    /* Update for DiscreteTransferFcn: '<S1>/Gff' */
-    motor_io_position_GABRIEL_DW.Gff_states_c[1] =
-      motor_io_position_GABRIEL_DW.Gff_states_c[0];
-    motor_io_position_GABRIEL_DW.Gff_states_c[0] =
-      motor_io_position_GABRIEL_DW.Gff_tmp_b;
+    /* Update for DiscreteTransferFcn: '<S2>/Gff2' */
+    motor_io_position_GABRIEL_DW.Gff2_states_b[1] =
+      motor_io_position_GABRIEL_DW.Gff2_states_b[0];
+    motor_io_position_GABRIEL_DW.Gff2_states_b[0] =
+      motor_io_position_GABRIEL_DW.Gff2_tmp_h;
   }
 
   if (rtmIsMajorTimeStep(motor_io_position_GABRIEL_M)) {
@@ -502,7 +506,7 @@ void motor_io_position_GABRIEL_update(void)
     (&motor_io_position_GABRIEL_M->solverInfo);
 
   {
-    /* Update absolute timer for sample time: [0.010870562815189595s, 0.0s] */
+    /* Update absolute timer for sample time: [0.019946620022792336s, 0.0s] */
     /* The "clockTick1" counts the number of times the code of this task has
      * been executed. The absolute time is the multiplication of "clockTick1"
      * and "Timing.stepSize1". Size of "clockTick1" ensures timer will not
@@ -540,40 +544,40 @@ void motor_io_position_GABRIEL_derivatives(void)
 /* Model initialize function */
 void motor_io_position_GABRIEL_initialize(void)
 {
-  /* Start for S-Function (rti_commonblock): '<S10>/S-Function1' */
+  /* Start for S-Function (rti_commonblock): '<S11>/S-Function1' */
 
   /* dSPACE I/O Board DS1104 #1 Unit:PWM Group:PWM */
   motor_io_position_GABRIEL_DW.SFunction1_IWORK[0] = 0;
   motor_io_position_GABRI_PrevZCX.DS1104ENC_SET_POS_C1_Trig_ZCE =
     UNINITIALIZED_ZCSIG;
 
-  /* InitializeConditions for DiscreteTransferFcn: '<S2>/Gff' */
-  motor_io_position_GABRIEL_DW.Gff_states[0] =
-    motor_io_position_GABRIEL_P.Gff_InitialStates;
-  motor_io_position_GABRIEL_DW.Gff_states[1] =
-    motor_io_position_GABRIEL_P.Gff_InitialStates;
+  /* InitializeConditions for DiscreteTransferFcn: '<S1>/Gff1' */
+  motor_io_position_GABRIEL_DW.Gff1_states[0] =
+    motor_io_position_GABRIEL_P.Gff1_InitialStates;
+  motor_io_position_GABRIEL_DW.Gff1_states[1] =
+    motor_io_position_GABRIEL_P.Gff1_InitialStates;
 
-  /* InitializeConditions for DiscreteTransferFcn: '<S2>/Gfb' */
-  motor_io_position_GABRIEL_DW.Gfb_states[0] =
-    motor_io_position_GABRIEL_P.Gfb_InitialStates;
-  motor_io_position_GABRIEL_DW.Gfb_states[1] =
-    motor_io_position_GABRIEL_P.Gfb_InitialStates;
+  /* InitializeConditions for DiscreteTransferFcn: '<S1>/Gff2' */
+  motor_io_position_GABRIEL_DW.Gff2_states[0] =
+    motor_io_position_GABRIEL_P.Gff2_InitialStates;
+  motor_io_position_GABRIEL_DW.Gff2_states[1] =
+    motor_io_position_GABRIEL_P.Gff2_InitialStates;
+
+  /* InitializeConditions for DiscreteTransferFcn: '<S2>/Gff1' */
+  motor_io_position_GABRIEL_DW.Gff1_states_k[0] =
+    motor_io_position_GABRIEL_P.Gff1_InitialStates_p;
+  motor_io_position_GABRIEL_DW.Gff1_states_k[1] =
+    motor_io_position_GABRIEL_P.Gff1_InitialStates_p;
 
   /* InitializeConditions for Integrator: '<S3>/Integrator1' */
   motor_io_position_GABRIEL_X.Integrator1_CSTATE =
     motor_io_position_GABRIEL_P.Integrator1_IC;
 
-  /* InitializeConditions for DiscreteTransferFcn: '<S1>/Gfb' */
-  motor_io_position_GABRIEL_DW.Gfb_states_p[0] =
-    motor_io_position_GABRIEL_P.Gfb_InitialStates_k;
-  motor_io_position_GABRIEL_DW.Gfb_states_p[1] =
-    motor_io_position_GABRIEL_P.Gfb_InitialStates_k;
-
-  /* InitializeConditions for DiscreteTransferFcn: '<S1>/Gff' */
-  motor_io_position_GABRIEL_DW.Gff_states_c[0] =
-    motor_io_position_GABRIEL_P.Gff_InitialStates_d;
-  motor_io_position_GABRIEL_DW.Gff_states_c[1] =
-    motor_io_position_GABRIEL_P.Gff_InitialStates_d;
+  /* InitializeConditions for DiscreteTransferFcn: '<S2>/Gff2' */
+  motor_io_position_GABRIEL_DW.Gff2_states_b[0] =
+    motor_io_position_GABRIEL_P.Gff2_InitialStates_c;
+  motor_io_position_GABRIEL_DW.Gff2_states_b[1] =
+    motor_io_position_GABRIEL_P.Gff2_InitialStates_c;
 
   /* InitializeConditions for Integrator: '<S3>/Integrator' */
   motor_io_position_GABRIEL_X.Integrator_CSTATE =
@@ -701,7 +705,7 @@ RT_MODEL_motor_io_position_GA_T *motor_io_position_GABRIEL(void)
 
     /* task periods */
     motor_io_position_GABRIEL_M->Timing.sampleTimes[0] = (0.0);
-    motor_io_position_GABRIEL_M->Timing.sampleTimes[1] = (0.010870562815189595);
+    motor_io_position_GABRIEL_M->Timing.sampleTimes[1] = (0.019946620022792336);
 
     /* task offsets */
     motor_io_position_GABRIEL_M->Timing.offsetTimes[0] = (0.0);
@@ -719,13 +723,13 @@ RT_MODEL_motor_io_position_GA_T *motor_io_position_GABRIEL(void)
   }
 
   rtmSetTFinal(motor_io_position_GABRIEL_M, -1);
-  motor_io_position_GABRIEL_M->Timing.stepSize0 = 0.010870562815189595;
-  motor_io_position_GABRIEL_M->Timing.stepSize1 = 0.010870562815189595;
+  motor_io_position_GABRIEL_M->Timing.stepSize0 = 0.019946620022792336;
+  motor_io_position_GABRIEL_M->Timing.stepSize1 = 0.019946620022792336;
   motor_io_position_GABRIEL_M->solverInfoPtr =
     (&motor_io_position_GABRIEL_M->solverInfo);
-  motor_io_position_GABRIEL_M->Timing.stepSize = (0.010870562815189595);
+  motor_io_position_GABRIEL_M->Timing.stepSize = (0.019946620022792336);
   rtsiSetFixedStepSize(&motor_io_position_GABRIEL_M->solverInfo,
-                       0.010870562815189595);
+                       0.019946620022792336);
   rtsiSetSolverMode(&motor_io_position_GABRIEL_M->solverInfo,
                     SOLVER_MODE_SINGLETASKING);
 
@@ -739,22 +743,23 @@ RT_MODEL_motor_io_position_GA_T *motor_io_position_GABRIEL(void)
     motor_io_position_GABRIEL_B.SinGenerator = 0.0;
     motor_io_position_GABRIEL_B.SquareGenerator = 0.0;
     motor_io_position_GABRIEL_B.ref = 0.0;
-    motor_io_position_GABRIEL_B.Gff = 0.0;
+    motor_io_position_GABRIEL_B.Gff1 = 0.0;
     motor_io_position_GABRIEL_B.SFunction1 = 0.0;
     motor_io_position_GABRIEL_B.fi1_scaling = 0.0;
-    motor_io_position_GABRIEL_B.Gfb = 0.0;
-    motor_io_position_GABRIEL_B.Sum1 = 0.0;
+    motor_io_position_GABRIEL_B.Gff2 = 0.0;
+    motor_io_position_GABRIEL_B.Sum2 = 0.0;
     motor_io_position_GABRIEL_B.Saturation = 0.0;
     motor_io_position_GABRIEL_B.Gain = 0.0;
     motor_io_position_GABRIEL_B.Volt = 0.0;
     motor_io_position_GABRIEL_B.pwm_skalning = 0.0;
     motor_io_position_GABRIEL_B.Sum = 0.0;
+    motor_io_position_GABRIEL_B.Gff1_f = 0.0;
     motor_io_position_GABRIEL_B.Integrator1 = 0.0;
     motor_io_position_GABRIEL_B.Quantizer = 0.0;
-    motor_io_position_GABRIEL_B.Gfb_k = 0.0;
-    motor_io_position_GABRIEL_B.Gff_b = 0.0;
-    motor_io_position_GABRIEL_B.Sum1_h = 0.0;
-    motor_io_position_GABRIEL_B.Saturation_f = 0.0;
+    motor_io_position_GABRIEL_B.ZeroOrderHold = 0.0;
+    motor_io_position_GABRIEL_B.Gff2_g = 0.0;
+    motor_io_position_GABRIEL_B.Sum2_d = 0.0;
+    motor_io_position_GABRIEL_B.Saturation_o = 0.0;
     motor_io_position_GABRIEL_B.Integrator = 0.0;
     motor_io_position_GABRIEL_B.Gain1 = 0.0;
     motor_io_position_GABRIEL_B.Add = 0.0;
@@ -791,18 +796,18 @@ RT_MODEL_motor_io_position_GA_T *motor_io_position_GABRIEL(void)
     &motor_io_position_GABRIEL_DW);
   (void) memset((void *)&motor_io_position_GABRIEL_DW, 0,
                 sizeof(DW_motor_io_position_GABRIEL_T));
-  motor_io_position_GABRIEL_DW.Gff_states[0] = 0.0;
-  motor_io_position_GABRIEL_DW.Gff_states[1] = 0.0;
-  motor_io_position_GABRIEL_DW.Gfb_states[0] = 0.0;
-  motor_io_position_GABRIEL_DW.Gfb_states[1] = 0.0;
-  motor_io_position_GABRIEL_DW.Gfb_states_p[0] = 0.0;
-  motor_io_position_GABRIEL_DW.Gfb_states_p[1] = 0.0;
-  motor_io_position_GABRIEL_DW.Gff_states_c[0] = 0.0;
-  motor_io_position_GABRIEL_DW.Gff_states_c[1] = 0.0;
-  motor_io_position_GABRIEL_DW.Gff_tmp = 0.0;
-  motor_io_position_GABRIEL_DW.Gfb_tmp = 0.0;
-  motor_io_position_GABRIEL_DW.Gfb_tmp_l = 0.0;
-  motor_io_position_GABRIEL_DW.Gff_tmp_b = 0.0;
+  motor_io_position_GABRIEL_DW.Gff1_states[0] = 0.0;
+  motor_io_position_GABRIEL_DW.Gff1_states[1] = 0.0;
+  motor_io_position_GABRIEL_DW.Gff2_states[0] = 0.0;
+  motor_io_position_GABRIEL_DW.Gff2_states[1] = 0.0;
+  motor_io_position_GABRIEL_DW.Gff1_states_k[0] = 0.0;
+  motor_io_position_GABRIEL_DW.Gff1_states_k[1] = 0.0;
+  motor_io_position_GABRIEL_DW.Gff2_states_b[0] = 0.0;
+  motor_io_position_GABRIEL_DW.Gff2_states_b[1] = 0.0;
+  motor_io_position_GABRIEL_DW.Gff1_tmp = 0.0;
+  motor_io_position_GABRIEL_DW.Gff2_tmp = 0.0;
+  motor_io_position_GABRIEL_DW.Gff1_tmp_n = 0.0;
+  motor_io_position_GABRIEL_DW.Gff2_tmp_h = 0.0;
 
   {
     /* user code (registration function declaration) */
@@ -817,9 +822,9 @@ RT_MODEL_motor_io_position_GA_T *motor_io_position_GABRIEL(void)
   motor_io_position_GABRIEL_M->Sizes.numU = (0);/* Number of model inputs */
   motor_io_position_GABRIEL_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
   motor_io_position_GABRIEL_M->Sizes.numSampTimes = (2);/* Number of sample times */
-  motor_io_position_GABRIEL_M->Sizes.numBlocks = (56);/* Number of blocks */
-  motor_io_position_GABRIEL_M->Sizes.numBlockIO = (38);/* Number of block outputs */
-  motor_io_position_GABRIEL_M->Sizes.numBlockPrms = (44);/* Sum of parameter "widths" */
+  motor_io_position_GABRIEL_M->Sizes.numBlocks = (57);/* Number of blocks */
+  motor_io_position_GABRIEL_M->Sizes.numBlockIO = (39);/* Number of block outputs */
+  motor_io_position_GABRIEL_M->Sizes.numBlockPrms = (59);/* Sum of parameter "widths" */
   return motor_io_position_GABRIEL_M;
 }
 

@@ -174,11 +174,10 @@ close all, clc
 % output feedback
 
 s = tf('s');
-Ts = 1; % Sampling time
 % Transfer of motor without indctance
 Go_p = Go*1/s       % position is velocity integrated 
 wb = 5.78;          % bandwidth of open loop system [rad/s]
-ws = 30*wb;
+ws = 10*wb;
 Ts = 2*pi/ws;
 
 % Make system discrete
@@ -196,12 +195,12 @@ A = tf([1 a1 a0], [0 0 1], Ts)
 
 % output feedback
 % Place poles of  discrete closed system
-p1 = 0.6; % Am pole 1
-p2 = 0.5;   % Am pole 2
+p1 = 0.1; % Am pole 1
+p2 = 0.1;   % Am pole 2
 Am = tf([1 -p1-p2 p1*p2], [0 1], Ts)
 
-p3 = 0.0; % observer polynomial poles
-p4 = 0.0;   
+p3 = 0.; % observer polynomial poles
+p4 = 0.;   
 Ao = tf([1 -p3-p4 p3*p4], [0 1], Ts)
 
 % parameter for integral feedback

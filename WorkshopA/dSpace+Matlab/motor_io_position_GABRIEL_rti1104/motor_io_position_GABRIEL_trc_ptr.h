@@ -5,7 +5,7 @@
    Declaration of function that initializes the global TRC pointers
 
    RTI1104 7.3 (02-Nov-2014)
-   Wed Apr 06 18:23:15 2016
+   Thu Apr 07 03:37:21 2016
 
    (c) Copyright 2008, dSPACE GmbH. All rights reserved.
 
@@ -40,7 +40,7 @@
               p_0_motor_io_position_GABRIEL_real_T_0 = &motor_io_position_GABRIEL_B.SinGenerator;\
               p_0_motor_io_position_GABRIEL_boolean_T_1 = &motor_io_position_GABRIEL_B.DataTypeConversion;\
               p_1_motor_io_position_GABRIEL_real_T_0 = &motor_io_position_GABRIEL_P.F_c;\
-              p_2_motor_io_position_GABRIEL_real_T_0 = &motor_io_position_GABRIEL_DW.Gff_states[0];\
+              p_2_motor_io_position_GABRIEL_real_T_0 = &motor_io_position_GABRIEL_DW.Gff1_states[0];\
               p_2_motor_io_position_GABRIEL_int_T_2 = &motor_io_position_GABRIEL_DW.SFunction1_IWORK[0];\
               p_3_motor_io_position_GABRIEL_real_T_0 = &motor_io_position_GABRIEL_X.Integrator1_CSTATE;\
 

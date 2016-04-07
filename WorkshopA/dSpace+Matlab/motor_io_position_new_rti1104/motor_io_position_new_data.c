@@ -5,7 +5,7 @@
  *
  * Model version              : 1.29
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Thu Apr 07 01:32:30 2016
+ * C source code generated on : Thu Apr 07 04:07:07 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -40,27 +40,27 @@ P_motor_io_position_new_T motor_io_position_new_P = {
    *   '<S2>/Gff1'
    *   '<S2>/Gff2'
    */
-  { 1.0, -0.32333928053843974, -0.67666071946156026 },
+  { 1.0, -0.21395969335166476, -0.78604030664833524 },
 
   /*  Variable: S_sim
    * Referenced by:
    *   '<S1>/Gff2'
    *   '<S2>/Gff2'
    */
-  { 71.367651812737932, -104.9955170379198, 39.924664259839332 },
+  { 13.260312718064553, -15.013624161393334, 4.8848145587514109 },
 
   /*  Variable: T_sim
    * Referenced by:
    *   '<S1>/Gff1'
    *   '<S2>/Gff1'
    */
-  { 6.2967990346574423, 0.0, 0.0 },
-  3.7555594650536164,                  /* Variable: c0
+  { 3.1950853131544035, -0.063901706263088068, 0.00031950853131544035 },
+  1.7533216376841885,                  /* Variable: c0
                                         * Referenced by:
                                         *   '<S1>/Gain'
                                         *   '<S2>/Gain'
                                         */
-  3.7555594650536008,                  /* Variable: c0_
+  1.7533216376841894,                  /* Variable: c0_
                                         * Referenced by:
                                         *   '<S1>/Gain1'
                                         *   '<S2>/Gain1'
@@ -87,12 +87,12 @@ P_motor_io_position_new_T motor_io_position_new_P = {
   /*  Expression: [d1_ d0_]
    * Referenced by: '<S2>/Gff'
    */
-  { 6.2967990346574423, 2.5412395696038419 },
+  { 3.1950853131544035, 1.3780408613240207 },
 
   /*  Expression: [1 r0]
    * Referenced by: '<S2>/Gff'
    */
-  { 1.0, 0.67666071946156026 },
+  { 1.0, 0.78604030664833524 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S2>/Gff'
                                         */
@@ -129,12 +129,12 @@ P_motor_io_position_new_T motor_io_position_new_P = {
   /*  Expression: [d1 d0]
    * Referenced by: '<S2>/PD part'
    */
-  { 71.367651812737932, -37.383424690235479 },
+  { 13.260312718064553, -3.50663308101297 },
 
   /*  Expression: [1 r0]
    * Referenced by: '<S2>/PD part'
    */
-  { 1.0, 0.67666071946156026 },
+  { 1.0, 0.78604030664833524 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S2>/PD part'
                                         */
@@ -166,12 +166,12 @@ P_motor_io_position_new_T motor_io_position_new_P = {
   /*  Expression: [d1_ d0_]
    * Referenced by: '<S1>/Gff'
    */
-  { 6.2967990346574423, 2.5412395696038419 },
+  { 3.1950853131544035, 1.3780408613240207 },
 
   /*  Expression: [1 r0]
    * Referenced by: '<S1>/Gff'
    */
-  { 1.0, 0.67666071946156026 },
+  { 1.0, 0.78604030664833524 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S1>/Gff'
                                         */
@@ -208,12 +208,12 @@ P_motor_io_position_new_T motor_io_position_new_P = {
   /*  Expression: [d1 d0]
    * Referenced by: '<S1>/PD part'
    */
-  { 71.367651812737932, -37.383424690235479 },
+  { 13.260312718064553, -3.50663308101297 },
 
   /*  Expression: [1 r0]
    * Referenced by: '<S1>/PD part'
    */
-  { 1.0, 0.67666071946156026 },
+  { 1.0, 0.78604030664833524 },
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S1>/PD part'
                                         */
@@ -259,7 +259,7 @@ P_motor_io_position_new_T motor_io_position_new_P = {
   7.46E-7,                             /* Expression: motor.J
                                         * Referenced by: '<S3>/Motor inertia'
                                         */
-  0.17340000000000003,                 /* Expression: 2*pi/(1000)/Ts
+  0.057800000000000004,                /* Expression: 2*pi/(1000)/Ts
                                         * Referenced by: '<S7>/w1_scaling'
                                         */
   0.0                                  /* Expression: 0

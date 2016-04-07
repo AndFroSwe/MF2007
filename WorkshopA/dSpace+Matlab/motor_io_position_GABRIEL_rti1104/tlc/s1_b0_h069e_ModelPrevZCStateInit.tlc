@@ -1,4 +1,4 @@
-%implements s1_b0_0ch9e_ModelPrevZCStateInit "C"
+%implements s1_b0_h069e_ModelPrevZCStateInit "C"
 
 %function ModelPrevZCStateInit(block, system) Output
 %assign cfgTxt = ""

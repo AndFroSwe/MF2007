@@ -1,0 +1,32 @@
+%implements s1_b0_h069e_Update "C"
+
+%function Update(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Header")>\
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Body")>\
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* Update for DiscreteTransferFcn: '<S1>/Gff1' */
+    motor_io_position_GABRIEL_DW.Gff1_states[1] = motor_io_position_GABRIEL_DW.Gff1_states[0];
+    motor_io_position_GABRIEL_DW.Gff1_states[0] = motor_io_position_GABRIEL_DW.Gff1_tmp;
+    /* Update for DiscreteTransferFcn: '<S1>/Gff2' */
+    motor_io_position_GABRIEL_DW.Gff2_states[1] = motor_io_position_GABRIEL_DW.Gff2_states[0];
+    motor_io_position_GABRIEL_DW.Gff2_states[0] = motor_io_position_GABRIEL_DW.Gff2_tmp;
+    /* Update for DiscreteTransferFcn: '<S2>/Gff1' */
+    motor_io_position_GABRIEL_DW.Gff1_states_k[1] = motor_io_position_GABRIEL_DW.Gff1_states_k[0];
+    motor_io_position_GABRIEL_DW.Gff1_states_k[0] = motor_io_position_GABRIEL_DW.Gff1_tmp_n;
+    /* Update for DiscreteTransferFcn: '<S2>/Gff2' */
+    motor_io_position_GABRIEL_DW.Gff2_states_b[1] = motor_io_position_GABRIEL_DW.Gff2_states_b[0];
+    motor_io_position_GABRIEL_DW.Gff2_states_b[0] = motor_io_position_GABRIEL_DW.Gff2_tmp_h;
+}
+%<SLibCGIRDumpSystemUserCode(1, "Update", "Trailer")>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%endfunction

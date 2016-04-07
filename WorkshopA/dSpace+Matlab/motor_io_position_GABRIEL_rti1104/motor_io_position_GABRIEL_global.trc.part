@@ -25,24 +25,6 @@ group "Tunable Parameters"
 	}
 	p_1_motor_io_position_GABRIEL_real_T_0[3]
 	{
-	 type:    motor_io_position_GABRIEL_ArrayDT0_3*
-	 alias:   "R_sim"
-	 flags:   PARAM
-	}
-	p_1_motor_io_position_GABRIEL_real_T_0[6]
-	{
-	 type:    motor_io_position_GABRIEL_ArrayDT0_3*
-	 alias:   "S_sim"
-	 flags:   PARAM
-	}
-	p_1_motor_io_position_GABRIEL_real_T_0[9]
-	{
-	 type:    motor_io_position_GABRIEL_ArrayDT0_3*
-	 alias:   "T_sim"
-	 flags:   PARAM
-	}
-	p_1_motor_io_position_GABRIEL_real_T_0[12]
-	{
 	 type:    flt(64,IEEE)*
 	 alias:   "quant"
 	 flags:   PARAM
@@ -76,28 +58,28 @@ group "Labels"
 	 origin:  "motor_io_position_GABRIEL/DC motor/Karnop friction1/Velocity threshold\n/y"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_position_GABRIEL_real_T_0[29]
+	p_0_motor_io_position_GABRIEL_real_T_0[30]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Friction"
 	 origin:  "motor_io_position_GABRIEL/DC motor/Karnop friction1/Switch/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_position_GABRIEL_real_T_0[23]
+	p_0_motor_io_position_GABRIEL_real_T_0[24]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Stick slip region\n"
 	 origin:  "motor_io_position_GABRIEL/DC motor/Karnop friction1/Saturate to Fc/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_position_GABRIEL_real_T_0[19]
+	p_0_motor_io_position_GABRIEL_real_T_0[20]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Velocity"
 	 origin:  "motor_io_position_GABRIEL/DC motor/Karnop friction1/Angular \nvelcoity/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_0_motor_io_position_GABRIEL_real_T_0[28]
+	p_0_motor_io_position_GABRIEL_real_T_0[29]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "Viscous region"

@@ -1,4 +1,4 @@
-%implements s1_b0_f809e_TLCInterface "C"
+%implements s1_b0_4d89e_TLCInterface "C"
 
 %function getOutputAddr_1_1_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
 

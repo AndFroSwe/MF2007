@@ -1,4 +1,4 @@
-%implements s1_b0_0ch9e_Start "C"
+%implements s1_b0_h069e_Start "C"
 
 %function Start(block, system) Output
 %assign cfgTxt = ""
@@ -23,24 +23,24 @@
 %<tlcStartFcnOfS1B8>\
 %<tlcStartFcnOfS1B13>\
 %<tlcStartFcnOfS1B14>\
-%assign   Start_open_DS1104ENC_SET_POS_C1_1_52 = ""
-%openfile Start_open_DS1104ENC_SET_POS_C1_1_52
+%assign   Start_open_DS1104ENC_SET_POS_C1_1_53 = ""
+%openfile Start_open_DS1104ENC_SET_POS_C1_1_53
 
-/* Start for Triggered SubSystem: '<S6>/DS1104ENC_SET_POS_C1' */
-%closefile Start_open_DS1104ENC_SET_POS_C1_1_52
+/* Start for Triggered SubSystem: '<S7>/DS1104ENC_SET_POS_C1' */
+%closefile Start_open_DS1104ENC_SET_POS_C1_1_53
 
-%assign    Start_body_DS1104ENC_SET_POS_C1_1_52 = ""
-%openfile  Start_body_DS1104ENC_SET_POS_C1_1_52
+%assign    Start_body_DS1104ENC_SET_POS_C1_1_53 = ""
+%openfile  Start_body_DS1104ENC_SET_POS_C1_1_53
 
 %<tlcStartFcnOfS0B0>\
-%closefile Start_body_DS1104ENC_SET_POS_C1_1_52
+%closefile Start_body_DS1104ENC_SET_POS_C1_1_53
 
-%assign    Start_close_DS1104ENC_SET_POS_C1_1_52 = ""
-%openfile  Start_close_DS1104ENC_SET_POS_C1_1_52
+%assign    Start_close_DS1104ENC_SET_POS_C1_1_53 = ""
+%openfile  Start_close_DS1104ENC_SET_POS_C1_1_53
 
-/* End of Start for SubSystem: '<S6>/DS1104ENC_SET_POS_C1' */
-%closefile Start_close_DS1104ENC_SET_POS_C1_1_52
-%<SLibCG_DumpSSCode(Start_open_DS1104ENC_SET_POS_C1_1_52, Start_body_DS1104ENC_SET_POS_C1_1_52, Start_close_DS1104ENC_SET_POS_C1_1_52)>
+/* End of Start for SubSystem: '<S7>/DS1104ENC_SET_POS_C1' */
+%closefile Start_close_DS1104ENC_SET_POS_C1_1_53
+%<SLibCG_DumpSSCode(Start_open_DS1104ENC_SET_POS_C1_1_53, Start_body_DS1104ENC_SET_POS_C1_1_53, Start_close_DS1104ENC_SET_POS_C1_1_53)>
 
 %<tlcStartFcnOfS1B17>\
 %<tlcStartFcnOfS1B18>\

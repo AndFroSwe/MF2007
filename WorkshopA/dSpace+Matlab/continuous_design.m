@@ -65,12 +65,12 @@ A = tf([1 b 0], [0 0 1])
 
 % design continuous controller
 % Am
-omega1 = 14;
-omega2 = 14;
+omega1 = 18;
+omega2 = 18;
 Am = (s + omega1)*(s + omega2);
 
 % Ao
-omega3 = 35;
+omega3 = 45;
 Zeta = 1;
 Ao = s^2 + 2*Zeta*omega3*s + omega3^2;
 
@@ -98,20 +98,48 @@ pole(Gc)
 
 %% discrete controller
 % calculate sampling time
-wb = 35, % fastest pole
-ws = wb*10;
+wb = 45 % fastest pole
+ws = wb*7;
 Ts = 2*pi/ws
 
+Kb = 10000;
 % discretize controllers
 Gff_d = c2d(T/R, Ts, 'tustin')
 Gfb_d = c2d(S/R, Ts, 'tustin')
 
+% simulation parameters
+
+% parameters for anti windup of feedback
+c0 = (s2 + s1 + s0)/(1 + r0);
+d1 = s2;
+d0 = (r0*(s1 + s2) - s0)/(1 + r0);
+
+% parameters for anti windup of feedback
+s2_ = Gff_d.num{1}(1)
+s1_ = Gff_d.num{1}(2)
+s0_ = Gff_d.num{1}(3)
+
+c0_ = (s2_ + s1_ + s0_)/(1 + r0);
+d1_ = s2_;
+d0_ = (r0*(s1_ + s2_))/(1 + r0);
+
+% run simulation
+simtime = 1;
+% sim('Simulate_position_motor_controllers.slx')
+sim('Simulate_position_motor_controllers.slx')
+% plot response
+figure
+plot(sim_reference.Time, sim_reference.Data)
+hold on
+grid on
+plot(sim_position.Time, sim_position.Data)
+title('step response for position')
+legend('reference', 'position')
+xlabel('t')
+ylabel('position [rad]')
 
 
 
-
-
-
-
+Ts
 
 

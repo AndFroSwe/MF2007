@@ -3,7 +3,7 @@
 --  Trace file: motor_io_position_GABRIEL.trc
 --
 --  RTI1104 7.3 (02-Nov-2014)
---  Wed Apr 06 18:23:15 2016
+--  Thu Apr 07 03:37:21 2016
 --
 --  Used options:
 --    TRCGenerateVirtualBlocks      = 1
@@ -27,7 +27,7 @@
 
 _genname     "RTI"
 _genversion  "7.3"
-_gendate     "04/06/2016 18:23:18"
+_gendate     "04/07/2016 03:37:23"
 _description ""
 _author      "RTI1104 7.3 (02-Nov-2014)"
 _model       "motor_io_position_GABRIEL.mdl"
@@ -39,9 +39,9 @@ _integer_type(32)
 -- No Data Capture blocks within model: use base sample time as sampling period
 sampling_period[0]
 {
-  value:       0.010870562815189595
+  value:       0.019946620022792336
   alias:       "HostService"
-  increment:   0.010870562815189595
+  increment:   0.019946620022792336
   unit:        "s"
 }
 

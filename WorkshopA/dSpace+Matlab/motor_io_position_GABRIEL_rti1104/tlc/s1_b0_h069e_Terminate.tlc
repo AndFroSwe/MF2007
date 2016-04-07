@@ -1,4 +1,4 @@
-%implements s1_b0_0ch9e_Terminate "C"
+%implements s1_b0_h069e_Terminate "C"
 
 %function Terminate(block, system) Output
 %assign cfgTxt = ""
@@ -21,24 +21,24 @@
 %<tlcTerminateFcnOfS1B6>\
 %<tlcTerminateFcnOfS1B8>\
 %<tlcTerminateFcnOfS1B14>\
-%assign   Terminate_open_DS1104ENC_SET_POS_C1_1_52 = ""
-%openfile Terminate_open_DS1104ENC_SET_POS_C1_1_52
+%assign   Terminate_open_DS1104ENC_SET_POS_C1_1_53 = ""
+%openfile Terminate_open_DS1104ENC_SET_POS_C1_1_53
 
-/* Terminate for Triggered SubSystem: '<S6>/DS1104ENC_SET_POS_C1' */
-%closefile Terminate_open_DS1104ENC_SET_POS_C1_1_52
+/* Terminate for Triggered SubSystem: '<S7>/DS1104ENC_SET_POS_C1' */
+%closefile Terminate_open_DS1104ENC_SET_POS_C1_1_53
 
-%assign    Terminate_body_DS1104ENC_SET_POS_C1_1_52 = ""
-%openfile  Terminate_body_DS1104ENC_SET_POS_C1_1_52
+%assign    Terminate_body_DS1104ENC_SET_POS_C1_1_53 = ""
+%openfile  Terminate_body_DS1104ENC_SET_POS_C1_1_53
 
 %<tlcTerminateFcnOfS0B0>\
-%closefile Terminate_body_DS1104ENC_SET_POS_C1_1_52
+%closefile Terminate_body_DS1104ENC_SET_POS_C1_1_53
 
-%assign    Terminate_close_DS1104ENC_SET_POS_C1_1_52 = ""
-%openfile  Terminate_close_DS1104ENC_SET_POS_C1_1_52
+%assign    Terminate_close_DS1104ENC_SET_POS_C1_1_53 = ""
+%openfile  Terminate_close_DS1104ENC_SET_POS_C1_1_53
 
-/* End of Terminate for SubSystem: '<S6>/DS1104ENC_SET_POS_C1' */
-%closefile Terminate_close_DS1104ENC_SET_POS_C1_1_52
-%<SLibCG_DumpSSCode(Terminate_open_DS1104ENC_SET_POS_C1_1_52, Terminate_body_DS1104ENC_SET_POS_C1_1_52, Terminate_close_DS1104ENC_SET_POS_C1_1_52)>
+/* End of Terminate for SubSystem: '<S7>/DS1104ENC_SET_POS_C1' */
+%closefile Terminate_close_DS1104ENC_SET_POS_C1_1_53
+%<SLibCG_DumpSSCode(Terminate_open_DS1104ENC_SET_POS_C1_1_53, Terminate_body_DS1104ENC_SET_POS_C1_1_53, Terminate_close_DS1104ENC_SET_POS_C1_1_53)>
 
 %<tlcTerminateFcnOfS1B17>\
 %<tlcTerminateFcnOfS1B18>\

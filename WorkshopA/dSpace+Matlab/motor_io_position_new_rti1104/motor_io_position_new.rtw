@@ -4,7 +4,7 @@ CompiledModel {
   Version		  "8.7 (R2014b) 08-Sep-2014"
   SimulinkVersion	  "8.4"
   ModelVersion		  "1.29"
-  GeneratedOn		  "Thu Apr 07 01:32:29 2016"
+  GeneratedOn		  "Thu Apr 07 04:07:06 2016"
   HasSimStructVars	  0
   HasCodeVariants	  0
   PreserveExternInFcnDecls 1
@@ -428,7 +428,7 @@ CompiledModel {
   SolverUpdateJacobianAtReset no
   FixedStepOpts {
     SolverMode		    SingleTasking
-    FixedStep		    0.036235209383965315
+    FixedStep		    0.10870562815189595
     ExtrapolationOrder	    -1
     NumberNewtonIterations  -1
     TID01EQ		    1
@@ -465,7 +465,7 @@ CompiledModel {
     tlcLanguage		    "C"
     tlcTargetType	    "RT"
   }
-  RTWContext		  [-1576890200, 0]
+  RTWContext		  [-2054103616, 0]
   RTWCGIR		  1
   TLCBlkFcnInCGIR	  1
   SLCI			  off
@@ -514,8 +514,8 @@ CompiledModel {
   NumSimulinkFunctions	  0
   PositivePriority	  no
   ConcurrentTasks	  no
-  SingleTimeDomainApplication "ClockDomain {\n_task0 : { \nSampleTime [0, 0]\nSampleTime [0, 1]\nSampleTime [0.0362352"
-  "0938396532, 0]\n }\n }\n"
+  SingleTimeDomainApplication "ClockDomain {\n_task0 : { \nSampleTime [0, 0]\nSampleTime [0, 1]\nSampleTime [0.1087056"
+  "28151896, 0]\n }\n }\n"
   AllSampleTimesInherited no
   ModelSampleTimeInheritanceDetails {
     AllowedOverall	    no
@@ -533,7 +533,7 @@ CompiledModel {
   HasNonVirtualConstantTs no
   FixedStepSizeBasedOnHeuristic	no
   InvariantConstants	  no
-  FundamentalStepSize	  0.036235209383965315
+  FundamentalStepSize	  0.10870562815189595
   SingleRate		  no
   NumSampleTimes	  2
   SampleTime {
@@ -548,7 +548,7 @@ CompiledModel {
     TimeSource		    Self_internal
     AsyncPromotedTID	    0
     TimerUpdateCode	    ""
-    ClockTickStepSize	    0.036235209383965315
+    ClockTickStepSize	    0.10870562815189595
     NeedAbsoluteTime	    yes
     IsInlined		    no
     NeedFloatTime	    yes
@@ -562,14 +562,14 @@ CompiledModel {
     TID			    1
     PriorityAssigned	    yes
     Priority		    40
-    PeriodAndOffset	    [0.036235209383965315, 0.0]
+    PeriodAndOffset	    [0.10870562815189595, 0.0]
     Asynchronous	    no
     IsUnionTs		    no
     IsVirtualTs		    no
     TimeSource		    Self_internal
     AsyncPromotedTID	    1
     TimerUpdateCode	    ""
-    ClockTickStepSize	    0.036235209383965315
+    ClockTickStepSize	    0.10870562815189595
     NeedAbsoluteTime	    yes
     IsInlined		    no
     NeedFloatTime	    no
@@ -5831,7 +5831,7 @@ CompiledModel {
       Identifier	      "R_sim"
       LogicalSrc	      P4
       WorkspaceVarName	      "R_sim"
-      Value		      [1.0, -0.32333928053843974, -0.67666071946156026]
+      Value		      [1.0, -0.21395969335166476, -0.78604030664833524]
       CGTypeIdx		      24
       ContainerCGTypeIdx      23
       ReferencedBy	      Matrix(4,4)
@@ -5845,7 +5845,7 @@ CompiledModel {
       Identifier	      "S_sim"
       LogicalSrc	      P5
       WorkspaceVarName	      "S_sim"
-      Value		      [71.367651812737932, -104.9955170379198, 39.924664259839332]
+      Value		      [13.260312718064553, -15.013624161393334, 4.8848145587514109]
       CGTypeIdx		      24
       ContainerCGTypeIdx      23
       ReferencedBy	      Matrix(2,4)
@@ -5859,7 +5859,7 @@ CompiledModel {
       Identifier	      "T_sim"
       LogicalSrc	      P6
       WorkspaceVarName	      "T_sim"
-      Value		      [6.2967990346574423, 0.0, 0.0]
+      Value		      [3.1950853131544035, -0.063901706263088068, 0.00031950853131544035]
       CGTypeIdx		      24
       ContainerCGTypeIdx      23
       ReferencedBy	      Matrix(2,4)
@@ -5873,7 +5873,7 @@ CompiledModel {
       Identifier	      "c0"
       LogicalSrc	      P7
       WorkspaceVarName	      "c0"
-      Value		      [3.7555594650536164]
+      Value		      [1.7533216376841885]
       ContainerCGTypeIdx      35
       ReferencedBy	      Matrix(2,4)
 [[1, -1, 21, 42]; [1, -1, 21, 51];]
@@ -5886,7 +5886,7 @@ CompiledModel {
       Identifier	      "c0_"
       LogicalSrc	      P8
       WorkspaceVarName	      "c0_"
-      Value		      [3.7555594650536008]
+      Value		      [1.7533216376841894]
       ContainerCGTypeIdx      35
       ReferencedBy	      Matrix(2,4)
 [[1, -1, 21, 43]; [1, -1, 21, 52];]
@@ -5974,7 +5974,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff_NumCoef"
       LogicalSrc	      P15
-      Value		      [6.2967990346574423, 2.5412395696038419]
+      Value		      [3.1950853131544035, 1.3780408613240207]
       CGTypeIdx		      25
       ContainerCGTypeIdx      21
       ReferencedBy	      Matrix(1,4)
@@ -5988,7 +5988,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff_DenCoef"
       LogicalSrc	      P16
-      Value		      [1.0, 0.67666071946156026]
+      Value		      [1.0, 0.78604030664833524]
       CGTypeIdx		      25
       ContainerCGTypeIdx      21
       ReferencedBy	      Matrix(1,4)
@@ -6107,7 +6107,7 @@ CompiledModel {
     Parameter {
       Identifier	      "PDpart_NumCoef"
       LogicalSrc	      P25
-      Value		      [71.367651812737932, -37.383424690235479]
+      Value		      [13.260312718064553, -3.50663308101297]
       CGTypeIdx		      25
       ContainerCGTypeIdx      21
       ReferencedBy	      Matrix(1,4)
@@ -6121,7 +6121,7 @@ CompiledModel {
     Parameter {
       Identifier	      "PDpart_DenCoef"
       LogicalSrc	      P26
-      Value		      [1.0, 0.67666071946156026]
+      Value		      [1.0, 0.78604030664833524]
       CGTypeIdx		      25
       ContainerCGTypeIdx      21
       ReferencedBy	      Matrix(1,4)
@@ -6251,7 +6251,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff_NumCoef_k"
       LogicalSrc	      P36
-      Value		      [6.2967990346574423, 2.5412395696038419]
+      Value		      [3.1950853131544035, 1.3780408613240207]
       CGTypeIdx		      25
       ContainerCGTypeIdx      21
       ReferencedBy	      Matrix(1,4)
@@ -6265,7 +6265,7 @@ CompiledModel {
     Parameter {
       Identifier	      "Gff_DenCoef_h"
       LogicalSrc	      P37
-      Value		      [1.0, 0.67666071946156026]
+      Value		      [1.0, 0.78604030664833524]
       CGTypeIdx		      25
       ContainerCGTypeIdx      21
       ReferencedBy	      Matrix(1,4)
@@ -6383,7 +6383,7 @@ CompiledModel {
     Parameter {
       Identifier	      "PDpart_NumCoef_o"
       LogicalSrc	      P46
-      Value		      [71.367651812737932, -37.383424690235479]
+      Value		      [13.260312718064553, -3.50663308101297]
       CGTypeIdx		      25
       ContainerCGTypeIdx      21
       ReferencedBy	      Matrix(1,4)
@@ -6397,7 +6397,7 @@ CompiledModel {
     Parameter {
       Identifier	      "PDpart_DenCoef_h"
       LogicalSrc	      P47
-      Value		      [1.0, 0.67666071946156026]
+      Value		      [1.0, 0.78604030664833524]
       CGTypeIdx		      25
       ContainerCGTypeIdx      21
       ReferencedBy	      Matrix(1,4)
@@ -6600,7 +6600,7 @@ CompiledModel {
     Parameter {
       Identifier	      "w1_scaling_Gain"
       LogicalSrc	      P63
-      Value		      [0.17340000000000003]
+      Value		      [0.057800000000000004]
       ContainerCGTypeIdx      35
       ReferencedBy	      Matrix(1,4)
 [[1, -1, 21, 71];]
@@ -8528,7 +8528,7 @@ CompiledModel {
 	Width			1
       }
       NumDataOutputPorts      0
-      TLCFileName	      "s1_b0_f809e"
+      TLCFileName	      "s1_b0_4d89e"
       OpaqueBlockMethode {
 	HasStart		1
 	HasInitializeConditions	1
@@ -8582,7 +8582,7 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		15
-	Value			[6.2967990346574423, 2.5412395696038419]
+	Value			[3.1950853131544035, 1.3780408613240207]
 	CGTypeIdx		25
 	ContainerCGTypeIdx	21
 	String			"[d1_ d0_]"
@@ -8592,7 +8592,7 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		16
-	Value			[1.0, 0.67666071946156026]
+	Value			[1.0, 0.78604030664833524]
 	CGTypeIdx		25
 	ContainerCGTypeIdx	21
 	String			"[1 r0]"
@@ -8671,7 +8671,7 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		25
-	Value			[71.367651812737932, -37.383424690235479]
+	Value			[13.260312718064553, -3.50663308101297]
 	CGTypeIdx		25
 	ContainerCGTypeIdx	21
 	String			"[d1 d0]"
@@ -8681,7 +8681,7 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		26
-	Value			[1.0, 0.67666071946156026]
+	Value			[1.0, 0.78604030664833524]
 	CGTypeIdx		25
 	ContainerCGTypeIdx	21
 	String			"[1 r0]"
@@ -8766,7 +8766,7 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		36
-	Value			[6.2967990346574423, 2.5412395696038419]
+	Value			[3.1950853131544035, 1.3780408613240207]
 	CGTypeIdx		25
 	ContainerCGTypeIdx	21
 	String			"[d1_ d0_]"
@@ -8776,7 +8776,7 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		37
-	Value			[1.0, 0.67666071946156026]
+	Value			[1.0, 0.78604030664833524]
 	CGTypeIdx		25
 	ContainerCGTypeIdx	21
 	String			"[1 r0]"
@@ -8862,7 +8862,7 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		46
-	Value			[71.367651812737932, -37.383424690235479]
+	Value			[13.260312718064553, -3.50663308101297]
 	CGTypeIdx		25
 	ContainerCGTypeIdx	21
 	String			"[d1 d0]"
@@ -8872,7 +8872,7 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		47
-	Value			[1.0, 0.67666071946156026]
+	Value			[1.0, 0.78604030664833524]
 	CGTypeIdx		25
 	ContainerCGTypeIdx	21
 	String			"[1 r0]"
@@ -8906,7 +8906,7 @@ CompiledModel {
       Parameter {
 	Name			"Gain"
 	MdlPrmIdx		7
-	Value			[3.7555594650536164]
+	Value			[1.7533216376841885]
 	ContainerCGTypeIdx	35
 	String			"c0"
 	StringType		"Expression"
@@ -8914,7 +8914,7 @@ CompiledModel {
       Parameter {
 	Name			"Gain"
 	MdlPrmIdx		8
-	Value			[3.7555594650536008]
+	Value			[1.7533216376841894]
 	ContainerCGTypeIdx	35
 	String			"c0_"
 	StringType		"Expression"
@@ -8930,7 +8930,7 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		6
-	Value			[6.2967990346574423, 0.0, 0.0]
+	Value			[3.1950853131544035, -0.063901706263088068, 0.00031950853131544035]
 	CGTypeIdx		24
 	ContainerCGTypeIdx	23
 	String			"T_sim"
@@ -8939,7 +8939,7 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		4
-	Value			[1.0, -0.32333928053843974, -0.67666071946156026]
+	Value			[1.0, -0.21395969335166476, -0.78604030664833524]
 	CGTypeIdx		24
 	ContainerCGTypeIdx	23
 	String			"R_sim"
@@ -8955,7 +8955,7 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		5
-	Value			[71.367651812737932, -104.9955170379198, 39.924664259839332]
+	Value			[13.260312718064553, -15.013624161393334, 4.8848145587514109]
 	CGTypeIdx		24
 	ContainerCGTypeIdx	23
 	String			"S_sim"
@@ -8964,7 +8964,7 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		4
-	Value			[1.0, -0.32333928053843974, -0.67666071946156026]
+	Value			[1.0, -0.21395969335166476, -0.78604030664833524]
 	CGTypeIdx		24
 	ContainerCGTypeIdx	23
 	String			"R_sim"
@@ -8980,7 +8980,7 @@ CompiledModel {
       Parameter {
 	Name			"Gain"
 	MdlPrmIdx		7
-	Value			[3.7555594650536164]
+	Value			[1.7533216376841885]
 	ContainerCGTypeIdx	35
 	String			"c0"
 	StringType		"Expression"
@@ -8988,7 +8988,7 @@ CompiledModel {
       Parameter {
 	Name			"Gain"
 	MdlPrmIdx		8
-	Value			[3.7555594650536008]
+	Value			[1.7533216376841894]
 	ContainerCGTypeIdx	35
 	String			"c0_"
 	StringType		"Expression"
@@ -9004,7 +9004,7 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		6
-	Value			[6.2967990346574423, 0.0, 0.0]
+	Value			[3.1950853131544035, -0.063901706263088068, 0.00031950853131544035]
 	CGTypeIdx		24
 	ContainerCGTypeIdx	23
 	String			"T_sim"
@@ -9013,7 +9013,7 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		4
-	Value			[1.0, -0.32333928053843974, -0.67666071946156026]
+	Value			[1.0, -0.21395969335166476, -0.78604030664833524]
 	CGTypeIdx		24
 	ContainerCGTypeIdx	23
 	String			"R_sim"
@@ -9029,7 +9029,7 @@ CompiledModel {
       Parameter {
 	Name			"Numerator"
 	MdlPrmIdx		5
-	Value			[71.367651812737932, -104.9955170379198, 39.924664259839332]
+	Value			[13.260312718064553, -15.013624161393334, 4.8848145587514109]
 	CGTypeIdx		24
 	ContainerCGTypeIdx	23
 	String			"S_sim"
@@ -9038,7 +9038,7 @@ CompiledModel {
       Parameter {
 	Name			"Denominator"
 	MdlPrmIdx		4
-	Value			[1.0, -0.32333928053843974, -0.67666071946156026]
+	Value			[1.0, -0.21395969335166476, -0.78604030664833524]
 	CGTypeIdx		24
 	ContainerCGTypeIdx	23
 	String			"R_sim"
@@ -9147,7 +9147,7 @@ CompiledModel {
       Parameter {
 	Name			"Gain"
 	MdlPrmIdx		63
-	Value			[0.17340000000000003]
+	Value			[0.057800000000000004]
 	ContainerCGTypeIdx	35
 	String			"2*pi/(1000)/Ts"
 	StringType		"Expression"
@@ -9175,8 +9175,8 @@ CompiledModel {
   }
   StateflowAutoEnumInfoList {
   }
-  BlockParamChecksum	  ["2336688795U", "743185745U", "550699490U", "3097863440U"]
-  ModelChecksum		  ["991826232U", "3147072405U", "3435036214U", "4111770104U"]
+  BlockParamChecksum	  ["1867505173U", "76443730U", "346462907U", "812653258U"]
+  ModelChecksum		  ["4240849580U", "1259456395U", "3106925437U", "3290382469U"]
   IncludeCodeGenSettings  1
   CGTypes {
     CGTypeDefaults {
@@ -9992,55 +9992,55 @@ CompiledModel {
     TestInterfaceFcnIdx	    -1
     RTWCGModule {
       RateGrouping	      0
-      TLCFileName	      "s1_b0_f809e"
+      TLCFileName	      "s1_b0_4d89e"
       RTWFcnConst {
 	HasInstanceSetup	"no"
 	Start_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_f809e_Start"
+	  TLCFileName		  "s1_b0_4d89e_Start"
 	  StackSize		  0
 	}
 	InitializeConditions_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_f809e_InitializeConditions"
+	  TLCFileName		  "s1_b0_4d89e_InitializeConditions"
 	  StackSize		  0
 	}
 	Outputs_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_f809e_Outputs"
+	  TLCFileName		  "s1_b0_4d89e_Outputs"
 	  StackSize		  28
 	}
 	Update_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_f809e_Update"
+	  TLCFileName		  "s1_b0_4d89e_Update"
 	  StackSize		  8
 	}
 	Derivatives_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_f809e_Derivatives"
+	  TLCFileName		  "s1_b0_4d89e_Derivatives"
 	  StackSize		  0
 	}
 	ForcingFunction_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_f809e_ForcingFunction"
+	  TLCFileName		  "s1_b0_4d89e_ForcingFunction"
 	  StackSize		  0
 	}
 	Terminate_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_f809e_Terminate"
+	  TLCFileName		  "s1_b0_4d89e_Terminate"
 	  StackSize		  0
 	}
 	ModelPrevZCStateInit_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_f809e_ModelPrevZCStateInit"
+	  TLCFileName		  "s1_b0_4d89e_ModelPrevZCStateInit"
 	  StackSize		  0
 	}
       }

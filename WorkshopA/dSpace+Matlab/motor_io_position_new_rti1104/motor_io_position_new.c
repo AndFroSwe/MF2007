@@ -5,7 +5,7 @@
  *
  * Model version              : 1.29
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Thu Apr 07 01:32:30 2016
+ * C source code generated on : Thu Apr 07 04:07:07 2016
  *
  * Target selection: rti1104.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -668,7 +668,7 @@ void motor_io_position_new_update(void)
     (&motor_io_position_new_M->solverInfo);
 
   {
-    /* Update absolute timer for sample time: [0.036235209383965315s, 0.0s] */
+    /* Update absolute timer for sample time: [0.10870562815189595s, 0.0s] */
     /* The "clockTick1" counts the number of times the code of this task has
      * been executed. The absolute time is the multiplication of "clockTick1"
      * and "Timing.stepSize1". Size of "clockTick1" ensures timer will not
@@ -899,7 +899,7 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new(void)
 
     /* task periods */
     motor_io_position_new_M->Timing.sampleTimes[0] = (0.0);
-    motor_io_position_new_M->Timing.sampleTimes[1] = (0.036235209383965315);
+    motor_io_position_new_M->Timing.sampleTimes[1] = (0.10870562815189595);
 
     /* task offsets */
     motor_io_position_new_M->Timing.offsetTimes[0] = (0.0);
@@ -916,12 +916,11 @@ RT_MODEL_motor_io_position_ne_T *motor_io_position_new(void)
   }
 
   rtmSetTFinal(motor_io_position_new_M, -1);
-  motor_io_position_new_M->Timing.stepSize0 = 0.036235209383965315;
-  motor_io_position_new_M->Timing.stepSize1 = 0.036235209383965315;
+  motor_io_position_new_M->Timing.stepSize0 = 0.10870562815189595;
+  motor_io_position_new_M->Timing.stepSize1 = 0.10870562815189595;
   motor_io_position_new_M->solverInfoPtr = (&motor_io_position_new_M->solverInfo);
-  motor_io_position_new_M->Timing.stepSize = (0.036235209383965315);
-  rtsiSetFixedStepSize(&motor_io_position_new_M->solverInfo,
-                       0.036235209383965315);
+  motor_io_position_new_M->Timing.stepSize = (0.10870562815189595);
+  rtsiSetFixedStepSize(&motor_io_position_new_M->solverInfo, 0.10870562815189595);
   rtsiSetSolverMode(&motor_io_position_new_M->solverInfo,
                     SOLVER_MODE_SINGLETASKING);
 

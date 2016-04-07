@@ -5,7 +5,7 @@
    Task Configuration file for model : motor_io_position_new
 
    RTI1104 7.3 (02-Nov-2014)/2.6
-   07-Apr-2016 01:32:29
+   07-Apr-2016 04:07:07
 
    MATLAB 8.4.0.150421 (R2014b)
 
@@ -15,7 +15,7 @@
 
 /* ===== List of model tasks and assigned interrupt sources ================
 
-   Timer Task 1 [0.0362352 0] s   : Timer A interrupt
+   Timer Task 1 [0.108706 0] s    : Timer A interrupt
 
   * ========================================================================= */
 
@@ -119,7 +119,7 @@ static void rti_th_initialize(void)
   rtith_bind_interrupt( /* --- Bind interrupt to task. ----- */
       service, subentry,         /*  RTK service, RTK subentry.       */
       pTask1,             /*  Task (TCB pointer).              */
-      (0.03623520938396532 * RTI_TIMER_TASK_TIME_SCALE),             /*  Sample time or period.           */
+      (0.108705628151896 * RTI_TIMER_TASK_TIME_SCALE),             /*  Sample time or period.           */
       C_LOCAL,             /*  RTK channel.                     */
       -1,             /*  Logical interrupt number.        */
       NULL);            /*  Hook function.                   */
