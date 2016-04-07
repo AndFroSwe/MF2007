@@ -178,6 +178,7 @@ s = tf('s');
 Go_p = Go*1/s       % position is velocity integrated 
 wb = 5.78;          % bandwidth of open loop system [rad/s]
 <<<<<<< HEAD
+<<<<<<< HEAD
 ws = 10*wb;
 =======
 <<<<<<< HEAD
@@ -187,6 +188,10 @@ ws = 30*wb;
 >>>>>>> 698b95201d3ae24de2fb5ff3e6658cdd38e5f1ec
 >>>>>>> origin/master
 Ts = 2*pi/ws;
+=======
+ws = 30*wb;
+Ts = 2*pi/ws
+>>>>>>> 47f62ebcc07df8b77e47712c4501e1eadd227f28
 
 % Make system discrete
 Go_z = c2d(Go_p, Ts, 'zoh')
