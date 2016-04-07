@@ -1,6 +1,6 @@
-%implements s1_b0_b5s9e_ForcingFunction "C"
+%implements s1_b0_f809e_Derivatives "C"
 
-%function ForcingFunction(block, system) Output
+%function Derivatives(block, system) Output
 %assign cfgTxt = ""
 %openfile cfgTxt
 %assign localVarDecl = ""
@@ -8,17 +8,17 @@
 XDot_motor_io_position_new_T *_rtXdot;
 %closefile localVarDecl
 _rtXdot = %<(SLibCG_SE(SLibGetContStatesDerivativeStructPtr()))>;
-/* ForcingFunction for Integrator: '<S5>/Integrator1' */
+/* Derivatives for Integrator: '<S3>/Integrator1' */
 _rtXdot->Integrator1_CSTATE = motor_io_position_new_B.Integrator;
-/* ForcingFunction for Integrator: '<S5>/Integrator' */
+/* Derivatives for Integrator: '<S3>/Integrator' */
 _rtXdot->Integrator_CSTATE = motor_io_position_new_B.Inertias1J;
 %closefile cfgTxt
 %<cfgTxt>
 %assign fcnProtoType = ""
 %openfile fcnProtoType
-static void ForcingFunction(\
+static void Derivatives(\
 %assign comma = ""
 %closefile fcnProtoType
-%<SLibCG_SetFcnProtoType(0, 6, fcnProtoType)>
-%<LibSetSystemField(system, "CachedForcingFunctionLocalVars", localVarDecl)>
+%<SLibCG_SetFcnProtoType(0, 5, fcnProtoType)>
+%<LibSetSystemField(system, "CachedDerivativeLocalVars", localVarDecl)>
 %endfunction
