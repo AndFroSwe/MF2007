@@ -327,15 +327,34 @@ rotor loaded with a torque by holding it.
   velocity controller with the resulting control law in Equation
   \ref{eq:contlaw} as,
   \begin{equation}
-      ((z-1)(z+0.677))u(z)=(71.4z^2-105z+39.9)r(z)-(6.30z^2)y(z)
+      \big((z-1)(z+0.677))u(z)=(71.4z^2-105z+39.9)r(z)-(6.30z^2)y(z)
   \end{equation}
   Where the observer polynomial and the closed loop polynomial is,
   \begin{align*}
         &A_m = (z-0.6)(z-0.5)\\
         &A_o = z^2,
   \end{align*}
-  with sampling time $T_s=0.362$.
-  \subsection*{Level 1}
+  with sampling time $T_s=0.0362$.
+  \subsection*{Level 1} 
+  In Figure~\ref{fig:pos_cont:a} the response from
+  the controller can be seen and in Figure~\ref{fig:pos_cont:b} the
+  voltage response is plotted. The specifications is met as can be seen
+  in the Figure~\ref{fig:pos_count:a}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{PosCont.png}
+    \caption{Position response}
+    \label{fig:pos_cont:a}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{PosCont_V.png}
+    \caption{Voltage response}
+    \label{fig:pos_cont:b}
+  \end{subfigure}
+  \caption{Response from position controller}
+  \label{fig:pos_cont}
+\end{figure}
 
   \subsection*{Level 2}
 
