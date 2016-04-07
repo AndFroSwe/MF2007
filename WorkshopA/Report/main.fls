@@ -66,6 +66,12 @@ INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
 INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
 INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/float/float.sty
 INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/float/float.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/caption/subcaption.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/caption/subcaption.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/caption/caption.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/caption/caption.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/caption/caption3.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/caption/caption3.sty
 INPUT main.aux
 INPUT main.aux
 OUTPUT main.aux
@@ -107,10 +113,53 @@ INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam7.
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT fig/l1_sq_a24_f016_dtuned.png
 OUTPUT main.pdf
+INPUT ./fig/l1_sq_a24_f016_dtuned.png
+INPUT ./fig/l1_sq_a24_f016_dtuned.png
 INPUT C:/Users/Andreas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
+INPUT fig/l1_sq_a24_f016.png
+INPUT ./fig/l1_sq_a24_f016.png
+INPUT ./fig/l1_sq_a24_f016.png
+INPUT fig/l2_sq_a5_f016_fcTuned.png
+INPUT ./fig/l2_sq_a5_f016_fcTuned.png
+INPUT ./fig/l2_sq_a5_f016_fcTuned.png
+INPUT fig/l2_sq_a24_f016_fcTuned.png
+INPUT ./fig/l2_sq_a24_f016_fcTuned.png
+INPUT ./fig/l2_sq_a24_f016_fcTuned.png
+INPUT fig/l2_sin_a5_f1.png
+INPUT ./fig/l2_sin_a5_f1.png
+INPUT ./fig/l2_sin_a5_f1.png
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/cm/cmtt12.tfm
+INPUT fig/T2_a50_f05.png
+INPUT ./fig/T2_a50_f05.png
+INPUT ./fig/T2_a50_f05.png
+INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT fig/T2_V_a50_f05.png
+INPUT ./fig/T2_V_a50_f05.png
+INPUT ./fig/T2_V_a50_f05.png
+INPUT fig/T2_a50_f05_ss.png
+INPUT ./fig/T2_a50_f05_ss.png
+INPUT ./fig/T2_a50_f05_ss.png
+INPUT fig/T2_a10_f02.png
+INPUT ./fig/T2_a10_f02.png
+INPUT ./fig/T2_a10_f02.png
+INPUT fig/T2_V_a10_f02.png
+INPUT ./fig/T2_V_a10_f02.png
+INPUT ./fig/T2_V_a10_f02.png
+INPUT fig/T2_a10_f02_load.png
+INPUT ./fig/T2_a10_f02_load.png
+INPUT ./fig/T2_a10_f02_load.png
+INPUT fig/T2_V_a10_f02_load.png
+INPUT ./fig/T2_V_a10_f02_load.png
+INPUT ./fig/T2_V_a10_f02_load.png
+INPUT fig/PosCont.png
+INPUT ./fig/PosCont.png
+INPUT ./fig/PosCont.png
+INPUT fig/PosCont_V.png
+INPUT ./fig/PosCont_V.png
+INPUT ./fig/PosCont_V.png
 INPUT main.aux
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
@@ -118,6 +167,7 @@ INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pf
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb

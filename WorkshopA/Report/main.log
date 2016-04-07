@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.16)  7 APR 2016 03:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.13)  7 APR 2016 13:34
 entering extended mode
 **./main.tex
 (main.tex
 LaTeX2e <2015/10/01> patch level 2
-Babel <3.9m> and hyphenation patterns for 69 languages loaded.
+Babel <3.9n> and hyphenation patterns for 69 languages loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
@@ -20,20 +20,25 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
+
 For additional information on amsmath, use the `?' option.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks14
 \ex@=\dimen103
-)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen104
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count87
@@ -73,24 +78,29 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \mathdisplay@stack=\toks18
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks19
 \inpenc@posthook=\toks20
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/09/07 v1.1p UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
@@ -250,6 +260,7 @@ File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
@@ -290,6 +301,7 @@ File: ot1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
 )
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
@@ -313,56 +325,72 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2015/08/03 3.9m The Babel package
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2016/01/08 3.9n The Babel package
+
 *************************************
 * Local config file bblopts.cfg used
 *
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
 Language: english 2012/08/20 v3.3p English support from the babel system
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2015/08/03 3.9m Babel common definitions
+File: babel.def 2016/01/08 3.9n Babel common definitions
 \babel@savecnt=\count99
 \U@D=\dimen112
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
-)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count100
 ))
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count101
@@ -377,18 +405,22 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen121
 \Gm@layoutvoffset=\dimen122
 \Gm@dimlist=\toks22
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg")) ("C:\Pro
-gram Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count104
 \float@exts=\toks23
 \float@box=\box28
 \@float@everytoks=\toks24
 \@floatcapt=\box29
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
 Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
@@ -405,7 +437,8 @@ Package caption Info: float package is loaded.
 )
 \c@subfigure=\count106
 \c@subtable=\count107
-) (main.aux)
+)
+(main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
@@ -420,7 +453,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count108
 \scratchdimen=\dimen130
@@ -475,178 +508,144 @@ LaTeX Font Info:    Try loading font information for U+msa on input line 27.
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) <fig/l1_sq_a24_f016_dtuned.png, id=1, 526.96875pt x 395.22656pt>
+)
+<fig/l1_sq_a24_f016_dtuned.png, id=1, 526.96875pt x 395.22656pt>
 File: fig/l1_sq_a24_f016_dtuned.png Graphic file (type png)
+
 <use fig/l1_sq_a24_f016_dtuned.png>
 Package pdftex.def Info: fig/l1_sq_a24_f016_dtuned.png used on input line 83.
 (pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
-[1
+ [1
 
-{C:/Users/Lamn/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] <fig/l1_sq_a
-24_f016.png, id=14, 526.96875pt x 395.22656pt>
+{C:/Users/Andreas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<fig/l1_sq_a24_f016.png, id=14, 526.96875pt x 395.22656pt>
 File: fig/l1_sq_a24_f016.png Graphic file (type png)
+
 <use fig/l1_sq_a24_f016.png>
 Package pdftex.def Info: fig/l1_sq_a24_f016.png used on input line 94.
 (pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
-[2 <./fig/l1_sq_a24_f016_dtuned.png (PNG copy)> <./fig/l1_sq_a24_f016.png (PNG 
-copy)>]
+ [2 <./fig/l1_sq_a24_f016_dtuned.png (PNG copy)> <./fig/l1_sq_a24_f016.png (PNG
+ copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 116--129
 
  []
 
 <fig/l2_sq_a5_f016_fcTuned.png, id=18, 526.96875pt x 395.22656pt>
 File: fig/l2_sq_a5_f016_fcTuned.png Graphic file (type png)
+
 <use fig/l2_sq_a5_f016_fcTuned.png>
 Package pdftex.def Info: fig/l2_sq_a5_f016_fcTuned.png used on input line 134.
 (pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
+
 <fig/l2_sq_a24_f016_fcTuned.png, id=19, 526.96875pt x 395.22656pt>
 File: fig/l2_sq_a24_f016_fcTuned.png Graphic file (type png)
+
 <use fig/l2_sq_a24_f016_fcTuned.png>
 Package pdftex.def Info: fig/l2_sq_a24_f016_fcTuned.png used on input line 143.
 
 (pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
+
 <fig/l2_sin_a5_f1.png, id=20, 526.96875pt x 395.22656pt>
 File: fig/l2_sin_a5_f1.png Graphic file (type png)
+
 <use fig/l2_sin_a5_f1.png>
 Package pdftex.def Info: fig/l2_sin_a5_f1.png used on input line 153.
 (pdftex.def)             Requested size: 284.52756pt x 213.40709pt.
-[3 <./fig/l2_sq_a5_f016_fcTuned.png (PNG copy)> <./fig/l2_sq_a24_f016_fcTuned.p
-ng (PNG copy)>]
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   t
-l.202 belowcaptionskip=1\baselineskip,to
-                                         simplify the equations.
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[4 <./fig/l2_sin_a5_f1.png (PNG copy)>]
-! Double subscript.
-l.217 _
-       \end{equation}
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-! Missing { inserted.
-<to be read again> 
-                   \gdef 
-l.217 _\end{equation}
-                     
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-! You can't use `\eqno' in math mode.
-\endmathdisplay@a ...\df@tag \@empty \else \veqno 
-                                                  \alt@tag \df@tag \fi \ifx ...
-l.217 _\end{equation}
-                     
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.217 _\end{equation}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-<fig/T2_a50_f05.png, id=31, 526.96875pt x 395.22656pt>
+ [3 <./fig/l2_sq_a5_f016_fcTuned.png (PNG copy)> <./fig/l2_sq_a24_f016_fcTuned.
+png (PNG copy)>] [4 <./fig/l2_sin_a5_f1.png (PNG copy)>] <fig/T2_a50_f05.png, i
+d=31, 526.96875pt x 395.22656pt>
 File: fig/T2_a50_f05.png Graphic file (type png)
+
 <use fig/T2_a50_f05.png>
 Package pdftex.def Info: fig/T2_a50_f05.png used on input line 267.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
+
 <fig/T2_V_a50_f05.png, id=32, 526.96875pt x 395.22656pt>
 File: fig/T2_V_a50_f05.png Graphic file (type png)
+
 <use fig/T2_V_a50_f05.png>
 Package pdftex.def Info: fig/T2_V_a50_f05.png used on input line 272.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
+
 <fig/T2_a50_f05_ss.png, id=34, 526.96875pt x 395.22656pt>
 File: fig/T2_a50_f05_ss.png Graphic file (type png)
+
 <use fig/T2_a50_f05_ss.png>
 Package pdftex.def Info: fig/T2_a50_f05_ss.png used on input line 285.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-[5 <./fig/T2_a50_f05.png (PNG copy)> <./fig/T2_V_a50_f05.png>] <fig/T2_a10_f02.
-png, id=41, 526.96875pt x 395.22656pt>
+ [5 <./fig/T2_a50_f05.png (PNG copy)> <./fig/T2_V_a50_f05.png>] <fig/T2_a10_f02
+.png, id=41, 526.96875pt x 395.22656pt>
 File: fig/T2_a10_f02.png Graphic file (type png)
+
 <use fig/T2_a10_f02.png>
 Package pdftex.def Info: fig/T2_a10_f02.png used on input line 294.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
+
 <fig/T2_V_a10_f02.png, id=42, 526.96875pt x 395.22656pt>
 File: fig/T2_V_a10_f02.png Graphic file (type png)
+
 <use fig/T2_V_a10_f02.png>
 Package pdftex.def Info: fig/T2_V_a10_f02.png used on input line 299.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
+
 <fig/T2_a10_f02_load.png, id=43, 526.96875pt x 395.22656pt>
 File: fig/T2_a10_f02_load.png Graphic file (type png)
+
 <use fig/T2_a10_f02_load.png>
 Package pdftex.def Info: fig/T2_a10_f02_load.png used on input line 312.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
+
 <fig/T2_V_a10_f02_load.png, id=44, 526.96875pt x 395.22656pt>
 File: fig/T2_V_a10_f02_load.png Graphic file (type png)
+
 <use fig/T2_V_a10_f02_load.png>
 Package pdftex.def Info: fig/T2_V_a10_f02_load.png used on input line 317.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-[6 <./fig/T2_a50_f05_ss.png (PNG copy)> <./fig/T2_a10_f02.png (PNG copy)> <./fi
-g/T2_V_a10_f02.png (PNG copy)> <./fig/T2_a10_f02_load.png (PNG copy)> <./fig/T2
-_V_a10_f02_load.png (PNG copy)>]
-
-LaTeX Warning: Reference `fig:pos_count:a' on page 7 undefined on input line 34
-2.
-
+ [6 <./fig/T2_a50_f05_ss.png (PNG copy)> <./fig/T2_a10_f02.png (PNG copy)> <./f
+ig/T2_V_a10_f02.png (PNG copy)>]
 <fig/PosCont.png, id=48, 526.96875pt x 395.22656pt>
 File: fig/PosCont.png Graphic file (type png)
-<use fig/PosCont.png>
+ <use fig/PosCont.png>
 Package pdftex.def Info: fig/PosCont.png used on input line 346.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
+
 <fig/PosCont_V.png, id=49, 526.96875pt x 395.22656pt>
 File: fig/PosCont_V.png Graphic file (type png)
-<use fig/PosCont_V.png>
+ <use fig/PosCont_V.png>
 Package pdftex.def Info: fig/PosCont_V.png used on input line 351.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
-[7 <./fig/PosCont.png (PNG copy)> <./fig/PosCont_V.png (PNG copy)>] (main.aux)
 
-LaTeX Warning: There were undefined references.
-
- ) 
+[7 <./fig/T2_a10_f02_load.png (PNG copy)> <./fig/T2_V_a10_f02_load.png (PNG cop
+y)> <./fig/PosCont.png (PNG copy)> <./fig/PosCont_V.png (PNG copy)>] [8]
+(main.aux) ) 
 Here is how much of TeX's memory you used:
- 4444 strings out of 493634
- 63307 string characters out of 3141316
+ 4450 strings out of 493634
+ 63246 string characters out of 3141308
  136436 words of memory out of 3000000
- 7760 multiletter control sequences out of 15000+200000
- 13173 words of font info for 51 fonts, out of 3000000 for 9000
+ 7767 multiletter control sequences out of 15000+200000
+ 12866 words of font info for 50 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  42i,8n,40p,270b,443s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on C:/Users/Lamn/Desktop/MF2007/WorkshopA/Report/main.pdf (7 pag
-es, 521005 bytes).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmc
+sc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex
+10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (8 pages, 523928 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
+ 101 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

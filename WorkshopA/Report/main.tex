@@ -109,7 +109,7 @@ rotational speed. A model which captures the real behaviour of the system is
 used here, called the Karnop friction model. In addition to the linear friction,
 the static friction is taken into account by adding a stick-slip zone where the
 friction tourque is equal to the applied torque. The model is given by the
-nequation
+equation
 \begin{equation}
     \label{eq:karnop}
     M_f = d \dot{\phi} + F_c sgn(\dot{\phi}),
@@ -199,7 +199,7 @@ The model of the plant is given in (\ref{eq:motormodel}) and is here rewritten a
     \label{eq:motorsimple}
     \frac{B}{A}=\frac{a}{s + b}
 \end{equation}
-belowcaptionskip=1\baselineskip,to simplify the equations. 
+,to simplify the equations. 
 Firstly, the feedback polynomial $\frac{S}{R}$ is derived. This is given by
 \begin{equation}
     \label{eq:feedback_vel}
@@ -214,7 +214,7 @@ The system is of order one so one closed loop pole given by
 \begin{equation}
     \label{eq:am_vel}
     A_m = z - p_1
-_\end{equation}
+\end{equation}
 is placed with an additional pole given by the observer polynomial 
 \begin{equation}
     \label{eq:ao_vel}
@@ -339,7 +339,7 @@ rotor loaded with a torque by holding it.
   In Figure~\ref{fig:pos_cont:a} the response from
   the controller can be seen and in Figure~\ref{fig:pos_cont:b} the
   voltage response is plotted. The specifications is met as can be seen
-  in the Figure~\ref{fig:pos_count:a}
+  in the Figure~\ref{fig:pos_cont:a}
 \begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.45\linewidth}
@@ -356,10 +356,55 @@ rotor loaded with a torque by holding it.
   \label{fig:pos_cont}
 \end{figure}
 
-  \subsection*{Level 2}
-
-
-
-
+\subsection*{Level 2}
+The controller used in level 1 is designed directly in the discrete plane. To
+compare admissable sampling times, a continuous time controller is designed and
+then discretized with Tustins approximation. \par
+The design steps are the same as the output feedback design in the velocity
+controller case and are therefore not stated again. For the feedback controller,
+a continuous PID with low pass filter is chosen,
+\begin{equation}
+    \label{eq:contpid}
+    \frac{S}{R} = \frac{s_2 s^2 + s_1 s + s_0}{s(s+_0)}.
+\end{equation}
+The Diophantine equation yields the parameter values
+\begin{equation}
+    \label{eq:r0pos}
+    r_0 = 2\omega_3 \zeta - b + \omega_1 + \omega_2, 
+\end{equation}
+\begin{equation}
+    \label{eq:s0pos}
+    s_0 = \frac{\omega_1 \omega_2 \omega_3^2}{a},
+\end{equation}
+\begin{equation}
+    \label{eq:s1pos}
+    s_1 = \frac{\omega_3 (2\omega_1 \omega_2 \zeta + \omega_1 \omega_3 +
+    \omega_2 \omega_3)}{a},
+\end{equation}
+and
+\begin{equation}
+    \label{eq:s2pos}
+    s_2 = \frac{1}{a} ( -2b\omega_3 \zeta + 2\omega_1 \omega_3 \zeta + 2\omega_2
+    \omega_3 \zeta + b^2 - b\omega_2 \omega_1 \omega_2 \omega_3^2),
+\end{equation}
+where
+\begin{equation}
+    \label{eq:contpoles}
+    A_m A_{o} = (s + \omega_1)(s + \omega_2)(s^2 + 2\omega_3\zeta s +
+    \omega_3^2).
+\end{equation}
+The feedback polynomial becomes
+\begin{equation}
+    \label{eq:cont_feedback}
+    \frac{T}{R} = \frac{t_0 (s^2 + 2\omega_3\zeta s + \omega_3^2)}{s(s + r_0)}.
+\end{equation}
+Designing the controller is done by iteration and testing. Firstly, the speed
+and performance of the system is set by moving the $A_m$ polynomial so that a
+good mix of model disturbance and sensor noice rejection is found. The closed
+loop poles in $A_o$ are then placed to get the desired performance. The sampling
+rate is first set by the thumbrule that it should be 10-30 times faster than the
+fastest pole in the system, then it is tuned to see what the maximum reachable
+sampling time is while maintaining the perfomance within specifications. The
+resultsing control law, sampling time and perfomance is displayed below. \par
 
 \end{document}
