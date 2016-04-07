@@ -74,8 +74,6 @@ omega3 = 45;
 Zeta = 1;
 Ao = s^2 + 2*Zeta*omega3*s + omega3^2;
 
-
-
 % feedback parameters
 r0 =2*Zeta*omega3-b+omega1+omega2
 s0 = omega1*omega2*omega3^2/a

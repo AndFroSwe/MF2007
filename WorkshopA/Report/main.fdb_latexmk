@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1460040949 "main.tex" "main.pdf" "main" 1460040949
+["pdflatex"] 1460043457 "main.tex" "main.pdf" "main" 1460043458
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233955448 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233955454 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -75,8 +75,8 @@
   "C:/Program Files (x86)/MiKTeX 2.9/tex/latex/pdftex-def/pdftex.def" 1306444860 55368 3c8a0d99822330f2dfabc0dfb09ce897 ""
   "C:/Users/Andreas/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1457897441 3708308 25b7089ba46f6b6b8028593a55fdf5f3 ""
   "C:/Users/Andreas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1460026416 72707 f588ad7f01fe06fd83e0054897eae5ea ""
-  "fig/PosCont.png" 1460025728 19816 40efc4a36339f28a0f4735ae89605d3e ""
-  "fig/PosCont_V.png" 1460025728 19834 0a66144bc3b0c254ee86b344a6a2971b ""
+  "fig/Pos_l1.png" 1460040981 24740 c8fdf9897c2bb275a523923138090358 ""
+  "fig/Pos_l1_V.png" 1460040981 29192 256dfbfe84a510f4b5abc520e17c80bd ""
   "fig/T2_V_a10_f02.png" 1460025728 26885 c78fc2c4d4fbf1fddebae6a137ee6ac4 ""
   "fig/T2_V_a10_f02_load.png" 1460025728 28831 977cd8c1fde13a954c1cfb98ec3453af ""
   "fig/T2_V_a50_f05.png" 1460025728 21742 38ded90fe5591826593bb7c5922c6218 ""
@@ -91,8 +91,8 @@
   "fig/l2_sin_a5_f1.png" 1460025728 31845 d5ba72a00be4b2ad6c13d084c11933c5 ""
   "fig/l2_sq_a24_f016_fcTuned.png" 1459944369 26852 a4a9f3d7cb8d4c29d1ef42ee0aeb9f98 ""
   "fig/l2_sq_a5_f016_fctuned.png" 1459944369 30558 4b53f30e6003731f1f6a97fbdd324c00 ""
-  "main.aux" 1460040949 4276 70cff2d9d0eb002b08903a442b512771 ""
-  "main.tex" 1460040947 19328 aab8117e2085dabb6261f09822928893 ""
+  "main.aux" 1460043458 4306 9bb9b7694a7349b7e056d742612ab593 ""
+  "main.tex" 1460043457 20338 27eb3f8646cebc7dd19c9e12e919f17e ""
   (generated)
   "main.pdf"
   "main.log"

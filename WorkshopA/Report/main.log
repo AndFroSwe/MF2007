@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.13)  7 APR 2016 16:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.13)  7 APR 2016 17:37
 entering extended mode
 **./main.tex
 (main.tex
@@ -601,41 +601,42 @@ File: fig/T2_V_a10_f02_load.png Graphic file (type png)
 Package pdftex.def Info: fig/T2_V_a10_f02_load.png used on input line 313.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
  [6 <./fig/T2_a50_f05_ss.png (PNG copy)> <./fig/T2_a10_f02.png (PNG copy)> <./f
-ig/T2_V_a10_f02.png (PNG copy)>]
-<fig/PosCont.png, id=48, 526.96875pt x 395.22656pt>
-File: fig/PosCont.png Graphic file (type png)
- <use fig/PosCont.png>
-Package pdftex.def Info: fig/PosCont.png used on input line 378.
+ig/T2_V_a10_f02.png (PNG copy)>] [7 <./fig/T2_a10_f02_load.png (PNG copy)> <./f
+ig/T2_V_a10_f02_load.png (PNG copy)>]
+<fig/Pos_l1.png, id=52, 526.96875pt x 395.22656pt>
+File: fig/Pos_l1.png Graphic file (type png)
+ <use fig/Pos_l1.png>
+Package pdftex.def Info: fig/Pos_l1.png used on input line 381.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
-<fig/PosCont_V.png, id=49, 526.96875pt x 395.22656pt>
-File: fig/PosCont_V.png Graphic file (type png)
- <use fig/PosCont_V.png>
-Package pdftex.def Info: fig/PosCont_V.png used on input line 383.
+<fig/Pos_l1_V.png, id=53, 526.96875pt x 395.22656pt>
+File: fig/Pos_l1_V.png Graphic file (type png)
+ <use fig/Pos_l1_V.png>
+Package pdftex.def Info: fig/Pos_l1_V.png used on input line 386.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
-[7 <./fig/T2_a10_f02_load.png (PNG copy)> <./fig/T2_V_a10_f02_load.png (PNG cop
-y)>] <fig/continuous_level2.png, id=54, 421.575pt x 316.18124pt>
+[8 <./fig/Pos_l1.png (PNG copy)> <./fig/Pos_l1_V.png (PNG copy)>]
+<fig/continuous_level2.png, id=57, 421.575pt x 316.18124pt>
 File: fig/continuous_level2.png Graphic file (type png)
 
 <use fig/continuous_level2.png>
-Package pdftex.def Info: fig/continuous_level2.png used on input line 455.
+Package pdftex.def Info: fig/continuous_level2.png used on input line 461.
 (pdftex.def)             Requested size: 420.19191pt x 315.14801pt.
- [8 <./fig/PosCont.png (PNG copy)> <./fig/PosCont_V.png (PNG copy)>]
+
 <fig/continuous_level2_voltage.png, id=58, 421.575pt x 316.18124pt>
 File: fig/continuous_level2_voltage.png Graphic file (type png)
 
 <use fig/continuous_level2_voltage.png>
 Package pdftex.def Info: fig/continuous_level2_voltage.png used on input line 4
-61.
+67.
 (pdftex.def)             Requested size: 420.19191pt x 315.14801pt.
  [9 <./fig/continuous_level2.png (PNG copy)>] [10 <./fig/continuous_level2_volt
 age.png (PNG copy)>] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 4468 strings out of 493634
+ 4469 strings out of 493634
  63669 string characters out of 3141308
  137436 words of memory out of 3000000
- 7783 multiletter control sequences out of 15000+200000
+ 7784 multiletter control sequences out of 15000+200000
  12866 words of font info for 50 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  42i,8n,40p,270b,443s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -653,7 +654,7 @@ r6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (10 pages, 561787 bytes).
+Output written on main.pdf (10 pages, 576918 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
