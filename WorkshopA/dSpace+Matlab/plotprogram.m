@@ -11,7 +11,7 @@ y2 = wsA_position_level1.Y(:,2);
 figure
 plot(x.Data,y1.Data,x.Data,y2.Data)
 legend('Reference','Motor')
-title('Voltage approximated system')
+title('C')
 ylabel('Velocity')
 xlabel('Time')
 %% 3
@@ -26,8 +26,8 @@ y2 = wsA_position_level1_long_sampli.Y(:,2);
 figure
 plot(x.Data,y1.Data,x.Data,y2.Data)
 legend('Reference','Motor')
-title('Voltage approximated system')
-ylabel('Velocity')
+title('Position Response')
+ylabel('Position')
 xlabel('Time')
 %% 3
 
@@ -39,7 +39,6 @@ y1 = wsA_position_level1_long_sampli.Y(:,1);
 % Plotting
 figure
 plot(x.Data,y1.Data)
-legend('Reference','Motor')
-title('Voltage approximated system')
-ylabel('Velocity')
+title('Voltage response')
+ylabel('Voltage')
 xlabel('Time')

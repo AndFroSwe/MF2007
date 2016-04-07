@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.16)  7 APR 2016 00:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.16)  7 APR 2016 17:35
 entering extended mode
 **./main.tex
 (main.tex
@@ -935,7 +935,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \c__siunitx_mathtt_int=\count169
  (part1.tex
-Underfull \hbox (badness 10000) in paragraph at lines 15--21
+Underfull \hbox (badness 10000) in paragraph at lines 2--8
 
  []
 
@@ -943,14 +943,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--21
 File: ./fig/task1_traj_rs10.png Graphic file (type png)
 
 <use ./fig/task1_traj_rs10.png>
-Package pdftex.def Info: ./fig/task1_traj_rs10.png used on input line 46.
+Package pdftex.def Info: ./fig/task1_traj_rs10.png used on input line 31.
 (pdftex.def)             Requested size: 472.71088pt x 184.6529pt.
 ) (part2.tex
 <./fig/task2_traj.png, id=3, 1626.075pt x 975.645pt>
 File: ./fig/task2_traj.png Graphic file (type png)
 
 <use ./fig/task2_traj.png>
-Package pdftex.def Info: ./fig/task2_traj.png used on input line 29.
+Package pdftex.def Info: ./fig/task2_traj.png used on input line 15.
 (pdftex.def)             Requested size: 236.35544pt x 141.79985pt.
  [1
 
@@ -960,27 +960,27 @@ traj_rs10.png>]
 File: ./fig/task2_position.png Graphic file (type png)
 
 <use ./fig/task2_position.png>
-Package pdftex.def Info: ./fig/task2_position.png used on input line 37.
+Package pdftex.def Info: ./fig/task2_position.png used on input line 23.
 (pdftex.def)             Requested size: 236.35544pt x 141.79985pt.
 
 <./fig/task2_closeup.png, id=20, 1626.075pt x 975.645pt>
 File: ./fig/task2_closeup.png Graphic file (type png)
 
 <use ./fig/task2_closeup.png>
-Package pdftex.def Info: ./fig/task2_closeup.png used on input line 51.
+Package pdftex.def Info: ./fig/task2_closeup.png used on input line 37.
 (pdftex.def)             Requested size: 236.35544pt x 141.79985pt.
  [2 <./fig/task2_traj.png (PNG copy)> <./fig/task2_position.png (PNG copy)>]
 <./fig/task2_traj_l2.png, id=24, 421.575pt x 316.18124pt>
 File: ./fig/task2_traj_l2.png Graphic file (type png)
 
 <use ./fig/task2_traj_l2.png>
-Package pdftex.def Info: ./fig/task2_traj_l2.png used on input line 67.
+Package pdftex.def Info: ./fig/task2_traj_l2.png used on input line 51.
 (pdftex.def)             Requested size: 236.35544pt x 177.26773pt.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 85.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 69.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1008,35 +1008,35 @@ NG copy)>]
 File: ./fig/task3_1_1000.png Graphic file (type png)
 
 <use ./fig/task3_1_1000.png>
-Package pdftex.def Info: ./fig/task3_1_1000.png used on input line 26.
+Package pdftex.def Info: ./fig/task3_1_1000.png used on input line 23.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
 <./fig/task3_1_2000.png, id=42, 526.96875pt x 395.22656pt>
 File: ./fig/task3_1_2000.png Graphic file (type png)
 
 <use ./fig/task3_1_2000.png>
-Package pdftex.def Info: ./fig/task3_1_2000.png used on input line 29.
+Package pdftex.def Info: ./fig/task3_1_2000.png used on input line 26.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
 <./fig/task3_2_1000.png, id=43, 526.96875pt x 395.22656pt>
 File: ./fig/task3_2_1000.png Graphic file (type png)
 
 <use ./fig/task3_2_1000.png>
-Package pdftex.def Info: ./fig/task3_2_1000.png used on input line 43.
+Package pdftex.def Info: ./fig/task3_2_1000.png used on input line 40.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
 <./fig/task3_2_2000.png, id=44, 526.96875pt x 395.22656pt>
 File: ./fig/task3_2_2000.png Graphic file (type png)
 
 <use ./fig/task3_2_2000.png>
-Package pdftex.def Info: ./fig/task3_2_2000.png used on input line 46.
+Package pdftex.def Info: ./fig/task3_2_2000.png used on input line 43.
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
 <./fig/task3_3_1000_freq_1700.png, id=45, 526.96875pt x 395.22656pt>
 File: ./fig/task3_3_1000_freq_1700.png Graphic file (type png)
 
 <use ./fig/task3_3_1000_freq_1700.png>
-Package pdftex.def Info: ./fig/task3_3_1000_freq_1700.png used on input line 61
+Package pdftex.def Info: ./fig/task3_3_1000_freq_1700.png used on input line 58
 .
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
 
@@ -1044,7 +1044,7 @@ Package pdftex.def Info: ./fig/task3_3_1000_freq_1700.png used on input line 61
 File: ./fig/task3_3_2000_freq_1700.png Graphic file (type png)
 
 <use ./fig/task3_3_2000_freq_1700.png>
-Package pdftex.def Info: ./fig/task3_3_2000_freq_1700.png used on input line 64
+Package pdftex.def Info: ./fig/task3_3_2000_freq_1700.png used on input line 61
 .
 (pdftex.def)             Requested size: 236.35544pt x 177.27136pt.
  [7 <./fig/task3_1_1000.png (PNG copy)> <./fig/task3_1_2000.png (PNG copy)> <./
@@ -1053,7 +1053,7 @@ fig/task3_2_1000.png (PNG copy)> <./fig/task3_2_2000.png (PNG copy)>]
 File: ./fig/task3_3_bode.png Graphic file (type png)
 
 <use ./fig/task3_3_bode.png>
-Package pdftex.def Info: ./fig/task3_3_bode.png used on input line 81.
+Package pdftex.def Info: ./fig/task3_3_bode.png used on input line 78.
 (pdftex.def)             Requested size: 236.35544pt x 188.0228pt.
 ) [8 <./fig/task3_3_1000_freq_1700.png (PNG copy)> <./fig/task3_3_2000_freq_170
 0.png (PNG copy)> <./fig/task3_3_bode.png (PNG copy)>] (main.aux)
@@ -1083,9 +1083,9 @@ gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (8 pages, 561774 bytes).
+Output written on main.pdf (8 pages, 562130 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
+ 352 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

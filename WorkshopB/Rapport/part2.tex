@@ -1,26 +1,12 @@
-%\documentclass[12pt,a4paper]{article}
-%
-%\usepackage{amsmath, amssymb}
-%\usepackage[utf8]{inputenc}
-%\usepackage[english]{babel}
-%\usepackage{graphicx}
-%\usepackage[margin=0.5in]{geometry}
-%\usepackage{float}
-%
-%\graphicspath{{fig/}}
-
-
-%\begin{document}
-
-%\section{Writing Controller Code}
 \subsection*{Level 1}
-The code equivalent to the Simulink blocks gave similar results which
-can be seen in Figure \ref{fig:task2_traj} and
+When comparing the Simulink blocks to the code equivalent it could be
+seen that this gave similar results, this can also be seen
+in Figure \ref{fig:task2_traj} and
 Figure~\ref{fig:task2_pos}. A sampling time of 10 ms was used for the
-code. Different sampling times were tested and it was noticed that
-when using a higher sampling time the impact on the trajectory planner
-increased. When a higher sampling time was used the change of
-acceleration is missed by a few milliseconds and is therefore impacting the
+code, and when experimenting with different sampling times it was noticed that
+a higher sampling time gave an increase on the trajectory planner.
+When a higher sampling time was used, was the change of
+acceleration missed by a few milliseconds and is therefore impacting the
 velocity and position. This gives the difference in the position of the
 motor which is seen in Figure \ref{fig:task2_pos}.
 \begin{figure}[H]
@@ -42,7 +28,7 @@ motor which is seen in Figure \ref{fig:task2_pos}.
 
 A close-up of the sampling time problem is shown in Figure
 \ref{fig:task2_closeup}. When the velocity increases it the code signal
-follows the curve perfectly but when there is a change in acceleration
+follows  perfectly but when there is a change in acceleration
 the velocity code signal gets "out-of-sync".
 
 \begin{figure}[H]
@@ -53,8 +39,6 @@ the velocity code signal gets "out-of-sync".
 		\label{fig:task2_closeup}
 	\end{center}
 \end{figure}
-
-
 \subsection*{Level 2}
 Some modifications to the code had to be made to make it work in dSPACE
 but the same code is used for the plot in Figure

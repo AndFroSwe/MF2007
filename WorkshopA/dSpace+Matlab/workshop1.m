@@ -199,8 +199,8 @@ p1 = 0.1; % Am pole 1
 p2 = 0.1;   % Am pole 2
 Am = tf([1 -p1-p2 p1*p2], [0 1], Ts)
 
-p3 = 0.9; % observer polynomial poles
-p4 = 0.9;   
+p3 = 0.; % observer polynomial poles
+p4 = 0.;   
 Ao = tf([1 -p3-p4 p3*p4], [0 1], Ts)
 
 % parameter for integral feedback

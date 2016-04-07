@@ -1,31 +1,17 @@
-%\documentclass[12pt,a4paper]{article}
-%
-%\usepackage{amsmath, amssymb}
-%\usepackage[utf8]{inputenc}
-%\usepackage[english]{babel}
-%\usepackage{graphicx}
-%\usepackage[margin=0.5in]{geometry}
-%\usepackage{float}
-%
-%\graphicspath{{fig/}}
-%
-%
-%\begin{document}
 \subsection*{Level 1}
-The model following part could be derived by inverting each block of the DC
+The part for following the model was derived by inverting each block of the DC
 motor model step by step. This was then verified by using outputs from the DC
 motor model as input to the inversed model. This should result in that
 the input to the DC motor model is the same as the output for the
 inverse model. Since this is the case, this part can be seen as
-verified. \\
-
-In order to design the trajectory planner values for $a_{max}$ and
-$v_{max}$ needed to be obtained. $v_{max}$ was read from a velocity plot
-when the motor model was fed with 24 V. $a_{max}$ was calculated to a
-value around 650 \si{\meter\per\square\second} but that value saturated the voltage from the model
-follower. $a_{max}$ was therefore tweaked into a value which never
-saturates the voltage. These derived values can be seen in
-Table~\ref{tbl:table1}.
+verified. \\ 
+\par Values for $a_{max}$ and $v_{max}$ needed to be
+obtained in order to design the trajectory planner. $v_{max}$ was read
+from the velocity plot when the motor model was fed with 24 V. $a_{max}$
+was calculated to a value around 650 \si{\meter\per\square\second} but
+since this value saturates the voltage from the model follower,
+therefore was $a_{max}$ tweaked into a value which never saturated the
+voltage. These derived values can be seen in Table~\ref{tbl:table1}.
 \begin{table}[H]
     \centering
     \caption{Max values for acceleration and velocity}
@@ -37,7 +23,6 @@ Table~\ref{tbl:table1}.
 	\end{tabular}
         \label{tbl:table1}
 \end{table}
-
 The signal from the trajectory planner with Rs = 10 and Rs=100 can be seen in Figure \ref{fig:task2_pos}.
 
 \begin{figure}[H]
@@ -48,6 +33,3 @@ The signal from the trajectory planner with Rs = 10 and Rs=100 can be seen in Fi
 		\label{fig:task2_pos}
 	\end{center}
 \end{figure}
-
-
-%\end{document}
